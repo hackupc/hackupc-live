@@ -1,2 +1,5 @@
-# live
-:red_dot: During HackUPC, see upcoming events information and more info.
+# HackUPC Live
+
+Repo for new live web app.
+
+Comming in 2020, like [the new Tesla Roadster](https://www.tesla.com/roadster).
