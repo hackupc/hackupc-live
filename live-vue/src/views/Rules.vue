@@ -1,5 +1,5 @@
 <template>
-  <article id="rules" class="under-header padding-bottom">
+  <div id="rules" class="under-header padding-bottom">
     <div class="container">
       <div class="panel">
         <h1>Hackathon Rules</h1>
@@ -104,7 +104,7 @@
         </div>
       </div>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
