@@ -60,21 +60,20 @@
       <nav>
         <ul>
           <li data-bind-view="dayof">
-            <a href="#/dayof">Home</a>
+            <router-link to="/#/home">Home</router-link>
           </li>
           <li data-bind-view="live">
-            <a href="#/live">Live</a>
+            <router-link to="/live#/live">Live</router-link>
           </li>
           <li data-bind-view="schedule">
-            <a href="#/schedule">Schedule</a>
+            <router-link to="/schedule#/schedule">Schedule</router-link>
           </li>
           <li data-bind-view="map">
-            <a href="#/map">Map</a>
+            <router-link to="/map#/map">Map</router-link>
           </li>
-          <!-- <li data-bind-view="mentors"> -->
           <li>
             <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
-            <!-- <a href="#/mentors">Mentors</a> -->
+            <!--<router-link to="/mentors#/mentors">Mentors</router-link>-->
           </li>
           <li id="countdown-li">
             <div class="countdown">
@@ -87,22 +86,18 @@
             </div>
           </li>
           <li data-bind-view="streaming">
-            <a href="#/streaming">Streaming</a>
+            <router-link to="/streaming#/streaming">Streaming</router-link>
           </li>
           <li data-bind-view="challenges">
-            <a href="#/challenges">Challenges</a>
+            <router-link to="/challenges#/challenges">Challenges</router-link>
           </li>
-          <!-- <li data-bind-view="guides">-->
           <li>
-            <!-- <a href="#/guides">Guides</a> -->
             <a href="https://guides.hackupc.com/guide/hacker" target="_blank">Guides</a>
           </li>
           <li data-bind-view="rules">
-            <!-- <a href="/rules">Rules</a> -->
             <router-link to="/rules#/rules">Rules</router-link>
           </li>
           <li data-bind-view="faq">
-            <!-- <a href="#/faq">FAQ</a> -->
             <router-link to="/faq#/faq">FAQ</router-link>
           </li>
         </ul>
