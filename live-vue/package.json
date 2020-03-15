@@ -33,11 +33,10 @@
       "plugin:vue/essential",
       "@vue/airbnb"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
+    "parserOptions": {},
     "rules": {
-      "max-len": ["error", { "code": 500 }]
+      "max-len": 0,
+      "linebreak-style": 0
     }
   },
   "browserslist": [
