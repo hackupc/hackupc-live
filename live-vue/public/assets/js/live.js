@@ -1,6 +1,6 @@
 
-(function (CONST, Util) {
-	'use strict'
+// (function (CONST, Util) {
+// 	'use strict'
 
 	/// /////////////////////
 	// Globals
@@ -731,4 +731,4 @@
 		// }, 60000)
 	})
 // eslint-disable-next-line no-undef
-}(CONST, Util))
+// }(CONST, Util))
