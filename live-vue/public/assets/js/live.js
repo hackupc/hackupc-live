@@ -205,7 +205,7 @@
   */
 	function paintSchedule () {
 		var fancyElements = document.querySelectorAll('.events-fancy')
-		var scheduleElement = document.getElementById(views.schedule).getElementsByClassName('container')[0]
+		// var scheduleElement = document.getElementById(views.schedule).getElementsByClassName('container')[0]
 		try {
 			var fancySchedule = generateFancySchedule()
 			for (let i = 0; i < fancyElements.length; i++) {
@@ -228,10 +228,10 @@
 				})(events[i])
 			}
 
-			scheduleElement.innerHTML = ''
-			scheduleElement.appendChild(
-				(generateSchedule()).cloneNode(true)
-			)
+			// scheduleElement.innerHTML = ''
+			// scheduleElement.appendChild(
+				// (generateSchedule()).cloneNode(true)
+			// )
 		} catch (e) {
 			console.error(e)
 			malformedDataError()
@@ -647,9 +647,9 @@
 		document.getElementById('countdown-li').addEventListener('click', function () {
 			toggleFullscreen()
 		})
-		document.getElementById('countdown-full').addEventListener('click', function () {
-			toggleFullscreen()
-		})
+		// document.getElementById('countdown-full').addEventListener('click', function () {
+			// toggleFullscreen()
+		// })
 
 		document.getElementById('open-aside-btn').addEventListener('click', function () {
 			openAsideMenu()
@@ -685,7 +685,7 @@
 
 		updateSchedule(function () {
 			init()
-			paintSchedule()
+			// paintSchedule()
 			updateChronologicalElements()
 			updateCountdown()
 			// Load current view
