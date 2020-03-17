@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    totalTvCount: 10,
+    subscribed: {},
     days: [
         {
            "name":"Friday",
@@ -554,13 +554,21 @@ export default new Vuex.Store({
         }
     ]
   },
-  getters: {
-    // Here we will create a getter
-  },
-  mutations: {
-    // Here we will create Jenny
-  },
-  actions: {
-    // Here we will create Larry
-  },
+   getters: {
+   // Here we will create a getter
+   },
+   mutations: {
+      toggleSubscribe (state, value) {
+         if (value in state.subscribed) {
+            state.subscribed[value] = !state.subscribed[value]
+         } else {
+            state.subscribed[value] = true
+         }
+      },
+   },
+   actions: {
+      toggleSubscribe ({ commit }, value) {
+         commit('toggleSubscribe', value)
+      }
+   },
 });

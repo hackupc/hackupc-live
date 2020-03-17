@@ -42,7 +42,7 @@
         */
 		updateFancyEvent: function (element) {
 			if (isEventSubscribed(element.dataset.eventId)) {
-				var offset = element.dataset.startTimestamp - Util.getNowSeconds()
+				var offset = element.dataset.startTimestamp - 1570842840// Util.getNowSeconds()
 				if (offset <= CONST.EVENT_NOTIF_OFFSET && offset >= 0) {
 					var event = getEvent(element.dataset.eventId)
 					notify(event.description, 'Happening soon: ' + event.title)

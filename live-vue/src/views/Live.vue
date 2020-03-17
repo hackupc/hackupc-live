@@ -12,16 +12,18 @@
               <h1 :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEndedEvent">{{event.name}}</h1>
             </li>
             <li v-if="event.type == 'item'" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEmptyStep" :key="event.name">
-              <div v-for="hourEvent in event.hourEvents" class="event" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
-                <a href="'#/map/' + hourEvent.locationId"></a>
-                <div class="event-hour">
-                  <div>{{hourEvent.startHour}}</div>
-                  <div class="end-hour">{{hourEvent.endHour}}</div>
+              <template v-for="hourEvent in event.hourEvents">
+                <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
+                  <a href="'#/map/' + hourEvent.locationId"></a>
+                  <div class="event-hour">
+                    <div>{{hourEvent.startHour}}</div>
+                    <div class="end-hour">{{hourEvent.endHour}}</div>
+                  </div>
+                  <div class="title">
+                    {{hourEvent.title}}
+                  </div>
                 </div>
-                <div class="title">
-                  {{hourEvent.title}}
-                </div>
-              </div>
+              </template>
             </li>
           </template>
         </ul>
@@ -41,6 +43,16 @@ export default {
   computed: {
     days() {
       return this.$store.state.days;
+    },
+    subscribed() {
+      return this.$store.state.subscribed;
+    },
+  },
+  methods: {
+    toggleSubscribe: function (event) {
+      const id = event.currentTarget.getAttribute('data-event-id');
+      this.$store.dispatch('toggleSubscribe', id);
+      event.currentTarget.classList.toggle('subscribed');
     },
   },
   mounted: function () {
@@ -74,6 +86,7 @@ export default {
             endHour: event.endHour,
             locationId: event.locationId,
             title: event.title,
+            subscribed: this.subscribed[event.id] ? 'subscribed' : '',
           });
           /*
           if (isEventSubscribed(day.events[eventIndex].id)) {
@@ -94,7 +107,6 @@ export default {
         });
       }
     }
-    console.log(this.events);
   },
 };
 </script>

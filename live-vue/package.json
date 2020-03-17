@@ -40,7 +40,8 @@
       "linebreak-style": 0,
       "object-shorthand": 0,
       "no-unused-vars": 0,
-      "no-restricted-syntax": 0
+      "no-restricted-syntax": 0,
+      "prefer-template": 0
     }
   },
   "browserslist": [
