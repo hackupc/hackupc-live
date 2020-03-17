@@ -37,7 +37,10 @@
     "parserOptions": {},
     "rules": {
       "max-len": 0,
-      "linebreak-style": 0
+      "linebreak-style": 0,
+      "object-shorthand": 0,
+      "no-unused-vars": 0,
+      "no-restricted-syntax": 0
     }
   },
   "browserslist": [
