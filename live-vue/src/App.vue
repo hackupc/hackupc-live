@@ -97,7 +97,7 @@
           <li data-bind-view="rules">
             <router-link to="/rules#/rules">Rules</router-link>
           </li>
-          <li data-bind-view="faq">
+          <li :class="isActive('/faq')">
             <router-link to="/faq#/faq">FAQ</router-link>
           </li>
         </ul>
@@ -108,6 +108,17 @@
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  methods: {
+    isActive: function (page) {
+      return this.$route.path === page ? 'selected' : '';
+    },
+  },
+};
+</script>
 
 <style>
 </style>

@@ -16,7 +16,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="event in day.events" :key="event.id" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">
+                <tr v-for="event in day.events" :key="event.id" :class="hasHappened(event.startTmsp)" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">
                   <td><a :href="'#/map/' + event.locationId">{{event.locationName}}</a></td>
                   <td>{{event.startHour}}</td>
                   <td>{{event.endHour}}</td>
@@ -38,6 +38,12 @@ export default {
   computed: {
     days() {
       return this.$store.state.days;
+    },
+  },
+  methods: {
+    hasHappened(startTmsp) {
+      const now = Date.now() / 1000;
+      return startTmsp < now ? 'happened' : '';
     },
   },
 };
