@@ -5,7 +5,6 @@
         <span class="hours">36</span>:<span class="minutes">00</span><span class="seconds">00</span>
       </div>
       <div class="events-fancy">
-        <!--To be filled by js-->
         <ul>
           <template v-for="event in events">
             <li v-if="event.type == 'title'" :data-end-timestamp="event.endTmsp" :key="event.name">
@@ -44,6 +43,9 @@ export default {
     days() {
       return this.$store.state.days;
     },
+    currentTime() {
+      return this.$store.state.currentTime;
+    },
     subscribed() {
       return this.$store.state.subscribed;
     },
@@ -68,12 +70,7 @@ export default {
       let nextEventTmsp = day.events[eventIndex].startTmsp;
       // Adding events for that day
       for (let i = day.startTmsp; i < day.startTmsp + 24 * 3600; i += SCHEDULE_STEP) {
-        // Add a list element for every step
-
         const hourEvents = [];
-        // let liEvent = list.children[list.children.length - 1];
-        // I think this loop could be a lot simpler
-        // I just don't know how right now
         // Add events that fit in this step
         while (nextEventTmsp < i + SCHEDULE_STEP && eventIndex < day.events.length) {
           const event = day.events[eventIndex];
@@ -88,17 +85,12 @@ export default {
             title: event.title,
             subscribed: this.subscribed[event.id] ? 'subscribed' : '',
           });
-          /*
-          if (isEventSubscribed(day.events[eventIndex].id)) {
-            var lastEvent = liEvent.children[liEvent.children.length - 1]
-            lastEvent.classList.add('subscribed')
-          }
-          */
           eventIndex += 1;
           if (eventIndex < day.events.length) {
             nextEventTmsp = event.startTmsp;
           }
         }
+        // Add a list element for every step
         this.events.push({
           type: 'item',
           startTmsp: i,
@@ -111,6 +103,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

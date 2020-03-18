@@ -218,11 +218,6 @@ function paintSchedule () {
 				})
 			})(events[i])
 		}
-
-		// scheduleElement.innerHTML = ''
-		// scheduleElement.appendChild(
-			// (generateSchedule()).cloneNode(true)
-		// )
 	} catch (e) {
 		console.error(e)
 		malformedDataError()

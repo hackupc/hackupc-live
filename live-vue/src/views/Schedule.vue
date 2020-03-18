@@ -39,11 +39,13 @@ export default {
     days() {
       return this.$store.state.days;
     },
+    currentTime() {
+      return this.$store.state.currentTime;
+    },
   },
   methods: {
     hasHappened(startTmsp) {
-      const now = Date.now() / 1000;
-      return startTmsp < now ? 'happened' : '';
+      return startTmsp < this.currentTime ? 'happened' : '';
     },
   },
 };

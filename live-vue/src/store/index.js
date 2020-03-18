@@ -1,12 +1,19 @@
 /* eslint-disable */
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersist from 'vuex-persist';
+
+const vuexPersist = new VuexPersist({
+   key: 'biene-hackupc',
+   storage: window.localStorage
+})
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    subscribed: {},
+   subscribed: {},
+   currentTime: 1570829400, //Date.now() / 1000,
     days: [
         {
            "name":"Friday",
@@ -571,4 +578,5 @@ export default new Vuex.Store({
          commit('toggleSubscribe', value)
       }
    },
+   plugins: [vuexPersist.plugin],
 });
