@@ -596,23 +596,6 @@
 	}
 
 	/// /////////////////////
-	// MLH Hardware Lab
-	/// /////////////////////
-
-	/* function buildHardwareLab(cb) {
-    Util.loadFile('https://hardware.mlh.io/events/hackupc-winter.json?date='+Util.getNowDate().getTime(), function(data) {
-      var hardElems = JSON.parse(data)['data']
-      var hardList = document.getElementById("hardwareList")
-      hardList.innerHTML=""
-      hardElems.forEach(function(hardElem) {
-        hardList.appendChild(
-          Util.inflateWith("hardwareElem", hardElem)
-        )
-      })
-    })
-  } */
-
-	/// /////////////////////
 	// Initialization
 	/// /////////////////////
 	function browserIsCompatible () {
