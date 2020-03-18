@@ -6,7 +6,6 @@ var main
 var header
 var smallHeader
 var aside
-var viewElements
 // var countdown
 var schedule = { 'version': -1 }
 // eslint-disable-next-line no-unused-vars
@@ -428,48 +427,6 @@ function updateSchedule (cb) {
 // Navigation
 /// /////////////////////
 
-// Sets 'selected' class in binded elements
-function updateBindings (newView) {
-	var elements = document.querySelectorAll('[data-bind-view]')
-	for (let i = 0; i < elements.length; i++) {
-		if (elements[i].dataset.bindView === newView) { elements[i].classList.add(CONST.SELECTED_CLASS) } else { elements[i].classList.remove(CONST.SELECTED_CLASS) }
-	}
-}
-
-// Changes the hash, which triggers a route change event
-function goTo (route) {
-	window.location.hash = '/' + route
-}
-
-function onRouteChange () {
-	if (window.location.hash && window.location.hash.indexOf('/') !== -1) {
-		var route = window.location.hash.slice(window.location.hash.indexOf('/') + 1)
-		var routeRoot = route.substring(0, route.indexOf('/')) || route
-		if (views[routeRoot]) {
-			updateBindings(routeRoot)
-			showView(route)
-		} else {
-			console.warn("View '" + route + "' doesn't exist. Showing default (' + CONST.DEFAULT_VIEW + ').")
-			goTo(CONST.DEFAULT_VIEW)
-		}
-	} else {
-		goTo(CONST.DEFAULT_VIEW)
-	}
-
-	closeAsideMenu()
-}
-
-function changeView (view) {
-	for (let i = 0; i < viewElements.length; i++) {
-		viewElements[i].classList.remove(CONST.ACTIVE_CLASS)
-	}
-
-	let viewRoot = view.substring(0, view.indexOf('/')) || view
-	document.getElementById(viewRoot).classList.add(CONST.ACTIVE_CLASS)
-
-	if (viewRoot === 'map') changeMapView(view.substring(view.indexOf('/') + 1))
-}
-
 function changeMapView (locationId) {
 	switch (locationId) {
 	case 'indoors':
@@ -493,7 +450,6 @@ function changeMapView (locationId) {
 		document.getElementById('map-button-indoors').classList.remove('disabled')
 		document.getElementById('map-button-campus').classList.add('disabled')
 		document.getElementById('map-button-judging').classList.remove('disabled')
-
 		break
 	case 'judging':
 		document.getElementById('map-indoors').style.display = 'none'
@@ -523,9 +479,6 @@ function hideFullscreen () {
 	Util.fadeOut(body, function () {
 		Util.show(header)
 		Util.show(smallHeader)
-		changeView(
-			window.location.hash.slice(window.location.hash.indexOf('/') + 1)
-		)
 		Util.fadeIn(body, () => { document.exitFullscreen() })
 	})
 }
@@ -534,14 +487,12 @@ function showFullscreen () {
 	Util.fadeOut(body, function () {
 		Util.hide(header)
 		Util.hide(smallHeader)
-		changeView(views.fullscreen)
 		Util.fadeIn(body, () => { document.documentElement.requestFullscreen() })
 	})
 }
 
 function showView (view) {
 	Util.fadeOut(main, function () {
-		changeView(view)
 		Util.fadeIn(main)
 	})
 }
@@ -608,9 +559,7 @@ function init () {
 	header = document.getElementById('header-nav-bar')
 	smallHeader = document.getElementById('header-small')
 	aside = document.getElementById('aside-small-menu')
-	viewElements = document.querySelectorAll('body main > article')
 
-	window.addEventListener('hashchange', onRouteChange)
 	document.addEventListener('keypress', function (ev) {
 		var key = String.fromCharCode(ev.which)
 		if (key === 'p' || key === 'f' || key === ' ') { toggleFullscreen() }
@@ -636,8 +585,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		// paintSchedule()
 		updateChronologicalElements()
 		updateCountdown()
-		// Load current view
-		onRouteChange()
 
 		// initNotifications() // now is asked when user clicks subscribe
 
@@ -649,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		setInterval(function () {
 			updateSchedule(function () {
 				notify(schedule.message, 'Schedule changed!', icons.logo, function () {
-					goTo(views.schedule)
+					// goTo(views.schedule)
 				})
 
 				Util.fadeOut(main, function () {

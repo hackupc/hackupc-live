@@ -18,39 +18,36 @@
       </div>
       <nav>
         <ul>
-          <li data-bind-view="dayof">
-            <a href="#/dayof">Home</a>
+          <li :class="isActive('/')">
+            <router-link to="/">Home</router-link>
           </li>
-          <li data-bind-view="live">
-            <a href="#/live">Live</a>
+          <li :class="isActive('/live')">
+            <router-link to="/live">Live</router-link>
           </li>
-          <li data-bind-view="schedule">
-            <a href="#/schedule">Schedule</a>
+          <li :class="isActive('/schedule')">
+            <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li data-bind-view="map">
-            <a href="#/map">Map</a>
+          <li :class="isActive('/map')">
+            <router-link to="/map">Map</router-link>
           </li>
-          <!-- <li data-bind-view="mentors">-->
-          <li>
-            <!-- <a href="#/mentors">Mentors</a> -->
+          <li :class="isActive('/mentors')">
             <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
+            <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
-          <li data-bind-view="streaming">
-            <a href="#/streaming">Streaming</a>
+          <li :class="isActive('/streaming')">
+            <router-link to="/streaming">Streaming</router-link>
           </li>
-          <li data-bind-view="challenges">
-            <a href="#/challenges">Challenges</a>
+          <li :class="isActive('/challenges')">
+            <router-link to="/challenges">Challenges</router-link>
           </li>
-          <!-- <li data-bind-view="guides">-->
           <li>
-            <!-- <a href="#/guides">Guides</a> -->
             <a href="https://guides.hackupc.com/guide/hacker" target="_blank">Guides</a>
           </li>
-          <li data-bind-view="rules">
-            <a href="#/rules">Rules</a>
+          <li :class="isActive('/rules')">
+            <router-link to="/rules">Rules</router-link>
           </li>
-          <li data-bind-view="faq">
-            <a href="#/faq">FAQ</a>
+          <li :class="isActive('/faq')">
+            <router-link to="/faq">FAQ</router-link>
           </li>
         </ul>
       </nav>
@@ -59,21 +56,21 @@
     <header id="header-nav-bar" class="hide-when-small">
       <nav>
         <ul>
-          <li data-bind-view="dayof">
-            <router-link to="/#/home">Home</router-link>
+          <li :class="isActive('/')">
+            <router-link to="/">Home</router-link>
           </li>
-          <li data-bind-view="live">
-            <router-link to="/live#/live">Live</router-link>
+          <li :class="isActive('/live')">
+            <router-link to="/live">Live</router-link>
           </li>
-          <li data-bind-view="schedule">
-            <router-link to="/schedule#/schedule">Schedule</router-link>
+          <li :class="isActive('/schedule')">
+            <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li data-bind-view="map">
-            <router-link to="/map#/map">Map</router-link>
+          <li :class="isActive('/map')">
+            <router-link to="/map">Map</router-link>
           </li>
-          <li>
+          <li :class="isActive('/mentors')">
             <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
-            <!--<router-link to="/mentors#/mentors">Mentors</router-link>-->
+            <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
           <li id="countdown-li">
             <div class="countdown">
@@ -85,20 +82,20 @@
               </div>
             </div>
           </li>
-          <li data-bind-view="streaming">
-            <router-link to="/streaming#/streaming">Streaming</router-link>
+          <li :class="isActive('/streaming')">
+            <router-link to="/streaming">Streaming</router-link>
           </li>
-          <li data-bind-view="challenges">
-            <router-link to="/challenges#/challenges">Challenges</router-link>
+          <li :class="isActive('/challenges')">
+            <router-link to="/challenges">Challenges</router-link>
           </li>
           <li>
             <a href="https://guides.hackupc.com/guide/hacker" target="_blank">Guides</a>
           </li>
-          <li data-bind-view="rules">
-            <router-link to="/rules#/rules">Rules</router-link>
+          <li :class="isActive('/rules')">
+            <router-link to="/rules">Rules</router-link>
           </li>
           <li :class="isActive('/faq')">
-            <router-link to="/faq#/faq">FAQ</router-link>
+            <router-link to="/faq">FAQ</router-link>
           </li>
         </ul>
       </nav>
