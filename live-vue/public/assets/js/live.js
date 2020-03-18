@@ -167,7 +167,7 @@ function generateFancySchedule () {
 */
 function updateChronologicalElements () {
 	var elements = document.querySelectorAll('[data-end-timestamp]')
-	var now = 1570842840// Util.getNowSeconds()
+	var now = 1570829400// Util.getNowSeconds()
 	for (let i = 0; i < elements.length; i++) {
 		if (elements[i].dataset.endTimestamp < now) {
 			elements[i].classList.add(CONST.HAPPENED_CLASS)

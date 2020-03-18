@@ -51,7 +51,7 @@ const routes = [
   },
   {
     path: '/map/:location',
-    name: 'Map',
+    name: 'MapLocated',
     component: MapView,
   },
   {

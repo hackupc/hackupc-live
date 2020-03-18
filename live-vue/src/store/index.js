@@ -169,7 +169,7 @@ export default new Vuex.Store({
               }
            ],
            "startTmsp":1570744800,
-           "endTmsp":1570824000
+           "endTmsp":1570831200
         },
         {
            "name":"Saturday",
