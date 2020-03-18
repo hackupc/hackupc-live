@@ -427,44 +427,6 @@ function updateSchedule (cb) {
 // Navigation
 /// /////////////////////
 
-function changeMapView (locationId) {
-	switch (locationId) {
-	case 'indoors':
-		document.getElementById('map-indoors').style.display = ''
-		document.getElementById('map-campus').style.display = 'none'
-		document.getElementById('map-judging').style.display = 'none'
-
-		document.getElementById('map-legend-floors').style.display = ''
-
-		document.getElementById('map-button-indoors').classList.add('disabled')
-		document.getElementById('map-button-campus').classList.remove('disabled')
-		document.getElementById('map-button-judging').classList.remove('disabled')
-		break
-	case 'campus':
-		document.getElementById('map-indoors').style.display = 'none'
-		document.getElementById('map-campus').style.display = ''
-		document.getElementById('map-judging').style.display = 'none'
-
-		document.getElementById('map-legend-floors').style.display = 'none'
-
-		document.getElementById('map-button-indoors').classList.remove('disabled')
-		document.getElementById('map-button-campus').classList.add('disabled')
-		document.getElementById('map-button-judging').classList.remove('disabled')
-		break
-	case 'judging':
-		document.getElementById('map-indoors').style.display = 'none'
-		document.getElementById('map-campus').style.display = 'none'
-		document.getElementById('map-judging').style.display = ''
-
-		document.getElementById('map-legend-floors').style.display = ''
-
-		document.getElementById('map-button-indoors').classList.remove('disabled')
-		document.getElementById('map-button-campus').classList.remove('disabled')
-		document.getElementById('map-button-judging').classList.add('disabled')
-		break
-	}
-}
-
 function toggleFullscreen () {
 	if (itsFullscreen) {
 		hideFullscreen()
@@ -617,7 +579,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		setInterval(function () {
 			updateChronologicalElements()
 		}, 60000)
-		// Testing
-		// }, 1000)
 	})
 })

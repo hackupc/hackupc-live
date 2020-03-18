@@ -17,7 +17,7 @@
               </thead>
               <tbody>
                 <tr v-for="event in day.events" :key="event.id" :class="hasHappened(event.startTmsp)" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">
-                  <td><a :href="'#/map/' + event.locationId">{{event.locationName}}</a></td>
+                  <td><router-link :to="'/map/' + event.locationId">{{event.locationName}}</router-link></td>
                   <td>{{event.startHour}}</td>
                   <td>{{event.endHour}}</td>
                   <td>{{event.title}}</td>

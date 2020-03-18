@@ -18,7 +18,7 @@
       </div>
       <nav>
         <ul>
-          <li :class="isActive('/')">
+          <li :class="$route.path === '/' ? 'selected' : ''">
             <router-link to="/">Home</router-link>
           </li>
           <li :class="isActive('/live')">
@@ -56,7 +56,7 @@
     <header id="header-nav-bar" class="hide-when-small">
       <nav>
         <ul>
-          <li :class="isActive('/')">
+          <li :class="$route.path === '/' ? 'selected' : ''">
             <router-link to="/">Home</router-link>
           </li>
           <li :class="isActive('/live')">
@@ -101,7 +101,9 @@
       </nav>
     </header>
     <main>
-      <router-view/>
+      <transition name="fade">
+        <router-view/>
+      </transition>
     </main>
   </div>
 </template>
@@ -111,11 +113,23 @@ export default {
   name: 'App',
   methods: {
     isActive: function (page) {
-      return this.$route.path === page ? 'selected' : '';
+      return this.$route.path.startsWith(page) ? 'selected' : '';
     },
   },
 };
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
 </style>

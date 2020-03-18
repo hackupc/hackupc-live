@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import Rules from '../views/Rules.vue';
-import FAQ from '../views/FAQ.vue';
-import Challenges from '../views/Challenges.vue';
-import Streaming from '../views/Streaming.vue';
-import Schedule from '../views/Schedule.vue';
-import MapView from '../views/Map.vue';
-import Mentors from '../views/Mentors.vue';
-import Live from '../views/Live.vue';
-import FullScreen from '../views/FullScreen.vue';
+import Home from '@/views/Home.vue';
+import Rules from '@/views/Rules.vue';
+import FAQ from '@/views/FAQ.vue';
+import Challenges from '@/views/Challenges.vue';
+import Streaming from '@/views/Streaming.vue';
+import Schedule from '@/views/Schedule.vue';
+import MapView from '@/views/Map.vue';
+import Mentors from '@/views/Mentors.vue';
+import Live from '@/views/Live.vue';
+import FullScreen from '@/views/FullScreen.vue';
 
 Vue.use(VueRouter);
 
@@ -46,6 +46,11 @@ const routes = [
   },
   {
     path: '/map',
+    name: 'Map',
+    component: MapView,
+  },
+  {
+    path: '/map/:location',
     name: 'Map',
     component: MapView,
   },
