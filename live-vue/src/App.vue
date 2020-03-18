@@ -116,6 +116,11 @@ export default {
       return this.$route.path.startsWith(page) ? 'selected' : '';
     },
   },
+  mounted: function () {
+    window.setInterval(() => {
+      console.log('notify here');
+    }, 1000);
+  },
 };
 </script>
 
