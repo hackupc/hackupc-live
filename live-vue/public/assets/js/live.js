@@ -73,37 +73,6 @@ function generateTimestamps () {
 	})
 }
 
-/*
-* Choronological elements store start(optional)
-* and end timestamps (in seconds)
-* A chronological element can have 3 states: none, happening, happened
-* An action callback can be specified
-*/
-function updateChronologicalElements () {
-	var elements = document.querySelectorAll('[data-end-timestamp]')
-	var now = 1570820400// Util.getNowSeconds()
-	for (let i = 0; i < elements.length; i++) {
-		if (elements[i].dataset.endTimestamp < now) {
-			elements[i].classList.add(CONST.HAPPENED_CLASS)
-			// If end action callback defined
-			if (elements[i].dataset.endAction && actions[elements[i].dataset.endAction]) {
-				actions[elements[i].dataset.endAction](elements[i])
-			}
-		} else if (elements[i].dataset.startTimestamp < now) {
-			elements[i].classList.add(CONST.HAPPENING_CLASS)
-			// If start action callback defined
-			if (elements[i].dataset.startAction && actions[elements[i].dataset.startAction]) {
-				actions[elements[i].dataset.startAction](elements[i])
-			}
-		}
-
-		// If update action callback defined
-		if (elements[i].dataset.updateAction && actions[elements[i].dataset.updateAction]) {
-			actions[elements[i].dataset.updateAction](elements[i])
-		}
-	}
-}
-
 function updateCountdown () {
 	var countdownStart = Util.dateStringToSeconds(schedule.countdownStart) + parseInt(schedule.baseTimeOffset) * 60
 	// var running = false
@@ -267,7 +236,6 @@ function closeAsideMenu () {
 /// /////////////////////
 // Initialization
 /// /////////////////////
-
 function init () {
 	body = document.body
 	main = document.getElementsByTagName('main')[0]
@@ -297,7 +265,6 @@ function init () {
 document.addEventListener('DOMContentLoaded', function (event) {
 	updateSchedule(function () {
 		init()
-		updateChronologicalElements()
 		updateCountdown()
 
 		// Keep polling the schedule
@@ -308,7 +275,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				})
 
 				Util.fadeOut(main, function () {
-					updateChronologicalElements()
 					setTimeout(function () {
 						Util.fadeIn(main)
 						// we want the screen to actually disappear
@@ -320,9 +286,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		setInterval(function () {
 			updateCountdown()
 		}, 1000)
-
-		setInterval(function () {
-			updateChronologicalElements()
-		}, 60000)
 	})
 })

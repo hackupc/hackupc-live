@@ -15,7 +15,7 @@ export default new Vuex.Store({
    canNotify: false,
    subscribed: {},
    askedSubscribeAll: false,
-   currentTime: 1570820400, //Date.now() / 1000,
+   currentTime: 1570825800, // 1570820400, //Date.now() / 1000,
     days: [
          {
             "name":"Friday",

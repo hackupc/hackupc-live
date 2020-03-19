@@ -10,7 +10,7 @@
             <li v-if="event.type == 'title'" :data-end-timestamp="event.endTmsp" :key="event.name">
               <h1 :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEndedEvent">{{event.name}}</h1>
             </li>
-            <li v-if="event.type == 'item'" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEmptyStep" :key="event.name">
+            <li v-if="event.type == 'item'" :class="event.class" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEmptyStep" :key="event.name">
               <template v-for="hourEvent in event.hourEvents">
                 <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
                   <a href="'#/map/' + hourEvent.locationId"></a>
@@ -58,18 +58,23 @@ export default {
     },
   },
   mounted: function () {
+    window.setInterval(this.updateEvents, 5000);
     for (const day of this.days) {
-      this.events.push({
-        type: 'title',
-        name: day.name,
-        startTmsp: day.startTmsp,
-        endTmsp: day.endTmsp,
-      });
+      console.log(day.endTmsp + ' - ' + this.currentTime);
+      if (day.endTmsp >= this.currentTime) {
+        this.events.push({
+          type: 'title',
+          name: day.name,
+          startTmsp: day.startTmsp,
+          endTmsp: day.endTmsp,
+        });
+      }
       const SCHEDULE_STEP = 3600;
       let eventIndex = 0;
       let nextEventTmsp = day.events[eventIndex].startTmsp;
       // Adding events for that day
       for (let i = day.startTmsp; i < day.startTmsp + 24 * 3600; i += SCHEDULE_STEP) {
+        const endTmsp = i + SCHEDULE_STEP - 1;
         const hourEvents = [];
         // Add events that fit in this step
         while (nextEventTmsp < i + SCHEDULE_STEP && eventIndex < day.events.length) {
@@ -78,7 +83,7 @@ export default {
             type: 'event',
             id: event.id,
             startTmsp: i,
-            endTmsp: i + SCHEDULE_STEP - 1,
+            endTmsp: endTmsp,
             startHour: event.startHour,
             endHour: event.endHour,
             locationId: event.locationId,
@@ -91,12 +96,15 @@ export default {
           }
         }
         // Add a list element for every step
-        this.events.push({
-          type: 'item',
-          startTmsp: i,
-          endTmsp: i + SCHEDULE_STEP - 1,
-          hourEvents: hourEvents,
-        });
+        if (endTmsp >= this.currentTime) {
+          this.events.push({
+            type: 'item',
+            startTmsp: i,
+            endTmsp: endTmsp,
+            hourEvents: hourEvents,
+            class: (this.currentTime >= i && this.currentTime < endTmsp) ? 'happening' : '',
+          });
+        }
       }
     }
   },
