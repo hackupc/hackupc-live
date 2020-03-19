@@ -10,40 +10,6 @@ var aside
 var schedule = { 'version': -1 }
 var canNotify = false
 let itsFullscreen = false
-// To add a view, add here the id of the new article
-var views = {
-	'fullscreen': 'fullscreen',
-	'live': 'live',
-	'dayof': 'dayof',
-	'rules': 'rules',
-	'travel': 'travel',
-	'streaming': 'streaming',
-	'faq': 'faq',
-	'schedule': 'schedule',
-	'challenges': 'challenges',
-	'map': 'map',
-	'mentors': 'mentors'
-}
-
-let icons = {
-	'logo': 'favicon.ico'
-}
-
-var actions = {
-	removeEmptyStep: function (element) {
-		if (element.children.length === 0) {
-			element.parentElement.removeChild(element)
-		}
-	},
-	// Remove happened element and parent if empty
-	removeEndedEvent: function (element) {
-		var parent = element.parentElement
-		parent.removeChild(element)
-		if (parent.children.length === 0) {
-			parent.parentElement.removeChild(parent)
-		}
-	}
-}
 
 /// /////////////////////
 // Main functions
@@ -106,23 +72,6 @@ function updateCountdown () {
 /*
 * Generates events table to keep track of subscriptions (notifications)
 */
-function generateEventReferences () {
-	var localSubs = Util.storageGet('eventSubscriptions')
-	var eventSubscriptions = {}
-	schedule.days.forEach(function (day) {
-		day.events.forEach(function (event) {
-			// Init to false
-			eventSubscriptions[event.id] = event
-			eventSubscriptions[event.id].subscribed = false
-			if (localSubs && localSubs[event.id]) { eventSubscriptions[event.id].subscribed = localSubs[event.id].subscribed }
-		})
-	})
-	Util.storagePut('eventSubscriptions', eventSubscriptions)
-}
-
-/*
-* Generates events table to keep track of subscriptions (notifications)
-*/
 function generateScheduleCompositedFields () {
 	schedule.days.forEach(function (day) {
 		day.events.forEach(function (event) {
@@ -150,7 +99,6 @@ function updateSchedule (cb) {
 		if (schedule.version !== newSchedule.version) {
 			schedule = newSchedule
 			generateTimestamps()
-			generateEventReferences()
 			generateScheduleCompositedFields()
 			if (typeof cb === 'function') { cb() }
 			console.info('Schedule updated on (' + Util.getNowDate() + '): \n' + schedule.message)
@@ -270,8 +218,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		// Keep polling the schedule
 		setInterval(function () {
 			updateSchedule(function () {
-				notify(schedule.message, 'Schedule changed!', icons.logo, function () {
-					// goTo(views.schedule)
+				notify(schedule.message, 'Schedule changed!', 'favicon.ico', function () {
+					// goTo('schedule')
 				})
 
 				Util.fadeOut(main, function () {

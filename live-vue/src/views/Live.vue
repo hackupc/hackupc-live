@@ -8,11 +8,11 @@
         <ul>
           <template v-for="event in events">
             <li v-if="event.type == 'title'" :data-end-timestamp="event.endTmsp" :key="event.name">
-              <h1 :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEndedEvent">{{event.name}}</h1>
+              <h1 :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">{{event.name}}</h1>
             </li>
-            <li v-if="event.type == 'item'" :class="event.class" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" data-end-action="removeEmptyStep" :key="event.name">
+            <li v-if="event.type == 'item'" :class="event.class" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" :key="event.name">
               <template v-for="hourEvent in event.hourEvents">
-                <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
+                <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp">
                   <a href="'#/map/' + hourEvent.locationId"></a>
                   <div class="event-hour">
                     <div>{{hourEvent.startHour}}</div>
