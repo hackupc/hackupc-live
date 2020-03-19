@@ -111,14 +111,66 @@
 <script>
 export default {
   name: 'App',
+  computed: {
+    days() {
+      return this.$store.state.days;
+    },
+    currentTime() {
+      return this.$store.state.currentTime;
+    },
+    subscribed() {
+      return this.$store.state.subscribed;
+    },
+  },
   methods: {
+    getEvent: function (id) {
+      for (const day of this.days) {
+        for (const event of day.events) {
+          if (event.id.toString() === id.toString()) return event;
+        }
+      }
+      return null;
+    },
     isActive: function (page) {
       return this.$route.path.startsWith(page) ? 'selected' : '';
     },
+    notify: function (msg, title, icon, cb) {
+      const ntitle = title || 'HackUPC 2020';
+      const notification = new Notification(ntitle, {
+        body: msg,
+        icon: icon || 'favicon.ico',
+      });
+      setTimeout(() => {
+        notification.close();
+      }, 7000);
+    },
+    initPermissions: function () {
+      if ('Notification' in window) {
+        if (Notification.permission !== 'granted') {
+          Notification.requestPermission((permission) => {
+            if (permission === 'granted') this.$store.dispatch('canNotify', true);
+          });
+        }
+      } else {
+        console.warn('This browser does not support desktop notification');
+      }
+    },
   },
   mounted: function () {
+    this.initPermissions();
+    const subscribed = this.subscribed;
     window.setInterval(() => {
-      console.log('notify here');
+      Object.keys(subscribed).forEach((eventId) => {
+        if (subscribed[eventId]) {
+          const event = this.getEvent(eventId);
+          const offset = event.startTmsp - this.currentTime;
+          const EVENT_NOTIF_OFFSET = 5 * 60;
+          if (offset <= EVENT_NOTIF_OFFSET && offset >= 0) {
+            this.notify(event.description, 'Happening soon: ' + event.title);
+            this.$store.dispatch('toggleSubscribe', eventId);
+          }
+        }
+      });
     }, 1000);
   },
 };

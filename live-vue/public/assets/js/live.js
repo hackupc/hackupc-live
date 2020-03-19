@@ -31,20 +31,6 @@ let icons = {
 }
 
 var actions = {
-	/*
-	* Updates progress bar and notifies if needed
-	* requires data-event-id to check subscriptions
-	*/
-	updateFancyEvent: function (element) {
-		if (isEventSubscribed(element.dataset.eventId)) {
-			var offset = element.dataset.startTimestamp - 1570842840// Util.getNowSeconds()
-			if (offset <= CONST.EVENT_NOTIF_OFFSET && offset >= 0) {
-				var event = getEvent(element.dataset.eventId)
-				notify(event.description, 'Happening soon: ' + event.title)
-				unsubscribeEvent(element.dataset.eventId)
-			}
-		}
-	},
 	removeEmptyStep: function (element) {
 		if (element.children.length === 0) {
 			element.parentElement.removeChild(element)
@@ -167,7 +153,7 @@ function generateFancySchedule () {
 */
 function updateChronologicalElements () {
 	var elements = document.querySelectorAll('[data-end-timestamp]')
-	var now = 1570829400// Util.getNowSeconds()
+	var now = 1570820400// Util.getNowSeconds()
 	for (let i = 0; i < elements.length; i++) {
 		if (elements[i].dataset.endTimestamp < now) {
 			elements[i].classList.add(CONST.HAPPENED_CLASS)
@@ -187,40 +173,6 @@ function updateChronologicalElements () {
 		if (elements[i].dataset.updateAction && actions[elements[i].dataset.updateAction]) {
 			actions[elements[i].dataset.updateAction](elements[i])
 		}
-	}
-}
-
-/*
-* Gets all schedule dependent elements
-* and repaints
-*/
-function paintSchedule () {
-	var fancyElements = document.querySelectorAll('.events-fancy')
-	// var scheduleElement = document.getElementById(views.schedule).getElementsByClassName('container')[0]
-	try {
-		var fancySchedule = generateFancySchedule()
-		for (let i = 0; i < fancyElements.length; i++) {
-			// fancyElements[i].innerHTML = "<div class='hide-scroll-hack'></div>"
-			fancyElements[i].appendChild(
-				fancySchedule.cloneNode(true)
-			)
-		}
-
-		var events = document.querySelectorAll('.events-fancy .event')
-		for (let i = 0; i < events.length; i++) {
-			(function (element) {
-				element.addEventListener('click', function () {
-					if (isEventSubscribed(element.dataset.eventId)) {
-						unsubscribeEvent(element.dataset.eventId)
-					} else {
-						subscribeEvent(element.dataset.eventId)
-					}
-				})
-			})(events[i])
-		}
-	} catch (e) {
-		console.error(e)
-		malformedDataError()
 	}
 }
 
@@ -301,20 +253,6 @@ function subscribeEvent (id) {
 		}
 		Util.storagePut('eventSubscriptions', refs)
 	}
-}
-function unsubscribeEvent (id) {
-	var refs = Util.storageGet('eventSubscriptions')
-	if (refs && refs[id]) {
-		refs[id].subscribed = false
-		var element = document.querySelectorAll("[data-event-id='" + id + "']")
-		if (element && element.length > 0) {
-			for (let i = 0; i < element.length; i++) {
-				element[i].classList.remove('subscribed')
-			}
-		}
-	}
-
-	Util.storagePut('eventSubscriptions', refs)
 }
 function isEventSubscribed (id) {
 	var refs = Util.storageGet('eventSubscriptions')
@@ -539,11 +477,8 @@ function init () {
 document.addEventListener('DOMContentLoaded', function (event) {
 	updateSchedule(function () {
 		init()
-		// paintSchedule()
 		updateChronologicalElements()
 		updateCountdown()
-
-		// initNotifications() // now is asked when user clicks subscribe
 
 		setTimeout(function () {
 			checkSubscriptionQuestion()
@@ -557,7 +492,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				})
 
 				Util.fadeOut(main, function () {
-					paintSchedule()
 					updateChronologicalElements()
 					setTimeout(function () {
 						Util.fadeIn(main)
