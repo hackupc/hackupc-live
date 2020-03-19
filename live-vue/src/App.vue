@@ -1,5 +1,15 @@
 <template>
   <div>
+    <div v-if="!this.askedSubscribeAll" class="prompt">
+      <div class="box">
+        <h1>{{prompt.title}}</h1>
+        <div v-html="prompt.message"></div>
+        <div class="buttons">
+          <div @click="subscribeAll">All right</div>
+          <div @click="toggleAskedSubscribeAll">Nope</div>
+        </div>
+      </div>
+    </div>
     <!--header for <720px-->
     <header id="header-small" class="show-when-small">
       <div class="bar">
@@ -111,6 +121,16 @@
 <script>
 export default {
   name: 'App',
+  data: function () {
+    return {
+      prompt: {
+        title: 'Notifications for upcoming events',
+        message: '<p>Do you want to subscribe to all the events? </p>'
+        + '<p>You will receive a notification 2 minutes before something happens. </p>'
+        + '<p><b>We won\'t spam you:</b> You can always choose to subscribe or unsubscribe by clicking individually on an event.</p>',
+      },
+    };
+  },
   computed: {
     days() {
       return this.$store.state.days;
@@ -120,6 +140,9 @@ export default {
     },
     subscribed() {
       return this.$store.state.subscribed;
+    },
+    askedSubscribeAll() {
+      return this.$store.state.askedSubscribeAll;
     },
   },
   methods: {
@@ -154,6 +177,19 @@ export default {
       } else {
         console.warn('This browser does not support desktop notification');
       }
+    },
+    subscribeAll: function (evt) {
+      for (const day of this.days) {
+        for (const event of day.events) {
+          if (!this.subscribed[event.id]) {
+            this.$store.dispatch('toggleSubscribe', event.id);
+          }
+        }
+      }
+      this.toggleAskedSubscribeAll();
+    },
+    toggleAskedSubscribeAll: function (event) {
+      this.$store.dispatch('isSubscribedAll', true);
     },
   },
   mounted: function () {

@@ -14,6 +14,7 @@ export default new Vuex.Store({
   state: {
    canNotify: false,
    subscribed: {},
+   askedSubscribeAll: false,
    currentTime: 1570820400, //Date.now() / 1000,
     days: [
          {
@@ -574,6 +575,9 @@ export default new Vuex.Store({
       canNotify (state, value) {
          state.canNotify = value
       },
+      isSubscribedAll (state, value) {
+         state.askedSubscribeAll = value
+      },
    },
    actions: {
       toggleSubscribe ({ commit }, value) {
@@ -581,6 +585,9 @@ export default new Vuex.Store({
       },
       canNotify ({ commit }, value) {
          commit('canNotify', value)
+      },
+      isSubscribedAll ({ commit }, value) {
+         commit('isSubscribedAll', value)
       },
    },
    plugins: [vuexPersist.plugin],

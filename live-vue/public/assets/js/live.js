@@ -8,7 +8,6 @@ var smallHeader
 var aside
 // var countdown
 var schedule = { 'version': -1 }
-// eslint-disable-next-line no-unused-vars
 var canNotify = false
 let itsFullscreen = false
 // To add a view, add here the id of the new article
@@ -55,28 +54,6 @@ function malformedDataError () {
 }
 
 /*
-* pre: requires 'schedule' with timestamaps generated
-* Generates boring tabular schedule
-*/
-function generateSchedule () {
-	var container = document.createElement('div')
-	schedule.days.forEach(function (day) {
-		container.appendChild(
-			Util.inflateWith('scheduleDay', day)
-		)
-		var lastDiv = container.children[container.children.length - 1]
-		var dayTable = lastDiv.getElementsByTagName('table')[0]
-		day.events.forEach(function (event) {
-			dayTable.tBodies[0].appendChild(
-				Util.inflateWith('scheduleRow', event)
-			)
-		})
-	})
-
-	return container
-}
-
-/*
 * Generates timestamps (UTC) inside 'schedule'
 */
 function generateTimestamps () {
@@ -94,55 +71,6 @@ function generateTimestamps () {
 			}
 		})
 	})
-}
-
-/*
-* pre: requires 'schedule' with timestamaps generated
-* Generates the list for 'live' and 'fullscreen'
-*/
-function generateFancySchedule () {
-	var list = document.createElement('ul')
-
-	schedule.days.forEach(function (day) {
-		// Adding day title element
-		list.appendChild(
-			Util.inflateWith('fancyTitle', day)
-		)
-
-		var eventIndex = 0
-		var nextEventTmsp = day.events[eventIndex].startTmsp
-		// Adding events for that day
-		for (let i = day.startTmsp; i < day.startTmsp + 24 * 60 * 60; i += CONST.SCHEDULE_STEP) {
-			// Add a list element for every step
-			list.appendChild(
-				Util.inflateWith('fancyItem', {
-					'startTmsp': i,
-					'endTmsp': i + CONST.SCHEDULE_STEP - 1
-				})
-			)
-			var liEvent = list.children[list.children.length - 1]
-
-			// I think this loop could be a lot simpler
-			// I just don't know how right now
-			// Add events that fit in this step
-			while (nextEventTmsp < i + CONST.SCHEDULE_STEP && eventIndex < day.events.length) {
-				liEvent.appendChild(
-					Util.inflateWith('fancyEvent', day.events[eventIndex])
-				)
-
-				if (isEventSubscribed(day.events[eventIndex].id)) {
-					var lastEvent = liEvent.children[liEvent.children.length - 1]
-					lastEvent.classList.add('subscribed')
-				}
-				eventIndex++
-				if (eventIndex < day.events.length) {
-					nextEventTmsp = day.events[eventIndex].startTmsp
-				}
-			}
-		}
-	})
-
-	return list
 }
 
 /*
@@ -203,96 +131,6 @@ function updateCountdown () {
 		if (hoursElem && hoursElem.textContent !== hours) hoursElem.textContent = hours
 		if (minutesElem && minutesElem.textContent !== minutes) minutesElem.textContent = minutes
 		if (secondsElem && secondsElem.textContent !== seconds) secondsElem.textContent = seconds
-	}
-}
-
-function prompt (title, message, acceptMsg, acceptCb, denyMsg, denyCb) {
-	var p = Util.inflateWith('promptTemplate', {
-		title: title,
-		message: message,
-		accept: acceptMsg || 'Ok',
-		cancel: denyMsg || 'Cancel'
-
-	})
-	body.appendChild(p)
-
-	var c = document.querySelector('.prompt')
-	document.getElementById('promptAccept').addEventListener('click', function () {
-		if (acceptCb) acceptCb()
-		Util.unveil(main)
-		Util.fadeOut(c, function () {
-			body.removeChild(c)
-		})
-	})
-	document.getElementById('promptCancel').addEventListener('click', function () {
-		if (denyCb) denyCb()
-		Util.unveil(main)
-		Util.fadeOut(c, function () {
-			body.removeChild(c)
-		})
-	})
-
-	Util.veil(main)
-	Util.show(c)
-	// Dom repaint
-	setTimeout(function () {
-		Util.fadeIn(c)
-	}, 1)
-}
-
-function subscribeEvent (id) {
-	initNotifications()
-	var refs = Util.storageGet('eventSubscriptions')
-	if (refs && refs[id]) {
-		refs[id].subscribed = true
-		var element = document.querySelectorAll("[data-event-id='" + id + "']")
-		if (element && element.length > 0) {
-			for (let i = 0; i < element.length; i++) {
-				element[i].classList.add('subscribed')
-			}
-		}
-		Util.storagePut('eventSubscriptions', refs)
-	}
-}
-function isEventSubscribed (id) {
-	var refs = Util.storageGet('eventSubscriptions')
-	return (refs && refs[id]) ? refs[id].subscribed : false
-}
-function subscribeAllEvents () {
-	var refs = Util.storageGet('eventSubscriptions')
-	for (var key in refs) {
-		if (refs.hasOwnProperty(key)) {
-			if (Util.getNowSeconds() - refs[key].startTmsp < 0) { subscribeEvent(key) }
-		}
-	}
-}
-function getEvent (id) {
-	var refs = Util.storageGet('eventSubscriptions')
-	return (refs && refs[id]) ? refs[id] : null
-}
-
-/*
-* Prompts the user if they want to subscribe to all events.
-* Result is stored in localStorage
-*/
-function askSubscribeAll (cb) {
-	prompt('Notifications for upcoming events',
-		'<p>Do you want to subscribe to all the events? </p>' +
-			'<p>You will receive a notification 2 minutes before something happens. </p>' +
-			'<p><b>We won\'t spam you:</b> You can always choose to subscribe or unsubscribe by clicking individually on an event.</p>',
-		'All right', function () { if (cb) cb() },
-		'Nope', function () { /* Do nothing */ })
-	Util.storagePut('askedSubscribeAll', true)
-}
-
-/*
-* Check if we asked the user
-*/
-function checkSubscriptionQuestion () {
-	if (!Util.storageGet('askedSubscribeAll')) {
-		askSubscribeAll(function () {
-			subscribeAllEvents()
-		})
 	}
 }
 
@@ -359,7 +197,6 @@ function updateSchedule (cb) {
 /// /////////////////////
 // Navigation
 /// /////////////////////
-
 function toggleFullscreen () {
 	if (itsFullscreen) {
 		hideFullscreen()
@@ -383,12 +220,6 @@ function showFullscreen () {
 		Util.hide(header)
 		Util.hide(smallHeader)
 		Util.fadeIn(body, () => { document.documentElement.requestFullscreen() })
-	})
-}
-
-function showView (view) {
-	Util.fadeOut(main, function () {
-		Util.fadeIn(main)
 	})
 }
 
@@ -436,17 +267,6 @@ function closeAsideMenu () {
 /// /////////////////////
 // Initialization
 /// /////////////////////
-function initNotifications () {
-	if ('Notification' in window) {
-		if (Notification.permission !== 'granted') {
-			Notification.requestPermission(function (permission) {
-				if (permission === 'granted') canNotify = true
-			})
-		}
-	} else {
-		console.warn('This browser does not support desktop notification')
-	}
-}
 
 function init () {
 	body = document.body
@@ -479,10 +299,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		init()
 		updateChronologicalElements()
 		updateCountdown()
-
-		setTimeout(function () {
-			checkSubscriptionQuestion()
-		}, 1000)
 
 		// Keep polling the schedule
 		setInterval(function () {
