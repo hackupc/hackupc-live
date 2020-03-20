@@ -83,14 +83,7 @@
             <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
           <li id="countdown-li">
-            <div class="countdown">
-              <div id="countdown-time" class="countdown-time">
-                <span class="hours">36</span>:<span class="minutes">00</span><span class="seconds">00</span>
-              </div>
-              <div class="countdown-bg">
-                <img src="/assets/img/live/hackupc-logo.svg" alt="HackUPC logo">
-              </div>
-            </div>
+            <Countdown/>
           </li>
           <li :class="isActive('/streaming')">
             <router-link to="/streaming">Streaming</router-link>
@@ -119,6 +112,8 @@
 </template>
 
 <script>
+import Countdown from '@/components/Countdown.vue';
+
 export default {
   name: 'App',
   data: function () {
@@ -214,6 +209,9 @@ export default {
         }
       });
     }, 1000);
+  },
+  components: {
+    Countdown,
   },
 };
 </script>
