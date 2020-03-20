@@ -133,7 +133,7 @@ export default {
   },
   computed: {
     days() {
-      return this.$store.state.days;
+      return this.$store.state.schedule.days;
     },
     currentTime() {
       return this.$store.state.currentTime;
@@ -193,6 +193,12 @@ export default {
     },
   },
   mounted: function () {
+    this.$store.dispatch('getSchedule');
+    window.setInterval(() => {
+      this.$store.dispatch('getSchedule', () => {
+        this.notify('', 'Schedule has changed!');
+      });
+    }, 5000);
     this.initPermissions();
     const subscribed = this.subscribed;
     window.setInterval(() => {

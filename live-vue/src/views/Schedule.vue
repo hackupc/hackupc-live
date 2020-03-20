@@ -37,7 +37,7 @@ export default {
   name: 'Schedule',
   computed: {
     days() {
-      return this.$store.state.days;
+      return this.$store.state.schedule.days;
     },
     currentTime() {
       return this.$store.state.currentTime;

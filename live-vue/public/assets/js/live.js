@@ -8,37 +8,11 @@ var smallHeader
 var aside
 // var countdown
 var schedule = { 'version': -1 }
-var canNotify = false
 let itsFullscreen = false
 
 /// /////////////////////
 // Main functions
 /// /////////////////////
-function malformedDataError () {
-	// TODO: decide what to do if this happens
-	console.error('New schedule data appears to be malformed. Please, try again refreshing the page. If the problem persists please contact us')
-}
-
-/*
-* Generates timestamps (UTC) inside 'schedule'
-*/
-function generateTimestamps () {
-	schedule.days.forEach(function (day) {
-		day.startTmsp = Util.dateStringToSeconds(day.date) + parseInt(schedule.baseTimeOffset) * 60
-
-		day.endTmsp = day.startTmsp + 24 * 60 * 60 + parseInt(schedule.baseTimeOffset) * 60
-
-		day.events.forEach(function (event) {
-			event.startTmsp = day.startTmsp + Util.hourStringToSeconds(event.startHour)
-			if (!event.endHour) {
-				event.endTmsp = event.startTmsp
-			} else {
-				event.endTmsp = day.startTmsp + Util.hourStringToSeconds(event.endHour)
-			}
-		})
-	})
-}
-
 function updateCountdown () {
 	var countdownStart = Util.dateStringToSeconds(schedule.countdownStart) + parseInt(schedule.baseTimeOffset) * 60
 	// var running = false
@@ -69,48 +43,6 @@ function updateCountdown () {
 	}
 }
 
-/*
-* Generates events table to keep track of subscriptions (notifications)
-*/
-function generateScheduleCompositedFields () {
-	schedule.days.forEach(function (day) {
-		day.events.forEach(function (event) {
-			event.title = (event.talk ? '[Talk] ' : '') +
-				(event.author ? (event.author + ': ') : '') +
-				(event.title || '')
-		})
-	})
-}
-
-/*
-* Loads the schedule in the global scope
-* and checks version.
-* If version is different from local
-* executes callback
-* Added actual datetime to avoid browser cached copies of schedule
-*/
-function updateSchedule (cb) {
-	Util.loadFile('/data/schedule.json?date=' + Util.getNowDate().getTime(), function (data) {
-		var newSchedule = JSON.parse(data)
-
-		if (!newSchedule.version) { malformedDataError() }
-
-		// TODO: discuss, != or <
-		if (schedule.version !== newSchedule.version) {
-			schedule = newSchedule
-			generateTimestamps()
-			generateScheduleCompositedFields()
-			if (typeof cb === 'function') { cb() }
-			console.info('Schedule updated on (' + Util.getNowDate() + '): \n' + schedule.message)
-		} else {
-			console.info('Schedule up to date')
-		}
-	}, function (data) {
-		// show
-		console.error('Error getting schedule: ' + data)
-	})
-}
-
 /// /////////////////////
 // Navigation
 /// /////////////////////
@@ -138,24 +70,6 @@ function showFullscreen () {
 		Util.hide(smallHeader)
 		Util.fadeIn(body, () => { document.documentElement.requestFullscreen() })
 	})
-}
-
-function notify (msg, title, icon, cb) {
-	var ntitle = title || CONST.DEFAULT_NOTIFICATION_TITLE
-	var notification = new Notification(ntitle, {
-		body: msg,
-		icon: icon || CONST.DEFAULT_NOTIFICATION_ICON
-	})
-
-	notification.onclick = function () {
-		if (typeof cb === 'function') { cb() }
-
-		notification.close()
-	}
-
-	setTimeout(function () {
-		notification.close()
-	}, CONST.NOTIFICATION_TIMEOUT)
 }
 
 function openAsideMenu () {
@@ -211,28 +125,9 @@ function init () {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
-	updateSchedule(function () {
-		init()
+	init()
+	updateCountdown()
+	setInterval(function () {
 		updateCountdown()
-
-		// Keep polling the schedule
-		setInterval(function () {
-			updateSchedule(function () {
-				notify(schedule.message, 'Schedule changed!', 'favicon.ico', function () {
-					// goTo('schedule')
-				})
-
-				Util.fadeOut(main, function () {
-					setTimeout(function () {
-						Util.fadeIn(main)
-						// we want the screen to actually disappear
-					}, CONST.FADE_ANIMATION_DURATION * 1.2)
-				})
-			})
-		}, CONST.SCHEDULE_REFRESH_INTERVAL)
-
-		setInterval(function () {
-			updateCountdown()
-		}, 1000)
-	})
+	}, 1000)
 })

@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     days() {
-      return this.$store.state.days;
+      return this.$store.state.schedule.days;
     },
     currentTime() {
       return this.$store.state.currentTime;
@@ -60,7 +60,6 @@ export default {
   mounted: function () {
     window.setInterval(this.updateEvents, 5000);
     for (const day of this.days) {
-      console.log(day.endTmsp + ' - ' + this.currentTime);
       if (day.endTmsp >= this.currentTime) {
         this.events.push({
           type: 'title',

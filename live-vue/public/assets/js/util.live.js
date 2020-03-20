@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 var Util = (function (CONST) {
 	'use strict'
 	if (!CONST) {
@@ -86,7 +85,6 @@ var Util = (function (CONST) {
 	* Sometimes we want to prevent scroll
 	* in an element
 	*/
-
 	obj.blockScroll = function (element) {
 		element.style.overflow = 'hidden'
 	}
@@ -112,8 +110,8 @@ var Util = (function (CONST) {
 	}
 
 	/*
-  * Seconds passed between epoch and 'date'
-  */
+	* Seconds passed between epoch and 'date'
+	*/
 	obj.dateStringToSeconds = function (d) {
 		var dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
 		var result = d.match(dateFormat)
@@ -165,5 +163,4 @@ var Util = (function (CONST) {
 	}
 
 	return obj
-// eslint-disable-next-line no-undef
 })(CONST)
