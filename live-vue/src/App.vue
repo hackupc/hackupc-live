@@ -13,7 +13,7 @@
     <!--header for <720px-->
     <header id="header-small" class="show-when-small">
       <div class="bar">
-        <div id="open-aside-btn">
+        <div @click="openAsideMenu" id="open-aside-btn">
           <span>&#9776;</span>
         </div>
         <div class="title-container">
@@ -22,8 +22,8 @@
       </div>
     </header>
     <!--Aside menu for small screens-->
-    <aside id="aside-small-menu" class="show-when-small closed hidden">
-      <div id="close-aside-btn">
+    <aside id="aside-small-menu" :class="[this.asideMenuClosed ? 'closed' : '', this.asideMenuHidden ? 'hidden' : '', 'show-when-small']">
+      <div @click="closeAsideMenu" id="close-aside-btn">
         <div>x</div>
       </div>
       <nav>
@@ -118,6 +118,8 @@ export default {
   name: 'App',
   data: function () {
     return {
+      asideMenuClosed: true,
+      asideMenuHidden: true,
       prompt: {
         title: 'Notifications for upcoming events',
         message: '<p>Do you want to subscribe to all the events? </p>'
@@ -141,6 +143,27 @@ export default {
     },
   },
   methods: {
+    openAsideMenu: function () {
+      document.body.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      this.asideMenuHidden = false;
+      document.body.classList.add('veil');
+      setTimeout(() => {
+        this.asideMenuClosed = false;
+        document.body.classList.add('veiled');
+      }, 1);
+    },
+    closeAsideMenu: function () {
+      document.body.classList.remove('veiled');
+      setTimeout(() => {
+        document.body.classList.remove('veil');
+      }, 1);
+      this.asideMenuClosed = true;
+      setTimeout(() => {
+        this.asideMenuHidden = true;
+      }, 300);
+      document.body.style.overflow = 'auto';
+    },
     getEvent: function (id) {
       for (const day of this.days) {
         for (const event of day.events) {

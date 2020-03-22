@@ -2,7 +2,6 @@
 // Globals
 /// /////////////////////
 var body
-var main
 var header
 var smallHeader
 var aside
@@ -37,35 +36,11 @@ function showFullscreen () {
 	})
 }
 
-function openAsideMenu () {
-	// Prevent seeing under veil
-	// (for some reason veil is shorter than body)
-	document.body.scrollTop = 0
-
-	Util.blockScroll(body)
-	aside.classList.remove('hidden')
-	// Force dom repaint
-	setTimeout(function () {
-		aside.classList.remove('closed')
-	}, 1)
-	Util.veil(body)
-}
-
-function closeAsideMenu () {
-	Util.unveil(body)
-	aside.classList.add('closed')
-	setTimeout(function () {
-		aside.classList.add('hidden')
-		Util.releaseScroll(body)
-	}, CONST.ASIDE_OPEN_ANIMATION_DURATION)
-}
-
 /// /////////////////////
 // Initialization
 /// /////////////////////
 document.addEventListener('DOMContentLoaded', function (event) {
 	body = document.body
-	main = document.getElementsByTagName('main')[0]
 	header = document.getElementById('header-nav-bar')
 	smallHeader = document.getElementById('header-small')
 	aside = document.getElementById('aside-small-menu')
@@ -80,11 +55,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	// document.getElementById('countdown-full').addEventListener('click', function () {
 		// toggleFullscreen()
 	// })
-
-	document.getElementById('open-aside-btn').addEventListener('click', function () {
-		openAsideMenu()
-	})
-	document.getElementById('close-aside-btn').addEventListener('click', function () {
-		closeAsideMenu()
-	})
 })
