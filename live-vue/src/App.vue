@@ -259,7 +259,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/scss/live";
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
   transition-duration: .25s;

@@ -1,5 +1,5 @@
 <template>
-  <div id="challenges" class="under-header padding-bottom">
+  <div class="under-header padding-bottom">
     <div class="container">
       <div class="panel large">
         <h1>HackUPC</h1>
@@ -12,32 +12,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Template challenge -->
-      <!--
-      <div class="panel">
-        <h1>{sponsor}</h1>
-        <div>
-          <h2 class="panel-info margin-bottom text-centered">{title}</h2>
-          <div class="margin-bottom text-centered">
-            <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel={slackChanelId}">{hashtag}</a></span>
-          </div>
-          <p class="margin-bottom">{description}</p>
-          <div>
-            <p><b>Prize: </b>{prize}</p>
-            <p><b>Prizes:</b></p>
-            <ul class="no-indent">
-              <li>1st Prize: {prizes[0]}</li>
-              <li>2nd Prize: {prizes[1]}</li>
-              <li>3rd Prize: {prizes[2]}</li>
-              <li>4th Prize: {prizes[3]}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      -->
-
       <div class="panel">
         <h1>McKinsey&Company</h1>
         <div>
@@ -268,6 +242,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="faq" class="under-header padding-bottom">
+  <div class="under-header padding-bottom">
     <div class="container">
         <div class="panel large">
           <h1>Travel reimbursement</h1>
@@ -111,6 +111,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
