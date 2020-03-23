@@ -11,7 +11,7 @@
       </div>
     </div>
     <!--header for <720px-->
-    <header id="header-small" class="show-when-small">
+    <header id="header-small" :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']">
       <div class="bar">
         <div @click="openAsideMenu" id="open-aside-btn">
           <span>&#9776;</span>
@@ -63,7 +63,7 @@
       </nav>
     </aside>
     <!--header for >720px-->
-    <header id="header-nav-bar" class="hide-when-small">
+    <header id="header-nav-bar" :class="[this.isFullscreen ? 'hidden' : '', 'hide-when-small']">
       <nav>
         <ul>
           <li :class="$route.path === '/' ? 'selected' : ''">
@@ -82,7 +82,7 @@
             <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
             <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
-          <li id="countdown-li">
+          <li @click="toggleFullscreen" id="countdown-li">
             <Countdown/>
           </li>
           <li :class="isActive('/streaming')">
@@ -118,6 +118,7 @@ export default {
   name: 'App',
   data: function () {
     return {
+      isFullscreen: false,
       asideMenuClosed: true,
       asideMenuHidden: true,
       prompt: {
@@ -143,6 +144,19 @@ export default {
     },
   },
   methods: {
+    toggleFullscreen: function () {
+      document.body.classList.add('faded');
+      const self = this;
+      setTimeout(() => {
+        document.body.classList.remove('faded');
+        if (self.isFullscreen) {
+          document.exitFullscreen();
+        } else {
+          document.documentElement.requestFullscreen();
+        }
+        self.isFullscreen = !self.isFullscreen;
+      }, 300);
+    },
     openAsideMenu: function () {
       document.body.scrollTop = 0;
       document.body.style.overflow = 'hidden';
@@ -211,6 +225,12 @@ export default {
     },
   },
   mounted: function () {
+    window.addEventListener('keypress', (event) => {
+      const key = String.fromCharCode(event.which);
+      if (key === 'p' || key === 'f' || key === ' ') {
+        this.toggleFullscreen();
+      }
+    });
     this.$store.dispatch('getSchedule');
     window.setInterval(() => {
       this.$store.dispatch('getSchedule', () => {
