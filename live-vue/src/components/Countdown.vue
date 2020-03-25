@@ -27,23 +27,26 @@ export default {
       return this.$store.getters.currentTime;
     },
   },
-  mounted: function () {
-    const self = this;
-    setInterval(() => {
+  methods: {
+    updateCountdown: function () {
       const HACKATHON_DURATION = 36 * 60 * 60;
-      const elapsed = this.currentTime - self.countdownStart;
+      const elapsed = this.currentTime - this.countdownStart;
       const current = 36 * 60 * 60 - elapsed;
       if (current > 0 && current < HACKATHON_DURATION) {
-        self.seconds = parseInt(current % 60, 10);
-        self.minutes = parseInt((current / 60) % 60, 10);
-        self.hours = parseInt(current / (60 * 60), 10);
+        this.seconds = parseInt(current % 60, 10);
+        this.minutes = parseInt((current / 60) % 60, 10);
+        this.hours = parseInt(current / (60 * 60), 10);
       } else if (current > HACKATHON_DURATION) {
-        self.hours = 36;
+        this.hours = 36;
       }
-      self.hours = ('0' + self.hours).slice(-2);
-      self.minutes = ('0' + self.minutes).slice(-2);
-      self.seconds = ('0' + self.seconds).slice(-2);
-    }, 1000);
+      this.hours = ('0' + this.hours).slice(-2);
+      this.minutes = ('0' + this.minutes).slice(-2);
+      this.seconds = ('0' + this.seconds).slice(-2);
+    },
+  },
+  mounted: function () {
+    this.updateCountdown();
+    setInterval(this.updateCountdown, 1000);
   },
 };
 </script>
