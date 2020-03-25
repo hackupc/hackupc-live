@@ -109,7 +109,10 @@ export default {
   },
   mounted: function () {
     this.updateEvents();
-    window.setInterval(this.updateEvents, 5000);
+    this.interval = window.setInterval(this.updateEvents, 1000);
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
   },
 };
 </script>

@@ -46,7 +46,10 @@ export default {
   },
   mounted: function () {
     this.updateCountdown();
-    setInterval(this.updateCountdown, 1000);
+    this.interval = setInterval(this.updateCountdown, 1000);
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
   },
 };
 </script>
