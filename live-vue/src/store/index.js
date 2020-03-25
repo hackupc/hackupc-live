@@ -34,7 +34,7 @@ export default new Vuex.Store({
    state: {
       canNotify: false,
       subscribed: {},
-      askedSubscribeAll: true,
+      askedSubscribeAll: false,
       realStartDate: new Date(),
       currentTime: Date.now(),
       fakeTime: new Date('2019-10-11 20:59:55'), // year, month, day, time

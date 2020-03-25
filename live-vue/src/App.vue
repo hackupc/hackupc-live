@@ -1,15 +1,6 @@
 <template>
   <div>
-    <div v-if="!this.askedSubscribeAll" class="prompt">
-      <div class="box">
-        <h1>{{prompt.title}}</h1>
-        <div v-html="prompt.message"></div>
-        <div class="buttons">
-          <div @click="subscribeAll">All right</div>
-          <div @click="toggleAskedSubscribeAll">Nope</div>
-        </div>
-      </div>
-    </div>
+    <Notification/>
     <!--header for <720px-->
     <header id="header-small" :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']">
       <div class="bar">
@@ -113,6 +104,7 @@
 
 <script>
 import Countdown from '@/components/Countdown.vue';
+import Notification from '@/components/Notification.vue';
 
 export default {
   name: 'App',
@@ -121,27 +113,7 @@ export default {
       isFullscreen: false,
       asideMenuClosed: true,
       asideMenuHidden: true,
-      prompt: {
-        title: 'Notifications for upcoming events',
-        message: '<p>Do you want to subscribe to all the events? </p>'
-        + '<p>You will receive a notification 2 minutes before something happens. </p>'
-        + '<p><b>We won\'t spam you:</b> You can always choose to subscribe or unsubscribe by clicking individually on an event.</p>',
-      },
     };
-  },
-  computed: {
-    days() {
-      return this.$store.state.schedule.days;
-    },
-    currentTime() {
-      return this.$store.getters.currentTime;
-    },
-    subscribed() {
-      return this.$store.state.subscribed;
-    },
-    askedSubscribeAll() {
-      return this.$store.state.askedSubscribeAll;
-    },
   },
   methods: {
     toggleFullscreen: function () {
@@ -178,59 +150,14 @@ export default {
       }, 300);
       document.body.style.overflow = 'auto';
     },
-    getEvent: function (id) {
-      for (const day of this.days) {
-        for (const event of day.events) {
-          if (event.id.toString() === id.toString()) return event;
-        }
-      }
-      return null;
-    },
     isActive: function (page) {
       return this.$route.path.startsWith(page) ? 'selected' : '';
-    },
-    notify: function (msg, title, icon, cb) {
-      const ntitle = title || 'HackUPC 2020';
-      const notification = new Notification(ntitle, {
-        body: msg,
-        icon: icon || 'favicon.ico',
-      });
-      setTimeout(() => {
-        notification.close();
-      }, 7000);
-    },
-    initPermissions: function () {
-      if ('Notification' in window) {
-        if (Notification.permission !== 'granted') {
-          Notification.requestPermission((permission) => {
-            if (permission === 'granted') this.$store.dispatch('canNotify', true);
-          });
-        }
-      } else {
-        console.warn('This browser does not support desktop notification');
-      }
-    },
-    subscribeAll: function (evt) {
-      for (const day of this.days) {
-        for (const event of day.events) {
-          if (!this.subscribed[event.id]) {
-            this.$store.dispatch('toggleSubscribe', event.id);
-          }
-        }
-      }
-      this.toggleAskedSubscribeAll();
-    },
-    toggleAskedSubscribeAll: function (event) {
-      this.$store.dispatch('isSubscribedAll', true);
     },
   },
   created: function () {
     this.interval = setInterval(() => {
       this.$store.dispatch('updateCurrentTime', Date.now());
     }, 1000);
-  },
-  beforeDestroy() {
-    clearInterval(this.interval);
   },
   mounted: function () {
     window.addEventListener('keypress', (event) => {
@@ -240,29 +167,10 @@ export default {
       }
     });
     this.$store.dispatch('getSchedule');
-    window.setInterval(() => {
-      this.$store.dispatch('getSchedule', () => {
-        this.notify('', 'Schedule has changed!');
-      });
-    }, 5000);
-    this.initPermissions();
-    const subscribed = this.subscribed;
-    window.setInterval(() => {
-      Object.keys(subscribed).forEach((eventId) => {
-        if (subscribed[eventId]) {
-          const event = this.getEvent(eventId);
-          const offset = event.startTmsp - this.currentTime;
-          const EVENT_NOTIF_OFFSET = 5 * 60;
-          if (offset <= EVENT_NOTIF_OFFSET && offset >= 0) {
-            this.notify(event.description, 'Happening soon: ' + event.title);
-            this.$store.dispatch('toggleSubscribe', eventId);
-          }
-        }
-      });
-    }, 1000);
   },
   components: {
     Countdown,
+    Notification,
   },
 };
 </script>
