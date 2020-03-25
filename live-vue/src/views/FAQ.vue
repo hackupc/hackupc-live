@@ -1,5 +1,5 @@
 <template>
-  <div class="under-header padding-bottom">
+  <div id="faq" class="under-header padding-bottom">
     <div class="container">
         <div class="panel large">
           <h1>Travel reimbursement</h1>

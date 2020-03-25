@@ -16,7 +16,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="event in day.events" :key="event.id" :class="hasHappened(event.startTmsp)" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">
+                <tr v-for="event in day.events" :key="event.id" :class="hasHappened(event.startTmsp)">
                   <td><router-link :to="'/map/' + event.locationId">{{event.locationName}}</router-link></td>
                   <td>{{event.startHour}}</td>
                   <td>{{event.endHour}}</td>
@@ -40,7 +40,7 @@ export default {
       return this.$store.state.schedule.days;
     },
     currentTime() {
-      return this.$store.state.currentTime;
+      return this.$store.getters.currentTime;
     },
   },
   methods: {
@@ -51,6 +51,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

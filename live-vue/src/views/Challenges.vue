@@ -1,5 +1,5 @@
 <template>
-  <div class="under-header padding-bottom">
+  <div id="challenges" class="under-header padding-bottom">
     <div class="container">
       <div class="panel large">
         <h1>HackUPC</h1>

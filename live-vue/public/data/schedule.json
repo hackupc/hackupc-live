@@ -2,7 +2,7 @@
 	"version": 2,
 	"message": "",
 	"baseTimeOffset":"-120",
-	"countdownStart":"20/03/2020 13:00",
+	"countdownStart":"11/10/2019 20:00",
 	"days":
 	[
 		{
@@ -214,7 +214,7 @@
 					"description": "Keeping solutions scalable is key, even if it is just a model to be run by others. This session will go about how to ensure anyone can understand what you code."
 				},
 				{
-					"id": "19",
+					"id": "20",
 					"title": "Implementing R projects as libraries",
 					"talk": true,
 					"author": "McKinsey & Company",
@@ -225,7 +225,7 @@
 					"description": "Learn how to structure a project as an R library by one of our expert coders!"
 				},
 				{
-					"id": "20",
+					"id": "21",
 					"title": "Lunch",
 					"startHour": "13:00",
 					"endHour": "14:30",
@@ -234,7 +234,7 @@
 					"description": "Come and get some delicious paella"
 				},
 				{
-					"id": "21",
+					"id": "22",
 					"title": "Meetup Hacktoberfest",
 					"talk": true,
 					"author": "GitHub",
@@ -245,7 +245,7 @@
 					"description": "Cheers"
 				},
 				{
-					"id": "22",
+					"id": "23",
 					"title": "How to organize your hackathon",
 					"talk": true,
 					"author": "Hackers@UPC",
@@ -256,7 +256,7 @@
 					"description": "Would you like to organize a hackathon? Come listen some of our experiences and tips. Don't be shy, we're here to help you!"
 				},
 				{
-					"id": "23",
+					"id": "24",
 					"title": "Robot building",
 					"activity": true,
 					"author":"McKinsey & Company",
@@ -267,7 +267,7 @@
 					"description": "Nothing to learn, just come for a fun time building a robot that won’t fall off a cliff!."
 				},
 				{
-					"id": "24",
+					"id": "25",
 					"title": "Lego Tournament",
 					"author":"Itequia",
 					"startHour": "18:00",
@@ -277,7 +277,7 @@
 					"description": "Call to \"Master Builders\", capable of building anything from their imagination without instructions"
 				},
 				{
-					"id": "25",
+					"id": "26",
 					"title": "Rubik Tournament",
 					"author":"iThinkUPC",
 					"startHour": "19:00",
@@ -287,7 +287,7 @@
 					"description": "Show your skills solving Rubik cubes!"
 				},
 				{
-					"id": "26",
+					"id": "27",
 					"title": "Dinner",
 					"startHour": "20:00",
 					"endHour": "21:30",
@@ -296,7 +296,7 @@
 					"description": "PIZZA TIME"
 				},
 				{
-					"id": "27",
+					"id": "28",
 					"title": "Photocall: Join the last survivors",
 					"startHour": "21:30",
 					"endHour": "22:00",
@@ -305,7 +305,7 @@
 					"description": "Have you already seen our photocall? Come and get a souvenir photo from our photographers."
 				},
 				{
-					"id": "28",
+					"id": "29",
 					"title": "SlideShare Show",
 					"startHour": "22:00",
 					"endHour": "23:00",
@@ -321,7 +321,7 @@
 			"events":
 			[
 				{
-					"id": "29",
+					"id": "30",
 					"title": "Sticker Exchange",
 					"startHour": "00:00",
 					"endHour": "01:00",
@@ -330,7 +330,7 @@
 					"description": "You give stickers, you receive stickers. Ez pz"
 				},
 				{
-					"id": "30",
+					"id": "31",
 					"title": "Midnight Snack",
 					"startHour": "01:00",
 					"endHour": "02:00",
@@ -339,7 +339,7 @@
 					"description": "It's been more than 24 hours. Get some sweet waffles to keep yourself motivated"
 				},
 				{
-					"id": "31",
+					"id": "32",
 					"title": "EPIC NERF GUNS BATTLE",
 					"startHour": "01:00",
 					"endHour": "03:00",
@@ -348,13 +348,13 @@
 					"description": "Come and play a HackUPC classic. Nerf guns, 2 teams, a full classroom. Will you miss it?"
 				},
 				{
-					"id": "32",
+					"id": "33",
 					"title": "The Game ends",
 					"startHour": "03:14",
 					"description": "You lost"
 				},
 				{
-					"id": "33",
+					"id": "34",
 					"title": "Breakfast",
 					"startHour": "08:00",
 					"endHour": "09:00",
@@ -363,7 +363,7 @@
 					"description": "Come charge your energies for the last hours of hacking"
 				},
 				{
-					"id": "34",
+					"id": "35",
 					"title": "Hack submissions",
 					"startHour": "08:00",
 					"endHour": "09:15",
@@ -371,13 +371,13 @@
 					"description": "Submit your project in our Devpost!"
 				},
 				{
-					"id": "35",
+					"id": "36",
 					"title": "Hacking ends",
 					"startHour": "09:00",
 					"description": "SUBMIT YOUR PROJECT BEFORE IT'S TOO LATE"
 				},
 				{
-					"id": "36",
+					"id": "37",
 					"title": "Showers",
 					"startHour": "09:15",
 					"endHour": "11:00",
@@ -386,7 +386,7 @@
 					"description": "Relax a bit before the demos start"
 				},
 				{
-					"id": "37",
+					"id": "38",
 					"title": "Hack Demos",
 					"startHour": "10:15",
 					"endHour": "13:15",
@@ -395,7 +395,7 @@
 					"description": "It's demo time!"
 				},
 				{
-					"id": "38",
+					"id": "39",
 					"title": "Lunch",
 					"startHour": "13:00",
 					"endHour": "14:00",
@@ -404,7 +404,7 @@
 					"description": "Mmmmmmm... frankfurt..."
 				},
 				{
-					"id": "39",
+					"id": "40",
 					"title": "Closing Ceremony",
 					"startHour": "15:30",
 					"endHour": "17:00",
@@ -413,7 +413,7 @@
 					"description": "And the winners are... Come watch the finalists and winners!"
 				},
 				{
-					"id": "40",
+					"id": "41",
 					"title": "Ciao Hackers",
 					"startHour": "17:00",
 					"description": "It's been a pleasure, see you next time"

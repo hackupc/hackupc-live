@@ -7,12 +7,12 @@
       <div class="events-fancy">
         <ul>
           <template v-for="event in events">
-            <li v-if="event.type == 'title'" :data-end-timestamp="event.endTmsp" :key="event.name">
-              <h1 :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp">{{event.name}}</h1>
+            <li v-if="event.type == 'title'" :key="event.name">
+              <h1>{{event.name}}</h1>
             </li>
-            <li v-if="event.type == 'item'" :class="event.class" :data-start-timestamp="event.startTmsp" :data-end-timestamp="event.endTmsp" :key="event.name">
+            <li v-if="event.type == 'item'" :class="event.class" :key="event.name">
               <template v-for="hourEvent in event.hourEvents">
-                <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id" :data-start-timestamp="hourEvent.startTmsp" :data-end-timestamp="hourEvent.endTmsp">
+                <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id">
                   <a href="'#/map/' + hourEvent.locationId"></a>
                   <div class="event-hour">
                     <div>{{hourEvent.startHour}}</div>
@@ -44,7 +44,7 @@ export default {
       return this.$store.state.schedule.days;
     },
     currentTime() {
-      return this.$store.state.currentTime;
+      return this.$store.getters.currentTime;
     },
     subscribed() {
       return this.$store.state.subscribed;
@@ -56,56 +56,60 @@ export default {
       this.$store.dispatch('toggleSubscribe', id);
       event.currentTarget.classList.toggle('subscribed');
     },
-  },
-  mounted: function () {
-    window.setInterval(this.updateEvents, 5000);
-    for (const day of this.days) {
-      if (day.endTmsp >= this.currentTime) {
-        this.events.push({
-          type: 'title',
-          name: day.name,
-          startTmsp: day.startTmsp,
-          endTmsp: day.endTmsp,
-        });
-      }
-      const SCHEDULE_STEP = 3600;
-      let eventIndex = 0;
-      let nextEventTmsp = day.events[eventIndex].startTmsp;
-      // Adding events for that day
-      for (let i = day.startTmsp; i < day.startTmsp + 24 * 3600; i += SCHEDULE_STEP) {
-        const endTmsp = i + SCHEDULE_STEP - 1;
-        const hourEvents = [];
-        // Add events that fit in this step
-        while (nextEventTmsp < i + SCHEDULE_STEP && eventIndex < day.events.length) {
-          const event = day.events[eventIndex];
-          hourEvents.push({
-            type: 'event',
-            id: event.id,
-            startTmsp: i,
-            endTmsp: endTmsp,
-            startHour: event.startHour,
-            endHour: event.endHour,
-            locationId: event.locationId,
-            title: event.title,
-            subscribed: this.subscribed[event.id] ? 'subscribed' : '',
+    updateEvents: function () {
+      this.events = [];
+      for (const day of this.days) {
+        if (day.endTmsp >= this.currentTime) {
+          this.events.push({
+            type: 'title',
+            name: day.name,
+            startTmsp: day.startTmsp,
+            endTmsp: day.endTmsp,
           });
-          eventIndex += 1;
-          if (eventIndex < day.events.length) {
-            nextEventTmsp = event.startTmsp;
+        }
+        const SCHEDULE_STEP = 3600;
+        let eventIndex = 0;
+        let nextEventTmsp = day.events[eventIndex].startTmsp;
+        // Adding events for that day
+        for (let i = day.startTmsp; i < day.startTmsp + 24 * 3600; i += SCHEDULE_STEP) {
+          const endTmsp = i + SCHEDULE_STEP - 1;
+          const hourEvents = [];
+          // Add events that fit in this step
+          while (nextEventTmsp < i + SCHEDULE_STEP && eventIndex < day.events.length) {
+            const event = day.events[eventIndex];
+            hourEvents.push({
+              type: 'event',
+              id: event.id,
+              startTmsp: i,
+              endTmsp: endTmsp,
+              startHour: event.startHour,
+              endHour: event.endHour,
+              locationId: event.locationId,
+              title: event.title,
+              subscribed: this.subscribed[event.id] ? 'subscribed' : '',
+            });
+            eventIndex += 1;
+            if (eventIndex < day.events.length) {
+              nextEventTmsp = event.startTmsp;
+            }
+          }
+          // Add a list element for every step
+          if (endTmsp >= this.currentTime) {
+            this.events.push({
+              type: 'item',
+              startTmsp: i,
+              endTmsp: endTmsp,
+              hourEvents: hourEvents,
+              class: (this.currentTime >= i && this.currentTime < endTmsp) ? 'happening' : '',
+            });
           }
         }
-        // Add a list element for every step
-        if (endTmsp >= this.currentTime) {
-          this.events.push({
-            type: 'item',
-            startTmsp: i,
-            endTmsp: endTmsp,
-            hourEvents: hourEvents,
-            class: (this.currentTime >= i && this.currentTime < endTmsp) ? 'happening' : '',
-          });
-        }
       }
-    }
+    },
+  },
+  mounted: function () {
+    this.updateEvents();
+    window.setInterval(this.updateEvents, 5000);
   },
 };
 </script>

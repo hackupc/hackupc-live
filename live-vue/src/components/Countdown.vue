@@ -24,15 +24,14 @@ export default {
       return this.$store.getters.countdownStart;
     },
     currentTime() {
-      return this.$store.state.currentTime;
+      return this.$store.getters.currentTime;
     },
   },
   mounted: function () {
     const self = this;
     setInterval(() => {
-      const timeNow = Date.now() / 1000;
       const HACKATHON_DURATION = 36 * 60 * 60;
-      const elapsed = timeNow - self.countdownStart;
+      const elapsed = this.currentTime - self.countdownStart;
       const current = 36 * 60 * 60 - elapsed;
       if (current > 0 && current < HACKATHON_DURATION) {
         self.seconds = parseInt(current % 60, 10);

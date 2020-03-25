@@ -134,7 +134,7 @@ export default {
       return this.$store.state.schedule.days;
     },
     currentTime() {
-      return this.$store.state.currentTime;
+      return this.$store.getters.currentTime;
     },
     subscribed() {
       return this.$store.state.subscribed;
@@ -223,6 +223,14 @@ export default {
     toggleAskedSubscribeAll: function (event) {
       this.$store.dispatch('isSubscribedAll', true);
     },
+  },
+  created: function () {
+    this.interval = setInterval(() => {
+      this.$store.dispatch('updateCurrentTime', Date.now());
+    }, 1000);
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
   },
   mounted: function () {
     window.addEventListener('keypress', (event) => {
