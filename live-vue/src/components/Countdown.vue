@@ -1,6 +1,6 @@
 <template>
-  <div class="countdown">
-    <div id="countdown-time" class="countdown-time">
+  <div :id="this.isFullscreen ? 'countdown-full' : ''" class="countdown" :class="this.isFullscreen ? 'hide-when-small' : ''">
+    <div class="countdown-time">
       <span class="hours">{{hours}}</span>:<span class="minutes">{{minutes}}</span><span class="seconds">{{seconds}}</span>
     </div>
     <div class="countdown-bg">
@@ -12,11 +12,13 @@
 <script>
 export default {
   name: 'Countdown',
+  props: ['fullscreen'],
   data: function () {
     return {
       hours: '00',
       minutes: '00',
       seconds: '00',
+      isFullscreen: this.fullscreen,
     };
   },
   computed: {

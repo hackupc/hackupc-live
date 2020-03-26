@@ -118,6 +118,7 @@ export default {
   methods: {
     toggleFullscreen: function () {
       document.body.classList.add('faded');
+      this.$router.push(this.isFullscreen ? '/' : 'fullscreen');
       const self = this;
       setTimeout(() => {
         document.body.classList.remove('faded');
@@ -160,9 +161,9 @@ export default {
     }, 1000);
   },
   mounted: function () {
-    window.addEventListener('keypress', (event) => {
-      const key = String.fromCharCode(event.which);
-      if (key === 'p' || key === 'f' || key === ' ') {
+    window.addEventListener('keyup', (event) => {
+      const key = event.which;
+      if (key === 80 || key === 70 || key === 32) {
         this.toggleFullscreen();
       }
     });
