@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import Config from '@/config';
+
 export default {
   name: 'Notification',
   data: function () {
@@ -38,10 +40,10 @@ export default {
   },
   methods: {
     notify: function (msg, title, icon, cb) {
-      const ntitle = title || 'HackUPC 2020';
+      const ntitle = title || Config.notificationTitle;
       const notification = new Notification(ntitle, {
         body: msg,
-        icon: icon || 'favicon.ico',
+        icon: icon || Config.notificationIcon,
       });
       setTimeout(() => {
         notification.close();
