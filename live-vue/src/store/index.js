@@ -34,7 +34,6 @@ export default new Vuex.Store({
    state: {
       canNotify: false,
       subscribed: {},
-      askedSubscribeAll: false,
       realStartDate: new Date(),
       currentTime: Date.now(),
       fakeTime: new Date('2019-10-11 20:59:55'), // year, month, day, time
@@ -572,9 +571,6 @@ export default new Vuex.Store({
       canNotify (state, value) {
          state.canNotify = value
       },
-      isSubscribedAll (state, value) {
-         state.askedSubscribeAll = value
-      },
       updateSchedule (state, value) {
          state.schedule = value
       },
@@ -588,9 +584,6 @@ export default new Vuex.Store({
       },
       canNotify ({ commit }, value) {
          commit('canNotify', value)
-      },
-      isSubscribedAll ({ commit }, value) {
-         commit('isSubscribedAll', value)
       },
       updateCurrentTime ({ commit }, value) {
          commit('updateCurrentTime', value)

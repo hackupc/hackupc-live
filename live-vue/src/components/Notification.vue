@@ -16,6 +16,7 @@ export default {
   name: 'Notification',
   data: function () {
     return {
+      askedSubscribeAll: false,
       prompt: {
         title: 'Notifications for upcoming events',
         message: '<p>Do you want to subscribe to all the events? </p>'
@@ -34,9 +35,9 @@ export default {
     subscribed() {
       return this.$store.state.subscribed;
     },
-    askedSubscribeAll() {
-      return this.$store.state.askedSubscribeAll;
-    },
+    // askedSubscribeAll() {
+    //   return this.$store.state.askedSubscribeAll;
+    // },
   },
   methods: {
     notify: function (msg, title, icon, cb) {
@@ -71,7 +72,8 @@ export default {
       this.toggleAskedSubscribeAll();
     },
     toggleAskedSubscribeAll: function (event) {
-      this.$store.dispatch('isSubscribedAll', true);
+      window.localStorage.setItem('notifications', '1');
+      this.askedSubscribeAll = 1;
     },
     getEvent: function (id) {
       for (const day of this.days) {
@@ -96,6 +98,7 @@ export default {
     },
   },
   created: function () {
+    this.askedSubscribeAll = window.localStorage.getItem('notifications') === '1';
     this.initPermissions();
     window.setInterval(this.lookForUpcoming, 1000);
     window.setInterval(() => {
