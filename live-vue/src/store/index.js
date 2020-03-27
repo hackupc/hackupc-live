@@ -562,20 +562,24 @@ export default new Vuex.Store({
    },
    mutations: {
       toggleSubscribe (state, value) {
-         if (value in state.subscribed) {
-            state.subscribed[value] = !state.subscribed[value]
-         } else {
-            state.subscribed[value] = true
-         }
+        if (value in state.subscribed) {
+          state.subscribed[value] = !state.subscribed[value]
+        } else {
+          state.subscribed[value] = true
+        }
+        window.localStorage['subscribed'] = JSON.stringify(state.subscribed);
       },
       canNotify (state, value) {
-         state.canNotify = value
+        state.canNotify = value
       },
       updateSchedule (state, value) {
-         state.schedule = value
+        state.schedule = value
+      },
+      updateSubscribed (state, value) {
+        state.subscribed = value
       },
       updateCurrentTime (state, value) {
-         state.currentTime = value
+        state.currentTime = value
       },
    },
    actions: {
@@ -587,6 +591,10 @@ export default new Vuex.Store({
       },
       updateCurrentTime ({ commit }, value) {
          commit('updateCurrentTime', value)
+      },
+      getSubscribed({ commit }) {
+        const subscribed = JSON.parse(window.localStorage['subscribed'] || '{}');
+        commit('updateSubscribed', subscribed)
       },
       getSchedule({ commit }, cb) {
          axios.get('/data/schedule.json?date=' + Date.now())

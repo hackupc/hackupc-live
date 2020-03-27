@@ -161,13 +161,14 @@ export default {
     }, 1000);
   },
   mounted: function () {
+    this.$store.dispatch('getSubscribed');
+    this.$store.dispatch('getSchedule');
     window.addEventListener('keyup', (event) => {
       const key = event.which;
       if (key === 80 || key === 70 || key === 32) {
         this.toggleFullscreen();
       }
     });
-    this.$store.dispatch('getSchedule');
   },
   components: {
     Countdown,

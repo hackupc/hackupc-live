@@ -108,7 +108,7 @@ export default {
     },
   },
   mounted: function () {
-    this.updateEvents();
+    setTimeout(this.updateEvents, 200);
     this.interval = window.setInterval(this.updateEvents, 1000);
   },
   beforeDestroy() {

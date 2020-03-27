@@ -35,9 +35,6 @@ export default {
     subscribed() {
       return this.$store.state.subscribed;
     },
-    // askedSubscribeAll() {
-    //   return this.$store.state.askedSubscribeAll;
-    // },
   },
   methods: {
     notify: function (msg, title, icon, cb) {
