@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import Config from '@/config';
+
 export default {
   name: 'Countdown',
   props: ['fullscreen'],
@@ -31,15 +33,15 @@ export default {
   },
   methods: {
     updateCountdown: function () {
-      const HACKATHON_DURATION = 36 * 60 * 60;
+      const HACKATHON_DURATION = Config.hackathon_duration_hours * 60 * 60;
       const elapsed = this.currentTime - this.countdownStart;
-      const current = 36 * 60 * 60 - elapsed;
+      const current = HACKATHON_DURATION - elapsed;
       if (current > 0 && current < HACKATHON_DURATION) {
         this.seconds = parseInt(current % 60, 10);
         this.minutes = parseInt((current / 60) % 60, 10);
         this.hours = parseInt(current / (60 * 60), 10);
       } else if (current > HACKATHON_DURATION) {
-        this.hours = 36;
+        this.hours = Config.hackathon_duration_hours;
       }
       this.hours = ('0' + this.hours).slice(-2);
       this.minutes = ('0' + this.minutes).slice(-2);

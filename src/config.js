@@ -5,6 +5,7 @@ module.exports = {
   notificationTitle: 'HackUPC 2020',
   notificationIcon: 'favicon.ico',
   baseTimeOffset: -120 * 60,
+  hackathon_duration_hours: 36,
   schedule: {
     "version": 2,
     "message": "",
