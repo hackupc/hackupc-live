@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 module.exports = {
+  // If you don't want to test, just comment the fakeTime field
   fakeTime: new Date('2019-10-11 20:59:55'), // year, month, day, time
   notificationTitle: 'HackUPC 2020',
   notificationIcon: 'favicon.ico',
