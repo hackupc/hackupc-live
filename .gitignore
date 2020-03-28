@@ -22,4 +22,3 @@ yarn-error.log*
 
 dist/*
 !dist/.gitkeep
-!dist/_redirects
