@@ -41,20 +41,20 @@ export default {
   methods: {
     notify: function (msg, title, icon, cb) {
       const ntitle = title || Config.notificationTitle;
-      const notification = new Notification(ntitle, {
-        body: msg,
-        icon: icon || Config.notificationIcon,
-      });
-      setTimeout(() => {
-        notification.close();
-      }, 7000);
+      if (Notification.permission === 'granted') {
+        const notification = new Notification(ntitle, {
+          body: msg,
+          icon: icon || Config.notificationIcon,
+        });
+        setTimeout(() => {
+          notification.close();
+        }, 7000);
+      }
     },
     initPermissions: function () {
       if ('Notification' in window) {
         if (Notification.permission !== 'granted') {
-          Notification.requestPermission((permission) => {
-            if (permission === 'granted') this.$store.dispatch('canNotify', true);
-          });
+          Notification.requestPermission();
         }
       } else {
         console.warn('This browser does not support desktop notification');
@@ -101,8 +101,8 @@ export default {
     this.initPermissions();
     window.setInterval(this.lookForUpcoming, 1000);
     window.setInterval(() => {
-      this.$store.dispatch('getSchedule', () => {
-        this.notify('', 'Schedule has changed!');
+      this.$store.dispatch('getSchedule', (message) => {
+        this.notify(message, 'Schedule has changed!');
       });
     }, 5000);
   },

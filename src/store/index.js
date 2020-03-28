@@ -25,7 +25,6 @@ function dateStringToSeconds(date) {
 
 export default new Vuex.Store({
    state: {
-      canNotify: false,
       subscribed: {},
       realStartDate: new Date(),
       currentTime: Date.now(),
@@ -53,9 +52,6 @@ export default new Vuex.Store({
         }
         window.localStorage['subscribed'] = JSON.stringify(state.subscribed);
       },
-      canNotify (state, value) {
-        state.canNotify = value
-      },
       updateSchedule (state, value) {
         state.schedule = value
       },
@@ -70,9 +66,6 @@ export default new Vuex.Store({
       toggleSubscribe ({ commit }, value) {
          commit('toggleSubscribe', value)
       },
-      canNotify ({ commit }, value) {
-         commit('canNotify', value)
-      },
       updateCurrentTime ({ commit }, value) {
          commit('updateCurrentTime', value)
       },
@@ -83,7 +76,6 @@ export default new Vuex.Store({
       getSchedule({ commit }, cb) {
          axios.get('/data/schedule.json?date=' + Date.now())
          .then((response) => {
-            // TODO: Si es una nova versio del schedule
             for (let i = 0; i < response.data.days.length; ++i) {
                const startDateTimestamp = getDateTimestamp(response.data.days[i].date) + Config.baseTimeOffset;
                response.data.days[i]["startTmsp"] = startDateTimestamp;
@@ -101,8 +93,8 @@ export default new Vuex.Store({
                }
             }
             if ('version' in this.state.schedule && this.state.schedule.version !== response.data.version) {
-               console.log('Schedule updated');
-               cb();
+               console.log('Schedule updated with message: ' + response.data.message);
+               cb(response.data.message);
             } else {
                console.log('Schedule up to date');
             }
