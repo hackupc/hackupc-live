@@ -16,16 +16,16 @@
         <div>
           <h3 class="text-centered margin-bottom">Links</h3>
           <div class="buttons margin-bottom">
-            <a target="_blank" href="https://my.hackupc.com">MyHackUPC <div style="font-weight: normal;">Hardware / Baggage / Judging</div></a>
+            <a target="_blank" rel="noopener" href="https://my.hackupc.com">MyHackUPC <div style="font-weight: normal;">Hardware / Baggage / Judging</div></a>
           </div>
           <div class="buttons margin-bottom">
-            <a target="_blank" href="https://mentors.hackupc.com">Mentors</a>
+            <a target="_blank" rel="noopener" href="https://mentors.hackupc.com">Mentors</a>
           </div>
           <div class="buttons margin-bottom">
-            <a target="_blank" href="https://guides.hackupc.com/guide/hacker">Guides</a>
+            <a target="_blank" rel="noopener" href="https://guides.hackupc.com/guide/hacker">Guides</a>
           </div>
           <div class="buttons margin-bottom">
-            <a target="_blank" href="https://hackupc2019.devpost.com">Devpost</a>
+            <a target="_blank" rel="noopener" href="https://hackupc2019.devpost.com">Devpost</a>
           </div>
         </div>
         <div>
@@ -38,11 +38,11 @@
         <h1>Contact</h1>
         <div class="text-centered">
           <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-          <span><a  target="_blank" href="https://hackupc2019.slack.com">hackupc2019.slack.com</a></span>
+          <span><a  target="_blank" rel="noopener" href="https://hackupc2019.slack.com">hackupc2019.slack.com</a></span>
         </div>
         <div class="text-centered">
           <p class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></p>
-          <span><a href="mailto:contact@hackupc.com" target="_blank">contact@hackupc.com</a></span>
+          <span><a href="mailto:contact@hackupc.com" target="_blank" rel="noopener">contact@hackupc.com</a></span>
         </div>
         <!-- <div>
           <h3 class="text-centered margin-bottom">Emergency phone</h3>
@@ -54,12 +54,12 @@
         <div>
           <h3 class="text-centered margin-bottom">Social media</h3>
           <div class="buttons">
-            <a class="fb" target="_blank" href="https://www.facebook.com/hackupc"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-            <a class="tw" target="_blank" href="https://twitter.com/hackupc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="ig" target="_blank" href="https://instagram.com/hackupc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a class="yt" target="_blank" href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-            <a class="gt" target="_blank" href="https://github.com/hackupc"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a class="me" target="_blank" href="https://medium.com/@hackupc"><i class="fa fa-medium" aria-hidden="true"></i></a>
+            <a class="fb" target="_blank" rel="noopener" href="https://www.facebook.com/hackupc"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a class="tw" target="_blank" rel="noopener" href="https://twitter.com/hackupc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="ig" target="_blank" rel="noopener" href="https://instagram.com/hackupc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a class="yt" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a class="gt" target="_blank" rel="noopener" href="https://github.com/hackupc"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a class="me" target="_blank" rel="noopener" href="https://medium.com/@hackupc"><i class="fa fa-medium" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>

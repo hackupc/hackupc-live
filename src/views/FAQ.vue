@@ -41,7 +41,7 @@
         <h1>I'm not in Slack, how do I get in?</h1>
         <div>
           <p>
-            Come to the <a href="#/map/infodesk">InfoDesk</a> during the event or send us an email to <a href="mailto:contact@hackupc.com" target="_blank">contact@hackupc.com</a>
+            Come to the <a href="#/map/infodesk">InfoDesk</a> during the event or send us an email to <a href="mailto:contact@hackupc.com" target="_blank" rel="noopener">contact@hackupc.com</a>
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@
         <h1>How does judging work?</h1>
         <div>
           <p>
-              We will have a judging expo on Sunday from 10:15 am - 13:15 am. We'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you can check how many hacks there are before yours at <a href="https://my.hackupc.com" target="_blank">MyHackUPC</a>. The presentation can only be 3 minutes long and with no slides, Prezi's or any visual support except expect your hack. You can check out other projects at any judging room. The top teams will move on to an additional round of panel judging in the Closing Ceremony. If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.
+              We will have a judging expo on Sunday from 10:15 am - 13:15 am. We'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you can check how many hacks there are before yours at <a href="https://my.hackupc.com" target="_blank" rel="noopener">MyHackUPC</a>. The presentation can only be 3 minutes long and with no slides, Prezi's or any visual support except expect your hack. You can check out other projects at any judging room. The top teams will move on to an additional round of panel judging in the Closing Ceremony. If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.
           </p>
         </div>
       </div>

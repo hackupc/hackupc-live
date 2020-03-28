@@ -91,7 +91,7 @@
 
           <h2 class="margin-bottom">Cheating</h2>
           <p class="margin-bottom">
-            Any cheating allegations will be resolved according to the HackUPC Cheating Response Procedure found <a href="https://github.com/hackupc/rules/blob/master/cheating_response_procedure.md" target="_blank">here</a>.
+            Any cheating allegations will be resolved according to the HackUPC Cheating Response Procedure found <a href="https://github.com/hackupc/rules/blob/master/cheating_response_procedure.md" target="_blank" rel="noopener">here</a>.
           </p>
 
           <h2 class="margin-bottom">Remember</h2>

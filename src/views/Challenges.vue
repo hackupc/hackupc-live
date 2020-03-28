@@ -18,7 +18,7 @@
           <h2 class="panel-info margin-bottom text-centered">Hack the crash</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHM7L8P">#mckinsey</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHM7L8P">#mckinsey</a></span>
           </div>
           <p class="margin-bottom">Help us predict damage inflicted in traffic accidents</p>
           <div>
@@ -32,7 +32,7 @@
           <h2 class="panel-info margin-bottom text-centered">Talk to 3D Print!</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CN97WQW3V">#hp</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CN97WQW3V">#hp</a></span>
           </div>
           <p class="margin-bottom">Are you able to create a 3D geometry that we can print by voice commands?  Your creativity is welcomed, unleash your imagination to test your skills! Come to our booth A5 1st floor our through Slack</p>
           <div>
@@ -46,7 +46,7 @@
           <h2 class="panel-info margin-bottom text-centered">Bring Communities Closer Together</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMVBJKS">#facebook</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMVBJKS">#facebook</a></span>
           </div>
           <p class="margin-bottom">In Facebook our mission is to bring the world closer together. We build products and applications that build community and would love to see you create something that does the same! It does not need to be a social platform, but just any product that you believe would help bridge people together. Whether it is within your study group, your family, your hometown or the wider world around us, show us something that creates opportunities for people to help and support one another.</p>
           <div>
@@ -65,7 +65,7 @@
           <h2 class="panel-info margin-bottom text-centered">EX_MACHINA: ¿can you fool a human?</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CN97WP3LK">#soprasteria</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CN97WP3LK">#soprasteria</a></span>
           </div>
           <p class="margin-bottom">Sopra Steria will introduce a challenge in which the participants will aim to design and implement a solution that must pass a variation of the Turing test.</p>
           <p class="margin-bottom">Participants should satisfy a series of evaluation criteria, such as interface design (app, voice, conversational agent , console, ...), character and empathy, context and memory, complexity of the conversation and, of course, the technical solution and its architecture.</p>
@@ -80,7 +80,7 @@
           <h2 class="panel-info margin-bottom text-centered">We want you to build a solution that solves real problems using Artificial Intelligence.</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMV4E8G">#itequia</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMV4E8G">#itequia</a></span>
           </div>
           <p class="margin-bottom">We at Itequia care about technology but we also care about people and for some time now, as a society, we are facing many problems that we are not able to fix: climate change, natural disasters, manmade disasters, poverty...</p>
           <div>
@@ -98,7 +98,7 @@
           <h2 class="panel-info margin-bottom text-centered">Climate Crisis in your hands. Show your tech skills and save the planet</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHLKRCP">#opentrends</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHLKRCP">#opentrends</a></span>
           </div>
           <p class="margin-bottom">How do you imagine living in 2050? Predictions are the worst for our planet in the next years. It's not just melting poles or plastic in the ocean, it is way more: irreversible effects are about to happen. There's not another planet to move so it is time to do something urgent.</p>
           <div>
@@ -112,7 +112,7 @@
           <h2 class="panel-info margin-bottom text-centered">From data to citizens. Make cities inclusive, safe, resilient and sustainable</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNL83LE5A">#everis</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNL83LE5A">#everis</a></span>
           </div>
           <p class="margin-bottom">With the number of people living within cities projected to rise to 5 billion people by 2030, it’s important that efficient urban planning and management practices are in place to deal with the urbanization.</p>
           <p class="margin-bottom">Congestion, lack of funds to provide basic services, a shortage of adequate housing, declining infrastructure, safe removal and management of solid waste and rising air pollution, can be overcome in ways that allow them to continue to thrive and grow, while improving resource use and reducing pollution and poverty.</p>
@@ -128,7 +128,7 @@
           <h2 class="panel-info margin-bottom text-centered">Build the app everybody will love at your university</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMW6E77">#ithinkupc</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNLMW6E77">#ithinkupc</a></span>
           </div>
           <p class="margin-bottom">We want to improve UPC student's digital experience by designing a whole new set of apps and resources that help us make a difference in the relationship between university services and students needs and preferences.</p>
           <p class="margin-bottom">We're talking about all kinds of features, not just the boring, academic stuff (just joking) but also any other feature that might be useful for students during their studies: information on public transport services, emergency services, restaurants and gyms, news; booking of labs and technical resources; social interaction; work offers; and any other interesting service you can think of. </p>
@@ -150,7 +150,7 @@
           <h2 class="panel-info margin-bottom text-centered">Boarding queue entertaining system</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHLCQMV">#vueling</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNNHLCQMV">#vueling</a></span>
           </div>
           <p class="margin-bottom">Develop an interactive experience (or a game) for our customers who are waiting in line before the boarding gate. It should make them have a good time and interact with one another. So here are a few requirements: It has to be multiplayer, cooperative, accessible for everyone, and without the need for chat (it should be as least language dependent as possible to allow interaction of people from different nationalities).</p>
           <div>
@@ -164,7 +164,7 @@
           <h2 class="panel-info margin-bottom text-centered">EY Challenge: Hospitality Experience Guests/Employees</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CN97VRKQT">#ey</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CN97VRKQT">#ey</a></span>
           </div>
           <p class="margin-bottom">Improve the guest or employee experience thorough the use of new technologies while interacting in hotels/resorts/amusement parks : Communicate, Share, Interact, Plan, Coordinate & Execute</p>
           <div>
@@ -178,7 +178,7 @@
           <h2 class="panel-info margin-bottom text-centered">Innovation with travel</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNL839AA0">#skyscanner</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNL839AA0">#skyscanner</a></span>
           </div>
           <p class="margin-bottom">The most visionary use of our APIs and/or OpenSource tech</p>
           <div>
@@ -192,7 +192,7 @@
           <h2 class="panel-info margin-bottom text-centered">Typeform or VideoAsk APIs</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CN7UF6M4J">#typeform</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CN7UF6M4J">#typeform</a></span>
           </div>
           <p class="margin-bottom">Most innovative use of Typeform or VideoAsk APIs</p>
           <div>
@@ -206,7 +206,7 @@
           <h2 class="panel-info margin-bottom text-centered">We can’t code planet B</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNL82PPDJ">#thoughtworks</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNL82PPDJ">#thoughtworks</a></span>
           </div>
           <p class="margin-bottom">CLIMATE JUSTICE (Solutions for the most vulnerable people that suffer the impact of climate change)</p>
           <p class="margin-bottom">REDUCE CARBON FOOTPRINT Cities generate ~70% of greenhouse gases. How can we measure our impact? How can we decrease our carbon footprint?</p>
@@ -222,7 +222,7 @@
           <h2 class="panel-info margin-bottom text-centered">Most disruptive use of Restb.ai API</h2>
           <div class="margin-bottom text-centered">
             <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-            <span><a target="_blank" href="https://hackupc2019.slack.com/app_redirect?channel=CNE9QCY01">#restbai</a></span>
+            <span><a target="_blank" rel="noopener" href="https://hackupc2019.slack.com/app_redirect?channel=CNE9QCY01">#restbai</a></span>
           </div>
           <p class="margin-bottom">Build your project using one (or more) of our available AI Computer Vision APIs. From Real Estate CV classification solutions to a broad collection of object and features detection models and even Image Similarity Search. Our API is waiting for you!</p>
           <p class="margin-bottom">Get a free API key with tons of requests <a href="https://restb.ai/hackupc">here</a>.</p>

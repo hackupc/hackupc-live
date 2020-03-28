@@ -32,7 +32,7 @@
             <router-link to="/map">Map</router-link>
           </li>
           <li :class="isActive('/mentors')">
-            <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
+            <a href="https://mentors.hackupc.com/" target="_blank" rel="noopener">Mentors</a>
             <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
           <li :class="isActive('/streaming')">
@@ -42,7 +42,7 @@
             <router-link to="/challenges">Challenges</router-link>
           </li>
           <li>
-            <a href="https://guides.hackupc.com/guide/hacker" target="_blank">Guides</a>
+            <a href="https://guides.hackupc.com/guide/hacker" target="_blank" rel="noopener">Guides</a>
           </li>
           <li :class="isActive('/rules')">
             <router-link to="/rules">Rules</router-link>
@@ -70,7 +70,7 @@
             <router-link to="/map">Map</router-link>
           </li>
           <li :class="isActive('/mentors')">
-            <a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>
+            <a href="https://mentors.hackupc.com/" target="_blank" rel="noopener">Mentors</a>
             <!--<router-link to="/mentors">Mentors</router-link>-->
           </li>
           <li @click="toggleFullscreen" id="countdown-li">
@@ -83,7 +83,7 @@
             <router-link to="/challenges">Challenges</router-link>
           </li>
           <li>
-            <a href="https://guides.hackupc.com/guide/hacker" target="_blank">Guides</a>
+            <a href="https://guides.hackupc.com/guide/hacker" target="_blank" rel="noopener">Guides</a>
           </li>
           <li :class="isActive('/rules')">
             <router-link to="/rules">Rules</router-link>
