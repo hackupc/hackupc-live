@@ -100,10 +100,10 @@
       </transition>
     </main>
   </div>
-  <div v-else class="disabled-msg">
+  <main v-else class="disabled-msg">
     Sorry, live is not aviable yet. <br>
     Come back later.
-  </div>
+  </main>
 </template>
 
 <script>
