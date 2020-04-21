@@ -52,9 +52,23 @@ export default {
   },
   methods: {
     toggleSubscribe: function (event) {
-      const id = event.currentTarget.getAttribute('data-event-id');
-      this.$store.dispatch('toggleSubscribe', id);
-      event.currentTarget.classList.toggle('subscribed');
+      const elemClicked = event.currentTarget;
+      const id = elemClicked.getAttribute('data-event-id');
+      if ('Notification' in window) {
+        if (Notification.permission === 'granted') {
+          this.$store.dispatch('toggleSubscribe', id);
+          elemClicked.classList.toggle('subscribed');
+        } else {
+          Notification.requestPermission().then((permision) => {
+            if (permision === 'granted') {
+              this.$store.dispatch('toggleSubscribe', id);
+              elemClicked.classList.toggle('subscribed');
+            }
+          });
+        }
+      } else {
+        console.warn('This browser does not support desktop notification');
+      }
     },
     updateEvents: function () {
       this.events = [];
