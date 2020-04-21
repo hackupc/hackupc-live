@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!disabled">
+  <div>
     <Notification/>
     <!--header for <720px-->
     <header id="header-small" :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']">
@@ -107,7 +107,6 @@
 </template>
 
 <script>
-import Config from '@/config';
 import Countdown from '@/components/Countdown.vue';
 import Notification from '@/components/Notification.vue';
 
@@ -118,7 +117,6 @@ export default {
       isFullscreen: false,
       asideMenuClosed: true,
       asideMenuHidden: true,
-      disabled: Config.disabled,
     };
   },
   methods: {
@@ -194,17 +192,5 @@ export default {
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
-}
-.disabled-msg{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
-  font-weight: bolder;
-  text-shadow: 0 0 1rem rgb(255, 255, 255);
 }
 </style>
