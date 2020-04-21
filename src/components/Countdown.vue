@@ -1,5 +1,5 @@
 <template>
-  <div :id="this.isFullscreen ? 'countdown-full' : ''" class="countdown" :class="this.isFullscreen ? 'hide-when-small' : ''">
+  <div @click="leaveFullscreen" :id="this.isFullscreen ? 'countdown-full' : ''" class="countdown" :class="this.isFullscreen ? 'hide-when-small' : ''">
     <div class="countdown-time">
       <span class="hours">{{hours}}</span>:<span class="minutes">{{minutes}}</span><span class="seconds">{{seconds}}</span>
     </div>
@@ -32,6 +32,12 @@ export default {
     },
   },
   methods: {
+    leaveFullscreen: function () {
+      // Altought not the best way, this is used to call the first Vue component, however since it is not the $root one, we need to call it's only child (App component)
+      if (this.isFullscreen) {
+        this.$root.$children[0].toggleFullscreen();
+      }
+    },
     updateCountdown: function () {
       const HACKATHON_DURATION = Config.hackathon_duration_hours * 60 * 60;
       const elapsed = this.currentTime - this.countdownStart;
