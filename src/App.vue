@@ -101,7 +101,7 @@
     </main>
   </div>
   <main v-else class="disabled-msg">
-    Sorry, live is not aviable yet. <br>
+    Sorry, live is not available yet. <br>
     Come back later.
   </main>
 </template>
