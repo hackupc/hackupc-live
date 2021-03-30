@@ -20,4 +20,4 @@ Insert the following code in the `head` section of your pages:
     <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml?v=00zyG6kr2M">
     <meta name="theme-color" content="#5f723f">
 
-*Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
+_Optional_ - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
