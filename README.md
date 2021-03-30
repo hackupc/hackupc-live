@@ -37,39 +37,42 @@ New versions of the schedule will be loaded only if 'version' is different.
 
 #### Schedule file
 
-- `id` can be whatever you want, but all ids must be different  
-- When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.  
-- Events should be ordered by starting hour  
-- `baseTimeOffset` should be the same output as executing (new Date()).getTimezoneOffset() in a machine with local time. (UTC - localtime in minutes)  
-- `dates` are DD/MM/YYYY format  
+- `id` can be whatever you want, but all ids must be different
+- When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.
+- Events should be ordered by starting hour
+- `baseTimeOffset` should be the same output as executing (new Date()).getTimezoneOffset() in a machine with local time. (UTC - localtime in minutes)
+- `dates` are DD/MM/YYYY format
 
 > If an event doesn't have endHour, then will show only startHour and it will finish at the same time as it starts.  
-Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")
+> Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")
 
 ## Setup
+
+Clone the repo, install [Yarn](https://yarnpkg.com/), and run `yarn install` the first time:
 
 ```sh
 git clone git@github.com:hackupc/hackupc-live.git
 cd hackupc-live
-npm install
+npm install -g yarn
+yarn install
 ```
 
-Use `npm run serve` to compile and serve the dist directory in real time. Then view the website at [https://localhost:8080](https://localhost:8080)
+Use `yarn serve` to compile and serve the dist directory in real time. Then view the website at [https://localhost:8080](https://localhost:8080)
 
 ```sh
-npm run serve
+yarn serve
 ```
 
 ## Deploy
 
 ### Deploy to localhost
 
-Use `npm run build` to compile all dist directory. The files will be compiled to `/dist/`.
+Use `yarn build` to compile all dist directory. The files will be compiled to `/dist/`.
 
 Use `serve -s dist` to just serve `/dist` at [https://localhost:5000](https://localhost:5000).
 
 ```sh
-npm run build
+yarn build
 serve -s dist
 ```
 
