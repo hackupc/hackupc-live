@@ -6,11 +6,11 @@
         <div>
           <div class="panel-info margin-bottom text-centered">
             <h4 class="label text-normal">Wifi:</h4>
-            <span>HACKUPC2019</span>
+            <span>HACKUPC2021</span>
           </div>
           <div class="panel-info text-centered">
             <h4 class="label text-normal">Password:</h4>
-            <span>Biene2019!</span>
+            <span>Biene2021!</span>
           </div>
         </div>
         <div>
@@ -25,7 +25,7 @@
             <a target="_blank" rel="noopener" href="https://guides.hackupc.com/guide/hacker">Guides</a>
           </div>
           <div class="buttons margin-bottom">
-            <a target="_blank" rel="noopener" href="https://hackupc2019.devpost.com">Devpost</a>
+            <a target="_blank" rel="noopener" href="https://hackupc2021.devpost.com">Devpost</a>
           </div>
         </div>
         <div>

@@ -18,7 +18,7 @@
       <div class="panel">
         <h1>Opening ceremony</h1>
         <p style="text-align: center;">
-          <a href="https://tv.upc.edu/continguts/hackupc-2019">https://tv.upc.edu/continguts/hackupc-2019</a>
+          <a href="https://tv.upc.edu/continguts/hackupc-2021">https://tv.upc.edu/continguts/hackupc-2021</a>
         </p>
       </div>
       <div class="panel">

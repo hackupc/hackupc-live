@@ -85,7 +85,7 @@ If you push something that doesn't build, don't worry, it won't be published.
 
 ## Support
 
-If you need help understanding something of this repo you can ask the previous developers. The ones that made the 2019 edition are:
+If you need help understanding something of this repo you can ask the previous developers. The ones that made the 2021 edition are:
 
 - Maurici Abad Gutierrez: Slack `@mauriciabad` [mauriciabad.com](https://mauriciabad.com/)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)

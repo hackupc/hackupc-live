@@ -73,7 +73,7 @@
         <h1>Deadline for project submissions?</h1>
         <div>
           <p>
-            The deadline for project submissions is Sunday 13th 9:00 AM. Submit your projects <a href="https://hackupc2019.devpost.com">here</a>.
+            The deadline for project submissions is Sunday 13th 9:00 AM. Submit your projects <a href="https://hackupc2021.devpost.com">here</a>.
           </p>
         </div>
       </div>
