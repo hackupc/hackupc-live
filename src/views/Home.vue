@@ -37,8 +37,8 @@
       <div class="panel" style="align-self: flex-start;">
         <h1>Contact</h1>
         <div class="text-centered">
-          <p class="icon"><i class="fab fa-slack" aria-hidden="true"></i></p>
-          <span><a  target="_blank" rel="noopener" href="https://hackupc2019.slack.com">hackupc2019.slack.com</a></span>
+          <p class="icon"><i class="fab fa-discord" aria-hidden="true"></i></p>
+          <span><a  target="_blank" rel="noopener" href="#">link.to.discord</a></span>
         </div>
         <div class="text-centered">
           <p class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></p>
