@@ -14,7 +14,6 @@
               <i class="fab fa-arrow-right" v-if="event.class === 'happening'"></i>
               <template v-for="hourEvent in event.hourEvents">
                 <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id">
-                  <a :href="'/map/' + hourEvent.locationId"><i class="fas fa-map-marker-alt"></i></a>
                   <div class="event-hour">
                     <div>{{hourEvent.startHour}}</div>
                     <div class="end-hour">{{hourEvent.endHour}}</div>
@@ -54,23 +53,9 @@ export default {
   },
   methods: {
     toggleSubscribe: function (event) {
-      const elemClicked = event.currentTarget;
-      const id = elemClicked.getAttribute('data-event-id');
-      if ('Notification' in window) {
-        if (Notification.permission === 'granted') {
-          this.$store.dispatch('toggleSubscribe', id);
-          elemClicked.classList.toggle('subscribed');
-        } else {
-          Notification.requestPermission().then((permision) => {
-            if (permision === 'granted') {
-              this.$store.dispatch('toggleSubscribe', id);
-              elemClicked.classList.toggle('subscribed');
-            }
-          });
-        }
-      } else {
-        console.warn('This browser does not support desktop notification');
-      }
+      const id = event.currentTarget.getAttribute('data-event-id');
+      this.$store.dispatch('toggleSubscribe', id);
+      event.currentTarget.classList.toggle('subscribed');
     },
     updateEvents: function () {
       this.events = [];

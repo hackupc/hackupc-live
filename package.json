@@ -1,58 +1,58 @@
 {
-	"name": "live-vue",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"lint": "vue-cli-service lint"
-	},
-	"dependencies": {
-		"axios": "^0.21.1",
-		"core-js": "^3.11.0",
-		"serve": "^11.3.2",
-		"vue": "^2.6.12",
-		"vue-router": "^3.5.1",
-		"vuex": "^3.6.2",
-		"vuex-persist": "^3.1.3"
-	},
-	"devDependencies": {
-		"@vue/cli-plugin-babel": "^4.5.12",
-		"@vue/cli-plugin-eslint": "^4.5.12",
-		"@vue/cli-plugin-router": "^4.5.12",
-		"@vue/cli-service": "^4.5.12",
-		"@vue/eslint-config-airbnb": "^5.3.0",
-		"babel-eslint": "^10.1.0",
-		"eslint": "^7.25.0",
-		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-vue": "^7.9.0",
-		"node-sass": "^5.0.0",
-		"sass-loader": "^10",
-		"vue-template-compiler": "^2.6.12"
-	},
-	"eslintConfig": {
-		"root": true,
-		"env": {
-			"node": true
-		},
-		"extends": [
-			"plugin:vue/essential",
-			"@vue/airbnb"
-		],
-		"parserOptions": {},
-		"rules": {
-			"max-len": 0,
-			"linebreak-style": 0,
-			"object-shorthand": 0,
-			"no-unused-vars": 0,
-			"no-restricted-syntax": 0,
-			"prefer-template": 0,
-			"consistent-return": 0,
-			"prefer-destructuring": 0
-		}
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
-	]
+  "name": "live-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "serve": "^11.3.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.3",
+    "vuex-persist": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-plugin-router": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "parserOptions": {},
+    "rules": {
+      "max-len": 0,
+      "linebreak-style": 0,
+      "object-shorthand": 0,
+      "no-unused-vars": 0,
+      "no-restricted-syntax": 0,
+      "prefer-template": 0,
+      "consistent-return": 0,
+      "prefer-destructuring": 0
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

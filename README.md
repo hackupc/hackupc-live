@@ -27,25 +27,23 @@ Here you can edit the `FAKE_DATE` parameter to test funtionalities.
 
 ### Change theme
 
-> TODO: fill this part
+If you want to change the theme you should change some properties
+2. For changing all the colors: Go to `src/live/params.scss` and in the top of the file you will find all the colors.
 
 ### Update schedule
 
-> TODO: polish this part
-
-Clients will poll constantly the schedule.json file. To update the schedule just change the file and deploy.  
-New versions of the schedule will be loaded only if 'version' is different.
+To update or change the schedule go to `public/data/schedule.json`. Changing this file will change the live and the schedule section. Here you can also set the start of the hackathon. The duration of it must be changed in `src/config.js`.
 
 #### Schedule file
 
-- `id` can be whatever you want, but all ids must be different
-- When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.
-- Events should be ordered by starting hour
-- `baseTimeOffset` should be the same output as executing (new Date()).getTimezoneOffset() in a machine with local time. (UTC - localtime in minutes)
-- `dates` are DD/MM/YYYY format
+- `id` can be whatever you want, but all ids must be different  
+- When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.  
+- Events should be ordered by starting hour  
+- `baseTimeOffset` should be the same output as executing (new Date()).getTimezoneOffset() in a machine with local time. (UTC - localtime in minutes)  
+- `dates` are DD/MM/YYYY format  
 
 > If an event doesn't have endHour, then will show only startHour and it will finish at the same time as it starts.  
-> Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")
+Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")
 
 ## Setup
 
@@ -85,9 +83,10 @@ If you push something that doesn't build, don't worry, it won't be published.
 
 ## Support
 
-If you need help understanding something of this repo you can ask the previous developers. The ones that made the 2021 edition are:
+If you need help understanding something of this repo you can ask the previous developers. The ones that made this edition live were:
 
-- Maurici Abad Gutierrez: Slack `@mauriciabad` [mauriciabad.com](https://mauriciabad.com/)
+- Maurici Abad Gutierrez: Slack `@mauriciabad` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
+- Carlota Catot Bragós: Slack `@Carlota` [carlotacb.dev](https://carlotacb.dev/)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)
 
 ## License

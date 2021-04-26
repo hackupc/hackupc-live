@@ -28,27 +28,26 @@
           <li :class="isActive('/schedule')">
             <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li :class="isActive('/map')">
-            <router-link to="/map">Map</router-link>
+          <li :class="isActive('/donations')">
+            <a href="https://www.fib.upc.edu/la-marato/donatiu.html" target="_blank" class="external-link">Donations</a>
           </li>
-          <li :class="isActive('/mentors')">
-            <a href="https://mentors.hackupc.com/" target="_blank" rel="noopener">Mentors</a>
-            <!--<router-link to="/mentors">Mentors</router-link>-->
-          </li>
-          <li :class="isActive('/streaming')">
-            <router-link to="/streaming">Streaming</router-link>
+          <li :class="isActive('/discord')">
+            <router-link to="/discord">Discord</router-link>
           </li>
           <li :class="isActive('/challenges')">
             <router-link to="/challenges">Challenges</router-link>
           </li>
-          <li>
-            <a href="https://guides.hackupc.com/guide/hacker" target="_blank" rel="noopener">Guides</a>
+          <li :class="isActive('/activities')">
+            <router-link to="/activities">Activities</router-link>
           </li>
           <li :class="isActive('/rules')">
             <router-link to="/rules">Rules</router-link>
           </li>
           <li :class="isActive('/faq')">
             <router-link to="/faq">FAQ</router-link>
+          </li>
+          <li :class="isActive('/judging')">
+            <router-link to="/judging">Judging</router-link>
           </li>
         </ul>
       </nav>
@@ -66,30 +65,29 @@
           <li :class="isActive('/schedule')">
             <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li :class="isActive('/map')">
-            <router-link to="/map">Map</router-link>
+          <li :class="isActive('/donations')">
+            <a href="https://www.fib.upc.edu/la-marato/donatiu.html" target="_blank" class="external-link">Donations</a>
           </li>
-          <li :class="isActive('/mentors')">
-            <a href="https://mentors.hackupc.com/" target="_blank" rel="noopener">Mentors</a>
-            <!--<router-link to="/mentors">Mentors</router-link>-->
+          <li :class="isActive('/discord')">
+            <router-link to="/discord">Discord</router-link>
           </li>
           <li @click="toggleFullscreen" id="countdown-li">
             <Countdown/>
           </li>
-          <li :class="isActive('/streaming')">
-            <router-link to="/streaming">Streaming</router-link>
-          </li>
           <li :class="isActive('/challenges')">
             <router-link to="/challenges">Challenges</router-link>
           </li>
-          <li>
-            <a href="https://guides.hackupc.com/guide/hacker" target="_blank" rel="noopener">Guides</a>
+          <li :class="isActive('/activities')">
+            <router-link to="/activities">Activities</router-link>
           </li>
           <li :class="isActive('/rules')">
             <router-link to="/rules">Rules</router-link>
           </li>
           <li :class="isActive('/faq')">
             <router-link to="/faq">FAQ</router-link>
+          </li>
+          <li :class="isActive('/judging')">
+            <router-link to="/judging">Judging</router-link>
           </li>
         </ul>
       </nav>

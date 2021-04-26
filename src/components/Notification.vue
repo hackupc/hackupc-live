@@ -51,34 +51,24 @@ export default {
         }, 7000);
       }
     },
-    subscribeAll: function (evt) {
+    initPermissions: function () {
       if ('Notification' in window) {
-        if (Notification.permission === 'granted') {
-          for (const day of this.days) {
-            for (const event of day.events) {
-              if (!this.subscribed[event.id]) {
-                this.$store.dispatch('toggleSubscribe', event.id);
-              }
-            }
-          }
-          this.toggleAskedSubscribeAll();
-        } else {
-          Notification.requestPermission().then((permision) => {
-            if (permision === 'granted') {
-              for (const day of this.days) {
-                for (const event of day.events) {
-                  if (!this.subscribed[event.id]) {
-                    this.$store.dispatch('toggleSubscribe', event.id);
-                  }
-                }
-              }
-              this.toggleAskedSubscribeAll();
-            }
-          });
+        if (Notification.permission !== 'granted') {
+          Notification.requestPermission();
         }
       } else {
         console.warn('This browser does not support desktop notification');
       }
+    },
+    subscribeAll: function (evt) {
+      for (const day of this.days) {
+        for (const event of day.events) {
+          if (!this.subscribed[event.id]) {
+            this.$store.dispatch('toggleSubscribe', event.id);
+          }
+        }
+      }
+      this.toggleAskedSubscribeAll();
     },
     toggleAskedSubscribeAll: function (event) {
       window.localStorage.setItem('notifications', '1');
@@ -108,6 +98,7 @@ export default {
   },
   created: function () {
     this.askedSubscribeAll = window.localStorage.getItem('notifications') === '1';
+    this.initPermissions();
     window.setInterval(this.lookForUpcoming, 1000);
     window.setInterval(() => {
       this.$store.dispatch('getSchedule', (message) => {

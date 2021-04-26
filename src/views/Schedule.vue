@@ -8,7 +8,7 @@
             <table>
               <thead>
                 <tr>
-                  <th>Location</th>
+                  <th></th>
                   <th>Start</th>
                   <th>End</th>
                   <th>Title</th>
@@ -17,10 +17,10 @@
               </thead>
               <tbody>
                 <tr v-for="event in day.events" :key="event.id" :class="hasHappened(event.startTmsp)">
-                  <td><router-link :to="'/map/' + event.locationId">{{event.locationName}}</router-link></td>
+                  <td><a href="https://www.twitch.tv/hackersupc">{{event.emoji}}</a></td>
                   <td>{{event.startHour}}</td>
                   <td>{{event.endHour}}</td>
-                  <td>{{event.title}}</td>
+                  <td class="when-small">{{event.title}}</td>
                   <td class="hide-when-small">{{event.description}}</td>
                 </tr>
               </tbody>

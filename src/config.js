@@ -7,7 +7,7 @@ export default {
   disabled: false,
   notificationTitle: 'HackUPC 2021',
   notificationIcon: 'favicon.ico',
-  baseTimeOffset: -120 * 60,
-  hackathon_duration_hours: 36,
+  baseTimeOffset: -60 * 60,
+  hackathon_duration_hours: 41,
   schedule: schedule,
 };

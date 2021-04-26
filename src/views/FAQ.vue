@@ -1,104 +1,46 @@
 <template>
   <div id="faq" class="under-header padding-bottom">
     <div class="container">
-        <div class="panel large">
-          <h1>Travel reimbursement</h1>
-          <div>
-            <p class="margin-bottom">If you have been elected to receive a travel reimbursement, we will contact you after the hackathon to send it to you. You will receive a maximum that has been specified on the email, based on current travelling prices and distances. Requirements to receive travel reimbursement are as follows.</p>
-            <ul class="margin-bottom">
-              <li>Received an email with travel reimbursement amount.</li>
-              <li>Travel reimbursement receipts submitted before the date specified by HackUPC Team.</li>
-              <li>Project submitted to Devpost before due date.</li>
-            </ul>
-            <p>The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1-2 months time period. Remember that you need to post a project before the deadline in order to get the reimbursement!</p>
-          </div>
-        </div>
-      <div class="panel">
-        <h1>When shall I arrive?</h1>
+      <div class="panel large">
+        <h1>Why is bitsxlaMarato so special?</h1>
         <div>
-          <p>
-            Registration will start at 4 PM on Friday. The opening ceremony is at 7 PM.
-          </p>
+          <p class="margin-bottom">The ultimate aim of bitsxlaMarató is to raise money for La Marató de TV3 as well as solving challenges to face the pandemic. La Marató de TV3 is a public Catalan charity effort that allocates all donations obtained to scientific research on diseases that still today have no cure. The disease chosen for this year’s event is COVID-19.</p>
         </div>
       </div>
       <div class="panel">
-        <h1>When is HackUPC ending?</h1>
+        <h1>How many people can make a team?</h1>
         <div>
-          <p>
-            The closing ceremony is expected to end on Sunday 13th at 5:00 PM.
-          </p>
+          <p class="margin-bottom">The team must be between 1 and 5 people.</p>
         </div>
       </div>
       <div class="panel">
-        <h1>What if I cannot make it in time?</h1>
+        <h1>How can I make a donation?</h1>
         <div>
-          <p>
-            No problem. Just come to our <a href="#/map/infodesk">InfoDesk</a> for a late check-in. If you are confused, please reach out to any volunteer (white t-shirts) or organizer (black t-shirts).
-          </p>
+          <p class="margin-bottom">To donate you need to acces our <b><a href="https://www.fib.upc.edu/la-marato/donatiu.html" target="_blank" class="external-link">platform</a></b>, remember that doing a donation you are participating to the pizza draw.</p>
+        </div>
+      </div>
+      <div class="panel large">
+        <h1>Does the code need to be 100% deveopled in the hackathon?</h1>
+        <div>
+          <p class="margin-bottom">No! You can start working straight away on the challenges we have proposed. And also you can use, code, projects or open source code that has been developed outside the hackathon.</p>
         </div>
       </div>
       <div class="panel">
-        <h1>I'm not in Slack, how do I get in?</h1>
+        <h1>When and where I need to post my project?</h1>
         <div>
-          <p>
-            Come to the <a href="#/map/infodesk">InfoDesk</a> during the event or send us an email to <a href="mailto:contact@hackupc.com" target="_blank" rel="noopener">contact@hackupc.com</a>
-          </p>
+          <p class="margin-bottom">The projects must be posted on Devpost before Sunday at 12:00. The objective of posting is to have all the projects saved. Also if you don't post the project to devpost you won't have access to the prices (or the ECTS credits if you are a FIB student).</p>
         </div>
       </div>
       <div class="panel">
-        <h1>Can I leave HackUPC?</h1>
+        <h1>I'm not registered and I want to participate</h1>
         <div>
-          <p>
-            Yes. However make sure you have your wristband with you, otherwise we might not let you in when you come back.
-          </p>
+          <p class="margin-bottom">Please send a mail to <a href="mailto:bitsxlamarato@fib.upc.edu" target="_blank">bitsxlamarato@fib.upc.edu</a> with the following information: Name, Surname, Email, Ocupation, Country, Area of knowledge and Team (in case you have one) and we will give you a spot in our hackathon!</p>
         </div>
       </div>
-      <div class="panel">
-        <h1>Can I sleep now?</h1>
+      <div class="panel large">
+        <h1>If you have more questions...</h1>
         <div>
-          <p>
-            Yes, sure. You can find the <a href="#/map/sleepingarea">sleeping spaces</a> in A3 and A4 buildings. Some matresses will be provided. Unfortunately, we don't have enough for everyone!
-          </p>
-        </div>
-      </div>
-      <div class="panel">
-        <h1>Something isn’t working!</h1>
-        <div>
-          <p>
-            If something is not working, please come to our <a href="#/map/infodesk">InfoDesk</a> and meet our awesome volunteers. They'll love to help you!
-          </p>
-        </div>
-      </div>
-      <div class="panel">
-        <h1>Deadline for project submissions?</h1>
-        <div>
-          <p>
-            The deadline for project submissions is Sunday 13th 9:00 AM. Submit your projects <a href="https://hackupc2021.devpost.com">here</a>.
-          </p>
-        </div>
-      </div>
-      <div class="panel">
-        <h1>How does judging work?</h1>
-        <div>
-          <p>
-              We will have a judging expo on Sunday from 10:15 am - 13:15 am. We'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you can check how many hacks there are before yours at <a href="https://my.hackupc.com" target="_blank" rel="noopener">MyHackUPC</a>. The presentation can only be 3 minutes long and with no slides, Prezi's or any visual support except expect your hack. You can check out other projects at any judging room. The top teams will move on to an additional round of panel judging in the Closing Ceremony. If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.
-          </p>
-        </div>
-      </div>
-      <div class="panel">
-        <h1>Where's my travel reimbursement?</h1>
-        <div>
-          <p>
-            The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1 - 2 months time period. Also, remember that you need to post a project before the deadline in order to get the reimbursement.
-          </p>
-        </div>
-      </div>
-      <div class="panel">
-        <h1>I have another question... Biene?</h1>
-        <div>
-          <p>
-            If you have any other questions and you can't find it here, make sure to pay us a visit at our <a href="#/map/infodesk">InfoDesk</a>.
-          </p>
+          <p class="margin-bottom">Reach any organizer by sending a message to <b>#help</b> channel on discord.</p>
         </div>
       </div>
     </div>
