@@ -178,9 +178,8 @@ a {
 				opacity: 1;
 				border-left: 2px solid fade($secondaryTextColor, 25%);
 			}
-			&.happening::before {
-				content: '\f061';
-				font: normal normal normal 14px/1 FontAwesome, sans-serif;
+			&.happening i {
+				font-size: 14px;
 				color: $secondaryTextColor;
 				position: absolute;
 				margin-top: -7.5px;
@@ -191,10 +190,6 @@ a {
 				display: block;
 				margin-right: 10px;
 				color: $secondaryColor;
-				&::before {
-					font-family: FontAwesome, sans-serif;
-					content: '\f041';
-				}
 			}
 			.event {
 				margin: 5px 0;
@@ -212,9 +207,7 @@ a {
 					.end-hour { font-size: 12px; }
 				}
 				&.subscribed {
-					.title::after {
-						font-family: FontAwesome, sans-serif;
-						content: "\f024";
+					.title i {
 						font-size: 13px;
 						vertical-align: super;
 						line-height: 0;
@@ -350,12 +343,6 @@ a {
 				text-align: center;
 				font-weight: bold;
 				&:not(:first-child) { border-left: thin solid white; }
-				// &.fb { background-color: $fbColor; }
-				// &.yt { background-color: $ytColor; }
-				// &.tw { background-color: $twColor; }
-				// &.ig { background-color: $igColor; }
-				// &.gt { background-color: $gtColor; }
-				// &.me { background-color: $meColor; }
 			}
 		}
 		.label { display: inline; }

@@ -11,15 +11,17 @@
               <h1>{{event.name}}</h1>
             </li>
             <li v-if="event.type == 'item'" :class="event.class" :key="event.name">
+              <i class="fab fa-arrow-right" v-if="event.class === 'happening'"></i>
               <template v-for="hourEvent in event.hourEvents">
                 <div @click="toggleSubscribe" :class="[hourEvent.subscribed, 'event']" :key="hourEvent.id" :data-event-id="hourEvent.id">
-                  <a href="'#/map/' + hourEvent.locationId"></a>
+                  <a :href="'/map/' + hourEvent.locationId"><i class="fas fa-map-marker-alt"></i></a>
                   <div class="event-hour">
                     <div>{{hourEvent.startHour}}</div>
                     <div class="end-hour">{{hourEvent.endHour}}</div>
                   </div>
                   <div class="title">
                     {{hourEvent.title}}
+                    <i v-if="hourEvent.subscribed" class="fab fa-bell"></i>
                   </div>
                 </div>
               </template>
