@@ -42,8 +42,8 @@
             <li :class="isActive('/challenges')">
               <router-link to="/challenges">Challenges</router-link>
             </li>
-            <li :class="isActive('/activities')">
-              <router-link to="/activities">Activities</router-link>
+            <li :class="isActive('/talks')">
+              <router-link to="/talks">Talks</router-link>
             </li>
             <li :class="isActive('/rules')">
               <router-link to="/rules">Rules</router-link>
@@ -73,8 +73,8 @@
             <li :class="isActive('/challenges')">
               <router-link to="/challenges">Challenges</router-link>
             </li>
-            <li :class="isActive('/activities')">
-              <router-link to="/activities">Activities</router-link>
+            <li :class="isActive('/talks')">
+              <router-link to="/talks">Talks</router-link>
             </li>
             <li :class="isActive('/rules')">
               <router-link to="/rules">Rules</router-link>
