@@ -2,9 +2,6 @@
   <div id="rules" class="under-header padding-bottom">
     <div class="container">
       <div class="panel large">
-        <h1 class="activity-title">Rules</h1>
-      </div>
-      <div class="panel large">
         <div style="text-align: justify">
           <!-- <p>Here you can find the rules of the #bitsxLaMarató hackathon. They are a customised and simplified version of the standard rules used by the HackUPC hackathon (organised by HackersUPC). If you have any suggestions or questions about it, please send them here.</p> -->
           <div class="margin-bottom text-centered">

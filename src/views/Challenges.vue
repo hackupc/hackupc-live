@@ -260,32 +260,6 @@
           </div>
         </div> -->
       </div>
-      <div class="panel large">
-        <h1>
-          <a
-            href="https://www.fib.upc.edu/en/la-marato"
-            target="_blank"
-            class="external-link"
-            >All challenge descriptions</a
-          >
-        </h1>
-      </div>
-      <div class="panel large">
-        <h1>Acces to Marenostrum+Power9 and GPU</h1>
-        <p>
-          <b
-            ><a
-              href="https://www.fib.upc.edu/sites/fib/files/bitsxlamarato-user-reponsabilities-bsc-2020.pdf"
-              target="_blank"
-              class="external-link"
-              >Basic information</a
-            ></b
-          >
-          <br />
-          If you want access contact a organizer in the
-          <span>#help</span> channel on discord.
-        </p>
-      </div>
     </div>
   </div>
 </template>
