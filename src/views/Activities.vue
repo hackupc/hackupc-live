@@ -207,7 +207,7 @@
           </p>
           <div style="text-align: center">
             <img
-              src="/assets/img/activities/pen.gif"
+              src="@/assets/img/activities/pen.gif"
               class="image"
               style="width: 50%"
             />
@@ -231,7 +231,7 @@
           </p>
           <div style="text-align: center">
             <img
-              src="/assets/img/activities/stop.jpg"
+              src="@/assets/img/activities/stop.jpg"
               class="image"
               style="width: 50%; margin-top: 1.3em"
             />
@@ -254,7 +254,7 @@
           </p>
           <div style="text-align: center">
             <img
-              src="/assets/img/activities/kahoot.png"
+              src="@/assets/img/activities/kahoot.png"
               class="image"
               style="width: 40%; margin-top: 1.3em"
             />
@@ -278,7 +278,7 @@
           </p>
           <div style="text-align: center">
             <img
-              src="/assets/img/activities/amongus.gif"
+              src="@/assets/img/activities/amongus.gif"
               class="image"
               style="width: 50%; margin-top: 1.3em"
             />

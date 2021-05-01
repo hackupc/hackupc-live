@@ -1,105 +1,109 @@
 <template>
-  <div v-if="!disabled">
-    <Notification />
-    <!--header for <720px-->
-    <header
-      id="header-small"
-      :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']"
-    >
-      <div class="bar">
-        <div @click="openAsideMenu" id="open-aside-btn">
-          <span>&#9776;</span>
+  <div>
+    <div v-if="!disabled">
+      <Notification />
+      <!--header for <720px-->
+      <header
+        id="header-small"
+        :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']"
+      >
+        <div class="bar">
+          <div @click="openAsideMenu" id="open-aside-btn">
+            <span>&#9776;</span>
+          </div>
+          <div class="title-container">
+            <h1 id="title">Live</h1>
+          </div>
         </div>
-        <div class="title-container">
-          <h1 id="title">Live</h1>
+      </header>
+      <!--Aside menu for small screens-->
+      <aside
+        id="aside-small-menu"
+        :class="[
+          this.asideMenuClosed ? 'closed' : '',
+          this.asideMenuHidden ? 'hidden' : '',
+          'show-when-small',
+        ]"
+      >
+        <div @click="closeAsideMenu" id="close-aside-btn">
+          <div>x</div>
         </div>
-      </div>
-    </header>
-    <!--Aside menu for small screens-->
-    <aside
-      id="aside-small-menu"
-      :class="[
-        this.asideMenuClosed ? 'closed' : '',
-        this.asideMenuHidden ? 'hidden' : '',
-        'show-when-small',
-      ]"
-    >
-      <div @click="closeAsideMenu" id="close-aside-btn">
-        <div>x</div>
-      </div>
-      <nav>
-        <ul>
-          <li :class="$route.path === '/' ? 'selected' : ''">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li :class="isActive('/live')">
-            <router-link to="/live">Live</router-link>
-          </li>
-          <li :class="isActive('/schedule')">
-            <router-link to="/schedule">Schedule</router-link>
-          </li>
-          <li :class="isActive('/discord')">
-            <router-link to="/discord">Discord</router-link>
-          </li>
-          <li :class="isActive('/challenges')">
-            <router-link to="/challenges">Challenges</router-link>
-          </li>
-          <li :class="isActive('/activities')">
-            <router-link to="/activities">Activities</router-link>
-          </li>
-          <li :class="isActive('/rules')">
-            <router-link to="/rules">Rules</router-link>
-          </li>
-          <li :class="isActive('/faq')">
-            <router-link to="/faq">FAQ</router-link>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    <!--header for >720px-->
-    <header
-      id="header-nav-bar"
-      :class="[this.isFullscreen ? 'hidden' : '', 'hide-when-small']"
-    >
-      <nav>
-        <ul>
-          <li :class="$route.path === '/' ? 'selected' : ''">
-            <router-link to="/">Home</router-link>
-          </li>
-          <li :class="isActive('/live')">
-            <router-link to="/live">Live</router-link>
-          </li>
-          <li :class="isActive('/schedule')">
-            <router-link to="/schedule">Schedule</router-link>
-          </li>
-          <li :class="isActive('/discord')">
-            <router-link to="/discord">Discord</router-link>
-          </li>
-          <li @click="toggleFullscreen" id="countdown-li">
-            <Countdown />
-          </li>
-          <li :class="isActive('/challenges')">
-            <router-link to="/challenges">Challenges</router-link>
-          </li>
-          <li :class="isActive('/activities')">
-            <router-link to="/activities">Activities</router-link>
-          </li>
-          <li :class="isActive('/rules')">
-            <router-link to="/rules">Rules</router-link>
-          </li>
-          <li :class="isActive('/faq')">
-            <router-link to="/faq">FAQ</router-link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <transition name="fade">
-        <router-view />
-      </transition>
-    </main>
+        <nav>
+          <ul>
+            <li :class="$route.path === '/' ? 'selected' : ''">
+              <router-link to="/">Home</router-link>
+            </li>
+            <li :class="isActive('/live')">
+              <router-link to="/live">Live</router-link>
+            </li>
+            <li :class="isActive('/schedule')">
+              <router-link to="/schedule">Schedule</router-link>
+            </li>
+            <li :class="isActive('/discord')">
+              <router-link to="/discord">Discord</router-link>
+            </li>
+            <li :class="isActive('/challenges')">
+              <router-link to="/challenges">Challenges</router-link>
+            </li>
+            <li :class="isActive('/activities')">
+              <router-link to="/activities">Activities</router-link>
+            </li>
+            <li :class="isActive('/rules')">
+              <router-link to="/rules">Rules</router-link>
+            </li>
+            <li :class="isActive('/faq')">
+              <router-link to="/faq">FAQ</router-link>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!--header for >720px-->
+      <header
+        id="header-nav-bar"
+        :class="[this.isFullscreen ? 'hidden' : '', 'hide-when-small']"
+      >
+        <nav>
+          <ul>
+            <li :class="$route.path === '/' ? 'selected' : ''">
+              <router-link to="/">Home</router-link>
+            </li>
+            <li :class="isActive('/live')">
+              <router-link to="/live">Live</router-link>
+            </li>
+            <li :class="isActive('/schedule')">
+              <router-link to="/schedule">Schedule</router-link>
+            </li>
+            <li :class="isActive('/discord')">
+              <router-link to="/discord">Discord</router-link>
+            </li>
+            <li @click="toggleFullscreen" id="countdown-li">
+              <Countdown />
+            </li>
+            <li :class="isActive('/challenges')">
+              <router-link to="/challenges">Challenges</router-link>
+            </li>
+            <li :class="isActive('/activities')">
+              <router-link to="/activities">Activities</router-link>
+            </li>
+            <li :class="isActive('/rules')">
+              <router-link to="/rules">Rules</router-link>
+            </li>
+            <li :class="isActive('/faq')">
+              <router-link to="/faq">FAQ</router-link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <transition name="fade">
+          <router-view />
+        </transition>
+      </main>
+    </div>
+    <disabled-message v-else />
+
+    <cookies />
   </div>
-  <disabled-message v-else />
 </template>
 
 <script>
@@ -107,6 +111,7 @@ import Config from '@/config'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
 import DisabledMessage from './components/DisabledMessage.vue'
+import Cookies from './components/Cookies.vue'
 
 export default {
   name: 'App',
@@ -176,6 +181,7 @@ export default {
     Countdown,
     Notification,
     DisabledMessage,
+    Cookies,
   },
 }
 </script>

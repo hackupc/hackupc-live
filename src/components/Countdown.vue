@@ -11,7 +11,7 @@
       ><span class="seconds">{{ seconds }}</span>
     </div>
     <div class="countdown-bg">
-      <img src="/assets/img/live/hackupc-logo.svg" alt="HackUPC logo" />
+      <img src="@/assets/img/live/hackupc-logo.svg" alt="HackUPC logo" />
     </div>
   </div>
 </template>
