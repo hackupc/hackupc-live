@@ -48,9 +48,6 @@
             <li :class="isActive('/rules')">
               <router-link to="/rules">Rules</router-link>
             </li>
-            <li :class="isActive('/faq')">
-              <router-link to="/faq">FAQ</router-link>
-            </li>
           </ul>
         </nav>
       </aside>
@@ -81,9 +78,6 @@
             </li>
             <li :class="isActive('/rules')">
               <router-link to="/rules">Rules</router-link>
-            </li>
-            <li :class="isActive('/faq')">
-              <router-link to="/faq">FAQ</router-link>
             </li>
           </ul>
         </nav>

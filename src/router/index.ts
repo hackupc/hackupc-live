@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '@/views/Home.vue'
-import FAQ from '@/views/FAQ.vue'
 import Activities from '@/views/Activities.vue'
 import Challenges from '@/views/Challenges.vue'
 import Schedule from '@/views/Schedule.vue'
@@ -16,11 +15,6 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home,
-  },
-  {
-    path: '/faq',
-    name: 'FAQ',
-    component: FAQ,
   },
   {
     path: '/activities',

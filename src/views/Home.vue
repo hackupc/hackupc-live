@@ -3,11 +3,15 @@
     <div class="container">
       <div class="panel">
         <h1>Important information</h1>
-        <p style="text-align: center; margin-bottom: 15px; margin-top: 15px">
-          Remember that all the hours in the schedule are in Barcelona time (GMT
-          +1)
-        </p>
+
         <div>
+          <p style="margin: 15px 0">
+            <b>
+              The projects must be posted on Devpost before Sunday at 12:00.
+            </b>
+            If you don't do it, you won't have access to the prices nor ECTS
+            credits.
+          </p>
           <div>
             <h3 class="text-centered margin-bottom">Links</h3>
           </div>
@@ -30,10 +34,6 @@
               >Devpost</a
             >
           </div>
-          <p>
-            <b>FIB Students!</b> Remember that to get the credits it's mandatory
-            to upload the project to Devpost!
-          </p>
         </div>
       </div>
       <div class="panel" style="align-self: flex-start">
@@ -108,6 +108,9 @@
             ></a>
           </div>
         </div>
+      </div>
+      <div class="panel large">
+        <h1 class="activity-title">DISCORD</h1>
       </div>
       <div class="panel large">
         <h1 style="text-transform: uppercase">BitsBot Commands</h1>
