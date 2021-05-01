@@ -296,7 +296,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -310,5 +310,21 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.prizes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px 0;
+
+  div {
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      font-size: 2rem;
+      color: #aa8e25;
+    }
+  }
 }
 </style>

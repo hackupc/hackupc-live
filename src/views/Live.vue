@@ -143,4 +143,14 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container-live {
+  display: flex;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  justify-content: center;
+  overflow: auto;
+}
+</style>

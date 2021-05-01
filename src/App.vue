@@ -121,16 +121,14 @@
       </transition>
     </main>
   </div>
-  <main v-else class="disabled-msg">
-    Sorry, live is not available yet. <br />
-    Come back later.
-  </main>
+  <disabled-message v-else />
 </template>
 
 <script>
 import Config from '@/config'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
+import DisabledMessage from './components/DisabledMessage.vue'
 
 export default {
   name: 'App',
@@ -199,34 +197,9 @@ export default {
   components: {
     Countdown,
     Notification,
+    DisabledMessage,
   },
 }
 </script>
 
-<style lang="scss">
-@import './assets/scss/live';
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.25s;
-}
-.fade-enter-active {
-  transition-delay: 0.25s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-.disabled-msg {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
-  font-weight: bolder;
-  text-shadow: 0 0 1rem rgb(255, 255, 255);
-}
-</style>
+<style lang="scss" scoped></style>

@@ -295,7 +295,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
