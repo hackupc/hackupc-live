@@ -68,11 +68,8 @@ yarn serve
 
 Use `yarn build` to compile all dist directory. The files will be compiled to `/dist/`.
 
-Use `serve -s dist` to just serve `/dist` at [https://localhost:5000](https://localhost:5000).
-
 ```sh
 yarn build
-serve -s dist
 ```
 
 ### Deploy to production
