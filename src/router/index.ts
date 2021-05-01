@@ -4,7 +4,6 @@ import Home from '@/views/Home.vue'
 import FAQ from '@/views/FAQ.vue'
 import Activities from '@/views/Activities.vue'
 import Challenges from '@/views/Challenges.vue'
-import Discord from '@/views/Discord.vue'
 import Schedule from '@/views/Schedule.vue'
 import Live from '@/views/Live.vue'
 import Rules from '@/views/Rules.vue'
@@ -47,11 +46,6 @@ const routes: Array<RouteConfig> = [
     path: '/fullscreen',
     name: 'FullScreen',
     component: FullScreen,
-  },
-  {
-    path: '/discord',
-    name: 'Discord',
-    component: Discord,
   },
   {
     path: '/rules',

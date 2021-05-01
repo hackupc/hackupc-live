@@ -39,9 +39,6 @@
             <li :class="isActive('/schedule')">
               <router-link to="/schedule">Schedule</router-link>
             </li>
-            <li :class="isActive('/discord')">
-              <router-link to="/discord">Discord</router-link>
-            </li>
             <li :class="isActive('/challenges')">
               <router-link to="/challenges">Challenges</router-link>
             </li>
@@ -72,9 +69,6 @@
             </li>
             <li :class="isActive('/schedule')">
               <router-link to="/schedule">Schedule</router-link>
-            </li>
-            <li :class="isActive('/discord')">
-              <router-link to="/discord">Discord</router-link>
             </li>
             <li @click="toggleFullscreen" id="countdown-li">
               <Countdown />
