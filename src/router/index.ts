@@ -15,67 +15,67 @@ import FullScreen from '@/views/FullScreen.vue'
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
-	{
-		path: '/',
-		name: 'Home',
-		component: Home,
-	},
-	{
-		path: '/faq',
-		name: 'FAQ',
-		component: FAQ,
-	},
-	{
-		path: '/activities',
-		name: 'Activities',
-		component: Activities,
-	},
-	{
-		path: '/challenges',
-		name: 'challenges',
-		component: Challenges,
-	},
-	{
-		path: '/schedule',
-		name: 'Schedule',
-		component: Schedule,
-	},
-	{
-		path: '/live',
-		name: 'Live',
-		component: Live,
-	},
-	{
-		path: '/fullscreen',
-		name: 'FullScreen',
-		component: FullScreen,
-	},
-	{
-		path: '/donations',
-		name: 'Donations',
-		component: Donations,
-	},
-	{
-		path: '/discord',
-		name: 'Discord',
-		component: Discord,
-	},
-	{
-		path: '/judging',
-		name: 'Judging',
-		component: Judging,
-	},
-	{
-		path: '/rules',
-		name: 'Rules',
-		component: Rules,
-	},
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ,
+  },
+  {
+    path: '/activities',
+    name: 'Activities',
+    component: Activities,
+  },
+  {
+    path: '/challenges',
+    name: 'challenges',
+    component: Challenges,
+  },
+  {
+    path: '/schedule',
+    name: 'Schedule',
+    component: Schedule,
+  },
+  {
+    path: '/live',
+    name: 'Live',
+    component: Live,
+  },
+  {
+    path: '/fullscreen',
+    name: 'FullScreen',
+    component: FullScreen,
+  },
+  {
+    path: '/donations',
+    name: 'Donations',
+    component: Donations,
+  },
+  {
+    path: '/discord',
+    name: 'Discord',
+    component: Discord,
+  },
+  {
+    path: '/judging',
+    name: 'Judging',
+    component: Judging,
+  },
+  {
+    path: '/rules',
+    name: 'Rules',
+    component: Rules,
+  },
 ]
 
 const router = new VueRouter({
-	mode: 'history',
-	base: process.env.BASE_URL,
-	routes,
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
 })
 
 export default router
