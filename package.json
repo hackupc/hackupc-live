@@ -50,5 +50,6 @@
       "consistent-return": 0,
       "prefer-destructuring": 0
     }
-  }
+  },
+  "$schema": "https://json.schemastore.org/package"
 }
