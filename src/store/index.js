@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
 import Config from '@/config';
 
 Vue.use(Vuex);
@@ -30,7 +29,7 @@ export default new Vuex.Store({
       currentTime: Date.now(),
       schedule: Config.schedule,
    },
-   getters: { 
+   getters: {
       countdownStart: (state) => {
          return dateStringToSeconds(state.schedule.countdownStart) + Config.baseTimeOffset;
       },
@@ -74,35 +73,36 @@ export default new Vuex.Store({
         commit('updateSubscribed', subscribed)
       },
       getSchedule({ commit }, cb) {
-         axios.get('/data/schedule.json?date=' + Date.now())
-         .then((response) => {
-            for (let i = 0; i < response.data.days.length; ++i) {
-               const startDateTimestamp = getDateTimestamp(response.data.days[i].date) + Config.baseTimeOffset;
-               response.data.days[i]["startTmsp"] = startDateTimestamp;
-               response.data.days[i]["endTmsp"] = startDateTimestamp + 24 * 60 * 60;
-               for (let j = 0; j < response.data.days[i].events.length; ++j) {
-                  const startHourTimestamp = startDateTimestamp + getHourTimestamp(response.data.days[i].events[j].startHour);
-                  response.data.days[i].events[j]["startTmsp"] = startHourTimestamp;
-                  if (!response.data.days[i].events[j].endHour) {
-                     response.data.days[i].events[j]["endTmsp"] = startHourTimestamp;
-                  } else {
-                     response.data.days[i].events[j]["endTmsp"] = startDateTimestamp + getHourTimestamp(response.data.days[i].events[j].endHour)
-                  }
-                  const event = response.data.days[i].events[j];
-                  response.data.days[i].events[j].title = (event.talk ? '[Talk] ' : '') + (event.author ? (event.author + ': ') : '') + (event.title || '')
-               }
-            }
-            if ('version' in this.state.schedule && this.state.schedule.version !== response.data.version) {
-               console.log('Schedule updated with message: ' + response.data.message);
-               cb(response.data.message);
-            } else {
-               console.log('Schedule up to date');
-            }
-            commit("updateSchedule", response.data);
-         })
-         .catch((error) => {
-            console.log(error);
-         });
+         fetch('/data/schedule.json?date=' + Date.now())
+					.then((response) => response.json())
+					.then((data) => {
+							for (let i = 0; i < data.days.length; ++i) {
+								const startDateTimestamp = getDateTimestamp(data.days[i].date) + Config.baseTimeOffset;
+								data.days[i]["startTmsp"] = startDateTimestamp;
+								data.days[i]["endTmsp"] = startDateTimestamp + 24 * 60 * 60;
+								for (let j = 0; j < data.days[i].events.length; ++j) {
+										const startHourTimestamp = startDateTimestamp + getHourTimestamp(data.days[i].events[j].startHour);
+										data.days[i].events[j]["startTmsp"] = startHourTimestamp;
+										if (!data.days[i].events[j].endHour) {
+											data.days[i].events[j]["endTmsp"] = startHourTimestamp;
+										} else {
+											data.days[i].events[j]["endTmsp"] = startDateTimestamp + getHourTimestamp(data.days[i].events[j].endHour)
+										}
+										const event = data.days[i].events[j];
+										data.days[i].events[j].title = (event.talk ? '[Talk] ' : '') + (event.author ? (event.author + ': ') : '') + (event.title || '')
+								}
+							}
+							if ('version' in this.state.schedule && this.state.schedule.version !== data.version) {
+								console.log('Schedule updated with message: ' + data.message);
+								cb(data.message);
+							} else {
+								console.log('Schedule up to date');
+							}
+							commit("updateSchedule", data);
+					})
+					.catch((error) => {
+							console.log(error);
+					});
      },
    },
 });
