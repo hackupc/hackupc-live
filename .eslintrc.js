@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 /**
  * @type {import("eslint").Linter.Config}
  */
@@ -19,7 +17,7 @@ module.exports = {
     ecmaVersion: 2021,
   },
   rules: {
-    'prettier/prettier': ['error', fs.readFileSync('prettier.config.js')],
+    'prettier/prettier': ['error', require('./prettier.config.js')],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
