@@ -38,14 +38,6 @@
           <li :class="isActive('/schedule')">
             <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li :class="isActive('/donations')">
-            <a
-              href="https://www.fib.upc.edu/la-marato/donatiu.html"
-              target="_blank"
-              class="external-link"
-              >Donations</a
-            >
-          </li>
           <li :class="isActive('/discord')">
             <router-link to="/discord">Discord</router-link>
           </li>
@@ -60,9 +52,6 @@
           </li>
           <li :class="isActive('/faq')">
             <router-link to="/faq">FAQ</router-link>
-          </li>
-          <li :class="isActive('/judging')">
-            <router-link to="/judging">Judging</router-link>
           </li>
         </ul>
       </nav>
@@ -83,14 +72,6 @@
           <li :class="isActive('/schedule')">
             <router-link to="/schedule">Schedule</router-link>
           </li>
-          <li :class="isActive('/donations')">
-            <a
-              href="https://www.fib.upc.edu/la-marato/donatiu.html"
-              target="_blank"
-              class="external-link"
-              >Donations</a
-            >
-          </li>
           <li :class="isActive('/discord')">
             <router-link to="/discord">Discord</router-link>
           </li>
@@ -108,9 +89,6 @@
           </li>
           <li :class="isActive('/faq')">
             <router-link to="/faq">FAQ</router-link>
-          </li>
-          <li :class="isActive('/judging')">
-            <router-link to="/judging">Judging</router-link>
           </li>
         </ul>
       </nav>
