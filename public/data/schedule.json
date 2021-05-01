@@ -1,201 +1,201 @@
 {
-	"version": 0,
-	"message": "",
-	"baseTimeOffset":"-120",
-	"countdownStart":"14/05/2021 20:00",
-	"days": [
-		{
-			"name": "Friday",
-			"date":"14/05/2021",
-			"events": [
-				{
-					"id": "0",
-					"title": "Check In",
-					"startHour": "17:00",
-					"endHour": "18:00",
-					"description": "Check In to Discord Server"
-				},
-				{
-					"id": "1",
-					"emoji": "🔗",
-					"title": "Opening Ceremony",
-					"startHour": "18:00",
-					"endHour": "19:30",
-					"description": "Opening"
-				},
-				{
-					"id": "2",
-					"title": "Hacking Start!!!",
-					"startHour": "19:00",
-					"description": "The hacking time starts"
-				},
-				{
-					"id": "3",
-					"title": "Team Building",
-					"startHour": "19:30",
-					"endHour": "20:00",
-					"description": "Are you looking for a team o for teammates? Join us on the Team Building activity"
-				},
-				{
-					"id": "4",
-					"title": "Dinner",
-					"startHour": "20:00",
-					"description": "Remember to eat something meanwhile you are attending the talks!!"
-				},
-				{
-					"id": "5",
-					"emoji": "🔗",
-					"title": "Avoiding unnecessary testing on boys and girls suspected of being infected with COVID-19. Refining the diagnosis.",
-					"startHour": "20:00",
-					"endHour": "20:30",
-					"description": "Children with COVID-19 have clinical manifestations that are often difficult to differentiate from those of other viral infections that affect the respiratory system, such as the flu. Through clinical data collected by more than 120 paediatricians in Catalonia we are seeking to identify which symptoms can predict that a child has COVID and which of them have not been connected to this disease. With your collaboration, we will be able to save many unnecessary tests on those boys and girls and to generate an algorithm or clinical score that allows us to identify properly each of them. We can make it! We are convinced that you will help paediatricians in Catalonia and around the world to work better in the future."
-				},
-				{
-					"id": "6",
-					"emoji": "🔗",
-					"title": "File processing and machine learning for audio classification using Python",
-					"startHour": "20:45",
-					"endHour": "21:45",
-					"description": "In this talk we will show and discuss tools and libraries to load and process audio files in Python. Once the files are loaded, we will show how to build machine learning models and how to evaluate the performance of the trained model using internal and external validation. In particular, we will illustrate the complete process using cough and non-cough audio files, import metadata to the model, and show the performance of the trained model when evaluated with new data. Finally, we we will show how to build a chatbot in Telegram that can be used to obtain information from the user and include this knowledge to the model."
-				},
-				{
-					"id": "7",
-					"emoji": "🔗",
-					"title": "Language technologies and artificial intelligence applied to health and medical data: perspectives, trends and resources",
-					"startHour": "22:00",
-					"endHour": "22:15",
-					"description": "When processing text, it is often not enough to simply extract the events found in the text. There is meaning hidden in plain view in the sentence, acting as modifiers of the information found. Recognising what events are negated or uncertain can radically change everything, and in clinical texts it can be critical for decision making and diferential diagnosis. Also, the presenter will point you to a youtube channel with a few more talks that you can look at and ask for any doubt you have."
-				},
-				{
-					"id": "8",
-					"title": "Let's play! Stop",
-					"startHour": "23:00",
-					"endHour": "23:30",
-					"description": "Put your vocabulary to the test playing STOP! Find out how many cities starting with the letter A you can think of in record time. And/or, how many fruits beginning with the letter K can you list? Show your skills by defeating your opponents in this fun game!"
-				},
-				{
-					"id": "9",
-					"title": "Good night Hackers!",
-					"startHour": "23:30",
-					"description": "See you tomorrow"
-				}
-			]
-		},
-		{
-			"name":"Saturday",
-			"date":"15/05/2021",
-			"events": [
-				{
-					"id": "10",
-					"title": "Good Morning Hackers!",
-					"startHour": "09:00",
-					"description": "Time to continue our hacking time!"
-				},
-				{
-					"id": "11",
-					"title": "Breakfast",
-					"startHour": "09:00",
-					"description": "Remember to eat something! Breakfast is the most important meal in of the day"
-				},
-				{
-					"id": "12",
-					"emoji": "🔗",
-					"title": "Applications of Digital Contact Tracing",
-					"startHour": "10:00",
-					"endHour": "11:00",
-					"description": "The talk will be about the usefulness of DCT applications to fight the COVID-19 pandemic, which are the technologies used and aspects you should take care about privacy, security and distance measures. We will also talk about protocols DP3T/GAEN, ROBERT, IDPT, DESIRE, and which is the role of Google and Apple. Finally, we will talk about how to improve the effectiveness of these systems."
-				},
-				{
-					"id": "13",
-					"title": "COVID-19 and empathy: being in their shoes",
-					"startHour": "11:00",
-					"endHour": "13:00",
-					"description": "Would you like to see through the eyes of a health professional working in the ICU or a patient about to be intubated due to COVID-19? Do you want to know how they feel and what they think? “COVID-19 and empathy: being in their shoes” is an activity that will allow you to get to know some of the situations that ICU nurses experience in their everyday lives and which some patients have to face. The aim of the activity is to promote empathy towards those whom COVID-19 touches personally in order to be able to see the world of COVID-19 from another perspective and to be able to develop technological tools focused on those people. The activity consists of viewing two videos, which are very short and are recorded in real hospital settings. One of the videos will allow you to see through the eyes of a nurse and the other one through those of a patient. Once the visualisation is over, you will need to fill in a short questionnaire that aims to encourage reflection and to make us question the ability to connect with the other and its impact. Are you ready to go into an ICU? If so, go ahead."
-				},
-				{
-					"id": "14",
-					"title": "Lunch",
-					"startHour": "14:00",
-					"description": "Remember to have luch and move a bit from the computer!"
-				},
-				{
-					"id": "15",
-					"title": "Let's Play! Pinturillo",
-					"startHour": "15:00",
-					"endHour": "15:30",
-					"description": "Are you becoming the next Picasso? Find it out with us! Join the battle of the “pinturillo” and have a good time. If you don't know what the “pinturillo” is ... it consists of being the fastest when guessing what your opponents are drawing before the time is over. Just try it out, fun is guaranteed."
-				},
-				{
-					"id": "16",
-					"title": "Dinner",
-					"startHour": "21:00",
-					"description": "We don't know if it's time to have dinner at your house, but we remember you that it's important to eat!"
-				},
-				{
-					"id": "17",
-					"title": "Let's play! Among us!",
-					"startHour": "23:00",
-					"endHour": "23:30",
-					"description": "Choose your colour and favourite hat and get ready for a game full of emotions! Go do your tasks and find the impostor before he finds you. Will you be able to save your crewmates? Or will you be the one in the vents..."
-				},
-				{
-					"id": "18",
-					"title": "Good night Hackers!",
-					"startHour": "23:30",
-					"description": "See you tomorrow"
-				}
-			]
-		},
-		{
-			"name":"Sunday",
-			"date":"16/05/2021",
-			"events": [
-				{
-					"id": "19",
-					"title": "Good Morning Hackers!",
-					"startHour": "09:00",
-					"description": "Time to continue our hacking time!"
-				},
-				{
-					"id": "20",
-					"title": "Breakfast",
-					"startHour": "09:00",
-					"description": "Remember to eat something! Breakfast is the most important meal in of the day"
-				},
-				{
-					"id": "21",
-					"title": "Hacking Ends",
-					"startHour": "12:00",
-					"description": "Remember to post your project on devpost or you don't be able to acces the prices!"
-				},
-				{
-					"id": "22",
-					"title": "Demo time",
-					"startHour": "12:30",
-					"endHour": "14:30",
-					"description": "Go to your challenge demo channel and present the awesome project you have made!"
-				},
-				{
-					"id": "23",
-					"title": "Lunch",
-					"startHour": "14:30",
-					"description": "Remember to have luch and move a bit before the closing ceremony starts!"
-				},
-				{
-					"id": "24",
-					"emoji": "🔗",
-					"title": "Closing ceremony",
-					"startHour": "15:30",
-					"endHour": "16:30",
-					"description": "Winners announcements and thanks for all"
-				},
-				{
-					"id": "25",
-					"title": "GoodBye",
-					"startHour": "16:30",
-					"description": "Thanks a lot to everyone to participate!"
-				}
-			]
-		}
-	]
+  "version": 0,
+  "message": "",
+  "baseTimeOffset":"-120",
+  "countdownStart":"14/05/2021 20:00",
+  "days": [
+    {
+      "name": "Friday",
+      "date":"14/05/2021",
+      "events": [
+        {
+          "id": "0",
+          "title": "Check In",
+          "startHour": "17:00",
+          "endHour": "18:00",
+          "description": "Check In to Discord Server"
+        },
+        {
+          "id": "1",
+          "emoji": "🔗",
+          "title": "Opening Ceremony",
+          "startHour": "18:00",
+          "endHour": "19:30",
+          "description": "Opening"
+        },
+        {
+          "id": "2",
+          "title": "Hacking Start!!!",
+          "startHour": "19:00",
+          "description": "The hacking time starts"
+        },
+        {
+          "id": "3",
+          "title": "Team Building",
+          "startHour": "19:30",
+          "endHour": "20:00",
+          "description": "Are you looking for a team o for teammates? Join us on the Team Building activity"
+        },
+        {
+          "id": "4",
+          "title": "Dinner",
+          "startHour": "20:00",
+          "description": "Remember to eat something meanwhile you are attending the talks!!"
+        },
+        {
+          "id": "5",
+          "emoji": "🔗",
+          "title": "Avoiding unnecessary testing on boys and girls suspected of being infected with COVID-19. Refining the diagnosis.",
+          "startHour": "20:00",
+          "endHour": "20:30",
+          "description": "Children with COVID-19 have clinical manifestations that are often difficult to differentiate from those of other viral infections that affect the respiratory system, such as the flu. Through clinical data collected by more than 120 paediatricians in Catalonia we are seeking to identify which symptoms can predict that a child has COVID and which of them have not been connected to this disease. With your collaboration, we will be able to save many unnecessary tests on those boys and girls and to generate an algorithm or clinical score that allows us to identify properly each of them. We can make it! We are convinced that you will help paediatricians in Catalonia and around the world to work better in the future."
+        },
+        {
+          "id": "6",
+          "emoji": "🔗",
+          "title": "File processing and machine learning for audio classification using Python",
+          "startHour": "20:45",
+          "endHour": "21:45",
+          "description": "In this talk we will show and discuss tools and libraries to load and process audio files in Python. Once the files are loaded, we will show how to build machine learning models and how to evaluate the performance of the trained model using internal and external validation. In particular, we will illustrate the complete process using cough and non-cough audio files, import metadata to the model, and show the performance of the trained model when evaluated with new data. Finally, we we will show how to build a chatbot in Telegram that can be used to obtain information from the user and include this knowledge to the model."
+        },
+        {
+          "id": "7",
+          "emoji": "🔗",
+          "title": "Language technologies and artificial intelligence applied to health and medical data: perspectives, trends and resources",
+          "startHour": "22:00",
+          "endHour": "22:15",
+          "description": "When processing text, it is often not enough to simply extract the events found in the text. There is meaning hidden in plain view in the sentence, acting as modifiers of the information found. Recognising what events are negated or uncertain can radically change everything, and in clinical texts it can be critical for decision making and diferential diagnosis. Also, the presenter will point you to a youtube channel with a few more talks that you can look at and ask for any doubt you have."
+        },
+        {
+          "id": "8",
+          "title": "Let's play! Stop",
+          "startHour": "23:00",
+          "endHour": "23:30",
+          "description": "Put your vocabulary to the test playing STOP! Find out how many cities starting with the letter A you can think of in record time. And/or, how many fruits beginning with the letter K can you list? Show your skills by defeating your opponents in this fun game!"
+        },
+        {
+          "id": "9",
+          "title": "Good night Hackers!",
+          "startHour": "23:30",
+          "description": "See you tomorrow"
+        }
+      ]
+    },
+    {
+      "name":"Saturday",
+      "date":"15/05/2021",
+      "events": [
+        {
+          "id": "10",
+          "title": "Good Morning Hackers!",
+          "startHour": "09:00",
+          "description": "Time to continue our hacking time!"
+        },
+        {
+          "id": "11",
+          "title": "Breakfast",
+          "startHour": "09:00",
+          "description": "Remember to eat something! Breakfast is the most important meal in of the day"
+        },
+        {
+          "id": "12",
+          "emoji": "🔗",
+          "title": "Applications of Digital Contact Tracing",
+          "startHour": "10:00",
+          "endHour": "11:00",
+          "description": "The talk will be about the usefulness of DCT applications to fight the COVID-19 pandemic, which are the technologies used and aspects you should take care about privacy, security and distance measures. We will also talk about protocols DP3T/GAEN, ROBERT, IDPT, DESIRE, and which is the role of Google and Apple. Finally, we will talk about how to improve the effectiveness of these systems."
+        },
+        {
+          "id": "13",
+          "title": "COVID-19 and empathy: being in their shoes",
+          "startHour": "11:00",
+          "endHour": "13:00",
+          "description": "Would you like to see through the eyes of a health professional working in the ICU or a patient about to be intubated due to COVID-19? Do you want to know how they feel and what they think? “COVID-19 and empathy: being in their shoes” is an activity that will allow you to get to know some of the situations that ICU nurses experience in their everyday lives and which some patients have to face. The aim of the activity is to promote empathy towards those whom COVID-19 touches personally in order to be able to see the world of COVID-19 from another perspective and to be able to develop technological tools focused on those people. The activity consists of viewing two videos, which are very short and are recorded in real hospital settings. One of the videos will allow you to see through the eyes of a nurse and the other one through those of a patient. Once the visualisation is over, you will need to fill in a short questionnaire that aims to encourage reflection and to make us question the ability to connect with the other and its impact. Are you ready to go into an ICU? If so, go ahead."
+        },
+        {
+          "id": "14",
+          "title": "Lunch",
+          "startHour": "14:00",
+          "description": "Remember to have luch and move a bit from the computer!"
+        },
+        {
+          "id": "15",
+          "title": "Let's Play! Pinturillo",
+          "startHour": "15:00",
+          "endHour": "15:30",
+          "description": "Are you becoming the next Picasso? Find it out with us! Join the battle of the “pinturillo” and have a good time. If you don't know what the “pinturillo” is ... it consists of being the fastest when guessing what your opponents are drawing before the time is over. Just try it out, fun is guaranteed."
+        },
+        {
+          "id": "16",
+          "title": "Dinner",
+          "startHour": "21:00",
+          "description": "We don't know if it's time to have dinner at your house, but we remember you that it's important to eat!"
+        },
+        {
+          "id": "17",
+          "title": "Let's play! Among us!",
+          "startHour": "23:00",
+          "endHour": "23:30",
+          "description": "Choose your colour and favourite hat and get ready for a game full of emotions! Go do your tasks and find the impostor before he finds you. Will you be able to save your crewmates? Or will you be the one in the vents..."
+        },
+        {
+          "id": "18",
+          "title": "Good night Hackers!",
+          "startHour": "23:30",
+          "description": "See you tomorrow"
+        }
+      ]
+    },
+    {
+      "name":"Sunday",
+      "date":"16/05/2021",
+      "events": [
+        {
+          "id": "19",
+          "title": "Good Morning Hackers!",
+          "startHour": "09:00",
+          "description": "Time to continue our hacking time!"
+        },
+        {
+          "id": "20",
+          "title": "Breakfast",
+          "startHour": "09:00",
+          "description": "Remember to eat something! Breakfast is the most important meal in of the day"
+        },
+        {
+          "id": "21",
+          "title": "Hacking Ends",
+          "startHour": "12:00",
+          "description": "Remember to post your project on devpost or you don't be able to acces the prices!"
+        },
+        {
+          "id": "22",
+          "title": "Demo time",
+          "startHour": "12:30",
+          "endHour": "14:30",
+          "description": "Go to your challenge demo channel and present the awesome project you have made!"
+        },
+        {
+          "id": "23",
+          "title": "Lunch",
+          "startHour": "14:30",
+          "description": "Remember to have luch and move a bit before the closing ceremony starts!"
+        },
+        {
+          "id": "24",
+          "emoji": "🔗",
+          "title": "Closing ceremony",
+          "startHour": "15:30",
+          "endHour": "16:30",
+          "description": "Winners announcements and thanks for all"
+        },
+        {
+          "id": "25",
+          "title": "GoodBye",
+          "startHour": "16:30",
+          "description": "Thanks a lot to everyone to participate!"
+        }
+      ]
+    }
+  ]
 }
