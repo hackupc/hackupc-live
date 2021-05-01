@@ -11,8 +11,7 @@
 <script>
 export default {
   name: 'Donations',
-};
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

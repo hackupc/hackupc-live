@@ -5,26 +5,42 @@ import Config from '@/config';
 
 Vue.use(Vuex);
 
-function getDateTimestamp(date) {
-   var dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/;
-   var result = date.match(dateFormat);
-   return Date.UTC(result[3], result[2] - 1, result[1], result[5] || 0, result[6] || 0, result[7] || 0) / 1000;
+function getDateTimestamp(date: string): number {
+	var dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/;
+	var result = date.match(dateFormat)?.map(r => Number(r));
+	if(!result) throw new Error("Wrong date format");
+	return Date.UTC(
+		result[3],
+		result[2] - 1,
+		result[1],
+		result[5] || 0,
+		result[6] || 0,
+		result[7] || 0
+	) / 1000;
 }
 
-function getHourTimestamp(hour) {
-   var hp = hour.split(':');
+function getHourTimestamp(hour: string): number {
+   var hp = hour.split(':').map(h => Number(h));
    return hp[0] * 60 * 60 + hp[1] * 60;
 }
 
-function dateStringToSeconds(date) {
-   var dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/;
-   var result = date.match(dateFormat);
-   return Date.UTC(result[3], result[2] - 1, result[1], result[5] || 0, result[6] || 0, result[7] || 0) / 1000;
+function dateStringToSeconds(date: string): number {
+	var dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/;
+	var result = date.match(dateFormat)?.map(r => Number(r));
+	if (!result) throw new Error("Wrong date format");
+	return Date.UTC(
+		result[3],
+		result[2] - 1,
+		result[1],
+		result[5] || 0,
+		result[6] || 0,
+		result[7] || 0
+	) / 1000;
 }
 
 export default new Vuex.Store({
    state: {
-      subscribed: {},
+      subscribed: {} as Record<string, boolean>,
       realStartDate: new Date(),
       currentTime: Date.now(),
       schedule: Config.schedule,
@@ -43,7 +59,7 @@ export default new Vuex.Store({
       }
    },
    mutations: {
-      toggleSubscribe (state, value) {
+      toggleSubscribe (state, value: string) {
         if (value in state.subscribed) {
           state.subscribed[value] = !state.subscribed[value]
         } else {
