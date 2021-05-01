@@ -50,5 +50,5 @@
       "consistent-return": 0,
       "prefer-destructuring": 0
     }
-  },
+  }
 }
