@@ -80,7 +80,7 @@ export default {
     text-align: center;
     margin: 0;
     padding: 10px;
-    background-color: $buttonColor;
+    background-color: $primaryColor;
     color: #fff;
     // border-bottom: 1px solid #fff3;
   }
@@ -96,7 +96,7 @@ export default {
 
     thead {
       color: $contrastColor;
-      background-color: $buttonColor;
+      background-color: $primaryColor;
     }
 
     td,

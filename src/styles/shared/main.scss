@@ -2,8 +2,8 @@ body, html, main { height: 100%; }
 body, html {
   padding: 0;
   margin: 0;
-    background-color: #141C15;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141C15'/%3E%3Crect y='12' width='32' height='8' fill='%233F5082'/%3E%3C/svg%3E%0A");
+  background-color: #141C15;
+  background-image: url('~@/assets/bg.svg');
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center center;
