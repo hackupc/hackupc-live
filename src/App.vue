@@ -95,20 +95,20 @@
 </template>
 
 <script>
-import Config from '@/config'
+import config from '@/config'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
 import DisabledMessage from './components/DisabledMessage.vue'
 import Cookies from './components/Cookies.vue'
+import Vue from 'vue'
 
-export default {
-  name: 'App',
+export default Vue.extend({
   data: function () {
     return {
       isFullscreen: false,
       asideMenuClosed: true,
       asideMenuHidden: true,
-      disabled: Config.disabled,
+      disabled: config.disabled,
     }
   },
   methods: {
@@ -171,7 +171,7 @@ export default {
     DisabledMessage,
     Cookies,
   },
-}
+})
 </script>
 
 <style lang="scss" scoped></style>

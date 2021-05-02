@@ -12,14 +12,14 @@
 <script>
 import Countdown from '@/components/Countdown.vue'
 import Live from '@/views/Live.vue'
+import Vue from 'vue'
 
-export default {
-  name: 'FullScreen',
+export default Vue.extend({
   components: {
     Countdown,
     Live,
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

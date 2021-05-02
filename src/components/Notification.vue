@@ -11,11 +11,11 @@
   </div>
 </template>
 
-<script>
-import Config from '@/config'
+<script lang="ts">
+import Vue from 'vue'
+import config from '../config'
 
-export default {
-  name: 'Notification',
+export default Vue.extend({
   data: function () {
     return {
       askedSubscribeAll: false,
@@ -40,12 +40,15 @@ export default {
     },
   },
   methods: {
-    notify: function (msg, title, icon, cb) {
-      const ntitle = title || Config.notificationTitle
+    notify: function (
+      body: string,
+      title: string = config.notificationTitle,
+      icon: string = config.notificationIcon
+    ) {
       if (Notification.permission === 'granted') {
-        const notification = new Notification(ntitle, {
-          body: msg,
-          icon: icon || Config.notificationIcon,
+        const notification = new Notification(title, {
+          body,
+          icon,
         })
         setTimeout(() => {
           notification.close()
@@ -61,7 +64,7 @@ export default {
         console.warn('This browser does not support desktop notification')
       }
     },
-    subscribeAll: function (evt) {
+    subscribeAll: function () {
       for (const day of this.days) {
         for (const event of day.events) {
           if (!this.subscribed[event.id]) {
@@ -71,11 +74,11 @@ export default {
       }
       this.toggleAskedSubscribeAll()
     },
-    toggleAskedSubscribeAll: function (event) {
+    toggleAskedSubscribeAll: function () {
       window.localStorage.setItem('notifications', '1')
-      this.askedSubscribeAll = 1
+      this.askedSubscribeAll = true
     },
-    getEvent: function (id) {
+    getEvent: function (id: string) {
       for (const day of this.days) {
         for (const event of day.events) {
           if (event.id.toString() === id.toString()) return event
@@ -83,7 +86,7 @@ export default {
       }
       return null
     },
-    lookForUpcoming: function (id) {
+    lookForUpcoming: function () {
       Object.keys(this.subscribed).forEach((eventId) => {
         if (this.subscribed[eventId]) {
           const event = this.getEvent(eventId)
@@ -103,12 +106,10 @@ export default {
     this.initPermissions()
     window.setInterval(this.lookForUpcoming, 1000)
     window.setInterval(() => {
-      this.$store.dispatch('getSchedule', (message) => {
-        this.notify(message, 'Schedule has changed!')
-      })
-    }, 5000)
+      this.$store.dispatch('getSchedule')
+    }, 1 * 60 * 1000) // 1 minute
   },
-}
+})
 </script>
 
 <style lang="scss" scoped></style>

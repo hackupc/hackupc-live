@@ -1,29 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Config from '@/config'
+import config from '@/config'
+import {
+  parseSchedule,
+  Schedule,
+  getLattestSchedule,
+} from '../services/schedule'
+import schedule from '../../public/data/schedule.json'
 
 Vue.use(Vuex)
-
-function getDateTimestamp(date: string): number {
-  const dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
-  const result = date.match(dateFormat)?.map((r) => Number(r))
-  if (!result) throw new Error('Wrong date format')
-  return (
-    Date.UTC(
-      result[3],
-      result[2] - 1,
-      result[1],
-      result[5] || 0,
-      result[6] || 0,
-      result[7] || 0
-    ) / 1000
-  )
-}
-
-function getHourTimestamp(hour: string): number {
-  const hp = hour.split(':').map((h) => Number(h))
-  return hp[0] * 60 * 60 + hp[1] * 60
-}
 
 function dateStringToSeconds(date: string): number {
   const dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
@@ -46,17 +31,17 @@ export default new Vuex.Store({
     subscribed: {} as Record<string, boolean>,
     realStartDate: new Date(),
     currentTime: Date.now(),
-    schedule: Config.schedule,
+    schedule: parseSchedule(schedule),
   },
   getters: {
     countdownStart: (state) => {
       return (
         dateStringToSeconds(state.schedule.countdownStart) +
-        Config.baseTimeOffset
+        state.schedule.baseTimeOffset
       )
     },
     currentTime: (state) => {
-      const fakeTime = Config.fakeTime
+      const fakeTime = config.fakeTime
       if (fakeTime) {
         return (
           (fakeTime.getTime() +
@@ -78,13 +63,13 @@ export default new Vuex.Store({
       }
       window.localStorage['subscribed'] = JSON.stringify(state.subscribed)
     },
-    updateSchedule(state, value) {
+    updateSchedule(state, value: Schedule) {
       state.schedule = value
     },
-    updateSubscribed(state, value) {
+    updateSubscribed(state, value: Record<string, boolean>) {
       state.subscribed = value
     },
-    updateCurrentTime(state, value) {
+    updateCurrentTime(state, value: number) {
       state.currentTime = value
     },
   },
@@ -99,43 +84,15 @@ export default new Vuex.Store({
       const subscribed = JSON.parse(window.localStorage['subscribed'] || '{}')
       commit('updateSubscribed', subscribed)
     },
-    async getSchedule({ commit }, cb) {
-      const response = await fetch('/data/schedule.json?date=' + Date.now())
-      const data = await response.json()
-      for (let i = 0; i < data.days.length; ++i) {
-        const startDateTimestamp =
-          getDateTimestamp(data.days[i].date) + Config.baseTimeOffset
-        data.days[i]['startTmsp'] = startDateTimestamp
-        data.days[i]['endTmsp'] = startDateTimestamp + 24 * 60 * 60
-        for (let j = 0; j < data.days[i].events.length; ++j) {
-          const startHourTimestamp =
-            startDateTimestamp +
-            getHourTimestamp(data.days[i].events[j].startHour)
-          data.days[i].events[j]['startTmsp'] = startHourTimestamp
-          if (!data.days[i].events[j].endHour) {
-            data.days[i].events[j]['endTmsp'] = startHourTimestamp
-          } else {
-            data.days[i].events[j]['endTmsp'] =
-              startDateTimestamp +
-              getHourTimestamp(data.days[i].events[j].endHour)
-          }
-          const event = data.days[i].events[j]
-          data.days[i].events[j].title =
-            (event.talk ? '[Talk] ' : '') +
-            (event.author ? event.author + ': ' : '') +
-            (event.title || '')
-        }
-      }
-      if (
-        'version' in this.state.schedule &&
-        this.state.schedule.version !== data.version
-      ) {
-        console.log('Schedule updated with message: ' + data.message)
-        cb(data.message)
+    async getSchedule({ commit }) {
+      const schedule: Schedule = await getLattestSchedule()
+
+      if (this.state.schedule.version !== schedule.version) {
+        console.info('Schedule updated with message: ' + schedule.message)
+        commit('updateSchedule', schedule)
       } else {
-        console.log('Schedule up to date')
+        console.info('Schedule up to date')
       }
-      commit('updateSchedule', data)
     },
   },
 })

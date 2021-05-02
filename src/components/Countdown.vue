@@ -1,14 +1,14 @@
 <template>
   <div
     @click="leaveFullscreen"
-    :id="this.isFullscreen ? 'countdown-full' : ''"
+    :id="fullscreen ? 'countdown-full' : ''"
     class="countdown"
-    :class="this.isFullscreen ? 'hide-when-small' : ''"
+    :class="{ 'hide-when-small': fullscreen }"
   >
     <div class="countdown-time">
-      <span class="hours">{{ hours }}</span
-      >:<span class="minutes">{{ minutes }}</span
-      ><span class="seconds">{{ seconds }}</span>
+      <span class="hours">{{ hoursFormatted }}</span
+      >:<span class="minutes">{{ minutesFormatted }}</span
+      ><span class="seconds">{{ secondsFormatted }}</span>
     </div>
     <div class="countdown-bg">
       <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />
@@ -17,17 +17,17 @@
 </template>
 
 <script>
-import Config from '@/config'
+import Vue from 'vue'
+import config from '../config'
 
-export default {
-  name: 'Countdown',
+export default Vue.extend({
   props: ['fullscreen'],
   data: function () {
     return {
-      hours: '00',
-      minutes: '00',
-      seconds: '00',
-      isFullscreen: this.fullscreen,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      interval: undefined,
     }
   },
   computed: {
@@ -37,28 +37,37 @@ export default {
     currentTime() {
       return this.$store.getters.currentTime
     },
+    hoursFormatted() {
+      return this.addLeadingZero(this.hours)
+    },
+    minutesFormatted() {
+      return this.addLeadingZero(this.minutes)
+    },
+    secondsFormatted() {
+      return this.addLeadingZero(this.seconds)
+    },
   },
   methods: {
     leaveFullscreen: function () {
       // Altought not the best way, this is used to call the first Vue component, however since it is not the $root one, we need to call it's only child (App component)
-      if (this.isFullscreen) {
+      if (this.fullscreen) {
         this.$root.$children[0].toggleFullscreen()
       }
     },
     updateCountdown: function () {
-      const HACKATHON_DURATION = Config.hackathon_duration_hours * 60 * 60
+      const HACKATHON_DURATION = config.hackathon_duration_hours * 60 * 60
       const elapsed = this.currentTime - this.countdownStart
       const current = HACKATHON_DURATION - elapsed
       if (current > 0 && current < HACKATHON_DURATION) {
-        this.seconds = parseInt(current % 60, 10)
-        this.minutes = parseInt((current / 60) % 60, 10)
-        this.hours = parseInt(current / (60 * 60), 10)
+        this.seconds = current % 60
+        this.minutes = (current / 60) % 60
+        this.hours = current / (60 * 60)
       } else if (current > HACKATHON_DURATION) {
-        this.hours = Config.hackathon_duration_hours
+        this.hours = config.hackathon_duration_hours
       }
-      this.hours = ('0' + this.hours).slice(-2)
-      this.minutes = ('0' + this.minutes).slice(-2)
-      this.seconds = ('0' + this.seconds).slice(-2)
+    },
+    addLeadingZero: function (n) {
+      return ('0' + n).slice(-2)
     },
   },
   mounted: function () {
@@ -68,7 +77,7 @@ export default {
   beforeDestroy() {
     clearInterval(this.interval)
   },
-}
+})
 </script>
 
 <style lang="scss" scoped></style>

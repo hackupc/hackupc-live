@@ -1,13 +1,9 @@
-import schedule from '../public/data/schedule.json'
-
 interface Config {
-  fakeTime?: Date
-  disabled: boolean
-  notificationTitle: string
-  notificationIcon: string
-  baseTimeOffset: number
-  hackathon_duration_hours: number
-  schedule: typeof schedule
+  readonly fakeTime?: Date
+  readonly disabled: boolean
+  readonly notificationTitle: string
+  readonly notificationIcon: string
+  readonly hackathon_duration_hours: number
 }
 
 const config: Config = {
@@ -16,9 +12,7 @@ const config: Config = {
   disabled: false,
   notificationTitle: 'HackUPC 2021',
   notificationIcon: 'favicon.ico',
-  baseTimeOffset: -60 * 60,
   hackathon_duration_hours: 41,
-  schedule: schedule,
 }
 
 export default config

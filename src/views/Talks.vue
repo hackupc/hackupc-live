@@ -91,9 +91,9 @@
 </template>
 
 <script>
-export default {
-  name: 'Talks',
-}
+import Vue from 'vue'
+
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>

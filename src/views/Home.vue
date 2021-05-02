@@ -250,9 +250,9 @@
 </template>
 
 <script>
-export default {
-  name: 'Home',
-}
+import Vue from 'vue'
+
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped></style>

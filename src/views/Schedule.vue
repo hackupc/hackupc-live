@@ -41,8 +41,9 @@
 </template>
 
 <script>
-export default {
-  name: 'Schedule',
+import Vue from 'vue'
+
+export default Vue.extend({
   computed: {
     days() {
       return this.$store.state.schedule.days
@@ -56,7 +57,7 @@ export default {
       return startTmsp < this.currentTime ? 'happened' : ''
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

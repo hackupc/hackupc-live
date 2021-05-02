@@ -265,9 +265,9 @@
 </template>
 
 <script>
-export default {
-  name: 'Challenges',
-}
+import Vue from 'vue'
+
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>
