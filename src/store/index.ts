@@ -7,24 +7,9 @@ import {
   getLattestSchedule,
 } from '../services/schedule'
 import schedule from '../../public/data/schedule.json'
+import { dateStringToSeconds } from '@/services/dates'
 
 Vue.use(Vuex)
-
-function dateStringToSeconds(date: string): number {
-  const dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
-  const result = date.match(dateFormat)?.map((r) => Number(r))
-  if (!result) throw new Error('Wrong date format')
-  return (
-    Date.UTC(
-      result[3],
-      result[2] - 1,
-      result[1],
-      result[5] || 0,
-      result[6] || 0,
-      result[7] || 0
-    ) / 1000
-  )
-}
 
 export default new Vuex.Store({
   state: {
