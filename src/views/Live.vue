@@ -15,17 +15,15 @@
             </li>
             <li
               v-if="event.type == 'item'"
-              :class="event.class"
+              :class="{ happening: event.isHappening }"
               :key="event.name"
             >
-              <i
-                class="fab fa-arrow-right"
-                v-if="event.class === 'happening'"
-              ></i>
+              <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
               <template v-for="hourEvent in event.hourEvents">
                 <div
-                  @click="toggleSubscribe"
-                  :class="[hourEvent.subscribed, 'event']"
+                  @click="toggleSubscribe(hourEvent.id)"
+                  class="event"
+                  :class="{ subscribed: subscribed[hourEvent.id] }"
                   :key="hourEvent.id"
                   :data-event-id="hourEvent.id"
                 >
@@ -35,7 +33,7 @@
                   </div>
                   <div class="title">
                     {{ hourEvent.title }}
-                    <i v-if="hourEvent.subscribed" class="fab fa-bell"></i>
+                    <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
                   </div>
                 </div>
               </template>
@@ -47,12 +45,42 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Live',
+<script lang="ts">
+import { ScheduleEvent } from '@/services/schedule'
+import Vue from 'vue'
+
+interface TimelineHourEvent {
+  type: string
+  id: ScheduleEvent['id']
+  startTmsp: number
+  endTmsp: number
+  startHour: number
+  endHour: number
+  locationId: string
+  title: string
+  isSubscribed: boolean
+}
+
+interface TimelineEventItem {
+  type: 'title'
+  name: string
+  startTmsp: number
+  endTmsp: number
+}
+
+interface TimelineEventTitle {
+  type: 'item'
+  startTmsp: number
+  endTmsp: number
+  isHappening: boolean
+  hourEvents: TimelineHourEvent[]
+}
+
+export default Vue.extend({
   data: function () {
     return {
-      events: [],
+      events: [] as (TimelineEventItem | TimelineEventTitle)[],
+      interval: undefined as number | undefined,
     }
   },
   computed: {
@@ -67,13 +95,12 @@ export default {
     },
   },
   methods: {
-    toggleSubscribe: function (event) {
-      const id = event.currentTarget.getAttribute('data-event-id')
+    toggleSubscribe: function (id: ScheduleEvent['id']) {
       this.$store.dispatch('toggleSubscribe', id)
-      event.currentTarget.classList.toggle('subscribed')
     },
     updateEvents: function () {
       this.events = []
+
       for (const day of this.days) {
         if (day.endTmsp >= this.currentTime) {
           this.events.push({
@@ -83,9 +110,11 @@ export default {
             endTmsp: day.endTmsp,
           })
         }
+
         const SCHEDULE_STEP = 3600
         let eventIndex = 0
         let nextEventTmsp = day.events[eventIndex].startTmsp
+
         // Adding events for that day
         for (
           let i = day.startTmsp;
@@ -93,7 +122,8 @@ export default {
           i += SCHEDULE_STEP
         ) {
           const endTmsp = i + SCHEDULE_STEP - 1
-          const hourEvents = []
+          const hourEvents: TimelineHourEvent[] = []
+
           // Add events that fit in this step
           while (
             nextEventTmsp < i + SCHEDULE_STEP &&
@@ -109,24 +139,22 @@ export default {
               endHour: event.endHour,
               locationId: event.locationId,
               title: event.title,
-              subscribed: this.subscribed[event.id] ? 'subscribed' : '',
+              isSubscribed: this.subscribed[event.id],
             })
             eventIndex += 1
             if (eventIndex < day.events.length) {
               nextEventTmsp = event.startTmsp
             }
           }
+
           // Add a list element for every step
           if (endTmsp >= this.currentTime) {
             this.events.push({
               type: 'item',
               startTmsp: i,
               endTmsp: endTmsp,
-              hourEvents: hourEvents,
-              class:
-                this.currentTime >= i && this.currentTime < endTmsp
-                  ? 'happening'
-                  : '',
+              hourEvents,
+              isHappening: this.currentTime >= i && this.currentTime < endTmsp,
             })
           }
         }
@@ -140,7 +168,7 @@ export default {
   beforeDestroy() {
     clearInterval(this.interval)
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
