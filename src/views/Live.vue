@@ -83,12 +83,6 @@ export default Vue.extend({
       default: false,
     },
   },
-  data: function () {
-    return {
-      events: [] as (TimelineEventItem | TimelineEventTitle)[],
-      interval: undefined as number | undefined,
-    }
-  },
   computed: {
     days() {
       return this.$store.state.schedule.days
@@ -99,17 +93,12 @@ export default Vue.extend({
     subscribed() {
       return this.$store.state.subscribed
     },
-  },
-  methods: {
-    toggleSubscribe: function (id: ScheduleEvent['id']) {
-      this.$store.dispatch('toggleSubscribe', id)
-    },
-    updateEvents: function () {
-      this.events = []
+    events() {
+      const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
 
       for (const day of this.days) {
         if (day.endTmsp >= this.nowInSeconds) {
-          this.events.push({
+          newEvents.push({
             type: 'title',
             name: day.name,
             startTmsp: day.startTmsp,
@@ -155,7 +144,7 @@ export default Vue.extend({
 
           // Add a list element for every step
           if (endTmsp >= this.nowInSeconds) {
-            this.events.push({
+            newEvents.push({
               type: 'item',
               startTmsp: i,
               endTmsp: endTmsp,
@@ -166,14 +155,14 @@ export default Vue.extend({
           }
         }
       }
+
+      return newEvents
     },
   },
-  mounted: function () {
-    setTimeout(this.updateEvents, 200)
-    this.interval = window.setInterval(this.updateEvents, 1000)
-  },
-  beforeDestroy() {
-    clearInterval(this.interval)
+  methods: {
+    toggleSubscribe: function (id: ScheduleEvent['id']) {
+      this.$store.dispatch('toggleSubscribe', id)
+    },
   },
 })
 </script>
