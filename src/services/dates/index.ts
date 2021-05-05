@@ -11,9 +11,9 @@ export function getDateTimestamp(date: string): number {
     hour = 0,
     minute = 0,
     second = 0,
-  ] = matches.map((n) => Number(n))
+  ] = matches.map((n) => Number(n)).map((n) => (isNaN(n) ? undefined : n))
 
-  if (isNaN(year) || isNaN(month) || isNaN(day)) {
+  if (year === undefined || month === undefined || day === undefined) {
     throw new Error('Wrong date format')
   }
 
@@ -25,8 +25,9 @@ export function getHourTimestamp(hourString: string): number {
     .trim()
     .split(':')
     .map((n) => Number(n))
+    .map((n) => (isNaN(n) ? undefined : n))
 
-  if (isNaN(hour)) throw new Error('Wrong time format')
+  if (hour === undefined) throw new Error('Wrong time format')
 
   return hour * 60 * 60 + minute * 60
 }
