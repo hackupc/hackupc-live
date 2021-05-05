@@ -39,8 +39,7 @@ To update or change the schedule go to `public/data/schedule.json`. Changing thi
 - `id` can be whatever you want, but all ids must be different  
 - When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.  
 - Events should be ordered by starting hour  
-- `baseTimeOffset` should be the same output as executing (new Date()).getTimezoneOffset() in a machine with local time. (UTC - localtime in minutes)  
-- `dates` are DD/MM/YYYY format  
+- `dates` are DD/MM/YYYY format at Spain time
 
 > If an event doesn't have endHour, then will show only startHour and it will finish at the same time as it starts.  
 Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")

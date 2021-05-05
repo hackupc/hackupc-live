@@ -5,37 +5,34 @@ import {
   parseSchedule,
   Schedule,
   getLattestSchedule,
+  RawSchedule,
 } from '../services/schedule'
 import schedule from '../../public/data/schedule.json'
 import { dateStringToSeconds } from '@/services/dates'
 
 Vue.use(Vuex)
 
+const parsedSchedule: Schedule = parseSchedule(schedule as RawSchedule)
+
+const realStartSeconds = Math.round(Date.now() / 1000)
+
 export default new Vuex.Store({
   state: {
     subscribed: {} as Record<string, boolean>,
-    realStartDate: new Date(),
-    currentTime: Date.now(),
-    schedule: parseSchedule(schedule),
+    nowInSeconds: realStartSeconds,
+    schedule: parsedSchedule,
+    countdown: {
+      start: dateStringToSeconds(parsedSchedule.countdownStart),
+      end: dateStringToSeconds(parsedSchedule.countdownEnd),
+    },
   },
   getters: {
-    countdownStart: (state) => {
-      return (
-        dateStringToSeconds(state.schedule.countdownStart) +
-        state.schedule.baseTimeOffset
-      )
-    },
-    currentTime: (state) => {
-      const fakeTime = config.fakeTime
-      if (fakeTime) {
-        return (
-          (fakeTime.getTime() +
-            state.currentTime -
-            state.realStartDate.getTime()) /
-          1000
-        )
+    nowInSeconds: (state) => {
+      const fakeStartSeconds = config.fakeStartSeconds
+      if (fakeStartSeconds) {
+        return state.nowInSeconds + fakeStartSeconds - realStartSeconds
       } else {
-        return state.currentTime / 1000
+        return state.nowInSeconds
       }
     },
   },
@@ -54,11 +51,14 @@ export default new Vuex.Store({
     updateSubscribed(state, value: Record<string, boolean>) {
       state.subscribed = value
     },
-    updateCurrentTime(state, value: number) {
-      state.currentTime = value
+    refreshNowInSeconds(state) {
+      state.nowInSeconds = Math.round(Date.now() / 1000)
     },
   },
   actions: {
+    refreshNowInSeconds({ commit }) {
+      commit('refreshNowInSeconds')
+    },
     toggleSubscribe({ commit }, value) {
       commit('toggleSubscribe', value)
     },

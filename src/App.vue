@@ -152,7 +152,7 @@ export default Vue.extend({
   },
   created: function () {
     this.interval = setInterval(() => {
-      this.$store.dispatch('updateCurrentTime', Date.now())
+      this.$store.dispatch('refreshNowInSeconds')
     }, 1000)
   },
   mounted: function () {

@@ -1,26 +1,66 @@
-export function getDateTimestamp(date: string): number {
-  const dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
+const spainTimezoneOffsetHours = -2 as const
+
+function makeUTCDateString({
+  year,
+  month,
+  day,
+  hour = 0,
+  minute = 0,
+  second = 0,
+  timezoneOffsetHours = spainTimezoneOffsetHours,
+}: {
+  year: number
+  month: number
+  day: number
+  hour?: number
+  minute?: number
+  second?: number
+  timezoneOffsetHours?: number
+}): string {
+  const date = `${Math.floor(year)}-${addLeadingZero(month)}-${addLeadingZero(
+    day
+  )}`
+  const time = `${addLeadingZero(hour)}:${addLeadingZero(
+    minute
+  )}:${addLeadingZero(second)}.000`
+  const offsetSign = Math.floor(timezoneOffsetHours) > 0 ? '+' : '-'
+  const offset = `${offsetSign}${addLeadingZero(timezoneOffsetHours)}:00`
+
+  return `${date}T${time}${offset}`
+}
+
+export function addLeadingZero(n: number): string {
+  return ('0' + Math.floor(Math.abs(n))).slice(-2)
+}
+
+export function dateStringToSeconds(date: string): number {
+  const dateFormat = /([0-3]?\d)\D([0-1]?\d)\D(\d{4})(\D([0-2]?\d)\D([0-5]?\d)\D?([0-5]?\d)?)?/
   const matches = date.trim().match(dateFormat)
   if (!matches) throw new Error('Wrong date format')
 
-  const [
-    ,
-    day,
-    month,
-    year,
-    hour = 0,
-    minute = 0,
-    second = 0,
-  ] = matches.map((n) => Number(n)).map((n) => (isNaN(n) ? undefined : n))
+  const [, day, month, year, , hour, minute, second] = matches
+    .map((n) => Number(n))
+    .map((n) => (isNaN(n) ? undefined : n))
 
   if (year === undefined || month === undefined || day === undefined) {
     throw new Error('Wrong date format')
   }
 
-  return Date.UTC(year, month - 1, day, hour, minute, second) / 1000
+  return Math.round(
+    Date.parse(
+      makeUTCDateString({
+        year,
+        month,
+        day,
+        hour,
+        minute,
+        second,
+      })
+    ) / 1000
+  )
 }
 
-export function getHourTimestamp(hourString: string): number {
+export function hourStringToSeconds(hourString: string): number {
   const [hour, minute = 0] = hourString
     .trim()
     .split(':')
@@ -29,21 +69,5 @@ export function getHourTimestamp(hourString: string): number {
 
   if (hour === undefined) throw new Error('Wrong time format')
 
-  return hour * 60 * 60 + minute * 60
-}
-
-export function dateStringToSeconds(date: string): number {
-  const dateFormat = /([0-3]?\d)\W([0-1]?\d)\W(\d{4})(\W([0-2]?\d)\W([0-5]?\d)\W?([0-5]?\d)?)?/
-  const result = date.match(dateFormat)?.map((n) => Number(n))
-  if (!result) throw new Error('Wrong date format')
-  return (
-    Date.UTC(
-      result[3],
-      result[2] - 1,
-      result[1],
-      result[5] || 0,
-      result[6] || 0,
-      result[7] || 0
-    ) / 1000
-  )
+  return hour * 60 * 60 + (minute + spainTimezoneOffsetHours) * 60
 }

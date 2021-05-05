@@ -1,8 +1,8 @@
 {
   "version": 0,
   "message": "",
-  "baseTimeOffset": -120,
-  "countdownStart":"14/05/2021 20:00",
+  "countdownStart":"14/05/2021 19:00",
+  "countdownEnd":"16/05/2021 12:00",
   "days": [
     {
       "name": "Friday",

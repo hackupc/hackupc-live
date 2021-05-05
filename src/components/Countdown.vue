@@ -6,9 +6,9 @@
     :class="{ 'hide-when-small': fullscreen }"
   >
     <div class="countdown__time">
-      <span class="hours">{{ hoursFormatted }}</span
-      >:<span class="minutes">{{ minutesFormatted }}</span
-      ><span class="seconds">{{ secondsFormatted }}</span>
+      <span class="hours">{{ hours }}</span
+      >:<span class="minutes">{{ minutes }}</span
+      ><span class="seconds">{{ seconds }}</span>
     </div>
     <div class="countdown__bg">
       <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />
@@ -18,7 +18,7 @@
 
 <script>
 import Vue from 'vue'
-import config from '../config'
+import { addLeadingZero } from '@/services/dates'
 
 export default Vue.extend({
   props: {
@@ -27,29 +27,31 @@ export default Vue.extend({
       default: false,
     },
   },
-  data: function () {
-    return {
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      interval: undefined,
-    }
-  },
+
   computed: {
-    countdownStart() {
-      return this.$store.getters.countdownStart
+    countdown() {
+      return this.$store.state.countdown
     },
-    currentTime() {
-      return this.$store.getters.currentTime
+    nowInSeconds() {
+      return this.$store.getters.nowInSeconds
     },
-    hoursFormatted() {
-      return this.addLeadingZero(this.hours)
+    remainingSeconds() {
+      if (this.nowInSeconds < this.countdown.start) {
+        return this.countdown.end - this.countdown.start
+      } else if (this.nowInSeconds > this.countdown.end) {
+        return 0
+      } else {
+        return this.countdown.end - this.nowInSeconds
+      }
     },
-    minutesFormatted() {
-      return this.addLeadingZero(this.minutes)
+    hours() {
+      return addLeadingZero(this.remainingSeconds / (60 * 60))
     },
-    secondsFormatted() {
-      return this.addLeadingZero(this.seconds)
+    minutes() {
+      return addLeadingZero((this.remainingSeconds / 60) % 60)
+    },
+    seconds() {
+      return addLeadingZero(this.remainingSeconds % 60)
     },
   },
   methods: {
@@ -59,28 +61,6 @@ export default Vue.extend({
         this.$root.$children[0].toggleFullscreen()
       }
     },
-    updateCountdown: function () {
-      const HACKATHON_DURATION = config.hackathon_duration_hours * 60 * 60
-      const elapsed = this.currentTime - this.countdownStart
-      const current = HACKATHON_DURATION - elapsed
-      if (current > 0 && current < HACKATHON_DURATION) {
-        this.seconds = current % 60
-        this.minutes = (current / 60) % 60
-        this.hours = current / (60 * 60)
-      } else if (current > HACKATHON_DURATION) {
-        this.hours = config.hackathon_duration_hours
-      }
-    },
-    addLeadingZero: function (n) {
-      return ('0' + n).slice(-2)
-    },
-  },
-  mounted: function () {
-    this.updateCountdown()
-    this.interval = setInterval(this.updateCountdown, 1000)
-  },
-  beforeDestroy() {
-    clearInterval(this.interval)
   },
 })
 </script>

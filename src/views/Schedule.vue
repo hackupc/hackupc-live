@@ -48,13 +48,13 @@ export default Vue.extend({
     days() {
       return this.$store.state.schedule.days
     },
-    currentTime() {
-      return this.$store.getters.currentTime
+    nowInSeconds() {
+      return this.$store.getters.nowInSeconds
     },
   },
   methods: {
     hasHappened(startTmsp) {
-      return startTmsp < this.currentTime ? 'happened' : ''
+      return startTmsp < this.nowInSeconds ? 'happened' : ''
     },
   },
 })

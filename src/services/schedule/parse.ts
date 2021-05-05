@@ -1,4 +1,4 @@
-import { getHourTimestamp, getDateTimestamp } from '@/services/dates'
+import { hourStringToSeconds, dateStringToSeconds } from '@/services/dates'
 import {
   RawSchedule,
   RawScheduleDay,
@@ -12,22 +12,19 @@ function parseScheduleEvent(
   event: RawScheduleEvent,
   dayTimestamp: number
 ): ScheduleEvent {
-  const hourTimestamp = dayTimestamp + getHourTimestamp(event.startHour)
+  const hourTimestamp = dayTimestamp + hourStringToSeconds(event.startHour)
 
   return {
     ...event,
     startTmsp: hourTimestamp,
     endTmsp: event.endHour
-      ? dayTimestamp + getHourTimestamp(event.endHour)
+      ? dayTimestamp + hourStringToSeconds(event.endHour)
       : hourTimestamp,
   }
 }
 
-function parseScheduleDay(
-  day: RawScheduleDay,
-  baseTimeOffset: number
-): ScheduleDay {
-  const dayTimestamp = getDateTimestamp(day.date) + baseTimeOffset
+function parseScheduleDay(day: RawScheduleDay): ScheduleDay {
+  const dayTimestamp = dateStringToSeconds(day.date)
 
   return {
     ...day,
@@ -40,9 +37,7 @@ function parseScheduleDay(
 export function parseSchedule(rawSchedule: RawSchedule): Schedule {
   const schedule: Schedule = {
     ...rawSchedule,
-    days: rawSchedule.days.map((day) =>
-      parseScheduleDay(day, rawSchedule.baseTimeOffset)
-    ),
+    days: rawSchedule.days.map((day) => parseScheduleDay(day)),
   }
 
   return schedule

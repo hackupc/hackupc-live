@@ -18,6 +18,7 @@ export interface RawSchedule {
   message: string
   baseTimeOffset: number
   countdownStart: string
+  countdownEnd: string
   days: RawScheduleDay[]
 }
 

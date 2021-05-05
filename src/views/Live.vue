@@ -93,8 +93,8 @@ export default Vue.extend({
     days() {
       return this.$store.state.schedule.days
     },
-    currentTime() {
-      return this.$store.getters.currentTime
+    nowInSeconds() {
+      return this.$store.getters.nowInSeconds
     },
     subscribed() {
       return this.$store.state.subscribed
@@ -108,7 +108,7 @@ export default Vue.extend({
       this.events = []
 
       for (const day of this.days) {
-        if (day.endTmsp >= this.currentTime) {
+        if (day.endTmsp >= this.nowInSeconds) {
           this.events.push({
             type: 'title',
             name: day.name,
@@ -154,13 +154,14 @@ export default Vue.extend({
           }
 
           // Add a list element for every step
-          if (endTmsp >= this.currentTime) {
+          if (endTmsp >= this.nowInSeconds) {
             this.events.push({
               type: 'item',
               startTmsp: i,
               endTmsp: endTmsp,
               hourEvents,
-              isHappening: this.currentTime >= i && this.currentTime < endTmsp,
+              isHappening:
+                this.nowInSeconds >= i && this.nowInSeconds < endTmsp,
             })
           }
         }
