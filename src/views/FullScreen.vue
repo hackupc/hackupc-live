@@ -1,10 +1,8 @@
 <template>
   <div id="fullscreen">
     <div>
-      <Countdown fullscreen="true" />
-      <div class="events-fancy">
-        <Live />
-      </div>
+      <Countdown :fullscreen="true" />
+      <Live :fullscreen="true" />
     </div>
   </div>
 </template>
@@ -33,23 +31,6 @@ export default Vue.extend({
     justify-content: center;
     align-items: center;
     height: 100%;
-  }
-
-  .events-fancy {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    position: fixed;
-    ul {
-      max-height: 100%;
-      width: 100%;
-      height: 100%;
-      margin-left: 40%;
-      li {
-        font-size: 1.5em;
-        margin-right: 60%;
-      }
-    }
   }
 }
 
