@@ -40,11 +40,7 @@ export default Vue.extend({
     },
   },
   methods: {
-    notify: function (
-      body: string,
-      title: string = config.notificationTitle,
-      icon: string = config.notificationIcon
-    ) {
+    notify: function (body: string, title = 'HackUPC', icon = 'favicon.svg') {
       if (Notification.permission === 'granted') {
         const notification = new Notification(title, {
           body,
