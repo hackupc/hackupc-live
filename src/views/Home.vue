@@ -113,15 +113,18 @@
         <h1 style="text-transform: uppercase">Discord channels</h1>
         <div style="text-align: justify">
           <h3>Principal information</h3>
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>welcome</span></b> On this channel you will find the
-          important information about the server. <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>rules</span></b> Take a look on this channel, here you will
-          find all the rules about the server. <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>announcements</span></b> The organizers will post all the
-          relevant announcements on this channel.
+          <discord-label
+            title="welcome"
+            text="On this channel you will find the important information about the server."
+          />
+          <discord-label
+            title="rules"
+            text="Take a look on this channel, here you will find all the rules about the server. "
+          />
+          <discord-label
+            title="announcements"
+            text="The organizers will post all the relevant announcements on this channel."
+          />
         </div>
         <div style="text-align: justify">
           <h3>General</h3>
@@ -130,13 +133,15 @@
           for some more members for your team? This is your channel.
           <br /><br />
           <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>mentors</span></b> Do you need help in some generic problem?
-          Don't worry and ask in this channel. <br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>mentors</span></b> You prefer to ask the question by voice?
-          Here you have some place to do it. <br /><br />
+          <discord-label
+            title="mentors"
+            text="Do you need help in some generic problem? Don't worry and ask in this channel. "
+          />
+          <discord-label
+            title="mentors"
+            text="You prefer to ask the question by voice? Here you have some place to do it."
+            icon="speaker"
+          />
           <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
           <b><span>help</span></b> Do you have any problem? Ask here for some
           help and a organizer will help you.
@@ -250,9 +255,12 @@
 </template>
 
 <script>
+import DiscordLabel from '@/components/DiscordLabel.vue'
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: { DiscordLabel },
+})
 </script>
 
 <style lang="scss" scoped></style>
