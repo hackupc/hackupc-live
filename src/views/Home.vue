@@ -111,106 +111,19 @@
       </div>
       <div class="panel large">
         <h1 style="text-transform: uppercase">Discord channels</h1>
-        <div style="text-align: justify">
-          <h3>Principal information</h3>
+        <div
+          v-for="(dC, i) in discordChannels"
+          v-bind:key="i - 'dC'"
+          style="text-align: justify"
+        >
+          <h3>{{ dC.title }}</h3>
           <discord-label
-            title="welcome"
-            text="On this channel you will find the important information about the server."
+            v-for="(d, i) in dC.channels"
+            v-bind:key="i + '-dL'"
+            :title="d.title"
+            :text="d.text"
+            :icon="d.icon"
           />
-          <discord-label
-            title="rules"
-            text="Take a look on this channel, here you will find all the rules about the server. "
-          />
-          <discord-label
-            title="announcements"
-            text="The organizers will post all the relevant announcements on this channel."
-          />
-        </div>
-        <div style="text-align: justify">
-          <h3>General</h3>
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>search-team</span></b> You don't have team or you are looking
-          for some more members for your team? This is your channel.
-          <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <discord-label
-            title="mentors"
-            text="Do you need help in some generic problem? Don't worry and ask in this channel. "
-          />
-          <discord-label
-            title="mentors"
-            text="You prefer to ask the question by voice? Here you have some place to do it."
-            icon="speaker"
-          />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>help</span></b> Do you have any problem? Ask here for some
-          help and a organizer will help you.
-        </div>
-        <div style="text-align: justify">
-          <h3>Chill time</h3>
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>memes</span></b> Post here your memes!! <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>random</span></b> Here you can talk about something random.
-          Be free like a bird! <br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>play-area</span></b> This voice channel will be used to play!
-          But only in play time!
-        </div>
-        <div style="text-align: justify">
-          <h3>Challenges</h3>
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>similar-patients</span></b> Channel to solve your problems
-          and doubts about the challenge<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>similar-patients</span></b> Channel to talk about the
-          challenge <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>pediatric-age</span></b> Channel to solve your problems and
-          doubts about the challenge<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>pediatric-age </span></b> Channel to talk about the challenge
-          <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>covid-cought</span></b> Channel to solve your problems and
-          doubts about the challenge<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>covid-cought</span></b> Channel to talk about the challenge
-          <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>tracking-campus</span></b> Channel to solve your problems and
-          doubts about the challenge<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>tracking-campus</span></b> Channel to talk about the
-          challenge <br /><br />
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>tracking-primary-health</span></b> Channel to solve your
-          problems and doubts about the challenge<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>tracking-primary-health</span></b> Channel to talk about the
-          challenge <br /><br />
-        </div>
-        <div style="text-align: justify">
-          <h3>Sponsors</h3>
-          <p class="icon"><i class="fas fa-hashtag" aria-hidden="true"></i></p>
-          <b><span>hipeac</span></b> Are you looking for some job oportunities
-          take a look on hipeac<br /><br />
-          <p class="icon">
-            <i class="fas fa-volume-up" aria-hidden="true"></i>
-          </p>
-          <b><span>hipeac</span></b> Channel to talk with hipeac members
         </div>
       </div>
       <div class="panel large">
@@ -254,12 +167,153 @@
   </div>
 </template>
 
-<script>
-import DiscordLabel from '@/components/DiscordLabel.vue'
+<script lang="ts">
+import DiscordLabel, {
+  DiscordLabelData,
+  DiscordType,
+} from '@/components/DiscordLabel.vue'
 import Vue from 'vue'
+
+interface DiscordChannelInfo {
+  title: string
+  channels: DiscordLabelData[]
+}
+
+const discordChannels: DiscordChannelInfo[] = [
+  {
+    title: 'Principal Information',
+    channels: [
+      {
+        title: 'welcome',
+        text:
+          'On this channel you will find the important information about the server.',
+      },
+      {
+        title: 'rules',
+        text:
+          'Take a look on this channel, here you will find all the rules about the server.',
+      },
+      {
+        title: 'announcements',
+        text:
+          'The organizers will post all the relevant announcements on this channel.',
+      },
+    ],
+  },
+  {
+    title: 'General',
+    channels: [
+      {
+        title: 'search-team',
+        text:
+          "You don't have team or you are looking for some more members for your team? This is your channel.",
+      },
+      {
+        title: 'mentors',
+        text:
+          "Do you need help in some generic problem? Don't worry and ask in this channel.",
+      },
+      {
+        title: 'mentors',
+        text:
+          'You prefer to ask the question by voice? Here you have some place to do it.',
+        icon: DiscordType.voice,
+      },
+      {
+        title: 'help',
+        text:
+          'Do you have any problem? Ask here for some help and a organizer will help you.',
+      },
+    ],
+  },
+  {
+    title: 'Chill Time',
+    channels: [
+      { title: 'memes', text: 'Post here your memes!!' },
+      {
+        title: 'random',
+        text: 'Here you can talk about something random. Be free like a bird!',
+      },
+      {
+        title: 'play-voice',
+        text: 'This voice channel will be used to play! But only in play time!',
+        icon: DiscordType.voice,
+      },
+    ],
+  },
+  {
+    title: 'Challenges',
+    channels: [
+      {
+        title: 'similar-patients',
+        text: 'Channel to solve your problems and doubts about the challenge',
+      },
+      {
+        title: 'similar-patients',
+        text: 'Channel to talk about the challenge',
+        icon: DiscordType.voice,
+      },
+      {
+        title: 'pediatric-age',
+        text: 'Channel to solve your problems and doubts about the challenge',
+      },
+      {
+        title: 'pediatric-age',
+        text: 'Channel to talk about the challenge',
+        icon: DiscordType.voice,
+      },
+      {
+        title: 'covid-caught',
+        text: 'Channel to solve your problems and doubts about the challenge',
+      },
+      {
+        title: 'covid-caught',
+        text: 'Channel to talk about the challenge',
+        icon: DiscordType.voice,
+      },
+      {
+        title: 'tracking-campus',
+        text: 'Channel to solve your problems and doubts about the challenge',
+      },
+      {
+        title: 'tracking-campus',
+        text: 'Channel to talk about the challenge',
+        icon: DiscordType.voice,
+      },
+      {
+        title: 'tracking-primary-health',
+        text: 'Channel to solve your problems and doubts about the challenge',
+      },
+      {
+        title: 'tracking-primary-health',
+        text: 'Channel to talk about the challenge',
+        icon: DiscordType.voice,
+      },
+    ],
+  },
+  {
+    title: 'Sponsors',
+    channels: [
+      {
+        title: 'hipeac',
+        text: 'Are you looking for some job oportunities take a look on hipeac',
+      },
+      {
+        title: 'hipeac',
+        text: 'Channel to talk with hipeac members',
+        icon: DiscordType.voice,
+      },
+    ],
+  },
+]
 
 export default Vue.extend({
   components: { DiscordLabel },
+  data() {
+    return {
+      discordChannels,
+    }
+  },
 })
 </script>
 

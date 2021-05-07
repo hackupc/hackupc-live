@@ -4,8 +4,8 @@
       <i
         class="fas"
         :class="{
-          'fa-volume-up': icon === DiscordType.speaker,
-          'fa-hashtag': icon === DiscordType.hashtag,
+          'fa-volume-up': icon === DiscordType.voice,
+          'fa-hashtag': icon === DiscordType.chat,
         }"
         aria-hidden="true"
       ></i>
@@ -18,9 +18,15 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue'
 
-enum DiscordType {
-  hashtag = 'hashtag',
-  speaker = 'speaker',
+export enum DiscordType {
+  chat = 'chat',
+  voice = 'voice',
+}
+
+export interface DiscordLabelData {
+  title: string
+  text: string
+  icon?: DiscordType
 }
 
 export default Vue.extend({
@@ -35,7 +41,7 @@ export default Vue.extend({
     },
     icon: {
       type: String as PropType<DiscordType>,
-      default: DiscordType.hashtag,
+      default: DiscordType.chat,
     },
   },
   data() {
