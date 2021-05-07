@@ -112,17 +112,17 @@
       <div class="panel large">
         <h1 style="text-transform: uppercase">Discord channels</h1>
         <div
-          v-for="(dC, i) in discordChannels"
-          v-bind:key="i - 'dC'"
+          v-for="groupOfChannels in discordChannels"
+          v-bind:key="groupOfChannels.title"
           style="text-align: justify"
         >
-          <h3>{{ dC.title }}</h3>
+          <h3>{{ groupOfChannels.title }}</h3>
           <discord-label
-            v-for="(d, i) in dC.channels"
-            v-bind:key="i + '-dL'"
-            :title="d.title"
-            :text="d.text"
-            :icon="d.icon"
+            v-for="channel in groupOfChannels.channels"
+            v-bind:key="channel.name + '-' + channel.icon"
+            :name="channel.name"
+            :description="channel.description"
+            :icon="channel.icon"
           />
         </div>
       </div>
@@ -184,18 +184,18 @@ const discordChannels: DiscordChannelInfo[] = [
     title: 'Principal Information',
     channels: [
       {
-        title: 'welcome',
-        text:
+        name: 'welcome',
+        description:
           'On this channel you will find the important information about the server.',
       },
       {
-        title: 'rules',
-        text:
+        name: 'rules',
+        description:
           'Take a look on this channel, here you will find all the rules about the server.',
       },
       {
-        title: 'announcements',
-        text:
+        name: 'announcements',
+        description:
           'The organizers will post all the relevant announcements on this channel.',
       },
     ],
@@ -204,24 +204,24 @@ const discordChannels: DiscordChannelInfo[] = [
     title: 'General',
     channels: [
       {
-        title: 'search-team',
-        text:
+        name: 'search-team',
+        description:
           "You don't have team or you are looking for some more members for your team? This is your channel.",
       },
       {
-        title: 'mentors',
-        text:
+        name: 'mentors',
+        description:
           "Do you need help in some generic problem? Don't worry and ask in this channel.",
       },
       {
-        title: 'mentors',
-        text:
+        name: 'mentors',
+        description:
           'You prefer to ask the question by voice? Here you have some place to do it.',
         icon: DiscordType.voice,
       },
       {
-        title: 'help',
-        text:
+        name: 'help',
+        description:
           'Do you have any problem? Ask here for some help and a organizer will help you.',
       },
     ],
@@ -229,14 +229,16 @@ const discordChannels: DiscordChannelInfo[] = [
   {
     title: 'Chill Time',
     channels: [
-      { title: 'memes', text: 'Post here your memes!!' },
+      { name: 'memes', description: 'Post here your memes!!' },
       {
-        title: 'random',
-        text: 'Here you can talk about something random. Be free like a bird!',
+        name: 'random',
+        description:
+          'Here you can talk about something random. Be free like a bird!',
       },
       {
-        title: 'play-voice',
-        text: 'This voice channel will be used to play! But only in play time!',
+        name: 'play-voice',
+        description:
+          'This voice channel will be used to play! But only in play time!',
         icon: DiscordType.voice,
       },
     ],
@@ -245,48 +247,53 @@ const discordChannels: DiscordChannelInfo[] = [
     title: 'Challenges',
     channels: [
       {
-        title: 'similar-patients',
-        text: 'Channel to solve your problems and doubts about the challenge',
+        name: 'similar-patients',
+        description:
+          'Channel to solve your problems and doubts about the challenge',
       },
       {
-        title: 'similar-patients',
-        text: 'Channel to talk about the challenge',
+        name: 'similar-patients',
+        description: 'Channel to talk about the challenge',
         icon: DiscordType.voice,
       },
       {
-        title: 'pediatric-age',
-        text: 'Channel to solve your problems and doubts about the challenge',
+        name: 'pediatric-age',
+        description:
+          'Channel to solve your problems and doubts about the challenge',
       },
       {
-        title: 'pediatric-age',
-        text: 'Channel to talk about the challenge',
+        name: 'pediatric-age',
+        description: 'Channel to talk about the challenge',
         icon: DiscordType.voice,
       },
       {
-        title: 'covid-caught',
-        text: 'Channel to solve your problems and doubts about the challenge',
+        name: 'covid-caught',
+        description:
+          'Channel to solve your problems and doubts about the challenge',
       },
       {
-        title: 'covid-caught',
-        text: 'Channel to talk about the challenge',
+        name: 'covid-caught',
+        description: 'Channel to talk about the challenge',
         icon: DiscordType.voice,
       },
       {
-        title: 'tracking-campus',
-        text: 'Channel to solve your problems and doubts about the challenge',
+        name: 'tracking-campus',
+        description:
+          'Channel to solve your problems and doubts about the challenge',
       },
       {
-        title: 'tracking-campus',
-        text: 'Channel to talk about the challenge',
+        name: 'tracking-campus',
+        description: 'Channel to talk about the challenge',
         icon: DiscordType.voice,
       },
       {
-        title: 'tracking-primary-health',
-        text: 'Channel to solve your problems and doubts about the challenge',
+        name: 'tracking-primary-health',
+        description:
+          'Channel to solve your problems and doubts about the challenge',
       },
       {
-        title: 'tracking-primary-health',
-        text: 'Channel to talk about the challenge',
+        name: 'tracking-primary-health',
+        description: 'Channel to talk about the challenge',
         icon: DiscordType.voice,
       },
     ],
@@ -295,12 +302,13 @@ const discordChannels: DiscordChannelInfo[] = [
     title: 'Sponsors',
     channels: [
       {
-        title: 'hipeac',
-        text: 'Are you looking for some job oportunities take a look on hipeac',
+        name: 'hipeac',
+        description:
+          'Are you looking for some job oportunities take a look on hipeac',
       },
       {
-        title: 'hipeac',
-        text: 'Channel to talk with hipeac members',
+        name: 'hipeac',
+        description: 'Channel to talk with hipeac members',
         icon: DiscordType.voice,
       },
     ],

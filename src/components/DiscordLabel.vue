@@ -11,8 +11,8 @@
       ></i>
     </p>
     <b
-      ><span>{{ title }}</span></b
-    >&ensp;{{ text }}<br /><br />
+      ><span>{{ name }}</span></b
+    >&ensp;{{ description }}<br /><br />
   </div>
 </template>
 <script lang="ts">
@@ -24,18 +24,18 @@ export enum DiscordType {
 }
 
 export interface DiscordLabelData {
-  title: string
-  text: string
+  name: string
+  description: string
   icon?: DiscordType
 }
 
 export default Vue.extend({
   props: {
-    title: {
+    name: {
       type: String,
       required: true,
     },
-    text: {
+    description: {
       type: String,
       required: true,
     },
