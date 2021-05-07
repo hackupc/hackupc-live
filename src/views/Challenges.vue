@@ -7,6 +7,9 @@
       <panel title="Example 2">
         <div>Hola que tal</div>
       </panel>
+      <panel title="Example 3" size="big">
+        <div>Aixo es un panel gran</div>
+      </panel>
     </div>
   </div>
 </template>
