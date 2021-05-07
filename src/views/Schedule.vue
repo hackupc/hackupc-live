@@ -19,7 +19,7 @@
                 <tr
                   v-for="event in day.events"
                   :key="event.id"
-                  :class="hasHappened(event.startTmsp)"
+                  :class="{ happened: hasHappened(event.startTmsp) }"
                 >
                   <td>
                     <a href="https://www.twitch.tv/hackersupc">{{
@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -53,8 +53,8 @@ export default Vue.extend({
     },
   },
   methods: {
-    hasHappened(startTmsp) {
-      return startTmsp < this.nowInSeconds ? 'happened' : ''
+    hasHappened(startTmsp: number): boolean {
+      return startTmsp < this.nowInSeconds
     },
   },
 })
