@@ -1,7 +1,11 @@
 <template>
   <div id="schedule" class="under-header padding-bottom">
     <div class="container">
-      <panel />
+      <panel
+        title="Looking for similar patients: the AI Doctor House conquers severe COVID-19!"
+      >
+        <div>Hola</div>
+      </panel>
       <div class="panel">
         <h1>
           Clinical-microbiological characterisation of SARS-CoV-2 infection in
