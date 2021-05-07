@@ -22,6 +22,11 @@ export default Vue.extend({
       default: PanelSize.small,
     },
   },
+  data() {
+    return {
+      PanelSize,
+    }
+  },
 })
 </script>
 
