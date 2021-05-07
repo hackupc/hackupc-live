@@ -68,7 +68,7 @@
               <router-link to="/schedule">Schedule</router-link>
             </li>
             <li @click="toggleFullscreen" id="countdown-li">
-              <Countdown />
+              <countdown />
             </li>
             <li :class="isActive('/challenges')">
               <router-link to="/challenges">Challenges</router-link>
