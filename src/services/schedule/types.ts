@@ -10,7 +10,6 @@ export interface RawScheduleEvent {
 }
 
 export interface RawScheduleDay {
-  name: string
   date: string
   events: RawScheduleEvent[]
 }

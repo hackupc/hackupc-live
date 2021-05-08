@@ -2,8 +2,8 @@
   <div id="schedule" class="under-header padding-bottom">
     <div class="container">
       <div>
-        <div v-for="day in days" :key="day.name" class="table-container">
-          <h1>{{ day.name }}</h1>
+        <div v-for="day in days" :key="day.start" class="table-container">
+          <h1>{{ formatDate('weekday', day.start) }}</h1>
           <div class="table-scroll">
             <table>
               <thead>

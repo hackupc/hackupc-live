@@ -101,7 +101,7 @@ export default Vue.extend({
         if (day.end.unix() >= this.nowInSeconds) {
           newEvents.push({
             type: 'title',
-            name: day.name,
+            name: formatDate('weekday', day.start),
             startTmsp: day.start.unix(),
             endTmsp: day.end.unix(),
           })
