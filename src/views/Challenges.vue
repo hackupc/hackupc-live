@@ -2,13 +2,13 @@
   <div id="schedule" class="under-header padding-bottom">
     <div class="container">
       <panel title="Example 1">
-        <div>Hola</div>
+        <p>Hola</p>
       </panel>
       <panel title="Example 2">
-        <div>Hola que tal</div>
+        <p>Hola que tal</p>
       </panel>
       <panel title="Example 3" size="big">
-        <div>Aixo es un panel gran</div>
+        <p>Aixo es un panel gran</p>
       </panel>
     </div>
   </div>

@@ -1,9 +1,7 @@
 <template>
   <div class="under-header padding-bottom">
     <div class="container">
-      <div class="panel">
-        <h1>Important information</h1>
-
+      <panel title="Important information">
         <div>
           <p style="margin: 15px 0">
             <b>
@@ -35,9 +33,9 @@
             >
           </div>
         </div>
-      </div>
-      <div class="panel" style="align-self: flex-start">
-        <h1>Contact</h1>
+      </panel>
+
+      <panel title="Contact">
         <div class="text-centered">
           <p class="icon"><i class="fab fa-discord" aria-hidden="true"></i></p>
           <!-- <span><a target="_blank" rel="noopener" href="">Discord Server</a></span> -->
@@ -108,9 +106,9 @@
             ></a>
           </div>
         </div>
-      </div>
-      <div class="panel large">
-        <h1 style="text-transform: uppercase">Discord channels</h1>
+      </panel>
+
+      <panel title="Discord channels" size="big">
         <div
           v-for="groupOfChannels in discordChannels"
           :key="groupOfChannels.title"
@@ -125,9 +123,9 @@
             :icon="channel.icon"
           />
         </div>
-      </div>
-      <div class="panel large">
-        <h1 style="text-transform: uppercase">Discord BieneBot Commands</h1>
+      </panel>
+
+      <panel title="Discord BieneBot Commands" size="big">
         <div>
           <h4>For registration</h4>
           <p style="text-align: justify">
@@ -162,161 +160,19 @@
             </p>
           </div>
         </div>
-      </div>
+      </panel>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import DiscordLabel, {
-  DiscordLabelData,
-  DiscordType,
-} from '@/components/DiscordLabel.vue'
+import DiscordLabel from '@/components/DiscordLabel.vue'
+import Panel from '@/components/Panel.vue'
 import Vue from 'vue'
-
-interface DiscordChannelInfo {
-  title: string
-  channels: DiscordLabelData[]
-}
-
-const discordChannels: DiscordChannelInfo[] = [
-  {
-    title: 'Principal Information',
-    channels: [
-      {
-        name: 'welcome',
-        description:
-          'On this channel you will find the important information about the server.',
-      },
-      {
-        name: 'rules',
-        description:
-          'Take a look on this channel, here you will find all the rules about the server.',
-      },
-      {
-        name: 'announcements',
-        description:
-          'The organizers will post all the relevant announcements on this channel.',
-      },
-    ],
-  },
-  {
-    title: 'General',
-    channels: [
-      {
-        name: 'search-team',
-        description:
-          "You don't have team or you are looking for some more members for your team? This is your channel.",
-      },
-      {
-        name: 'mentors',
-        description:
-          "Do you need help in some generic problem? Don't worry and ask in this channel.",
-      },
-      {
-        name: 'mentors',
-        description:
-          'You prefer to ask the question by voice? Here you have some place to do it.',
-        icon: DiscordType.voice,
-      },
-      {
-        name: 'help',
-        description:
-          'Do you have any problem? Ask here for some help and a organizer will help you.',
-      },
-    ],
-  },
-  {
-    title: 'Chill Time',
-    channels: [
-      { name: 'memes', description: 'Post here your memes!!' },
-      {
-        name: 'random',
-        description:
-          'Here you can talk about something random. Be free like a bird!',
-      },
-      {
-        name: 'play-voice',
-        description:
-          'This voice channel will be used to play! But only in play time!',
-        icon: DiscordType.voice,
-      },
-    ],
-  },
-  {
-    title: 'Challenges',
-    channels: [
-      {
-        name: 'similar-patients',
-        description:
-          'Channel to solve your problems and doubts about the challenge',
-      },
-      {
-        name: 'similar-patients',
-        description: 'Channel to talk about the challenge',
-        icon: DiscordType.voice,
-      },
-      {
-        name: 'pediatric-age',
-        description:
-          'Channel to solve your problems and doubts about the challenge',
-      },
-      {
-        name: 'pediatric-age',
-        description: 'Channel to talk about the challenge',
-        icon: DiscordType.voice,
-      },
-      {
-        name: 'covid-caught',
-        description:
-          'Channel to solve your problems and doubts about the challenge',
-      },
-      {
-        name: 'covid-caught',
-        description: 'Channel to talk about the challenge',
-        icon: DiscordType.voice,
-      },
-      {
-        name: 'tracking-campus',
-        description:
-          'Channel to solve your problems and doubts about the challenge',
-      },
-      {
-        name: 'tracking-campus',
-        description: 'Channel to talk about the challenge',
-        icon: DiscordType.voice,
-      },
-      {
-        name: 'tracking-primary-health',
-        description:
-          'Channel to solve your problems and doubts about the challenge',
-      },
-      {
-        name: 'tracking-primary-health',
-        description: 'Channel to talk about the challenge',
-        icon: DiscordType.voice,
-      },
-    ],
-  },
-  {
-    title: 'Sponsors',
-    channels: [
-      {
-        name: 'hipeac',
-        description:
-          'Are you looking for some job oportunities take a look on hipeac',
-      },
-      {
-        name: 'hipeac',
-        description: 'Channel to talk with hipeac members',
-        icon: DiscordType.voice,
-      },
-    ],
-  },
-]
+import { discordChannels } from '@/data/home'
 
 export default Vue.extend({
-  components: { DiscordLabel },
+  components: { DiscordLabel, Panel },
   data() {
     return {
       discordChannels,
