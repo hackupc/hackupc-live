@@ -11,7 +11,7 @@
       ></i>
     </p>
     <b
-      ><span>{{ name }}</span></b
+      ><span class="highlight-span">{{ name }}</span></b
     >&ensp;{{ description }}<br /><br />
   </div>
 </template>

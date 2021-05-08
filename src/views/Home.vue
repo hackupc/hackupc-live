@@ -38,12 +38,12 @@
       <panel title="Contact">
         <div class="text-centered">
           <p class="icon"><i class="fab fa-discord" aria-hidden="true"></i></p>
-          <!-- <span><a target="_blank" rel="noopener" href="">Discord Server</a></span> -->
-          <span>Discord Server</span>
+          <!-- <span class="highlight-span"><a target="_blank" rel="noopener" href="">Discord Server</a></span> -->
+          <span class="highlight-span">Discord Server</span>
         </div>
         <div class="text-centered">
           <p class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></p>
-          <span
+          <span class="highlight-span"
             ><a
               href="mailto:bitsxlamarato@fib.upc.edu"
               target="_blank"
@@ -129,17 +129,21 @@
         <div>
           <h4>For registration</h4>
           <p style="text-align: justify">
-            <span>bits!login [RegisterEmail]</span> (checkin)
+            <span class="highlight-span">bits!login [RegisterEmail]</span>
+            (checkin)
           </p>
           <br />
           <p style="text-align: justify">
-            <span>bits!createTeam [nameTeam]</span> (if you don't have team and
-            you want to create one)
+            <span class="highlight-span">bits!createTeam [nameTeam]</span> (if
+            you don't have team and you want to create one)
           </p>
           <br />
           <p style="text-align: justify">
-            <span>bits!addToTeam [@personToAddToYourTeam]</span> (the user you
-            want to add to the team must be logged in and with no team)
+            <span class="highlight-span"
+              >bits!addToTeam [@personToAddToYourTeam]</span
+            >
+            (the user you want to add to the team must be logged in and with no
+            team)
           </p>
           <h4>
             To use in random or memes channels (<i
@@ -148,15 +152,20 @@
           </h4>
           <div>
             <p>
-              <span>bits!cat</span> <span>bits!dog</span>
-              <span>bits!parrot</span>
+              <span class="highlight-span">bits!cat</span>
+              <span class="highlight-span">bits!dog</span>
+              <span class="highlight-span">bits!parrot</span>
             </p>
             <br />
-            <p><span>bits!biene</span> <span>bits!ping</span></p>
+            <p>
+              <span class="highlight-span">bits!biene</span>
+              <span class="highlight-span">bits!ping</span>
+            </p>
             <br />
             <p>
-              <span>bits!proJoke</span> <span>bits!parJoke</span>
-              <span>bits!joke</span>
+              <span class="highlight-span">bits!proJoke</span>
+              <span class="highlight-span">bits!parJoke</span>
+              <span class="highlight-span">bits!joke</span>
             </p>
           </div>
         </div>

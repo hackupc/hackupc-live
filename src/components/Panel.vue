@@ -129,19 +129,6 @@ export default Vue.extend({
     display: inline;
   }
 
-  .icon {
-    display: inline-block;
-    margin: 0;
-    padding: 3px;
-    text-align: center;
-    border-radius: 5px;
-    width: 30px;
-    background-color: $secondaryColor;
-    color: white;
-    font-weight: normal;
-    margin-right: 0.25em;
-  }
-
   /* stylelint-disable */
   & > div {
     /* stylelint-enable */
@@ -150,19 +137,6 @@ export default Vue.extend({
     h1,
     h2 {
       margin: 0 0;
-    }
-  }
-
-  span {
-    display: inline-block;
-    padding: 3px 6px;
-    border-radius: 3px;
-    background-color: #f8d6c6;
-
-    /* stylelint-disable */
-    a {
-      /* stylelint-enable */
-      color: #000;
     }
   }
 
