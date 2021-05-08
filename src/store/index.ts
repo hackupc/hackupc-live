@@ -8,32 +8,36 @@ import {
   RawSchedule,
 } from '../services/schedule'
 import schedule from '../../public/data/schedule.json'
-import { dateStringToSeconds } from '@/services/dates'
+import { parseSpanishDate } from '@/services/dates'
+import duration from 'dayjs/plugin/duration'
+import dayjs from 'dayjs'
+
+dayjs.extend(duration)
 
 Vue.use(Vuex)
 
 const parsedSchedule: Schedule = parseSchedule(schedule as RawSchedule)
 
-const realStartSeconds = Math.round(Date.now() / 1000)
+const realStartTime = dayjs()
+const fakeStartTime = config.fakeStartTime
+  ? parseSpanishDate('full-date-time', config.fakeStartTime)
+  : undefined
 
 export default new Vuex.Store({
   state: {
     subscribed: {} as Record<string, boolean>,
-    nowInSeconds: realStartSeconds,
+    now: realStartTime,
     schedule: parsedSchedule,
     countdown: {
-      start: dateStringToSeconds(parsedSchedule.countdownStart),
-      end: dateStringToSeconds(parsedSchedule.countdownEnd),
+      start: parseSpanishDate('date-time', parsedSchedule.countdownStart),
+      end: parseSpanishDate('date-time', parsedSchedule.countdownEnd),
     },
   },
   getters: {
-    nowInSeconds: (state) => {
-      const fakeStartSeconds = config.fakeStartSeconds
-      if (fakeStartSeconds) {
-        return state.nowInSeconds + fakeStartSeconds - realStartSeconds
-      } else {
-        return state.nowInSeconds
-      }
+    now: (state) => {
+      return fakeStartTime
+        ? fakeStartTime.add(dayjs.duration(state.now.diff(realStartTime)))
+        : state.now
     },
   },
   mutations: {
@@ -51,13 +55,13 @@ export default new Vuex.Store({
     updateSubscribed(state, value: Record<string, boolean>) {
       state.subscribed = value
     },
-    refreshNowInSeconds(state) {
-      state.nowInSeconds = Math.round(Date.now() / 1000)
+    refreshTime(state) {
+      state.now = dayjs()
     },
   },
   actions: {
-    refreshNowInSeconds({ commit }) {
-      commit('refreshNowInSeconds')
+    refreshTime({ commit }) {
+      commit('refreshTime')
     },
     toggleSubscribe({ commit }, value) {
       commit('toggleSubscribe', value)

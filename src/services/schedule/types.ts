@@ -1,3 +1,5 @@
+import { Dayjs } from 'dayjs'
+
 export interface RawScheduleEvent {
   id: string
   title: string
@@ -16,20 +18,19 @@ export interface RawScheduleDay {
 export interface RawSchedule {
   version: number
   message: string
-  baseTimeOffset: number
   countdownStart: string
   countdownEnd: string
   days: RawScheduleDay[]
 }
 
 export interface ScheduleEvent extends RawScheduleEvent {
-  startTmsp: number
-  endTmsp: number
+  start: Dayjs
+  end: Dayjs
 }
 
 export interface ScheduleDay extends RawScheduleDay {
-  startTmsp: number
-  endTmsp: number
+  start: Dayjs
+  end: Dayjs
   events: ScheduleEvent[]
 }
 

@@ -18,7 +18,11 @@
 
 <script>
 import Vue from 'vue'
-import { addLeadingZero } from '@/services/dates'
+import { formatDate } from '@/services/dates'
+import duration from 'dayjs/plugin/duration'
+import dayjs from 'dayjs'
+
+dayjs.extend(duration)
 
 export default Vue.extend({
   props: {
@@ -32,26 +36,26 @@ export default Vue.extend({
     countdown() {
       return this.$store.state.countdown
     },
-    nowInSeconds() {
-      return this.$store.getters.nowInSeconds
+    now() {
+      return this.$store.getters.now
     },
-    remainingSeconds() {
-      if (this.nowInSeconds < this.countdown.start) {
-        return this.countdown.end - this.countdown.start
-      } else if (this.nowInSeconds > this.countdown.end) {
-        return 0
+    remainingTime() {
+      if (this.now.isBefore(this.countdown.start)) {
+        return dayjs.duration(this.countdown.end.diff(this.countdown.start))
+      } else if (this.now.isAfter(this.countdown.end)) {
+        return dayjs.duration(0)
       } else {
-        return this.countdown.end - this.nowInSeconds
+        return dayjs.duration(this.countdown.end.diff(this.now))
       }
     },
     hours() {
-      return addLeadingZero(this.remainingSeconds / (60 * 60))
+      return Math.floor(this.remainingTime.asHours())
     },
     minutes() {
-      return addLeadingZero((this.remainingSeconds / 60) % 60)
+      return formatDate('minute', this.remainingTime)
     },
     seconds() {
-      return addLeadingZero(this.remainingSeconds % 60)
+      return formatDate('second', this.remainingTime)
     },
   },
   methods: {

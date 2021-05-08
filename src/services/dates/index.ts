@@ -1,73 +1,45 @@
-const spainTimezoneOffsetHours = -2 as const
+import dayjs, { Dayjs } from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 
-function makeUTCDateString({
-  year,
-  month,
-  day,
-  hour = 0,
-  minute = 0,
-  second = 0,
-  timezoneOffsetHours = spainTimezoneOffsetHours,
-}: {
-  year: number
-  month: number
-  day: number
-  hour?: number
-  minute?: number
-  second?: number
-  timezoneOffsetHours?: number
-}): string {
-  const date = `${Math.floor(year)}-${addLeadingZero(month)}-${addLeadingZero(
-    day
-  )}`
-  const time = `${addLeadingZero(hour)}:${addLeadingZero(
-    minute
-  )}:${addLeadingZero(second)}.000`
-  const offsetSign = Math.floor(timezoneOffsetHours) > 0 ? '+' : '-'
-  const offset = `${offsetSign}${addLeadingZero(timezoneOffsetHours)}:00`
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
 
-  return `${date}T${time}${offset}`
+export type DateFormat =
+  | 'minute'
+  | 'second'
+  | 'time'
+  | 'weekday'
+  | 'weekday-time'
+  | 'date'
+  | 'date-time'
+  | 'full-date-time'
+
+export const dateFormats: Record<DateFormat, string> = {
+  minute: 'mm',
+  second: 'ss',
+  time: 'H:mm',
+  weekday: 'EEEE',
+  'weekday-time': 'EEEE H:mm',
+  date: 'D/M/YYYY',
+  'date-time': 'D/M/YYYY H:mm',
+  'full-date-time': 'D/M/YYYY H:mm:ss',
+} as const
+
+export function formatDate(format: DateFormat, date: Dayjs): string {
+  return date.format(dateFormats[format])
 }
 
-export function addLeadingZero(n: number): string {
-  return ('0' + Math.floor(Math.abs(n))).slice(-2)
+export function parseSpanishDate(
+  format: DateFormat,
+  dateString: string
+): Dayjs {
+  return dayjs(dateString, dateFormats[format]).tz('Europe/Madrid')
 }
 
-export function dateStringToSeconds(date: string): number {
-  const dateFormat = /([0-3]?\d)\D([0-1]?\d)\D(\d{4})(\D([0-2]?\d)\D([0-5]?\d)\D?([0-5]?\d)?)?/
-  const matches = date.trim().match(dateFormat)
-  if (!matches) throw new Error('Wrong date format')
-
-  const [, day, month, year, , hour, minute, second] = matches
-    .map((n) => Number(n))
-    .map((n) => (isNaN(n) ? undefined : n))
-
-  if (year === undefined || month === undefined || day === undefined) {
-    throw new Error('Wrong date format')
-  }
-
-  return Math.round(
-    Date.parse(
-      makeUTCDateString({
-        year,
-        month,
-        day,
-        hour,
-        minute,
-        second,
-      })
-    ) / 1000
-  )
-}
-
-export function hourStringToSeconds(hourString: string): number {
-  const [hour, minute = 0] = hourString
-    .trim()
-    .split(':')
-    .map((n) => Number(n))
-    .map((n) => (isNaN(n) ? undefined : n))
-
-  if (hour === undefined) throw new Error('Wrong time format')
-
-  return hour * 60 * 60 + (minute + spainTimezoneOffsetHours) * 60
+export function parseTimeInDay(timeString: string, dayDate: Dayjs): Dayjs {
+  const timeDate = dayjs(timeString, dateFormats['time'])
+  return dayDate.hour(timeDate.hour()).minute(timeDate.minute())
 }

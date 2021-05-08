@@ -37,7 +37,6 @@ To update or change the schedule go to `public/data/schedule.json`. Changing thi
 #### Schedule file
 
 - `id` can be whatever you want, but all ids must be different  
-- When writing hours, prepend zeroes: Nice: 01:00; Not-so-nice: 1:00.  
 - Events should be ordered by starting hour  
 - `dates` are DD/MM/YYYY format at Spain time
 

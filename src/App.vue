@@ -152,7 +152,7 @@ export default Vue.extend({
   },
   created: function () {
     this.interval = setInterval(() => {
-      this.$store.dispatch('refreshNowInSeconds')
+      this.$store.dispatch('refreshTime')
     }, 1000)
   },
   mounted: function () {

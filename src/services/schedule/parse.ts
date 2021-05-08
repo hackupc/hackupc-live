@@ -1,4 +1,5 @@
-import { hourStringToSeconds, dateStringToSeconds } from '@/services/dates'
+import { Dayjs } from 'dayjs'
+import { parseSpanishDate, parseTimeInDay } from '@/services/dates'
 import {
   RawSchedule,
   RawScheduleDay,
@@ -10,27 +11,25 @@ import {
 
 function parseScheduleEvent(
   event: RawScheduleEvent,
-  dayTimestamp: number
+  dayDate: Dayjs
 ): ScheduleEvent {
-  const hourTimestamp = dayTimestamp + hourStringToSeconds(event.startHour)
+  const startDate = parseTimeInDay(event.startHour, dayDate)
 
   return {
     ...event,
-    startTmsp: hourTimestamp,
-    endTmsp: event.endHour
-      ? dayTimestamp + hourStringToSeconds(event.endHour)
-      : hourTimestamp,
+    start: startDate,
+    end: event.endHour ? parseTimeInDay(event.endHour, dayDate) : startDate,
   }
 }
 
 function parseScheduleDay(day: RawScheduleDay): ScheduleDay {
-  const dayTimestamp = dateStringToSeconds(day.date)
+  const dayDate = parseSpanishDate('date', day.date)
 
   return {
     ...day,
-    startTmsp: dayTimestamp,
-    endTmsp: dayTimestamp + 24 * 60 * 60,
-    events: day.events.map((event) => parseScheduleEvent(event, dayTimestamp)),
+    start: dayDate,
+    end: dayDate.add(1, 'day'),
+    events: day.events.map((event) => parseScheduleEvent(event, dayDate)),
   }
 }
 

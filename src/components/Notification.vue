@@ -31,8 +31,8 @@ export default Vue.extend({
     days() {
       return this.$store.state.schedule.days
     },
-    nowInSeconds() {
-      return this.$store.getters.nowInSeconds
+    now() {
+      return this.$store.getters.now
     },
     subscribed() {
       return this.$store.state.subscribed
@@ -85,7 +85,7 @@ export default Vue.extend({
       Object.keys(this.subscribed).forEach((eventId) => {
         if (this.subscribed[eventId]) {
           const event = this.getEvent(eventId)
-          const offset = event.startTmsp - this.nowInSeconds
+          const offset = event.start.unix() - this.now.unix()
           const EVENT_NOTIF_OFFSET = 5 * 60
           if (offset <= EVENT_NOTIF_OFFSET && offset >= 0) {
             this.notify(event.description, 'Happening soon: ' + event.title)

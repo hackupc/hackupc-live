@@ -46,6 +46,7 @@
 </template>
 
 <script lang="ts">
+import { formatDate } from '@/services/dates'
 import { ScheduleEvent } from '@/services/schedule'
 import Vue from 'vue'
 
@@ -54,8 +55,8 @@ interface TimelineHourEvent {
   id: ScheduleEvent['id']
   startTmsp: number
   endTmsp: number
-  startHour: number
-  endHour: number
+  startHour: string
+  endHour: string
   locationId: string
   title: string
   isSubscribed: boolean
@@ -88,7 +89,7 @@ export default Vue.extend({
       return this.$store.state.schedule.days
     },
     nowInSeconds() {
-      return this.$store.getters.nowInSeconds
+      return this.$store.getters.now.unix()
     },
     subscribed() {
       return this.$store.state.subscribed
@@ -97,23 +98,23 @@ export default Vue.extend({
       const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
 
       for (const day of this.days) {
-        if (day.endTmsp >= this.nowInSeconds) {
+        if (day.end.unix() >= this.nowInSeconds) {
           newEvents.push({
             type: 'title',
             name: day.name,
-            startTmsp: day.startTmsp,
-            endTmsp: day.endTmsp,
+            startTmsp: day.start.unix(),
+            endTmsp: day.end.unix(),
           })
         }
 
         const SCHEDULE_STEP = 3600
         let eventIndex = 0
-        let nextEventTmsp = day.events[eventIndex].startTmsp
+        let nextEventTmsp = day.events[eventIndex].start.unix()
 
         // Adding events for that day
         for (
-          let i = day.startTmsp;
-          i < day.startTmsp + 24 * 3600;
+          let i = day.start.unix();
+          i < day.start.unix() + 24 * 3600;
           i += SCHEDULE_STEP
         ) {
           const endTmsp = i + SCHEDULE_STEP - 1
@@ -129,16 +130,16 @@ export default Vue.extend({
               type: 'event',
               id: event.id,
               startTmsp: i,
-              endTmsp: endTmsp,
-              startHour: event.startHour,
-              endHour: event.endHour,
+              endTmsp,
+              startHour: formatDate('time', event.start),
+              endHour: formatDate('time', event.end),
               locationId: event.locationId,
               title: event.title,
               isSubscribed: this.subscribed[event.id],
             })
             eventIndex += 1
             if (eventIndex < day.events.length) {
-              nextEventTmsp = event.startTmsp
+              nextEventTmsp = event.start.unix()
             }
           }
 
@@ -147,7 +148,7 @@ export default Vue.extend({
             newEvents.push({
               type: 'item',
               startTmsp: i,
-              endTmsp: endTmsp,
+              endTmsp,
               hourEvents,
               isHappening:
                 this.nowInSeconds >= i && this.nowInSeconds < endTmsp,

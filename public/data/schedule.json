@@ -1,12 +1,12 @@
 {
   "version": 0,
   "message": "",
-  "countdownStart":"14/05/2021 19:00",
-  "countdownEnd":"16/05/2021 12:00",
+  "countdownStart":"14/5/2021 19:00",
+  "countdownEnd":"16/5/2021 12:00",
   "days": [
     {
       "name": "Friday",
-      "date":"14/05/2021",
+      "date":"14/5/2021",
       "events": [
         {
           "id": "0",
@@ -83,18 +83,18 @@
     },
     {
       "name":"Saturday",
-      "date":"15/05/2021",
+      "date":"15/5/2021",
       "events": [
         {
           "id": "10",
           "title": "Good Morning Hackers!",
-          "startHour": "09:00",
+          "startHour": "9:00",
           "description": "Time to continue our hacking time!"
         },
         {
           "id": "11",
           "title": "Breakfast",
-          "startHour": "09:00",
+          "startHour": "9:00",
           "description": "Remember to eat something! Breakfast is the most important meal in of the day"
         },
         {
@@ -148,18 +148,18 @@
     },
     {
       "name":"Sunday",
-      "date":"16/05/2021",
+      "date":"16/5/2021",
       "events": [
         {
           "id": "19",
           "title": "Good Morning Hackers!",
-          "startHour": "09:00",
+          "startHour": "9:00",
           "description": "Time to continue our hacking time!"
         },
         {
           "id": "20",
           "title": "Breakfast",
-          "startHour": "09:00",
+          "startHour": "9:00",
           "description": "Remember to eat something! Breakfast is the most important meal in of the day"
         },
         {

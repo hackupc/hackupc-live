@@ -19,15 +19,15 @@
                 <tr
                   v-for="event in day.events"
                   :key="event.id"
-                  :class="{ happened: hasHappened(event.startTmsp) }"
+                  :class="{ happened: hasHappened(event.end) }"
                 >
                   <td>
                     <a href="https://www.twitch.tv/hackersupc">{{
                       event.emoji
                     }}</a>
                   </td>
-                  <td>{{ event.startHour }}</td>
-                  <td>{{ event.endHour }}</td>
+                  <td>{{ formatDate('time', event.start) }}</td>
+                  <td>{{ formatDate('time', event.end) }}</td>
                   <td class="when-small">{{ event.title }}</td>
                   <td class="hide-when-small">{{ event.description }}</td>
                 </tr>
@@ -42,20 +42,23 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { formatDate } from '@/services/dates'
+import { Dayjs } from 'dayjs'
 
 export default Vue.extend({
   computed: {
     days() {
       return this.$store.state.schedule.days
     },
-    nowInSeconds() {
-      return this.$store.getters.nowInSeconds
+    now() {
+      return this.$store.getters.now
     },
   },
   methods: {
-    hasHappened(startTmsp: number): boolean {
-      return startTmsp < this.nowInSeconds
+    hasHappened(date: Dayjs): boolean {
+      return date.isBefore(this.now)
     },
+    formatDate,
   },
 })
 </script>
