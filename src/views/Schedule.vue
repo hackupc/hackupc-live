@@ -22,12 +22,18 @@
                   :class="{ happened: hasHappened(event.end) }"
                 >
                   <td>
-                    <a href="https://www.twitch.tv/hackersupc">{{
-                      event.emoji
-                    }}</a>
+                    <a
+                      v-if="event.emoji"
+                      href="https://www.twitch.tv/hackersupc"
+                      >{{ event.emoji }}</a
+                    >
                   </td>
                   <td>{{ formatDate('time', event.start) }}</td>
-                  <td>{{ formatDate('time', event.end) }}</td>
+                  <td>
+                    <template v-if="event.start !== event.end">
+                      {{ formatDate('time', event.end) }}
+                    </template>
+                  </td>
                   <td class="when-small">{{ event.title }}</td>
                   <td class="hide-when-small">{{ event.description }}</td>
                 </tr>
