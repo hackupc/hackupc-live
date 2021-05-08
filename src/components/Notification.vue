@@ -1,9 +1,9 @@
 <template>
   <div v-if="!this.askedSubscribeAll" class="prompt">
-    <div class="box">
+    <div class="prompt__box">
       <h1>{{ prompt.title }}</h1>
       <div v-html="prompt.message"></div>
-      <div class="buttons">
+      <div class="prompt__buttons">
         <div @click="subscribeAll">All right</div>
         <div @click="toggleAskedSubscribeAll">Nope</div>
       </div>
@@ -107,4 +107,55 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.prompt {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+  backdrop-filter: blur(10px);
+
+  &__box {
+    color: $secondaryTextColor;
+    background-color: $bgColor;
+    padding: 20px;
+    margin: 20px;
+    max-width: 575px;
+    border-radius: 5px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      margin: 16px 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    div {
+      padding: 5px 10px;
+      color: $contrastColor;
+      background-color: $primaryColor;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    #promptCancel {
+      background-color: #ddd;
+      color: #666;
+      font-weight: normal;
+      letter-spacing: 0;
+    }
+  }
+}
+</style>
