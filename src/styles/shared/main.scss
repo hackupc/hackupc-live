@@ -1,8 +1,13 @@
-body, html, main { height: 100%; }
-body, html {
+body,
+html,
+main {
+  height: 100%;
+}
+body,
+html {
   padding: 0;
   margin: 0;
-  background-color: #141C15;
+  background-color: #141c15;
   background-image: url('~@/assets/img/bg.svg');
   background-repeat: repeat;
   background-attachment: fixed;
@@ -12,7 +17,9 @@ body, html {
   -webkit-tap-highlight-color: $tapColor;
 }
 
-main { transition: opacity $fadeTime; }
+main {
+  transition: opacity $fadeTime;
+}
 
 #background {
   position: absolute;
@@ -46,7 +53,9 @@ main { transition: opacity $fadeTime; }
         text-decoration: none;
       }
 
-      &:first-child { border-left: none; }
+      &:first-child {
+        border-left: none;
+      }
 
       &.selected {
         box-shadow: 0 3px 0 $primaryColor;
@@ -62,7 +71,9 @@ main { transition: opacity $fadeTime; }
           margin-top: -90px;
           padding: 90px 0 55px;
         }
-        .countdown:hover { transform: translateY(-5px); }
+        .countdown:hover {
+          transform: translateY(-5px);
+        }
       }
     }
   }
@@ -103,7 +114,9 @@ main { transition: opacity $fadeTime; }
       text-align: center;
       cursor: pointer;
       /* stylelint-disable */
-      span { flex: 1 1 0; }
+      span {
+        flex: 1 1 0;
+      }
       /* stylelint-enable */
     }
   }
@@ -119,7 +132,9 @@ main { transition: opacity $fadeTime; }
   overflow: auto; /* just in case */
   left: 0;
   transition: left $asideOpenTime;
-  &.closed { left: -210px; }
+  &.closed {
+    left: -210px;
+  }
 
   #close-aside-btn {
     display: flex;
@@ -140,7 +155,9 @@ main { transition: opacity $fadeTime; }
     margin-top: 20px;
     text-align: center;
     /* stylelint-disable */
-    img { width: 90%; }
+    img {
+      width: 90%;
+    }
     /* stylelint-enable */
   }
   nav {
