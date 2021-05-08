@@ -107,24 +107,7 @@ export default Vue.extend({
   .no-indent {
     padding-left: 0;
   }
-  .buttons {
-    display: flex;
-    border-radius: 3px;
-    overflow: hidden;
-    a {
-      display: block;
-      flex: 1 1 0;
-      color: $textColor;
-      text-decoration: none;
-      background-color: $buttonsMediaColor;
-      padding: 8px;
-      text-align: center;
-      font-weight: bold;
-      &:not(:first-child) {
-        border-left: thin solid white;
-      }
-    }
-  }
+
   .label {
     display: inline;
   }
