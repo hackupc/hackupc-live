@@ -1,46 +1,44 @@
 <template>
-  <div id="live" class="under-header">
-    <div class="container-live">
-      <div
-        class="events-fancy"
-        :class="{ 'events-fancy--fullscreen': fullscreen }"
-      >
-        <ul>
-          <template v-for="event in events">
-            <li
-              v-if="event.type == 'title'"
-              :key="`${event.name}-${event.startTmsp}`"
-            >
-              <h1>{{ event.name }}</h1>
-            </li>
-            <li
-              v-else-if="event.type == 'item'"
-              :class="{ happening: event.isHappening }"
-              :key="`${event.name}-${event.startTmsp}`"
-            >
-              <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
-              <template v-for="hourEvent in event.hourEvents">
-                <div
-                  @click="toggleSubscribe(hourEvent.id)"
-                  class="event"
-                  :class="{ subscribed: subscribed[hourEvent.id] }"
-                  :key="hourEvent.id"
-                  :data-event-id="hourEvent.id"
-                >
-                  <div class="event-hour">
-                    <div>{{ hourEvent.startHour }}</div>
-                    <div class="end-hour">{{ hourEvent.endHour }}</div>
-                  </div>
-                  <div class="title">
-                    {{ hourEvent.title }}
-                    <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
-                  </div>
+  <div id="live" class="container-live">
+    <div
+      class="events-fancy"
+      :class="{ 'events-fancy--fullscreen': fullscreen }"
+    >
+      <ul>
+        <template v-for="event in events">
+          <li
+            v-if="event.type == 'title'"
+            :key="`${event.name}-${event.startTmsp}`"
+          >
+            <h1>{{ event.name }}</h1>
+          </li>
+          <li
+            v-else-if="event.type == 'item'"
+            :class="{ happening: event.isHappening }"
+            :key="`${event.name}-${event.startTmsp}`"
+          >
+            <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
+            <template v-for="hourEvent in event.hourEvents">
+              <div
+                @click="toggleSubscribe(hourEvent.id)"
+                class="event"
+                :class="{ subscribed: subscribed[hourEvent.id] }"
+                :key="hourEvent.id"
+                :data-event-id="hourEvent.id"
+              >
+                <div class="event-hour">
+                  <div>{{ hourEvent.startHour }}</div>
+                  <div class="end-hour">{{ hourEvent.endHour }}</div>
                 </div>
-              </template>
-            </li>
-          </template>
-        </ul>
-      </div>
+                <div class="title">
+                  {{ hourEvent.title }}
+                  <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
+                </div>
+              </div>
+            </template>
+          </li>
+        </template>
+      </ul>
     </div>
   </div>
 </template>

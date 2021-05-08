@@ -125,7 +125,7 @@ main {
 #aside-small-menu {
   height: 100%;
   position: fixed;
-  background-color: $bgColor;
+  background-color: $contrastColor;
   width: 200px;
   box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.6);
   z-index: 150;
@@ -162,7 +162,7 @@ main {
   }
   nav {
     margin-top: 10px;
-    background-color: darken($bgColor, 5%);
+    background-color: darken($contrastColor, 5%);
     ul {
       list-style: none;
       padding: 0;
@@ -172,7 +172,7 @@ main {
         border-top: thin solid rgba(255, 255, 255, 0.3);
         &.selected {
           font-weight: bold;
-          background-color: darken($bgColor, 15%);
+          background-color: darken($contrastColor, 15%);
         }
         a {
           display: block;

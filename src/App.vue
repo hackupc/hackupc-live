@@ -5,7 +5,8 @@
       <!--header for <720px-->
       <header
         id="header-small"
-        :class="[this.isFullscreen ? 'hidden' : '', 'show-when-small']"
+        class="show-when-small"
+        :class="{ hidden: this.isFullscreen }"
       >
         <div class="bar">
           <div @click="openAsideMenu" id="open-aside-btn">
@@ -19,33 +20,33 @@
       <!--Aside menu for small screens-->
       <aside
         id="aside-small-menu"
-        :class="[
-          this.asideMenuClosed ? 'closed' : '',
-          this.asideMenuHidden ? 'hidden' : '',
-          'show-when-small',
-        ]"
+        class="'show-when-small'"
+        :class="{
+          closed: this.asideMenuClosed,
+          hidden: this.asideMenuHidden,
+        }"
       >
         <div @click="closeAsideMenu" id="close-aside-btn">
           <div>x</div>
         </div>
         <nav>
           <ul>
-            <li :class="$route.path === '/' ? 'selected' : ''">
+            <li :class="{ selected: $route.path === '/' }">
               <router-link to="/">Home</router-link>
             </li>
-            <li :class="isActive('/live')">
+            <li :class="{ selected: isActive('/live') }">
               <router-link to="/live">Live</router-link>
             </li>
-            <li :class="isActive('/schedule')">
+            <li :class="{ selected: isActive('/schedule') }">
               <router-link to="/schedule">Schedule</router-link>
             </li>
-            <li :class="isActive('/challenges')">
+            <li :class="{ selected: isActive('/challenges') }">
               <router-link to="/challenges">Challenges</router-link>
             </li>
-            <li :class="isActive('/talks')">
+            <li :class="{ selected: isActive('/talks') }">
               <router-link to="/talks">Talks</router-link>
             </li>
-            <li :class="isActive('/rules')">
+            <li :class="{ selected: isActive('/rules') }">
               <router-link to="/rules">Rules</router-link>
             </li>
           </ul>
@@ -54,29 +55,30 @@
       <!--header for >720px-->
       <header
         id="header-nav-bar"
-        :class="[this.isFullscreen ? 'hidden' : '', 'hide-when-small']"
+        class="hide-when-small"
+        :class="{ hidden: this.isFullscreen }"
       >
         <nav>
           <ul>
-            <li :class="$route.path === '/' ? 'selected' : ''">
+            <li :class="{ selected: $route.path === '/' }">
               <router-link to="/">Home</router-link>
             </li>
-            <li :class="isActive('/live')">
+            <li :class="{ selected: isActive('/live') }">
               <router-link to="/live">Live</router-link>
             </li>
-            <li :class="isActive('/schedule')">
+            <li :class="{ selected: isActive('/schedule') }">
               <router-link to="/schedule">Schedule</router-link>
             </li>
             <li @click="toggleFullscreen" id="countdown-li">
               <countdown />
             </li>
-            <li :class="isActive('/challenges')">
+            <li :class="{ selected: isActive('/challenges') }">
               <router-link to="/challenges">Challenges</router-link>
             </li>
-            <li :class="isActive('/talks')">
+            <li :class="{ selected: isActive('/talks') }">
               <router-link to="/talks">Talks</router-link>
             </li>
-            <li :class="isActive('/rules')">
+            <li :class="{ selected: isActive('/rules') }">
               <router-link to="/rules">Rules</router-link>
             </li>
           </ul>
@@ -147,7 +149,7 @@ export default Vue.extend({
       document.body.style.overflow = 'auto'
     },
     isActive: function (page) {
-      return this.$route.path.startsWith(page) ? 'selected' : ''
+      return this.$route.path.startsWith(page)
     },
   },
   created: function () {

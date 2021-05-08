@@ -6,9 +6,9 @@
     :class="{ 'hide-when-small': fullscreen }"
   >
     <div class="countdown__time">
-      <span class="hours">{{ hours }}</span
-      >:<span class="minutes">{{ minutes }}</span
-      ><span class="seconds">{{ seconds }}</span>
+      <span>{{ hours }}</span
+      >:<span>{{ minutes }}</span
+      ><span class="countdown__seconds">{{ seconds }}</span>
     </div>
     <div class="countdown__bg">
       <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />
@@ -92,15 +92,15 @@ export default Vue.extend({
     font-weight: bold;
     padding-left: 0.125em;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
 
-    .seconds {
-      vertical-align: top;
-      font-size: 0.6em;
-      width: 1.25em;
-      display: inline-block;
-      text-align: left;
-      margin-left: 0.125em;
-    }
+  &__seconds {
+    vertical-align: top;
+    font-size: 0.6em;
+    width: 1.25em;
+    display: inline-block;
+    text-align: left;
+    margin-left: 0.125em;
   }
 
   &__bg {

@@ -15,10 +15,6 @@ a {
   text-decoration: none;
 }
 
-.padding-bottom {
-  padding-bottom: 50px;
-}
-
 .hidden {
   display: none !important;
 }
@@ -64,20 +60,12 @@ a {
 }
 
 @media (min-width: 720px) {
-  .under-header {
-    padding-top: 150px;
-  }
-
   .show-when-small {
     display: none !important;
   }
 }
 
 @media (max-width: 720px) {
-  .under-header {
-    padding-top: 60px;
-  }
-
   .hide-when-small {
     display: none !important;
   }
@@ -94,11 +82,15 @@ a {
   max-width: 1024px;
   margin: 0 auto;
   padding: 16px;
+  padding-bottom: 50px;
+  padding-top: 150px;
+
+  @media (max-width: 720px) {
+    padding-top: 60px;
+  }
 
   .no-margin {
-    /* stylelint-disable */
     div {
-      /* stylelint-enable */
       margin: 0;
     }
   }
