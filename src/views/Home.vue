@@ -113,13 +113,13 @@
         <h1 style="text-transform: uppercase">Discord channels</h1>
         <div
           v-for="groupOfChannels in discordChannels"
-          v-bind:key="groupOfChannels.title"
+          :key="groupOfChannels.title"
           style="text-align: justify"
         >
           <h3>{{ groupOfChannels.title }}</h3>
           <discord-label
             v-for="channel in groupOfChannels.channels"
-            v-bind:key="channel.name + '-' + channel.icon"
+            :key="channel.name + '-' + channel.icon"
             :name="channel.name"
             :description="channel.description"
             :icon="channel.icon"
