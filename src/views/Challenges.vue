@@ -1,14 +1,16 @@
 <template>
-  <div id="schedule">
+  <div id="challenges">
     <div class="container">
-      <panel title="Example 1">
-        <p>Hola</p>
-      </panel>
-      <panel title="Example 2">
-        <p>Hola que tal</p>
-      </panel>
-      <panel title="Example 3" size="big">
-        <p>Aixo es un panel gran</p>
+      <panel
+        v-for="challenge in challenges"
+        :key="challenge.title"
+        :title="challenge.company"
+      >
+        <h3>{{ challenge.title }}</h3>
+        <p>
+          {{ challenge.description }}
+        </p>
+        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
       </panel>
     </div>
   </div>
@@ -17,10 +19,16 @@
 <script lang="ts">
 import Vue from 'vue'
 import Panel from '@/components/Panel.vue'
+import { challenges } from '@/data/challenges'
 
 export default Vue.extend({
   components: {
     Panel,
+  },
+  data() {
+    return {
+      challenges,
+    }
   },
 })
 </script>
