@@ -6,9 +6,7 @@
         :key="activity.title"
         :title="activity.title"
       >
-        <p>
-          {{ activity.description }}
-        </p>
+        <vue-markdown :source="activity.description" />
       </panel>
     </div>
   </div>
@@ -18,10 +16,12 @@
 import Vue from 'vue'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
+import VueMarkdown from 'vue-markdown'
 
 export default Vue.extend({
   components: {
     Panel,
+    VueMarkdown,
   },
   data() {
     return {

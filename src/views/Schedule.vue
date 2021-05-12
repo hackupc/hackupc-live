@@ -34,7 +34,9 @@
                   </template>
                 </td>
                 <td class="when-small">{{ event.title }}</td>
-                <td class="hide-when-small">{{ event.description }}</td>
+                <td class="hide-when-small">
+                  <vue-markdown :source="event.description" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -48,13 +50,18 @@
 import Vue from 'vue'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
+import VueMarkdown from 'vue-markdown'
+import { ScheduleDay } from '@/services/schedule'
 
 export default Vue.extend({
+  components: {
+    VueMarkdown,
+  },
   computed: {
-    days() {
+    days(): ScheduleDay {
       return this.$store.state.schedule.days
     },
-    now() {
+    now(): Dayjs {
       return this.$store.getters.now
     },
   },

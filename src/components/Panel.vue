@@ -62,32 +62,35 @@ export default Vue.extend({
     padding: 24px;
     line-height: 1.6;
 
-    & > *:first-child {
+    & > *:first-child,
+    & ::v-deep > div:first-child > *:first-child {
       margin-top: 0;
     }
-
-    a {
-      color: $secondaryColor;
+    & > *:last-child,
+    & ::v-deep > div:last-child > *:last-child {
+      margin-bottom: 0;
     }
 
-    h3 {
-      margin: 12px 0 4px;
-    }
-
-    p,
-    ul,
-    ol,
-    li {
-      margin: 0 0 1em;
-
-      &:last-child {
-        margin: 0;
+    ::v-deep {
+      a {
+        color: $secondaryColor;
       }
-    }
 
-    ul,
-    ol {
-      padding-left: 1em;
+      h3 {
+        margin: 12px 0 4px;
+      }
+
+      p,
+      ul,
+      ol,
+      li {
+        margin: 0 0 1em;
+      }
+
+      ul,
+      ol {
+        padding-left: 1em;
+      }
     }
   }
 }

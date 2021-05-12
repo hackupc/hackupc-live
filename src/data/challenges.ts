@@ -4,23 +4,22 @@ export interface Challenge {
   videoUrl?: string
   channel: string
   prize: string
-  description: string
+  description: string // Accepts Markdown
 }
 
 export const challenges: Challenge[] = [
   {
-    company: 'McKinsey & Company',
+    company: 'FAKE ACME',
     title: 'FAKE Hack the crash',
-    description: 'FAKE Help us predict damage inflicted in traffic accidents',
-    prize: 'Nintendo switch lite',
-    channel: 'mckensey',
+    description: 'FAKE  _am a_ ~~tast~~ **test**.\n\n New line',
+    prize: '3D printed trphy',
+    channel: 'acme',
   },
   {
-    company: 'HP',
-    title: 'FAKE Talk to 3D Print!',
-    description:
-      'FAKE Are you able to create a 3D geometry that we can print by voice commands? Your creativity is welcomed, unleash your imagination to test your skills! Come to our booth A5 1st floor our through Slack',
-    prize: '4 Soprocket',
-    channel: 'hp',
+    company: 'FAKE ACME 2',
+    title: 'FAKE Hack the crash',
+    description: 'FAKE  _am a_ ~~tast~~ **test**.\n\n New line',
+    prize: '3D printed trphy',
+    channel: 'acme',
   },
 ]

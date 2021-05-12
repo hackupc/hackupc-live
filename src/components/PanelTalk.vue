@@ -1,10 +1,11 @@
 <template>
   <panel :title="talk.title">
     <h3 class="talk__speaker">Speaker: {{ talk.speaker }}</h3>
-    <div class="embed-container">
+    <vue-markdown :source="talk.description" />
+    <div class="embed">
       <iframe
         :src="talk.videoUrl"
-        class="embed"
+        class="embed__item"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -16,6 +17,7 @@
 import Vue, { PropType } from 'vue'
 import Panel from '@/components/Panel.vue'
 import { Talk } from '@/data/talks'
+import VueMarkdown from 'vue-markdown'
 
 export default Vue.extend({
   props: {
@@ -24,7 +26,10 @@ export default Vue.extend({
       required: true,
     },
   },
-  components: { Panel },
+  components: {
+    Panel,
+    VueMarkdown,
+  },
 })
 </script>
 
@@ -34,18 +39,19 @@ export default Vue.extend({
     margin-bottom: 24px !important;
   }
 }
-.embed-container {
+.embed {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
-}
-.embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

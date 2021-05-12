@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs'
 export interface RawScheduleEvent {
   id: string
   title: string
-  description: string
+  description: string // Accepts Markdown
   startHour: string
   endHour?: string
   emoji?: string
