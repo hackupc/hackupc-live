@@ -2,27 +2,35 @@
   <div class="container">
     <panel title="Important information">
       <p>
-        <b> The projects must be posted on Devpost before Sunday at 12:00. </b>
-        If you don't do it, you won't have access to the prices nor ECTS
+        <b>
+          The projects must be posted on
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://hackupc2021.devpost.com/"
+            >Devpost</a
+          >
+          before Sunday at 12:00.
+        </b>
+        If you don't do it, you won't have access to the prices, swag, nor ECTS
         credits.
       </p>
-      <div>
-        <h3>Links</h3>
-      </div>
+
+      <h3>Links</h3>
       <div class="buttons">
         <a
           target="_blank"
           rel="noopener"
           href="https://www.twitch.tv/hackersupc"
           class="external-link"
-          ><i class="fab fa-twitch" aria-hidden="true"></i> Talks in twitch</a
+          >Twitch</a
         >
       </div>
       <div class="buttons" style="margin-top: 8px">
         <a
           target="_blank"
           rel="noopener"
-          href="https://hackupc-2021.devpost.com/"
+          href="https://hackupc2021.devpost.com/"
           class="external-link"
           >Devpost</a
         >
@@ -108,36 +116,43 @@
     </panel>
 
     <panel title="Discord BieneBot Commands" size="big">
-      <h3>For registration</h3>
+      <h3>Useful</h3>
       <div>
-        <span class="highlight-span">bits!login [RegisterEmail]</span>
-        Check-in
+        <div>
+          <span class="highlight-span"
+            >biene changeteamname [new_teamname]</span
+          >
+          Dhanges the team's name.
+        </div>
+        <div>
+          <span class="highlight-span"
+            >biene jointeam [teamname] [new_members]</span
+          >
+          Adds multiple users to a team.
+        </div>
+        <div>
+          <span class="highlight-span">biene ping</span> Displays info for your
+          internet connection.
+        </div>
       </div>
+
+      <h3>Useless</h3>
       <div>
-        <span class="highlight-span">bits!createTeam [nameTeam]</span>
-        Create a team if you don't have one
+        <span class="highlight-span">biene joke</span>
+        <span class="highlight-span">biene biene</span>
+        <span class="highlight-span">biene biene [organizer_name]</span>
+        <span class="highlight-span">biene parrot</span>
+        <span class="highlight-span">biene cat</span>
+        <span class="highlight-span">biene dog</span>
       </div>
       <div>
         <span class="highlight-span"
-          >bits!addToTeam [@personToAddToYourTeam]</span
-        >
-        Add a hacker to your team. The hacker must be logged in and with no
-        team.
+          >biene meme [meme_code] text|seperated|by|lines
+        </span>
+        Inserts text to meme with code [meme_code].
       </div>
-      <h3>To use in random or memes channels</h3>
-      <p>
-        <i>You'll only know what this commands do if you try them.</i>
-      </p>
-
       <div>
-        <span class="highlight-span">bits!cat</span>
-        <span class="highlight-span">bits!dog</span>
-        <span class="highlight-span">bits!parrot</span>
-        <span class="highlight-span">bits!biene</span>
-        <span class="highlight-span">bits!ping</span>
-        <span class="highlight-span">bits!proJoke</span>
-        <span class="highlight-span">bits!parJoke</span>
-        <span class="highlight-span">bits!joke</span>
+        <span class="highlight-span">biene meme help</span> Get meme_code.
       </div>
     </panel>
   </div>
