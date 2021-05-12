@@ -16,36 +16,7 @@
         credits.
       </p>
 
-      <h3>Links</h3>
-      <div class="buttons">
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://www.twitch.tv/hackersupc"
-          class="external-link"
-          >Twitch</a
-        >
-      </div>
-      <div class="buttons" style="margin-top: 8px">
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://hackupc2021.devpost.com/"
-          class="external-link"
-          >Devpost</a
-        >
-      </div>
-    </panel>
-
-    <panel title="Contact">
-      <div style="text-align: center; margin-top: 25px">
-        <span class="icon"
-          ><i class="fab fa-discord" aria-hidden="true"></i
-        ></span>
-        <span class="highlight-span">Discord Server</span>
-      </div>
-
-      <div style="text-align: center; margin-bottom: 37px">
+      <div style="text-align: center">
         <span class="icon"
           ><i class="fa fa-envelope" aria-hidden="true"></i
         ></span>
@@ -58,57 +29,73 @@
           ></span
         >
       </div>
+    </panel>
 
-      <div>
-        <h3>Social media</h3>
+    <panel title="Links">
+      <div class="buttons">
+        <a target="_blank" rel="noopener" href="#"
+          ><i class="fab fa-discord" aria-hidden="true"></i>
+          <br />
+          Discord
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.twitch.tv/hackersupc"
+          ><i class="fab fa-twitch" aria-hidden="true"></i>
+          <br />
+          Twitch
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://hackupc2021.devpost.com/"
+        >
+          <svg viewBox="0 0 280.3 242" height="1em">
+            <path
+              d="M133.7 76H118v90h14.7c30.9 0 45.1-18.1 45.1-45 0-30.1-12.9-45-44.1-45z"
+              fill="currentColor"
+            />
+            <path
+              d="M210.2 0H70.1L0 121l70.1 121h140.1l70.1-121L210.2 0zm-77.5 195H89V47h45.8c42.1 0 73.3 20.1 73.3 74 0 51.8-37.5 74-75.4 74z"
+              fill="currentColor"
+            />
+          </svg>
+          <br />
+          Devpost
+        </a>
+      </div>
+
+      <div style="margin-top: 1.5rem">
         <div class="buttons">
           <a
-            class="fb"
             target="_blank"
             rel="noopener"
             href="https://www.facebook.com/hackersupc"
             ><i class="fab fa-facebook" aria-hidden="true"></i
           ></a>
           <a
-            class="tw"
             target="_blank"
             rel="noopener"
             href="https://twitter.com/hackersupc"
             ><i class="fab fa-twitter" aria-hidden="true"></i
           ></a>
           <a
-            class="ig"
             target="_blank"
             rel="noopener"
             href="https://instagram.com/hackersupc"
             ><i class="fab fa-instagram" aria-hidden="true"></i
           ></a>
           <a
-            class="yt"
             target="_blank"
             rel="noopener"
             href="https://www.youtube.com/c/HackersUPC"
             ><i class="fab fa-youtube" aria-hidden="true"></i
           ></a>
-          <a
-            class="yt"
-            target="_blank"
-            rel="noopener"
-            href="https://www.twitch.tv/hackersupc"
-            ><i class="fab fa-twitch" aria-hidden="true"></i
-          ></a>
-          <a
-            class="gt"
-            target="_blank"
-            rel="noopener"
-            href="https://github.com/hackupc"
+          <a target="_blank" rel="noopener" href="https://github.com/hackupc"
             ><i class="fab fa-github" aria-hidden="true"></i
           ></a>
-          <a
-            class="me"
-            target="_blank"
-            rel="noopener"
-            href="https://medium.com/@hackupc"
+          <a target="_blank" rel="noopener" href="https://medium.com/@hackupc"
             ><i class="fab fa-medium" aria-hidden="true"></i
           ></a>
         </div>
