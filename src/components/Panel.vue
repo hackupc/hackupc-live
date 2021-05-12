@@ -73,7 +73,8 @@ export default Vue.extend({
 
     ::v-deep {
       a {
-        color: $secondaryColor;
+        color: $highlightColor;
+        text-decoration: underline;
       }
 
       h3 {
@@ -82,14 +83,37 @@ export default Vue.extend({
 
       p,
       ul,
-      ol,
-      li {
+      ol {
         margin: 0 0 1em;
+      }
+
+      li {
+        margin-bottom: 0.25em;
       }
 
       ul,
       ol {
-        padding-left: 1em;
+        padding-left: 2em;
+      }
+
+      ol li::marker {
+        color: $primaryColor;
+        font-weight: 600;
+      }
+
+      blockquote {
+        margin: 1.5em 0;
+        padding: 10px 0 10px 24px;
+        border-left: 4px solid $primaryColor;
+        background-color: transparentize($primaryColor, 0.9);
+        border-radius: 0 8px 8px 0;
+
+        p {
+          font-weight: 600;
+          margin-left: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
       }
     }
   }

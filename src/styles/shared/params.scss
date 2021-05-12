@@ -10,8 +10,7 @@ $buttonsMediaColor: #f2e7bf;
 $overlayColor: rgba(0, 0, 0, 0.4);
 $tapColor: rgba(0, 102, 204, 0.4);
 //Links
-// $highlightColor: darken($secondaryColor, 25%);
-$highlightColor: #9e5235;
+$highlightColor: $secondaryColor;
 $mlhHardwareBtn: $highlightColor;
 
 /* --- PATHS --- */
