@@ -40,6 +40,9 @@
             <li :class="{ selected: isActive('/schedule') }">
               <router-link to="/schedule">Schedule</router-link>
             </li>
+            <li :class="{ selected: isActive('/activities') }">
+              <router-link to="/activities">Activities</router-link>
+            </li>
             <li :class="{ selected: isActive('/challenges') }">
               <router-link to="/challenges">Challenges</router-link>
             </li>
@@ -48,6 +51,14 @@
             </li>
             <li :class="{ selected: isActive('/rules') }">
               <router-link to="/rules">Rules</router-link>
+            </li>
+            <li>
+              <a
+                href="https://hackupc.com/#faq"
+                target="_blank"
+                class="external-link"
+                >FAQ</a
+              >
             </li>
           </ul>
         </nav>
@@ -69,6 +80,9 @@
             <li :class="{ selected: isActive('/schedule') }">
               <router-link to="/schedule">Schedule</router-link>
             </li>
+            <li :class="{ selected: isActive('/activities') }">
+              <router-link to="/activities">Activities</router-link>
+            </li>
             <li @click="toggleFullscreen" id="countdown-li">
               <countdown />
             </li>
@@ -80,6 +94,14 @@
             </li>
             <li :class="{ selected: isActive('/rules') }">
               <router-link to="/rules">Rules</router-link>
+            </li>
+            <li>
+              <a
+                href="https://hackupc.com/#faq"
+                target="_blank"
+                class="external-link"
+                >FAQ</a
+              >
             </li>
           </ul>
         </nav>

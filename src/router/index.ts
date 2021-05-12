@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import Talks from '@/views/Talks.vue'
 import Challenges from '@/views/Challenges.vue'
 import Schedule from '@/views/Schedule.vue'
+import Activities from '@/views/Activities.vue'
 import Live from '@/views/Live.vue'
 import Rules from '@/views/Rules.vue'
 import FullScreen from '@/views/FullScreen.vue'
@@ -30,6 +31,11 @@ const routes: Array<RouteConfig> = [
     path: '/schedule',
     name: 'Schedule',
     component: Schedule,
+  },
+  {
+    path: '/activities',
+    name: 'Activities',
+    component: Activities,
   },
   {
     path: '/live',
