@@ -107,22 +107,6 @@
       </div>
     </panel>
 
-    <panel title="Discord channels" size="big">
-      <div
-        v-for="groupOfChannels in discordChannels"
-        :key="groupOfChannels.title"
-      >
-        <h3>{{ groupOfChannels.title }}</h3>
-        <discord-label
-          v-for="channel in groupOfChannels.channels"
-          :key="channel.name + '-' + channel.icon"
-          :name="channel.name"
-          :description="channel.description"
-          :icon="channel.icon"
-        />
-      </div>
-    </panel>
-
     <panel title="Discord BieneBot Commands" size="big">
       <h3>For registration</h3>
       <div>
@@ -160,18 +144,11 @@
 </template>
 
 <script lang="ts">
-import DiscordLabel from '@/components/DiscordLabel.vue'
 import Panel from '@/components/Panel.vue'
 import Vue from 'vue'
-import { discordChannels } from '@/data/home'
 
 export default Vue.extend({
-  components: { DiscordLabel, Panel },
-  data() {
-    return {
-      discordChannels,
-    }
-  },
+  components: { Panel },
 })
 </script>
 
