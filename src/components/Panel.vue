@@ -6,15 +6,16 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
-import Vue, { PropType } from 'vue'
+import { defineComponent, PropType } from '@vue/composition-api'
 
 enum PanelSize {
   small = 'small',
   big = 'big',
 }
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     title: {
       type: String,
@@ -24,7 +25,8 @@ export default Vue.extend({
       default: PanelSize.small,
     },
   },
-  data() {
+
+  setup() {
     return {
       PanelSize,
     }

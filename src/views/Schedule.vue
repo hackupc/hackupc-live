@@ -47,13 +47,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
 import VueMarkdown from 'vue-markdown'
 import { ScheduleDay } from '@/services/schedule'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueMarkdown,
   },

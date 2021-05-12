@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import { formatDate } from '@/services/dates'
 import duration from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
 
 dayjs.extend(duration)
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     fullscreen: {
       type: Boolean,

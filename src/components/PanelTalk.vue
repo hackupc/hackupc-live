@@ -14,12 +14,12 @@
   </panel>
 </template>
 <script lang="ts">
-import Vue, { PropType } from 'vue'
+import { defineComponent, PropType } from '@vue/composition-api'
 import Panel from '@/components/Panel.vue'
 import { Talk } from '@/data/talks'
 import VueMarkdown from 'vue-markdown'
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     talk: {
       type: Object as PropType<Talk>,

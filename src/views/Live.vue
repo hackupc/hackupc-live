@@ -45,8 +45,8 @@
 
 <script lang="ts">
 import { formatDate } from '@/services/dates'
-import { ScheduleEvent } from '@/services/schedule'
-import Vue from 'vue'
+import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
+import { defineComponent } from '@vue/composition-api'
 
 interface TimelineHourEvent {
   type: string
@@ -55,7 +55,6 @@ interface TimelineHourEvent {
   endTmsp: number
   startHour: string
   endHour: string
-  locationId: string
   title: string
   isSubscribed: boolean
 }
@@ -75,7 +74,7 @@ interface TimelineEventTitle {
   hourEvents: TimelineHourEvent[]
 }
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     fullscreen: {
       type: Boolean,
@@ -83,13 +82,13 @@ export default Vue.extend({
     },
   },
   computed: {
-    days() {
+    days(): ScheduleDay[] {
       return this.$store.state.schedule.days
     },
-    nowInSeconds() {
+    nowInSeconds(): number {
       return this.$store.getters.now.unix()
     },
-    subscribed() {
+    subscribed(): Record<string, boolean> {
       return this.$store.state.subscribed
     },
     events() {
@@ -131,7 +130,6 @@ export default Vue.extend({
               endTmsp,
               startHour: formatDate('time', event.start),
               endHour: formatDate('time', event.end),
-              locationId: event.locationId,
               title: event.title,
               isSubscribed: this.subscribed[event.id],
             })

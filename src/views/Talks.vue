@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import PanelTalk from '@/components/PanelTalk.vue'
 import { talks } from '@/data/talks'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     PanelTalk,
   },

@@ -13,17 +13,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
 import VueMarkdown from 'vue-markdown'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     Panel,
     VueMarkdown,
   },
-  data() {
+
+  setup() {
     return {
       activities,
     }

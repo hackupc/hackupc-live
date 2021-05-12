@@ -15,12 +15,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 import Panel from '@/components/Panel.vue'
 import { challenges } from '@/data/challenges'
 import VueMarkdown from 'vue-markdown'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     Panel,
     VueMarkdown,

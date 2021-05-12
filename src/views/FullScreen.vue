@@ -10,9 +10,9 @@
 <script>
 import Countdown from '@/components/Countdown.vue'
 import Live from '@/views/Live.vue'
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     Countdown,
     Live,

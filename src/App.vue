@@ -124,9 +124,9 @@ import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
 import DisabledMessage from './components/DisabledMessage.vue'
 import Cookies from './components/Cookies.vue'
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 
-export default Vue.extend({
+export default defineComponent({
   data: function () {
     return {
       isFullscreen: false,

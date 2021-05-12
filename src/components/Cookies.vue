@@ -27,25 +27,27 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 
-export default Vue.extend({
-  data: function () {
-    return {
-      showBanner: false,
-    }
-  },
+export default defineComponent({
+  setup() {
+    const showBanner = ref(false)
 
-  mounted: function () {
-    if (window.localStorage.getItem('cookies') !== '1') {
-      this.showBanner = true
-    }
-  },
-  methods: {
-    acceptCookies: function () {
+    onMounted(() => {
+      if (window.localStorage.getItem('cookies') !== '1') {
+        showBanner.value = true
+      }
+    })
+
+    const acceptCookies = function () {
       window.localStorage.setItem('cookies', '1')
-      this.showBanner = false
-    },
+      showBanner.value = false
+    }
+
+    return {
+      showBanner,
+      acceptCookies,
+    }
   },
 })
 </script>

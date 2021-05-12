@@ -147,9 +147,9 @@
 
 <script lang="ts">
 import Panel from '@/components/Panel.vue'
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
 
-export default Vue.extend({
+export default defineComponent({
   components: { Panel },
 })
 </script>
