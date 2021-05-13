@@ -109,17 +109,13 @@
           <span class="highlight-span"
             >biene changeteamname [new_teamname]</span
           >
-          Dhanges the team's name.
+          Change your team name with a fancy one!
         </div>
         <div>
           <span class="highlight-span"
             >biene jointeam [teamname] [new_members]</span
           >
-          Adds multiple users to a team.
-        </div>
-        <div>
-          <span class="highlight-span">biene ping</span> Displays info for your
-          internet connection.
+          Adds more users to your team.
         </div>
       </div>
 
@@ -131,6 +127,10 @@
         <span class="highlight-span">biene parrot</span>
         <span class="highlight-span">biene cat</span>
         <span class="highlight-span">biene dog</span>
+      </div>
+      <div>
+        <span class="highlight-span">biene ping</span> Displays info for your
+        internet connection.
       </div>
       <div>
         <span class="highlight-span"
