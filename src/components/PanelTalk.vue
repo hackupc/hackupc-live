@@ -1,16 +1,7 @@
 <template>
   <panel :title="talk.title">
-    <h3 class="talk__speaker">Speaker: {{ talk.speaker }}</h3>
+    <h3 class="talk__speaker">Company: {{ talk.speaker }}</h3>
     <vue-markdown-it :source="talk.description" />
-    <div class="embed">
-      <iframe
-        :src="talk.videoUrl"
-        class="embed__item"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
-    </div>
   </panel>
 </template>
 <script lang="ts">
@@ -20,15 +11,15 @@ import { Talk } from '@/data/talks'
 import VueMarkdownIt from 'vue3-markdown-it'
 
 export default defineComponent({
+  components: {
+    Panel,
+    VueMarkdownIt,
+  },
   props: {
     talk: {
       type: Object as PropType<Talk>,
       required: true,
     },
-  },
-  components: {
-    Panel,
-    VueMarkdownIt,
   },
 })
 </script>
