@@ -7,6 +7,14 @@
         :title="activity.title"
         class="activity"
       >
+        <p class="activity__time">
+          {{
+            formatInterval(
+              parseSpanishDate('date-time', activity.start),
+              parseSpanishDate('date-time', activity.end)
+            )
+          }}
+        </p>
         <vue-markdown-it :source="activity.description" />
         <img
           :src="activity.image"
@@ -40,6 +48,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .activity {
+  &__time {
+    margin-bottom: 1.5em;
+    font-style: italic;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
   &__image {
     display: block;
     margin: 1em auto 0;
