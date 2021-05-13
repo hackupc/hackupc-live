@@ -22,17 +22,24 @@ export interface RawSchedule {
   days: RawScheduleDay[]
 }
 
-export interface ScheduleEvent extends RawScheduleEvent {
+export type ScheduleEvent = Omit<RawScheduleEvent, 'startHour' | 'endHour'> & {
   start: Dayjs
   end: Dayjs
 }
 
-export interface ScheduleDay extends RawScheduleDay {
+export type ScheduleDay = Omit<RawScheduleDay, 'date' | 'events'> & {
   start: Dayjs
   end: Dayjs
   events: ScheduleEvent[]
 }
 
-export interface Schedule extends RawSchedule {
+export type Schedule = Omit<
+  RawSchedule,
+  'days' | 'countdownStart' | 'countdownEnd'
+> & {
   days: ScheduleDay[]
+  countdown: {
+    start: Dayjs
+    end: Dayjs
+  }
 }

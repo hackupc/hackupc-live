@@ -25,10 +25,6 @@ export default createStore({
     subscribed: {} as Record<string, boolean>,
     now: realStartTime,
     schedule: parsedSchedule,
-    countdown: {
-      start: parseSpanishDate('date-time', parsedSchedule.countdownStart),
-      end: parseSpanishDate('date-time', parsedSchedule.countdownEnd),
-    },
   },
   getters: {
     now: (state) => {

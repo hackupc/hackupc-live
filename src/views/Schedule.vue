@@ -18,7 +18,7 @@
               <tr
                 v-for="event in day.events"
                 :key="event.id"
-                :class="{ happened: hasHappened(event.end) }"
+                :class="{ happened: event.end.isBefore(now.value) }"
               >
                 <td>
                   <a
@@ -65,14 +65,10 @@ export default defineComponent({
     const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
     const now = computed<Dayjs>(() => store.getters.now)
 
-    const hasHappened = (date: Dayjs): boolean => {
-      return date.isBefore(now.value)
-    }
-
     return {
       formatDate,
-      hasHappened,
       days,
+      now,
     }
   },
 })
