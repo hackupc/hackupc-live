@@ -65,8 +65,4 @@ The rubber duck search has begun! 🦆 During the hacking time, every 2 hours, 2
 After the first hacking night, only standing up to go to the bathroom and to grab some snacks... We thought that a good relaxed 30-min yoga session could help you to release some tiredness! Join us in discord and get relaxed! 🧘`,
     image: require('@/assets/img/activities/yoga.png'),
   },
-  // {
-  //   title: 'FAKE Nerf 2',
-  //   description: 'FAKE  _am a_ ~~tast~~ **test**. \n\n New line',
-  // },
 ]
