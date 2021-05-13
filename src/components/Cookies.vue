@@ -1,9 +1,9 @@
 <template>
   <div
+    id="gdpr"
     class="gdpr"
     :class="{ 'gdpr--hidden': !showBanner }"
     :aria-hidden="!showBanner"
-    id="gdpr"
   >
     <span class="gdpr__emoji">🍪</span>
     <span class="gdpr__text">
@@ -19,9 +19,9 @@
       >.
     </span>
     <button
+      id="gdpr-close"
       class="gdpr__button"
       type="button"
-      id="gdpr-close"
       aria-label="Close GDPR notification"
       @click="acceptCookies()"
     >

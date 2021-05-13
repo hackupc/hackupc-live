@@ -1,9 +1,9 @@
 <template>
   <div
-    @click="handleClick"
     :id="fullscreen ? 'countdown-full' : ''"
     class="countdown"
     :class="{ 'hide-when-small': fullscreen }"
+    @click="handleClick"
   >
     <div class="countdown__time">
       <span>{{ hours }}</span
