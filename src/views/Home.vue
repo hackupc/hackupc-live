@@ -33,7 +33,7 @@
 
     <panel title="Links">
       <div class="buttons">
-        <a target="_blank" rel="noopener" href="#"
+        <a target="_blank" rel="noopener" href="https://discord.gg/PfHw68NN"
           ><i class="fab fa-discord" aria-hidden="true"></i>
           <br />
           Discord
@@ -102,6 +102,22 @@
       </div>
     </panel>
 
+    <panel title="Discord channels" size="big">
+      <div
+        v-for="groupOfChannels in discordChannels"
+        :key="groupOfChannels.title"
+      >
+        <h3>{{ groupOfChannels.title }}</h3>
+        <discord-label
+          v-for="channel in groupOfChannels.channels"
+          :key="channel.name + '-' + channel.icon"
+          :name="channel.name"
+          :description="channel.description"
+          :icon="channel.icon"
+        />
+      </div>
+    </panel>
+
     <panel title="Discord BieneBot Commands" size="big">
       <h3>Useful</h3>
       <div>
@@ -146,16 +162,16 @@
 </template>
 
 <script lang="ts">
+import DiscordLabel from '@/components/DiscordLabel.vue'
 import Panel from '@/components/Panel.vue'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
 import { computed, defineComponent } from 'vue'
 import { useStore } from 'vuex'
+import { discordChannels } from '@/data/home'
 
 export default defineComponent({
-  components: {
-    Panel,
-  },
+  components: { DiscordLabel, Panel },
   setup() {
     const store = useStore()
 
@@ -166,6 +182,7 @@ export default defineComponent({
     return {
       submitDeadline,
       formatDate,
+      discordChannels,
     }
   },
 })
