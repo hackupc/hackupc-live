@@ -1,27 +1,43 @@
 <template>
   <div
-    class="cookies-notice"
-    :class="{ 'cookies-notice--hidden': !showBanner }"
+    class="gdpr"
+    :class="{ 'gdpr--hidden': !showBanner }"
+    :aria-hidden="!showBanner"
+    id="gdpr"
   >
-    <p class="cookies-notice__text">
-      This website uses cookies of its own and of third parties to improve your
-      browsing experience and show you personalized content based on your
-      interests. If you continue browsing, we consider that you accept its use.
-      You can obtain more information in our
+    <span class="gdpr__emoji">🍪</span>
+    <span class="gdpr__text">
+      By browsing this website, you consent to the use of cookies and agree to
+      our
       <a
-        class="cookies-notice__link"
-        href="/privacy_and_cookies"
+        class="gdpr__link"
+        href="https://legal.hackersatupc.org/hackupc/privacy_and_cookies"
+        hreflang="en"
         target="_blank"
-        rel="noopener"
-        >Privacy and Cookies Policy</a
-      >
-    </p>
+        rel="noopener noreferrer"
+        >privacy policy</a
+      >.
+    </span>
     <button
-      class="cookies-notice__button"
+      class="gdpr__button"
+      type="button"
+      id="gdpr-close"
+      aria-label="Close GDPR notification"
       @click="acceptCookies()"
-      title="Close"
     >
-      OK
+      <svg
+        stroke="currentColor"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="gdpr__close-icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
     </button>
   </div>
 </template>
@@ -53,58 +69,98 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.cookies-notice {
+$ease-bounce: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+$ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+.gdpr {
   position: fixed;
-  right: 0;
-  bottom: -16px;
-  left: 0;
-  transition: transform 200ms ease-out, opacity 200ms ease-out;
-  background-color: #171c18;
-  color: white;
+  z-index: 100;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   display: flex;
+  max-width: 1000px;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  padding: 8px;
-  animation: slide-up 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  z-index: 1000;
-  border-bottom: solid transparent 16px;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin: 0 auto;
+  background-color: #0c0c0c;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: transform 400ms $ease-quad, opacity 400ms $ease-quad;
+
+  // animation: gdpr-show 400ms $ease-bounce;
+  // @keyframes gdpr-show {
+  //   from {transform: translateY(100%); opacity: 0.5;}
+  //   to   {transform: translateY(0%); opacity: 1;}
+  // }
+
+  @media (min-width: 640px) {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 1rem;
+  }
 
   &--hidden {
-    transform: translateY(100%);
-    pointer-events: none;
     opacity: 0;
-    flex-grow: 1;
+    pointer-events: none;
+    transform: translateY(100%);
+  }
+
+  &__emoji {
+    margin-right: 0.5rem;
+    cursor: default;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 250ms $ease-bounce;
+    @media (min-width: 640px) {
+      margin-right: 0.75rem;
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+    }
   }
 
   &__text {
-    font-size: 0.8em;
-    line-height: 1;
-    max-width: 800px;
+    flex: 1;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    @media (min-width: 640px) {
+      font-size: 1rem;
+    }
   }
 
   &__link {
-    color: #69a9e9;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.6667);
   }
 
   &__button {
-    border: none;
-    border-bottom: solid #003569 4px;
-    background: #0066cc;
+    flex-shrink: 0;
+    padding: 0.5rem;
+    border: 0;
+    margin: -0.25rem -0.25rem -0.25rem 0;
+    background-color: transparent;
+    border-radius: 0.5rem;
     color: #fff;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-left: 16px;
-    padding: 4px 10px;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: transparentize(#fff, 0.8);
+      outline: none;
+    }
   }
 
-  @keyframes slide-up {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  &__close-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: currentColor;
   }
 }
 </style>
