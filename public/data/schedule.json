@@ -9,7 +9,7 @@
       "date": "14/5/2021",
       "events": [
         {
-          "id": "0",
+          "id": "opening",
           "emoji": "🔗",
           "title": "Opening Ceremony",
           "startHour": "19:00",
@@ -17,20 +17,20 @@
           "description": "Join us on twitch to be aware of everything will be happening this weekend"
         },
         {
-          "id": "1",
+          "id": "hacking-starts",
           "title": "Hacking Start!!!",
           "startHour": "21:00",
           "description": "Hacking time is starting now!! 👨‍💻👩‍💻"
         },
         {
-          "id": "2",
+          "id": "activity-team-building",
           "title": "Team Building",
           "startHour": "21:00",
           "endHour": "21:30",
           "description": "Are you looking for a team o for teammates? Join us on the Team Building activity"
         },
         {
-          "id": "3",
+          "id": "talk-infojobs",
           "emoji": "🔗",
           "title": "InfoJobs Talk title",
           "startHour": "21:30",
@@ -38,7 +38,7 @@
           "description": "InfoJobs Talk description"
         },
         {
-          "id": "4",
+          "id": "talk-happyscribe",
           "emoji": "🔗",
           "title": "HappyScribe talk title",
           "startHour": "22:30",
@@ -46,7 +46,7 @@
           "description": "HappyScribe talk description"
         },
         {
-          "id": "5",
+          "id": "talk-typeform",
           "emoji": "🔗",
           "title": "Typeform talk title",
           "startHour": "23:00",
@@ -54,7 +54,7 @@
           "description": "Typeform talk description"
         },
         {
-          "id": "6",
+          "id": "talk-X",
           "emoji": "🔗",
           "title": "X talk title",
           "startHour": "23:30",
@@ -67,21 +67,21 @@
       "date": "15/5/2021",
       "events": [
         {
-          "id": "7",
+          "id": "activity-sports",
           "title": "Sports activity",
           "startHour": "10:00",
           "endHour": "11:00",
           "description": "Join us on discord and let's do some yoga to relax!"
         },
         {
-          "id": "8",
+          "id": "activity-nerf",
           "title": "Nerf activity",
           "startHour": "12:00",
           "endHour": "13:00",
           "description": "Join the playground channel on discord and let's play some Krunker rounds!"
         },
         {
-          "id": "9",
+          "id": "activity-draw-1",
           "emoji": "🔗",
           "title": "Draw",
           "startHour": "17:45",
@@ -89,14 +89,14 @@
           "description": "Join us on twitch, we will be doing a draw with the participants of the photocall! Maybe you can win a pizza for dinner!"
         },
         {
-          "id": "10",
+          "id": "activity-freehand",
           "title": "FreeHand activity",
           "startHour": "18:00",
           "endHour": "19:00",
           "description": "Join the playground channel on discord ... NOSE QUE POSAR HELP ;)"
         },
         {
-          "id": "11",
+          "id": "activity-draw-2",
           "emoji": "🔗",
           "title": "Draw",
           "startHour": "21:45",
@@ -104,7 +104,7 @@
           "description": "Join us on twitch, we will be doing a draw with the participants of the photocall!"
         },
         {
-          "id": "12",
+          "id": "activity-slideshare",
           "emoji": "🔗",
           "title": "SlideShare Show",
           "startHour": "22:00",
@@ -117,27 +117,27 @@
       "date": "16/5/2021",
       "events": [
         {
-          "id": "13",
+          "id": "submisions",
           "title": "Hack submisions",
           "startHour": "8:00",
           "endHour": "9:15",
           "description": "Time to deliver your project on devpost!"
         },
         {
-          "id": "14",
+          "id": "hacking-ends",
           "title": "Hacking Ends",
           "startHour": "09:00",
           "description": "Remember to post your project on devpost or you don't be able to acces the prices!"
         },
         {
-          "id": "15",
+          "id": "demos",
           "title": "Demo time",
           "startHour": "10:15",
           "endHour": "13:30",
           "description": "Follow the instructions in order to demo your project for the sponsor and for HackUPC team"
         },
         {
-          "id": "16",
+          "id": "activity-draw-3",
           "title": "Draw",
           "emoji": "🔗",
           "startHour": "13:30",
@@ -145,7 +145,7 @@
           "description": "Join us on twitch, we will be doing a draw with the participants of the photocall! Maybe you can win a pizza for lunch!"
         },
         {
-          "id": "17",
+          "id": "closing",
           "emoji": "🔗",
           "title": "Closing ceremony",
           "startHour": "14:30",
