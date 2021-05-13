@@ -33,7 +33,7 @@
 
     <panel title="Links">
       <div class="buttons">
-        <a target="_blank" rel="noopener" href="#"
+        <a target="_blank" rel="noopener" href="https://discord.gg/PfHw68NN"
           ><i class="fab fa-discord" aria-hidden="true"></i>
           <br />
           Discord
