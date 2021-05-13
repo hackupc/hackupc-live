@@ -10,7 +10,7 @@
             href="https://hackupc2021.devpost.com/"
             >Devpost</a
           >
-          before Sunday at 12:00.
+          before {{ formatDate('weekday-time', submitDeadline) }}.
         </b>
         If you don't do it, you won't have access to the prices, swag, nor ECTS
         credits.
@@ -147,11 +147,26 @@
 
 <script lang="ts">
 import Panel from '@/components/Panel.vue'
-import { defineComponent } from 'vue'
+import { formatDate } from '@/services/dates'
+import { Dayjs } from 'dayjs'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {
     Panel,
+  },
+  setup() {
+    const store = useStore()
+
+    const submitDeadline = computed<Dayjs>(
+      () => store.state.schedule.submitDeadline
+    )
+
+    return {
+      submitDeadline,
+      formatDate,
+    }
   },
 })
 </script>
