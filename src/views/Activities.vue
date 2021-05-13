@@ -7,6 +7,11 @@
         :title="activity.title"
       >
         <vue-markdown-it :source="activity.description" />
+        <img
+          :src="activity.imageUrl"
+          v-bind:alt="activity.imageUrl"
+          style="width: 100%"
+        />
       </panel>
     </div>
   </div>
