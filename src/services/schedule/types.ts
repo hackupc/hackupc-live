@@ -1,27 +1,5 @@
+import { RawScheduleEvent, RawScheduleDay, RawSchedule } from '@/data/schedule'
 import { Dayjs } from 'dayjs'
-
-export interface RawScheduleEvent {
-  id: string
-  title: string
-  description: string // Accepts Markdown
-  startHour: string
-  endHour?: string
-  emoji?: string
-}
-
-export interface RawScheduleDay {
-  date: string
-  events: RawScheduleEvent[]
-}
-
-export interface RawSchedule {
-  version: number
-  message: string
-  countdownStart: string
-  countdownEnd: string
-  submitDeadline: string
-  days: RawScheduleDay[]
-}
 
 export type ScheduleEvent = Omit<RawScheduleEvent, 'startHour' | 'endHour'> & {
   start: Dayjs

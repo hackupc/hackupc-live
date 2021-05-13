@@ -23,7 +23,7 @@ export const dateFormats: Record<DateFormat, string> = {
   second: 'ss',
   time: 'H:mm',
   weekday: 'dddd',
-  'weekday-time': 'dddd H:mm',
+  'weekday-time': 'dddd [at] H:mm',
   date: 'D/M/YYYY',
   'date-time': 'D/M/YYYY H:mm',
   'full-date-time': 'D/M/YYYY H:mm:ss',
@@ -35,6 +35,22 @@ export function formatDate(format: DateFormat, date: Dayjs): string {
 
 export function formatDuration(format: DateFormat, date: Duration): string {
   return date.format(dateFormats[format])
+}
+
+export function formatInterval(dateStart: Dayjs, dateEnd: Dayjs): string {
+  if (!dateEnd.isValid() || dateEnd.isSame(dateStart)) {
+    return `${formatDate('weekday-time', dateStart)}`
+  } else if (dateEnd.isSame(dateStart, 'day')) {
+    return `${formatDate('weekday', dateStart)} from ${formatDate(
+      'time',
+      dateStart
+    )} to ${formatDate('time', dateEnd)}`
+  } else {
+    return `from ${formatDate('weekday-time', dateStart)} to ${formatDate(
+      'weekday-time',
+      dateEnd
+    )}`
+  }
 }
 
 export function parseSpanishDate(

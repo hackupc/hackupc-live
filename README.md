@@ -18,7 +18,7 @@ Theme variables are in `src/live/params.scss`.
 Most of the content is in `src/data` or hardcoded into the components.
 
 ### Schedule
-The schedule is in `public/data/schedule.json`
+The schedule is in `src/data/schedule.ts`
 
 - `id` can be whatever you want, but all ids must be different  
 - `dates` are D/M/YYYY format at Spain time

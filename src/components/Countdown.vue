@@ -1,8 +1,10 @@
 <template>
   <div
-    :id="fullscreen ? 'countdown-full' : ''"
     class="countdown"
-    :class="{ 'hide-when-small': fullscreen }"
+    :class="{
+      'hide-when-small': fullscreen,
+      'countdown--fullscreen': fullscreen,
+    }"
     @click="handleClick"
   >
     <div class="countdown__time">
@@ -118,6 +120,33 @@ export default defineComponent({
       width: 100%;
       opacity: 0.2;
     }
+  }
+
+  &--fullscreen {
+    position: absolute;
+    width: 33.333vw;
+    height: 33.333vw;
+    top: calc(50vh - 16.667vw);
+    left: 8vw;
+    z-index: 50;
+    border-radius: 50%;
+    box-shadow: 0 4px 42px 0 rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  &--fullscreen &__time {
+    font-size: 7.5vw;
+    padding-left: 0;
+  }
+
+  &--fullscreen &__bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border-radius: 100%;
+    border-width: 8px;
+    box-sizing: border-box;
   }
 }
 </style>

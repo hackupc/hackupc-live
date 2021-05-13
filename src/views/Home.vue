@@ -10,7 +10,7 @@
             href="https://hackupc2021.devpost.com/"
             >Devpost</a
           >
-          before {{ formatDate('weekday-time', submitDeadline) }} AM (UTC+2).
+          before {{ formatDate('weekday-time', submitDeadline) }}.
         </b>
         If you don't do it, you won't have access to the prizes, swag, nor ECTS
         credits.
