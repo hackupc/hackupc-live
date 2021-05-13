@@ -9,17 +9,18 @@ export const activities: Activity[] = [
     title: 'Draw your Biene',
     description:
       'Biene is our mascot and we invite you to create your own personalized Biene 🐝. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄\n\n Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.',
-    imageUrl: require('@/assets/img/activities/draw-biene.png'),
+    imageUrl: require('@/assets/img/activities/biene.png'),
   },
   {
     title: 'Photocall',
     description:
-      'We would love to receive photos from your HackUPC online experience! 📷 From you and your college coding, your pizza, anything you want to share with us!\n\n You can upload them on this channel or on any social network using the hashtag **#HackUPC2021**. If your account is private, send us a screenshot via DM!\n\n You will enter some amazing contests by participating! If you upload your photo on the discord channel you will have 1 spot on the contest, but if you post the image on your social media you will have 2 spots on the contest. You can upload as many pictures as you want, every picture will count.',
+      'We would love to receive photos from your HackUPC online experience! 📷 From you and your college coding, your pizza, anything you want to share with us!\n\n You can upload them on photocall channel or on any social network using the hashtag **#HackUPC2021**. If your account is private, send us a screenshot via DM!\n\n You will enter some amazing contests by participating! You can upload as many pictures as you want, every picture will count.',
+    imageUrl: require('@/assets/img/activities/photocall.png'),
   },
   {
     title: 'HackUphone',
     description:
-      "How weird can a sentence become? Let's play a Telephone Game! ☎️\n\n Stay tuned to discord, there will be a message where you can react in order to participate, later on you will receive a picture or a sentence. If you receive a sentence, you then will need to draw it, if you receive a picture you will need to write a sentence describing what the picture is. You will have an hour to do it!",
+      "How weird can a sentence become? Let's play a Telephone Game! ☎️\n\n Stay tuned to discord, there will be a message where you can react in order to participate, later on you will receive a picture or a sentence. If you receive a sentence, you will have to draw it; if you receive a picture, you will have to write a sentence describing what the picture is about. You will have an hour to do it!",
     imageUrl: require('@/assets/img/activities/hackuphone.png'),
   },
   {
@@ -44,13 +45,13 @@ export const activities: Activity[] = [
     title: 'Rubber Duck',
     description:
       'The rubber duck search has begun! 🦆 During the hacking time, every 2 hours, 2 questions will be launched. If you get the answer right and it is one of the first 4 correct answers, then you will get the rubber duck (virtually)!',
-    imageUrl: require('@/assets/img/activities/rubber-duck.webp'),
+    imageUrl: require('@/assets/img/activities/rubber-duck.png'),
   },
   {
     title: 'Yoga',
     description:
       'After the first hacking night, only standing up to go to the bathroom and to grab some snacks... We thought that a good relaxed 30-min yoga session could help you to release some tiredness! Join us in discord and get relaxed! 🧘',
-    imageUrl: require('@/assets/img/activities/yoga.svg'),
+    imageUrl: require('@/assets/img/activities/yoga.png'),
   },
   // {
   //   title: 'FAKE Nerf 2',
