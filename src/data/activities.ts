@@ -11,7 +11,7 @@ export const activities: Activity[] = [
 Biene is our mascot and we invite you to create your own personalized Biene 🐝. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄
 
 Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.`,
-    image: require('@/assets/img/activities/draw-biene.png'),
+    image: require('@/assets/img/activities/biene.png'),
   },
   {
     title: 'Photocall',
@@ -21,6 +21,7 @@ We would love to receive photos from your HackUPC online experience! 📷 From y
 You can upload them on this channel or on any social network using the hashtag **#HackUPC2021**. If your account is private, send us a screenshot via DM!
 
 You will enter some amazing contests by participating! If you upload your photo on the discord channel you will have 1 spot on the contest, but if you post the image on your social media you will have 2 spots on the contest. You can upload as many pictures as you want, every picture will coun.`,
+    image: require('@/assets/img/activities/photocall.png'),
   },
   {
     title: 'HackUphone',
@@ -56,12 +57,12 @@ The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW! 🎤 This time, adapted i
     title: 'Rubber Duck',
     description: `
 The rubber duck search has begun! 🦆 During the hacking time, every 2 hours, 2 questions will be launched. If you get the answer right and it is one of the first 4 correct answers, then you will get the rubber duck (virtually)!`,
-    image: require('@/assets/img/activities/rubber-duck.webp'),
+    image: require('@/assets/img/activities/rubber-duck.png'),
   },
   {
     title: 'Yoga',
     description: `
 After the first hacking night, only standing up to go to the bathroom and to grab some snacks... We thought that a good relaxed 30-min yoga session could help you to release some tiredness! Join us in discord and get relaxed! 🧘`,
-    image: require('@/assets/img/activities/yoga.svg'),
+    image: require('@/assets/img/activities/yoga.png'),
   },
 ]
