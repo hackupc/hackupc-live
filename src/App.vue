@@ -148,14 +148,11 @@ export default defineComponent({
       store.dispatch('refreshTime')
     }, 1000)
 
+    window.setInterval(() => {
+      store.dispatch('refreshSchedule')
+    }, 1 * 60 * 1000) // 1 minute
+
     onMounted(() => {
-      store.dispatch('getSubscribed')
-      store.dispatch('getSchedule')
-
-      window.setInterval(() => {
-        store.dispatch('getSchedule')
-      }, 1 * 60 * 1000) // 1 minute
-
       window.addEventListener('keyup', (event) => {
         if (
           event.key === 'p' ||

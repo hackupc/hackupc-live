@@ -20,9 +20,13 @@ const fakeStartTime = config.fakeStartTime
   ? parseSpanishDate('full-date-time', config.fakeStartTime)
   : undefined
 
+const subscribed: Record<string, boolean> = JSON.parse(
+  window.localStorage.subscribed || '{}'
+)
+
 export default createStore({
   state: {
-    subscribed: {} as Record<string, boolean>,
+    subscribed,
     now: realStartTime,
     schedule: parsedSchedule,
   },
@@ -40,13 +44,10 @@ export default createStore({
       } else {
         state.subscribed[value] = true
       }
-      window.localStorage['subscribed'] = JSON.stringify(state.subscribed)
+      window.localStorage.subscribed = JSON.stringify(state.subscribed)
     },
     updateSchedule(state, value: Schedule) {
       state.schedule = value
-    },
-    updateSubscribed(state, value: Record<string, boolean>) {
-      state.subscribed = value
     },
     refreshTime(state) {
       state.now = dayjs()
@@ -59,14 +60,7 @@ export default createStore({
     toggleSubscribe({ commit }, value) {
       commit('toggleSubscribe', value)
     },
-    updateCurrentTime({ commit }, value) {
-      commit('updateCurrentTime', value)
-    },
-    getSubscribed({ commit }) {
-      const subscribed = JSON.parse(window.localStorage['subscribed'] || '{}')
-      commit('updateSubscribed', subscribed)
-    },
-    async getSchedule({ commit }) {
+    async refreshSchedule({ commit }) {
       const schedule = await getLattestSchedule()
 
       if (!schedule || areSameSchedule(this.state.schedule, schedule)) {
