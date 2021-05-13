@@ -9,7 +9,7 @@ module.exports = {
   singleQuote: true,
   overrides: [
     {
-      files: 'src/**/*.html',
+      files: '*.html',
       options: {
         printWidth: 120,
       },
