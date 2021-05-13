@@ -9,8 +9,8 @@
       >
         <vue-markdown-it :source="activity.description" />
         <img
-          :src="activity.imageUrl"
-          v-bind:alt="activity.imageUrl"
+          :src="activity.image"
+          v-bind:alt="activity.image"
           class="activity__image"
         />
       </panel>
