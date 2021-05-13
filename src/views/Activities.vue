@@ -6,22 +6,22 @@
         :key="activity.title"
         :title="activity.title"
       >
-        <vue-markdown :source="activity.description" />
+        <vue-markdown-it :source="activity.description" />
       </panel>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownIt from 'vue3-markdown-it'
 
 export default defineComponent({
   components: {
     Panel,
-    VueMarkdown,
+    VueMarkdownIt,
   },
 
   setup() {

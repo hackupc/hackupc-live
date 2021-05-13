@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import PanelTalk from '@/components/PanelTalk.vue'
 import { talks } from '@/data/talks'
 
@@ -13,8 +13,10 @@ export default defineComponent({
   components: {
     PanelTalk,
   },
-  data() {
-    return { talks }
+  setup() {
+    return {
+      talks,
+    }
   },
 })
 </script>

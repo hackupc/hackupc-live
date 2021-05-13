@@ -6,23 +6,24 @@
       :title="rule.title"
       size="big"
     >
-      <vue-markdown :source="rule.description" />
+      <vue-markdown-it :source="rule.description" />
     </panel>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownIt from 'vue3-markdown-it'
 import { rules } from '@/data/rules'
 
 export default defineComponent({
   components: {
     Panel,
-    VueMarkdown,
+    VueMarkdownIt,
   },
-  data: function () {
+
+  setup() {
     return {
       rules,
     }

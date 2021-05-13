@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="leaveFullscreen"
+    @click="handleClick"
     :id="fullscreen ? 'countdown-full' : ''"
     class="countdown"
     :class="{ 'hide-when-small': fullscreen }"
@@ -16,11 +16,12 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api'
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
 import { formatDate } from '@/services/dates'
 import duration from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
+import { useStore } from 'vuex'
 
 dayjs.extend(duration)
 
@@ -31,40 +32,34 @@ export default defineComponent({
       default: false,
     },
   },
+  setup(props, { emit }) {
+    const store = useStore()
 
-  computed: {
-    countdown() {
-      return this.$store.state.countdown
-    },
-    now() {
-      return this.$store.getters.now
-    },
-    remainingTime() {
-      if (this.now.isBefore(this.countdown.start)) {
-        return dayjs.duration(this.countdown.end.diff(this.countdown.start))
-      } else if (this.now.isAfter(this.countdown.end)) {
+    const countdown = computed(() => store.state.countdown)
+    const now = computed(() => store.getters.now)
+    const remainingTime = computed(() => {
+      if (now.value.isBefore(countdown.value.start)) {
+        return dayjs.duration(countdown.value.end.diff(countdown.value.start))
+      } else if (now.value.isAfter(countdown.value.end)) {
         return dayjs.duration(0)
       } else {
-        return dayjs.duration(this.countdown.end.diff(this.now))
+        return dayjs.duration(countdown.value.end.diff(now.value))
       }
-    },
-    hours() {
-      return Math.floor(this.remainingTime.asHours())
-    },
-    minutes() {
-      return formatDate('minute', this.remainingTime)
-    },
-    seconds() {
-      return formatDate('second', this.remainingTime)
-    },
-  },
-  methods: {
-    leaveFullscreen: function () {
-      // Altought not the best way, this is used to call the first Vue component, however since it is not the $root one, we need to call it's only child (App component)
-      if (this.fullscreen) {
-        this.$root.$children[0].toggleFullscreen()
-      }
-    },
+    })
+    const hours = computed(() => Math.floor(remainingTime.value.asHours()))
+    const minutes = computed(() => formatDate('minute', remainingTime.value))
+    const seconds = computed(() => formatDate('second', remainingTime.value))
+
+    const handleClick = () => {
+      emit('click')
+    }
+
+    return {
+      hours,
+      minutes,
+      seconds,
+      handleClick,
+    }
   },
 })
 </script>

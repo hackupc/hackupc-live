@@ -35,7 +35,7 @@
                 </td>
                 <td class="when-small">{{ event.title }}</td>
                 <td class="hide-when-small">
-                  <vue-markdown :source="event.description" />
+                  <vue-markdown-it :source="event.description" />
                 </td>
               </tr>
             </tbody>
@@ -47,29 +47,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { computed, defineComponent } from 'vue'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownIt from 'vue3-markdown-it'
 import { ScheduleDay } from '@/services/schedule'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {
-    VueMarkdown,
+    VueMarkdownIt,
   },
-  computed: {
-    days(): ScheduleDay {
-      return this.$store.state.schedule.days
-    },
-    now(): Dayjs {
-      return this.$store.getters.now
-    },
-  },
-  methods: {
-    hasHappened(date: Dayjs): boolean {
-      return date.isBefore(this.now)
-    },
-    formatDate,
+
+  setup() {
+    const store = useStore()
+
+    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
+    const now = computed<Dayjs>(() => store.getters.now)
+
+    const hasHappened = (date: Dayjs): boolean => {
+      return date.isBefore(now.value)
+    }
+
+    return {
+      formatDate,
+      hasHappened,
+      days,
+    }
   },
 })
 </script>

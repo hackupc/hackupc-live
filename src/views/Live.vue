@@ -18,24 +18,23 @@
             :key="`${event.name}-${event.startTmsp}`"
           >
             <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
-            <template v-for="hourEvent in event.hourEvents">
-              <div
-                @click="toggleSubscribe(hourEvent.id)"
-                class="event"
-                :class="{ subscribed: subscribed[hourEvent.id] }"
-                :key="hourEvent.id"
-                :data-event-id="hourEvent.id"
-              >
-                <div class="event-hour">
-                  <div>{{ hourEvent.startHour }}</div>
-                  <div class="end-hour">{{ hourEvent.endHour }}</div>
-                </div>
-                <div class="title">
-                  {{ hourEvent.title }}
-                  <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
-                </div>
+            <div
+              v-for="hourEvent in event.hourEvents"
+              :key="hourEvent.id"
+              @click="toggleSubscribe(hourEvent.id)"
+              class="event"
+              :class="{ subscribed: subscribed[hourEvent.id] }"
+              :data-event-id="hourEvent.id"
+            >
+              <div class="event-hour">
+                <div>{{ hourEvent.startHour }}</div>
+                <div class="end-hour">{{ hourEvent.endHour }}</div>
               </div>
-            </template>
+              <div class="title">
+                {{ hourEvent.title }}
+                <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
+              </div>
+            </div>
           </li>
         </template>
       </ul>
@@ -46,7 +45,8 @@
 <script lang="ts">
 import { formatDate } from '@/services/dates'
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { defineComponent } from '@vue/composition-api'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
 
 interface TimelineHourEvent {
   type: string
@@ -81,21 +81,20 @@ export default defineComponent({
       default: false,
     },
   },
-  computed: {
-    days(): ScheduleDay[] {
-      return this.$store.state.schedule.days
-    },
-    nowInSeconds(): number {
-      return this.$store.getters.now.unix()
-    },
-    subscribed(): Record<string, boolean> {
-      return this.$store.state.subscribed
-    },
-    events() {
+  setup() {
+    const store = useStore()
+
+    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
+    const nowInSeconds = computed<number>(() => store.getters.now.unix())
+    const subscribed = computed<Record<string, boolean>>(
+      () => store.state.subscribed
+    )
+
+    const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
 
-      for (const day of this.days) {
-        if (day.end.unix() >= this.nowInSeconds) {
+      for (const day of days.value) {
+        if (day.end.unix() >= nowInSeconds.value) {
           newEvents.push({
             type: 'title',
             name: formatDate('weekday', day.start),
@@ -131,7 +130,7 @@ export default defineComponent({
               startHour: formatDate('time', event.start),
               endHour: formatDate('time', event.end),
               title: event.title,
-              isSubscribed: this.subscribed[event.id],
+              isSubscribed: subscribed.value[event.id],
             })
             eventIndex += 1
             if (eventIndex < day.events.length) {
@@ -140,26 +139,33 @@ export default defineComponent({
           }
 
           // Add a list element for every step
-          if (endTmsp >= this.nowInSeconds) {
+          if (endTmsp >= nowInSeconds.value) {
             newEvents.push({
               type: 'item',
               startTmsp: i,
               endTmsp,
               hourEvents,
               isHappening:
-                this.nowInSeconds >= i && this.nowInSeconds < endTmsp,
+                nowInSeconds.value >= i && nowInSeconds.value < endTmsp,
             })
           }
         }
       }
 
       return newEvents
-    },
-  },
-  methods: {
-    toggleSubscribe: function (id: ScheduleEvent['id']) {
-      this.$store.dispatch('toggleSubscribe', id)
-    },
+    })
+
+    const toggleSubscribe = (id: ScheduleEvent['id']): void => {
+      store.dispatch('toggleSubscribe', id)
+    }
+
+    return {
+      days,
+      nowInSeconds,
+      subscribed,
+      events,
+      toggleSubscribe,
+    }
   },
 })
 </script>

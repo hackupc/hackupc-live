@@ -1,7 +1,7 @@
 <template>
   <panel :title="talk.title">
     <h3 class="talk__speaker">Speaker: {{ talk.speaker }}</h3>
-    <vue-markdown :source="talk.description" />
+    <vue-markdown-it :source="talk.description" />
     <div class="embed">
       <iframe
         :src="talk.videoUrl"
@@ -14,10 +14,10 @@
   </panel>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from '@vue/composition-api'
+import { defineComponent, PropType } from 'vue'
 import Panel from '@/components/Panel.vue'
 import { Talk } from '@/data/talks'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownIt from 'vue3-markdown-it'
 
 export default defineComponent({
   props: {
@@ -28,7 +28,7 @@ export default defineComponent({
   },
   components: {
     Panel,
-    VueMarkdown,
+    VueMarkdownIt,
   },
 })
 </script>

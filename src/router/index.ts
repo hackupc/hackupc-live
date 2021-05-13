@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Talks from '@/views/Talks.vue'
 import Challenges from '@/views/Challenges.vue'
@@ -9,9 +8,7 @@ import Live from '@/views/Live.vue'
 import Rules from '@/views/Rules.vue'
 import FullScreen from '@/views/FullScreen.vue'
 
-Vue.use(VueRouter)
-
-const routes: Array<RouteConfig> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
@@ -54,9 +51,8 @@ const routes: Array<RouteConfig> = [
   },
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 })
 

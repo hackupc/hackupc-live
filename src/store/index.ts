@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import config from '@/config'
 import {
   parseSchedule,
@@ -14,8 +13,6 @@ import dayjs from 'dayjs'
 
 dayjs.extend(duration)
 
-Vue.use(Vuex)
-
 const parsedSchedule: Schedule = parseSchedule(schedule as RawSchedule)
 
 const realStartTime = dayjs()
@@ -23,7 +20,7 @@ const fakeStartTime = config.fakeStartTime
   ? parseSpanishDate('full-date-time', config.fakeStartTime)
   : undefined
 
-export default new Vuex.Store({
+export default createStore({
   state: {
     subscribed: {} as Record<string, boolean>,
     now: realStartTime,

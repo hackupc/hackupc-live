@@ -1,5 +1,6 @@
 import dayjs, { Dayjs } from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
+import { Duration } from 'dayjs/plugin/duration'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
@@ -28,7 +29,7 @@ export const dateFormats: Record<DateFormat, string> = {
   'full-date-time': 'D/M/YYYY H:mm:ss',
 } as const
 
-export function formatDate(format: DateFormat, date: Dayjs): string {
+export function formatDate(format: DateFormat, date: Dayjs | Duration): string {
   return date.format(dateFormats[format])
 }
 

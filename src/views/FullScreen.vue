@@ -1,21 +1,41 @@
 <template>
   <div id="fullscreen">
     <div>
-      <Countdown :fullscreen="true" />
+      <Countdown :fullscreen="true" @click="exitFullscreen" />
       <Live :fullscreen="true" />
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Countdown from '@/components/Countdown.vue'
 import Live from '@/views/Live.vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, onBeforeUnmount, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
     Countdown,
     Live,
+  },
+  setup() {
+    const router = useRouter()
+
+    onMounted(() => {
+      document.documentElement.requestFullscreen()
+    })
+
+    onBeforeUnmount(() => {
+      document.exitFullscreen?.()
+    })
+
+    const exitFullscreen = () => {
+      router.push('/')
+    }
+
+    return {
+      exitFullscreen,
+    }
   },
 })
 </script>

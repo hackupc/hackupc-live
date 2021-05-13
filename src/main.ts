@@ -1,16 +1,9 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import VueCompositionAPI from '@vue/composition-api'
 
-Vue.config.devtools = true
+const app = createApp(App).use(store).use(router).mount('#app')
 
-Vue.use(VueCompositionAPI)
-
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount('#app')
+// app.config.devtools = true

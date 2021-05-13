@@ -7,7 +7,7 @@
         :title="challenge.company"
       >
         <h3>{{ challenge.title }}</h3>
-        <vue-markdown :source="challenge.description" />
+        <vue-markdown-it :source="challenge.description" />
         <p><strong>Prize:</strong> {{ challenge.prize }}</p>
       </panel>
     </div>
@@ -15,17 +15,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
 import { challenges } from '@/data/challenges'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdownIt from 'vue3-markdown-it'
 
 export default defineComponent({
   components: {
     Panel,
-    VueMarkdown,
+    VueMarkdownIt,
   },
-  data() {
+
+  setup() {
     return {
       challenges,
     }

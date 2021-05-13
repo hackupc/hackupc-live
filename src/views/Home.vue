@@ -147,10 +147,12 @@
 
 <script lang="ts">
 import Panel from '@/components/Panel.vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: { Panel },
+  components: {
+    Panel,
+  },
 })
 </script>
 
