@@ -12,7 +12,7 @@
           >
           before {{ formatDate('weekday-time', submitDeadline) }}.
         </b>
-        If you don't do it, you won't have access to the prices, swag, nor ECTS
+        If you don't do it, you won't have access to the prizes, swag, nor ECTS
         credits.
       </p>
 
