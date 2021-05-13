@@ -35,7 +35,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const store = useStore()
 
-    const countdown = computed(() => store.state.countdown)
+    const countdown = computed(() => store.state.schedule.countdown)
     const now = computed(() => store.getters.now)
     const remainingTime = computed(() => {
       if (now.value.isBefore(countdown.value.start)) {

@@ -37,6 +37,10 @@ export function parseSchedule(rawSchedule: RawSchedule): Schedule {
   const schedule: Schedule = {
     ...rawSchedule,
     days: rawSchedule.days.map((day) => parseScheduleDay(day)),
+    countdown: {
+      start: parseSpanishDate('date-time', rawSchedule.countdownStart),
+      end: parseSpanishDate('date-time', rawSchedule.countdownEnd),
+    },
   }
 
   return schedule
