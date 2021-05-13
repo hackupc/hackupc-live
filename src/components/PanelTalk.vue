@@ -1,6 +1,9 @@
 <template>
   <panel :title="talk.title">
-    <h3 class="talk__speaker">Company: {{ talk.speaker }}</h3>
+    <h3>Company: {{ talk.speaker }}</h3>
+    <h5>
+      <i class="talk__speaker">{{ talk.time }}</i>
+    </h5>
     <vue-markdown-it :source="talk.description" />
   </panel>
 </template>
