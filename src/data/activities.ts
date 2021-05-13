@@ -8,7 +8,7 @@ export const activities: Activity[] = [
   {
     title: 'Draw your Biene',
     description:
-      'Biene is our mascot and we invite you to create your own personalized Biene. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄\n\n Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.',
+      'Biene is our mascot and we invite you to create your own personalized Biene 🐝. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄\n\n Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.',
     imageUrl: require('@/assets/img/activities/draw-biene.png'),
   },
   {
@@ -37,7 +37,7 @@ export const activities: Activity[] = [
   {
     title: 'SlideShare Show',
     description:
-      'The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW!  This time, adapted into an online version. The activity will happen on our twitch channel! The details will be explained during the live… but if you don’t know about this activity long story short: someone will have to present some random slides. The topic of the slides will be chosen by the audience... So we need you to participate in both speaker and audience roles!!',
+      'The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW! 🎤 This time, adapted into an online version. The activity will happen on our twitch channel! The details will be explained during the live… but if you don’t know about this activity long story short: someone will have to present some random slides. The topic of the slides will be chosen by the audience... So we need you to participate in both speaker and audience roles!!',
     imageUrl: require('@/assets/img/activities/slideshare-show.jpg'),
   },
   {
