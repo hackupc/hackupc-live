@@ -8,7 +8,7 @@
       >
         <h3>{{ challenge.title }}</h3>
         <vue-markdown-it :source="challenge.description" />
-        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
+        <!-- <p><strong>Prize:</strong> {{ challenge.prize }}</p> -->
       </panel>
     </div>
   </div>

@@ -9,23 +9,34 @@ export interface Challenge {
 
 export const challenges: Challenge[] = [
   {
-    company: 'FAKE ACME',
-    title: 'FAKE Hack the crash',
+    company: '',
+    title: '',
+    description: `
+All the challenge information will be available **after** the opening ceremony
+
+Stay tunned you will be able to see all the information of the challenges and the prizes!
+`,
+    prize: '',
+    channel: '',
+  },
+  /*{
+    company: 'InfoJobs',
+    title: 'Title challenge',
     description: `
 FAKE  _am a_ ~~tast~~ **test**.
 
 New line`,
-    prize: '3D printed trphy',
-    channel: 'acme',
+    prize: 'Nintendo switch live',
+    channel: '#infojobs',
   },
   {
-    company: 'FAKE ACME 2',
-    title: 'FAKE Hack the crash',
+    company: 'HappyScribe',
+    title: 'Title challenge',
     description: `
 FAKE  _am a_ ~~tast~~ **test**.
 
 New line`,
     prize: '3D printed trphy',
     channel: 'acme',
-  },
+  },*/
 ]
