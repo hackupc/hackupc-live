@@ -10,15 +10,24 @@
       }}
     </p>
     <vue-markdown-it :source="talk.description" />
-    <div v-if="talk.videoUrl" class="embed">
-      <iframe
-        :src="talk.videoUrl"
-        class="embed__item"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+    <a
+      v-if="talk.videoUrl"
+      :href="talk.videoUrl"
+      class="talk__video"
+      target="_blank"
+    >
+      <img
+        :src="getVideoThumbnail(talk.videoUrl)"
+        alt="Video thumbnail"
+        class="talk__video-thumbnail"
+        loading="lazy"
       />
-    </div>
+      <img
+        src="@/assets/img/video-thumbnail-play.svg"
+        alt=""
+        class="talk__video-thumbnail-play"
+      />
+    </a>
   </panel>
 </template>
 <script lang="ts">
@@ -27,6 +36,14 @@ import Panel from '@/components/Panel.vue'
 import { Talk } from '@/data/talks'
 import VueMarkdownIt from 'vue3-markdown-it'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
+
+function getVideoThumbnail(videoUrl: string): string {
+  const videoId = videoUrl.match(
+    /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
+  )?.[1]
+
+  return `http://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+}
 
 export default defineComponent({
   components: {
@@ -43,6 +60,7 @@ export default defineComponent({
     return {
       formatInterval,
       parseSpanishDate,
+      getVideoThumbnail,
     }
   },
 })
@@ -57,20 +75,26 @@ export default defineComponent({
       text-transform: uppercase;
     }
   }
-}
-.embed {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
 
-  &__item {
+  &__video {
+    display: block;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  &__video-thumbnail {
+    display: block;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &__video-thumbnail-play {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    height: 8rem;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, 50%);
   }
 }
 </style>
