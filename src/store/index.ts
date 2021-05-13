@@ -21,7 +21,7 @@ const fakeStartTime = config.fakeStartTime
   : undefined
 
 const subscribed: Record<string, boolean> = JSON.parse(
-  window.localStorage.subscribed || '{}'
+  window.localStorage.getItem('subscribed') || '{}'
 )
 
 export default createStore({
@@ -39,12 +39,12 @@ export default createStore({
   },
   mutations: {
     toggleSubscribe(state, value: string) {
-      if (value in state.subscribed) {
-        state.subscribed[value] = !state.subscribed[value]
-      } else {
-        state.subscribed[value] = true
-      }
-      window.localStorage.subscribed = JSON.stringify(state.subscribed)
+      state.subscribed[value] = !state.subscribed[value]
+
+      window.localStorage.setItem(
+        'subscribed',
+        JSON.stringify(state.subscribed)
+      )
     },
     updateSchedule(state, value: Schedule) {
       state.schedule = value
