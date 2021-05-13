@@ -4,16 +4,16 @@ import {
   parseSchedule,
   Schedule,
   getLattestSchedule,
-  RawSchedule,
+  areSameSchedule,
 } from '../services/schedule'
-import schedule from '../../public/data/schedule.json'
+import { schedule } from '@/data/schedule'
 import { parseSpanishDate } from '@/services/dates'
 import duration from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
 
 dayjs.extend(duration)
 
-const parsedSchedule: Schedule = parseSchedule(schedule as RawSchedule)
+const parsedSchedule: Schedule = parseSchedule(schedule)
 
 const realStartTime = dayjs()
 const fakeStartTime = config.fakeStartTime
@@ -67,14 +67,13 @@ export default createStore({
       commit('updateSubscribed', subscribed)
     },
     async getSchedule({ commit }) {
-      const schedule: Schedule = await getLattestSchedule()
+      const schedule = await getLattestSchedule()
 
-      if (this.state.schedule.version !== schedule.version) {
-        console.info('Schedule updated with message: ' + schedule.message)
-        commit('updateSchedule', schedule)
-      } else {
-        console.info('Schedule up to date')
+      if (!schedule || areSameSchedule(this.state.schedule, schedule)) {
+        return
       }
+
+      commit('updateSchedule', schedule)
     },
   },
 })
