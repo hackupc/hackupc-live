@@ -17,7 +17,20 @@
             :key="`${event.name}-${event.startTmsp}`"
             :class="{ happening: event.isHappening }"
           >
-            <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
+            <svg
+              v-if="event.isHappening"
+              class="event__arrow"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
             <div
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
@@ -180,6 +193,13 @@ export default defineComponent({
   justify-content: center;
   overflow: auto;
 }
+.event__arrow {
+  position: absolute;
+  margin-top: -0.25em;
+  right: 100%;
+  margin-right: 0.5em;
+  height: 2rem;
+}
 .events-fancy {
   text-align: left;
   color: white;
@@ -237,14 +257,6 @@ export default defineComponent({
       &.happened {
         opacity: 1;
         border-left: 2px solid fade($secondaryTextColor, 25%);
-      }
-      &.happening i {
-        font-size: 14px;
-        color: $secondaryTextColor;
-        position: absolute;
-        margin-top: -7.5px;
-        left: -35px;
-        font-size: 25px;
       }
       a {
         display: block;
