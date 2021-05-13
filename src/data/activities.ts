@@ -8,7 +8,7 @@ export const activities: Activity[] = [
   {
     title: 'Draw your Biene',
     description:
-      'Biene is our mascot and we invite you to create your own personalized Biene. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄\n\n Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.',
+      'Biene is our mascot and we invite you to create your own personalized Biene 🐝. You can draw it by hand, digitally, on a cake... any form of art is welcome 😄\n\n Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag. There will be final voting between some of your submissions in order to find a winner.',
     imageUrl:
       'https://images-na.ssl-images-amazon.com/images/I/71yqHJPpkBL.png',
   },
@@ -41,7 +41,7 @@ export const activities: Activity[] = [
   {
     title: 'SlideShare Show',
     description:
-      'The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW!  This time, adapted into an online version. The activity will happen on our twitch channel! The details will be explained during the live… but if you don’t know about this activity long story short: someone will have to present some random slides. The topic of the slides will be chosen by the audience... So we need you to participate in both speaker and audience roles!!',
+      'The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW! 🎤 This time, adapted into an online version. The activity will happen on our twitch channel! The details will be explained during the live… but if you don’t know about this activity long story short: someone will have to present some random slides. The topic of the slides will be chosen by the audience... So we need you to participate in both speaker and audience roles!!',
     imageUrl:
       'https://scontent-frt3-2.xx.fbcdn.net/v/t1.6435-9/76654208_976127582761300_6894369524598964224_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=cdbe9c&_nc_ohc=tCTGJ58exHoAX_jGAnZ&_nc_ht=scontent-frt3-2.xx&oh=f0875ecee5c3f74965bbf17b75dba1f4&oe=60C39291',
   },
