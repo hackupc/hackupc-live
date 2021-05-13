@@ -14,17 +14,17 @@
           </li>
           <li
             v-else-if="event.type == 'item'"
-            :class="{ happening: event.isHappening }"
             :key="`${event.name}-${event.startTmsp}`"
+            :class="{ happening: event.isHappening }"
           >
             <i v-if="event.isHappening" class="fab fa-arrow-right"></i>
             <div
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
-              @click="toggleSubscribe(hourEvent.id)"
               class="event"
               :class="{ subscribed: subscribed[hourEvent.id] }"
               :data-event-id="hourEvent.id"
+              @click="toggleSubscribe(hourEvent.id)"
             >
               <div class="event-hour">
                 <div>{{ hourEvent.startHour }}</div>

@@ -9,7 +9,7 @@
         :class="{ hidden: isFullscreen }"
       >
         <div class="bar">
-          <div @click="openAsideMenu" id="open-aside-btn">
+          <div id="open-aside-btn" @click="openAsideMenu">
             <span>&#9776;</span>
           </div>
           <div class="title-container">
@@ -26,7 +26,7 @@
           hidden: asideMenuHidden,
         }"
       >
-        <div @click="closeAsideMenu" id="close-aside-btn">
+        <div id="close-aside-btn" @click="closeAsideMenu">
           <div>x</div>
         </div>
         <nav>
