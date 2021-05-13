@@ -44,7 +44,7 @@ export default defineComponent({
     display: block;
     margin: 1em auto 0;
     max-width: 100%;
-    max-height: 200px;
+    max-height: 10em;
     border-radius: 0.5rem;
   }
 }
