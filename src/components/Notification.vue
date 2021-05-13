@@ -44,7 +44,7 @@ export default defineComponent({
             const offset = event.start.unix() - nowInSeconds.value
             const EVENT_NOTIF_OFFSET = 5 * 60
             if (offset <= EVENT_NOTIF_OFFSET && offset >= 0) {
-              notify(event.description, 'Happening soon: ' + event.title)
+              notify(event.description, `Happening soon: ${event.title}`)
               store.dispatch('toggleSubscribe', eventId)
             }
           }

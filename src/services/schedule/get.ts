@@ -6,7 +6,7 @@ export async function getLattestSchedule(): Promise<Schedule | undefined> {
   if (process.env.NODE_ENV !== 'production') return undefined
 
   try {
-    const response = await fetch('/data/schedule.json?date=' + Date.now())
+    const response = await fetch(`/data/schedule.json?date=${Date.now()}`)
     const rawSchedule: RawSchedule = await response.json()
     return parseSchedule(rawSchedule)
   } catch (error) {
