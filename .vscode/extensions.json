@@ -6,5 +6,6 @@
     "esbenp.prettier-vscode",
     "znck.grammarly",
     "redhat.vscode-yaml",
+    "octref.vetur"
   ]
 }

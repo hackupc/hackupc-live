@@ -7,50 +7,27 @@
 
 Hi! This is the code of the HackUPC live page.
 
-## Live
-
-Features included
-
-- Optional subscription to events - 5 minutes before notifications
-- Schedule live reload
-- Fancy schedule with time padding
-- Normal tabular schedule
-- Countdown
-- Full-screen mode by pressing `p`
-
-### Config
-
-Some parameters (offsets, timeouts, defaults) can be changed in `src/config.js`. Keep in mind that some values are just constants and should not be changed.
-Here you can edit the `FAKE_DATE` parameter to test funtionalities.
-
 ## Edit content
 
-### Change theme
+### Theme
 
-If you want to change the theme you should change some properties
-2. For changing all the colors: Go to `src/live/params.scss` and in the top of the file you will find all the colors.
+Theme variables are in `src/live/params.scss`.
 
-### Update schedule
+### Contents
 
-To update or change the schedule go to `public/data/schedule.json`. Changing this file will change the live and the schedule section. Here you can also set the start of the hackathon. The duration of it must be changed in `src/config.js`.
+Most of the content is in `src/data` or hardcoded into the components.
 
-#### Schedule file
+### Schedule
+The schedule is in `public/data/schedule.json`
 
 - `id` can be whatever you want, but all ids must be different  
-- Events should be ordered by starting hour  
-- `dates` are DD/MM/YYYY format at Spain time
-
-> If an event doesn't have endHour, then will show only startHour and it will finish at the same time as it starts.  
-Useful to specify events that don't have concept of length or that span through more than one day ("Event start", "Event end")
+- `dates` are D/M/YYYY format at Spain time
 
 ## Setup
 
-Clone the repo, install [Yarn](https://yarnpkg.com/), and run `yarn install` the first time:
+Clone the repo, install [Yarn](https://yarnpkg.com/) (`npm install -g yarn`), and run `yarn install` the first time:
 
 ```sh
-git clone git@github.com:hackupc/hackupc-live.git
-cd hackupc-live
-npm install -g yarn
 yarn install
 ```
 
@@ -59,6 +36,8 @@ Use `yarn serve` to compile and serve the dist directory in real time. Then view
 ```sh
 yarn serve
 ```
+
+Install this extensions in your editor: `eslint`, `prettier`, `stylelint` and `vetur`.
 
 ## Deploy
 
@@ -80,7 +59,8 @@ If you push something that doesn't build, don't worry, it won't be published.
 
 If you need help understanding something of this repo you can ask the previous developers. The ones that made this edition live were:
 
-- Maurici Abad Gutierrez: Slack `@mauriciabad` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
+- Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
+- David Dionís: Slack `@David Dionis`
 - Carlota Catot Bragós: Slack `@Carlota` [carlotacb.dev](https://carlotacb.dev/)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)
 
