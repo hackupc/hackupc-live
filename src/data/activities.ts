@@ -45,13 +45,13 @@ In order to participate in the activity, join the voice channel and later on upl
 Let's chill a little bit playing some Online Nerf rounds!
 
 In HackUPC we always play NERF and in this online edition we will do it in a different way! We will play some 5-minute Krunker rounds. In order to play Krunker you only need to have a browser, no installation is needed. Stay tuned to the playground channel in order to join a round. Also, you can enter the voice channel to share the experience with the other players.`,
-    image: require('@/assets/img/activities/nerf.jpg'),
+    image: require('@/assets/img/activities/nerf.png'),
   },
   {
     title: 'SlideShare Show',
     description: `
 The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW! 🎤 This time, adapted into an online version. The activity will happen on our twitch channel! The details will be explained during the live… but if you don’t know about this activity long story short: someone will have to present some random slides. The topic of the slides will be chosen by the audience... So we need you to participate in both speaker and audience roles!!`,
-    image: require('@/assets/img/activities/slideshare-show.jpg'),
+    image: require('@/assets/img/activities/slideshare-show.png'),
   },
   {
     title: 'Rubber Duck',
