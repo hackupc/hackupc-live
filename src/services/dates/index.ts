@@ -44,7 +44,7 @@ export function formatInterval(dateStart: Dayjs, dateEnd: Dayjs): string {
     return `${formatDate('weekday', dateStart)} from ${formatDate(
       'time',
       dateStart
-    )} to ${formatDate('time', dateStart)}`
+    )} to ${formatDate('time', dateEnd)}`
   } else {
     return `from ${formatDate('weekday-time', dateStart)} to ${formatDate(
       'weekday-time',
