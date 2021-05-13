@@ -299,7 +299,7 @@ export default defineComponent({
       max-height: 100%;
       width: 100%;
       height: 100%;
-      margin-left: 0;
+      margin-left: 40%;
       li {
         font-size: 1.5em;
         margin-right: 60%;
