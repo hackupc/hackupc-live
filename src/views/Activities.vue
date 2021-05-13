@@ -5,12 +5,13 @@
         v-for="activity in activities"
         :key="activity.title"
         :title="activity.title"
+        class="activity"
       >
         <vue-markdown-it :source="activity.description" />
         <img
           :src="activity.imageUrl"
           v-bind:alt="activity.imageUrl"
-          style="width: 100%"
+          class="activity__image"
         />
       </panel>
     </div>
@@ -37,4 +38,14 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.activity {
+  &__image {
+    display: block;
+    margin: 1em auto 0;
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 0.5rem;
+  }
+}
+</style>
