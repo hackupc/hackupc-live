@@ -11,14 +11,20 @@ export const challenges: Challenge[] = [
   {
     company: 'FAKE ACME',
     title: 'FAKE Hack the crash',
-    description: 'FAKE  _am a_ ~~tast~~ **test**.\n\n New line',
+    description: `
+FAKE  _am a_ ~~tast~~ **test**.
+
+New line`,
     prize: '3D printed trphy',
     channel: 'acme',
   },
   {
     company: 'FAKE ACME 2',
     title: 'FAKE Hack the crash',
-    description: 'FAKE  _am a_ ~~tast~~ **test**.\n\n New line',
+    description: `
+FAKE  _am a_ ~~tast~~ **test**.
+
+New line`,
     prize: '3D printed trphy',
     channel: 'acme',
   },
