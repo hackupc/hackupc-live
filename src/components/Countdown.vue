@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { formatDate } from '@/services/dates'
+import { formatDuration } from '@/services/dates'
 import duration from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
 import { useStore } from 'vuex'
@@ -47,8 +47,12 @@ export default defineComponent({
       }
     })
     const hours = computed(() => Math.floor(remainingTime.value.asHours()))
-    const minutes = computed(() => formatDate('minute', remainingTime.value))
-    const seconds = computed(() => formatDate('second', remainingTime.value))
+    const minutes = computed(() =>
+      formatDuration('minute', remainingTime.value)
+    )
+    const seconds = computed(() =>
+      formatDuration('second', remainingTime.value)
+    )
 
     const handleClick = () => {
       emit('click')

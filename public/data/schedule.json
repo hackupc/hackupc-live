@@ -1,11 +1,12 @@
 {
   "version": 0,
   "message": "",
-  "countdownStart":"14/5/2021 21:00",
-  "countdownEnd":"16/5/2021 9:00",
+  "countdownStart": "14/5/2021 21:00",
+  "countdownEnd": "16/5/2021 9:00",
+  "submitDeadline": "16/5/2021 12:00",
   "days": [
     {
-      "date":"14/5/2021",
+      "date": "14/5/2021",
       "events": [
         {
           "id": "0",
@@ -81,7 +82,7 @@
       ]
     },
     {
-      "date":"15/5/2021",
+      "date": "15/5/2021",
       "events": [
         {
           "id": "10",
@@ -145,7 +146,7 @@
       ]
     },
     {
-      "date":"16/5/2021",
+      "date": "16/5/2021",
       "events": [
         {
           "id": "19",

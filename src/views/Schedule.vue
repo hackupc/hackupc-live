@@ -18,7 +18,7 @@
               <tr
                 v-for="event in day.events"
                 :key="event.id"
-                :class="{ happened: event.end.isBefore(now.value) }"
+                :class="{ happened: event.end.isBefore(now) }"
               >
                 <td>
                   <a

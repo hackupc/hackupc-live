@@ -19,6 +19,7 @@ export interface RawSchedule {
   message: string
   countdownStart: string
   countdownEnd: string
+  submitDeadline: string
   days: RawScheduleDay[]
 }
 
@@ -35,11 +36,12 @@ export type ScheduleDay = Omit<RawScheduleDay, 'date' | 'events'> & {
 
 export type Schedule = Omit<
   RawSchedule,
-  'days' | 'countdownStart' | 'countdownEnd'
+  'days' | 'countdownStart' | 'countdownEnd' | 'submitDeadline'
 > & {
   days: ScheduleDay[]
   countdown: {
     start: Dayjs
     end: Dayjs
   }
+  submitDeadline: Dayjs
 }

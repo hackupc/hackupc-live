@@ -29,7 +29,11 @@ export const dateFormats: Record<DateFormat, string> = {
   'full-date-time': 'D/M/YYYY H:mm:ss',
 } as const
 
-export function formatDate(format: DateFormat, date: Dayjs | Duration): string {
+export function formatDate(format: DateFormat, date: Dayjs): string {
+  return date.local().format(dateFormats[format])
+}
+
+export function formatDuration(format: DateFormat, date: Duration): string {
   return date.format(dateFormats[format])
 }
 
