@@ -1,5 +1,12 @@
-import { DiscordLabelData, DiscordType } from '@/components/DiscordLabel.vue'
-
+export enum DiscordType {
+  chat = 'chat',
+  voice = 'voice',
+}
+export interface DiscordLabelData {
+  name: string
+  description: string
+  icon?: DiscordType
+}
 interface DiscordChannelInfo {
   title: string
   channels: DiscordLabelData[]

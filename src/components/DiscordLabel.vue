@@ -17,16 +17,9 @@
 </template>
 
 <script lang="ts">
+import { DiscordType } from '@/data/home'
 import { defineComponent, PropType } from 'vue'
-export enum DiscordType {
-  chat = 'chat',
-  voice = 'voice',
-}
-export interface DiscordLabelData {
-  name: string
-  description: string
-  icon?: DiscordType
-}
+
 export default defineComponent({
   props: {
     name: {
@@ -42,7 +35,7 @@ export default defineComponent({
       default: DiscordType.chat,
     },
   },
-  data() {
+  setup() {
     return {
       DiscordType,
     }

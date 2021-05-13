@@ -30,6 +30,7 @@
 import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
+import { formatInterval, parseSpanishDate } from '@/services/dates'
 import VueMarkdownIt from 'vue3-markdown-it'
 
 export default defineComponent({
@@ -41,6 +42,8 @@ export default defineComponent({
   setup() {
     return {
       activities,
+      formatInterval,
+      parseSpanishDate,
     }
   },
 })
