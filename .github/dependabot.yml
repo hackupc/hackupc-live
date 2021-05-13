@@ -1,17 +1,11 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "09:00"
-    timezone: Europe/Madrid
-  open-pull-requests-limit: 99
-  ignore:
-  - dependency-name: core-js
-    versions:
-    - 3.10.0
-    - 3.10.2
-  - dependency-name: sass-loader
-    versions:
-    - 11.0.0
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '09:00'
+      timezone: Europe/Madrid
+    open-pull-requests-limit: 99
+    assignees:
+      - mauriciabad
