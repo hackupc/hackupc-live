@@ -34,7 +34,7 @@ export const schedule: RawSchedule = {
           startHour: '19:00',
           endHour: '21:00',
           description:
-            'Join us on twitch to be aware of everything will be happening this weekend',
+            'Join us on twitch to be aware of everything that will be happening this weekend',
         },
         {
           id: 'hacking-starts',
@@ -48,39 +48,34 @@ export const schedule: RawSchedule = {
           startHour: '21:00',
           endHour: '21:30',
           description:
-            'Are you looking for a team o for teammates? Join us on the Team Building activity',
+            'Are you looking for a team or for teammates? Join us on the Team Building activity at #team-building',
         },
         {
           id: 'talk-infojobs',
           emoji: '🔗',
-          title: 'InfoJobs Talk title',
+          title: 'A Deep Learning solution to improve match-making in InfoJobs',
           startHour: '21:30',
           endHour: '22:30',
-          description: 'InfoJobs Talk description',
+          description:
+            'Join us on twitch! All the information on the talk is found on the talks tab',
         },
         {
           id: 'talk-happyscribe',
           emoji: '🔗',
-          title: 'HappyScribe talk title',
+          title: '*startup = &hackathon',
           startHour: '22:30',
           endHour: '23:00',
-          description: 'HappyScribe talk description',
+          description:
+            'Join us on twitch! All the information on the talk is found on the talks tab',
         },
         {
           id: 'talk-typeform',
           emoji: '🔗',
-          title: 'Typeform talk title',
+          title: 'Introduction to Typeform Developer Kit',
           startHour: '23:00',
           endHour: '23:30',
-          description: 'Typeform talk description',
-        },
-        {
-          id: 'talk-X',
-          emoji: '🔗',
-          title: 'X talk title',
-          startHour: '23:30',
-          endHour: '00:00',
-          description: 'X talk description',
+          description:
+            'Join us on twitch! All the information on the talk is found on the talks tab',
         },
       ],
     },
@@ -92,7 +87,8 @@ export const schedule: RawSchedule = {
           title: 'Sports activity',
           startHour: '10:00',
           endHour: '11:00',
-          description: "Join us on discord and let's do some yoga to relax!",
+          description:
+            "Let's do some yoga to relax! 🧘 Join us on 🔊 playground discord channel",
         },
         {
           id: 'activity-nerf',
@@ -100,7 +96,7 @@ export const schedule: RawSchedule = {
           startHour: '12:00',
           endHour: '13:00',
           description:
-            "Join the playground channel on discord and let's play some Krunker rounds!",
+            "Let's play some Krunker rounds! Join us on both 🔊 playground and #playground discord channels",
         },
         {
           id: 'activity-draw-1',
@@ -109,15 +105,16 @@ export const schedule: RawSchedule = {
           startHour: '17:45',
           endHour: '18:00',
           description:
-            'Join us on twitch, we will be doing a draw with the participants of the photocall! Maybe you can win a pizza for dinner!',
+            'Join us on twitch! We will be doing a draw with the participants of the photocall! 📷  Maybe you can win a pizza for dinner... 🍕',
         },
         {
-          id: 'activity-freehand',
-          title: 'FreeHand activity',
+          id: 'activity-slideshare',
+          emoji: '🔗',
+          title: 'SlideShare Show',
           startHour: '18:00',
           endHour: '19:00',
           description:
-            'Join the playground channel on discord ... NOSE QUE POSAR HELP ;)',
+            'Join us on twitch, or be part of the stream and let your imagination fly! 🎤',
         },
         {
           id: 'activity-draw-2',
@@ -126,16 +123,15 @@ export const schedule: RawSchedule = {
           startHour: '21:45',
           endHour: '22:00',
           description:
-            'Join us on twitch, we will be doing a draw with the participants of the photocall!',
+            'Join us on twitch, we will be doing a draw with the participants of the photocall! 📷 ',
         },
         {
-          id: 'activity-slideshare',
-          emoji: '🔗',
-          title: 'SlideShare Show',
+          id: 'activity-freehand',
+          title: 'FreeHand activity',
           startHour: '22:00',
           endHour: '23:00',
           description:
-            'Join us on twitch, or be part of the stream let your imagination fly!',
+            "Let's do some drawing! 🎨 Join us on #playground discord channel",
         },
       ],
     },
@@ -147,14 +143,14 @@ export const schedule: RawSchedule = {
           title: 'Hack submisions',
           startHour: '8:00',
           endHour: '9:15',
-          description: 'Time to deliver your project on devpost!',
+          description: 'Time to submit your project on devpost! ⌛⌛',
         },
         {
           id: 'hacking-ends',
           title: 'Hacking Ends',
           startHour: '09:00',
           description:
-            "Remember to post your project on devpost or you don't be able to acces the prices!",
+            'Remember to submit your project on devpost to be elegible for prizes 🏆, swag 🎁 or credits ECTS!',
         },
         {
           id: 'demos',
@@ -171,7 +167,7 @@ export const schedule: RawSchedule = {
           startHour: '13:30',
           endHour: '13:45',
           description:
-            'Join us on twitch, we will be doing a draw with the participants of the photocall! Maybe you can win a pizza for lunch!',
+            'Join us on twitch, we will be doing a draw with the participants of the photocall! 📷 Maybe you can win a pizza for lunch... 🍕',
         },
         {
           id: 'closing',
@@ -179,7 +175,8 @@ export const schedule: RawSchedule = {
           title: 'Closing ceremony',
           startHour: '14:30',
           endHour: '16:30',
-          description: 'Winners announcements and thanks for all',
+          description:
+            'Join us on twitch for the closing ceremony to be aware of the winners! 🥇🥈🥉',
         },
       ],
     },

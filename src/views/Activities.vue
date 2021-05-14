@@ -54,6 +54,7 @@ export default defineComponent({
   &__time {
     margin-bottom: 1.5em;
     font-style: italic;
+    color: #ec6162;
     &:first-letter {
       text-transform: uppercase;
     }
