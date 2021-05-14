@@ -21,10 +21,7 @@
           ><i class="fa fa-envelope" aria-hidden="true"></i
         ></span>
         <span class="highlight-span"
-          ><a
-            href="mailto:bitsxlamarato@fib.upc.edu"
-            target="_blank"
-            rel="noopener"
+          ><a href="mailto:contact@hackupc.com" target="_blank" rel="noopener"
             >contact@hackupc.com</a
           ></span
         >
