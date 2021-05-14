@@ -1,0 +1,26 @@
+{
+  "name": "HackUPC Live",
+  "short_name": "HackUPC",
+  "display": "minimal-ui",
+  "orientation": "omit",
+  "theme_color": "#1f143a",
+  "background_color": "#1f143a",
+  "icons": [
+    {
+      "src": "./favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon/maskable_icon.png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "."
+}
