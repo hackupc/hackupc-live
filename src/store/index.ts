@@ -10,6 +10,7 @@ import { schedule } from '@/data/schedule'
 import { parseSpanishDate } from '@/services/dates'
 import duration from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
+import { askNotificationPermissions } from '@/services/notification'
 
 dayjs.extend(duration)
 
@@ -20,9 +21,34 @@ const fakeStartTime = config.fakeStartTime
   ? parseSpanishDate('full-date-time', config.fakeStartTime)
   : undefined
 
-const subscribed: Record<string, boolean> = JSON.parse(
-  window.localStorage.getItem('subscribed') || '{}'
-)
+const subscribed: string[] = getPersistedSubscribed()
+
+function getPersistedSubscribed(): string[] {
+  const subscribedFromLocalStorage: unknown = JSON.parse(
+    window.localStorage.getItem('subscribed') || '[]'
+  )
+  if (
+    Array.isArray(subscribedFromLocalStorage) &&
+    (subscribedFromLocalStorage.length === 0 ||
+      typeof subscribedFromLocalStorage[0] === 'string')
+  ) {
+    return subscribedFromLocalStorage as string[]
+  } else {
+    window.localStorage.setItem('askedGetAllNotifications', '')
+    return []
+  }
+}
+
+function persistSubscribed(subscribed: string[]) {
+  window.localStorage.setItem('subscribed', JSON.stringify(subscribed || []))
+}
+
+function removeItemFromArray<T>(value: T, list: T[]): void {
+  const index = list.indexOf(value)
+  if (index > -1) {
+    list.splice(index, 1)
+  }
+}
 
 export default createStore({
   state: {
@@ -38,13 +64,34 @@ export default createStore({
     },
   },
   mutations: {
-    toggleSubscribe(state, value: string) {
-      state.subscribed[value] = !state.subscribed[value]
+    toggleSubscribe(state, id: string) {
+      askNotificationPermissions()
 
-      window.localStorage.setItem(
-        'subscribed',
-        JSON.stringify(state.subscribed)
-      )
+      if (state.subscribed.includes(id)) {
+        removeItemFromArray(id, state.subscribed)
+      } else {
+        state.subscribed.push(id)
+      }
+
+      persistSubscribed(state.subscribed)
+    },
+    setSubscribe(
+      state,
+      { id, isSubscribed }: { id: string; isSubscribed: boolean }
+    ) {
+      askNotificationPermissions()
+
+      if (state.subscribed.includes(id)) {
+        if (!isSubscribed) {
+          removeItemFromArray(id, state.subscribed)
+        }
+      } else {
+        if (isSubscribed) {
+          state.subscribed.push(id)
+        }
+      }
+
+      persistSubscribed(state.subscribed)
     },
     updateSchedule(state, value: Schedule) {
       state.schedule = value
@@ -59,6 +106,12 @@ export default createStore({
     },
     toggleSubscribe({ commit }, value) {
       commit('toggleSubscribe', value)
+    },
+    removeSubscribe({ commit }, value) {
+      commit('setSubscribe', { id: value, isSubscribed: false })
+    },
+    addSubscribe({ commit }, value) {
+      commit('setSubscribe', { id: value, isSubscribed: true })
     },
     async refreshSchedule({ commit }) {
       const schedule = await getLattestSchedule()

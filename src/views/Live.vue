@@ -25,7 +25,7 @@
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
               class="event"
-              :class="{ subscribed: subscribed[hourEvent.id] }"
+              :class="{ subscribed: hourEvent.isSubscribed }"
               :data-event-id="hourEvent.id"
               @click="toggleSubscribe(hourEvent.id)"
             >
@@ -36,7 +36,7 @@
               <div class="title">
                 {{ hourEvent.title }}
                 <volume-off-icon
-                  v-if="!subscribed[hourEvent.id]"
+                  v-if="!hourEvent.isSubscribed"
                   class="event__subscribed-icon"
                 />
               </div>
@@ -97,9 +97,7 @@ export default defineComponent({
 
     const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
     const nowInSeconds = computed<number>(() => store.getters.now.unix())
-    const subscribed = computed<Record<string, boolean>>(
-      () => store.state.subscribed
-    )
+    const subscribed = computed<string[]>(() => store.state.subscribed)
 
     const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
@@ -141,7 +139,7 @@ export default defineComponent({
               startHour: formatDate('time', event.start),
               endHour: formatDate('time', event.end),
               title: event.title,
-              isSubscribed: subscribed.value[event.id],
+              isSubscribed: subscribed.value.includes(event.id),
             })
             eventIndex += 1
             if (eventIndex < day.events.length) {

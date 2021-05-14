@@ -12,7 +12,7 @@
 
       <div class="prompt__buttons">
         <div @click="subscribeAll">All right</div>
-        <div @click="toggleAskedSubscribeAll">Nope</div>
+        <div @click="neverAskAgainGetAllNotifications">Nope</div>
       </div>
     </div>
   </div>
@@ -20,60 +20,59 @@
 
 <script lang="ts">
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, defineComponent, onMounted, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import { useStore } from 'vuex'
-import { notify, initPermissions } from '@/services/notification'
+import { notify } from '@/services/notification'
+import { Dayjs } from 'dayjs'
+
+const NOTIFY_MINUTES_BEFORE = 5
 
 export default defineComponent({
   setup() {
     const store = useStore()
 
     const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
-    const nowInSeconds = computed<number>(() => store.getters.now.unix())
-    const subscribed = computed<Record<string, boolean>>(
-      () => store.state.subscribed
+    const now = computed<Dayjs>(() => store.getters.now)
+    const subscribed = computed<string[]>(() => store.state.subscribed)
+
+    const askedSubscribeAll = ref(
+      window.localStorage.getItem('askedGetAllNotifications') === '1'
     )
 
-    const askedSubscribeAll = ref(false)
-
     const lookForUpcoming = () => {
-      for (const eventId in subscribed) {
-        if (subscribed.value[eventId]) {
-          const event = getEvent(eventId)
-          if (event) {
-            const offset = event.start.unix() - nowInSeconds.value
-            const EVENT_NOTIF_OFFSET = 5 * 60
-            if (offset <= EVENT_NOTIF_OFFSET && offset >= 0) {
-              notify(event.description, `Happening soon: ${event.title}`)
-              store.dispatch('toggleSubscribe', eventId)
-            }
-          }
+      console.log(subscribed.value)
+
+      for (const id of subscribed.value) {
+        const event = getEvent(id)
+        if (!event) {
+          store.dispatch('removeSubscribe', id)
+          continue
+        }
+
+        const remainingMinutes = now.value.diff(event.start, 'minutes', true)
+        if (remainingMinutes > 0 && remainingMinutes <= NOTIFY_MINUTES_BEFORE) {
+          notify({
+            title: `Happening soon: ${event.title}`,
+            body: event.description,
+          })
+          store.dispatch('removeSubscribe', id)
         }
       }
     }
 
-    onMounted(() => {
-      askedSubscribeAll.value =
-        window.localStorage.getItem('notifications') === '1'
-
-      initPermissions()
-
-      window.setInterval(lookForUpcoming, 1000)
-    })
+    window.setInterval(lookForUpcoming, 1000)
 
     const subscribeAll = () => {
       for (const day of days.value) {
         for (const event of day.events) {
-          if (!subscribed.value[event.id]) {
-            store.dispatch('toggleSubscribe', event.id)
-          }
+          store.dispatch('addSubscribe', event.id)
         }
       }
-      toggleAskedSubscribeAll()
+      neverAskAgainGetAllNotifications()
     }
 
-    const toggleAskedSubscribeAll = () => {
-      window.localStorage.setItem('notifications', '1')
+    const neverAskAgainGetAllNotifications = () => {
+      window.localStorage.setItem('askedGetAllNotifications', '1')
       askedSubscribeAll.value = true
     }
 
@@ -86,7 +85,7 @@ export default defineComponent({
     return {
       askedSubscribeAll,
       subscribeAll,
-      toggleAskedSubscribeAll,
+      neverAskAgainGetAllNotifications,
     }
   },
 })

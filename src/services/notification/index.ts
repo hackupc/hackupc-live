@@ -1,25 +1,23 @@
-export function notify(
-  body: string,
-  title = 'HackUPC',
-  icon = 'favicon.svg'
-): void {
+export function notify({
+  body,
+  title = 'HackUPC Live',
+  icon = require('@/assets/img/hackupc-logo.svg'),
+}: {
+  body?: string
+  title: string
+  icon?: string
+}): void {
   if (Notification.permission === 'granted') {
-    const notification = new Notification(title, {
+    new Notification(title, {
       body,
       icon,
     })
-    setTimeout(() => {
-      notification.close()
-    }, 7000)
+  } else {
+    askNotificationPermissions()
   }
 }
 
-export function initPermissions(): void {
-  if ('Notification' in window) {
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission()
-    }
-  } else {
-    console.warn('This browser does not support desktop notification')
-  }
+export async function askNotificationPermissions(): Promise<boolean> {
+  const permission = await Notification.requestPermission()
+  return permission === 'granted'
 }
