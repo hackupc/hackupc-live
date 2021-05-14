@@ -43,7 +43,8 @@ export const discordChannels: DiscordChannelInfo[] = [
       },
       {
         name: 'general',
-        description: '',
+        description:
+          'Main channel, feel free to say how you are living this hackathon!',
       },
     ],
   },
