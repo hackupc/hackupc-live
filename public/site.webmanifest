@@ -2,7 +2,7 @@
   "name": "HackUPC Live",
   "short_name": "HackUPC",
   "display": "minimal-ui",
-  "orientation": "omit",
+  "orientation": "any",
   "theme_color": "#1f143a",
   "background_color": "#1f143a",
   "icons": [
