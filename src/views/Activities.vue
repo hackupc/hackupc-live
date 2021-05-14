@@ -7,6 +7,12 @@
         :title="activity.title"
         class="activity"
       >
+        <div class="channel">
+          <span class="icon"
+            ><i :class="activity.where" aria-hidden="true"></i
+          ></span>
+          <span class="highlight-span">{{ activity.discordChannel }}</span>
+        </div>
         <p class="activity__time">
           {{
             formatInterval(
@@ -50,6 +56,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.channel {
+  text-align: center;
+  margin-bottom: 1em;
+}
 .activity {
   &__time {
     margin-bottom: 1.5em;
