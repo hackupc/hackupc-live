@@ -169,9 +169,6 @@ export default defineComponent({
     }
 
     return {
-      days,
-      nowInSeconds,
-      subscribed,
       events,
       toggleSubscribe,
     }

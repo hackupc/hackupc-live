@@ -47,8 +47,13 @@ export default defineComponent({
           continue
         }
 
-        const remainingMinutes = now.value.diff(event.start, 'minutes', true)
-        if (remainingMinutes > 0 && remainingMinutes <= NOTIFY_MINUTES_BEFORE) {
+        const remainingMinutes = event.start.diff(now.value, 'minutes', true)
+        if (remainingMinutes < 0) {
+          store.dispatch('removeSubscribe', id)
+          continue
+        }
+
+        if (remainingMinutes <= NOTIFY_MINUTES_BEFORE) {
           notify({
             title: `Happening soon: ${event.title}`,
             body: event.description,
