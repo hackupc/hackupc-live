@@ -36,7 +36,7 @@ Just in case, remember that:
 1. Spam of memes or random things outside #random and #memes is prohibited.
 1. ASCII or advertising suspicious links is prohibited.
 1. Do not abuse mentioning other users, staff or support roles.
-1. Discord accounts with disturbing images or with violent, racist, sexist, homophobic or hate-provoking content will be expelled from the server without prior notice.
+1. Discord accounts with disturbing images or with violent, racist, sexist, homophobic or hate-provoking content will be expelled from the hackathon without prior notice.
 1. Multi-account is prohibited.`,
   },
   {
