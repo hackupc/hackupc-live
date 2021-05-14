@@ -30,7 +30,7 @@ Why should you consider building a startup? Why is it easier than you think? Aft
 As the machine learning team of InfoJobs we developed a high-accuracy end-to-end system that normalizes the "job title" field of job offers and résumée entries posted on our site. The solution is based on a deep learning model that uses NLP and transfer learning methods. The obtained solution has been crucial in increasing the matching between applicants and vacancies in our site.`,
     speaker: 'InfoJobs',
     start: '14/5/2021 21:30',
-    end: '14/5/2021 20:30',
+    end: '14/5/2021 22:30',
   },
   //   {
   //     title: 'Example',
