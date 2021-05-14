@@ -24,6 +24,7 @@
                   <a
                     v-if="event.emoji"
                     href="https://www.twitch.tv/hackersupc"
+                    rel="noopener noreferrer"
                     >{{ event.emoji }}</a
                   >
                 </td>

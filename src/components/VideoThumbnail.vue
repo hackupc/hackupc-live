@@ -1,5 +1,5 @@
 <template>
-  <a :href="videoUrl" class="video" target="_blank">
+  <a :href="videoUrl" class="video" target="_blank" rel="noopener noreferrer">
     <img
       :src="videoThumbnail"
       alt="Video thumbnail"
