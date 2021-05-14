@@ -1,100 +1,188 @@
 <template>
-  <div class="under-header padding-bottom">
-    <div class="container">
-      <div class="panel">
-        <h1>Important Info</h1>
-        <div>
-          <div class="panel-info margin-bottom text-centered">
-            <h4 class="label text-normal">Wifi:</h4>
-            <span>HACKUPC2019</span>
-          </div>
-          <div class="panel-info text-centered">
-            <h4 class="label text-normal">Password:</h4>
-            <span>Biene2019!</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-centered margin-bottom">Links</h3>
-          <div class="buttons margin-bottom">
-            <a target="_blank" rel="noopener" href="https://my.hackupc.com">MyHackUPC <div style="font-weight: normal;">Hardware / Baggage / Judging</div></a>
-          </div>
-          <div class="buttons margin-bottom">
-            <a target="_blank" rel="noopener" href="https://mentors.hackupc.com">Mentors</a>
-          </div>
-          <div class="buttons margin-bottom">
-            <a target="_blank" rel="noopener" href="https://guides.hackupc.com/guide/hacker">Guides</a>
-          </div>
-          <div class="buttons margin-bottom">
-            <a target="_blank" rel="noopener" href="https://hackupc2019.devpost.com">Devpost</a>
-          </div>
-        </div>
-        <div>
-          <p>
-            Remember that in order to get your travel reimbursement you must submit a project to Devpost before the deadline.
-          </p>
+  <div class="container">
+    <panel title="Important information">
+      <p>
+        <b>
+          The projects must be posted on
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://hackupc2021.devpost.com/"
+            >Devpost</a
+          >
+          before {{ formatDate('weekday-time', submitDeadline) }}.
+        </b>
+        If you don't do it, you won't have access to the prizes, swag, nor ECTS
+        credits.
+      </p>
+
+      <div style="text-align: center">
+        <span class="icon"
+          ><i class="fa fa-envelope" aria-hidden="true"></i
+        ></span>
+        <span class="highlight-span"
+          ><a href="mailto:contact@hackupc.com" target="_blank" rel="noopener"
+            >contact@hackupc.com</a
+          ></span
+        >
+      </div>
+    </panel>
+
+    <panel title="Links">
+      <div class="buttons">
+        <a target="_blank" rel="noopener" href="https://discord.gg/PfHw68NN"
+          ><i class="fab fa-discord" aria-hidden="true"></i>
+          <br />
+          Discord
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.twitch.tv/hackersupc"
+          ><i class="fab fa-twitch" aria-hidden="true"></i>
+          <br />
+          Twitch
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://hackupc2021.devpost.com/"
+        >
+          <svg viewBox="0 0 280.3 242" height="1em">
+            <path
+              d="M133.7 76H118v90h14.7c30.9 0 45.1-18.1 45.1-45 0-30.1-12.9-45-44.1-45z"
+              fill="currentColor"
+            />
+            <path
+              d="M210.2 0H70.1L0 121l70.1 121h140.1l70.1-121L210.2 0zm-77.5 195H89V47h45.8c42.1 0 73.3 20.1 73.3 74 0 51.8-37.5 74-75.4 74z"
+              fill="currentColor"
+            />
+          </svg>
+          <br />
+          Devpost
+        </a>
+      </div>
+
+      <div style="margin-top: 1.5rem">
+        <div class="buttons">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.facebook.com/hackersupc"
+            ><i class="fab fa-facebook" aria-hidden="true"></i
+          ></a>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://twitter.com/hackersupc"
+            ><i class="fab fa-twitter" aria-hidden="true"></i
+          ></a>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://instagram.com/hackersupc"
+            ><i class="fab fa-instagram" aria-hidden="true"></i
+          ></a>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.youtube.com/c/HackersUPC"
+            ><i class="fab fa-youtube" aria-hidden="true"></i
+          ></a>
+          <a target="_blank" rel="noopener" href="https://github.com/hackupc"
+            ><i class="fab fa-github" aria-hidden="true"></i
+          ></a>
+          <a target="_blank" rel="noopener" href="https://medium.com/@hackupc"
+            ><i class="fab fa-medium" aria-hidden="true"></i
+          ></a>
         </div>
       </div>
-      <div class="panel" style="align-self: flex-start;">
-        <h1>Contact</h1>
-        <div class="text-centered">
-          <p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-          <span><a  target="_blank" rel="noopener" href="https://hackupc2019.slack.com">hackupc2019.slack.com</a></span>
-        </div>
-        <div class="text-centered">
-          <p class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></p>
-          <span><a href="mailto:contact@hackupc.com" target="_blank" rel="noopener">contact@hackupc.com</a></span>
-        </div>
-        <!-- <div>
-          <h3 class="text-centered margin-bottom">Emergency phone</h3>
-          <div class="text-centered">
-            <p class="icon"><i class="fa fa-phone" aria-hidden="true"></i></p>
-            <span>112</span>
-          </div>
-        </div> -->
+    </panel>
+
+    <panel title="Discord channels" size="big">
+      <div
+        v-for="groupOfChannels in discordChannels"
+        :key="groupOfChannels.title"
+      >
+        <h3>{{ groupOfChannels.title }}</h3>
+        <discord-label
+          v-for="channel in groupOfChannels.channels"
+          :key="channel.name + '-' + channel.icon"
+          :name="channel.name"
+          :description="channel.description"
+          :icon="channel.icon"
+        />
+      </div>
+    </panel>
+
+    <panel title="Discord BieneBot Commands" size="big">
+      <h3>Useful</h3>
+      <div>
         <div>
-          <h3 class="text-centered margin-bottom">Social media</h3>
-          <div class="buttons">
-            <a class="fb" target="_blank" rel="noopener" href="https://www.facebook.com/hackupc"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-            <a class="tw" target="_blank" rel="noopener" href="https://twitter.com/hackupc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="ig" target="_blank" rel="noopener" href="https://instagram.com/hackupc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a class="yt" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-            <a class="gt" target="_blank" rel="noopener" href="https://github.com/hackupc"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a class="me" target="_blank" rel="noopener" href="https://medium.com/@hackupc"><i class="fa fa-medium" aria-hidden="true"></i></a>
-          </div>
+          <span class="highlight-span"
+            >biene changeteamname [new_teamname]</span
+          >
+          Change your team name with a fancy one!
+        </div>
+        <div>
+          <span class="highlight-span"
+            >biene jointeam [teamname] [new_members]</span
+          >
+          Adds more users to your team.
         </div>
       </div>
-      <div class="panel large">
-        <h1>How to get to HackUPC</h1>
-        <div class="get-there">
-          <h2 class="get-title text-centered"><i class="fa fa-plane" aria-hidden="true"></i> By plane</h2>
-          <h3 class="get-subtitle text-centered">Arriving</h3>
-          <p>Take the metro L9 in either <b>Aeroport T2</b> or <b>Aeroport T1</b> towards <b>Zona Universitària</b>. Go to the last station <b>Zona Universitària</b>. Our venue is a 10 minute walk from there. To get to our check-in point please check out our <a href="#/map/">map</a>.</p>
-          <p>Don't get a T-10 ticket if you are in the airport, you won't be able to use it from there. Buy a single trip ticket from the airport instead. If you really want to use a T-10, then you can take the train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes), but the train only runs every 30 minutes. You will have to get down at <b>Sants Estació</b> (3rd stop) and take the metro as explained below.</p>
-          <h3 class="get-subtitle text-centered">Leaving</h3>
-          <p>Take the metro L9 in <b>Zona Universitària</b> towards <b>Aeroport T1</b>. Stop at either <b> Aeroport T1</b> or <b>Aeroport T2</b> depending on the terminal your plane is departing from.</p>
-          <div class="get-accessible">
-                <p><i style="background-color: #155196;" class="fa fa-wheelchair icon" aria-hidden="true"></i> This itinerary is completely accessible.</p>
-          </div>
-          <div class="get-separator"></div>
-          <h2 class="get-title text-centered margin-bottom"><i class="fa fa-train" aria-hidden="true"></i> By train</h2>
-          <h3 class="get-subtitle text-centered">Arriving</h3>
-          <p>If you take the train, you will probably arrive at <b>Sants Estació</b>. From there you need to take the metro L3, it is located on the north side of the station, follow the signs for the green line (L3), not the blue one (L5). When you reach the station, go towards <b>Zona Universitària</b> (to the right if coming from underground). Get off at <b>Palau Reial</b>, from there you should see some signs pointing where HackUPC is, otherwise you can check out our <a href="#/map/">map</a>.</p>
-          <h3 class="get-subtitle text-centered" style="margin-top: 20px;">Leaving</h3>
-          <p>Take the metro L3 in <b>Palau Reial</b> towards <b>Trinitat Nova</b> and get off at <b>Sants Estació</b>. When exiting, the easiest way is to turn left and follow the signs towards the railway station, you can follow the plane sign or the letter R with the orange background.</p>
-          <div class="get-accessible">
-                <p><i style="background-color: #155196;" class="fa fa-wheelchair icon" aria-hidden="true"></i> This itinerary is completely accessible. To enter the metro, you will have to reach the elevator on the street at Sants Estació.</p>
-          </div>
-        </div>
+
+      <h3>Useless</h3>
+      <div>
+        <span class="highlight-span">biene joke</span>
+        <span class="highlight-span">biene biene</span>
+        <span class="highlight-span">biene biene [organizer_name]</span>
+        <span class="highlight-span">biene parrot</span>
+        <span class="highlight-span">biene cat</span>
+        <span class="highlight-span">biene dog</span>
       </div>
-    </div>
+      <div>
+        <span class="highlight-span">biene ping</span> Displays info for your
+        internet connection.
+      </div>
+      <div>
+        <span class="highlight-span"
+          >biene meme [meme_code] text|seperated|by|lines
+        </span>
+        Inserts text to meme with code [meme_code].
+      </div>
+      <div>
+        <span class="highlight-span">biene meme help</span> Get meme_code.
+      </div>
+    </panel>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Home',
-};
+<script lang="ts">
+import DiscordLabel from '@/components/DiscordLabel.vue'
+import Panel from '@/components/Panel.vue'
+import { formatDate } from '@/services/dates'
+import { Dayjs } from 'dayjs'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
+import { discordChannels } from '@/data/home'
+
+export default defineComponent({
+  components: { DiscordLabel, Panel },
+  setup() {
+    const store = useStore()
+
+    const submitDeadline = computed<Dayjs>(
+      () => store.state.schedule.submitDeadline
+    )
+
+    return {
+      submitDeadline,
+      formatDate,
+      discordChannels,
+    }
+  },
+})
 </script>
 
-<style scoped>
-</style>
+<style lang="scss" scoped></style>

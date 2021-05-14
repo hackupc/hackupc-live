@@ -1,58 +1,56 @@
 {
-	"name": "live-vue",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"lint": "vue-cli-service lint"
-	},
-	"dependencies": {
-		"axios": "^0.21.1",
-		"core-js": "^3.12.1",
-		"serve": "^11.3.2",
-		"vue": "^2.6.12",
-		"vue-router": "^3.5.1",
-		"vuex": "^3.6.2",
-		"vuex-persist": "^3.1.3"
-	},
-	"devDependencies": {
-		"@vue/cli-plugin-babel": "^4.5.13",
-		"@vue/cli-plugin-eslint": "^4.5.13",
-		"@vue/cli-plugin-router": "^4.5.13",
-		"@vue/cli-service": "^4.5.13",
-		"@vue/eslint-config-airbnb": "^5.3.0",
-		"babel-eslint": "^10.1.0",
-		"eslint": "^7.26.0",
-		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-vue": "^7.9.0",
-		"node-sass": "^5.0.0",
-		"sass-loader": "^10",
-		"vue-template-compiler": "^2.6.12"
-	},
-	"eslintConfig": {
-		"root": true,
-		"env": {
-			"node": true
-		},
-		"extends": [
-			"plugin:vue/essential",
-			"@vue/airbnb"
-		],
-		"parserOptions": {},
-		"rules": {
-			"max-len": 0,
-			"linebreak-style": 0,
-			"object-shorthand": 0,
-			"no-unused-vars": 0,
-			"no-restricted-syntax": 0,
-			"prefer-template": 0,
-			"consistent-return": 0,
-			"prefer-destructuring": 0
-		}
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
-	]
+  "name": "live-vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "dayjs": "^1.10.4",
+    "register-service-worker": "^1.7.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.0",
+    "@heroicons/vue": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "create-file-webpack": "^1.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~4.1.5",
+    "typescript-require": "^0.3.0",
+    "vue-template-compiler": "^2.6.11",
+    "vue3-markdown-it": "^1.0.8"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "$schema": "https://json.schemastore.org/package"
 }
