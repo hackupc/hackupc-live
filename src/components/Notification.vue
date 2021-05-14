@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import { notify } from '@/services/notification'
 import { Dayjs } from 'dayjs'
@@ -39,7 +39,7 @@ export default defineComponent({
       window.localStorage.getItem('askedGetAllNotifications') === '1'
     )
 
-    const lookForUpcoming = () => {
+    watch(now, () => {
       for (const id of subscribed.value) {
         const event = getEvent(id)
         if (!event) {
@@ -56,9 +56,7 @@ export default defineComponent({
           store.dispatch('removeSubscribe', id)
         }
       }
-    }
-
-    window.setInterval(lookForUpcoming, 1000)
+    })
 
     const subscribeAll = () => {
       for (const day of days.value) {
