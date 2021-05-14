@@ -17,20 +17,10 @@
             :key="`${event.name}-${event.startTmsp}`"
             :class="{ happening: event.isHappening }"
           >
-            <svg
+            <arrow-narrow-right-icon
               v-if="event.isHappening"
               class="event__arrow"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            />
             <div
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
@@ -45,7 +35,10 @@
               </div>
               <div class="title">
                 {{ hourEvent.title }}
-                <i v-if="subscribed[hourEvent.id]" class="fab fa-bell"></i>
+                <volume-off-icon
+                  v-if="!subscribed[hourEvent.id]"
+                  class="event__subscribed-icon"
+                />
               </div>
             </div>
           </li>
@@ -60,6 +53,7 @@ import { formatDate } from '@/services/dates'
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
 import { computed, defineComponent } from 'vue'
 import { useStore } from 'vuex'
+import { VolumeOffIcon, ArrowNarrowRightIcon } from '@heroicons/vue/solid'
 
 interface TimelineHourEvent {
   type: string
@@ -88,6 +82,10 @@ interface TimelineEventTitle {
 }
 
 export default defineComponent({
+  components: {
+    VolumeOffIcon,
+    ArrowNarrowRightIcon,
+  },
   props: {
     fullscreen: {
       type: Boolean,
@@ -193,12 +191,18 @@ export default defineComponent({
   justify-content: center;
   overflow: auto;
 }
-.event__arrow {
-  position: absolute;
-  margin-top: -0.25em;
-  right: 100%;
-  margin-right: 0.5em;
-  height: 2rem;
+.event {
+  &__arrow {
+    position: absolute;
+    margin-top: -0.25em;
+    right: 100%;
+    margin-right: 0.5em;
+    height: 2.5rem;
+  }
+  &__subscribed-icon {
+    width: 20px;
+    color: $secondaryColor;
+  }
 }
 .events-fancy {
   text-align: left;

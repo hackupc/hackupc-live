@@ -25,27 +25,19 @@
       aria-label="Close GDPR notification"
       @click="acceptCookies()"
     >
-      <svg
-        stroke="currentColor"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="gdpr__close-icon"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        ></path>
-      </svg>
+      <x-icon class="gdpr__close-icon" />
     </button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
+import { XIcon } from '@heroicons/vue/solid'
 
 export default defineComponent({
+  components: {
+    XIcon,
+  },
   setup() {
     const showBanner = ref(false)
 
