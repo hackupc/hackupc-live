@@ -40,8 +40,6 @@ export default defineComponent({
     )
 
     const lookForUpcoming = () => {
-      console.log(subscribed.value)
-
       for (const id of subscribed.value) {
         const event = getEvent(id)
         if (!event) {
