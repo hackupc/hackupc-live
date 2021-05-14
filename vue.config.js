@@ -19,4 +19,9 @@ module.exports = {
       }),
     ],
   },
+  pwa: {
+    workboxOptions: {
+      exclude: [/\.map$/, /_redirects/],
+    },
+  },
 }
