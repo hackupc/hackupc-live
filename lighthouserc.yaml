@@ -1,19 +1,10 @@
 ci:
   assert:
     assertions:
-      uses-http2: 'off'
-      canonical: 'off'
-      categories:performance:
-        - error
-        - minScore: 0.8
-      categories:seo:
-        - error
-        - minScore: 0.8
-      categories:accessibility:
-        - error
-        - minScore: 0.8
-      categories:best-practices:
-        - error
-        - minScore: 0.8
+      - 'categories:performance': 'off'
+      - 'categories:accessibility': 'off'
+      - 'categories:best-practices': 'off'
+      - 'categories:seo': 'off'
+      - 'categories:pwa': 'error'
   upload:
     target: temporary-public-storage
