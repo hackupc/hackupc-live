@@ -6,9 +6,15 @@
         :key="challenge.title"
         :title="challenge.company"
       >
+        <div class="channel">
+          <span class="icon"
+            ><i class="fab fa-discord" aria-hidden="true"></i
+          ></span>
+          <span class="highlight-span">{{ challenge.channel }}</span>
+        </div>
         <h3>{{ challenge.title }}</h3>
         <vue-markdown-it :source="challenge.description" />
-        <!-- <p><strong>Prize:</strong> {{ challenge.prize }}</p> -->
+        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
         <video-thumbnail
           v-if="challenge.videoUrl"
           :videoUrl="challenge.videoUrl"
@@ -40,4 +46,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.channel {
+  text-align: center;
+  margin-bottom: 1em;
+}
+</style>
