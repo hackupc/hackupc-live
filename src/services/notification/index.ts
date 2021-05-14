@@ -1,7 +1,7 @@
 export function notify({
   body,
   title = 'HackUPC Live',
-  icon = require('@/assets/img/hackupc-logo.svg'),
+  icon = 'favicon.ico',
 }: {
   body?: string
   title: string
