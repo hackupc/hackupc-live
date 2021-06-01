@@ -6,8 +6,8 @@
           The projects must be posted on
           <a
             target="_blank"
-            rel="noopener"
             href="https://hackupc2021.devpost.com/"
+            rel="noopener noreferrer"
             >Devpost</a
           >
           before {{ formatDate('weekday-time', submitDeadline) }}.
@@ -21,7 +21,10 @@
           ><i class="fa fa-envelope" aria-hidden="true"></i
         ></span>
         <span class="highlight-span"
-          ><a href="mailto:contact@hackupc.com" target="_blank" rel="noopener"
+          ><a
+            href="mailto:contact@hackupc.com"
+            target="_blank"
+            rel="noopener noreferrer"
             >contact@hackupc.com</a
           ></span
         >
@@ -30,14 +33,17 @@
 
     <panel title="Links">
       <div class="buttons">
-        <a target="_blank" rel="noopener" href="https://discord.gg/PfHw68NN"
+        <a
+          target="_blank"
+          href="https://discord.gg/PfHw68NN"
+          rel="noopener noreferrer"
           ><i class="fab fa-discord" aria-hidden="true"></i>
           <br />
           Discord
         </a>
         <a
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           href="https://www.twitch.tv/hackersupc"
           ><i class="fab fa-twitch" aria-hidden="true"></i>
           <br />
@@ -45,7 +51,7 @@
         </a>
         <a
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           href="https://hackupc2021.devpost.com/"
         >
           <svg viewBox="0 0 280.3 242" height="1em">
@@ -67,32 +73,38 @@
         <div class="buttons">
           <a
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://www.facebook.com/hackersupc"
             ><i class="fab fa-facebook" aria-hidden="true"></i
           ></a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://twitter.com/hackersupc"
             ><i class="fab fa-twitter" aria-hidden="true"></i
           ></a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://instagram.com/hackersupc"
             ><i class="fab fa-instagram" aria-hidden="true"></i
           ></a>
           <a
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://www.youtube.com/c/HackersUPC"
             ><i class="fab fa-youtube" aria-hidden="true"></i
           ></a>
-          <a target="_blank" rel="noopener" href="https://github.com/hackupc"
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/hackupc"
             ><i class="fab fa-github" aria-hidden="true"></i
           ></a>
-          <a target="_blank" rel="noopener" href="https://medium.com/@hackupc"
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://medium.com/@hackupc"
             ><i class="fab fa-medium" aria-hidden="true"></i
           ></a>
         </div>

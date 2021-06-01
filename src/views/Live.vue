@@ -272,7 +272,6 @@ export default defineComponent({
         .event-hour {
           width: 54px;
           display: flex;
-          font-family: 'Montserrat', sans-serif;
           flex-direction: column;
           text-align: right;
           font-weight: bold;

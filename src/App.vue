@@ -55,6 +55,7 @@
             <li>
               <a
                 href="https://hackupc.com/#faq"
+                rel="noopener noreferrer"
                 target="_blank"
                 class="external-link"
                 >FAQ</a
@@ -98,6 +99,7 @@
             <li>
               <a
                 href="https://hackupc.com/#faq"
+                rel="noopener noreferrer"
                 target="_blank"
                 class="external-link"
                 >FAQ</a

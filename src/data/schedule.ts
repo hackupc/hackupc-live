@@ -120,8 +120,8 @@ export const schedule: RawSchedule = {
           id: 'activity-draw-2',
           emoji: '🔗',
           title: 'Draw',
-          startHour: '21:45',
-          endHour: '22:00',
+          startHour: '20:00',
+          endHour: '20:15',
           description:
             'Join us on twitch, we will be doing a draw with the participants of the photocall! 📷 ',
         },

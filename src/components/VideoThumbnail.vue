@@ -1,5 +1,5 @@
 <template>
-  <a :href="videoUrl" class="video" target="_blank">
+  <a :href="videoUrl" class="video" target="_blank" rel="noopener noreferrer">
     <img
       :src="videoThumbnail"
       alt="Video thumbnail"
@@ -47,7 +47,9 @@ export default defineComponent({
 
   &__thumbnail {
     display: block;
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
