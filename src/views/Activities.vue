@@ -8,9 +8,7 @@
         class="activity"
       >
         <div class="channel">
-          <span class="icon"
-            ><i :class="activity.where" aria-hidden="true"></i
-          ></span>
+          <span class="icon"><i :class="activity.where"></i></span>
           <span class="highlight-span">{{ activity.discordChannel }}</span>
         </div>
         <p class="activity__time">

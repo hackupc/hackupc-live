@@ -7,9 +7,7 @@
         :title="challenge.company"
       >
         <div class="channel">
-          <span class="icon"
-            ><i class="fab fa-discord" aria-hidden="true"></i
-          ></span>
+          <span class="icon"><i class="fab fa-discord"></i></span>
           <span class="highlight-span">{{ challenge.channel }}</span>
         </div>
         <h3>{{ challenge.title }}</h3>

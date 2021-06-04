@@ -7,7 +7,6 @@
           'fa-volume-up': icon === DiscordType.voice,
           'fa-hashtag': icon === DiscordType.chat,
         }"
-        aria-hidden="true"
       ></i>
     </p>
     <b

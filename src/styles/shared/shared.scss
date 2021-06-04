@@ -15,10 +15,6 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .faded {
   opacity: 0;
   transition: opacity $fadeTime;

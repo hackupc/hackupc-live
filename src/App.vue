@@ -3,11 +3,7 @@
     <div v-if="!disabled">
       <Notification />
       <!--header for <720px-->
-      <header
-        id="header-small"
-        class="show-when-small"
-        :class="{ hidden: isFullscreen }"
-      >
+      <header v-if="!isFullscreen" id="header-small" class="show-when-small">
         <div class="bar">
           <div id="open-aside-btn" @click="openAsideMenu">
             <span>&#9776;</span>
@@ -19,11 +15,11 @@
       </header>
       <!--Aside menu for small screens-->
       <aside
+        v-if="!asideMenuHidden"
         id="aside-small-menu"
         class="'show-when-small'"
         :class="{
           closed: asideMenuClosed,
-          hidden: asideMenuHidden,
         }"
       >
         <div id="close-aside-btn" @click="closeAsideMenu">
@@ -65,11 +61,7 @@
         </nav>
       </aside>
       <!--header for >720px-->
-      <header
-        id="header-nav-bar"
-        class="hide-when-small"
-        :class="{ hidden: isFullscreen }"
-      >
+      <header v-if="!isFullscreen" id="header-nav-bar" class="hide-when-small">
         <nav>
           <ul>
             <li :class="{ selected: isActive('/') }">

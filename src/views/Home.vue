@@ -17,9 +17,7 @@
       </p>
 
       <div style="text-align: center">
-        <span class="icon"
-          ><i class="fa fa-envelope" aria-hidden="true"></i
-        ></span>
+        <span class="icon"><i class="fa fa-envelope"></i></span>
         <span class="highlight-span"
           ><a
             href="mailto:contact@hackupc.com"
@@ -37,7 +35,7 @@
           target="_blank"
           href="https://discord.gg/PfHw68NN"
           rel="noopener noreferrer"
-          ><i class="fab fa-discord" aria-hidden="true"></i>
+          ><i class="fab fa-discord"></i>
           <br />
           Discord
         </a>
@@ -45,7 +43,7 @@
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.twitch.tv/hackersupc"
-          ><i class="fab fa-twitch" aria-hidden="true"></i>
+          ><i class="fab fa-twitch"></i>
           <br />
           Twitch
         </a>
@@ -75,37 +73,37 @@
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.facebook.com/hackersupc"
-            ><i class="fab fa-facebook" aria-hidden="true"></i
+            ><i class="fab fa-facebook"></i
           ></a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://twitter.com/hackersupc"
-            ><i class="fab fa-twitter" aria-hidden="true"></i
+            ><i class="fab fa-twitter"></i
           ></a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://instagram.com/hackersupc"
-            ><i class="fab fa-instagram" aria-hidden="true"></i
+            ><i class="fab fa-instagram"></i
           ></a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/c/HackersUPC"
-            ><i class="fab fa-youtube" aria-hidden="true"></i
+            ><i class="fab fa-youtube"></i
           ></a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/hackupc"
-            ><i class="fab fa-github" aria-hidden="true"></i
+            ><i class="fab fa-github"></i
           ></a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://medium.com/@hackupc"
-            ><i class="fab fa-medium" aria-hidden="true"></i
+            ><i class="fab fa-medium"></i
           ></a>
         </div>
       </div>
