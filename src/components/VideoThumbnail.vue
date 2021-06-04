@@ -43,7 +43,8 @@ export default defineComponent({
 .video {
   display: block;
   position: relative;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 432px;
 
   &__thumbnail {
     display: block;
