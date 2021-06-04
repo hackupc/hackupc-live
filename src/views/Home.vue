@@ -197,4 +197,23 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.buttons {
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+  a {
+    display: block;
+    flex: 1 1 0;
+    color: $textColor !important;
+    text-decoration: none;
+    background-color: $buttonsMediaColor;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    &:not(:first-child) {
+      border-left: thin solid white;
+    }
+  }
+}
+</style>
