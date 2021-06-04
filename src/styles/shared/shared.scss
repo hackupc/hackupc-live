@@ -50,14 +50,6 @@ a {
   width: 20%;
 }
 
-.external-link::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin-left: 0.75ch;
-  vertical-align: 0.07em;
-  line-height: 1;
-  color: currentColor;
-}
-
 @media (min-width: 720px) {
   .show-when-small {
     display: none !important;

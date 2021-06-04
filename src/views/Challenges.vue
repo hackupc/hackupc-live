@@ -6,10 +6,12 @@
         :key="challenge.title"
         :title="challenge.company"
       >
-        <div class="channel">
-          <span class="icon"><i class="fab fa-discord"></i></span>
-          <span class="highlight-span">{{ challenge.channel }}</span>
-        </div>
+        <icon-label class="channel" :centered="true">
+          <template v-slot:icon>
+            <font-awesome-icon :icon="['fab', 'discord']" />
+          </template>
+          {{ challenge.channel }}
+        </icon-label>
         <h3>{{ challenge.title }}</h3>
         <vue-markdown-it :source="challenge.description" />
         <p><strong>Prize:</strong> {{ challenge.prize }}</p>
@@ -26,14 +28,18 @@
 import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
 import VideoThumbnail from '@/components/VideoThumbnail.vue'
+import IconLabel from '@/components/IconLabel.vue'
 import { challenges } from '@/data/challenges'
 import VueMarkdownIt from 'vue3-markdown-it'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default defineComponent({
   components: {
     Panel,
+    IconLabel,
     VideoThumbnail,
     VueMarkdownIt,
+    FontAwesomeIcon,
   },
 
   setup() {
@@ -46,7 +52,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .channel {
-  text-align: center;
   margin-bottom: 1em;
 }
 </style>

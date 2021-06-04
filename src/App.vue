@@ -53,9 +53,9 @@
                 href="https://hackupc.com/#faq"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="external-link"
-                >FAQ</a
               >
+                FAQ <external-link-icon class="external-link-icon" />
+              </a>
             </li>
           </ul>
         </nav>
@@ -93,9 +93,9 @@
                 href="https://hackupc.com/#faq"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="external-link"
-                >FAQ</a
               >
+                FAQ <external-link-icon class="external-link-icon" />
+              </a>
             </li>
           </ul>
         </nav>
@@ -119,6 +119,7 @@ import Cookies from './components/Cookies.vue'
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
+import { ExternalLinkIcon } from '@heroicons/vue/solid'
 
 export default defineComponent({
   components: {
@@ -126,6 +127,7 @@ export default defineComponent({
     Notification,
     DisabledMessage,
     Cookies,
+    ExternalLinkIcon,
   },
 
   setup() {
@@ -204,4 +206,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.external-link-icon {
+  width: 16px;
+  vertical-align: text-top;
+}
+</style>

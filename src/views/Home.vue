@@ -16,17 +16,17 @@
         credits.
       </p>
 
-      <div style="text-align: center">
-        <span class="icon"><i class="fa fa-envelope"></i></span>
-        <span class="highlight-span"
-          ><a
-            href="mailto:contact@hackupc.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            >contact@hackupc.com</a
-          ></span
+      <icon-label :centered="true">
+        <template v-slot:icon>
+          <mail-icon />
+        </template>
+        <a
+          href="mailto:contact@hackupc.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >contact@hackupc.com</a
         >
-      </div>
+      </icon-label>
     </panel>
 
     <panel title="Links">
@@ -35,7 +35,8 @@
           target="_blank"
           href="https://discord.gg/PfHw68NN"
           rel="noopener noreferrer"
-          ><i class="fab fa-discord"></i>
+        >
+          <font-awesome-icon :icon="['fab', 'discord']" />
           <br />
           Discord
         </a>
@@ -43,7 +44,8 @@
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.twitch.tv/hackersupc"
-          ><i class="fab fa-twitch"></i>
+        >
+          <font-awesome-icon :icon="['fab', 'twitch']" />
           <br />
           Twitch
         </a>
@@ -52,16 +54,7 @@
           rel="noopener noreferrer"
           href="https://hackupc2021.devpost.com/"
         >
-          <svg viewBox="0 0 280.3 242" height="1em">
-            <path
-              d="M133.7 76H118v90h14.7c30.9 0 45.1-18.1 45.1-45 0-30.1-12.9-45-44.1-45z"
-              fill="currentColor"
-            />
-            <path
-              d="M210.2 0H70.1L0 121l70.1 121h140.1l70.1-121L210.2 0zm-77.5 195H89V47h45.8c42.1 0 73.3 20.1 73.3 74 0 51.8-37.5 74-75.4 74z"
-              fill="currentColor"
-            />
-          </svg>
+          <devpost-icon />
           <br />
           Devpost
         </a>
@@ -73,38 +66,50 @@
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.facebook.com/hackersupc"
-            ><i class="fab fa-facebook"></i
-          ></a>
+            aria-label="facebook"
+          >
+            <font-awesome-icon :icon="['fab', 'facebook']" />
+          </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://twitter.com/hackersupc"
-            ><i class="fab fa-twitter"></i
-          ></a>
+            aria-label="twitter"
+          >
+            <font-awesome-icon :icon="['fab', 'twitter']" />
+          </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://instagram.com/hackersupc"
-            ><i class="fab fa-instagram"></i
-          ></a>
+            aria-label="instagram"
+          >
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/c/HackersUPC"
-            ><i class="fab fa-youtube"></i
-          ></a>
+            aria-label="youtube"
+          >
+            <font-awesome-icon :icon="['fab', 'youtube']" />
+          </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/hackupc"
-            ><i class="fab fa-github"></i
-          ></a>
+            aria-label="github"
+          >
+            <font-awesome-icon :icon="['fab', 'github']" />
+          </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://medium.com/@hackupc"
-            ><i class="fab fa-medium"></i
-          ></a>
+            aria-label="medium"
+          >
+            <font-awesome-icon :icon="['fab', 'medium']" />
+          </a>
         </div>
       </div>
     </panel>
@@ -170,15 +175,26 @@
 
 <script lang="ts">
 import DiscordLabel from '@/components/DiscordLabel.vue'
+import IconLabel from '@/components/IconLabel.vue'
+import { DevpostIcon } from '@/components/icons'
 import Panel from '@/components/Panel.vue'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
 import { computed, defineComponent } from 'vue'
 import { useStore } from 'vuex'
 import { discordChannels } from '@/data/home'
+import { MailIcon } from '@heroicons/vue/solid'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default defineComponent({
-  components: { DiscordLabel, Panel },
+  components: {
+    DiscordLabel,
+    DevpostIcon,
+    IconLabel,
+    Panel,
+    MailIcon,
+    FontAwesomeIcon,
+  },
   setup() {
     const store = useStore()
 

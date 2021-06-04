@@ -257,15 +257,7 @@ export default defineComponent({
         opacity: 1;
         border-left: 2px solid fade($secondaryTextColor, 25%);
       }
-      a {
-        display: block;
-        margin-right: 10px;
-        color: $secondaryColor;
-        &::before {
-          font-family: FontAwesome, sans-serif;
-          content: '\f041';
-        }
-      }
+
       .event {
         margin: 5px 0;
         cursor: pointer;

@@ -22,11 +22,13 @@
               >
                 <td>
                   <a
-                    v-if="event.emoji"
+                    v-if="event.showLink"
                     href="https://www.twitch.tv/hackersupc"
                     rel="noopener noreferrer"
-                    >{{ event.emoji }}</a
+                    class="link-icon"
                   >
+                    <link-icon />
+                  </a>
                 </td>
                 <td>{{ formatDate('time', event.start) }}</td>
                 <td>
@@ -52,12 +54,14 @@ import { computed, defineComponent } from 'vue'
 import { formatDate } from '@/services/dates'
 import { Dayjs } from 'dayjs'
 import VueMarkdownIt from 'vue3-markdown-it'
+import { LinkIcon } from '@heroicons/vue/solid'
 import { ScheduleDay } from '@/services/schedule'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {
     VueMarkdownIt,
+    LinkIcon,
   },
 
   setup() {
@@ -135,6 +139,13 @@ export default defineComponent({
         color: $secondaryColor;
       }
     }
+  }
+}
+.link-icon {
+  color: currentColor !important;
+
+  svg {
+    width: 20px;
   }
 }
 </style>

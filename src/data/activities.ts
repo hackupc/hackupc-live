@@ -4,8 +4,8 @@ export interface Activity {
   image?: string
   start: string
   end?: string
-  discordChannel: string
-  where: string
+  location: string
+  icon: 'discord' | 'twitch'
 }
 
 export const activities: Activity[] = [
@@ -18,8 +18,8 @@ Upload a picture of your Biene on the discord channel or on a social network usi
     image: require('@/assets/img/activities/biene.png'),
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:45',
-    discordChannel: '#draw-your-biene',
-    where: 'fab fa-discord',
+    location: '#draw-your-biene',
+    icon: 'discord',
   },
   {
     title: 'Photocall',
@@ -32,8 +32,8 @@ You will enter some amazing contests by participating! You can upload as many pi
     image: require('@/assets/img/activities/photocall.png'),
     start: '14/05/2021 21:00',
     end: '16/05/2021 13:30',
-    discordChannel: '#photocall',
-    where: 'fab fa-discord',
+    location: '#photocall',
+    icon: 'discord',
   },
   {
     title: 'HackUphone',
@@ -44,8 +44,8 @@ Stay tuned to discord, there will be a message where you can react in order to p
     image: require('@/assets/img/activities/hackuphone.png'),
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:15',
-    discordChannel: 'DM with organizers',
-    where: 'fab fa-discord',
+    location: 'DM with organizers',
+    icon: 'discord',
   },
   {
     title: 'Freehand',
@@ -56,8 +56,8 @@ In order to participate in the activity, join the voice channel and later on upl
     image: require('@/assets/img/activities/freehand.png'),
     start: '15/05/2021 10:00',
     end: '15/05/2021 11:00',
-    discordChannel: '#playground',
-    where: 'fab fa-discord',
+    location: '#playground',
+    icon: 'discord',
   },
   {
     title: 'NERF',
@@ -68,8 +68,8 @@ In HackUPC we always play NERF and in this online edition we will do it in a dif
     image: require('@/assets/img/activities/nerf.png'),
     start: '15/05/2021 12:00',
     end: '15/05/2021 13:00',
-    discordChannel: '#playground 🔊playground',
-    where: 'fab fa-discord',
+    location: '#playground 🔊playground',
+    icon: 'discord',
   },
   {
     title: 'SlideShare Show',
@@ -78,8 +78,8 @@ The MYTHIC HackUPC activity is back: SLIDE SHARE SHOW! 🎤 This time, adapted i
     image: require('@/assets/img/activities/slideshare-show.png'),
     start: '15/05/2021 18:00',
     end: '15/05/2021 19:00',
-    discordChannel: 'hackersupc',
-    where: 'fab fa-twitch',
+    location: 'hackersupc',
+    icon: 'twitch',
   },
   {
     title: 'Rubber Duck',
@@ -88,8 +88,8 @@ The rubber duck search has begun! 🦆 During the hacking time, every 2 hours, 2
     image: require('@/assets/img/activities/rubber-duck.png'),
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:15',
-    discordChannel: '#rubber-duck',
-    where: 'fab fa-discord',
+    location: '#rubber-duck',
+    icon: 'discord',
   },
   {
     title: 'Yoga',
@@ -98,7 +98,7 @@ After the first hacking night, only standing up to go to the bathroom and to gra
     image: require('@/assets/img/activities/yoga.png'),
     start: '15/05/2021 10:00',
     end: '15/05/2021 11:00',
-    discordChannel: '🔊playground',
-    where: 'fab fa-discord',
+    location: '🔊playground',
+    icon: 'discord',
   },
 ]

@@ -1,25 +1,28 @@
 <template>
   <div>
-    <p class="icon">
-      <i
-        class="fas"
-        :class="{
-          'fa-volume-up': icon === DiscordType.voice,
-          'fa-hashtag': icon === DiscordType.chat,
-        }"
-      ></i>
-    </p>
-    <b
-      ><span class="highlight-span">{{ name }}</span></b
-    >&ensp;{{ description }}
+    <icon-label>
+      <template v-slot:icon>
+        <volume-up-icon v-if="icon === DiscordType.voice" />
+        <hashtag-icon v-else-if="icon === DiscordType.chat" />
+      </template>
+      <b>{{ name }}</b>
+    </icon-label>
+    {{ description }}
   </div>
 </template>
 
 <script lang="ts">
 import { DiscordType } from '@/data/home'
 import { defineComponent, PropType } from 'vue'
+import IconLabel from '@/components/IconLabel.vue'
+import { VolumeUpIcon, HashtagIcon } from '@heroicons/vue/solid'
 
 export default defineComponent({
+  components: {
+    IconLabel,
+    VolumeUpIcon,
+    HashtagIcon,
+  },
   props: {
     name: {
       type: String,

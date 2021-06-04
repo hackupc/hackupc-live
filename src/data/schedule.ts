@@ -4,7 +4,7 @@ export interface RawScheduleEvent {
   description: string // Accepts Markdown
   startHour: string
   endHour?: string
-  emoji?: string
+  showLink?: boolean
 }
 
 export interface RawScheduleDay {
@@ -29,7 +29,7 @@ export const schedule: RawSchedule = {
       events: [
         {
           id: 'opening',
-          emoji: '🔗',
+          showLink: true,
           title: 'Opening Ceremony',
           startHour: '19:00',
           endHour: '21:00',
@@ -52,7 +52,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'talk-infojobs',
-          emoji: '🔗',
+          showLink: true,
           title: 'A Deep Learning solution to improve match-making in InfoJobs',
           startHour: '21:30',
           endHour: '22:30',
@@ -61,7 +61,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'talk-happyscribe',
-          emoji: '🔗',
+          showLink: true,
           title: '*startup = &hackathon',
           startHour: '22:30',
           endHour: '23:00',
@@ -70,7 +70,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'talk-typeform',
-          emoji: '🔗',
+          showLink: true,
           title: 'Introduction to Typeform Developer Kit',
           startHour: '23:00',
           endHour: '23:30',
@@ -100,7 +100,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'activity-draw-1',
-          emoji: '🔗',
+          showLink: true,
           title: 'Draw',
           startHour: '17:45',
           endHour: '18:00',
@@ -109,7 +109,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'activity-slideshare',
-          emoji: '🔗',
+          showLink: true,
           title: 'SlideShare Show',
           startHour: '18:00',
           endHour: '19:00',
@@ -118,7 +118,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'activity-draw-2',
-          emoji: '🔗',
+          showLink: true,
           title: 'Draw',
           startHour: '20:00',
           endHour: '20:15',
@@ -163,7 +163,7 @@ export const schedule: RawSchedule = {
         {
           id: 'activity-draw-3',
           title: 'Draw',
-          emoji: '🔗',
+          showLink: true,
           startHour: '13:30',
           endHour: '13:45',
           description:
@@ -171,7 +171,7 @@ export const schedule: RawSchedule = {
         },
         {
           id: 'closing',
-          emoji: '🔗',
+          showLink: true,
           title: 'Closing ceremony',
           startHour: '14:30',
           endHour: '16:30',
