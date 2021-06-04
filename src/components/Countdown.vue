@@ -77,11 +77,18 @@ export default defineComponent({
   height: 215px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: transform 200ms $easeBounce;
   border-radius: 100%;
   box-shadow: 0 -5px 42px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -90px;
+  padding: 90px 0 55px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 
   &__time {
     z-index: 1;
