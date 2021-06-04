@@ -221,7 +221,7 @@ export default defineComponent({
     flex: 1 1 0;
     color: $textColor !important;
     text-decoration: none;
-    background-color: $buttonsMediaColor;
+    background-color: $tertiaryLightColor;
     padding: 8px;
     text-align: center;
     font-weight: bold;

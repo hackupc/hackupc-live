@@ -96,7 +96,7 @@ export default defineComponent({
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   h1 {
-    border-radius: $borderRadius $borderRadius 0 0;
+    border-radius: 3px 3px 0 0;
     text-align: center;
     margin: 0;
     padding: 10px;
@@ -112,7 +112,7 @@ export default defineComponent({
     color: $textColor;
     border-collapse: collapse;
     background-color: $contrastColor;
-    border-radius: 0 0 $borderRadius $borderRadius;
+    border-radius: 0 0 3px 3px;
 
     thead {
       color: $contrastColor;

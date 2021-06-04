@@ -36,7 +36,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .panel {
-  border-radius: $borderRadius;
+  border-radius: 3px;
   flex: 1 1 350px;
   margin: 16px;
   background-color: $contrastColor;

@@ -77,7 +77,6 @@ export default defineComponent({
   height: 215px;
   box-sizing: border-box;
   cursor: pointer;
-  transition: transform $timerAnimLength, box-shadow $timerAnimLength;
   border-radius: 100%;
   box-shadow: 0 -5px 42px rgba(0, 0, 0, 0.4);
   display: flex;

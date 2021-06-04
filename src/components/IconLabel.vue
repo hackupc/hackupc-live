@@ -56,7 +56,7 @@ export default defineComponent({
     height: 2rem;
     padding: 0 12px;
     border-radius: 3px;
-    background-color: #f8d6c6;
+    background-color: $secondaryLightColor;
     margin: 4px;
     line-height: 2;
     font-size: 1rem;
