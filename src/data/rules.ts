@@ -6,7 +6,7 @@ export interface Rule {
 export const rules: Rule[] = [
   {
     title: 'Hackathon Rules',
-    description: `
+    description: /* markdown */ `
 > You can find the hackathon and submission rules in the [Terms and Conditions](https://legal.hackersatupc.org/hackupc/terms_and_conditions) and [Code of Conduct](https://legal.hackersatupc.org/hackupc/code_of_conduct).
 
 Just in case, remember that:
@@ -22,11 +22,12 @@ Just in case, remember that:
 1. Teams must stop hacking once the time is up. However, teams are allowed to debug and make small fixes to their programs after time is up. e.g. If during demoing your hack you find a bug that breaks your application and the fix is only a few lines of code, it's okay to fix that. Making large changes or adding new features is not allowed.
 1. Projects that violate the [Code of Conduct](https://legal.hackersatupc.org/hackupc/code_of_conduct) are not allowed.
 1. Teams can be disqualified from the competition at the organizers' discretion. Reasons might include but are not limited to breaking the Competition Rules, breaking the Code of Conduct, or other unsporting behaviors.
-1. In order to present the project to our judges the participants must be previously accepted by the organization team.`,
+1. In order to present the project to our judges the participants must be previously accepted by the organization team.
+`,
   },
   {
     title: 'Server Rules',
-    description: `
+    description: /* markdown */ `
 > You can find the hackathon rules in the [Code of Conduct](https://legal.hackersatupc.org/hackupc/code_of_conduct).
 
 Just in case, remember that:
@@ -37,10 +38,13 @@ Just in case, remember that:
 1. ASCII or advertising suspicious links is prohibited.
 1. Do not abuse mentioning other users, staff or support roles.
 1. Discord accounts with disturbing images or with violent, racist, sexist, homophobic or hate-provoking content will be expelled from the hackathon without prior notice.
-1. Multi-account is prohibited.`,
+1. Multi-account is prohibited.
+`,
   },
   {
     title: '',
-    description: `If you break any of the rules you will be expelled from the server and depending on the level of your infraction you won't be able to participate in future editions of HackUPC.`,
+    description: /* markdown */ `
+If you break any of the rules you will be expelled from the server and depending on the level of your infraction you won't be able to participate in future editions of HackUPC.
+`,
   },
 ]

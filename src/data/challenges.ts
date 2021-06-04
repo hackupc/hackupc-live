@@ -40,7 +40,9 @@ export const challenges: Challenge[] = [
   {
     company: 'Floorfy',
     title: "Virtual tours, best usage of Floorfy's datasets",
-    description: `[DataSet](https://mega.nz/folder/uzYWibST#7QY4JO5GWNof22euRnqTQA)`,
+    description: /* markdown */ `
+[DataSet](https://mega.nz/folder/uzYWibST#7QY4JO5GWNof22euRnqTQA)
+`,
     videoUrl: 'https://www.youtube.com/watch?v=KeG4q7_dLFo',
     prize: 'A Ricoh SC2 camera for each member of the team.',
     channel: '#floorfy',

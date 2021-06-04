@@ -6,6 +6,7 @@
     "esbenp.prettier-vscode",
     "znck.grammarly",
     "redhat.vscode-yaml",
-    "octref.vetur"
+    "octref.vetur",
+    "bierner.comment-tagged-templates"
   ]
 }
