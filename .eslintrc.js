@@ -23,6 +23,12 @@ module.exports = {
     'vue/order-in-components': 'error',
     'vue/attributes-order': 'error',
     'vue/no-v-html': 'error',
+    'vue/component-tags-order': [
+      'error',
+      {
+        order: ['script', 'template', 'style'],
+      },
+    ],
     'prefer-template': 'warn',
   },
   overrides: [

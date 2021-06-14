@@ -1,3 +1,99 @@
+<script lang="ts">
+import config from '@/config'
+import Countdown from '@/components/Countdown.vue'
+import Notification from '@/components/Notification.vue'
+import DisabledMessage from './components/DisabledMessage.vue'
+import Cookies from './components/Cookies.vue'
+import { computed, defineComponent, onMounted, ref } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter, useRoute } from 'vue-router'
+import { ExternalLinkIcon } from '@heroicons/vue/solid'
+
+export default defineComponent({
+  components: {
+    Countdown,
+    Notification,
+    DisabledMessage,
+    Cookies,
+    ExternalLinkIcon,
+  },
+
+  setup() {
+    const store = useStore()
+    const router = useRouter()
+    const route = useRoute()
+
+    const isFullscreen = computed(() => route.path === '/fullscreen')
+    const asideMenuClosed = ref(true)
+    const asideMenuHidden = ref(true)
+    const disabled = ref(config.disabled)
+
+    setInterval(() => {
+      store.dispatch('refreshTime')
+    }, 1000)
+
+    window.setInterval(() => {
+      store.dispatch('refreshSchedule')
+    }, 1 * 60 * 1000) // 1 minute
+
+    onMounted(() => {
+      window.addEventListener('keyup', (event) => {
+        if (
+          event.key === 'p' ||
+          event.key === 'f' ||
+          event.key === 'Spacebar'
+        ) {
+          router.push(isFullscreen.value ? '/' : 'fullscreen')
+        }
+      })
+    })
+
+    const goToFullscreen = () => {
+      router.push('fullscreen')
+    }
+
+    const openAsideMenu = () => {
+      document.body.scrollTop = 0
+      document.body.style.overflow = 'hidden'
+      asideMenuHidden.value = false
+      document.body.classList.add('veil')
+      setTimeout(() => {
+        asideMenuClosed.value = false
+        document.body.classList.add('veiled')
+      }, 1)
+    }
+
+    const closeAsideMenu = () => {
+      document.body.classList.remove('veiled')
+      setTimeout(() => {
+        document.body.classList.remove('veil')
+      }, 1)
+      asideMenuClosed.value = true
+      setTimeout(() => {
+        asideMenuHidden.value = true
+      }, 300)
+      document.body.style.overflow = 'auto'
+    }
+
+    const isActive = (page: string): boolean => {
+      if (page === '/') return route.path === '/'
+      return route.path.startsWith(page)
+    }
+
+    return {
+      isFullscreen,
+      asideMenuClosed,
+      asideMenuHidden,
+      disabled,
+      goToFullscreen,
+      openAsideMenu,
+      closeAsideMenu,
+      isActive,
+    }
+  },
+})
+</script>
+
 <template>
   <div>
     <div v-if="!disabled">
@@ -109,102 +205,6 @@
     <cookies />
   </div>
 </template>
-
-<script lang="ts">
-import config from '@/config'
-import Countdown from '@/components/Countdown.vue'
-import Notification from '@/components/Notification.vue'
-import DisabledMessage from './components/DisabledMessage.vue'
-import Cookies from './components/Cookies.vue'
-import { computed, defineComponent, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import { useRouter, useRoute } from 'vue-router'
-import { ExternalLinkIcon } from '@heroicons/vue/solid'
-
-export default defineComponent({
-  components: {
-    Countdown,
-    Notification,
-    DisabledMessage,
-    Cookies,
-    ExternalLinkIcon,
-  },
-
-  setup() {
-    const store = useStore()
-    const router = useRouter()
-    const route = useRoute()
-
-    const isFullscreen = computed(() => route.path === '/fullscreen')
-    const asideMenuClosed = ref(true)
-    const asideMenuHidden = ref(true)
-    const disabled = ref(config.disabled)
-
-    setInterval(() => {
-      store.dispatch('refreshTime')
-    }, 1000)
-
-    window.setInterval(() => {
-      store.dispatch('refreshSchedule')
-    }, 1 * 60 * 1000) // 1 minute
-
-    onMounted(() => {
-      window.addEventListener('keyup', (event) => {
-        if (
-          event.key === 'p' ||
-          event.key === 'f' ||
-          event.key === 'Spacebar'
-        ) {
-          router.push(isFullscreen.value ? '/' : 'fullscreen')
-        }
-      })
-    })
-
-    const goToFullscreen = () => {
-      router.push('fullscreen')
-    }
-
-    const openAsideMenu = () => {
-      document.body.scrollTop = 0
-      document.body.style.overflow = 'hidden'
-      asideMenuHidden.value = false
-      document.body.classList.add('veil')
-      setTimeout(() => {
-        asideMenuClosed.value = false
-        document.body.classList.add('veiled')
-      }, 1)
-    }
-
-    const closeAsideMenu = () => {
-      document.body.classList.remove('veiled')
-      setTimeout(() => {
-        document.body.classList.remove('veil')
-      }, 1)
-      asideMenuClosed.value = true
-      setTimeout(() => {
-        asideMenuHidden.value = true
-      }, 300)
-      document.body.style.overflow = 'auto'
-    }
-
-    const isActive = (page: string): boolean => {
-      if (page === '/') return route.path === '/'
-      return route.path.startsWith(page)
-    }
-
-    return {
-      isFullscreen,
-      asideMenuClosed,
-      asideMenuHidden,
-      disabled,
-      goToFullscreen,
-      openAsideMenu,
-      closeAsideMenu,
-      isActive,
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 .external-link-icon {
