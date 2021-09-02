@@ -1,29 +1,3 @@
-<template>
-  <div id="challenges">
-    <div class="container">
-      <panel
-        v-for="challenge in challenges"
-        :key="challenge.title"
-        :title="challenge.company"
-      >
-        <icon-label class="channel" :centered="true">
-          <template v-slot:icon>
-            <font-awesome-icon :icon="['fab', 'discord']" />
-          </template>
-          {{ challenge.channel }}
-        </icon-label>
-        <h3>{{ challenge.title }}</h3>
-        <vue-markdown-it :source="challenge.description" />
-        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
-        <video-thumbnail
-          v-if="challenge.videoUrl"
-          :videoUrl="challenge.videoUrl"
-        />
-      </panel>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Panel from '@/components/Panel.vue'
@@ -49,6 +23,32 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div id="challenges">
+    <div class="container">
+      <panel
+        v-for="challenge in challenges"
+        :key="challenge.title"
+        :title="challenge.company"
+      >
+        <icon-label class="channel" :centered="true">
+          <template v-slot:icon>
+            <font-awesome-icon :icon="['fab', 'discord']" />
+          </template>
+          {{ challenge.channel }}
+        </icon-label>
+        <h3>{{ challenge.title }}</h3>
+        <vue-markdown-it :source="challenge.description" />
+        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
+        <video-thumbnail
+          v-if="challenge.videoUrl"
+          :videoUrl="challenge.videoUrl"
+        />
+      </panel>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .channel {

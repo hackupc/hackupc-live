@@ -1,9 +1,3 @@
-<template>
-  <div id="talks" class="container">
-    <panel-talk v-for="talk in talks" :key="talk.title" :talk="talk" />
-  </div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import PanelTalk from '@/components/PanelTalk.vue'
@@ -20,5 +14,11 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div id="talks" class="container">
+    <panel-talk v-for="talk in talks" :key="talk.title" :talk="talk" />
+  </div>
+</template>
 
 <style lang="scss" scoped></style>

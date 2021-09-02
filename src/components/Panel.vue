@@ -1,12 +1,3 @@
-<template>
-  <div class="panel" :class="{ 'panel--large': size === PanelSize.big }">
-    <h2 v-if="title" class="panel__title">{{ title }}</h2>
-    <div class="panel__content">
-      <slot></slot>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
@@ -33,6 +24,15 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div class="panel" :class="{ 'panel--large': size === PanelSize.big }">
+    <h2 v-if="title" class="panel__title">{{ title }}</h2>
+    <div class="panel__content">
+      <slot></slot>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .panel {

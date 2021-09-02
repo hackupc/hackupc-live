@@ -1,12 +1,3 @@
-<template>
-  <span :class="{ 'icon-label--centered': centered }"
-    ><span class="icon-label__icon">
-      <slot name="icon"></slot>
-    </span>
-    <span class="icon-label__label"><slot /></span
-  ></span>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 
@@ -19,6 +10,15 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <span :class="{ 'icon-label--centered': centered }"
+    ><span class="icon-label__icon">
+      <slot name="icon"></slot>
+    </span>
+    <span class="icon-label__label"><slot /></span
+  ></span>
+</template>
 
 <style lang="scss" scoped>
 .icon-label {

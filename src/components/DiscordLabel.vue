@@ -1,16 +1,3 @@
-<template>
-  <div>
-    <icon-label>
-      <template v-slot:icon>
-        <volume-up-icon v-if="icon === DiscordType.voice" />
-        <hashtag-icon v-else-if="icon === DiscordType.chat" />
-      </template>
-      <b>{{ name }}</b>
-    </icon-label>
-    {{ description }}
-  </div>
-</template>
-
 <script lang="ts">
 import { DiscordType } from '@/data/home'
 import { defineComponent, PropType } from 'vue'
@@ -44,5 +31,18 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div>
+    <icon-label>
+      <template v-slot:icon>
+        <volume-up-icon v-if="icon === DiscordType.voice" />
+        <hashtag-icon v-else-if="icon === DiscordType.chat" />
+      </template>
+      <b>{{ name }}</b>
+    </icon-label>
+    {{ description }}
+  </div>
+</template>
 
 <style lang="scss" scoped></style>

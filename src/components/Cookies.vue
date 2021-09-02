@@ -1,3 +1,33 @@
+<script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue'
+import { XIcon } from '@heroicons/vue/solid'
+
+export default defineComponent({
+  components: {
+    XIcon,
+  },
+  setup() {
+    const showBanner = ref(false)
+
+    onMounted(() => {
+      if (window.localStorage.getItem('cookies') !== '1') {
+        showBanner.value = true
+      }
+    })
+
+    const acceptCookies = function () {
+      window.localStorage.setItem('cookies', '1')
+      showBanner.value = false
+    }
+
+    return {
+      showBanner,
+      acceptCookies,
+    }
+  },
+})
+</script>
+
 <template>
   <div
     id="gdpr"
@@ -29,36 +59,6 @@
     </button>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
-import { XIcon } from '@heroicons/vue/solid'
-
-export default defineComponent({
-  components: {
-    XIcon,
-  },
-  setup() {
-    const showBanner = ref(false)
-
-    onMounted(() => {
-      if (window.localStorage.getItem('cookies') !== '1') {
-        showBanner.value = true
-      }
-    })
-
-    const acceptCookies = function () {
-      window.localStorage.setItem('cookies', '1')
-      showBanner.value = false
-    }
-
-    return {
-      showBanner,
-      acceptCookies,
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 $ease-bounce: cubic-bezier(0.18, 0.89, 0.32, 1.28);

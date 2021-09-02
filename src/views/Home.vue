@@ -1,3 +1,41 @@
+<script lang="ts">
+import DiscordLabel from '@/components/DiscordLabel.vue'
+import IconLabel from '@/components/IconLabel.vue'
+import { DevpostIcon } from '@/components/icons'
+import Panel from '@/components/Panel.vue'
+import { formatDate } from '@/services/dates'
+import { Dayjs } from 'dayjs'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
+import { discordChannels } from '@/data/home'
+import { MailIcon } from '@heroicons/vue/solid'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+export default defineComponent({
+  components: {
+    DiscordLabel,
+    DevpostIcon,
+    IconLabel,
+    Panel,
+    MailIcon,
+    FontAwesomeIcon,
+  },
+  setup() {
+    const store = useStore()
+
+    const submitDeadline = computed<Dayjs>(
+      () => store.state.schedule.submitDeadline
+    )
+
+    return {
+      submitDeadline,
+      formatDate,
+      discordChannels,
+    }
+  },
+})
+</script>
+
 <template>
   <div class="container">
     <panel title="Important information">
@@ -172,44 +210,6 @@
     </panel>
   </div>
 </template>
-
-<script lang="ts">
-import DiscordLabel from '@/components/DiscordLabel.vue'
-import IconLabel from '@/components/IconLabel.vue'
-import { DevpostIcon } from '@/components/icons'
-import Panel from '@/components/Panel.vue'
-import { formatDate } from '@/services/dates'
-import { Dayjs } from 'dayjs'
-import { computed, defineComponent } from 'vue'
-import { useStore } from 'vuex'
-import { discordChannels } from '@/data/home'
-import { MailIcon } from '@heroicons/vue/solid'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-export default defineComponent({
-  components: {
-    DiscordLabel,
-    DevpostIcon,
-    IconLabel,
-    Panel,
-    MailIcon,
-    FontAwesomeIcon,
-  },
-  setup() {
-    const store = useStore()
-
-    const submitDeadline = computed<Dayjs>(
-      () => store.state.schedule.submitDeadline
-    )
-
-    return {
-      submitDeadline,
-      formatDate,
-      discordChannels,
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 .buttons {

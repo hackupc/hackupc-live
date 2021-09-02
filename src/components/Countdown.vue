@@ -1,23 +1,3 @@
-<template>
-  <div
-    class="countdown"
-    :class="{
-      'hide-when-small': fullscreen,
-      'countdown--fullscreen': fullscreen,
-    }"
-    @click="handleClick"
-  >
-    <div class="countdown__time">
-      <span>{{ hours }}</span
-      >:<span>{{ minutes }}</span
-      ><span class="countdown__seconds">{{ seconds }}</span>
-    </div>
-    <div class="countdown__bg">
-      <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { formatDuration } from '@/services/dates'
@@ -34,6 +14,7 @@ export default defineComponent({
       default: false,
     },
   },
+
   setup(props, { emit }) {
     const store = useStore()
 
@@ -69,6 +50,26 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div
+    class="countdown"
+    :class="{
+      'hide-when-small': fullscreen,
+      'countdown--fullscreen': fullscreen,
+    }"
+    @click="handleClick"
+  >
+    <div class="countdown__time">
+      <span>{{ hours }}</span
+      >:<span>{{ minutes }}</span
+      ><span class="countdown__seconds">{{ seconds }}</span>
+    </div>
+    <div class="countdown__bg">
+      <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .countdown {

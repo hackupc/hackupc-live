@@ -1,3 +1,33 @@
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
+import { formatDate } from '@/services/dates'
+import { Dayjs } from 'dayjs'
+import VueMarkdownIt from 'vue3-markdown-it'
+import { LinkIcon } from '@heroicons/vue/solid'
+import { ScheduleDay } from '@/services/schedule'
+import { useStore } from 'vuex'
+
+export default defineComponent({
+  components: {
+    VueMarkdownIt,
+    LinkIcon,
+  },
+
+  setup() {
+    const store = useStore()
+
+    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
+    const now = computed<Dayjs>(() => store.getters.now)
+
+    return {
+      formatDate,
+      days,
+      now,
+    }
+  },
+})
+</script>
+
 <template>
   <div id="schedule" class="container">
     <div>
@@ -48,36 +78,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
-import { formatDate } from '@/services/dates'
-import { Dayjs } from 'dayjs'
-import VueMarkdownIt from 'vue3-markdown-it'
-import { LinkIcon } from '@heroicons/vue/solid'
-import { ScheduleDay } from '@/services/schedule'
-import { useStore } from 'vuex'
-
-export default defineComponent({
-  components: {
-    VueMarkdownIt,
-    LinkIcon,
-  },
-
-  setup() {
-    const store = useStore()
-
-    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
-    const now = computed<Dayjs>(() => store.getters.now)
-
-    return {
-      formatDate,
-      days,
-      now,
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 #schedule {

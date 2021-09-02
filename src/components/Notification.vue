@@ -1,23 +1,3 @@
-<template>
-  <div v-if="!askedSubscribeAll" class="prompt">
-    <div class="prompt__box">
-      <h1>Notifications for upcoming events</h1>
-
-      <p>Do you want to subscribe to all the events?</p>
-      <p>You will receive a notification 2 minutes before something happens.</p>
-      <p>
-        <strong>We won't spam you:</strong> You can always choose to subscribe
-        or unsubscribe by clicking individually on an event.
-      </p>
-
-      <div class="prompt__buttons">
-        <div @click="subscribeAll">All right</div>
-        <div @click="neverAskAgainGetAllNotifications">Nope</div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
 import { computed, defineComponent, ref, watch } from 'vue'
@@ -91,6 +71,26 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div v-if="!askedSubscribeAll" class="prompt">
+    <div class="prompt__box">
+      <h1>Notifications for upcoming events</h1>
+
+      <p>Do you want to subscribe to all the events?</p>
+      <p>You will receive a notification 2 minutes before something happens.</p>
+      <p>
+        <strong>We won't spam you:</strong> You can always choose to subscribe
+        or unsubscribe by clicking individually on an event.
+      </p>
+
+      <div class="prompt__buttons">
+        <div @click="subscribeAll">All right</div>
+        <div @click="neverAskAgainGetAllNotifications">Nope</div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .prompt {

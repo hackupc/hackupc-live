@@ -1,3 +1,29 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+import Panel from '@/components/Panel.vue'
+import { activities } from '@/data/activities'
+import { formatInterval, parseSpanishDate } from '@/services/dates'
+import VueMarkdownIt from 'vue3-markdown-it'
+import IconLabel from '@/components/IconLabel.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+export default defineComponent({
+  components: {
+    Panel,
+    VueMarkdownIt,
+    IconLabel,
+    FontAwesomeIcon,
+  },
+  setup() {
+    return {
+      activities,
+      formatInterval,
+      parseSpanishDate,
+    }
+  },
+})
+</script>
+
 <template>
   <div id="activities">
     <div class="container">
@@ -31,32 +57,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Panel from '@/components/Panel.vue'
-import { activities } from '@/data/activities'
-import { formatInterval, parseSpanishDate } from '@/services/dates'
-import VueMarkdownIt from 'vue3-markdown-it'
-import IconLabel from '@/components/IconLabel.vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-export default defineComponent({
-  components: {
-    Panel,
-    VueMarkdownIt,
-    IconLabel,
-    FontAwesomeIcon,
-  },
-  setup() {
-    return {
-      activities,
-      formatInterval,
-      parseSpanishDate,
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 .channel {

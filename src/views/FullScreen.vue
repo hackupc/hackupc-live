@@ -1,12 +1,3 @@
-<template>
-  <div id="fullscreen">
-    <div>
-      <Countdown :fullscreen="true" @click="exitFullscreen" />
-      <Live :fullscreen="true" />
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import Countdown from '@/components/Countdown.vue'
 import Live from '@/views/Live.vue'
@@ -39,6 +30,15 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div id="fullscreen">
+    <div>
+      <Countdown :fullscreen="true" @click="exitFullscreen" />
+      <Live :fullscreen="true" />
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 #fullscreen {

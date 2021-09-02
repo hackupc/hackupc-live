@@ -1,18 +1,3 @@
-<template>
-  <a :href="videoUrl" class="video" target="_blank" rel="noopener noreferrer">
-    <img
-      :src="videoThumbnail"
-      alt="Video thumbnail"
-      class="video__thumbnail"
-      loading="lazy"
-    />
-    <img
-      src="@/assets/img/video-thumbnail-play.svg"
-      alt=""
-      class="video__play"
-    />
-  </a>
-</template>
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 
@@ -38,6 +23,22 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <a :href="videoUrl" class="video" target="_blank" rel="noopener noreferrer">
+    <img
+      :src="videoThumbnail"
+      alt="Video thumbnail"
+      class="video__thumbnail"
+      loading="lazy"
+    />
+    <img
+      src="@/assets/img/video-thumbnail-play.svg"
+      alt=""
+      class="video__play"
+    />
+  </a>
+</template>
 
 <style lang="scss" scoped>
 .video {

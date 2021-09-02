@@ -1,53 +1,3 @@
-<template>
-  <div id="live" class="container-live">
-    <div
-      class="events-fancy"
-      :class="{ 'events-fancy--fullscreen': fullscreen }"
-    >
-      <ul>
-        <template v-for="event in events">
-          <li
-            v-if="event.type == 'title'"
-            :key="`${event.name}-${event.startTmsp}`"
-          >
-            <h1>{{ event.name }}</h1>
-          </li>
-          <li
-            v-else-if="event.type == 'item'"
-            :key="`${event.name}-${event.startTmsp}`"
-            :class="{ happening: event.isHappening }"
-          >
-            <arrow-narrow-right-icon
-              v-if="event.isHappening"
-              class="event__arrow"
-            />
-            <div
-              v-for="hourEvent in event.hourEvents"
-              :key="hourEvent.id"
-              class="event"
-              :class="{ subscribed: hourEvent.isSubscribed }"
-              :data-event-id="hourEvent.id"
-              @click="toggleSubscribe(hourEvent.id)"
-            >
-              <div class="event-hour">
-                <div>{{ hourEvent.startHour }}</div>
-                <div class="end-hour">{{ hourEvent.endHour }}</div>
-              </div>
-              <div class="title">
-                {{ hourEvent.title }}
-                <volume-off-icon
-                  v-if="!hourEvent.isSubscribed"
-                  class="event__subscribed-icon"
-                />
-              </div>
-            </div>
-          </li>
-        </template>
-      </ul>
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 import { formatDate } from '@/services/dates'
 import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
@@ -175,6 +125,56 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <div id="live" class="container-live">
+    <div
+      class="events-fancy"
+      :class="{ 'events-fancy--fullscreen': fullscreen }"
+    >
+      <ul>
+        <template v-for="event in events">
+          <li
+            v-if="event.type == 'title'"
+            :key="`${event.name}-${event.startTmsp}`"
+          >
+            <h1>{{ event.name }}</h1>
+          </li>
+          <li
+            v-else-if="event.type == 'item'"
+            :key="`${event.name}-${event.startTmsp}`"
+            :class="{ happening: event.isHappening }"
+          >
+            <arrow-narrow-right-icon
+              v-if="event.isHappening"
+              class="event__arrow"
+            />
+            <div
+              v-for="hourEvent in event.hourEvents"
+              :key="hourEvent.id"
+              class="event"
+              :class="{ subscribed: hourEvent.isSubscribed }"
+              :data-event-id="hourEvent.id"
+              @click="toggleSubscribe(hourEvent.id)"
+            >
+              <div class="event-hour">
+                <div>{{ hourEvent.startHour }}</div>
+                <div class="end-hour">{{ hourEvent.endHour }}</div>
+              </div>
+              <div class="title">
+                {{ hourEvent.title }}
+                <volume-off-icon
+                  v-if="!hourEvent.isSubscribed"
+                  class="event__subscribed-icon"
+                />
+              </div>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .container-live {

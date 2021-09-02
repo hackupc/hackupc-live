@@ -1,18 +1,3 @@
-<template>
-  <panel :title="talk.title">
-    <h3>Company: {{ talk.speaker }}</h3>
-    <p class="talk__time">
-      {{
-        formatInterval(
-          parseSpanishDate('date-time', talk.start),
-          parseSpanishDate('date-time', talk.end)
-        )
-      }}
-    </p>
-    <vue-markdown-it :source="talk.description" />
-    <video-thumbnail v-if="talk.videoUrl" :videoUrl="talk.videoUrl" />
-  </panel>
-</template>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import Panel from '@/components/Panel.vue'
@@ -41,6 +26,22 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <panel :title="talk.title">
+    <h3>Company: {{ talk.speaker }}</h3>
+    <p class="talk__time">
+      {{
+        formatInterval(
+          parseSpanishDate('date-time', talk.start),
+          parseSpanishDate('date-time', talk.end)
+        )
+      }}
+    </p>
+    <vue-markdown-it :source="talk.description" />
+    <video-thumbnail v-if="talk.videoUrl" :videoUrl="talk.videoUrl" />
+  </panel>
+</template>
 
 <style lang="scss" scoped>
 .talk {

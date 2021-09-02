@@ -1,15 +1,15 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
+</script>
+
 <template>
   <div class="disabled-msg">
     Sorry, live is not available yet. <br />
     Come back later.
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({})
-</script>
 
 <style lang="scss">
 .disabled-msg {
