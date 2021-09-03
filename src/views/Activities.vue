@@ -34,7 +34,7 @@ export default defineComponent({
         class="activity"
       >
         <icon-label class="channel" :centered="true">
-          <template v-slot:icon>
+          <template #icon>
             <font-awesome-icon :icon="['fab', activity.icon]" />
           </template>
           {{ activity.location }}
@@ -48,11 +48,7 @@ export default defineComponent({
           }}
         </p>
         <vue-markdown-it :source="activity.description" />
-        <img
-          :src="activity.image"
-          v-bind:alt="activity.image"
-          class="activity__image"
-        />
+        <img :src="activity.image" alt="" class="activity__image" />
       </panel>
     </div>
   </div>

@@ -7,12 +7,13 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/vue3-recommended',
     'eslint:recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
     '@vue/prettier/@typescript-eslint',
   ],
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 2021,
   },
@@ -29,6 +30,7 @@ module.exports = {
         order: ['script', 'template', 'style'],
       },
     ],
+    'vue/block-lang': ['error', { script: { lang: 'ts' } }],
     'prefer-template': 'warn',
   },
   overrides: [

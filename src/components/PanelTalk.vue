@@ -39,7 +39,7 @@ export default defineComponent({
       }}
     </p>
     <vue-markdown-it :source="talk.description" />
-    <video-thumbnail v-if="talk.videoUrl" :videoUrl="talk.videoUrl" />
+    <video-thumbnail v-if="talk.videoUrl" :video-url="talk.videoUrl" />
   </panel>
 </template>
 

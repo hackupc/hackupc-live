@@ -55,7 +55,7 @@ export default defineComponent({
       </p>
 
       <icon-label :centered="true">
-        <template v-slot:icon>
+        <template #icon>
           <mail-icon />
         </template>
         <a

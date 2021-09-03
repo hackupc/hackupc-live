@@ -35,7 +35,7 @@ export default defineComponent({
 <template>
   <div>
     <icon-label>
-      <template v-slot:icon>
+      <template #icon>
         <volume-up-icon v-if="icon === DiscordType.voice" />
         <hashtag-icon v-else-if="icon === DiscordType.chat" />
       </template>

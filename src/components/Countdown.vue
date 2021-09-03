@@ -15,6 +15,8 @@ export default defineComponent({
     },
   },
 
+  emits: ['click'],
+
   setup(props, { emit }) {
     const store = useStore()
 

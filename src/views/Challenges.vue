@@ -33,7 +33,7 @@ export default defineComponent({
         :title="challenge.company"
       >
         <icon-label class="channel" :centered="true">
-          <template v-slot:icon>
+          <template #icon>
             <font-awesome-icon :icon="['fab', 'discord']" />
           </template>
           {{ challenge.channel }}
@@ -43,7 +43,7 @@ export default defineComponent({
         <p><strong>Prize:</strong> {{ challenge.prize }}</p>
         <video-thumbnail
           v-if="challenge.videoUrl"
-          :videoUrl="challenge.videoUrl"
+          :video-url="challenge.videoUrl"
         />
       </panel>
     </div>

@@ -10,6 +10,7 @@ export default defineComponent({
   props: {
     title: {
       type: String,
+      default: undefined,
     },
     size: {
       type: String as PropType<PanelSize>,
