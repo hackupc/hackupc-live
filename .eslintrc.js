@@ -21,14 +21,9 @@ module.exports = {
     'prettier/prettier': ['error', require('./prettier.config.js')],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'vue/order-in-components': 'error',
-    'vue/attributes-order': 'error',
-    'vue/no-v-html': 'error',
     'vue/component-tags-order': [
       'error',
-      {
-        order: ['script', 'template', 'style'],
-      },
+      { order: ['script', 'template', 'style'] },
     ],
     'vue/block-lang': ['error', { script: { lang: 'ts' } }],
     'prefer-template': 'warn',
