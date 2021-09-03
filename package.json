@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.3.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.4",
