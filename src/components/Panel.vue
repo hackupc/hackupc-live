@@ -66,58 +66,53 @@ export default defineComponent({
     line-height: 1.6;
 
     & > *:first-child,
-    & ::v-deep > div:first-child > *:first-child {
+    & ::v-deep(* > div:first-child > *:first-child) {
       margin-top: 0;
     }
     & > *:last-child,
-    & ::v-deep > div:last-child > *:last-child {
+    & ::v-deep(* > div:last-child > *:last-child) {
       margin-bottom: 0;
     }
 
-    ::v-deep {
-      a {
-        color: $highlightColor;
-        text-decoration: underline;
-      }
+    ::v-deep(a) {
+      color: $highlightColor;
+      text-decoration: underline;
+    }
 
-      h3 {
-        margin: 12px 0 4px;
-      }
+    ::v-deep(h3) {
+      margin: 12px 0 4px;
+    }
 
-      p,
-      ul,
-      ol {
-        margin: 0 0 1em;
-      }
+    ::v-deep(p, ul, ol) {
+      margin: 0 0 1em;
+    }
 
-      li {
-        margin-bottom: 0.25em;
-      }
+    ::v-deep(li) {
+      margin-bottom: 0.25em;
+    }
 
-      ul,
-      ol {
-        padding-left: 2em;
-      }
+    ::v-deep(ul, ol) {
+      padding-left: 2em;
+    }
 
-      ol li::marker {
-        color: $primaryColor;
-        font-weight: 600;
-      }
+    ::v-deep(ol li::marker) {
+      color: $primaryColor;
+      font-weight: 600;
+    }
 
-      blockquote {
-        margin: 1.5em 0;
-        padding: 10px 0 10px 24px;
-        border-left: 4px solid $primaryColor;
-        background-color: transparentize($primaryColor, 0.9);
-        border-radius: 0 8px 8px 0;
+    ::v-deep(blockquote) {
+      margin: 1.5em 0;
+      padding: 10px 0 10px 24px;
+      border-left: 4px solid $primaryColor;
+      background-color: transparentize($primaryColor, 0.9);
+      border-radius: 0 8px 8px 0;
+    }
 
-        p {
-          font-weight: 600;
-          margin-left: 0;
-          margin-bottom: 0;
-          padding-bottom: 0;
-        }
-      }
+    ::v-deep(blockquote p) {
+      font-weight: 600;
+      margin-left: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
