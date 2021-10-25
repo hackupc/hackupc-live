@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
     // },
     // New content is available; please refresh.
     updated() {
-      window.location.reload(true)
+      window.location.reload()
     },
     // offline() {
     //   console.log(
