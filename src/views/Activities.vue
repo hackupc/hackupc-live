@@ -1,44 +1,27 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
 import VueMarkdownIt from 'vue3-markdown-it'
 import IconLabel from '@/components/IconLabel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-export default defineComponent({
-  components: {
-    Panel,
-    VueMarkdownIt,
-    IconLabel,
-    FontAwesomeIcon,
-  },
-  setup() {
-    return {
-      activities,
-      formatInterval,
-      parseSpanishDate,
-    }
-  },
-})
 </script>
 
 <template>
   <div id="activities">
     <div class="container">
-      <panel
+      <Panel
         v-for="activity in activities"
         :key="activity.title"
         :title="activity.title"
         class="activity"
       >
-        <icon-label class="channel" :centered="true">
+        <IconLabel class="channel" :centered="true">
           <template #icon>
-            <font-awesome-icon :icon="['fab', activity.icon]" />
+            <FontAwesomeIcon :icon="['fab', activity.icon]" />
           </template>
           {{ activity.location }}
-        </icon-label>
+        </IconLabel>
         <p class="activity__time">
           {{
             formatInterval(
@@ -47,9 +30,9 @@ export default defineComponent({
             )
           }}
         </p>
-        <vue-markdown-it :source="activity.description" />
-        <img :src="activity.image" alt="" class="activity__image" />
-      </panel>
+        <VueMarkdownIt :source="activity.description" />
+        <img :src="activity.image" aria-hidden="true" class="activity__image" />
+      </Panel>
     </div>
   </div>
 </template>

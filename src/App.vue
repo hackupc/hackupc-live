@@ -1,97 +1,77 @@
-<script lang="ts">
+<script setup lang="ts">
 import config from '@/config'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
 import DisabledMessage from './components/DisabledMessage.vue'
 import Cookies from './components/Cookies.vue'
-import { computed, defineComponent, onMounted, ref } from 'vue'
-import { useStore } from 'vuex'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ExternalLinkIcon } from '@heroicons/vue/solid'
+import { useTimeStore } from './stores/time'
+import { useScheduleStore } from './stores/schedule'
 
-export default defineComponent({
-  components: {
-    Countdown,
-    Notification,
-    DisabledMessage,
-    Cookies,
-    ExternalLinkIcon,
-  },
+const timeStore = useTimeStore()
+const scheduleStore = useScheduleStore()
 
-  setup() {
-    const store = useStore()
-    const router = useRouter()
-    const route = useRoute()
+const router = useRouter()
+const route = useRoute()
 
-    const isFullscreen = computed(() => route.path === '/fullscreen')
-    const asideMenuClosed = ref(true)
-    const asideMenuHidden = ref(true)
-    const disabled = ref(config.disabled)
+const isFullscreen = computed(() => route.path === '/fullscreen')
+const asideMenuClosed = ref(true)
+const asideMenuHidden = ref(true)
+const disabled = ref(config.disabled)
 
-    setInterval(() => {
-      store.dispatch('refreshTime')
-    }, 1000)
+setInterval(() => {
+  timeStore.refreshTime()
+}, 1000) // 1 second
 
-    window.setInterval(() => {
-      store.dispatch('refreshSchedule')
-    }, 1 * 60 * 1000) // 1 minute
+setInterval(() => {
+  scheduleStore.refreshSchedule()
+}, 1 * 60 * 1000) // 1 minute
 
-    onMounted(() => {
-      window.addEventListener('keyup', (event) => {
-        if (
-          event.key === 'p' ||
-          event.key === 'f' ||
-          event.key === 'Spacebar'
-        ) {
-          router.push(isFullscreen.value ? '/' : 'fullscreen')
-        }
-      })
-    })
-
-    const goToFullscreen = () => {
-      router.push('fullscreen')
+onMounted(() => {
+  window.addEventListener('keyup', (event) => {
+    if (
+      event.key === 'p' ||
+      event.key === 'f' ||
+      event.key === 'Spacebar'
+    ) {
+      router.push(isFullscreen.value ? '/' : 'fullscreen')
     }
-
-    const openAsideMenu = () => {
-      document.body.scrollTop = 0
-      document.body.style.overflow = 'hidden'
-      asideMenuHidden.value = false
-      document.body.classList.add('veil')
-      setTimeout(() => {
-        asideMenuClosed.value = false
-        document.body.classList.add('veiled')
-      }, 1)
-    }
-
-    const closeAsideMenu = () => {
-      document.body.classList.remove('veiled')
-      setTimeout(() => {
-        document.body.classList.remove('veil')
-      }, 1)
-      asideMenuClosed.value = true
-      setTimeout(() => {
-        asideMenuHidden.value = true
-      }, 300)
-      document.body.style.overflow = 'auto'
-    }
-
-    const isActive = (page: string): boolean => {
-      if (page === '/') return route.path === '/'
-      return route.path.startsWith(page)
-    }
-
-    return {
-      isFullscreen,
-      asideMenuClosed,
-      asideMenuHidden,
-      disabled,
-      goToFullscreen,
-      openAsideMenu,
-      closeAsideMenu,
-      isActive,
-    }
-  },
+  })
 })
+
+const goToFullscreen = () => {
+  router.push('fullscreen')
+}
+
+const openAsideMenu = (): void => {
+  document.body.scrollTop = 0
+  document.body.style.overflow = 'hidden'
+  asideMenuHidden.value = false
+  document.body.classList.add('veil')
+  setTimeout(() => {
+    asideMenuClosed.value = false
+    document.body.classList.add('veiled')
+  }, 1)
+}
+
+const closeAsideMenu = (): void => {
+  document.body.classList.remove('veiled')
+  setTimeout(() => {
+    document.body.classList.remove('veil')
+  }, 1)
+  asideMenuClosed.value = true
+  setTimeout(() => {
+    asideMenuHidden.value = true
+  }, 300)
+  document.body.style.overflow = 'auto'
+}
+
+const isActive = (page: string): boolean => {
+  if (page === '/') return route.path === '/'
+  return route.path.startsWith(page)
+}
 </script>
 
 <template>
@@ -124,33 +104,30 @@ export default defineComponent({
         <nav>
           <ul>
             <li :class="{ selected: isActive('/') }">
-              <router-link to="/">Home</router-link>
+              <RouterLink to="/">Home</RouterLink>
             </li>
             <li :class="{ selected: isActive('/live') }">
-              <router-link to="/live">Live</router-link>
+              <RouterLink to="/live">Live</RouterLink>
             </li>
             <li :class="{ selected: isActive('/schedule') }">
-              <router-link to="/schedule">Schedule</router-link>
+              <RouterLink to="/schedule">Schedule</RouterLink>
             </li>
             <li :class="{ selected: isActive('/activities') }">
-              <router-link to="/activities">Activities</router-link>
+              <RouterLink to="/activities">Activities</RouterLink>
             </li>
             <li :class="{ selected: isActive('/challenges') }">
-              <router-link to="/challenges">Challenges</router-link>
+              <RouterLink to="/challenges">Challenges</RouterLink>
             </li>
             <li :class="{ selected: isActive('/talks') }">
-              <router-link to="/talks">Talks</router-link>
+              <RouterLink to="/talks">Talks</RouterLink>
             </li>
             <li :class="{ selected: isActive('/rules') }">
-              <router-link to="/rules">Rules</router-link>
+              <RouterLink to="/rules">Rules</RouterLink>
             </li>
             <li>
-              <a
-                href="https://hackupc.com/#faq"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                FAQ <external-link-icon class="external-link-icon" />
+              <a href="https://hackupc.com/#faq" rel="noopener noreferrer" target="_blank">
+                FAQ
+                <ExternalLinkIcon class="external-link-icon" />
               </a>
             </li>
           </ul>
@@ -161,46 +138,43 @@ export default defineComponent({
         <nav>
           <ul>
             <li :class="{ selected: isActive('/') }">
-              <router-link to="/">Home</router-link>
+              <RouterLink to="/">Home</RouterLink>
             </li>
             <li :class="{ selected: isActive('/live') }">
-              <router-link to="/live">Live</router-link>
+              <RouterLink to="/live">Live</RouterLink>
             </li>
             <li :class="{ selected: isActive('/schedule') }">
-              <router-link to="/schedule">Schedule</router-link>
+              <RouterLink to="/schedule">Schedule</RouterLink>
             </li>
             <li :class="{ selected: isActive('/activities') }">
-              <router-link to="/activities">Activities</router-link>
+              <RouterLink to="/activities">Activities</RouterLink>
             </li>
             <li id="countdown-li">
               <countdown @click="goToFullscreen" />
             </li>
             <li :class="{ selected: isActive('/challenges') }">
-              <router-link to="/challenges">Challenges</router-link>
+              <RouterLink to="/challenges">Challenges</RouterLink>
             </li>
             <li :class="{ selected: isActive('/talks') }">
-              <router-link to="/talks">Talks</router-link>
+              <RouterLink to="/talks">Talks</RouterLink>
             </li>
             <li :class="{ selected: isActive('/rules') }">
-              <router-link to="/rules">Rules</router-link>
+              <RouterLink to="/rules">Rules</RouterLink>
             </li>
             <li>
-              <a
-                href="https://hackupc.com/#faq"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                FAQ <external-link-icon class="external-link-icon" />
+              <a href="https://hackupc.com/#faq" rel="noopener noreferrer" target="_blank">
+                FAQ
+                <ExternalLinkIcon class="external-link-icon" />
               </a>
             </li>
           </ul>
         </nav>
       </header>
       <main>
-        <router-view />
+        <RouterView />
       </main>
     </div>
-    <disabled-message v-else />
+    <DisabledMessage v-else />
 
     <cookies />
   </div>

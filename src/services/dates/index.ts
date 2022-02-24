@@ -1,6 +1,6 @@
 import dayjs, { Dayjs } from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { Duration } from 'dayjs/plugin/duration'
+import type { Duration } from 'dayjs/plugin/duration'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
@@ -9,6 +9,7 @@ dayjs.extend(timezone)
 dayjs.extend(customParseFormat)
 
 export type DateFormat =
+  | 'hour'
   | 'minute'
   | 'second'
   | 'time'
@@ -19,6 +20,7 @@ export type DateFormat =
   | 'full-date-time'
 
 export const dateFormats: Record<DateFormat, string> = {
+  hour: 'H',
   minute: 'mm',
   second: 'ss',
   time: 'H:mm',
@@ -53,9 +55,13 @@ export function formatInterval(dateStart: Dayjs, dateEnd: Dayjs): string {
   }
 }
 
+/**
+ * Parses a date.
+ * Note: if the input is wrong, returns an invalid date.
+ */
 export function parseSpanishDate(
   format: DateFormat,
-  dateString: string
+  dateString?: string
 ): Dayjs {
   return dayjs(dateString, dateFormats[format]).tz('Europe/Madrid')
 }

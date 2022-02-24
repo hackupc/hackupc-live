@@ -1,56 +1,52 @@
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { formatDuration } from '@/services/dates'
-import duration from 'dayjs/plugin/duration'
+import duration, { type Duration } from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
-import { useStore } from 'vuex'
+import type { Dayjs } from 'dayjs'
+import { useTimeStore } from '@/stores/time';
+import { useScheduleStore } from '@/stores/schedule';
+import type { ScheduleCountdown } from '@/services/schedule'
 
 dayjs.extend(duration)
 
-export default defineComponent({
-  props: {
-    fullscreen: {
-      type: Boolean,
-      default: false,
-    },
-  },
+interface Props {
+  fullscreen?: boolean
+}
+const { fullscreen = false } = defineProps<Props>()
 
-  emits: ['click'],
+const emit = defineEmits<{
+  (e: 'click'): void
+}>()
 
-  setup(props, { emit }) {
-    const store = useStore()
+const timeStore = useTimeStore()
+const scheduleStore = useScheduleStore()
 
-    const countdown = computed(() => store.state.schedule.countdown)
-    const now = computed(() => store.getters.now)
-    const remainingTime = computed(() => {
-      if (now.value.isBefore(countdown.value.start)) {
-        return dayjs.duration(countdown.value.end.diff(countdown.value.start))
-      } else if (now.value.isAfter(countdown.value.end)) {
-        return dayjs.duration(0)
-      } else {
-        return dayjs.duration(countdown.value.end.diff(now.value))
-      }
-    })
-    const hours = computed(() => Math.floor(remainingTime.value.asHours()))
-    const minutes = computed(() =>
-      formatDuration('minute', remainingTime.value)
-    )
-    const seconds = computed(() =>
-      formatDuration('second', remainingTime.value)
-    )
+const remainingTime = computed<Duration>(() => {
+  const now = timeStore.realNow
+  const { start, end } = scheduleStore.schedule.countdown
 
-    const handleClick = () => {
-      emit('click')
-    }
-
-    return {
-      hours,
-      minutes,
-      seconds,
-      handleClick,
-    }
-  },
+  if (now.isBefore(start)) {
+    return dayjs.duration(end.diff(start))
+  } else if (now.isAfter(end)) {
+    return dayjs.duration(0)
+  } else {
+    return dayjs.duration(end.diff(now))
+  }
 })
+const hours = computed<string>(() =>
+  formatDuration('hour', remainingTime.value)
+)
+const minutes = computed<string>(() =>
+  formatDuration('minute', remainingTime.value)
+)
+const seconds = computed<string>(() =>
+  formatDuration('second', remainingTime.value)
+)
+
+const handleClick = (): void => {
+  emit('click')
+}
 </script>
 
 <template>
@@ -63,9 +59,9 @@ export default defineComponent({
     @click="handleClick"
   >
     <div class="countdown__time">
-      <span>{{ hours }}</span
-      >:<span>{{ minutes }}</span
-      ><span class="countdown__seconds">{{ seconds }}</span>
+      <span>{{ hours }}</span>:
+      <span>{{ minutes }}</span>
+      <span class="countdown__seconds">{{ seconds }}</span>
     </div>
     <div class="countdown__bg">
       <img src="@/assets/img/hackupc-logo.svg" alt="HackUPC logo" />

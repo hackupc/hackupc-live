@@ -1,34 +1,18 @@
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
 import Panel from '@/components/Panel.vue'
-import { Talk } from '@/data/talks'
+import type { Talk } from '@/data/talks'
 import VueMarkdownIt from 'vue3-markdown-it'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
 import VideoThumbnail from './VideoThumbnail.vue'
 
-export default defineComponent({
-  components: {
-    Panel,
-    VueMarkdownIt,
-    VideoThumbnail,
-  },
-  props: {
-    talk: {
-      type: Object as PropType<Talk>,
-      required: true,
-    },
-  },
-  setup() {
-    return {
-      formatInterval,
-      parseSpanishDate,
-    }
-  },
-})
+interface Props {
+  talk: Talk
+}
+defineProps<Props>()
 </script>
 
 <template>
-  <panel :title="talk.title">
+  <Panel :title="talk.title">
     <h3>Company: {{ talk.speaker }}</h3>
     <p class="talk__time">
       {{
@@ -38,9 +22,9 @@ export default defineComponent({
         )
       }}
     </p>
-    <vue-markdown-it :source="talk.description" />
-    <video-thumbnail v-if="talk.videoUrl" :video-url="talk.videoUrl" />
-  </panel>
+    <VueMarkdownIt :source="talk.description" />
+    <VideoThumbnail v-if="talk.videoUrl" :video-url="talk.videoUrl" />
+  </Panel>
 </template>
 
 <style lang="scss" scoped>

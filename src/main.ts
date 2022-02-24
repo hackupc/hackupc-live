@@ -10,10 +10,10 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
-import './registerServiceWorker'
 import router from './router'
-import store from './store'
 
 library.add(
   faTwitch,
@@ -26,4 +26,9 @@ library.add(
   faMedium
 )
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')

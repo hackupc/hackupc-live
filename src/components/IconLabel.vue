@@ -1,14 +1,7 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  props: {
-    centered: {
-      type: Boolean,
-      default: false,
-    },
-  },
-})
+<script setup lang="ts">
+const { centered = false } = defineProps<{
+  centered?: boolean
+}>()
 </script>
 
 <template>

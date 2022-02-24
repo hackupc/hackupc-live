@@ -1,44 +1,25 @@
-<script lang="ts">
+<script setup lang="ts">
 import DiscordLabel from '@/components/DiscordLabel.vue'
 import IconLabel from '@/components/IconLabel.vue'
 import { DevpostIcon } from '@/components/icons'
 import Panel from '@/components/Panel.vue'
 import { formatDate } from '@/services/dates'
-import { Dayjs } from 'dayjs'
-import { computed, defineComponent } from 'vue'
-import { useStore } from 'vuex'
+import { computed } from 'vue'
 import { discordChannels } from '@/data/home'
 import { MailIcon } from '@heroicons/vue/solid'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { useScheduleStore } from '@/stores/schedule'
 
-export default defineComponent({
-  components: {
-    DiscordLabel,
-    DevpostIcon,
-    IconLabel,
-    Panel,
-    MailIcon,
-    FontAwesomeIcon,
-  },
-  setup() {
-    const store = useStore()
+const scheduleStore = useScheduleStore()
 
-    const submitDeadline = computed<Dayjs>(
-      () => store.state.schedule.submitDeadline
-    )
-
-    return {
-      submitDeadline,
-      formatDate,
-      discordChannels,
-    }
-  },
-})
+const submitDeadline = computed<string>(
+  () => formatDate('weekday-time', scheduleStore.schedule.submitDeadline)
+)
 </script>
 
 <template>
   <div class="container">
-    <panel title="Important information">
+    <Panel title="Important information">
       <p>
         <b>
           The projects must be posted on
@@ -46,55 +27,38 @@ export default defineComponent({
             target="_blank"
             href="https://hackupc2021.devpost.com/"
             rel="noopener noreferrer"
-            >Devpost</a
-          >
-          before {{ formatDate('weekday-time', submitDeadline) }}.
+          >Devpost</a>
+          before {{ submitDeadline }}.
         </b>
         If you don't do it, you won't have access to the prizes, swag, nor ECTS
         credits.
       </p>
 
-      <icon-label :centered="true">
+      <IconLabel :centered="true">
         <template #icon>
-          <mail-icon />
+          <MailIcon />
         </template>
         <a
           href="mailto:contact@hackupc.com"
           target="_blank"
           rel="noopener noreferrer"
-          >contact@hackupc.com</a
-        >
-      </icon-label>
-    </panel>
+        >contact@hackupc.com</a>
+      </IconLabel>
+    </Panel>
 
-    <panel title="Links">
+    <Panel title="Links">
       <div class="buttons">
-        <a
-          target="_blank"
-          href="https://discord.gg/PfHw68NN"
-          rel="noopener noreferrer"
-        >
-          <font-awesome-icon :icon="['fab', 'discord']" />
-          <br />
-          Discord
+        <a target="_blank" href="https://discord.gg/PfHw68NN" rel="noopener noreferrer">
+          <FontAwesomeIcon :icon="['fab', 'discord']" />
+          <br />Discord
         </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.twitch.tv/hackersupc"
-        >
-          <font-awesome-icon :icon="['fab', 'twitch']" />
-          <br />
-          Twitch
+        <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/hackersupc">
+          <FontAwesomeIcon :icon="['fab', 'twitch']" />
+          <br />Twitch
         </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://hackupc2021.devpost.com/"
-        >
-          <devpost-icon />
-          <br />
-          Devpost
+        <a target="_blank" rel="noopener noreferrer" href="https://hackupc2021.devpost.com/">
+          <DevpostIcon />
+          <br />Devpost
         </a>
       </div>
 
@@ -106,7 +70,7 @@ export default defineComponent({
             href="https://www.facebook.com/hackersupc"
             aria-label="facebook"
           >
-            <font-awesome-icon :icon="['fab', 'facebook']" />
+            <FontAwesomeIcon :icon="['fab', 'facebook']" />
           </a>
           <a
             target="_blank"
@@ -114,7 +78,7 @@ export default defineComponent({
             href="https://twitter.com/hackersupc"
             aria-label="twitter"
           >
-            <font-awesome-icon :icon="['fab', 'twitter']" />
+            <FontAwesomeIcon :icon="['fab', 'twitter']" />
           </a>
           <a
             target="_blank"
@@ -122,7 +86,7 @@ export default defineComponent({
             href="https://instagram.com/hackersupc"
             aria-label="instagram"
           >
-            <font-awesome-icon :icon="['fab', 'instagram']" />
+            <FontAwesomeIcon :icon="['fab', 'instagram']" />
           </a>
           <a
             target="_blank"
@@ -130,7 +94,7 @@ export default defineComponent({
             href="https://www.youtube.com/c/HackersUPC"
             aria-label="youtube"
           >
-            <font-awesome-icon :icon="['fab', 'youtube']" />
+            <FontAwesomeIcon :icon="['fab', 'youtube']" />
           </a>
           <a
             target="_blank"
@@ -138,7 +102,7 @@ export default defineComponent({
             href="https://github.com/hackupc"
             aria-label="github"
           >
-            <font-awesome-icon :icon="['fab', 'github']" />
+            <FontAwesomeIcon :icon="['fab', 'github']" />
           </a>
           <a
             target="_blank"
@@ -146,19 +110,16 @@ export default defineComponent({
             href="https://medium.com/@hackupc"
             aria-label="medium"
           >
-            <font-awesome-icon :icon="['fab', 'medium']" />
+            <FontAwesomeIcon :icon="['fab', 'medium']" />
           </a>
         </div>
       </div>
-    </panel>
+    </Panel>
 
-    <panel title="Discord channels" size="big">
-      <div
-        v-for="groupOfChannels in discordChannels"
-        :key="groupOfChannels.title"
-      >
+    <Panel title="Discord channels" size="big">
+      <div v-for="groupOfChannels in discordChannels" :key="groupOfChannels.title">
         <h3>{{ groupOfChannels.title }}</h3>
-        <discord-label
+        <DiscordLabel
           v-for="channel in groupOfChannels.channels"
           :key="channel.name + '-' + channel.icon"
           :name="channel.name"
@@ -166,21 +127,17 @@ export default defineComponent({
           :icon="channel.icon"
         />
       </div>
-    </panel>
+    </Panel>
 
-    <panel title="Discord BieneBot Commands" size="big">
+    <Panel title="Discord BieneBot Commands" size="big">
       <h3>Useful</h3>
       <div>
         <div>
-          <span class="highlight-span"
-            >biene changeteamname [new_teamname]</span
-          >
+          <span class="highlight-span">biene changeteamname [new_teamname]</span>
           Change your team name with a fancy one!
         </div>
         <div>
-          <span class="highlight-span"
-            >biene jointeam [teamname] [new_members]</span
-          >
+          <span class="highlight-span">biene jointeam [teamname] [new_members]</span>
           Adds more users to your team.
         </div>
       </div>
@@ -199,15 +156,13 @@ export default defineComponent({
         internet connection.
       </div>
       <div>
-        <span class="highlight-span"
-          >biene meme [meme_code] text|seperated|by|lines
-        </span>
+        <span class="highlight-span">biene meme [meme_code] text|seperated|by|lines</span>
         Inserts text to meme with code [meme_code].
       </div>
       <div>
         <span class="highlight-span">biene meme help</span> Get meme_code.
       </div>
-    </panel>
+    </Panel>
   </div>
 </template>
 

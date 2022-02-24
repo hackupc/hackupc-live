@@ -1,10 +1,11 @@
+type MarkdownString = string // Accepts Markdown
 export interface Challenge {
   title: string
   company: string
   videoUrl?: string
   channel: string
   prize: string
-  description?: string // Accepts Markdown
+  description?: MarkdownString
 }
 
 export const challenges: Challenge[] = [

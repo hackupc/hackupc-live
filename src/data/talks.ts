@@ -1,6 +1,8 @@
+type MarkdownString = string // Accepts Markdown
+
 export interface Talk {
   title: string
-  description?: string // Accepts Markdown
+  description?: MarkdownString
   speaker: string
   videoUrl?: string
   start: string

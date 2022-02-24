@@ -1,75 +1,65 @@
-<script lang="ts">
-import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, defineComponent, ref, watch } from 'vue'
-import { useStore } from 'vuex'
+<script setup lang="ts">
+import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
+import { computed, ref, watch } from 'vue'
 import { notify } from '@/services/notification'
-import { Dayjs } from 'dayjs'
+import type { Dayjs } from 'dayjs'
+import { useScheduleStore } from '@/stores/schedule';
+import { useTimeStore } from '@/stores/time';
+import { useNotificationsStore } from '@/stores/notifications';
+import { useStorage } from '@vueuse/core'
 
 const NOTIFY_MINUTES_BEFORE = 5
 
-export default defineComponent({
-  setup() {
-    const store = useStore()
+const timeStore = useTimeStore()
+const scheduleStore = useScheduleStore()
+const notificationsStore = useNotificationsStore()
 
-    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
-    const now = computed<Dayjs>(() => store.getters.now)
-    const subscribed = computed<string[]>(() => store.state.subscribed)
+const days = computed<ScheduleDay[]>(() => scheduleStore.schedule.days)
+const now = computed<Dayjs>(() => timeStore.realNow)
+const subscriptions = computed<string[]>(() => notificationsStore.subscriptions)
 
-    const askedSubscribeAll = ref(
-      window.localStorage.getItem('askedGetAllNotifications') === '1'
-    )
+const askedSubscribeAll = useStorage<boolean>('askedSubscribeAll', false)
 
-    watch(now, () => {
-      for (const id of subscribed.value) {
-        const event = getEvent(id)
-        if (!event) {
-          store.dispatch('removeSubscribe', id)
-          continue
-        }
-
-        const remainingMinutes = event.start.diff(now.value, 'minutes', true)
-        if (remainingMinutes < 0) {
-          store.dispatch('removeSubscribe', id)
-          continue
-        }
-
-        if (remainingMinutes <= NOTIFY_MINUTES_BEFORE) {
-          notify({
-            title: `Happening soon: ${event.title}`,
-            body: event.description,
-          })
-          store.dispatch('removeSubscribe', id)
-        }
-      }
-    })
-
-    const subscribeAll = () => {
-      for (const day of days.value) {
-        for (const event of day.events) {
-          store.dispatch('addSubscribe', event.id)
-        }
-      }
-      neverAskAgainGetAllNotifications()
+watch(now, async () => {
+  for (const id of subscriptions.value) {
+    const event = getEvent(id)
+    if (!event) {
+      notificationsStore.removeSubscription(id)
+      continue
     }
 
-    const neverAskAgainGetAllNotifications = () => {
-      window.localStorage.setItem('askedGetAllNotifications', '1')
-      askedSubscribeAll.value = true
+    const remainingMinutes = event.start.diff(now.value, 'minutes', true)
+    if (remainingMinutes < 0) {
+      notificationsStore.removeSubscription(id)
+      continue
     }
 
-    const getEvent = function (id: string): ScheduleEvent | undefined {
-      return days.value
-        .flatMap((day) => day.events)
-        .find((event) => event.id.toString() === id.toString())
+    if (remainingMinutes <= NOTIFY_MINUTES_BEFORE) {
+      notify({
+        title: `Happening soon: ${event.title}`,
+        body: event.description,
+      })
+      await notificationsStore.removeSubscription(id)
     }
-
-    return {
-      askedSubscribeAll,
-      subscribeAll,
-      neverAskAgainGetAllNotifications,
-    }
-  },
+  }
 })
+
+const subscribeAll = async () => {
+  const ids = days.value.flatMap(day => day.events.map(event => event.id))
+
+  await notificationsStore.addSubscription(...ids)
+  neverAskAgainGetAllNotifications()
+}
+
+const neverAskAgainGetAllNotifications = () => {
+  askedSubscribeAll.value = true
+}
+
+const getEvent = function (id: string): ScheduleEvent | undefined {
+  return days.value
+    .flatMap((day) => day.events)
+    .find((event) => event.id.toString() === id.toString())
+}
 </script>
 
 <template>

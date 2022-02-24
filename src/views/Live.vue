@@ -1,161 +1,140 @@
-<script lang="ts">
+<script setup lang="ts">
 import { formatDate } from '@/services/dates'
-import { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, defineComponent } from 'vue'
-import { useStore } from 'vuex'
+import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
+import { computed } from 'vue'
 import { VolumeOffIcon, ArrowNarrowRightIcon } from '@heroicons/vue/solid'
+import { useNotificationsStore } from '@/stores/notifications';
+import { useScheduleStore } from '@/stores/schedule';
+import { useTimeStore } from '@/stores/time';
 
 interface TimelineHourEvent {
-  type: string
-  id: ScheduleEvent['id']
+  type: 'event'
   startTmsp: number
   endTmsp: number
+  title: string
+
+  id: ScheduleEvent['id']
   startHour: string
   endHour: string
-  title: string
   isSubscribed: boolean
 }
 
-interface TimelineEventItem {
+interface TimelineEventTitle {
   type: 'title'
-  name: string
   startTmsp: number
   endTmsp: number
+  title: string
 }
 
-interface TimelineEventTitle {
+interface TimelineEventItem {
   type: 'item'
   startTmsp: number
   endTmsp: number
+
   isHappening: boolean
   hourEvents: TimelineHourEvent[]
 }
 
-export default defineComponent({
-  components: {
-    VolumeOffIcon,
-    ArrowNarrowRightIcon,
-  },
-  props: {
-    fullscreen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup() {
-    const store = useStore()
+interface Props {
+  fullscreen?: boolean
+}
+const { fullscreen = false } = defineProps<Props>()
 
-    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
-    const nowInSeconds = computed<number>(() => store.getters.now.unix())
-    const subscribed = computed<string[]>(() => store.state.subscribed)
+const timeStore = useTimeStore()
+const scheduleStore = useScheduleStore()
+const notificationsStore = useNotificationsStore()
 
-    const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
-      const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
+const days = computed<ScheduleDay[]>(() => scheduleStore.schedule.days)
+const nowInSeconds = computed<number>(() => timeStore.realNow.unix())
 
-      for (const day of days.value) {
-        if (day.end.unix() >= nowInSeconds.value) {
-          newEvents.push({
-            type: 'title',
-            name: formatDate('weekday', day.start),
-            startTmsp: day.start.unix(),
-            endTmsp: day.end.unix(),
-          })
-        }
+const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
+  const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
 
-        const SCHEDULE_STEP = 3600
-        let eventIndex = 0
-        let nextEventTmsp = day.events[eventIndex].start.unix()
+  for (const day of days.value) {
+    if (day.end.unix() >= nowInSeconds.value) {
+      newEvents.push({
+        type: 'title',
+        title: formatDate('weekday', day.start),
+        startTmsp: day.start.unix(),
+        endTmsp: day.end.unix(),
+      })
+    }
 
-        // Adding events for that day
-        for (
-          let i = day.start.unix();
-          i < day.start.unix() + 24 * 3600;
-          i += SCHEDULE_STEP
-        ) {
-          const endTmsp = i + SCHEDULE_STEP - 1
-          const hourEvents: TimelineHourEvent[] = []
+    const SCHEDULE_STEP = 3600
+    let eventIndex = 0
+    let nextEventTmsp = day.events[eventIndex].start.unix()
 
-          // Add events that fit in this step
-          while (
-            nextEventTmsp < i + SCHEDULE_STEP &&
-            eventIndex < day.events.length
-          ) {
-            const event = day.events[eventIndex]
-            hourEvents.push({
-              type: 'event',
-              id: event.id,
-              startTmsp: i,
-              endTmsp,
-              startHour: formatDate('time', event.start),
-              endHour: formatDate('time', event.end),
-              title: event.title,
-              isSubscribed: subscribed.value.includes(event.id),
-            })
-            eventIndex += 1
-            if (eventIndex < day.events.length) {
-              nextEventTmsp = event.start.unix()
-            }
-          }
+    // Adding events for that day
+    for (
+      let i = day.start.unix();
+      i < day.start.unix() + 24 * 3600;
+      i += SCHEDULE_STEP
+    ) {
+      const endTmsp = i + SCHEDULE_STEP - 1
+      const hourEvents: TimelineHourEvent[] = []
 
-          // Add a list element for every step
-          if (endTmsp >= nowInSeconds.value) {
-            newEvents.push({
-              type: 'item',
-              startTmsp: i,
-              endTmsp,
-              hourEvents,
-              isHappening:
-                nowInSeconds.value >= i && nowInSeconds.value < endTmsp,
-            })
-          }
+      // Add events that fit in this step
+      while (
+        nextEventTmsp < i + SCHEDULE_STEP &&
+        eventIndex < day.events.length
+      ) {
+        const event = day.events[eventIndex]
+        hourEvents.push({
+          type: 'event',
+          id: event.id,
+          startTmsp: i,
+          endTmsp,
+          startHour: formatDate('time', event.start),
+          endHour: formatDate('time', event.end),
+          title: event.title,
+          isSubscribed: notificationsStore.subscriptions.includes(event.id),
+        })
+        eventIndex += 1
+        if (eventIndex < day.events.length) {
+          nextEventTmsp = event.start.unix()
         }
       }
 
-      return newEvents
-    })
-
-    const toggleSubscribe = (id: ScheduleEvent['id']): void => {
-      store.dispatch('toggleSubscribe', id)
+      // Add a list element for every step
+      if (endTmsp >= nowInSeconds.value) {
+        newEvents.push({
+          type: 'item',
+          startTmsp: i,
+          endTmsp,
+          hourEvents,
+          isHappening:
+            nowInSeconds.value >= i && nowInSeconds.value < endTmsp,
+        })
+      }
     }
+  }
 
-    return {
-      events,
-      toggleSubscribe,
-    }
-  },
+  return newEvents
 })
+
 </script>
 
 <template>
   <div id="live" class="container-live">
-    <div
-      class="events-fancy"
-      :class="{ 'events-fancy--fullscreen': fullscreen }"
-    >
+    <div class="events-fancy" :class="{ 'events-fancy--fullscreen': fullscreen }">
       <ul>
         <template v-for="event in events">
-          <li
-            v-if="event.type == 'title'"
-            :key="`${event.name}-${event.startTmsp}`"
-          >
-            <h1>{{ event.name }}</h1>
+          <li v-if="event.type === 'title'" :key="`${event.title}-${event.startTmsp}`">
+            <h1>{{ event.title }}</h1>
           </li>
           <li
-            v-else-if="event.type == 'item'"
-            :key="`${event.name}-${event.startTmsp}`"
+            v-else-if="event.type === 'item'"
+            :key="`${event.startTmsp}`"
             :class="{ happening: event.isHappening }"
           >
-            <arrow-narrow-right-icon
-              v-if="event.isHappening"
-              class="event__arrow"
-            />
+            <ArrowNarrowRightIcon v-if="event.isHappening" class="event__arrow" />
             <div
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
               class="event"
               :class="{ subscribed: hourEvent.isSubscribed }"
               :data-event-id="hourEvent.id"
-              @click="toggleSubscribe(hourEvent.id)"
+              @click="notificationsStore.toggleSubscription(hourEvent.id)"
             >
               <div class="event-hour">
                 <div>{{ hourEvent.startHour }}</div>
@@ -163,10 +142,7 @@ export default defineComponent({
               </div>
               <div class="title">
                 {{ hourEvent.title }}
-                <volume-off-icon
-                  v-if="!hourEvent.isSubscribed"
-                  class="event__subscribed-icon"
-                />
+                <VolumeOffIcon v-if="!hourEvent.isSubscribed" class="event__subscribed-icon" />
               </div>
             </div>
           </li>
@@ -209,7 +185,7 @@ export default defineComponent({
   -webkit-overflow-scrolling: touch;
 
   &::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 39px;
     left: 0;

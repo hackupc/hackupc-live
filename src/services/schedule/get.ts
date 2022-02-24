@@ -1,9 +1,9 @@
-import { RawSchedule } from '@/data/schedule'
+import type { RawSchedule } from '@/data/schedule'
 import { parseSchedule } from '.'
-import { Schedule } from './types'
+import type { Schedule } from './types'
 
 export async function getLattestSchedule(): Promise<Schedule | undefined> {
-  if (process.env.NODE_ENV !== 'production') return undefined
+  if (import.meta.env.DEV) return undefined
 
   try {
     const response = await fetch(`/data/schedule.json?date=${Date.now()}`)

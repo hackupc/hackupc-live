@@ -1,5 +1,5 @@
 /**
- * @type {import("eslint").Linter.Config}
+ * @type {import('eslint").Linter.Config}
  */
 module.exports = {
   root: true,
@@ -19,14 +19,15 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error', require('./prettier.config.js')],
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': import.meta.env.DEV ? 'off' : 'warn',
+    'no-debugger': import.meta.env.DEV ? 'off' : 'warn',
     'vue/component-tags-order': [
       'error',
       { order: ['script', 'template', 'style'] },
     ],
     'vue/block-lang': ['error', { script: { lang: 'ts' } }],
     'prefer-template': 'warn',
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
   },
   overrides: [
     {

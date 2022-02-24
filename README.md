@@ -7,6 +7,37 @@
 
 Hi! This is the code of the HackUPC live page.
 
+## Project Setup
+
+1. Clone the repo.
+   ```sh
+   git clone https://github.com/hackupc/hackupc-live.git
+   ```
+1. Open it with [VSCode](https://code.visualstudio.com/) and install this extensions:
+
+   - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur)
+   - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   - [EsLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+   - [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+   - [MarkdownLint](https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint)
+   - [Grammarly](https://marketplace.visualstudio.com/items?itemName=znck.grammarly)
+
+1. Install [Node.js](https://nodejs.org/en/download/) (preferably with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
+1. Install the dependencies:
+   ```sh
+   npm install
+   ```
+1. Run the project in development mode:
+   ```sh
+   npm run dev
+   ```
+1. Go to http://localhost:3000/ to preview the app.
+1. Code. If you're not familiar with Vue 3, read its [official documentation](https://vuejs.org/guide), it's very good. BTW write tests if possible.
+
+1. Open a Pull Request and ask for reviews to merge to `main`.
+1. Whenever the PR is merged, [Netlify](https://app.netlify.com/sites/hackupc-live) will build and deploy automatically. 🧙🏻‍♂️
+
 ## Edit content
 
 ### Theme
@@ -18,42 +49,50 @@ Theme variables are in `src/live/params.scss`.
 Most of the content is in `src/data` or hardcoded into the components.
 
 ### Schedule
-The schedule is in `src/data/schedule.ts`
 
-- `id` can be whatever you want, but all ids must be different  
-- `dates` are D/M/YYYY format at Spain time
+The schedule is in `src/data/schedule.ts`.
 
-## Setup
+- `id` can be whatever you want, but all ids must be different.
+- `dates` are D/M/YYYY format at Spain time.
 
-Clone the repo, install [Yarn](https://yarnpkg.com/) (`npm install -g yarn`), and run `yarn install` the first time:
+## Commands
 
-```sh
-yarn install
-```
-
-Use `yarn serve` to compile and serve the dist directory in real time. Then view the website at [https://localhost:8080](https://localhost:8080)
+### Install dependencies
 
 ```sh
-yarn serve
+npm install
 ```
 
-Install this extensions in your editor: `eslint`, `prettier`, `stylelint` and `vetur`.
-
-## Deploy
-
-### Deploy to localhost
-
-Use `yarn build` to compile all dist directory. The files will be compiled to `/dist/`.
+### Compile and Hot-Reload for Development
 
 ```sh
-yarn build
+npm run dev
 ```
 
-### Deploy to production
+### Type-Check, Compile and Minify for Production
 
-**Push to master**. [Netlify](https://app.netlify.com/sites/hackupc-live) will build and deploy automatically.
+```sh
+npm run build
+```
 
-If you push something that doesn't build, don't worry, it won't be published.
+### Run Unit Tests with [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/introduction)
+
+```sh
+npm run test:unit # or `npm run test:unit:ci` for headless testing
+```
+
+### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+
+```sh
+npm run build
+npm run test:e2e # or `npm run test:e2e:ci` for headless testing
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
 
 ## Support
 

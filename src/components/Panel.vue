@@ -1,33 +1,13 @@
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-enum PanelSize {
-  small = 'small',
-  big = 'big',
+<script setup lang="ts">
+interface Props {
+  title?: string
+  size?: 'big' | 'small'
 }
-
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      default: undefined,
-    },
-    size: {
-      type: String as PropType<PanelSize>,
-      default: PanelSize.small,
-    },
-  },
-
-  setup() {
-    return {
-      PanelSize,
-    }
-  },
-})
+const { title, size = 'small' } = defineProps<Props>()
 </script>
 
 <template>
-  <div class="panel" :class="{ 'panel--large': size === PanelSize.big }">
+  <div class="panel" :class="{ 'panel--large': size === 'big' }">
     <h2 v-if="title" class="panel__title">{{ title }}</h2>
     <div class="panel__content">
       <slot></slot>
