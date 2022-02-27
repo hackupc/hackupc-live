@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import config from '@/config'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
-import DisabledMessage from './components/DisabledMessage.vue'
-import Cookies from './components/Cookies.vue'
-import { computed, onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import config from '@/config'
 import { ExternalLinkIcon } from '@heroicons/vue/solid'
-import { useTimeStore } from './stores/time'
+import { computed, onMounted, ref } from 'vue'
+import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
+import Cookies from './components/Cookies.vue'
+import DisabledMessage from './components/DisabledMessage.vue'
 import { useScheduleStore } from './stores/schedule'
-import { RouterLink } from 'vue-router'
+import { useTimeStore } from './stores/time'
 
 const timeStore = useTimeStore()
 const scheduleStore = useScheduleStore()
