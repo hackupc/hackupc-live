@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import {
-  parseSchedule,
-  getLattestSchedule,
   areSameSchedule,
+  getLattestSchedule,
+  parseSchedule,
 } from '../services/schedule'
 import type { Schedule } from '../services/schedule'
 import { schedule } from '@/data/schedule'

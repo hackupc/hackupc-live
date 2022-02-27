@@ -2,7 +2,7 @@
 import { formatDate } from '@/services/dates'
 import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
 import { computed } from 'vue'
-import { VolumeOffIcon, ArrowNarrowRightIcon } from '@heroicons/vue/solid'
+import { ArrowNarrowRightIcon, VolumeOffIcon } from '@heroicons/vue/solid'
 import { useNotificationsStore } from '@/stores/notifications'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
