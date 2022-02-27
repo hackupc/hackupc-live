@@ -1,53 +1,45 @@
-import Activities from '@/views/Activities.vue'
-import Challenges from '@/views/Challenges.vue'
-import FullScreen from '@/views/FullScreen.vue'
-import Home from '@/views/Home.vue'
-import Live from '@/views/Live.vue'
-import Rules from '@/views/Rules.vue'
-import Schedule from '@/views/Schedule.vue'
-import Talks from '@/views/Talks.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('@/views/Home.vue'),
   },
   {
     path: '/talks',
     name: 'Talks',
-    component: Talks,
+    component: () => import('@/views/Talks.vue'),
   },
   {
     path: '/challenges',
     name: 'challenges',
-    component: Challenges,
+    component: () => import('@/views/Challenges.vue'),
   },
   {
     path: '/schedule',
     name: 'Schedule',
-    component: Schedule,
+    component: () => import('@/views/Schedule.vue'),
   },
   {
     path: '/activities',
     name: 'Activities',
-    component: Activities,
+    component: () => import('@/views/Activities.vue'),
   },
   {
     path: '/live',
     name: 'Live',
-    component: Live,
+    component: () => import('@/views/Live.vue'),
   },
   {
     path: '/fullscreen',
     name: 'FullScreen',
-    component: FullScreen,
+    component: () => import('@/views/FullScreen.vue'),
   },
   {
     path: '/rules',
     name: 'Rules',
-    component: Rules,
+    component: () => import('@/views/Rules.vue'),
   },
 ]
 
