@@ -1,7 +1,7 @@
 import type {
-  RawScheduleEvent,
-  RawScheduleDay,
   RawSchedule,
+  RawScheduleDay,
+  RawScheduleEvent,
 } from '@/data/schedule'
 import type { Dayjs } from 'dayjs'
 
