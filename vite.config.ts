@@ -46,7 +46,7 @@ const pluginVitePWAOptions: Partial<VitePWAOptions> = {
         purpose: 'maskable',
       },
     ],
-    start_url: import.meta.url,
+    start_url: '.',
   },
 }
 
