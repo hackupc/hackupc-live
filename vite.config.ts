@@ -22,7 +22,9 @@ const pluginVitePWAOptions: Partial<VitePWAOptions> = {
   ],
   manifest: {
     name: 'HackUPC Live',
+    id: '/',
     short_name: 'HackUPC',
+    description: 'Upcoming events information and more info',
     display: 'minimal-ui',
     orientation: 'any',
     theme_color: '#1f143a',
@@ -40,11 +42,11 @@ const pluginVitePWAOptions: Partial<VitePWAOptions> = {
       },
       {
         src: './favicon/maskable_icon.png',
-        sizes: '512x512',
+        sizes: '1024x1024',
         purpose: 'maskable',
       },
     ],
-    start_url: '.',
+    start_url: import.meta.url,
   },
 }
 
