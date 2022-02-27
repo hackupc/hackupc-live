@@ -19,7 +19,9 @@ useRegisterSW({
   onRegistered(registration) {
     if (!registration) return
 
-    setInterval(registration.update, 60 * 1000)
+    setInterval(() => {
+      registration.update()
+    }, 60 * 1000)
   },
 })
 
