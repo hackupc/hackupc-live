@@ -10,14 +10,14 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import { createPinia } from 'pinia'
-import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { registerSW } from 'virtual:pwa-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
 console.log('main.ts')
 
-const { updateServiceWorker } = useRegisterSW({
+registerSW({
   immediate: true,
   onRegistered(registration) {
     console.log('on registered', registration)
@@ -26,7 +26,6 @@ const { updateServiceWorker } = useRegisterSW({
     setInterval(() => {
       console.log('sw update', registration)
 
-      updateServiceWorker()
       registration.update()
     }, 10 * 1000)
   },
