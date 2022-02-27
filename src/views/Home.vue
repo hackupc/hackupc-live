@@ -3,12 +3,12 @@ import DiscordLabel from '@/components/DiscordLabel.vue'
 import IconLabel from '@/components/IconLabel.vue'
 import { DevpostIcon } from '@/components/icons'
 import Panel from '@/components/Panel.vue'
-import { formatDate } from '@/services/dates'
-import { computed } from 'vue'
 import { discordChannels } from '@/data/home'
-import { MailIcon } from '@heroicons/vue/solid'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { formatDate } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { MailIcon } from '@heroicons/vue/solid'
+import { computed } from 'vue'
 
 const scheduleStore = useScheduleStore()
 

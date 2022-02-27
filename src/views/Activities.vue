@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
-import VueMarkdownIt from 'vue3-markdown-it'
-import IconLabel from '@/components/IconLabel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueMarkdownIt from 'vue3-markdown-it'
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { formatDate } from '@/services/dates'
 import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed } from 'vue'
-import { ArrowNarrowRightIcon, VolumeOffIcon } from '@heroicons/vue/solid'
 import { useNotificationsStore } from '@/stores/notifications'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
+import { ArrowNarrowRightIcon, VolumeOffIcon } from '@heroicons/vue/solid'
+import { computed } from 'vue'
 
 interface TimelineHourEvent {
   type: 'event'

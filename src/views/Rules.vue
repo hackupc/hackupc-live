@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Panel from '@/components/Panel.vue'
-import VueMarkdownIt from 'vue3-markdown-it'
 import { rules } from '@/data/rules'
+import VueMarkdownIt from 'vue3-markdown-it'
 </script>
 
 <template>

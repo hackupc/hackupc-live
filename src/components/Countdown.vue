@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { formatDuration } from '@/services/dates'
-import duration, { type Duration } from 'dayjs/plugin/duration'
-import dayjs from 'dayjs'
-import { useTimeStore } from '@/stores/time'
 import { useScheduleStore } from '@/stores/schedule'
+import { useTimeStore } from '@/stores/time'
+import dayjs from 'dayjs'
+import duration, { type Duration } from 'dayjs/plugin/duration'
+import { computed } from 'vue'
 
 dayjs.extend(duration)
 

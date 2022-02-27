@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { DiscordType } from '@/data/home'
 import IconLabel from '@/components/IconLabel.vue'
+import type { DiscordType } from '@/data/home'
 import { HashtagIcon, VolumeUpIcon } from '@heroicons/vue/solid'
 
 defineProps<{

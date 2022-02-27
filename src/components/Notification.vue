@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, watch } from 'vue'
 import { notify } from '@/services/notification'
-import type { Dayjs } from 'dayjs'
+import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
+import { useNotificationsStore } from '@/stores/notifications'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
-import { useNotificationsStore } from '@/stores/notifications'
 import { useStorage } from '@vueuse/core'
+import type { Dayjs } from 'dayjs'
+import { computed, watch } from 'vue'
 
 const NOTIFY_MINUTES_BEFORE = 5
 

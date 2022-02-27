@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { formatDate } from '@/services/dates'
-import VueMarkdownIt from 'vue3-markdown-it'
-import { LinkIcon } from '@heroicons/vue/solid'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
+import { LinkIcon } from '@heroicons/vue/solid'
+import VueMarkdownIt from 'vue3-markdown-it'
 
 const scheduleStore = useScheduleStore()
 const timeStore = useTimeStore()

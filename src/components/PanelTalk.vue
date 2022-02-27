@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Panel from '@/components/Panel.vue'
 import type { Talk } from '@/data/talks'
-import VueMarkdownIt from 'vue3-markdown-it'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
+import VueMarkdownIt from 'vue3-markdown-it'
 import VideoThumbnail from './VideoThumbnail.vue'
 
 interface Props {

@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import VideoThumbnail from '@/components/VideoThumbnail.vue'
-import IconLabel from '@/components/IconLabel.vue'
 import { challenges } from '@/data/challenges'
-import VueMarkdownIt from 'vue3-markdown-it'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueMarkdownIt from 'vue3-markdown-it'
 </script>
 
 <template>

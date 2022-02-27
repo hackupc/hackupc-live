@@ -6,7 +6,7 @@ import Live from '@/views/Live.vue'
 import Rules from '@/views/Rules.vue'
 import Schedule from '@/views/Schedule.vue'
 import Talks from '@/views/Talks.vue'
-import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
