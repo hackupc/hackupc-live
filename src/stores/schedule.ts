@@ -16,8 +16,7 @@ export const useScheduleStore = defineStore({
     schedule: parsedSchedule,
   }),
 
-  getters: {
-  },
+  getters: {},
 
   actions: {
     async refreshSchedule(): Promise<void> {
@@ -29,5 +28,5 @@ export const useScheduleStore = defineStore({
 
       this.schedule = lattestSchedule
     },
-  }
+  },
 })

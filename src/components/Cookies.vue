@@ -26,7 +26,8 @@ const acceptCookies = function () {
         hreflang="en"
         target="_blank"
         rel="noopener noreferrer"
-      >privacy policy</a>.
+        >privacy policy</a
+      >.
     </span>
     <button
       id="gdpr-close"

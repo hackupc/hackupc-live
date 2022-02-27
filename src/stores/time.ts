@@ -30,5 +30,5 @@ export const useTimeStore = defineStore({
     refreshTime(): void {
       this.realNow = dayjs()
     },
-  }
+  },
 })

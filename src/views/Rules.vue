@@ -6,9 +6,13 @@ import { rules } from '@/data/rules'
 
 <template>
   <div id="rules" class="container">
-    <Panel v-for="rule in rules" :key="rule.title" :title="rule.title" size="big">
+    <Panel
+      v-for="rule in rules"
+      :key="rule.title"
+      :title="rule.title"
+      size="big"
+    >
       <VueMarkdownIt :source="rule.description" />
     </Panel>
   </div>
 </template>
-

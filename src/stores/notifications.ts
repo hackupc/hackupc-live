@@ -13,18 +13,16 @@ export const useNotificationsStore = defineStore({
   id: 'notifications',
 
   state: () => ({
-    subscriptions: useStorage<string[]>('subscriptions', [])
+    subscriptions: useStorage<string[]>('subscriptions', []),
   }),
 
-  getters: {
-  },
+  getters: {},
 
   actions: {
     async toggleSubscription(...ids: string[]): Promise<void> {
-      if (!await askNotificationPermissions()) return
+      if (!(await askNotificationPermissions())) return
 
       for (const id of ids) {
-
         if (this.subscriptions.includes(id)) {
           removeItemFromArray(id, this.subscriptions)
         } else {
@@ -34,7 +32,7 @@ export const useNotificationsStore = defineStore({
     },
 
     async removeSubscription(...ids: string[]): Promise<void> {
-      if (!await askNotificationPermissions()) return
+      if (!(await askNotificationPermissions())) return
 
       for (const id of ids) {
         if (this.subscriptions.includes(id)) {
@@ -44,7 +42,7 @@ export const useNotificationsStore = defineStore({
     },
 
     async addSubscription(...ids: string[]): Promise<void> {
-      if (!await askNotificationPermissions()) return
+      if (!(await askNotificationPermissions())) return
 
       for (const id of ids) {
         if (!this.subscriptions.includes(id)) {
@@ -52,5 +50,5 @@ export const useNotificationsStore = defineStore({
         }
       }
     },
-  }
+  },
 })

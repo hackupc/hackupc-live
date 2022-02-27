@@ -1,4 +1,8 @@
-import type { RawScheduleEvent, RawScheduleDay, RawSchedule } from '@/data/schedule'
+import type {
+  RawScheduleEvent,
+  RawScheduleDay,
+  RawSchedule,
+} from '@/data/schedule'
 import type { Dayjs } from 'dayjs'
 
 export type ScheduleEvent = Omit<RawScheduleEvent, 'startHour' | 'endHour'> & {

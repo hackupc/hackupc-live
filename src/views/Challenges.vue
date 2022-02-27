@@ -10,7 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 <template>
   <div id="challenges">
     <div class="container">
-      <Panel v-for="challenge in challenges" :key="challenge.title" :title="challenge.company">
+      <Panel
+        v-for="challenge in challenges"
+        :key="challenge.title"
+        :title="challenge.company"
+      >
         <IconLabel class="channel" :centered="true">
           <template #icon>
             <FontAwesomeIcon :icon="['fab', 'discord']" />
@@ -23,7 +27,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
           <strong>Prize:</strong>
           {{ challenge.prize }}
         </p>
-        <VideoThumbnail v-if="challenge.videoUrl" :video-url="challenge.videoUrl" />
+        <VideoThumbnail
+          v-if="challenge.videoUrl"
+          :video-url="challenge.videoUrl"
+        />
       </Panel>
     </div>
   </div>

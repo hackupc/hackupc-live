@@ -6,7 +6,7 @@ import { VolumeUpIcon, HashtagIcon } from '@heroicons/vue/solid'
 defineProps<{
   name: string
   description: string
-  icon: DiscordType,
+  icon: DiscordType
 }>()
 </script>
 
@@ -22,4 +22,3 @@ defineProps<{
     {{ description }}
   </div>
 </template>
-

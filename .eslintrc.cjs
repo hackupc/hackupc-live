@@ -1,4 +1,4 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
+require('@rushstack/eslint-patch/modern-module-resolution')
 
 /**
  * @type {import('eslint").Linter.Config}
@@ -6,39 +6,39 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 module.exports = {
   root: true,
   extends: [
-    "plugin:vue/vue3-recommended",
-    "eslint:recommended",
-    "@vue/eslint-config-typescript/recommended",
-    "@vue/eslint-config-prettier",
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended',
+    '@vue/eslint-config-typescript/recommended',
+    '@vue/eslint-config-prettier',
   ],
   env: {
-    "vue/setup-compiler-macros": true,
+    'vue/setup-compiler-macros': true,
   },
   rules: {
     'prettier/prettier': ['error', require('./prettier.config.js')],
-    "prefer-template": "warn",
-    "vue/block-lang": ["error", { script: { lang: "ts" } }],
-    "vue/component-api-style": ["error", ["script-setup"]],
-    "vue/component-name-in-template-casing": ["error", "PascalCase"],
-    "vue/custom-event-name-casing": ["error", "camelCase"],
+    'prefer-template': 'warn',
+    'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+    'vue/component-api-style': ['error', ['script-setup']],
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+    'vue/custom-event-name-casing': ['error', 'camelCase'],
   },
   overrides: [
     {
       files: [
-        "**/__tests__/*.spec.{js,ts,jsx,tsx}",
-        "cypress/integration/**.spec.{js,ts,jsx,tsx}",
+        '**/__tests__/*.spec.{js,ts,jsx,tsx}',
+        'cypress/integration/**.spec.{js,ts,jsx,tsx}',
       ],
-      extends: ["plugin:cypress/recommended"],
+      extends: ['plugin:cypress/recommended'],
     },
     {
-      files: ["*.js", "*.cjs", "*.ts"],
+      files: ['*.js', '*.cjs', '*.ts'],
       rules: {
-        "@typescript-eslint/no-var-requires": "off",
+        '@typescript-eslint/no-var-requires': 'off',
       },
       env: {
         node: true,
       },
     },
   ],
-  ignorePatterns: ["/dist/"],
-};
+  ignorePatterns: ['/dist/'],
+}

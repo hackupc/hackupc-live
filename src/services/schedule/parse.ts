@@ -1,7 +1,11 @@
 import type { Dayjs } from 'dayjs'
 import { parseSpanishDate, parseTimeInDay } from '@/services/dates'
 import type { Schedule, ScheduleDay, ScheduleEvent } from './types'
-import type { RawScheduleEvent, RawScheduleDay, RawSchedule } from '@/data/schedule'
+import type {
+  RawScheduleEvent,
+  RawScheduleDay,
+  RawSchedule,
+} from '@/data/schedule'
 
 function parseScheduleEvent(
   event: RawScheduleEvent,

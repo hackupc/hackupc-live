@@ -8,4 +8,3 @@ import { talks } from '@/data/talks'
     <PanelTalk v-for="talk in talks" :key="talk.title" :talk="talk" />
   </div>
 </template>
-

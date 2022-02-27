@@ -47,7 +47,9 @@ const timeStore = useTimeStore()
                 </td>
                 <td>{{ formatDate('time', event.start) }}</td>
                 <td>
-                  <template v-if="event.start !== event.end">{{ formatDate('time', event.end) }}</template>
+                  <template v-if="event.start !== event.end">{{
+                    formatDate('time', event.end)
+                  }}</template>
                 </td>
                 <td class="when-small">{{ event.title }}</td>
                 <td class="hide-when-small">

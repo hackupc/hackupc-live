@@ -12,8 +12,8 @@ import { useScheduleStore } from '@/stores/schedule'
 
 const scheduleStore = useScheduleStore()
 
-const submitDeadline = computed<string>(
-  () => formatDate('weekday-time', scheduleStore.schedule.submitDeadline)
+const submitDeadline = computed<string>(() =>
+  formatDate('weekday-time', scheduleStore.schedule.submitDeadline)
 )
 </script>
 
@@ -27,7 +27,8 @@ const submitDeadline = computed<string>(
             target="_blank"
             href="https://hackupc2021.devpost.com/"
             rel="noopener noreferrer"
-          >Devpost</a>
+            >Devpost</a
+          >
           before {{ submitDeadline }}.
         </b>
         If you don't do it, you won't have access to the prizes, swag, nor ECTS
@@ -42,21 +43,34 @@ const submitDeadline = computed<string>(
           href="mailto:contact@hackupc.com"
           target="_blank"
           rel="noopener noreferrer"
-        >contact@hackupc.com</a>
+          >contact@hackupc.com</a
+        >
       </IconLabel>
     </Panel>
 
     <Panel title="Links">
       <div class="buttons">
-        <a target="_blank" href="https://discord.gg/PfHw68NN" rel="noopener noreferrer">
+        <a
+          target="_blank"
+          href="https://discord.gg/PfHw68NN"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon :icon="['fab', 'discord']" />
           <br />Discord
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/hackersupc">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.twitch.tv/hackersupc"
+        >
           <FontAwesomeIcon :icon="['fab', 'twitch']" />
           <br />Twitch
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://hackupc2021.devpost.com/">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://hackupc2021.devpost.com/"
+        >
           <DevpostIcon />
           <br />Devpost
         </a>
@@ -117,7 +131,10 @@ const submitDeadline = computed<string>(
     </Panel>
 
     <Panel title="Discord channels" size="big">
-      <div v-for="groupOfChannels in discordChannels" :key="groupOfChannels.title">
+      <div
+        v-for="groupOfChannels in discordChannels"
+        :key="groupOfChannels.title"
+      >
         <h3>{{ groupOfChannels.title }}</h3>
         <DiscordLabel
           v-for="channel in groupOfChannels.channels"
@@ -133,11 +150,15 @@ const submitDeadline = computed<string>(
       <h3>Useful</h3>
       <div>
         <div>
-          <span class="highlight-span">biene changeteamname [new_teamname]</span>
+          <span class="highlight-span"
+            >biene changeteamname [new_teamname]</span
+          >
           Change your team name with a fancy one!
         </div>
         <div>
-          <span class="highlight-span">biene jointeam [teamname] [new_members]</span>
+          <span class="highlight-span"
+            >biene jointeam [teamname] [new_members]</span
+          >
           Adds more users to your team.
         </div>
       </div>
@@ -156,7 +177,9 @@ const submitDeadline = computed<string>(
         internet connection.
       </div>
       <div>
-        <span class="highlight-span">biene meme [meme_code] text|seperated|by|lines</span>
+        <span class="highlight-span"
+          >biene meme [meme_code] text|seperated|by|lines</span
+        >
         Inserts text to meme with code [meme_code].
       </div>
       <div>

@@ -31,11 +31,7 @@ setInterval(() => {
 
 onMounted(() => {
   window.addEventListener('keyup', (event) => {
-    if (
-      event.key === 'p' ||
-      event.key === 'f' ||
-      event.key === 'Spacebar'
-    ) {
+    if (event.key === 'p' || event.key === 'f' || event.key === 'Spacebar') {
       router.push(isFullscreen.value ? '/' : 'fullscreen')
     }
   })
@@ -125,7 +121,11 @@ const isActive = (page: string): boolean => {
               <RouterLink to="/rules">Rules</RouterLink>
             </li>
             <li>
-              <a href="https://hackupc.com/#faq" rel="noopener noreferrer" target="_blank">
+              <a
+                href="https://hackupc.com/#faq"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 FAQ
                 <ExternalLinkIcon class="external-link-icon" />
               </a>
@@ -162,7 +162,11 @@ const isActive = (page: string): boolean => {
               <RouterLink to="/rules">Rules</RouterLink>
             </li>
             <li>
-              <a href="https://hackupc.com/#faq" rel="noopener noreferrer" target="_blank">
+              <a
+                href="https://hackupc.com/#faq"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 FAQ
                 <ExternalLinkIcon class="external-link-icon" />
               </a>
