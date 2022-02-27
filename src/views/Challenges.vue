@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
         :key="challenge.title"
         :title="challenge.company"
       >
-        <IconLabel class="channel" :centered="true">
+        <IconLabel class="channel" centered>
           <template #icon>
             <FontAwesomeIcon :icon="['fab', 'discord']" />
           </template>

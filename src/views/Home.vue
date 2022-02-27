@@ -35,7 +35,7 @@ const submitDeadline = computed<string>(() =>
         credits.
       </p>
 
-      <IconLabel :centered="true">
+      <IconLabel centered>
         <template #icon>
           <MailIcon />
         </template>

@@ -22,8 +22,8 @@ const exitFullscreen = () => {
 <template>
   <div id="fullscreen">
     <div>
-      <Countdown :fullscreen="true" @click="exitFullscreen" />
-      <Live :fullscreen="true" />
+      <Countdown fullscreen @click="exitFullscreen" />
+      <Live fullscreen />
     </div>
   </div>
 </template>

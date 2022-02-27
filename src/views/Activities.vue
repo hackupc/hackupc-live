@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
         :title="activity.title"
         class="activity"
       >
-        <IconLabel class="channel" :centered="true">
+        <IconLabel class="channel" centered>
           <template #icon>
             <FontAwesomeIcon :icon="['fab', activity.icon]" />
           </template>
