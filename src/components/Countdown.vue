@@ -11,7 +11,7 @@ dayjs.extend(duration)
 interface Props {
   fullscreen?: boolean
 }
-const { fullscreen = false } = defineProps<Props>()
+defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'click'): void
@@ -57,8 +57,7 @@ const handleClick = (): void => {
     @click="handleClick"
   >
     <div class="countdown__time">
-      <span>{{ hours }}</span
-      >:
+      <span>{{ hours }}</span>:
       <span>{{ minutes }}</span>
       <span class="countdown__seconds">{{ seconds }}</span>
     </div>

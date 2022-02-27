@@ -7,9 +7,7 @@ import ViteFonts, { type VitePluginFontsOptions } from 'vite-plugin-fonts'
 import type { VitePWAOptions } from 'vite-plugin-pwa'
 import ViteRadar, { type VitePluginRadarOptions } from 'vite-plugin-radar'
 
-const pluginVueOptions: PluginVueOptions = {
-  reactivityTransform: true,
-}
+const pluginVueOptions: PluginVueOptions = {}
 
 const pluginVitePWAOptions: Partial<VitePWAOptions> = {
   includeAssets: [],

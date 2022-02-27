@@ -3,11 +3,11 @@ interface Props {
   title?: string
   size?: 'big' | 'small'
 }
-const { title, size = 'small' } = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <template>
-  <div class="panel" :class="{ 'panel--large': size === 'big' }">
+  <div class="panel" :class="{ 'panel--big': size === 'big' }">
     <h2 v-if="title" class="panel__title">{{ title }}</h2>
     <div class="panel__content">
       <slot></slot>
@@ -27,7 +27,7 @@ const { title, size = 'small' } = defineProps<Props>()
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  &--large {
+  &--big {
     flex: 1 1 782px;
   }
 

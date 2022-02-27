@@ -1,16 +1,18 @@
 <script setup lang="ts">
-const { centered = false } = defineProps<{
+defineProps<{
   centered?: boolean
 }>()
 </script>
 
 <template>
-  <span :class="{ 'icon-label--centered': centered }"
-    ><span class="icon-label__icon">
+  <span :class="{ 'icon-label--centered': centered }">
+    <span class="icon-label__icon">
       <slot name="icon"></slot>
     </span>
-    <span class="icon-label__label"><slot /></span
-  ></span>
+    <span class="icon-label__label">
+      <slot />
+    </span>
+  </span>
 </template>
 
 <style lang="scss" scoped>
