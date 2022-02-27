@@ -14,7 +14,6 @@ Hi! This is the code of the HackUPC live page.
    git clone https://github.com/hackupc/hackupc-live.git
    ```
 1. Open it with [VSCode](https://code.visualstudio.com/) and install this extensions:
-
    - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur)
    - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
    - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
@@ -22,7 +21,6 @@ Hi! This is the code of the HackUPC live page.
    - [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
    - [MarkdownLint](https://marketplace.visualstudio.com/items?itemName=davidanson.vscode-markdownlint)
    - [Grammarly](https://marketplace.visualstudio.com/items?itemName=znck.grammarly)
-
 1. Install [Node.js](https://nodejs.org/en/download/) (preferably with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 1. Install the dependencies:
    ```sh
@@ -33,8 +31,8 @@ Hi! This is the code of the HackUPC live page.
    npm run dev
    ```
 1. Go to http://localhost:3000/ to preview the app.
-1. Code. If you're not familiar with Vue 3, read its [official documentation](https://vuejs.org/guide), it's very good. BTW write tests if possible.
-
+1. Install the [Vue.js devtools extension (beta)](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) to debug faster.
+1. Code. If you're not familiar with Vue 3, read its [official documentation](https://vuejs.org/guide), it's very good.
 1. Open a Pull Request and ask for reviews to merge to `main`.
 1. Whenever the PR is merged, [Netlify](https://app.netlify.com/sites/hackupc-live) will build and deploy automatically. 🧙🏻‍♂️
 
