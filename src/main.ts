@@ -22,7 +22,7 @@ registerSW({
 
     setInterval(() => {
       registration.update()
-    }, 10 * 1000)
+    }, 2 * 1000)
   },
 })
 

@@ -21,7 +21,7 @@ const submitDeadline = computed<string>(() =>
   <div class="container">
     <Panel title="Important information">
       <p>
-        test 4
+        test 5
         <b>
           The projects must be posted on
           <a
