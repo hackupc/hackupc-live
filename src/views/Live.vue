@@ -176,6 +176,8 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   overflow: auto;
 }
 .event {
+  user-select: none;
+
   &__arrow {
     position: absolute;
     margin-top: -0.25em;
