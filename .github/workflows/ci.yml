@@ -63,7 +63,7 @@ jobs:
       - name: 🔦 Lint
         run: npm run lint
       - name: 🍾 Commit & Push changes
-        if: always()
+        if: failure()
         uses: actions-js/push@master
         with:
           message: 'chore: Auto-fix some lint errors'
