@@ -21,6 +21,14 @@ module.exports = {
     'vue/component-api-style': ['error', ['script-setup']],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     'vue/custom-event-name-casing': ['error', 'camelCase'],
+    'vue/no-empty-component-block': 'error',
+    'vue/no-template-target-blank': 'error',
+    'vue/no-useless-mustaches': 'error',
+    'vue/padding-line-between-blocks': 'error',
+    'vue/prefer-separate-static-class': 'error',
+    'vue/prefer-true-attribute-shorthand': 'error',
+    'vue/v-for-delimiter-style': 'error',
+    'vue/v-on-function-call': 'error',
   },
   overrides: [
     {
