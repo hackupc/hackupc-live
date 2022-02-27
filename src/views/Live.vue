@@ -114,10 +114,16 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 
 <template>
   <div id="live" class="container-live">
-    <div class="events-fancy" :class="{ 'events-fancy--fullscreen': fullscreen }">
+    <div
+      class="events-fancy"
+      :class="{ 'events-fancy--fullscreen': fullscreen }"
+    >
       <ul>
         <template v-for="event in events">
-          <li v-if="event.type === 'title'" :key="`${event.title}-${event.startTmsp}`">
+          <li
+            v-if="event.type === 'title'"
+            :key="`${event.title}-${event.startTmsp}`"
+          >
             <h1>{{ event.title }}</h1>
           </li>
           <li
@@ -125,7 +131,10 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
             :key="`${event.startTmsp}`"
             :class="{ happening: event.isHappening }"
           >
-            <ArrowNarrowRightIcon v-if="event.isHappening" class="event__arrow" />
+            <ArrowNarrowRightIcon
+              v-if="event.isHappening"
+              class="event__arrow"
+            />
             <div
               v-for="hourEvent in event.hourEvents"
               :key="hourEvent.id"
@@ -140,7 +149,10 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
               </div>
               <div class="title">
                 {{ hourEvent.title }}
-                <VolumeOffIcon v-if="!hourEvent.isSubscribed" class="event__subscribed-icon" />
+                <VolumeOffIcon
+                  v-if="!hourEvent.isSubscribed"
+                  class="event__subscribed-icon"
+                />
               </div>
             </div>
           </li>
@@ -183,7 +195,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   -webkit-overflow-scrolling: touch;
 
   &::before {
-    content: "";
+    content: '';
     position: fixed;
     top: 39px;
     left: 0;

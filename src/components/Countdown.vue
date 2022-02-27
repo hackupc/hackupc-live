@@ -57,7 +57,8 @@ const handleClick = (): void => {
     @click="handleClick"
   >
     <div class="countdown__time">
-      <span>{{ hours }}</span>:
+      <span>{{ hours }}</span
+      >:
       <span>{{ minutes }}</span>
       <span class="countdown__seconds">{{ seconds }}</span>
     </div>
