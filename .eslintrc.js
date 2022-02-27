@@ -19,8 +19,8 @@ module.exports = {
   },
   rules: {
     "prettier/prettier": ["error", require("./prettier.config.js")],
-    "no-console": import.meta.env.DEV ? "off" : "warn",
-    "no-debugger": import.meta.env.DEV ? "off" : "warn",
+    "no-console": process.env.DEV ? "off" : "warn",
+    "no-debugger": process.env.DEV ? "off" : "warn",
     "vue/component-tags-order": [
       "error",
       { order: ["script", "template", "style"] },
