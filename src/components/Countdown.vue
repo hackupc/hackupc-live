@@ -21,7 +21,7 @@ const timeStore = useTimeStore()
 const scheduleStore = useScheduleStore()
 
 const remainingTime = computed<Duration>(() => {
-  const now = timeStore.realNow
+  const now = timeStore.now
   const { start, end } = scheduleStore.schedule.countdown
 
   if (now.isBefore(start)) {
@@ -58,8 +58,7 @@ const handleClick = (): void => {
   >
     <div class="countdown__time">
       <span>{{ hours }}</span
-      >:
-      <span>{{ minutes }}</span>
+      >:<span>{{ minutes }}</span>
       <span class="countdown__seconds">{{ seconds }}</span>
     </div>
     <div class="countdown__bg">

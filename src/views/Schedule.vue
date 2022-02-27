@@ -3,10 +3,15 @@ import { formatDate } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
 import { LinkIcon } from '@heroicons/vue/solid'
+import { computed } from 'vue'
 import VueMarkdownIt from 'vue3-markdown-it'
 
 const scheduleStore = useScheduleStore()
 const timeStore = useTimeStore()
+
+const hasHackathonFinished = computed<boolean>(
+  () => scheduleStore.schedule.days.at(-1)?.end.isBefore(timeStore.now) ?? true
+)
 </script>
 
 <template>
@@ -33,7 +38,10 @@ const timeStore = useTimeStore()
               <tr
                 v-for="event in day.events"
                 :key="event.id"
-                :class="{ happened: event.end.isBefore(timeStore.realNow) }"
+                :class="{
+                  happened:
+                    !hasHackathonFinished && event.end.isBefore(timeStore.now),
+                }"
               >
                 <td>
                   <a

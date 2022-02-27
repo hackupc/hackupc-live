@@ -45,13 +45,16 @@ const scheduleStore = useScheduleStore()
 const notificationsStore = useNotificationsStore()
 
 const days = computed<ScheduleDay[]>(() => scheduleStore.schedule.days)
-const nowInSeconds = computed<number>(() => timeStore.realNow.unix())
+const nowInSeconds = computed<number>(() => timeStore.now.unix())
+const hasHackathonFinished = computed<boolean>(
+  () => scheduleStore.schedule.days.at(-1)?.end.isBefore(timeStore.now) ?? true
+)
 
 const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   const newEvents: (TimelineEventItem | TimelineEventTitle)[] = []
 
   for (const day of days.value) {
-    if (day.end.unix() >= nowInSeconds.value) {
+    if (hasHackathonFinished.value || day.end.unix() >= nowInSeconds.value) {
       newEvents.push({
         type: 'title',
         title: formatDate('weekday', day.start),
@@ -96,7 +99,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       }
 
       // Add a list element for every step
-      if (endTmsp >= nowInSeconds.value) {
+      if (hasHackathonFinished.value || endTmsp >= nowInSeconds.value) {
         newEvents.push({
           type: 'item',
           startTmsp: i,

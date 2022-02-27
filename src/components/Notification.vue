@@ -15,7 +15,7 @@ const scheduleStore = useScheduleStore()
 const notificationsStore = useNotificationsStore()
 
 const days = computed<ScheduleDay[]>(() => scheduleStore.schedule.days)
-const now = computed<Dayjs>(() => timeStore.realNow)
+const now = computed<Dayjs>(() => timeStore.now)
 const subscriptions = computed<string[]>(() => notificationsStore.subscriptions)
 
 const askedSubscribeAll = useStorage<boolean>('askedSubscribeAll', false)
