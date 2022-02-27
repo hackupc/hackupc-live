@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import bgImage from '@/assets/img/bg.svg'
 import Countdown from '@/components/Countdown.vue'
 import Notification from '@/components/Notification.vue'
 import config from '@/config'
@@ -71,7 +72,13 @@ const isActive = (page: string): boolean => {
 </script>
 
 <template>
-  <div>
+  <div
+    :style="{
+      backgroundImage: `url(${bgImage})`,
+      backgroundColor: '#141c15',
+    }"
+    class="app"
+  >
     <div v-if="!disabled">
       <Notification />
       <!--header for <720px-->
@@ -188,5 +195,10 @@ const isActive = (page: string): boolean => {
 .external-link-icon {
   width: 16px;
   vertical-align: text-top;
+}
+.app {
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center center;
 }
 </style>

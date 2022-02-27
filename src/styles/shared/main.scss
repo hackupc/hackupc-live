@@ -7,21 +7,8 @@ body,
 html {
   padding: 0;
   margin: 0;
-  background-color: #141c15;
-  background-image: url("@/assets/img/bg.svg");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-#background {
-  position: absolute;
-  height: 100%;
-  /* woah, hax (centering a child larger than parent) */
-  left: 50%;
-  transform: translate(-50%, 0);
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #header-nav-bar {
