@@ -14,7 +14,7 @@ jobs:
       - name: 🎁 Install dependencies
         run: npm ci
       - name: 👷🏽‍♂️ Build the site
-        run: npm run build
+        run: npm run build --if-present
       - name: 💾 Store the build
         uses: actions/upload-artifact@v2
         with:
