@@ -69,8 +69,6 @@ const handleClick = (): void => {
 
 <style lang="scss" scoped>
 .countdown {
-
-.countdown {
   position: absolute;
   width: 100%;
   height: 215px;
@@ -154,3 +152,4 @@ const handleClick = (): void => {
     box-sizing: border-box;
   }
 }
+</style>
