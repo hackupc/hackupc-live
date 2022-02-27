@@ -6,4 +6,3 @@
 - [ ] configuracions
 - [ ] google analytics works?
 - [ ] commit link hook
-- [ ] github actions
