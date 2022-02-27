@@ -17,11 +17,9 @@ module.exports = {
   rules: {
     "prefer-template": "warn",
     "vue/block-lang": ["error", { script: { lang: "ts" } }],
-    "vue/component-api-style": ["error",
-      ["script-setup"]
-    ],
+    "vue/component-api-style": ["error", ["script-setup"]],
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
-
+    "vue/custom-event-name-casing": ["error", "camelCase"],
   },
   overrides: [
     {
@@ -32,7 +30,7 @@ module.exports = {
       extends: ["plugin:cypress/recommended"],
     },
     {
-      files: ["*.js", "*.ts"],
+      files: ["*.js", "*.cjs", "*.ts"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
       },
