@@ -1,12 +1,12 @@
-import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import Talks from '@/views/Talks.vue'
-import Challenges from '@/views/Challenges.vue'
-import Schedule from '@/views/Schedule.vue'
 import Activities from '@/views/Activities.vue'
+import Challenges from '@/views/Challenges.vue'
+import FullScreen from '@/views/FullScreen.vue'
+import Home from '@/views/Home.vue'
 import Live from '@/views/Live.vue'
 import Rules from '@/views/Rules.vue'
-import FullScreen from '@/views/FullScreen.vue'
+import Schedule from '@/views/Schedule.vue'
+import Talks from '@/views/Talks.vue'
+import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {

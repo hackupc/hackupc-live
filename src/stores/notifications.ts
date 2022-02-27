@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia'
 import { askNotificationPermissions } from '@/services/notification'
 import { useStorage } from '@vueuse/core'
+import { defineStore } from 'pinia'
 
 function removeItemFromArray<T>(value: T, list: T[]): void {
   const index = list.indexOf(value)

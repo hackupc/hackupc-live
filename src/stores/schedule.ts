@@ -1,11 +1,11 @@
+import { schedule } from '@/data/schedule'
 import { defineStore } from 'pinia'
+import type { Schedule } from '../services/schedule'
 import {
   areSameSchedule,
   getLattestSchedule,
   parseSchedule,
 } from '../services/schedule'
-import type { Schedule } from '../services/schedule'
-import { schedule } from '@/data/schedule'
 
 const parsedSchedule: Schedule = parseSchedule(schedule)
 

@@ -15,7 +15,8 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   rules: {
-    'prettier/prettier': ['error', require('./prettier.config.js')],
+    'prettier/prettier': ['warn', require('./prettier.config.js')],
+    'prefer-template': 'warn',
     'vue/block-lang': ['error', { script: { lang: 'ts' } }],
     'vue/component-api-style': ['error', ['script-setup']],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
@@ -29,8 +30,6 @@ module.exports = {
     'vue/v-for-delimiter-style': 'error',
     'vue/v-on-function-call': 'error',
     'vue/no-undef-components': 'error',
-    'prefer-template': 'warn',
-    'sort-imports': 'warn',
   },
   overrides: [
     {
