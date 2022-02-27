@@ -1,11 +1,14 @@
-import { URL, fileURLToPath } from 'url'
-
-import { defineConfig } from 'vite'
 import vue, { type Options as PluginVueOptions } from '@vitejs/plugin-vue'
-import { VitePWA } from 'vite-plugin-pwa'
+import { fileURLToPath, URL } from 'url'
+import { defineConfig } from 'vite'
 import ViteFonts, { type VitePluginFontsOptions } from 'vite-plugin-fonts'
+import generateFile, {
+  type Options as PluginGenerateFileOptions,
+} from 'vite-plugin-generate-file'
 import type { VitePWAOptions } from 'vite-plugin-pwa'
+import { VitePWA } from 'vite-plugin-pwa'
 import ViteRadar, { type VitePluginRadarOptions } from 'vite-plugin-radar'
+import { schedule } from './src/data/schedule'
 
 const pluginVueOptions: PluginVueOptions = {}
 
@@ -56,6 +59,14 @@ const pluginViteRadarOptions: VitePluginRadarOptions = {
   },
 }
 
+const pluginGenerateFileOptions: PluginGenerateFileOptions = [
+  {
+    type: 'json',
+    output: './data/schedule.json',
+    data: schedule,
+  },
+]
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -63,6 +74,7 @@ export default defineConfig({
     VitePWA(pluginVitePWAOptions),
     ViteFonts(pluginViteFontsOptions),
     ViteRadar(pluginViteRadarOptions),
+    generateFile(pluginGenerateFileOptions),
   ],
   resolve: {
     alias: {
