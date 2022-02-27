@@ -20,6 +20,8 @@ useRegisterSW({
     if (!registration) return
 
     setInterval(() => {
+      console.log('sw update', registration)
+
       registration.update()
     }, 60 * 1000)
   },
