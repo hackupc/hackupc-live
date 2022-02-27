@@ -34,7 +34,7 @@ const acceptCookies = function () {
       class="gdpr__button"
       type="button"
       aria-label="Close GDPR notification"
-      @click="acceptCookies()"
+      @click="acceptCookies"
     >
       <XIcon class="gdpr__close-icon" />
     </button>
