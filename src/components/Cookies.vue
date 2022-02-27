@@ -26,6 +26,7 @@ const acceptCookies = function () {
         hreflang="en"
         target="_blank"
         rel="noopener noreferrer"
+        :tabindex="hasAcceptedCookies ? -1 : undefined"
         >privacy policy</a
       >.
     </span>
@@ -34,6 +35,7 @@ const acceptCookies = function () {
       class="gdpr__button"
       type="button"
       aria-label="Close GDPR notification"
+      :disabled="hasAcceptedCookies"
       @click="acceptCookies"
     >
       <XIcon class="gdpr__close-icon" />

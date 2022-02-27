@@ -54,7 +54,11 @@ const handleClick = (): void => {
       'hide-when-small': fullscreen,
       'countdown--fullscreen': fullscreen,
     }"
+    role="button"
+    tabindex="0"
     @click="handleClick"
+    @keyup.enter="handleClick"
+    @keyup.space="handleClick"
   >
     <div class="countdown__time">
       <span>{{ hours }}</span
