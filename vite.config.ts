@@ -13,6 +13,7 @@ import { schedule } from './src/data/schedule'
 const pluginVueOptions: PluginVueOptions = {}
 
 const pluginVitePWAOptions: Partial<VitePWAOptions> = {
+  registerType: 'autoUpdate',
   includeAssets: [
     'favicon.svg',
     'favicon.ico',
