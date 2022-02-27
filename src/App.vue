@@ -9,6 +9,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { ExternalLinkIcon } from '@heroicons/vue/solid'
 import { useTimeStore } from './stores/time'
 import { useScheduleStore } from './stores/schedule'
+import { RouterLink } from 'vue-router'
 
 const timeStore = useTimeStore()
 const scheduleStore = useScheduleStore()
