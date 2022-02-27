@@ -28,7 +28,7 @@ const { updateServiceWorker } = useRegisterSW({
 
       updateServiceWorker()
       registration.update()
-    }, 60 * 1000)
+    }, 10 * 1000)
   },
 })
 
