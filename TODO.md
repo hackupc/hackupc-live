@@ -1,3 +1,0 @@
-# TODO
-
-- [ ] commit link hook
