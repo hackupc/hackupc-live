@@ -13,7 +13,12 @@ import { schedule } from './src/data/schedule'
 const pluginVueOptions: PluginVueOptions = {}
 
 const pluginVitePWAOptions: Partial<VitePWAOptions> = {
-  includeAssets: [],
+  includeAssets: [
+    'favicon.svg',
+    'favicon.ico',
+    'robots.txt',
+    'favicon/apple-touch-icon.png',
+  ],
   manifest: {
     name: 'HackUPC Live',
     short_name: 'HackUPC',
