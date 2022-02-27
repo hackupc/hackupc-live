@@ -15,8 +15,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
+console.log('main.ts')
+
 useRegisterSW({
   onRegistered(registration) {
+    console.log('on registered', registration)
     if (!registration) return
 
     setInterval(() => {
