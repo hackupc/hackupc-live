@@ -15,17 +15,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-console.log('main.ts')
-
 registerSW({
   immediate: true,
   onRegistered(registration) {
-    console.log('on registered', registration)
     if (!registration) return
 
     setInterval(() => {
-      console.log('sw update', registration)
-
       registration.update()
     }, 10 * 1000)
   },

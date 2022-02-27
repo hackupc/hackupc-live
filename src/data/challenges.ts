@@ -13,7 +13,8 @@ export const challenges: Challenge[] = [
     title: 'Build your dreamed tech-InfoJobs Build your perfect job seeker',
     company: 'InfoJobs',
     videoUrl: 'https://youtu.be/IG_bN195bwI',
-    prize: 'A nintendo switch lite for each winning team member.',
+    prize:
+      'TTTTEEEEESSSSTTTT A nintendo switch lite for each winning team member.',
     channel: '#infojobs',
   },
   {
