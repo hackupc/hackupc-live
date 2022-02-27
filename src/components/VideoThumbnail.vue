@@ -11,7 +11,7 @@ const videoThumbnail = computed(() => {
     /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
   )?.[1]
 
-  return `http://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+  return `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 })
 </script>
 
