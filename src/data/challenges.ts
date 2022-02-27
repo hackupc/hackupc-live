@@ -13,8 +13,7 @@ export const challenges: Challenge[] = [
     title: 'Build your dreamed tech-InfoJobs Build your perfect job seeker',
     company: 'InfoJobs',
     videoUrl: 'https://youtu.be/IG_bN195bwI',
-    prize:
-      'TTTTEEEEESSSSTTTT A nintendo switch lite for each winning team member.',
+    prize: 'A nintendo switch lite for each winning team member.',
     channel: '#infojobs',
   },
   {
@@ -26,7 +25,7 @@ export const challenges: Challenge[] = [
   },
   {
     company: 'IThinkUPC',
-    title: 'Build the app everybody will love at your university',
+    title: 'EEEooooo! Build the app everybody will love at your university',
     videoUrl: 'https://youtu.be/UIrA73wtBAY',
     prize:
       '1st Prize: 4 Google Nest Hub, 2nd Prize: 4 Amazon Fire TV stick 2021, 3rd Prize: 4 Google Nest Mini.',
