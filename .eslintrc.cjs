@@ -31,7 +31,7 @@ module.exports = {
       extends: ['plugin:cypress/recommended'],
     },
     {
-      files: ['*.js', '*.cjs', '*.ts'],
+      files: ['*.{js,cjs,mjs,ts,cts,mts}'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
