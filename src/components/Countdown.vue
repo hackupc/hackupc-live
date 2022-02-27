@@ -3,10 +3,8 @@ import { computed } from 'vue'
 import { formatDuration } from '@/services/dates'
 import duration, { type Duration } from 'dayjs/plugin/duration'
 import dayjs from 'dayjs'
-import type { Dayjs } from 'dayjs'
-import { useTimeStore } from '@/stores/time';
-import { useScheduleStore } from '@/stores/schedule';
-import type { ScheduleCountdown } from '@/services/schedule'
+import { useTimeStore } from '@/stores/time'
+import { useScheduleStore } from '@/stores/schedule'
 
 dayjs.extend(duration)
 
@@ -70,6 +68,8 @@ const handleClick = (): void => {
 </template>
 
 <style lang="scss" scoped>
+.countdown {
+
 .countdown {
   position: absolute;
   width: 100%;
@@ -154,4 +154,3 @@ const handleClick = (): void => {
     box-sizing: border-box;
   }
 }
-</style>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { ScheduleDay, ScheduleEvent } from '@/services/schedule'
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 import { notify } from '@/services/notification'
 import type { Dayjs } from 'dayjs'
-import { useScheduleStore } from '@/stores/schedule';
-import { useTimeStore } from '@/stores/time';
-import { useNotificationsStore } from '@/stores/notifications';
+import { useScheduleStore } from '@/stores/schedule'
+import { useTimeStore } from '@/stores/time'
+import { useNotificationsStore } from '@/stores/notifications'
 import { useStorage } from '@vueuse/core'
 
 const NOTIFY_MINUTES_BEFORE = 5
@@ -45,7 +45,7 @@ watch(now, async () => {
 })
 
 const subscribeAll = async () => {
-  const ids = days.value.flatMap(day => day.events.map(event => event.id))
+  const ids = days.value.flatMap((day) => day.events.map((event) => event.id))
 
   await notificationsStore.addSubscription(...ids)
   neverAskAgainGetAllNotifications()
