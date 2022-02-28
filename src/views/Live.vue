@@ -280,7 +280,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    position: fixed;
+
     &::before {
       content: none;
     }
