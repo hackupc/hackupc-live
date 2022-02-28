@@ -1,0 +1,10 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["./integration/**/*", "./support/**/*"],
+  "compilerOptions": {
+    "isolatedModules": false,
+    "target": "es2016",
+    "lib": ["esnext", "dom"],
+    "types": ["cypress"]
+  }
+}

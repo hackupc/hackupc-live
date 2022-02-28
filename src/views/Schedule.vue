@@ -1,37 +1,27 @@
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script setup lang="ts">
 import { formatDate } from '@/services/dates'
-import { Dayjs } from 'dayjs'
-import VueMarkdownIt from 'vue3-markdown-it'
+import { useScheduleStore } from '@/stores/schedule'
+import { useTimeStore } from '@/stores/time'
 import { LinkIcon } from '@heroicons/vue/solid'
-import { ScheduleDay } from '@/services/schedule'
-import { useStore } from 'vuex'
+import { computed } from 'vue'
+import VueMarkdownIt from 'vue3-markdown-it'
 
-export default defineComponent({
-  components: {
-    VueMarkdownIt,
-    LinkIcon,
-  },
+const scheduleStore = useScheduleStore()
+const timeStore = useTimeStore()
 
-  setup() {
-    const store = useStore()
-
-    const days = computed<ScheduleDay[]>(() => store.state.schedule.days)
-    const now = computed<Dayjs>(() => store.getters.now)
-
-    return {
-      formatDate,
-      days,
-      now,
-    }
-  },
-})
+const hasHackathonFinished = computed<boolean>(
+  () => scheduleStore.schedule.days.at(-1)?.end.isBefore(timeStore.now) ?? true
+)
 </script>
 
 <template>
   <div id="schedule" class="container">
     <div>
-      <div v-for="day in days" :key="day.start.unix()" class="table-container">
+      <div
+        v-for="day in scheduleStore.schedule.days"
+        :key="day.start.unix()"
+        class="table-container"
+      >
         <h1>{{ formatDate('weekday', day.start) }}</h1>
         <div class="table-scroll">
           <table>
@@ -48,7 +38,10 @@ export default defineComponent({
               <tr
                 v-for="event in day.events"
                 :key="event.id"
-                :class="{ happened: event.end.isBefore(now) }"
+                :class="{
+                  happened:
+                    !hasHackathonFinished && event.end.isBefore(timeStore.now),
+                }"
               >
                 <td>
                   <a
@@ -57,18 +50,18 @@ export default defineComponent({
                     rel="noopener noreferrer"
                     class="link-icon"
                   >
-                    <link-icon />
+                    <LinkIcon />
                   </a>
                 </td>
                 <td>{{ formatDate('time', event.start) }}</td>
                 <td>
-                  <template v-if="event.start !== event.end">
-                    {{ formatDate('time', event.end) }}
-                  </template>
+                  <template v-if="event.start !== event.end">{{
+                    formatDate('time', event.end)
+                  }}</template>
                 </td>
                 <td class="when-small">{{ event.title }}</td>
                 <td class="hide-when-small">
-                  <vue-markdown-it :source="event.description" />
+                  <VueMarkdownIt :source="event.description" />
                 </td>
               </tr>
             </tbody>

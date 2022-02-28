@@ -1,4 +1,4 @@
-import { Schedule } from './types'
+import type { Schedule } from './types'
 
 export function areSameSchedule(
   schedule1: Schedule,

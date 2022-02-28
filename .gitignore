@@ -2,6 +2,7 @@
 node_modules
 /dist
 /tmp
+/dev-dist
 
 
 # local env files

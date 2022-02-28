@@ -1,23 +1,18 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  props: {
-    centered: {
-      type: Boolean,
-      default: false,
-    },
-  },
-})
+<script setup lang="ts">
+defineProps<{
+  centered?: boolean
+}>()
 </script>
 
 <template>
-  <span :class="{ 'icon-label--centered': centered }"
-    ><span class="icon-label__icon">
+  <span :class="{ 'icon-label--centered': centered }">
+    <span class="icon-label__icon">
       <slot name="icon"></slot>
     </span>
-    <span class="icon-label__label"><slot /></span
-  ></span>
+    <span class="icon-label__label">
+      <slot />
+    </span>
+  </span>
 </template>
 
 <style lang="scss" scoped>

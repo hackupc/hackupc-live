@@ -1,51 +1,37 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import VideoThumbnail from '@/components/VideoThumbnail.vue'
-import IconLabel from '@/components/IconLabel.vue'
 import { challenges } from '@/data/challenges'
-import VueMarkdownIt from 'vue3-markdown-it'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-export default defineComponent({
-  components: {
-    Panel,
-    IconLabel,
-    VideoThumbnail,
-    VueMarkdownIt,
-    FontAwesomeIcon,
-  },
-
-  setup() {
-    return {
-      challenges,
-    }
-  },
-})
+import VueMarkdownIt from 'vue3-markdown-it'
 </script>
 
 <template>
   <div id="challenges">
     <div class="container">
-      <panel
+      <Panel
         v-for="challenge in challenges"
         :key="challenge.title"
         :title="challenge.company"
       >
-        <icon-label class="channel" :centered="true">
+        <IconLabel class="channel" centered>
           <template #icon>
-            <font-awesome-icon :icon="['fab', 'discord']" />
+            <FontAwesomeIcon :icon="['fab', 'discord']" />
           </template>
           {{ challenge.channel }}
-        </icon-label>
+        </IconLabel>
         <h3>{{ challenge.title }}</h3>
-        <vue-markdown-it :source="challenge.description" />
-        <p><strong>Prize:</strong> {{ challenge.prize }}</p>
-        <video-thumbnail
+        <VueMarkdownIt :source="challenge.description" />
+        <p>
+          <strong>Prize:</strong>
+          {{ challenge.prize }}
+        </p>
+        <VideoThumbnail
           v-if="challenge.videoUrl"
           :video-url="challenge.videoUrl"
         />
-      </panel>
+      </Panel>
     </div>
   </div>
 </template>

@@ -1,48 +1,24 @@
-<script lang="ts">
-import { DiscordType } from '@/data/home'
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
 import IconLabel from '@/components/IconLabel.vue'
-import { VolumeUpIcon, HashtagIcon } from '@heroicons/vue/solid'
+import type { DiscordType } from '@/data/home'
+import { HashtagIcon, VolumeUpIcon } from '@heroicons/vue/solid'
 
-export default defineComponent({
-  components: {
-    IconLabel,
-    VolumeUpIcon,
-    HashtagIcon,
-  },
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    icon: {
-      type: String as PropType<DiscordType>,
-      default: DiscordType.chat,
-    },
-  },
-  setup() {
-    return {
-      DiscordType,
-    }
-  },
-})
+defineProps<{
+  name: string
+  description: string
+  icon: DiscordType
+}>()
 </script>
 
 <template>
   <div>
-    <icon-label>
+    <IconLabel>
       <template #icon>
-        <volume-up-icon v-if="icon === DiscordType.voice" />
-        <hashtag-icon v-else-if="icon === DiscordType.chat" />
+        <VolumeUpIcon v-if="icon === 'voice'" />
+        <HashtagIcon v-else-if="icon === 'chat'" />
       </template>
       <b>{{ name }}</b>
-    </icon-label>
+    </IconLabel>
     {{ description }}
   </div>
 </template>
-
-<style lang="scss" scoped></style>

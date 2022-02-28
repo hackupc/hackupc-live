@@ -1,26 +1,17 @@
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 
-export default defineComponent({
-  props: {
-    videoUrl: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props) {
-    const videoThumbnail = computed(() => {
-      const videoId = props.videoUrl.match(
-        /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
-      )?.[1]
+interface Props {
+  videoUrl: string
+}
+const props = defineProps<Props>()
 
-      return `http://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
-    })
+const videoThumbnail = computed(() => {
+  const videoId = props.videoUrl.match(
+    /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
+  )?.[1]
 
-    return {
-      videoThumbnail,
-    }
-  },
+  return `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 })
 </script>
 

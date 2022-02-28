@@ -1,9 +1,3 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({})
-</script>
-
 <template>
   <svg viewBox="0 0 280.3 242" height="1em">
     <path
@@ -16,5 +10,3 @@ export default defineComponent({})
     />
   </svg>
 </template>
-
-<style lang="scss" scoped></style>

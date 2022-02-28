@@ -1,39 +1,20 @@
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+<script setup lang="ts">
 import { XIcon } from '@heroicons/vue/solid'
+import { useStorage } from '@vueuse/core'
 
-export default defineComponent({
-  components: {
-    XIcon,
-  },
-  setup() {
-    const showBanner = ref(false)
+const hasAcceptedCookies = useStorage('cookies', false)
 
-    onMounted(() => {
-      if (window.localStorage.getItem('cookies') !== '1') {
-        showBanner.value = true
-      }
-    })
-
-    const acceptCookies = function () {
-      window.localStorage.setItem('cookies', '1')
-      showBanner.value = false
-    }
-
-    return {
-      showBanner,
-      acceptCookies,
-    }
-  },
-})
+const acceptCookies = function () {
+  hasAcceptedCookies.value = true
+}
 </script>
 
 <template>
   <div
     id="gdpr"
     class="gdpr"
-    :class="{ 'gdpr--hidden': !showBanner }"
-    :aria-hidden="!showBanner"
+    :class="{ 'gdpr--hidden': hasAcceptedCookies }"
+    :aria-hidden="hasAcceptedCookies"
   >
     <span class="gdpr__emoji">🍪</span>
     <span class="gdpr__text">
@@ -45,6 +26,7 @@ export default defineComponent({
         hreflang="en"
         target="_blank"
         rel="noopener noreferrer"
+        :tabindex="hasAcceptedCookies ? -1 : undefined"
         >privacy policy</a
       >.
     </span>
@@ -53,9 +35,10 @@ export default defineComponent({
       class="gdpr__button"
       type="button"
       aria-label="Close GDPR notification"
-      @click="acceptCookies()"
+      :disabled="hasAcceptedCookies"
+      @click="acceptCookies"
     >
-      <x-icon class="gdpr__close-icon" />
+      <XIcon class="gdpr__close-icon" />
     </button>
   </div>
 </template>

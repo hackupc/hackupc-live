@@ -1,7 +1,9 @@
+type MarkdownString = string // Accepts Markdown
+
 export interface RawScheduleEvent {
   id: string
   title: string
-  description: string // Accepts Markdown
+  description: MarkdownString
   startHour: string
   endHour?: string
   showLink?: boolean

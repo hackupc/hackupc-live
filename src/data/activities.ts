@@ -1,6 +1,16 @@
+import imageBiene from '@/assets/img/activities/biene.png'
+import imageFreehand from '@/assets/img/activities/freehand.png'
+import imageHackuphone from '@/assets/img/activities/hackuphone.png'
+import imageNerf from '@/assets/img/activities/nerf.png'
+import imagePhotocall from '@/assets/img/activities/photocall.png'
+import imageRubberDuck from '@/assets/img/activities/rubber-duck.png'
+import imageSlideshareShow from '@/assets/img/activities/slideshare-show.png'
+import imageYoga from '@/assets/img/activities/yoga.png'
+
+type MarkdownString = string // Accepts Markdown
 export interface Activity {
   title: string
-  description: string // Accepts Markdown
+  description: MarkdownString
   image?: string
   start: string
   end?: string
@@ -18,7 +28,7 @@ You can draw it by hand, digitally, on a cake... any form of art is welcome 😄
 Upload a picture of your Biene on the discord channel or on a social network using the **#drawyourbiene** hashtag.
 There will be final voting between some of your submissions in order to find a winner.
 `,
-    image: require('@/assets/img/activities/biene.png'),
+    image: imageBiene,
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:45',
     location: '#draw-your-biene',
@@ -36,7 +46,7 @@ If your account is private, send us a screenshot via DM!
 You will enter some amazing contests by participating!
 You can upload as many pictures as you want, every picture will count.
 `,
-    image: require('@/assets/img/activities/photocall.png'),
+    image: imagePhotocall,
     start: '14/05/2021 21:00',
     end: '16/05/2021 13:30',
     location: '#photocall',
@@ -53,7 +63,7 @@ If you receive a sentence, you will have to draw it;
 if you receive a picture you will have to write a sentence describing what the picture is about.
 You will have an hour to do it!
 `,
-    image: require('@/assets/img/activities/hackuphone.png'),
+    image: imageHackuphone,
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:15',
     location: 'DM with organizers',
@@ -69,7 +79,7 @@ You can use any medium to draw (by hand, paint, photoshop, illustrator…).
 In order to participate in the activity, join the voice channel and later on upload your picture on the text channel.
 We are not Picasso, so we will not judge any draw, we only want to have fun. 😄
 `,
-    image: require('@/assets/img/activities/freehand.png'),
+    image: imageFreehand,
     start: '15/05/2021 10:00',
     end: '15/05/2021 11:00',
     location: '#playground',
@@ -86,7 +96,7 @@ In order to play Krunker you only need to have a browser, no installation is nee
 Stay tuned to the playground channel in order to join a round.
 Also, you can enter the voice channel to share the experience with the other players.
 `,
-    image: require('@/assets/img/activities/nerf.png'),
+    image: imageNerf,
     start: '15/05/2021 12:00',
     end: '15/05/2021 13:00',
     location: '#playground 🔊playground',
@@ -105,7 +115,7 @@ someone will have to present some random slides.
 The topic of the slides will be chosen by the audience...
 So we need you to participate in both speaker and audience roles!!
 `,
-    image: require('@/assets/img/activities/slideshare-show.png'),
+    image: imageSlideshareShow,
     start: '15/05/2021 18:00',
     end: '15/05/2021 19:00',
     location: 'hackersupc',
@@ -119,7 +129,7 @@ The rubber duck search has begun!
 If you get the answer right and it is one of the first 4 correct answers,
 then you will get the rubber duck (virtually)!
 `,
-    image: require('@/assets/img/activities/rubber-duck.png'),
+    image: imageRubberDuck,
     start: '14/05/2021 21:00',
     end: '16/05/2021 10:15',
     location: '#rubber-duck',
@@ -132,7 +142,7 @@ After the first hacking night, only standing up to go to the bathroom and to gra
 We thought that a good relaxed 30-min yoga session could help you to release some tiredness!
 Join us in discord and get relaxed! 🧘
 `,
-    image: require('@/assets/img/activities/yoga.png'),
+    image: imageYoga,
     start: '15/05/2021 10:00',
     end: '15/05/2021 11:00',
     location: '🔊playground',

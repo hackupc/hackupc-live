@@ -8,29 +8,19 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: 🎯 Set up Node.js using nvm
-        uses: dcodeIO/setup-node-nvm@v4
-      - name: 🎁 Install Yarn
-        run: npm install -g yarn
-      - name: 🗂 Configure cache 1
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: 🗂 Configure cache 2
-        uses: actions/cache@v2
-        id: yarn-cache
+        uses: actions/setup-node@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version-file: '.nvmrc'
       - name: 🎁 Install dependencies
-        run: yarn install --immutable
+        run: npm ci
       - name: 👷🏽‍♂️ Build the site
-        run: yarn run build
+        run: npm run build --if-present
       - name: 💾 Store the build
         uses: actions/upload-artifact@v2
         with:
           name: dist
           path: dist
+
   lighthouseci:
     name: Lighthouse
     needs: build
@@ -46,15 +36,18 @@ jobs:
           name: dist
           path: dist
       - name: 🎯 Set up Node.js using nvm
-        uses: dcodeIO/setup-node-nvm@v4
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
       - name: 🎁 Install Lighthouse
         run: npm install -g @lhci/cli
       - name: 🔎 Run Lighthouse
         run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
   lintfix:
-    name: Lint and fix
+    name: Lint, Type check and auto-fix
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -62,25 +55,18 @@ jobs:
         with:
           fetch-depth: 0
       - name: 🎯 Set up Node.js using nvm
-        uses: dcodeIO/setup-node-nvm@v4
-      - name: 🎁 Install Yarn
-        run: npm install -g yarn
-      - name: 🗂 Configure cache 1
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: 🗂 Configure cache 2
-        uses: actions/cache@v2
-        id: yarn-cache
+        uses: actions/setup-node@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version-file: '.nvmrc'
       - name: 🎁 Install dependencies
-        run: yarn install --immutable
+        run: npm ci
+      - name: 🔦 Typecheck
+        run: npm run typecheck
       - name: 🔦 Lint
-        run: yarn run lint
+        if: always()
+        run: npm run lint
       - name: 🍾 Commit & Push changes
+        if: always()
         uses: actions-js/push@master
         with:
           message: 'chore: Auto-fix some lint errors'
