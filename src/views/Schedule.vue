@@ -5,6 +5,7 @@ import { useTimeStore } from '@/stores/time'
 import { LinkIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
 import VueMarkdownIt from 'vue3-markdown-it'
+import PanelContainer from '../components/PanelContainer.vue'
 
 const scheduleStore = useScheduleStore()
 const timeStore = useTimeStore()
@@ -15,7 +16,7 @@ const hasHackathonFinished = computed<boolean>(
 </script>
 
 <template>
-  <div id="schedule" class="container">
+  <PanelContainer id="schedule">
     <div>
       <div
         v-for="day in scheduleStore.schedule.days"
@@ -69,7 +70,7 @@ const hasHackathonFinished = computed<boolean>(
         </div>
       </div>
     </div>
-  </div>
+  </PanelContainer>
 </template>
 
 <style lang="scss" scoped>
@@ -139,6 +140,23 @@ const hasHackathonFinished = computed<boolean>(
 
   svg {
     width: 20px;
+  }
+}
+
+.happened {
+  opacity: 0.5;
+}
+.when-small {
+  width: 20%;
+}
+
+@media (max-width: 720px) {
+  .when-small {
+    width: 60%;
+  }
+
+  .hide-when-small {
+    display: none !important;
   }
 }
 </style>

@@ -146,9 +146,9 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
               :data-event-id="hourEvent.id"
               @click="notificationsStore.toggleSubscription(hourEvent.id)"
             >
-              <div class="event-hour">
+              <div class="event__hour">
                 <div>{{ hourEvent.startHour }}</div>
-                <div class="end-hour">{{ hourEvent.endHour }}</div>
+                <div class="event__end-hour">{{ hourEvent.endHour }}</div>
               </div>
               <div class="title">
                 {{ hourEvent.title }}
@@ -240,39 +240,6 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
         display: flex;
       }
       /* stylelint-enable */
-      &.happened {
-        opacity: 1;
-        border-left: 2px solid fade($secondaryTextColor, 25%);
-      }
-
-      .event {
-        margin: 5px 0;
-        cursor: pointer;
-        .event-hour {
-          width: 54px;
-          display: flex;
-          flex-direction: column;
-          text-align: right;
-          font-weight: bold;
-          font-size: 15px;
-          margin-top: 3px;
-          margin-right: 10px;
-          .end-hour {
-            font-size: 12px;
-          }
-        }
-        &.subscribed {
-          .title i {
-            font-size: 13px;
-            vertical-align: super;
-            line-height: 0;
-          }
-        }
-        .title {
-          position: relative;
-          line-height: 25px;
-        }
-      }
     }
   }
 
@@ -297,11 +264,43 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   }
 }
 
+.event {
+  margin: 5px 0;
+  cursor: pointer;
+
+  &__hour {
+    width: 54px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-right: 10px;
+    &__end-hour {
+      font-size: 12px;
+    }
+  }
+  &.subscribed {
+    .title i {
+      font-size: 13px;
+      vertical-align: super;
+      line-height: 0;
+    }
+  }
+  .title {
+    position: relative;
+    line-height: 25px;
+  }
+}
 @media (max-width: 720px) {
   .events-fancy {
     ul {
       padding-left: 25px !important;
     }
   }
+}
+.happening {
+  font-weight: bold !important;
 }
 </style>

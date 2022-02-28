@@ -133,4 +133,7 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
     }
   }
 }
+strong {
+  color: $highlightColor;
+}
 </style>

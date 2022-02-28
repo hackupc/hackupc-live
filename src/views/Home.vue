@@ -9,6 +9,7 @@ import { useScheduleStore } from '@/stores/schedule'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { MailIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
+import PanelContainer from '../components/PanelContainer.vue'
 
 const scheduleStore = useScheduleStore()
 
@@ -18,7 +19,7 @@ const submitDeadline = computed<string>(() =>
 </script>
 
 <template>
-  <div class="container">
+  <PanelContainer>
     <Panel title="Important information">
       <p>
         <b>
@@ -186,7 +187,7 @@ const submitDeadline = computed<string>(() =>
         <span class="highlight-span">biene meme help</span> Get meme_code.
       </div>
     </Panel>
-  </div>
+  </PanelContainer>
 </template>
 
 <style lang="scss" scoped>

@@ -5,11 +5,12 @@ import { activities } from '@/data/activities'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueMarkdownIt from 'vue3-markdown-it'
+import PanelContainer from '../components/PanelContainer.vue'
 </script>
 
 <template>
   <div id="activities">
-    <div class="container">
+    <PanelContainer>
       <Panel
         v-for="activity in activities"
         :key="activity.title"
@@ -33,7 +34,7 @@ import VueMarkdownIt from 'vue3-markdown-it'
         <VueMarkdownIt :source="activity.description" />
         <img :src="activity.image" aria-hidden="true" class="activity__image" />
       </Panel>
-    </div>
+    </PanelContainer>
   </div>
 </template>
 

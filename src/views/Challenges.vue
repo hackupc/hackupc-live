@@ -5,11 +5,12 @@ import VideoThumbnail from '@/components/VideoThumbnail.vue'
 import { challenges } from '@/data/challenges'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueMarkdownIt from 'vue3-markdown-it'
+import PanelContainer from '../components/PanelContainer.vue'
 </script>
 
 <template>
   <div id="challenges">
-    <div class="container">
+    <PanelContainer>
       <Panel
         v-for="challenge in challenges"
         :key="challenge.title"
@@ -32,12 +33,16 @@ import VueMarkdownIt from 'vue3-markdown-it'
           :video-url="challenge.videoUrl"
         />
       </Panel>
-    </div>
+    </PanelContainer>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .channel {
   margin-bottom: 1em;
+}
+
+strong {
+  color: $highlightColor;
 }
 </style>
