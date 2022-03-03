@@ -51,7 +51,6 @@ const handleClick = (): void => {
   <div
     class="countdown"
     :class="{
-      'hide-when-small': fullscreen,
       'countdown--fullscreen': fullscreen,
     }"
     role="button"

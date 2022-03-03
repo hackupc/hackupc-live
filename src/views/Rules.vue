@@ -2,10 +2,11 @@
 import Panel from '@/components/Panel.vue'
 import { rules } from '@/data/rules'
 import VueMarkdownIt from 'vue3-markdown-it'
+import PanelContainer from '../components/PanelContainer.vue'
 </script>
 
 <template>
-  <div id="rules" class="container">
+  <PanelContainer id="rules">
     <Panel
       v-for="rule in rules"
       :key="rule.title"
@@ -14,5 +15,5 @@ import VueMarkdownIt from 'vue3-markdown-it'
     >
       <VueMarkdownIt :source="rule.description" />
     </Panel>
-  </div>
+  </PanelContainer>
 </template>

@@ -6,12 +6,12 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-onMounted(() => {
-  document.documentElement.requestFullscreen()
+onMounted(async () => {
+  await document.documentElement.requestFullscreen()
 })
 
-onBeforeUnmount(() => {
-  document.exitFullscreen?.()
+onBeforeUnmount(async () => {
+  await document.exitFullscreen()
 })
 
 const exitFullscreen = () => {
@@ -19,26 +19,17 @@ const exitFullscreen = () => {
 }
 </script>
 
-<template>
-  <div id="fullscreen">
-    <div>
-      <Countdown fullscreen @click="exitFullscreen" />
-      <Live fullscreen />
-    </div>
-  </div>
+<template class="fullscreen">
+  <Countdown fullscreen @click="exitFullscreen" />
+  <Live fullscreen />
 </template>
 
 <style lang="scss" scoped>
-#fullscreen {
+.fullscreen {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-
-  & > div {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
 }
 </style>

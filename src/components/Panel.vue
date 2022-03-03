@@ -54,6 +54,9 @@ defineProps<Props>()
       margin-bottom: 0;
     }
 
+    ::v-deep(strong) {
+      color: $highlightColor;
+    }
     ::v-deep(a) {
       color: $highlightColor;
       text-decoration: underline;
@@ -93,6 +96,13 @@ defineProps<Props>()
       margin-left: 0;
       margin-bottom: 0;
       padding-bottom: 0;
+    }
+
+    ::v-deep(code) {
+      background-color: $secondaryLightColor;
+      padding: 0.33ch 0.66ch;
+      border-radius: 3px;
+      font-size: 1rem;
     }
   }
 }
