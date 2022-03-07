@@ -27,7 +27,7 @@
     "@cypress/vite-dev-server": "^2.2.2",
     "@cypress/vue": "^3.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
-    "@heroicons/vue": "^1.0.5",
+    "@heroicons/vue": "^1.0.6",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/node": "^16.11.26",
     "@vitejs/plugin-vue": "^2.2.2",
