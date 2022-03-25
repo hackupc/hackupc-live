@@ -74,6 +74,9 @@ const hasHackathonFinished = computed<boolean>(
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+@use '@/variables' as *;
+
 .schedule {
   display: flex;
   flex-wrap: wrap;

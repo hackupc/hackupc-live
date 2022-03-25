@@ -166,6 +166,8 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .container-live {
   display: flex;
   overflow: auto;
