@@ -33,25 +33,25 @@ const videoThumbnail = computed(() => {
 
 <style lang="scss" scoped>
 .video {
-  display: block;
   position: relative;
-  margin: 0 auto 2rem;
+  display: block;
   max-width: 432px;
+  margin: 0 auto 2rem;
 
   &__thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
     border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 40%);
+    object-fit: cover;
   }
 
   &__play {
     position: absolute;
-    height: 8rem;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    height: 8rem;
     transform: translate(0, 50%);
   }
 }

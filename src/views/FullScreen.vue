@@ -28,8 +28,8 @@ const exitFullscreen = () => {
 .fullscreen {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 </style>

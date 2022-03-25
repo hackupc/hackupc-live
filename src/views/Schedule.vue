@@ -16,7 +16,7 @@ const hasHackathonFinished = computed<boolean>(
 </script>
 
 <template>
-  <PanelContainer id="schedule">
+  <PanelContainer id="schedule" class="schedule">
     <div>
       <div
         v-for="day in scheduleStore.schedule.days"
@@ -74,7 +74,10 @@ const hasHackathonFinished = computed<boolean>(
 </template>
 
 <style lang="scss" scoped>
-#schedule {
+@use 'sass:color';
+@use '@/variables' as *;
+
+.schedule {
   display: flex;
   flex-wrap: wrap;
 
@@ -84,33 +87,36 @@ const hasHackathonFinished = computed<boolean>(
 }
 
 .table-container {
-  color: $secondaryColor;
   flex: 1 1 0;
   margin-bottom: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: $secondary-color;
 
   h1 {
-    border-radius: 3px 3px 0 0;
-    text-align: center;
-    margin: 0;
     padding: 10px;
-    background-color: $primaryColor;
+    margin: 0;
+    background-color: $primary-color;
+    border-radius: 3px 3px 0 0;
     color: #fff;
+    text-align: center;
+
     // border-bottom: 1px solid #fff3;
   }
+
   .table-scroll {
     overflow: auto;
   }
+
   table {
     width: 100%;
-    color: $textColor;
+    background-color: $contrast-color;
     border-collapse: collapse;
-    background-color: $contrastColor;
     border-radius: 0 0 3px 3px;
+    color: $text-color;
 
     thead {
-      color: $contrastColor;
-      background-color: $primaryColor;
+      background-color: $primary-color;
+      color: $contrast-color;
     }
 
     td,
@@ -118,25 +124,27 @@ const hasHackathonFinished = computed<boolean>(
       padding: 10px;
       text-align: left;
     }
+
     td {
-      border: thin solid fade($secondaryColor, 20%);
+      border: thin solid color.adjust($secondary-color, $alpha: -0.2);
+
       &:last-child {
         min-width: 200px;
       }
+
       &:first-child {
         text-align: center;
-        .location-icon {
-          display: inline-block;
-        }
       }
-      a {
-        color: $secondaryColor;
-      }
+    }
+
+    a {
+      color: $secondary-color;
     }
   }
 }
+
 .link-icon {
-  color: currentColor !important;
+  color: currentcolor !important;
 
   svg {
     width: 20px;
@@ -146,6 +154,7 @@ const hasHackathonFinished = computed<boolean>(
 .happened {
   opacity: 0.5;
 }
+
 .when-small {
   width: 20%;
 }

@@ -166,133 +166,142 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .container-live {
   display: flex;
-  justify-content: center;
   overflow: auto;
-}
-.event {
-  user-select: none;
-
-  &__arrow {
-    position: absolute;
-    margin-top: -0.25em;
-    right: 100%;
-    margin-right: 0.5em;
-    height: 2.5rem;
-  }
-  &__subscribed-icon {
-    width: 20px;
-    color: $secondaryColor;
-  }
-}
-.events-fancy {
-  text-align: left;
-  color: white;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 39px;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-image: linear-gradient($bgColor, transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    min-height: 200px;
-    max-height: 100%;
-    overflow-y: scroll;
-    padding-top: 200px;
-    padding-left: 100px;
-    box-sizing: content-box;
-    li {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      position: relative;
-      margin: 15px 0 15px 0;
-      min-height: 10px;
-      padding: 0 0 0 15px;
-      font-size: 28px;
-      border-left: 3px solid $secondaryTextColor;
-      color: $secondaryTextColor;
-      align-content: flex-start;
-      &:last-child {
-        margin-bottom: 400px;
-      }
-      /* stylelint-disable */
-      h1 {
-        margin: 0;
-        font-weight: normal;
-      }
-      & > div {
-        display: flex;
-      }
-      /* stylelint-enable */
-    }
-  }
-
-  &--fullscreen {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-
-    &::before {
-      content: none;
-    }
-    ul {
-      max-height: 100%;
-      width: 100%;
-      height: 100%;
-      margin-left: 40%;
-      li {
-        font-size: 1.5em;
-        margin-right: 60%;
-      }
-    }
-  }
+  justify-content: center;
 }
 
 .event {
   margin: 5px 0;
   cursor: pointer;
+  user-select: none;
+
+  &__arrow {
+    position: absolute;
+    right: 100%;
+    height: 2.5rem;
+    margin-top: -0.25em;
+    margin-right: 0.5em;
+  }
+
+  &__subscribed-icon {
+    width: 20px;
+    color: $secondary-color;
+  }
 
   &__hour {
-    width: 54px;
     display: flex;
+    width: 54px;
     flex-direction: column;
-    text-align: right;
-    font-weight: bold;
-    font-size: 15px;
     margin-top: 3px;
     margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+
     &__end-hour {
       font-size: 12px;
     }
   }
+
   &.subscribed {
     .title i {
       font-size: 13px;
-      vertical-align: super;
       line-height: 0;
+      vertical-align: super;
     }
   }
+
   .title {
     position: relative;
     line-height: 25px;
   }
 }
+
+.events-fancy {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  -webkit-overflow-scrolling: touch;
+  text-align: left;
+
+  &::before {
+    position: fixed;
+    z-index: 10;
+    top: 39px;
+    right: 0;
+    left: 0;
+    height: 100px;
+    background-image: linear-gradient($bg-color, transparent);
+    content: '';
+    pointer-events: none;
+  }
+
+  ul {
+    min-height: 200px;
+    max-height: 100%;
+    box-sizing: content-box;
+    padding-top: 200px;
+    padding-left: 100px;
+    margin: 0;
+    list-style: none;
+    overflow-y: scroll;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    min-height: 10px;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    padding: 0 0 0 15px;
+    border-left: 3px solid $secondary-text-color;
+    margin: 15px 0;
+    color: $secondary-text-color;
+    font-size: 28px;
+
+    :last-child {
+      margin-bottom: 400px;
+    }
+
+    > div {
+      display: flex;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: normal;
+  }
+
+  &--fullscreen {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+
+    &::before {
+      content: none;
+    }
+
+    ul {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      margin-left: 40%;
+    }
+
+    li {
+      margin-right: 60%;
+      font-size: 1.5em;
+    }
+  }
+}
+
 @media (max-width: 720px) {
   .events-fancy {
     ul {
@@ -300,6 +309,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     }
   }
 }
+
 .happening {
   font-weight: bold !important;
 }

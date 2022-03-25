@@ -31,9 +31,10 @@ defineProps<Props>()
 .talk {
   &__time {
     margin-bottom: 1.5em;
-    font-style: italic;
     color: #ec6162;
-    &:first-letter {
+    font-style: italic;
+
+    &::first-letter {
       text-transform: uppercase;
     }
   }

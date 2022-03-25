@@ -16,6 +16,8 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .icon-label {
   display: inline-block;
 
@@ -25,21 +27,20 @@ defineProps<{
   }
 
   &__icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-    line-height: 1;
-    height: 2rem;
-    width: 2rem;
-    text-align: center;
     display: inline-flex;
+    width: 2rem;
+    height: 2rem;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    background-color: $secondaryColor;
-    color: white;
-    font-weight: normal;
+    margin: 0;
     margin-right: 0.25em;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
 
     svg {
       width: 20px;
@@ -50,15 +51,15 @@ defineProps<{
     display: inline-block;
     height: 2rem;
     padding: 0 12px;
-    border-radius: 3px;
-    background-color: $secondaryLightColor;
     margin: 4px;
-    line-height: 2;
+    background-color: $secondary-light-color;
+    border-radius: 3px;
     font-size: 1rem;
+    line-height: 2;
     vertical-align: middle;
 
     a {
-      color: currentColor !important;
+      color: currentcolor !important;
     }
   }
 }

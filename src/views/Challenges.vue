@@ -38,11 +38,13 @@ import PanelContainer from '../components/PanelContainer.vue'
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .channel {
   margin-bottom: 1em;
 }
 
 strong {
-  color: $highlightColor;
+  color: $highlight-color;
 }
 </style>
