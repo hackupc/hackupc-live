@@ -85,28 +85,30 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
 <style lang="scss" scoped>
 .prompt {
   position: fixed;
-  display: flex;
+  z-index: 110;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  z-index: 110;
+  justify-content: center;
   backdrop-filter: blur(10px);
 
   &__box {
-    color: $secondaryTextColor;
-    background-color: $bgColor;
+    max-width: 575px;
     padding: 20px;
     margin: 20px;
-    max-width: 575px;
+    background-color: $bgColor;
     border-radius: 5px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+    color: $secondaryTextColor;
+
     h1 {
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
+
     p {
       margin: 16px 0;
     }
@@ -115,16 +117,18 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
   &__buttons {
     display: flex;
     justify-content: flex-end;
+
     div {
       padding: 5px 10px;
-      color: $contrastColor;
-      background-color: $primaryColor;
-      cursor: pointer;
-      border-radius: 5px;
       margin-left: 16px;
+      background-color: $primaryColor;
+      border-radius: 5px;
+      color: $contrastColor;
+      cursor: pointer;
       font-weight: bold;
       letter-spacing: 1px;
     }
+
     #promptCancel {
       background-color: #ddd;
       color: #666;
@@ -133,6 +137,7 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
     }
   }
 }
+
 strong {
   color: $highlightColor;
 }

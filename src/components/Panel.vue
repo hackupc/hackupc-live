@@ -17,28 +17,28 @@ defineProps<Props>()
 
 <style lang="scss" scoped>
 .panel {
-  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
   flex: 1 1 350px;
   margin: 16px;
   background-color: $contrastColor;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   color: $textColor;
-  overflow: hidden;
   text-align: left;
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   &--big {
     flex: 1 1 782px;
   }
 
   &__title {
-    margin: 0 0 0 0;
-    font-size: 20px;
-    color: white;
-    background-color: $primaryColor;
-    text-align: center;
     padding: 4px 24px;
+    margin: 0;
+    background-color: $primaryColor;
+    color: white;
+    font-size: 20px;
     line-height: 1.6;
+    text-align: center;
   }
 
   &__content {
@@ -49,6 +49,7 @@ defineProps<Props>()
     & ::v-deep(* > div:first-child > *:first-child) {
       margin-top: 0;
     }
+
     & > *:last-child,
     & ::v-deep(* > div:last-child > *:last-child) {
       margin-bottom: 0;
@@ -57,6 +58,7 @@ defineProps<Props>()
     ::v-deep(strong) {
       color: $highlightColor;
     }
+
     ::v-deep(a) {
       color: $highlightColor;
       text-decoration: underline;
@@ -84,23 +86,23 @@ defineProps<Props>()
     }
 
     ::v-deep(blockquote) {
-      margin: 1.5em 0;
       padding: 10px 0 10px 24px;
       border-left: 4px solid $primaryColor;
+      margin: 1.5em 0;
       background-color: transparentize($primaryColor, 0.9);
       border-radius: 0 8px 8px 0;
     }
 
     ::v-deep(blockquote p) {
-      font-weight: 600;
-      margin-left: 0;
-      margin-bottom: 0;
       padding-bottom: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      font-weight: 600;
     }
 
     ::v-deep(code) {
-      background-color: $secondaryLightColor;
       padding: 0.33ch 0.66ch;
+      background-color: $secondaryLightColor;
       border-radius: 3px;
       font-size: 1rem;
     }

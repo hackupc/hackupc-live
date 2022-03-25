@@ -62,7 +62,7 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   margin: 0 auto;
   background-color: #0c0c0c;
   border-radius: 0.75rem;
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 30%);
   color: #fff;
   transition: transform 400ms $ease-quad, opacity 400ms $ease-quad;
 
@@ -91,6 +91,7 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-size: 1.5rem;
     line-height: 1;
     transition: transform 250ms $ease-bounce;
+
     @media (min-width: 640px) {
       margin-right: 0.75rem;
     }
@@ -105,13 +106,14 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     margin: 0;
     font-size: 0.85rem;
     line-height: 1.5;
+
     @media (min-width: 640px) {
       font-size: 1rem;
     }
   }
 
   &__link {
-    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.6667);
+    text-shadow: 0 0 1rem rgb(0 0 0 / 66.7%);
   }
 
   &__button {
@@ -135,7 +137,7 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: block;
     width: 1.5rem;
     height: 1.5rem;
-    color: currentColor;
+    color: currentcolor;
   }
 }
 </style>

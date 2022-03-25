@@ -42,20 +42,23 @@ import PanelContainer from '../components/PanelContainer.vue'
 .channel {
   margin-bottom: 1em;
 }
+
 .activity {
   &__time {
     margin-bottom: 1.5em;
-    font-style: italic;
     color: #ec6162;
-    &:first-letter {
+    font-style: italic;
+
+    &::first-letter {
       text-transform: uppercase;
     }
   }
+
   &__image {
     display: block;
-    margin: 1em auto 0;
     max-width: 100%;
     max-height: 10em;
+    margin: 1em auto 0;
     border-radius: 0.5rem;
   }
 }

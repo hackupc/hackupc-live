@@ -193,17 +193,19 @@ const submitDeadline = computed<string>(() =>
 <style lang="scss" scoped>
 .buttons {
   display: flex;
-  border-radius: 3px;
   overflow: hidden;
+  border-radius: 3px;
+
   a {
     display: block;
     flex: 1 1 0;
-    color: $textColor !important;
-    text-decoration: none;
-    background-color: $tertiaryLightColor;
     padding: 8px;
-    text-align: center;
+    background-color: $tertiaryLightColor;
+    color: $textColor !important;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
     &:not(:first-child) {
       border-left: thin solid white;
     }

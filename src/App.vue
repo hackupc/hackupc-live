@@ -50,17 +50,17 @@ onMounted(() => {
 
 <style lang="scss">
 body {
-  background-color: #141c15;
-  background-image: url('@/assets/img/bg.svg');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: center center;
-
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
+  background-attachment: fixed;
+  background-color: #141c15;
+  background-image: url('@/assets/img/bg.svg');
+  background-position: center center;
+  background-repeat: repeat;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 a {
   color: $highlightColor;
   text-decoration: none;

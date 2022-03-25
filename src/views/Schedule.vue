@@ -84,33 +84,36 @@ const hasHackathonFinished = computed<boolean>(
 }
 
 .table-container {
-  color: $secondaryColor;
   flex: 1 1 0;
   margin-bottom: 50px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: $secondaryColor;
 
   h1 {
-    border-radius: 3px 3px 0 0;
-    text-align: center;
-    margin: 0;
     padding: 10px;
+    margin: 0;
     background-color: $primaryColor;
+    border-radius: 3px 3px 0 0;
     color: #fff;
+    text-align: center;
+
     // border-bottom: 1px solid #fff3;
   }
+
   .table-scroll {
     overflow: auto;
   }
+
   table {
     width: 100%;
-    color: $textColor;
-    border-collapse: collapse;
     background-color: $contrastColor;
+    border-collapse: collapse;
     border-radius: 0 0 3px 3px;
+    color: $textColor;
 
     thead {
-      color: $contrastColor;
       background-color: $primaryColor;
+      color: $contrastColor;
     }
 
     td,
@@ -118,25 +121,31 @@ const hasHackathonFinished = computed<boolean>(
       padding: 10px;
       text-align: left;
     }
+
     td {
       border: thin solid fade($secondaryColor, 20%);
+
       &:last-child {
         min-width: 200px;
       }
+
       &:first-child {
         text-align: center;
+
         .location-icon {
           display: inline-block;
         }
       }
+
       a {
         color: $secondaryColor;
       }
     }
   }
 }
+
 .link-icon {
-  color: currentColor !important;
+  color: currentcolor !important;
 
   svg {
     width: 20px;
@@ -146,6 +155,7 @@ const hasHackathonFinished = computed<boolean>(
 .happened {
   opacity: 0.5;
 }
+
 .when-small {
   width: 20%;
 }
