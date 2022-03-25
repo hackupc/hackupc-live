@@ -50,9 +50,9 @@ const isActive = (page: string): boolean => {
 
 <template>
   <!--header for <720px-->
-  <header v-if="!isFullscreen" id="header-small" class="show-when-small">
-    <div class="bar">
-      <div id="open-aside-btn" @click="openAsideMenu">
+  <header v-if="!isFullscreen" class="header-small show-when-small">
+    <div class="header-small__bar">
+      <div class="open-aside-btn" @click="openAsideMenu">
         <span>&#9776;</span>
       </div>
       <div class="title-container">
@@ -63,13 +63,12 @@ const isActive = (page: string): boolean => {
   <!--Aside menu for small screens-->
   <aside
     v-if="!asideMenuHidden"
-    id="aside-small-menu"
-    class="'show-when-small'"
+    class="aside-small-menu show-when-small"
     :class="{
       closed: asideMenuClosed,
     }"
   >
-    <div id="close-aside-btn" @click="closeAsideMenu">
+    <div class="close-aside-btn" @click="closeAsideMenu">
       <div>x</div>
     </div>
     <nav>
@@ -109,7 +108,7 @@ const isActive = (page: string): boolean => {
     </nav>
   </aside>
   <!--header for >720px-->
-  <header v-if="!isFullscreen" id="header-nav-bar" class="hide-when-small">
+  <header v-if="!isFullscreen" class="header-nav-bar hide-when-small">
     <nav>
       <ul>
         <li :class="{ selected: isActive('/') }">
@@ -124,7 +123,7 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/activities') }">
           <RouterLink to="/activities">Activities</RouterLink>
         </li>
-        <li id="countdown-li">
+        <li class="countdown-li">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
         </li>
         <li :class="{ selected: isActive('/challenges') }">
@@ -152,27 +151,175 @@ const isActive = (page: string): boolean => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+@use '@/variables' as *;
+
+$fade-time: 300ms;
+
 .external-link-icon {
   width: 16px;
   vertical-align: text-top;
 }
 
-$fadeTime: 300ms;
-
 .veil::before {
-  content: ' ';
   position: absolute;
+  z-index: 100;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 100;
+  background-color: rgb(0 0 0 / 40%);
+  content: ' ';
   opacity: 0;
-  transition: opacity $fadeTime;
+  transition: opacity $fade-time;
 }
 
 .veiled::before {
   opacity: 1 !important;
-  transition: opacity $fadeTime;
+  transition: opacity $fade-time;
+}
+
+.header-small {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+
+  &__bar {
+    position: relative;
+    height: 50px;
+    border-bottom: thin solid rgb(125 125 125 / 30%);
+    background-color: $contrast-color;
+    box-shadow: 0 0 10px 0 rgb(125 125 125 / 60%);
+    color: $secondary-text-color;
+  }
+}
+
+.title-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    flex: 1 1 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.open-aside-btn {
+  position: absolute;
+  display: flex;
+  width: 50px;
+  height: 100%;
+  align-items: center;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+
+  span {
+    flex: 1 1 0;
+  }
+}
+
+.aside-small-menu {
+  position: fixed;
+  z-index: 150;
+  left: 0;
+  overflow: auto; /* just in case */
+  width: 200px;
+  height: 100%;
+  background-color: $contrast-color;
+  box-shadow: 0 0 13px 1px rgb(0 0 0 / 60%);
+  transition: left 300ms;
+
+  &.closed {
+    left: -210px;
+  }
+
+  .close-aside-btn {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+
+    div {
+      flex: 1 1 0;
+      font-size: 25px;
+    }
+  }
+
+  nav {
+    margin-top: 10px;
+    background-color: color.adjust($contrast-color, $lightness: -5%);
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    border-top: thin solid rgb(255 255 255 / 30%);
+  }
+
+  .selected {
+    background-color: color.adjust($contrast-color, $lightness: -15%);
+    font-weight: bold;
+  }
+
+  a {
+    display: block;
+    padding: 10px 20px;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.header-nav-bar {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 3px 0 color.adjust($primary-color, $alpha: -0.5);
+    list-style: none;
+  }
+
+  li {
+    flex: 1 1 0;
+    border-left: thin solid rgb(30 30 30 / 20%);
+    background: #fff;
+    text-align: center;
+
+    :first-child {
+      border-left: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 10px 0;
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  .selected {
+    box-shadow: 0 3px 0 $primary-color;
+    cursor: default;
+  }
+}
+
+.countdown-li {
+  position: relative;
+  flex: 0 0 215px;
+  padding: 0;
 }
 
 @media (min-width: 720px) {
@@ -184,154 +331,6 @@ $fadeTime: 300ms;
 @media (max-width: 720px) {
   .hide-when-small {
     display: none !important;
-  }
-}
-
-#header-small {
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-
-  .bar {
-    position: relative;
-    height: 50px;
-    background-color: $contrastColor;
-    color: $secondaryTextColor;
-    border-bottom: thin solid rgba(125, 125, 125, 0.3);
-    box-shadow: 0 0 10px 0 rgba(125, 125, 125, 0.6);
-
-    .title-container {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      height: 100%;
-      h1 {
-        flex: 1 1 0;
-        margin: 0;
-        padding: 0;
-      }
-    }
-    #open-aside-btn {
-      display: flex;
-      position: absolute;
-      font-size: 20px;
-      color: black;
-      align-items: center;
-      width: 50px;
-      height: 100%;
-      text-align: center;
-      cursor: pointer;
-      /* stylelint-disable */
-      span {
-        flex: 1 1 0;
-      }
-      /* stylelint-enable */
-    }
-  }
-}
-
-#aside-small-menu {
-  height: 100%;
-  position: fixed;
-  background-color: $contrastColor;
-  width: 200px;
-  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.6);
-  z-index: 150;
-  overflow: auto; /* just in case */
-  left: 0;
-  transition: left 300ms;
-  &.closed {
-    left: -210px;
-  }
-
-  #close-aside-btn {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    /* stylelint-disable */
-    div {
-      /* stylelint-enable */
-      flex: 1 1 0;
-      font-size: 25px;
-    }
-  }
-
-  div.logo {
-    margin-top: 20px;
-    text-align: center;
-    /* stylelint-disable */
-    img {
-      width: 90%;
-    }
-    /* stylelint-enable */
-  }
-  nav {
-    margin-top: 10px;
-    background-color: darken($contrastColor, 5%);
-    ul {
-      list-style: none;
-      padding: 0;
-      /* stylelint-disable */
-      li {
-        /* stylelint-enable */
-        border-top: thin solid rgba(255, 255, 255, 0.3);
-        &.selected {
-          font-weight: bold;
-          background-color: darken($contrastColor, 15%);
-        }
-        a {
-          display: block;
-          padding: 10px 20px;
-          color: $textColor;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
-
-#header-nav-bar {
-  position: fixed;
-  width: 100%;
-  z-index: 50;
-  ul {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    justify-content: center;
-    box-shadow: 0 3px 0 transparentize($primaryColor, 0.5);
-    li {
-      flex: 1 1 0;
-      border-left: thin solid rgba(30, 30, 30, 0.2);
-      text-align: center;
-      background: white;
-      a {
-        display: block;
-        padding: 10px 0;
-        color: $textColor;
-        text-decoration: none;
-      }
-
-      &:first-child {
-        border-left: none;
-      }
-
-      &.selected {
-        box-shadow: 0 3px 0 $primaryColor;
-        cursor: default;
-      }
-
-      &#countdown-li {
-        flex: 0 0 215px;
-        position: relative;
-        padding: 0;
-      }
-    }
   }
 }
 </style>

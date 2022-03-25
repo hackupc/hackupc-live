@@ -128,7 +128,7 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     &:hover,
     &:focus {
-      background-color: transparentize(#fff, 0.8);
+      background-color: hsl(0deg 0% 100% / 80%);
       outline: none;
     }
   }

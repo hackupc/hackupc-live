@@ -16,15 +16,18 @@ defineProps<Props>()
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+@use '@/variables' as *;
+
 .panel {
   position: relative;
   overflow: hidden;
   flex: 1 1 350px;
   margin: 16px;
-  background-color: $contrastColor;
+  background-color: $contrast-color;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  color: $textColor;
+  color: $text-color;
   text-align: left;
 
   &--big {
@@ -34,8 +37,8 @@ defineProps<Props>()
   &__title {
     padding: 4px 24px;
     margin: 0;
-    background-color: $primaryColor;
-    color: white;
+    background-color: $primary-color;
+    color: #fff;
     font-size: 20px;
     line-height: 1.6;
     text-align: center;
@@ -45,22 +48,22 @@ defineProps<Props>()
     padding: 24px;
     line-height: 1.6;
 
-    & > *:first-child,
-    & ::v-deep(* > div:first-child > *:first-child) {
+    > *:first-child,
+    ::v-deep(* > div:first-child > *:first-child) {
       margin-top: 0;
     }
 
-    & > *:last-child,
-    & ::v-deep(* > div:last-child > *:last-child) {
+    > *:last-child,
+    ::v-deep(* > div:last-child > *:last-child) {
       margin-bottom: 0;
     }
 
     ::v-deep(strong) {
-      color: $highlightColor;
+      color: $highlight-color;
     }
 
     ::v-deep(a) {
-      color: $highlightColor;
+      color: $highlight-color;
       text-decoration: underline;
     }
 
@@ -81,15 +84,15 @@ defineProps<Props>()
     }
 
     ::v-deep(ol li::marker) {
-      color: $primaryColor;
+      color: $primary-color;
       font-weight: 600;
     }
 
     ::v-deep(blockquote) {
       padding: 10px 0 10px 24px;
-      border-left: 4px solid $primaryColor;
+      border-left: 4px solid $primary-color;
       margin: 1.5em 0;
-      background-color: transparentize($primaryColor, 0.9);
+      background-color: color.adjust($primary-color, $alpha: -0.9);
       border-radius: 0 8px 8px 0;
     }
 
@@ -102,7 +105,7 @@ defineProps<Props>()
 
     ::v-deep(code) {
       padding: 0.33ch 0.66ch;
-      background-color: $secondaryLightColor;
+      background-color: $secondary-light-color;
       border-radius: 3px;
       font-size: 1rem;
     }

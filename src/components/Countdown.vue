@@ -71,6 +71,8 @@ const handleClick = (): void => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .countdown {
   position: absolute;
   display: flex;
@@ -84,7 +86,7 @@ const handleClick = (): void => {
   border-radius: 100%;
   box-shadow: 0 -5px 42px rgb(0 0 0 / 40%);
   cursor: pointer;
-  transition: transform 200ms $easeBounce;
+  transition: transform 200ms $ease-bounce;
 
   &:hover {
     transform: translateY(-5px);
@@ -119,7 +121,7 @@ const handleClick = (): void => {
     left: 0;
     padding: 8px;
     border: 12px solid #e5e5e5;
-    background: $primaryColor;
+    background: $primary-color;
     border-radius: 100%;
 
     img {

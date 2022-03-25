@@ -16,7 +16,7 @@ const hasHackathonFinished = computed<boolean>(
 </script>
 
 <template>
-  <PanelContainer id="schedule">
+  <PanelContainer id="schedule" class="schedule">
     <div>
       <div
         v-for="day in scheduleStore.schedule.days"
@@ -74,7 +74,7 @@ const hasHackathonFinished = computed<boolean>(
 </template>
 
 <style lang="scss" scoped>
-#schedule {
+.schedule {
   display: flex;
   flex-wrap: wrap;
 
@@ -87,12 +87,12 @@ const hasHackathonFinished = computed<boolean>(
   flex: 1 1 0;
   margin-bottom: 50px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  color: $secondaryColor;
+  color: $secondary-color;
 
   h1 {
     padding: 10px;
     margin: 0;
-    background-color: $primaryColor;
+    background-color: $primary-color;
     border-radius: 3px 3px 0 0;
     color: #fff;
     text-align: center;
@@ -106,14 +106,14 @@ const hasHackathonFinished = computed<boolean>(
 
   table {
     width: 100%;
-    background-color: $contrastColor;
+    background-color: $contrast-color;
     border-collapse: collapse;
     border-radius: 0 0 3px 3px;
-    color: $textColor;
+    color: $text-color;
 
     thead {
-      background-color: $primaryColor;
-      color: $contrastColor;
+      background-color: $primary-color;
+      color: $contrast-color;
     }
 
     td,
@@ -123,7 +123,7 @@ const hasHackathonFinished = computed<boolean>(
     }
 
     td {
-      border: thin solid fade($secondaryColor, 20%);
+      border: thin solid color.adjust($secondary-color, $alpha: -0.2);
 
       &:last-child {
         min-width: 200px;
@@ -131,15 +131,11 @@ const hasHackathonFinished = computed<boolean>(
 
       &:first-child {
         text-align: center;
-
-        .location-icon {
-          display: inline-block;
-        }
       }
+    }
 
-      a {
-        color: $secondaryColor;
-      }
+    a {
+      color: $secondary-color;
     }
   }
 }

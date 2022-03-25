@@ -49,6 +49,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+@use '@/variables' as *;
+
 body {
   padding: 0;
   margin: 0;
@@ -62,7 +64,7 @@ body {
 }
 
 a {
-  color: $highlightColor;
+  color: $highlight-color;
   text-decoration: none;
 }
 </style>

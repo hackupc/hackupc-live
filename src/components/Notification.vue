@@ -75,14 +75,22 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
       </p>
 
       <div class="prompt__buttons">
-        <div @click="subscribeAll">All right</div>
-        <div @click="neverAskAgainGetAllNotifications">Nope</div>
+        <div
+          class="prompt__button prompt__button--cancel"
+          @click="neverAskAgainGetAllNotifications"
+        >
+          Nope
+        </div>
+        <div class="prompt__button" @click="subscribeAll">All right</div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+@use '@/variables' as *;
+
 .prompt {
   position: fixed;
   z-index: 110;
@@ -99,10 +107,10 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
     max-width: 575px;
     padding: 20px;
     margin: 20px;
-    background-color: $bgColor;
+    background-color: $bg-color;
     border-radius: 5px;
     box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
-    color: $secondaryTextColor;
+    color: $secondary-text-color;
 
     h1 {
       padding: 0;
@@ -117,21 +125,21 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
   &__buttons {
     display: flex;
     justify-content: flex-end;
+  }
 
-    div {
-      padding: 5px 10px;
-      margin-left: 16px;
-      background-color: $primaryColor;
-      border-radius: 5px;
-      color: $contrastColor;
-      cursor: pointer;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+  &__button {
+    padding: 5px 10px;
+    margin-left: 16px;
+    background-color: $primary-color;
+    border-radius: 5px;
+    color: $contrast-color;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
 
-    #promptCancel {
-      background-color: #ddd;
-      color: #666;
+    &--cancel {
+      background-color: #303531;
+      color: #ccc;
       font-weight: normal;
       letter-spacing: 0;
     }
@@ -139,6 +147,6 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
 }
 
 strong {
-  color: $highlightColor;
+  color: $highlight-color;
 }
 </style>

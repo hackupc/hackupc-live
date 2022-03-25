@@ -43,6 +43,6 @@ import PanelContainer from '../components/PanelContainer.vue'
 }
 
 strong {
-  color: $highlightColor;
+  color: $highlight-color;
 }
 </style>

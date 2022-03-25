@@ -191,6 +191,8 @@ const submitDeadline = computed<string>(() =>
 </template>
 
 <style lang="scss" scoped>
+@use '@/variables' as *;
+
 .buttons {
   display: flex;
   overflow: hidden;
@@ -200,14 +202,14 @@ const submitDeadline = computed<string>(() =>
     display: block;
     flex: 1 1 0;
     padding: 8px;
-    background-color: $tertiaryLightColor;
-    color: $textColor !important;
+    background-color: $tertiary-light-color;
+    color: $text-color !important;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: thin solid white;
+      border-left: thin solid #fff;
     }
   }
 }

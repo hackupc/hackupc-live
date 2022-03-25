@@ -1,13 +1,13 @@
 /* --- COLORS --- */
-$bgColor: #161c17;
-$textColor: #494949;
-$contrastColor: #fff;
-$primaryColor: #3F5182 ;
-$secondaryColor: #EC6162;
-$secondaryLightColor: #f8d6c6;
-$secondaryTextColor: white;
-$tertiaryLightColor: #f2e7bf;
-$highlightColor: $secondaryColor;
+$bg-color: #161c17;
+$text-color: #494949;
+$contrast-color: #fff;
+$primary-color: #3f5182;
+$secondary-color: #ec6162;
+$secondary-light-color: #f8d6c6;
+$secondary-text-color: #fff;
+$tertiary-light-color: #f2e7bf;
+$highlight-color: $secondary-color;
 
 /* --- EASINGS --- */
-$easeBounce: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+$ease-bounce: cubic-bezier(0.18, 0.89, 0.32, 1.28);
