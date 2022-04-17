@@ -82,8 +82,11 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/schedule') }">
           <RouterLink to="/schedule">Schedule</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/activities') }">
-          <RouterLink to="/activities">Activities</RouterLink>
+        <li :class="{ selected: isActive('/maps') }">
+          <RouterLink to="/maps">Map</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/the-mission') }">
+          <RouterLink to="/the-mission">The Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
           <RouterLink to="/challenges">Challenges</RouterLink>
@@ -91,18 +94,21 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/talks') }">
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules">Rules</RouterLink>
-        </li>
         <li>
           <a
-            href="https://hackupc.com/#faq"
+            href="https://guides.hackupc.com/guide/hacker/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            FAQ
+            Guides
             <ExternalLinkIcon class="external-link-icon" />
           </a>
+        </li>
+        <li :class="{ selected: isActive('/rules') }">
+          <RouterLink to="/rules">Rules</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/FAQs') }">
+          <RouterLink to="/FAQs">FAQ</RouterLink>
         </li>
       </ul>
     </nav>
@@ -120,8 +126,11 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/schedule') }">
           <RouterLink to="/schedule">Schedule</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/activities') }">
-          <RouterLink to="/activities">Activities</RouterLink>
+        <li :class="{ selected: isActive('/maps') }">
+          <RouterLink to="/maps">Map</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/the-mission') }">
+          <RouterLink to="/the-mission">The Mission</RouterLink>
         </li>
         <li class="countdown-li">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
@@ -132,18 +141,21 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/talks') }">
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules">Rules</RouterLink>
-        </li>
         <li>
           <a
-            href="https://hackupc.com/#faq"
+            href="https://guides.hackupc.com/guide/hacker/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            FAQ
+            Guides
             <ExternalLinkIcon class="external-link-icon" />
           </a>
+        </li>
+        <li :class="{ selected: isActive('/rules') }">
+          <RouterLink to="/rules">Rules</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/FAQs') }">
+          <RouterLink to="/FAQs">FAQ</RouterLink>
         </li>
       </ul>
     </nav>

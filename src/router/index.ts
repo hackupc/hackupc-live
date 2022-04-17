@@ -22,6 +22,16 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Schedule.vue'),
   },
   {
+    path: '/map',
+    name: 'Map',
+    component: () => import('@/views/Maps.vue'),
+  },
+  {
+    path: '/the-mission',
+    name: 'The Mission',
+    component: () => import('@/views/Mission.vue'),
+  },
+  {
     path: '/activities',
     name: 'Activities',
     component: () => import('@/views/Activities.vue'),
@@ -40,6 +50,16 @@ const routes: RouteRecordRaw[] = [
     path: '/rules',
     name: 'Rules',
     component: () => import('@/views/Rules.vue'),
+  },
+  {
+    path: '/challenges',
+    name: 'challenges',
+    component: () => import('@/views/Challenges.vue'),
+  },
+  {
+    path: '/FAQs',
+    name: 'FAQs',
+    component: () => import('@/views/FAQs.vue'),
   },
 ]
 

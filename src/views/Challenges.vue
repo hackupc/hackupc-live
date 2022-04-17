@@ -18,7 +18,7 @@ import PanelContainer from '../components/PanelContainer.vue'
       >
         <IconLabel class="channel" centered>
           <template #icon>
-            <FontAwesomeIcon :icon="['fab', 'discord']" />
+            <FontAwesomeIcon :icon="['fab', 'hashtag']" />
           </template>
           {{ challenge.channel }}
         </IconLabel>
