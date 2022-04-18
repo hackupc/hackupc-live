@@ -9,6 +9,7 @@
 .disabled-msg {
   display: flex;
   height: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
