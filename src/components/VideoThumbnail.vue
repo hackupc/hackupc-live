@@ -6,12 +6,27 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const videoThumbnail = computed(() => {
-  const videoId = props.videoUrl.match(
-    /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
-  )?.[1]
+function isYoutubeUrl(url: string): boolean {
+  return /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)/.test(url)
+}
+function isTwitchUrl(url: string): boolean {
+  return /(?:https?:\/{2})?(?:w{3}\.)?twitch\.tv/.test(url)
+}
 
-  return `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+const videoThumbnail = computed<string>(() => {
+  if (isYoutubeUrl(props.videoUrl)) {
+    const videoId = props.videoUrl.match(
+      /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
+    )?.[1]
+
+    return `https://i3.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+  }
+
+  if (isTwitchUrl(props.videoUrl)) {
+    return 'https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_large/public/blog/twitch-logo-1138x658.jpg'
+  }
+
+  return ''
 })
 </script>
 
