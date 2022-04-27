@@ -85,8 +85,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/maps') }">
           <RouterLink to="/maps">Map</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/the-mission') }">
-          <RouterLink to="/the-mission">The Mission</RouterLink>
+        <li :class="{ selected: isActive('/mission') }">
+          <RouterLink to="/mission">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
           <RouterLink to="/challenges">Challenges</RouterLink>
@@ -129,8 +129,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/maps') }">
           <RouterLink to="/maps">Map</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/the-mission') }">
-          <RouterLink to="/the-mission">The Mission</RouterLink>
+        <li :class="{ selected: isActive('/mission') }">
+          <RouterLink to="/mission">Mission</RouterLink>
         </li>
         <li class="countdown-li">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
