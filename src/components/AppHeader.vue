@@ -107,8 +107,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/rules') }">
           <RouterLink to="/rules">Rules</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/FAQs') }">
-          <RouterLink to="/FAQs">FAQ</RouterLink>
+        <li :class="{ selected: isActive('/faq') }">
+          <RouterLink to="/faq">FAQ</RouterLink>
         </li>
       </ul>
     </nav>
@@ -154,8 +154,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/rules') }">
           <RouterLink to="/rules">Rules</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/FAQs') }">
-          <RouterLink to="/FAQs">FAQ</RouterLink>
+        <li :class="{ selected: isActive('/faq') }">
+          <RouterLink to="/faq">FAQ</RouterLink>
         </li>
       </ul>
     </nav>

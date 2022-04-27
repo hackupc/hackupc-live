@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/challenges',
-    name: 'challenges',
+    name: 'Challenges',
     component: () => import('@/views/Challenges.vue'),
   },
   {
@@ -53,11 +53,11 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/challenges',
-    name: 'challenges',
+    name: 'Challenges',
     component: () => import('@/views/Challenges.vue'),
   },
   {
-    path: '/FAQs',
+    path: '/faq',
     name: 'FAQs',
     component: () => import('@/views/FAQs.vue'),
   },

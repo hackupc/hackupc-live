@@ -5,7 +5,7 @@ import type { Talk } from '@/data/talks'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
 import VueMarkdownIt from 'vue3-markdown-it'
 import VideoThumbnail from './VideoThumbnail.vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { LocationMarkerIcon } from '@heroicons/vue/solid'
 
 interface Props {
   talk: Talk
@@ -17,7 +17,7 @@ defineProps<Props>()
   <Panel :title="talk.title">
     <IconLabel class="channel" centered>
       <template #icon>
-        <FontAwesomeIcon :icon="['fab', 'map-pin']" />
+        <LocationMarkerIcon />
       </template>
       {{ talk.where }}
     </IconLabel>

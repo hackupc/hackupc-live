@@ -28,10 +28,11 @@ defineProps<{
 
   &__icon {
     display: inline-flex;
-    width: 2rem;
-    height: 2rem;
+    width: 20px;
+    height: 20px;
     align-items: center;
     justify-content: center;
+    padding: 6px;
     margin: 0;
     margin-right: 0.25em;
     background-color: $secondary-color;
