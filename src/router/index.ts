@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Schedule.vue'),
   },
   {
-    path: '/map',
+    path: '/map/:id?',
     name: 'Map',
     component: () => import('@/views/Map.vue'),
   },
