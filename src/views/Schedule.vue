@@ -126,7 +126,7 @@ const hasHackathonFinished = computed<boolean>(
     }
 
     td {
-      border: thin solid color.adjust($secondary-color, $alpha: -0.2);
+      border: thin solid #ececec;
 
       &:last-child {
         min-width: 200px;
