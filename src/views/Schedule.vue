@@ -139,6 +139,7 @@ const hasHackathonFinished = computed<boolean>(
     border-radius: 0 0 3px 3px;
     color: $text-color;
   }
+
   thead {
     background-color: $primary-color;
     color: $contrast-color;
@@ -194,8 +195,8 @@ const hasHackathonFinished = computed<boolean>(
 
   &__icon {
     height: 20px;
-    vertical-align: -4px;
     margin-right: 0.25rem;
+    vertical-align: -4px;
   }
 }
 </style>

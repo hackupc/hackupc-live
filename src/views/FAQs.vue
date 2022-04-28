@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import PanelTalk from '@/components/PanelTalk.vue'
-import { talks } from '@/data/talks'
+import Panel from '@/components/Panel.vue'
+import { faqs } from '@/data/faqs'
+import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
 </script>
 
 <template>
-  <PanelContainer id="talks">
-    <PanelTalk v-for="talk in talks" :key="talk.title" :talk="talk" />
+  <PanelContainer id="faqs">
+    <Panel
+      v-for="faq in faqs"
+      :key="faq.title"
+      :title="faq.title"
+      :size="faq.size"
+    >
+      <VueMarkdownIt :source="faq.description" />
+    </Panel>
   </PanelContainer>
 </template>
