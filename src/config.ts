@@ -4,7 +4,7 @@ interface Config {
 }
 
 const config: Config = {
-  // fakeStartTime: '14/5/2021 21:59:55',
+  // fakeStartTime: '29/4/2022 21:59:55',
   disabled: false,
 }
 
