@@ -129,6 +129,11 @@ Tired? Recharge your energies here!
             text: 'A4002',
             mapId: 'indoors',
           },
+          onlineLocation: {
+            text: 'Slack',
+            url: 'https://hackupc2022.slack.com',
+            icon: 'slack',
+          },
           startHour: '22:00',
           endHour: '23:00',
           description: /* markdown */ `
