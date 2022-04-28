@@ -16,7 +16,11 @@ function parseScheduleEvent(
   return {
     ...event,
     start: startDate,
-    end: event.endHour ? parseTimeInDay(event.endHour, dayDate) : startDate,
+    end: event.endHour
+      ? event.endHour === '24:00'
+        ? dayDate.add(1, 'day')
+        : parseTimeInDay(event.endHour, dayDate)
+      : startDate,
   }
 }
 

@@ -220,7 +220,7 @@ Join us on twitch! All the information on the talk is found on the talks tab
           showLink: true,
           title: '[Talk] Deep Learning: breaking the ice',
           startHour: '23:30',
-          endHour: '00:00',
+          endHour: '24:00',
           physicalLocation: {
             text: 'A5001',
             mapId: 'indoors',
@@ -239,7 +239,7 @@ In this hands-on workshop, we will train a Deep Learning model to classify image
           showLink: true,
           title: '[Talk] Want to code faster? Try TDD!',
           startHour: '23:30',
-          endHour: '00:00',
+          endHour: '24:00',
           physicalLocation: {
             text: 'A5002',
             mapId: 'indoors',
