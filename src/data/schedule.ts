@@ -1,35 +1,35 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface RawScheduleEvent {
-  id: string
-  title: string
-  description?: MarkdownString
-  physicalLocation?: PhysicalLocation
-  onlineLocation?: OnlineLocation
-  startHour: string
-  endHour?: string
-  showLink?: boolean
+  readonly id: string
+  readonly title: string
+  readonly description?: MarkdownString
+  readonly physicalLocation?: PhysicalLocation
+  readonly onlineLocation?: OnlineLocation
+  readonly startHour: string
+  readonly endHour?: string
+  readonly showLink?: boolean
 }
 
 export interface PhysicalLocation {
-  text: string
-  mapId: 'indoors' | 'campus' | 'judging'
+  readonly text: string
+  readonly mapId: 'indoors' | 'campus' | 'judging'
 }
 export interface OnlineLocation {
-  text: string
-  url: string
-  icon: 'slack' | 'twitch' | 'other'
+  readonly text: string
+  readonly url: string
+  readonly icon: 'slack' | 'twitch' | 'other'
 }
 export interface RawScheduleDay {
-  date: string
-  events: RawScheduleEvent[]
+  readonly date: string
+  readonly events: RawScheduleEvent[]
 }
 
 export interface RawSchedule {
-  countdownStart: string
-  countdownEnd: string
-  submitDeadline: string
-  days: RawScheduleDay[]
+  readonly countdownStart: string
+  readonly countdownEnd: string
+  readonly submitDeadline: string
+  readonly days: RawScheduleDay[]
 }
 
 export const schedule: RawSchedule = {

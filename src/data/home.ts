@@ -1,12 +1,12 @@
 export type DiscordType = 'chat' | 'voice'
 export interface DiscordLabelData {
-  name: string
-  description: string
-  icon: DiscordType
+  readonly name: string
+  readonly description: string
+  readonly icon: DiscordType
 }
 interface DiscordChannelInfo {
-  title: string
-  channels: DiscordLabelData[]
+  readonly title: string
+  readonly channels: DiscordLabelData[]
 }
 
 export const discordChannels: DiscordChannelInfo[] = [

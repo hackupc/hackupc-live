@@ -9,13 +9,13 @@ import imageYoga from '@/assets/img/activities/yoga.png'
 
 type MarkdownString = string // Accepts Markdown
 export interface Activity {
-  title: string
-  description: MarkdownString
-  image?: string
-  start: string
-  end?: string
-  location: string
-  icon: 'discord' | 'twitch'
+  readonly title: string
+  readonly description: MarkdownString
+  readonly image?: string
+  readonly start: string
+  readonly end?: string
+  readonly location: string
+  readonly icon: 'discord' | 'twitch'
 }
 
 export const activities: Activity[] = [

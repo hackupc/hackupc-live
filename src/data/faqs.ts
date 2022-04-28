@@ -1,9 +1,9 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface Faq {
-  title: string
-  description?: MarkdownString
-  size: 'big' | 'small'
+  readonly title: string
+  readonly description?: MarkdownString
+  readonly size: 'big' | 'small'
 }
 
 export const faqs: Faq[] = [

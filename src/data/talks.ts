@@ -1,14 +1,14 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface Talk {
-  title: string
-  description?: MarkdownString
-  where: string
-  company: string
-  videoUrl?: string
-  start: string
-  end?: string
-  streamLink?: string
+  readonly title: string
+  readonly description?: MarkdownString
+  readonly where: string
+  readonly company: string
+  readonly videoUrl?: string
+  readonly start: string
+  readonly end?: string
+  readonly streamLink?: string
 }
 
 export const talks: Talk[] = [

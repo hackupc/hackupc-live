@@ -1,8 +1,8 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface Rule {
-  title: string
-  description: MarkdownString
+  readonly title: string
+  readonly description: MarkdownString
 }
 
 export const rules: Rule[] = [

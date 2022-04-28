@@ -1,9 +1,9 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface Mission {
-  title: string
-  description?: MarkdownString
-  size: 'big' | 'small'
+  readonly title: string
+  readonly description?: MarkdownString
+  readonly size: 'big' | 'small'
 }
 
 export const missions: Mission[] = [
