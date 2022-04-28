@@ -1,6 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import type { Duration } from 'dayjs/plugin/duration'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
@@ -33,10 +32,6 @@ export const dateFormats: Record<DateFormat, string> = {
 
 export function formatDate(format: DateFormat, date: Dayjs): string {
   return date.local().format(dateFormats[format])
-}
-
-export function formatDuration(format: DateFormat, date: Duration): string {
-  return date.format(dateFormats[format])
 }
 
 export function formatInterval(dateStart: Dayjs, dateEnd: Dayjs): string {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { formatDuration } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
 import dayjs from 'dayjs'
@@ -32,15 +31,20 @@ const remainingTime = computed<Duration>(() => {
     return dayjs.duration(end.diff(now))
   }
 })
+
 const hours = computed<string>(() =>
-  formatDuration('hour', remainingTime.value)
+  Math.floor(remainingTime.value.asHours()).toString()
 )
-const minutes = computed<string>(() =>
-  formatDuration('minute', remainingTime.value)
-)
-const seconds = computed<string>(() =>
-  formatDuration('second', remainingTime.value)
-)
+
+const minutes = computed<string>(() => {
+  const minutes = remainingTime.value.minutes()
+  return minutes < 10 ? `0${minutes}` : `${minutes}`
+})
+
+const seconds = computed<string>(() => {
+  const seconds = remainingTime.value.seconds()
+  return seconds < 10 ? `0${seconds}` : `${seconds}`
+})
 
 const handleClick = (): void => {
   emit('click')
