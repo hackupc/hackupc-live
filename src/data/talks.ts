@@ -45,8 +45,9 @@ export const talks: Talk[] = [
     // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'Efficient Machine Learning for Scientists',
-    description: `Discover how to industrialize machine learning models to improve the efficency of your scientific data by Juan Fra Fernández and Didac Fortuny`,
+    title:
+      'Productionizing Machine Learning models to increase your Data Scientists performance.',
+    description: `Whenever a machine learning model is ready for deployment, data scientists and machine learning engineers still have a long path ahead collaborating to enable it for production. This talk explains how, in infojobs, we have modified this process to free data scientists of this duty. Freed data scientists can go back to develop the following model.`,
     where: 'A5002',
     company: 'Infojobs',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',

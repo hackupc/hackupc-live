@@ -1,35 +1,35 @@
 type MarkdownString = string // Accepts Markdown
 
 export interface RawScheduleEvent {
-  readonly id: string
-  readonly title: string
-  readonly description?: MarkdownString
-  readonly physicalLocation?: PhysicalLocation
-  readonly onlineLocation?: OnlineLocation
-  readonly startHour: string
-  readonly endHour?: string
-  readonly showLink?: boolean
+  id: string
+  title: string
+  description?: MarkdownString
+  physicalLocation?: PhysicalLocation
+  onlineLocation?: OnlineLocation
+  startHour: string
+  endHour?: string
+  showLink?: boolean
 }
 
 export interface PhysicalLocation {
-  readonly text: string
-  readonly mapId: 'indoors' | 'campus' | 'judging'
+  text: string
+  mapId: 'indoors' | 'campus' | 'judging'
 }
 export interface OnlineLocation {
-  readonly text: string
-  readonly url: string
-  readonly icon: 'slack' | 'twitch' | 'other'
+  text: string
+  url: string
+  icon: 'slack' | 'twitch' | 'other'
 }
 export interface RawScheduleDay {
-  readonly date: string
-  readonly events: RawScheduleEvent[]
+  date: string
+  events: RawScheduleEvent[]
 }
 
 export interface RawSchedule {
-  readonly countdownStart: string
-  readonly countdownEnd: string
-  readonly submitDeadline: string
-  readonly days: RawScheduleDay[]
+  countdownStart: string
+  countdownEnd: string
+  submitDeadline: string
+  days: RawScheduleDay[]
 }
 
 export const schedule: RawSchedule = {
@@ -157,7 +157,8 @@ Introduction to git and GitHub, learn the most basic commands for git and collab
         {
           id: 'talk-infojobs',
           showLink: true,
-          title: '[Talk] Efficient Machine Learning for Scientists',
+          title:
+            '[Talk] Productionizing Machine Learning models to increase your Data Scientists performance.',
           startHour: '22:30',
           endHour: '23:00',
           physicalLocation: {
@@ -170,7 +171,7 @@ Introduction to git and GitHub, learn the most basic commands for git and collab
             icon: 'twitch',
           },
           description: /* markdown */ `
-Learn how is machine learning applied nowadays in the industry of scientists`,
+This talk explains how, in infojobs, we have modified this process to free data scientists of this duty. Freed data scientists can go back to develop the following model.`,
         },
         {
           id: 'talk-mundimoto',
