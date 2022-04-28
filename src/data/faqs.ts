@@ -54,8 +54,11 @@ The processing of travel reimbursements takes some time. Our schedule depends on
     size: 'small',
   },
   {
-    title: 'Deadline for project submissions?',
-    description: `The deadline for project submissions is Sunday 13th 9:00 AM. Submit your projects [to devpost](https://hackupc2019.devpost.com).`,
+    title: "Where's my travel reimbursement?",
+    description: `
+  The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1 to 2 months time period.
+
+  Also, remember that you need to post a project before the deadline in order to get the reimbursement.`,
     size: 'small',
   },
   {
@@ -71,14 +74,6 @@ The top teams will move on to an additional round of panel judging in the Closin
 
 If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.`,
     size: 'big',
-  },
-  {
-    title: "Where's my travel reimbursement?",
-    description: `
-The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1 to 2 months time period.
-
-Also, remember that you need to post a project before the deadline in order to get the reimbursement.`,
-    size: 'small',
   },
   {
     title: 'I have another question... Biene?',
