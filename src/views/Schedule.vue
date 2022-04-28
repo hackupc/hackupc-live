@@ -45,14 +45,16 @@ const hasHackathonFinished = computed<boolean>(
                     !hasHackathonFinished && event.end.isBefore(timeStore.now),
                 }"
               >
-                <td class="links">
+                <td>
                   <a
                     v-if="event.physicalLocation"
                     class="link"
                     :href="`/map/${event.physicalLocation.mapId}`"
                   >
                     <LocationMarkerIcon class="link__icon" />
-                    {{ event.physicalLocation.text }}
+                    <span class="link__text">
+                      {{ event.physicalLocation.text }}
+                    </span>
                   </a>
 
                   <a
@@ -72,7 +74,9 @@ const hasHackathonFinished = computed<boolean>(
                       :icon="['fab', 'twitch']"
                     />
                     <LinkIcon v-else class="link__icon" />
-                    {{ event.onlineLocation.text }}
+                    <span class="link__text">
+                      {{ event.onlineLocation.text }}
+                    </span>
                   </a>
                 </td>
                 <td>{{ formatDate('time', event.start) }}</td>
@@ -134,33 +138,32 @@ const hasHackathonFinished = computed<boolean>(
     border-collapse: collapse;
     border-radius: 0 0 3px 3px;
     color: $text-color;
+  }
+  thead {
+    background-color: $primary-color;
+    color: $contrast-color;
+  }
 
-    thead {
-      background-color: $primary-color;
-      color: $contrast-color;
+  td,
+  th {
+    padding: 10px;
+    text-align: left;
+  }
+
+  td {
+    border: thin solid #ececec;
+
+    &:last-child {
+      min-width: 200px;
     }
 
-    td,
-    th {
-      padding: 10px;
-      text-align: left;
+    &:first-child {
+      text-align: center;
     }
+  }
 
-    td {
-      border: thin solid #ececec;
-
-      &:last-child {
-        min-width: 200px;
-      }
-
-      &:first-child {
-        text-align: center;
-      }
-    }
-
-    a {
-      color: $secondary-color;
-    }
+  a {
+    color: $secondary-color;
   }
 }
 
@@ -182,18 +185,17 @@ const hasHackathonFinished = computed<boolean>(
   }
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
 .link {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
   &__icon {
     height: 20px;
     vertical-align: -4px;
+    margin-right: 0.25rem;
   }
 }
 </style>
