@@ -21,7 +21,7 @@ defineProps<Props>()
       </template>
       {{ talk.where }}
     </IconLabel>
-    <h3>Company: {{ talk.speaker }}</h3>
+    <h3>Company: {{ talk.company }}</h3>
     <p class="talk__time">
       {{
         formatInterval(

@@ -4,7 +4,7 @@ export interface Talk {
   title: string
   description?: MarkdownString
   where: string
-  speaker: string
+  company: string
   videoUrl?: string
   start: string
   end?: string
@@ -14,98 +14,90 @@ export interface Talk {
 export const talks: Talk[] = [
   {
     title: 'Intro to Git and Github',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'HackUPC team',
+    description:
+      'Are you new to git? Do you want to know about how to use GitHub?',
+    where: 'A5001',
+    company: 'HackUPC team',
     //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
     start: '29/4/2022 22:30',
     end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'InfoJobs',
-    //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
-  },
-  {
-    title: 'TBD',
-    /*description: /* markdown */ /*`
-4 years ago we launched the version of APIs and Webhooks for Typeform, giving developers the tools
-necessary to build apps and automation around data collection.
-For HackUPC we are releasing a new tool that will let developers build apps directly inside Typeform UI.
-This workshop is an introduction to this new framework. No previous experience needed, first-timers welcome.
-`,*/
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'InfoJobs',
+    title: 'Ignorance Oriented Programming',
+    description: 'by Sergi Martinez',
+    where: 'A5002',
+    company: 'InfoJobs',
     //videoUrl: 'https://www.youtube.com/watch?v=h2lTZOoifM0',
     start: '29/4/2022 22:30',
     end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'HP',
+    title: 'Company choices explained',
+    description:
+      'Choosing your next company decides where you invest your most valued resource, your time. Selecting a suitable workplace will affect your present life and shape your future as a software engineer, both in skills and future opportunities. However, we spend very little time speaking about how we should reason about this decision.\nJordi has worked as a software engineer for 15 years, both in Europe and California, in 8 different companies. He worked on projects like Instagram, Facebook crypto, Snapchat Infrastructure, and Tuenti. He’ll share his clues about how to choose your next company to decide where you want to be in 5 years.',
+    where: 'A5001',
+    company: 'Mundimoto',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '29/4/2022 23:00',
+    end: '29/4/2022 23:30',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'MundiMoto',
+    title: 'Efficient Machine Learning for Scientists',
+    description: `Discover how to industrialize machine learning models to improve the efficency of your scientific data by Juan Fra Fernández and Didac Fortuny`,
+    where: 'A5002',
+    company: 'Infojobs',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '29/4/2022 23:00',
+    end: '29/4/2022 23:30',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'RestB',
+    title: 'Deep Learning: breaking the ice',
+    description: `In this hands-on workshop, we will train a Deep Learning model to classify images using Python, Keras and Tensorflow. Starting with the basics, we will navigate through some of the most common and interesting challenges one has to face while getting started in ML.
+    Requirements:
+    - Google account
+    - Although can be very helpful, Python programming skills are not required - final solutions will be presented by the lecturers`,
+    where: 'A5001',
+    company: 'RestbAI',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '29/4/2022 23:30',
+    end: '29/4/2022 00:00',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'Huawei',
+    title: 'Want to code faster? Try TDD!',
+    description:
+      'Test-Driven Development is a practice of extreme programming that fosters some of the best approaches to deliver high-quality software in production rapidly. Hop into this introductory session to familiarise yourself with it and clear any doubts.',
+    where: 'A5002',
+    company: 'Anyul Rivas',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '29/4/2022 23:30',
+    end: '29/4/2022 00:00',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'TBD',
+    title: 'Make development easier with Huawei Mobile Service',
+    description:
+      ' Discover some of the main functionalities of Huawei Mobile Services that allow you to develop an app with a great user experience. Learn the main advantages of publishing applications in the App Gallery: security, monetization, etc. Are you going to miss it?',
+    where: 'A5001',
+    company: 'Huawei',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '30/4/2022 10:00',
+    end: '30/4/2022 10:30',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'TBD',
-    description: 'TBD',
-    where: 'TBD',
-    speaker: 'TBD',
+    title: 'HP Virtual & Augmented Reality applications.',
+    description:
+      'In this talk, we will explain how HP use VR & AR technology to make our life better, give an overview how this technology is evolving today, and what we can expect for the near future”',
+    where: 'A5001',
+    company: 'HP',
     //videoUrl: 'https://www.youtube.com/watch?v=AEz840YZZ1w&ab_channel=HackersUPCHackersUPC',
-    start: '29/4/2022 22:30',
-    end: '29/4/2022 23:00',
-    streamLink: 'https://www.twitch.tv/hackersupc',
+    start: '30/4/2022 10:30',
+    end: '30/4/2022 11:00',
+    // streamLink: 'https://www.twitch.tv/hackersupc',
   },
 ]
