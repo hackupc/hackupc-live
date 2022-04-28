@@ -87,7 +87,7 @@ Join us on twitch & Vertex to be aware of everything that will be happening this
         },
         {
           id: 'hacking-starts',
-          title: 'Hacking Start!!!',
+          title: 'Hacking Starts!!!',
           startHour: '21:00',
           description: /* markdown */ `
 Hacking time is starting now!! 👨‍💻👩‍💻
