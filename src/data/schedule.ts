@@ -543,7 +543,7 @@ Remember to submit a valid project on devpost to be elegible for prizes 🏆, sw
 Follow the instructions in order to demo your project for the sponsor and for the HackUPC team
 `,
           physicalLocation: {
-            text: 'A3 & A4',
+            text: 'A4',
             mapId: 'judging',
           },
         },
