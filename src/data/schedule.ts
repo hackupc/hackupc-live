@@ -120,36 +120,32 @@ Join us on twitch! All the information on the talk is found on the talks tab
       ],
     },
     {
-      date: '15/5/2021',
+      date: '30/4/2022',
       events: [
         {
-          id: 'activity-sports',
-          title: 'Sports activity',
-          startHour: '10:00',
-          endHour: '11:00',
+          id: 'Midnight-Snack',
+          title: 'Midnight Snack',
+          startHour: '1:30',
+          endHour: '2:00',
           description: /* markdown */ `
-Let's do some yoga to relax! 🧘 Join us on 🔊 playground discord channel
+Let's take a break and enjoy the power of snaks at night time 🌙
 `,
         },
         {
-          id: 'activity-nerf',
-          title: 'Nerf activity',
-          startHour: '12:00',
-          endHour: '13:00',
+          id: 'TheGame',
+          title: 'TheGame',
+          startHour: '3:14:15',
           description: /* markdown */ `
-Let's play some Krunker rounds!
-Join us on both 🔊 playground and #playground discord channels
+Enjoy game is easy!
 `,
         },
         {
-          id: 'activity-draw-1',
-          showLink: true,
-          title: 'Draw',
-          startHour: '17:45',
-          endHour: '18:00',
+          id: 'breakfast',
+          title: 'Breakfast',
+          startHour: '8:00',
+          endHour: '9:00',
           description: /* markdown */ `
-Join us on twitch! We will be doing a draw with the participants of the photocall! 📷
-Maybe you can win a pizza for dinner... 🍕
+Good morning! Your meal is waiting 4 u ♥
 `,
         },
         {
