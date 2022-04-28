@@ -6,14 +6,14 @@ const route = useRoute()
 
 const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
   if (
-    route.params?.id !== 'judging' &&
-    route.params?.id !== 'campus' &&
-    route.params?.id !== 'indoors'
+    route.params?.mapId !== 'judging' &&
+    route.params?.mapId !== 'campus' &&
+    route.params?.mapId !== 'indoors'
   ) {
     return 'indoors'
   }
 
-  return route.params.id
+  return route.params.mapId
 })
 </script>
 
@@ -44,19 +44,28 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
       <p class="explore__title">Explore</p>
       <div class="explore__list">
         <RouterLink
-          to="/map/indoors"
+          :to="{
+            name: 'map',
+            params: { mapId: 'indoors' },
+          }"
           class="button"
           :class="{ 'button--disabled': currentMap === 'indoors' }"
           >Indoors</RouterLink
         >
         <RouterLink
-          to="/map/campus"
+          :to="{
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
           class="button"
           :class="{ 'button--disabled': currentMap === 'campus' }"
           >Campus</RouterLink
         >
         <RouterLink
-          to="/map/judging"
+          :to="{
+            name: 'map',
+            params: { mapId: 'judging' },
+          }"
           class="button"
           :class="{ 'button--disabled': currentMap === 'judging' }"
           >Judging</RouterLink

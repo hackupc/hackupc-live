@@ -131,7 +131,7 @@ const handleClick = (): void => {
   }
 
   &--fullscreen {
-    position: absolute;
+    position: sticky;
     z-index: 50;
     top: calc(50vh - 16.667vw);
     left: 8vw;

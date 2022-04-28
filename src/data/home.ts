@@ -16,7 +16,7 @@ export const discordChannels: DiscordChannelInfo[] = [
       {
         name: '👋 welcome',
         description:
-          'Welcome to HackUPC 2021! Here you have the important basic information about the server.',
+          'Welcome to HackUPC 2022! Here you have the important basic information about the server.',
         icon: 'chat',
       },
       {

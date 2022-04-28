@@ -265,10 +265,6 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     color: $secondary-text-color;
     font-size: 28px;
 
-    :last-child {
-      margin-bottom: 400px;
-    }
-
     > div {
       display: flex;
     }
@@ -299,6 +295,10 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       margin-right: 60%;
       font-size: 1.5em;
     }
+  }
+
+  li:last-child {
+    margin-bottom: 400px;
   }
 }
 

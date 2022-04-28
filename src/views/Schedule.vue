@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import PanelContainer from '@/components/PanelContainer.vue'
 import { formatDate } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
 import { useTimeStore } from '@/stores/time'
-import { LinkIcon } from '@heroicons/vue/solid'
-import { computed } from 'vue'
-import VueMarkdownIt from 'vue3-markdown-it'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import PanelContainer from '@/components/PanelContainer.vue'
-import { LocationMarkerIcon } from '@heroicons/vue/solid'
+import { LinkIcon, LocationMarkerIcon } from '@heroicons/vue/solid'
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
+import VueMarkdownIt from 'vue3-markdown-it'
+
 const scheduleStore = useScheduleStore()
 const timeStore = useTimeStore()
 
@@ -46,17 +47,19 @@ const hasHackathonFinished = computed<boolean>(
                 }"
               >
                 <td>
-                  <a
+                  <RouterLink
                     v-if="event.physicalLocation"
                     class="link"
-                    :href="`/map/${event.physicalLocation.mapId}`"
+                    :to="{
+                      name: 'map',
+                      params: { mapId: event.physicalLocation.mapId },
+                    }"
                   >
                     <LocationMarkerIcon class="link__icon" />
                     <span class="link__text">
                       {{ event.physicalLocation.text }}
                     </span>
-                  </a>
-
+                  </RouterLink>
                   <a
                     v-if="event.onlineLocation"
                     :href="event.onlineLocation.url"

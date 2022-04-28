@@ -10,6 +10,11 @@ import {
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
+import {
+  faPlaneArrival,
+  faTrainSubway,
+  faWheelchair,
+} from '@fortawesome/free-solid-svg-icons'
 import { createPinia } from 'pinia'
 import { registerSW } from 'virtual:pwa-register'
 import { createApp } from 'vue'
@@ -36,7 +41,10 @@ library.add(
   faSlack,
   faTwitch,
   faTwitter,
-  faYoutube
+  faYoutube,
+  faWheelchair,
+  faTrainSubway,
+  faPlaneArrival
 )
 
 const app = createApp(App)

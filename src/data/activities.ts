@@ -29,8 +29,8 @@ Upload a picture of your Biene on the discord channel or on a social network usi
 There will be final voting between some of your submissions in order to find a winner.
 `,
     image: imageBiene,
-    start: '14/05/2021 21:00',
-    end: '16/05/2021 10:45',
+    start: '14/05/2022 21:00',
+    end: '16/05/2022 10:45',
     location: '#draw-your-biene',
     icon: 'discord',
   },
@@ -40,15 +40,15 @@ There will be final voting between some of your submissions in order to find a w
 We would love to receive photos from your HackUPC online experience! 📷
 From you and your college coding, your pizza, anything you want to share with us!
 
-You can upload them on photocall channel or on any social network \`using\` the hashtag **#HackUPC2021**.
+You can upload them on photocall channel or on any social network \`using\` the hashtag **#HackUPC2022**.
 If your account is private, send us a screenshot via DM!
 
 You will enter some amazing contests by participating!
 You can upload as many pictures as you want, every picture will count.
 `,
     image: imagePhotocall,
-    start: '14/05/2021 21:00',
-    end: '16/05/2021 13:30',
+    start: '14/05/2022 21:00',
+    end: '16/05/2022 13:30',
     location: '#photocall',
     icon: 'discord',
   },
@@ -64,8 +64,8 @@ if you receive a picture you will have to write a sentence describing what the p
 You will have an hour to do it!
 `,
     image: imageHackuphone,
-    start: '14/05/2021 21:00',
-    end: '16/05/2021 10:15',
+    start: '14/05/2022 21:00',
+    end: '16/05/2022 10:15',
     location: 'DM with organizers',
     icon: 'discord',
   },
@@ -80,8 +80,8 @@ In order to participate in the activity, join the voice channel and later on upl
 We are not Picasso, so we will not judge any draw, we only want to have fun. 😄
 `,
     image: imageFreehand,
-    start: '15/05/2021 10:00',
-    end: '15/05/2021 11:00',
+    start: '15/05/2022 10:00',
+    end: '15/05/2022 11:00',
     location: '#playground',
     icon: 'discord',
   },
@@ -97,8 +97,8 @@ Stay tuned to the playground channel in order to join a round.
 Also, you can enter the voice channel to share the experience with the other players.
 `,
     image: imageNerf,
-    start: '15/05/2021 12:00',
-    end: '15/05/2021 13:00',
+    start: '15/05/2022 12:00',
+    end: '15/05/2022 13:00',
     location: '#playground 🔊playground',
     icon: 'discord',
   },
@@ -116,8 +116,8 @@ The topic of the slides will be chosen by the audience...
 So we need you to participate in both speaker and audience roles!!
 `,
     image: imageSlideshareShow,
-    start: '15/05/2021 18:00',
-    end: '15/05/2021 19:00',
+    start: '15/05/2022 18:00',
+    end: '15/05/2022 19:00',
     location: 'hackersupc',
     icon: 'twitch',
   },
@@ -130,8 +130,8 @@ If you get the answer right and it is one of the first 4 correct answers,
 then you will get the rubber duck (virtually)!
 `,
     image: imageRubberDuck,
-    start: '14/05/2021 21:00',
-    end: '16/05/2021 10:15',
+    start: '14/05/2022 21:00',
+    end: '16/05/2022 10:15',
     location: '#rubber-duck',
     icon: 'discord',
   },
@@ -143,8 +143,8 @@ We thought that a good relaxed 30-min yoga session could help you to release som
 Join us in discord and get relaxed! 🧘
 `,
     image: imageYoga,
-    start: '15/05/2021 10:00',
-    end: '15/05/2021 11:00',
+    start: '15/05/2022 10:00',
+    end: '15/05/2022 11:00',
     location: '🔊playground',
     icon: 'discord',
   },
