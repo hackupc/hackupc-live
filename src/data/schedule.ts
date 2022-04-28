@@ -30,13 +30,33 @@ export const schedule: RawSchedule = {
       date: '14/5/2021',
       events: [
         {
+          id: 'checkin',
+          showLink: false,
+          title: 'Hacker Registration',
+          startHour: '17:00',
+          endHour: '18:45',
+          description: /* markdown */ `
+--A5-A6 Underground corridor
+`,
+        },
+        {
+          id: 'baggage',
+          showLink: false,
+          title: 'Baggage Registration',
+          startHour: '19:00',
+          description: /* markdown */ `
+Bring your pertenences to A5E, we will store them securely.
+`,
+        },
+        {
           id: 'opening',
           showLink: true,
           title: 'Opening Ceremony',
           startHour: '19:00',
           endHour: '21:00',
           description: /* markdown */ `
-Join us on twitch to be aware of everything that will be happening this weekend
+Join us on twitch & Vertex to be aware of everything that will be happening this weekend
+-- vertex
 `,
         },
         {
@@ -50,11 +70,21 @@ Hacking time is starting now!! 👨‍💻👩‍💻
         {
           id: 'activity-team-building',
           title: 'Team Building',
-          startHour: '21:00',
-          endHour: '21:30',
+          startHour: '22:00',
+          endHour: '23:00',
           description: /* markdown */ `
 Are you looking for a team or for teammates?
 Join us on the Team Building activity at #team-building
+`,
+        },
+        {
+          id: 'dinner',
+          title: 'Dinner',
+          startHour: '21:00',
+          endHour: '22:00',
+          description: /* markdown */ `
+
+
 `,
         },
         {
