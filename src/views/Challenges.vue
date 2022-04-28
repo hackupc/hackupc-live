@@ -3,7 +3,7 @@ import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import VideoThumbnail from '@/components/VideoThumbnail.vue'
 import { challenges } from '@/data/challenges'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { HashtagIcon } from '@heroicons/vue/solid'
 import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
 </script>
@@ -18,7 +18,7 @@ import PanelContainer from '../components/PanelContainer.vue'
       >
         <IconLabel class="channel" centered>
           <template #icon>
-            <FontAwesomeIcon :icon="['fab', 'hashtag']" />
+            <HashtagIcon />
           </template>
           {{ challenge.channel }}
         </IconLabel>
