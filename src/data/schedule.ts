@@ -51,7 +51,7 @@ export const schedule: RawSchedule = {
           startHour: '17:00',
           endHour: '18:45',
           description: /* markdown */ `
-TBD
+Register to the hackathon and get your swag! Make sure to have your ID ready
 `,
         },
         {
@@ -151,14 +151,13 @@ Join us on the Team Building activity at #team-building
             icon: 'twitch',
           },
           description: /* markdown */ `
-TBD
+Introduction to git and GitHub, learn the most basic commands for git and collaborate with GitHub
 `,
         },
         {
           id: 'talk-infojobs',
           showLink: true,
-          title:
-            '[Talk] A Deep Learning solution to improve match-making in InfoJobs',
+          title: '[Talk] Efficient Machine Learning for Scientists',
           startHour: '22:30',
           endHour: '23:00',
           physicalLocation: {
@@ -171,13 +170,12 @@ TBD
             icon: 'twitch',
           },
           description: /* markdown */ `
-TBD
-`,
+Learn how is machine learning applied nowadays in the industry of scientists`,
         },
         {
           id: 'talk-mundimoto',
           showLink: true,
-          title: '[Talk] ',
+          title: '[Talk] Interviewing a company. Hire o no hire',
           startHour: '23:00',
           endHour: '23:30',
           physicalLocation: {
@@ -190,13 +188,12 @@ TBD
             icon: 'twitch',
           },
           description: /* markdown */ `
-tbd
-`,
+Discover the key to choose your next company.`,
         },
         {
           id: 'talk-infojobs-2',
           showLink: true,
-          title: '[Talk] ',
+          title: '[Talk] Ignorance Oriented Programming',
           startHour: '23:00',
           endHour: '23:30',
           physicalLocation: {
@@ -228,16 +225,13 @@ Join us on twitch! All the information on the talk is found on the talks tab
             icon: 'twitch',
           },
           description: /* markdown */ `
-In this hands-on workshop, we will train a Deep Learning model to classify images using Python, Keras and Tensorflow. Starting with the basics, we will navigate through some of the most common and interesting challenges one has to face while getting started in ML.
-Requirements:
-- Google account
-- Although can be very helpful, Python programming skills are not required - final solutions will be presented by the lecturers
+In this hands-on workshop, we will train a Deep Learning model to classify images using Python, Keras and Tensorflow.
 `,
         },
         {
           id: 'talk-tdd',
           showLink: true,
-          title: '[Talk] ',
+          title: '[Talk] Want to code faster? Try TDD!',
           startHour: '23:30',
           endHour: '00:00',
           physicalLocation: {
@@ -250,8 +244,7 @@ Requirements:
             icon: 'twitch',
           },
           description: /* markdown */ `
-
-tbd
+Hop into this introductory session to familiarise yourself with it and clear any doubts.
 `,
         },
       ],
@@ -313,7 +306,7 @@ Time to take a shower! 🚿 💧
         },
         {
           id: 'talk-huawei',
-          title: '[Talk] ',
+          title: '[Talk] Make development easier with Huawei Mobile Service',
           startHour: '10:00',
           endHour: '10:30',
           physicalLocation: {
@@ -325,9 +318,9 @@ Time to take a shower! 🚿 💧
             url: 'https://twitch.tv/hackersupc',
             icon: 'twitch',
           },
-          description: /* markdown */ `
-
-`,
+          /* markdown */
+          description:
+            'Discover some of the main functionalities of Huawei Mobile Services that allow you to develop an app with a great user experience.',
         },
         {
           id: 'talk-hp',
@@ -344,7 +337,7 @@ Time to take a shower! 🚿 💧
             icon: 'twitch',
           },
           description: /* markdown */ `
-
+In this talk, we will explain how HP use VR & AR technology to make our life better.”
 `,
         },
         {
@@ -484,7 +477,7 @@ Come and play a HackUPC classic: Nerf guns, 2 teams, a full classroom. Will you 
           title: 'TheGame ends',
           startHour: '3:14',
           description: /* markdown */ `
-TBD
+ohh... The game just finished. But your skills leveled up!
 `,
         },
         {
@@ -492,7 +485,7 @@ TBD
           title: 'Draw your Biene ends',
           startHour: '4:00',
           description: /* markdown */ `
-TBD
+Let the public vote for the best Biene
 `,
         },
         {
@@ -509,6 +502,20 @@ Start the day with your energies at MAX level!
 `,
         },
         {
+          id: 'hacking-submissions',
+          title: 'Hack Submissions',
+          startHour: '08:00',
+          endHour: '09:15',
+          onlineLocation: {
+            text: 'Devpost',
+            icon: 'other',
+            url: 'https://hackupc-2022.devpost.com/',
+          },
+          description: /* markdown */ `
+Submit your project in our Devpost!
+`,
+        },
+        {
           id: 'hacking-ends',
           title: 'Hacking Ends',
           startHour: '09:15',
@@ -518,7 +525,7 @@ Start the day with your energies at MAX level!
             url: 'https://hackupc-2022.devpost.com/',
           },
           description: /* markdown */ `
-Remember to submit your project on devpost to be elegible for prizes 🏆, swag 🎁 or credits ECTS!
+Remember to submit a valid project on devpost to be elegible for prizes 🏆, swag 🎁 or credits ECTS!
 `,
         },
         {
@@ -536,7 +543,7 @@ Follow the instructions in order to demo your project for the sponsor and for th
         },
         {
           id: 'leo-boeck',
-          title: 'Lunch: Frankfurt',
+          title: 'Lunch',
           startHour: '13:00',
           endHour: '14:00',
           physicalLocation: {
@@ -544,8 +551,7 @@ Follow the instructions in order to demo your project for the sponsor and for th
             mapId: 'campus',
           },
           description: /* markdown */ `
-TBD
-`,
+Mmmmmmm... frankfurt...`,
         },
         {
           id: 'closing',
