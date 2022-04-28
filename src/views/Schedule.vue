@@ -5,8 +5,9 @@ import { useTimeStore } from '@/stores/time'
 import { LinkIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
 import VueMarkdownIt from 'vue3-markdown-it'
-import PanelContainer from '../components/PanelContainer.vue'
-
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import PanelContainer from '@/components/PanelContainer.vue'
+import { LocationMarkerIcon } from '@heroicons/vue/solid'
 const scheduleStore = useScheduleStore()
 const timeStore = useTimeStore()
 
@@ -28,7 +29,7 @@ const hasHackathonFinished = computed<boolean>(
           <table>
             <thead>
               <tr>
-                <th></th>
+                <th>Location</th>
                 <th>Start</th>
                 <th>End</th>
                 <th>Title</th>
@@ -44,14 +45,34 @@ const hasHackathonFinished = computed<boolean>(
                     !hasHackathonFinished && event.end.isBefore(timeStore.now),
                 }"
               >
-                <td>
+                <td class="links">
                   <a
-                    v-if="event.showLink"
-                    href="https://www.twitch.tv/hackersupc"
-                    rel="noopener noreferrer"
-                    class="link-icon"
+                    v-if="event.physicalLocation"
+                    class="link"
+                    :href="`/map/${event.physicalLocation.mapId}`"
                   >
-                    <LinkIcon />
+                    <LocationMarkerIcon class="link__icon" />
+                    {{ event.physicalLocation.text }}
+                  </a>
+
+                  <a
+                    v-if="event.onlineLocation"
+                    :href="event.onlineLocation.url"
+                    rel="noopener noreferrer"
+                    class="link"
+                  >
+                    <FontAwesomeIcon
+                      v-if="event.onlineLocation.icon === 'slack'"
+                      class="link__icon"
+                      :icon="['fab', 'slack']"
+                    />
+                    <FontAwesomeIcon
+                      v-else-if="event.onlineLocation.icon === 'twitch'"
+                      class="link__icon"
+                      :icon="['fab', 'twitch']"
+                    />
+                    <LinkIcon v-else class="link__icon" />
+                    {{ event.onlineLocation.text }}
                   </a>
                 </td>
                 <td>{{ formatDate('time', event.start) }}</td>
@@ -143,14 +164,6 @@ const hasHackathonFinished = computed<boolean>(
   }
 }
 
-.link-icon {
-  color: currentcolor !important;
-
-  svg {
-    width: 20px;
-  }
-}
-
 .happened {
   opacity: 0.5;
 }
@@ -166,6 +179,21 @@ const hasHackathonFinished = computed<boolean>(
 
   .hide-when-small {
     display: none !important;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.link {
+  &__icon {
+    height: 20px;
+    vertical-align: -4px;
   }
 }
 </style>

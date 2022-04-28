@@ -3,12 +3,23 @@ type MarkdownString = string // Accepts Markdown
 export interface RawScheduleEvent {
   id: string
   title: string
-  description: MarkdownString
+  description?: MarkdownString
+  physicalLocation?: PhysicalLocation
+  onlineLocation?: OnlineLocation
   startHour: string
   endHour?: string
   showLink?: boolean
 }
 
+export interface PhysicalLocation {
+  text: string
+  mapId: 'indoors' | 'campus' | 'judging'
+}
+export interface OnlineLocation {
+  text: string
+  url: string
+  icon: 'slack' | 'twitch' | 'other'
+}
 export interface RawScheduleDay {
   date: string
   events: RawScheduleEvent[]
@@ -22,41 +33,56 @@ export interface RawSchedule {
 }
 
 export const schedule: RawSchedule = {
-  countdownStart: '14/5/2021 21:00',
-  countdownEnd: '16/5/2021 9:00',
-  submitDeadline: '16/5/2021 9:00',
+  countdownStart: '29/4/2022 17:00',
+  countdownEnd: '1/5/2022 17:00',
+  submitDeadline: '1/5/2022 9:00',
   days: [
     {
-      date: '14/5/2021',
+      date: '29/4/2022',
       events: [
         {
           id: 'checkin',
+          physicalLocation: {
+            text: 'A5-A6 Underground corridor',
+            mapId: 'indoors',
+          },
           showLink: false,
           title: 'Hacker Registration',
           startHour: '17:00',
           endHour: '18:45',
           description: /* markdown */ `
---A5-A6 Underground corridor
+TBD
 `,
         },
         {
           id: 'baggage',
           showLink: false,
+          physicalLocation: {
+            text: 'A5E',
+            mapId: 'indoors',
+          },
           title: 'Baggage Registration',
           startHour: '19:00',
           description: /* markdown */ `
-Bring your pertenences to A5E, we will store them securely.
+Bring your pertenences and we will store them securely.
 `,
         },
         {
           id: 'opening',
-          showLink: true,
+          physicalLocation: {
+            text: 'Vertex',
+            mapId: 'campus',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
           title: 'Opening Ceremony',
           startHour: '19:00',
           endHour: '21:00',
           description: /* markdown */ `
 Join us on twitch & Vertex to be aware of everything that will be happening this weekend
--- vertex
 `,
         },
         {
@@ -68,8 +94,41 @@ Hacking time is starting now!! 👨‍💻👩‍💻
 `,
         },
         {
+          id: 'biene-draw',
+          title: 'Draw your Biene & Quackstions',
+          onlineLocation: {
+            text: 'Slack',
+            url: 'https://hackupc2022.slack.com',
+            icon: 'slack',
+          },
+          startHour: '21:00',
+          description: /* markdown */ `
+Create your own remix of Biene!
+You can also answer out quack-stions!
+`,
+        },
+
+        {
+          id: 'dinner',
+          title: 'Dinner',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'indoors',
+          },
+          startHour: '21:00',
+          endHour: '23:00',
+          description: /* markdown */ `
+Tired? Recharge your energies here!
+
+`,
+        },
+        {
           id: 'activity-team-building',
           title: 'Team Building',
+          physicalLocation: {
+            text: 'A4002',
+            mapId: 'indoors',
+          },
           startHour: '22:00',
           endHour: '23:00',
           description: /* markdown */ `
@@ -78,43 +137,121 @@ Join us on the Team Building activity at #team-building
 `,
         },
         {
-          id: 'dinner',
-          title: 'Dinner',
-          startHour: '21:00',
-          endHour: '22:00',
+          id: 'intro-git',
+          title: '[Talk] Intro to Git and Github',
+          startHour: '22:30',
+          endHour: '23:00',
+          physicalLocation: {
+            text: 'A5001',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
           description: /* markdown */ `
-
-
+TBD
 `,
         },
         {
           id: 'talk-infojobs',
           showLink: true,
-          title: 'A Deep Learning solution to improve match-making in InfoJobs',
-          startHour: '21:30',
-          endHour: '22:30',
-          description: /* markdown */ `
-Join us on twitch! All the information on the talk is found on the talks tab
-`,
-        },
-        {
-          id: 'talk-happyscribe',
-          showLink: true,
-          title: '*startup = &hackathon',
+          title:
+            '[Talk] A Deep Learning solution to improve match-making in InfoJobs',
           startHour: '22:30',
           endHour: '23:00',
+          physicalLocation: {
+            text: 'A5002',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            url: 'https://twitch.tv/hackersupc',
+            text: 'Twitch',
+            icon: 'twitch',
+          },
+          description: /* markdown */ `
+TBD
+`,
+        },
+        {
+          id: 'talk-mundimoto',
+          showLink: true,
+          title: '[Talk] ',
+          startHour: '23:00',
+          endHour: '23:30',
+          physicalLocation: {
+            text: 'A5001',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
+          description: /* markdown */ `
+tbd
+`,
+        },
+        {
+          id: 'talk-infojobs-2',
+          showLink: true,
+          title: '[Talk] ',
+          startHour: '23:00',
+          endHour: '23:30',
+          physicalLocation: {
+            text: 'A5002',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
           description: /* markdown */ `
 Join us on twitch! All the information on the talk is found on the talks tab
 `,
         },
         {
-          id: 'talk-typeform',
+          id: 'talk-RestbAI',
           showLink: true,
-          title: 'Introduction to Typeform Developer Kit',
-          startHour: '23:00',
-          endHour: '23:30',
+          title: '[Talk] Deep Learning: breaking the ice',
+          startHour: '23:30',
+          endHour: '00:00',
+          physicalLocation: {
+            text: 'A5001',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
           description: /* markdown */ `
-Join us on twitch! All the information on the talk is found on the talks tab
+In this hands-on workshop, we will train a Deep Learning model to classify images using Python, Keras and Tensorflow. Starting with the basics, we will navigate through some of the most common and interesting challenges one has to face while getting started in ML.
+Requirements:
+- Google account
+- Although can be very helpful, Python programming skills are not required - final solutions will be presented by the lecturers
+`,
+        },
+        {
+          id: 'talk-tdd',
+          showLink: true,
+          title: '[Talk] ',
+          startHour: '23:30',
+          endHour: '00:00',
+          physicalLocation: {
+            text: 'A5002',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
+          description: /* markdown */ `
+
+tbd
 `,
         },
       ],
@@ -126,6 +263,10 @@ Join us on twitch! All the information on the talk is found on the talks tab
           id: 'Midnight-Snack',
           title: 'Midnight Snack',
           startHour: '1:30',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'indoors',
+          },
           endHour: '2:00',
           description: /* markdown */ `
 Let's take a break and enjoy the power of snaks at night time 🌙
@@ -135,8 +276,13 @@ Let's take a break and enjoy the power of snaks at night time 🌙
           id: 'TheGame',
           title: 'TheGame',
           startHour: '3:14:15',
+          onlineLocation: {
+            text: 'A5001',
+            url: 'https://thegame.hackupc.com',
+            icon: 'other',
+          },
           description: /* markdown */ `
-Enjoy game is easy!
+Enjoy, game is easy!
 `,
         },
         {
@@ -144,57 +290,233 @@ Enjoy game is easy!
           title: 'Breakfast',
           startHour: '8:00',
           endHour: '9:00',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'indoors',
+          },
           description: /* markdown */ `
 Good morning! Your meal is waiting 4 u ♥
 `,
         },
         {
-          id: 'activity-slideshare',
-          showLink: true,
-          title: 'SlideShare Show',
-          startHour: '18:00',
-          endHour: '19:00',
+          id: 'showers',
+          title: 'Showers',
+          physicalLocation: {
+            text: 'Gym',
+            mapId: 'campus',
+          },
+          startHour: '9:15',
+          endHour: '11:00',
           description: /* markdown */ `
-Join us on twitch, or be part of the stream and let your imagination fly! 🎤
+Time to take a shower! 🚿 💧
 `,
         },
         {
-          id: 'activity-draw-2',
-          showLink: true,
-          title: 'Draw',
-          startHour: '20:00',
-          endHour: '20:15',
+          id: 'talk-huawei',
+          title: '[Talk] ',
+          startHour: '10:00',
+          endHour: '10:30',
+          physicalLocation: {
+            text: 'A5001',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
+          description: /* markdown */ `
+
+`,
+        },
+        {
+          id: 'talk-hp',
+          title: '[Talk] HP Virtual & Augmented Reality applications.',
+          startHour: '10:30',
+          endHour: '11:00',
+          physicalLocation: {
+            text: 'A5001',
+            mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
+          description: /* markdown */ `
+
+`,
+        },
+        {
+          id: 'lunch',
+          title: 'Lunch: Paellada',
+          startHour: '13:00',
+          endHour: '14:30',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'campus',
+          },
           description: /* markdown */ `
 Join us on twitch, we will be doing a draw with the participants of the photocall! 📷
 `,
         },
+        //         {
+        //           id: 'activity-freehand',
+        //           title: 'Find the Duck',
+        //           startHour: '16:00',
+        //           endHour: '17:00',
+        //           description: /* markdown */ `
+
+        // `,
+        //         },
         {
-          id: 'activity-freehand',
-          title: 'FreeHand activity',
+          id: 'showers',
+          title: 'Showers',
+          physicalLocation: {
+            text: 'Gym',
+            mapId: 'campus',
+          },
+          startHour: '17:00',
+          endHour: '19:00',
+          description: /* markdown */ `
+Time to take a shower! 🚿 💧
+`,
+        },
+        {
+          id: 'krunker',
+          title: 'Krunker',
+          onlineLocation: {
+            text: 'Slack',
+            url: 'hackupc2022.slack.com',
+            icon: 'slack',
+          },
+          startHour: '17:00',
+          endHour: '19:00',
+          description: /* markdown */ `
+Reload your gun... The cyber-battle begins!
+`,
+        },
+        {
+          id: 'lego',
+          title: 'Lego Tournament',
+          physicalLocation: {
+            text: 'A5002',
+            mapId: 'indoors',
+          },
+          startHour: '17:00',
+          endHour: '19:00',
+          description: /* markdown */ `
+Let your imagination fly and create amazing structures!
+`,
+        },
+        {
+          id: 'dinner-2',
+          title: 'Dinner: Pizza 🍕',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'campus',
+          },
+          startHour: '20:00',
+          endHour: '21:30',
+          description: /* markdown */ `
+The famous pizza dinner has arrived! Come and enjoy your favourite meal ;)
+`,
+        },
+        {
+          id: 'slideshare',
+          title: 'Slideshare Show',
+          physicalLocation: {
+            text: 'A5002',
+            mapId: 'indoors',
+          },
           startHour: '22:00',
           endHour: '23:00',
           description: /* markdown */ `
-Let's do some drawing! 🎨 Join us on #playground discord channel
+Want to laugh as you have never done? Come and discover it!
 `,
         },
       ],
     },
     {
-      date: '16/5/2021',
+      date: '1/5/2022',
       events: [
         {
-          id: 'submisions',
-          title: 'Hack submisions',
-          startHour: '8:00',
-          endHour: '9:15',
+          id: 'sticker',
+          title: 'StickerXchange',
+          startHour: '0:00',
+          endHour: '1:00',
+          physicalLocation: {
+            text: 'Cafeteria (A5106)',
+            mapId: 'indoors',
+          },
           description: /* markdown */ `
-Time to submit your project on devpost! ⌛
+The most intense sticker trading
+`,
+        },
+        {
+          id: 'snack-mid-2',
+          title: 'Midnight Snack',
+          startHour: '1:00',
+          endHour: '2:00',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'campus',
+          },
+          description: /* markdown */ `
+Charging batteries 🔋🔋🔋
+`,
+        },
+        {
+          id: 'nerf',
+          title: 'EPIC NERF GUNS BATTLE',
+          startHour: '1:00',
+          endHour: '3:00',
+          physicalLocation: {
+            text: 'A4101 & A4102',
+            mapId: 'indoors',
+          },
+          description: /* markdown */ `
+Come and play a HackUPC classic: Nerf guns, 2 teams, a full classroom. Will you miss it?
+`,
+        },
+        {
+          id: 'thegame-end',
+          title: 'TheGame ends',
+          startHour: '3:14',
+          description: /* markdown */ `
+TBD
+`,
+        },
+        {
+          id: 'draw-biene-end',
+          title: 'Draw your Biene ends',
+          startHour: '4:00',
+          description: /* markdown */ `
+TBD
+`,
+        },
+        {
+          id: 'breakfast',
+          title: 'Breakfast',
+          startHour: '8:00',
+          endHour: '9:00',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'campus',
+          },
+          description: /* markdown */ `
+Start the day with your energies at MAX level!
 `,
         },
         {
           id: 'hacking-ends',
           title: 'Hacking Ends',
-          startHour: '09:00',
+          startHour: '09:15',
+          onlineLocation: {
+            text: 'Devpost',
+            icon: 'other',
+            url: 'https://hackupc-2022.devpost.com/',
+          },
           description: /* markdown */ `
 Remember to submit your project on devpost to be elegible for prizes 🏆, swag 🎁 or credits ECTS!
 `,
@@ -203,28 +525,42 @@ Remember to submit your project on devpost to be elegible for prizes 🏆, swag 
           id: 'demos',
           title: 'Demo time',
           startHour: '10:15',
-          endHour: '13:30',
+          endHour: '13:15',
           description: /* markdown */ `
-Follow the instructions in order to demo your project for the sponsor and for HackUPC team
+Follow the instructions in order to demo your project for the sponsor and for the HackUPC team
 `,
+          physicalLocation: {
+            text: 'A3 & A4',
+            mapId: 'judging',
+          },
         },
         {
-          id: 'activity-draw-3',
-          title: 'Draw',
-          showLink: true,
-          startHour: '13:30',
-          endHour: '13:45',
+          id: 'leo-boeck',
+          title: 'Lunch: Frankfurt',
+          startHour: '13:00',
+          endHour: '14:00',
+          physicalLocation: {
+            text: 'Meal Zone',
+            mapId: 'campus',
+          },
           description: /* markdown */ `
-Join us on twitch, we will be doing a draw with the participants of the photocall! 📷
-Maybe you can win a pizza for lunch... 🍕
+TBD
 `,
         },
         {
           id: 'closing',
-          showLink: true,
           title: 'Closing ceremony',
           startHour: '14:30',
           endHour: '16:30',
+          physicalLocation: {
+            text: 'Vèrtex',
+            mapId: 'campus',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
+          },
           description: /* markdown */ `
 Join us on twitch for the closing ceremony to be aware of the winners! 🥇🥈🥉
 `,

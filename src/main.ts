@@ -5,6 +5,7 @@ import {
   faGithub,
   faInstagram,
   faMedium,
+  faSlack,
   faTwitch,
   faTwitter,
   faYoutube,
@@ -27,14 +28,15 @@ registerSW({
 })
 
 library.add(
-  faTwitch,
   faDiscord,
-  faTwitter,
   faFacebook,
-  faInstagram,
-  faYoutube,
   faGithub,
-  faMedium
+  faInstagram,
+  faMedium,
+  faSlack,
+  faTwitch,
+  faTwitter,
+  faYoutube
 )
 
 const app = createApp(App)
