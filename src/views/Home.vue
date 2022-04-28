@@ -23,6 +23,12 @@ const submitDeadline = computed<string>(() =>
     <Panel title="Important information">
       <p>
         <b>
+          <div style="text-align: center">
+            Wifi SSID: <code>HACKUPC2022</code> <br />
+            Password: <code>Biene2022!</code><br />
+          </div>
+          <br />
+
           The projects must be posted on
           <a
             target="_blank"
@@ -36,6 +42,17 @@ const submitDeadline = computed<string>(() =>
         credits.
       </p>
 
+      <IconLabel centered>
+        <template #icon>
+          <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
+        </template>
+        <a
+          href="https://hackupc2022.slack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >hackupc2022.slack.com</a
+        >
+      </IconLabel>
       <IconLabel centered>
         <template #icon>
           <MailIcon />

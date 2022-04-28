@@ -386,7 +386,7 @@ Time to take a shower! 🚿 💧
           title: 'Krunker',
           onlineLocation: {
             text: 'Slack',
-            url: 'hackupc2022.slack.com',
+            url: 'https://hackupc2022.slack.com',
             icon: 'slack',
           },
           startHour: '17:00',
