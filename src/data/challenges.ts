@@ -26,7 +26,7 @@ export const challenges: Challenge[] = [
     channel: '#hp',
   },
   {
-    company: 'MundiMoto',
+    company: 'Mundimoto',
     title: 'TBD',
     //videoUrl: 'https://youtu.be/UIrA73wtBAY',
     description: 'TBD',
