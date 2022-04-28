@@ -34,7 +34,7 @@ export const talks: Talk[] = [
     // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'Company choices explained',
+    title: 'Interviewing a company. Hire o no hire',
     description:
       'Choosing your next company decides where you invest your most valued resource, your time. Selecting a suitable workplace will affect your present life and shape your future as a software engineer, both in skills and future opportunities. However, we spend very little time speaking about how we should reason about this decision.\nJordi has worked as a software engineer for 15 years, both in Europe and California, in 8 different companies. He worked on projects like Instagram, Facebook crypto, Snapchat Infrastructure, and Tuenti. He’ll share his clues about how to choose your next company to decide where you want to be in 5 years.',
     where: 'A5001',
