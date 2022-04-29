@@ -25,8 +25,11 @@ export const talks: Talk[] = [
     // streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
-    title: 'Ignorance Oriented Programming',
-    description: 'by Sergi Martinez',
+    title: '(my own) Stupidity Driven Development',
+    description: `
+After many years as a developer, I’ve had the opportunity to make a lot of mistakes and I learned that the only sure thing is that I will make even more mistakes. In this talk we will discuss how to be prepared for mistakes and how to deal with them, and I will explain some of the biggest ones I’ve made these past years and the lessons learned (trust me, they are epic).
+
+By Sergi Martinez`,
     location: 'A5002',
     company: 'InfoJobs',
     //videoUrl: 'https://www.youtube.com/watch?v=h2lTZOoifM0',
