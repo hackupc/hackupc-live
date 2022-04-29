@@ -1,5 +1,7 @@
+import type { DateFormatsTypes } from './services/dates'
+
 interface Config {
-  readonly fakeStartTime?: string
+  readonly fakeStartTime?: DateFormatsTypes['full-date-time']
   readonly disabled: boolean
   readonly hideChallengesAndPrizes: boolean
 }

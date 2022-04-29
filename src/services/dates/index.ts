@@ -7,16 +7,11 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 dayjs.extend(customParseFormat)
 
-export type DateFormat =
-  | 'hour'
-  | 'minute'
-  | 'second'
-  | 'time'
-  | 'weekday'
-  | 'weekday-time'
-  | 'date'
-  | 'date-time'
-  | 'full-date-time'
+const defaultTimezone = 'Europe/Madrid'
+dayjs.tz.setDefault(defaultTimezone)
+const userTimezone = dayjs.tz.guess()
+
+export type DateFormat = keyof DateFormatsTypes
 
 export const dateFormats: Record<DateFormat, string> = {
   hour: 'H',
@@ -28,6 +23,18 @@ export const dateFormats: Record<DateFormat, string> = {
   date: 'D/M/YYYY',
   'date-time': 'D/M/YYYY H:mm',
   'full-date-time': 'D/M/YYYY H:mm:ss',
+}
+
+export type DateFormatsTypes = {
+  hour: `${number}`
+  minute: `${number}`
+  second: `${number}`
+  time: `${number}:${number}`
+  weekday: `${string}`
+  'weekday-time': `${string} at ${number}:${number}`
+  date: `${number}/${number}/${2022}`
+  'date-time': `${number}/${number}/${2022} ${number}:${number}`
+  'full-date-time': `${number}/${number}/${2022} ${number}:${number}:${number}`
 }
 
 export function formatDate(format: DateFormat, date: Dayjs): string {
@@ -58,12 +65,9 @@ export function parseSpanishDate(
   format: DateFormat,
   dateString?: string
 ): Dayjs {
-  return dayjs(dateString, dateFormats[format]).tz('Europe/Madrid')
-}
-
-export function parseTimeInDay(timeString: string, dayDate: Dayjs): Dayjs {
-  const timeDate = dayjs(timeString, dateFormats['time'])
-  return dayDate.hour(timeDate.hour()).minute(timeDate.minute())
+  return dayjs
+    .tz(dateString, dateFormats[format], defaultTimezone)
+    .tz(userTimezone)
 }
 
 export function formatDateInTimezone(
