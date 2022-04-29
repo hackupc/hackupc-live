@@ -96,10 +96,9 @@ npm run lint
 
 If you need help understanding something of this repo you can ask the previous developers. The ones that made this edition live were:
 
-- Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
-- David Dionís: Slack `@David Dionis`
+- Jaume López: Slack `@jaume` [jaumelopez.dev](https://jaumelopez.dev)
+- Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/)
 - Carlota Catot Bragós: Slack `@Carlota` [carlotacb.dev](https://carlotacb.dev/)
-- Jaume López Slack `@jaume`[jaumelopez.dev](https://jaumelopez.dev)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)
 
 ## License
