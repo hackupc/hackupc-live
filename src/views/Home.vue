@@ -46,6 +46,7 @@ const submitDeadline = computed<string>(() =>
         to the travel reimbursement, prizes, swag, nor ECTS credits.
       </p>
 
+      <p>All dates and hours are adjusted to your timezone.</p>
       <div class="buttons">
         <a
           href="https://guides.hackupc.com/guide/hacker/"
@@ -55,13 +56,10 @@ const submitDeadline = computed<string>(() =>
           <b>Guides</b>
         </a>
       </div>
-      <p>
-        <br /><b>Remember</b> that all the hours are in the Barcelona time zone
-      </p>
     </Panel>
 
     <Panel title="Contact">
-      <IconLabel centered>
+      <IconLabel centered style="margin-top: 0.27rem">
         <template #icon>
           <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
         </template>
@@ -73,7 +71,7 @@ const submitDeadline = computed<string>(() =>
           >hackupc2022.slack.com</a
         >
       </IconLabel>
-      <IconLabel centered>
+      <IconLabel centered style="margin-bottom: 1.5rem">
         <template #icon>
           <MailIcon />
         </template>

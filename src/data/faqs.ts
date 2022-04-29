@@ -1,3 +1,8 @@
+import {
+  formatDateInTimezone,
+  formatIntervalInTimezone,
+} from '@/services/dates'
+
 type MarkdownString = string // Accepts Markdown
 
 export interface Faq {
@@ -21,7 +26,10 @@ The processing of travel reimbursements takes some time. Our schedule depends on
   {
     title: 'How does judging work?',
     description: `
-We will have a judging expo **on Sunday from 10:15 am - 13:15 am**.
+We will have a judging expo **on ${formatIntervalInTimezone(
+      '31/4/2022 10:15:00',
+      '31/4/2022 13:15:00'
+    )}**.
 
 - If you are hacking in-person, we'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you need to go there so that an organizer gives you a time to present.
 
@@ -36,12 +44,21 @@ If you participate in a challenge, you'll have to present at the specific sponso
   },
   {
     title: 'When shall I arrive?',
-    description: `Registration will start at 5 PM on Friday. The opening ceremony is at 7 PM.`,
+    description: `Registration will start on ${formatDateInTimezone(
+      'weekday-time',
+      '29/4/2022 17:00:00'
+    )}. The opening ceremony is at ${formatDateInTimezone(
+      'time',
+      '29/4/2022 19:00:00'
+    )}.`,
     size: 'small',
   },
   {
     title: 'When is HackUPC ending?',
-    description: `The closing ceremony is expected to end on Sunday 13th at 5:00 PM.`,
+    description: `The closing ceremony is expected to end on ${formatDateInTimezone(
+      'weekday-time',
+      '31/4/2022 17:00:00'
+    )}.`,
     size: 'small',
   },
   {

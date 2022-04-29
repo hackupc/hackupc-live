@@ -65,3 +65,20 @@ export function parseTimeInDay(timeString: string, dayDate: Dayjs): Dayjs {
   const timeDate = dayjs(timeString, dateFormats['time'])
   return dayDate.hour(timeDate.hour()).minute(timeDate.minute())
 }
+
+export function formatDateInTimezone(
+  format: DateFormat,
+  dateString: string
+): string {
+  return formatDate(format, parseSpanishDate('full-date-time', dateString))
+}
+
+export function formatIntervalInTimezone(
+  dateStartString: string,
+  dateEndString: string
+): string {
+  return formatInterval(
+    parseSpanishDate('full-date-time', dateStartString),
+    parseSpanishDate('full-date-time', dateEndString)
+  )
+}
