@@ -19,9 +19,12 @@ defineProps<Props>()
       <template #icon>
         <LocationMarkerIcon />
       </template>
-      {{ talk.where }}
+      {{ talk.location }}
     </IconLabel>
-    <h3>Company: {{ talk.company }}</h3>
+
+    <h3 v-if="talk.company">Company: {{ talk.company }}</h3>
+    <h3 v-if="talk.speaker">Speaker: {{ talk.speaker }}</h3>
+
     <p class="talk__time">
       {{
         formatInterval(
