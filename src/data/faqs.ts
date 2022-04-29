@@ -23,9 +23,11 @@ The processing of travel reimbursements takes some time. Our schedule depends on
     description: `
 We will have a judging expo **on Sunday from 10:15 am - 13:15 am**.
 
-We'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you can check how many hacks there are before yours at [my.hackupc.com](https://my.hackupc.com).
-The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except expect your hack.
-You can check out other projects at any judging room.
+- If you are hacking in-person, we'll assign you a classroom to present your project (one for HackUPC + as many challenges as you participate), you need to go there so that an organizer gives you a time to present.
+
+- For online hackers, there will be a dedicated google meet room for you to enter and present your project, and we will release information very soon for the online sponsor judging.
+
+The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except expect your hack. You can check out other projects at any judging room.
 
 The top teams will move on to an additional round of panel judging in the Closing Ceremony.
 
