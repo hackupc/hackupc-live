@@ -55,7 +55,9 @@ const submitDeadline = computed<string>(() =>
           <b>Guides</b>
         </a>
       </div>
-      <p> <br><b>Remember</b> that all the hours are in the Barcelona time zone</p>
+      <p>
+        <br /><b>Remember</b> that all the hours are in the Barcelona time zone
+      </p>
     </Panel>
 
     <Panel title="Contact">
@@ -196,8 +198,8 @@ const submitDeadline = computed<string>(() =>
         <p>
           Don't get a T-10 ticket if you are in the airport, you won't be able
           to use it from there. Buy a single trip ticket from the airport
-          instead. If you really want to use a T-Casual, then you can take the train
-          (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
+          instead. If you really want to use a T-Casual, then you can take the
+          train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
           shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes),
           but the train only runs every 30 minutes. You will have to get down at
           <b>Sants Estació</b> (3rd stop) and take the metro as explained below.
