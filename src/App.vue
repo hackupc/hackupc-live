@@ -43,7 +43,7 @@ onMounted(() => {
       <RouterView />
     </main>
   </template>
-  <DisabledMessage v-else />
+  <DisabledMessage v-else light-theme />
 
   <cookies />
 </template>
