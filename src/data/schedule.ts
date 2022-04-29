@@ -10,7 +10,6 @@ export interface RawScheduleEvent {
   onlineLocation?: OnlineLocation
   start: DateFormatsTypes['date-time']
   end?: DateFormatsTypes['date-time']
-  showLink?: boolean
 }
 
 export interface PhysicalLocation {
@@ -41,7 +40,6 @@ export const schedule: RawSchedule = {
         text: 'A5-A6 Underground corridor',
         mapId: 'indoors',
       },
-      showLink: false,
       title: 'Hacker Registration',
       start: '29/4/2022 17:00',
       end: '29/4/2022 18:45',
@@ -51,7 +49,6 @@ Register to the hackathon and get your swag! Make sure to have your ID ready
     },
     {
       id: 'baggage',
-      showLink: false,
       physicalLocation: {
         text: 'A5E',
         mapId: 'indoors',
@@ -156,7 +153,6 @@ Introduction to git and GitHub, learn the most basic commands for git and collab
     },
     {
       id: 'talk-infojobs',
-      showLink: true,
       title:
         '[Talk] Productionizing Machine Learning models to increase your Data Scientists performance.',
       start: '29/4/2022 22:30',
@@ -176,7 +172,6 @@ This talk explains how, in infojobs, we have modified this process to free data 
     },
     {
       id: 'talk-mundimoto',
-      showLink: true,
       title: '[Talk] Interviewing a company. Hire o no hire',
       start: '29/4/2022 23:00',
       end: '29/4/2022 23:30',
@@ -195,7 +190,6 @@ Discover the key to choose your next company.
     },
     {
       id: 'talk-infojobs-2',
-      showLink: true,
       title: '[Talk] Ignorance Oriented Programming',
       start: '29/4/2022 23:00',
       end: '29/4/2022 23:30',
@@ -214,7 +208,6 @@ Join us on twitch! All the information on the talk is found on the talks tab
     },
     {
       id: 'talk-RestbAI',
-      showLink: true,
       title: '[Talk] Deep Learning: breaking the ice',
       start: '29/4/2022 23:30',
       end: '30/4/2022 00:00',
@@ -233,7 +226,6 @@ In this hands-on workshop, we will train a Deep Learning model to classify image
     },
     {
       id: 'talk-tdd',
-      showLink: true,
       title: '[Talk] Want to code faster? Try TDD!',
       start: '29/4/2022 23:30',
       end: '30/4/2022 00:00',
