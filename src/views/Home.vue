@@ -97,11 +97,11 @@ const submitDeadline = computed<string>(() =>
       <div class="buttons">
         <a
           target="_blank"
-          href="https://hackupc2022.slack.com"
+          href="https://www.youtube.com/c/HackersUPC"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon :icon="['fab', 'slack']" />
-          <br />Slack
+          <FontAwesomeIcon :icon="['fab', 'youtube']" />
+          <br />YouTube
         </a>
         <a
           target="_blank"
