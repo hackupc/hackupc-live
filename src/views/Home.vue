@@ -312,8 +312,7 @@ const submitDeadline = computed<string>(() =>
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 0%);
-    transition: transform 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28),
-      box-shadow 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: transform 500ms $ease-bounce, box-shadow 500ms $ease-bounce;
 
     &:hover,
     &:focus {
