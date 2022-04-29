@@ -36,7 +36,7 @@ If you participate in a challenge, you'll have to present at the specific sponso
   },
   {
     title: 'When shall I arrive?',
-    description: `Registration will start at 4 PM on Friday. The opening ceremony is at 7 PM.`,
+    description: `Registration will start at 5 PM on Friday. The opening ceremony is at 7 PM.`,
     size: 'small',
   },
   {

@@ -18,7 +18,7 @@ export interface PhysicalLocation {
 export interface OnlineLocation {
   text: string
   url: string
-  icon: 'slack' | 'twitch' | 'other'
+  icon: 'slack' | 'twitch' | 'other' | 'youtube'
 }
 export interface RawScheduleDay {
   date: string
@@ -62,9 +62,9 @@ Register to the hackathon and get your swag! Make sure to have your ID ready
             mapId: 'indoors',
           },
           title: 'Baggage Registration',
-          startHour: '19:00',
+          startHour: '17:00',
           description: /* markdown */ `
-Bring your pertenences and we will store them securely.
+Bring your luggage or the stuff you don't need to be with you and we will store them securely.
 `,
         },
         {
@@ -74,15 +74,15 @@ Bring your pertenences and we will store them securely.
             mapId: 'campus',
           },
           onlineLocation: {
-            text: 'Twitch',
-            url: 'https://twitch.tv/hackersupc',
-            icon: 'twitch',
+            text: 'Youtube',
+            url: 'https://www.youtube.com/c/HackersUPC',
+            icon: 'other',
           },
           title: 'Opening Ceremony',
           startHour: '19:00',
           endHour: '21:00',
           description: /* markdown */ `
-Join us on twitch & Vertex to be aware of everything that will be happening this weekend
+Join us on youtube & Vertex to be aware of everything that will be happening this weekend
 `,
         },
         {
@@ -171,9 +171,9 @@ Introduction to git and GitHub, learn the most basic commands for git and collab
             mapId: 'indoors',
           },
           onlineLocation: {
-            url: 'https://twitch.tv/hackersupc',
-            text: 'Twitch',
-            icon: 'twitch',
+            text: 'Youtube',
+            url: 'https://www.youtube.com/c/HackersUPC',
+            icon: 'other',
           },
           description: /* markdown */ `
 This talk explains how, in infojobs, we have modified this process to free data scientists of this duty. Freed data scientists can go back to develop the following model.`,
@@ -207,9 +207,9 @@ Discover the key to choose your next company.`,
             mapId: 'indoors',
           },
           onlineLocation: {
-            text: 'Twitch',
-            url: 'https://twitch.tv/hackersupc',
-            icon: 'twitch',
+            text: 'Youtube',
+            url: 'https://www.youtube.com/c/HackersUPC',
+            icon: 'other',
           },
           description: /* markdown */ `
 Join us on twitch! All the information on the talk is found on the talks tab
@@ -245,9 +245,9 @@ In this hands-on workshop, we will train a Deep Learning model to classify image
             mapId: 'indoors',
           },
           onlineLocation: {
-            text: 'Twitch',
-            url: 'https://twitch.tv/hackersupc',
-            icon: 'twitch',
+            text: 'Youtube',
+            url: 'https://www.youtube.com/c/HackersUPC',
+            icon: 'other',
           },
           description: /* markdown */ `
 Hop into this introductory session to familiarise yourself with it and clear any doubts.
@@ -389,8 +389,8 @@ Time to take a shower! 🚿 💧
             url: 'https://hackupc2022.slack.com',
             icon: 'slack',
           },
-          startHour: '17:00',
-          endHour: '19:00',
+          startHour: '18:00',
+          endHour: '17:00',
           description: /* markdown */ `
 Reload your gun... The cyber-battle begins!
 `,
@@ -402,8 +402,8 @@ Reload your gun... The cyber-battle begins!
             text: 'A5002',
             mapId: 'indoors',
           },
-          startHour: '17:00',
-          endHour: '19:00',
+          startHour: '19:00',
+          endHour: '20:00',
           description: /* markdown */ `
 Let your imagination fly and create amazing structures!
 `,
@@ -427,6 +427,11 @@ The famous pizza dinner has arrived! Come and enjoy your favourite meal ;)
           physicalLocation: {
             text: 'A5002',
             mapId: 'indoors',
+          },
+          onlineLocation: {
+            text: 'Twitch',
+            url: 'https://twitch.tv/hackersupc',
+            icon: 'twitch',
           },
           startHour: '22:00',
           endHour: '23:00',

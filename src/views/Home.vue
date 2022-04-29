@@ -38,12 +38,12 @@ const submitDeadline = computed<string>(() =>
         The projects must be posted on
         <a
           target="_blank"
-          href="https://hackupc2022.devpost.com/"
+          href="https://hackupc-2022.devpost.com"
           rel="noopener noreferrer"
           >Devpost</a
         >
         before {{ submitDeadline }}. If you don't do it, you won't have access
-        to the prizes, swag, nor ECTS credits.
+        to the travel reimbursement, prizes, swag, nor ECTS credits.
       </p>
 
       <div class="buttons">
@@ -55,6 +55,7 @@ const submitDeadline = computed<string>(() =>
           <b>Guides</b>
         </a>
       </div>
+      <p> <br><b>Remember</b> that all the hours are in the Barcelona time zone</p>
     </Panel>
 
     <Panel title="Contact">
@@ -114,7 +115,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://hackupc2022.devpost.com/"
+          href="https://hackupc-2022.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
@@ -125,7 +126,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.facebook.com/hackersupc"
+          href="https://www.facebook.com/HackUPC"
           aria-label="facebook"
         >
           <FontAwesomeIcon :icon="['fab', 'facebook']" />
@@ -133,7 +134,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://twitter.com/hackersupc"
+          href="https://twitter.com/HackUPC"
           aria-label="twitter"
         >
           <FontAwesomeIcon :icon="['fab', 'twitter']" />
@@ -141,7 +142,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://instagram.com/hackersupc"
+          href="https://instagram.com/HackUPC"
           aria-label="instagram"
         >
           <FontAwesomeIcon :icon="['fab', 'instagram']" />
@@ -195,7 +196,7 @@ const submitDeadline = computed<string>(() =>
         <p>
           Don't get a T-10 ticket if you are in the airport, you won't be able
           to use it from there. Buy a single trip ticket from the airport
-          instead. If you really want to use a T-10, then you can take the train
+          instead. If you really want to use a T-Casual, then you can take the train
           (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
           shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes),
           but the train only runs every 30 minutes. You will have to get down at

@@ -76,6 +76,11 @@ const hasHackathonFinished = computed<boolean>(
                       class="link__icon"
                       :icon="['fab', 'twitch']"
                     />
+                    <FontAwesomeIcon
+                      v-else-if="event.onlineLocation.icon === 'youtube'"
+                      class="link__icon"
+                      :icon="['fab', 'youtube']"
+                    />
                     <LinkIcon v-else class="link__icon" />
                     <span class="link__text">
                       {{ event.onlineLocation.text }}
