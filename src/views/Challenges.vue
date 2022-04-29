@@ -8,6 +8,7 @@ import { HashtagIcon } from '@heroicons/vue/solid'
 import { ref } from 'vue'
 import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
+import SecretContent from '../components/SecretContent.vue'
 
 const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 </script>
@@ -23,10 +24,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
             </template>
             {{ challenge.channel }}
           </IconLabel>
-          <div class="secret">
-            <div class="secret__title">Secret</div>
-            <div class="secret__text">Come back after the opening cerimony</div>
-          </div>
+          <SecretContent />
         </Panel>
 
         <Panel v-else :title="challenge.company">
