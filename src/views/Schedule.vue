@@ -129,7 +129,7 @@ const hasHackathonFinished = computed<boolean>(
     padding: 10px;
     margin: 0;
     background-color: $primary-color;
-    border-radius: 3px 3px 0 0;
+    border-radius: $border-radius $border-radius 0 0;
     color: #fff;
     text-align: center;
 
@@ -144,7 +144,7 @@ const hasHackathonFinished = computed<boolean>(
     width: 100%;
     background-color: $contrast-color;
     border-collapse: collapse;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 $border-radius $border-radius;
     color: $text-color;
   }
 
@@ -153,26 +153,45 @@ const hasHackathonFinished = computed<boolean>(
     color: $contrast-color;
   }
 
-  td,
   th {
     padding: 10px;
     text-align: left;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
   }
 
   td {
+    padding: 10px;
     border: thin solid #ececec;
+    text-align: left;
 
     &:last-child {
       min-width: 200px;
+      border-right: 0;
     }
 
     &:first-child {
+      border-left: 0;
       text-align: center;
     }
   }
 
   a {
     color: $secondary-color;
+  }
+
+  tr:first-child th {
+    border-top: 0;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
   }
 }
 

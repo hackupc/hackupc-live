@@ -25,7 +25,7 @@ defineProps<Props>()
   flex: 1 1 350px;
   margin: 16px;
   background-color: $contrast-color;
-  border-radius: 3px;
+  border-radius: $border-radius;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   color: $text-color;
   text-align: left;
@@ -35,9 +35,10 @@ defineProps<Props>()
   }
 
   &__title {
-    padding: 4px 24px;
+    padding: 12px 24px;
     margin: 0;
     background-color: $primary-color;
+    border-radius: $border-radius $border-radius 0 0;
     color: #fff;
     font-size: 20px;
     line-height: 1.6;
