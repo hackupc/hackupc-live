@@ -55,7 +55,7 @@ body {
   padding: 0;
   margin: 0;
   background-attachment: fixed;
-  background-color: #141c15;
+  background-color: $bg-color;
   background-image: url('@/assets/img/bg.svg');
   background-position: center center;
   background-repeat: repeat;

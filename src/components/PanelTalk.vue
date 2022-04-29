@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import type { Talk } from '@/data/talks'
 import { formatInterval, parseSpanishDate } from '@/services/dates'
 import VueMarkdownIt from 'vue3-markdown-it'
 import VideoThumbnail from './VideoThumbnail.vue'
+import { LocationMarkerIcon } from '@heroicons/vue/solid'
 
 interface Props {
   talk: Talk
@@ -13,7 +15,16 @@ defineProps<Props>()
 
 <template>
   <Panel :title="talk.title">
-    <h3>Company: {{ talk.speaker }}</h3>
+    <IconLabel class="channel" centered>
+      <template #icon>
+        <LocationMarkerIcon />
+      </template>
+      {{ talk.location }}
+    </IconLabel>
+
+    <h3 v-if="talk.company">Company: {{ talk.company }}</h3>
+    <h3 v-if="talk.speaker">Speaker: {{ talk.speaker }}</h3>
+
     <p class="talk__time">
       {{
         formatInterval(
@@ -24,6 +35,7 @@ defineProps<Props>()
     </p>
     <VueMarkdownIt :source="talk.description" />
     <VideoThumbnail v-if="talk.videoUrl" :video-url="talk.videoUrl" />
+    <VideoThumbnail v-if="talk.streamLink" :video-url="talk.streamLink" />
   </Panel>
 </template>
 

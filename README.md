@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/71c013e3-dd84-4bc9-b55e-548fd0b8666d/deploy-status)](https://app.netlify.com/sites/hackupc-live/deploys)
 [![Build Status](https://travis-ci.com/hackupc/hackupc-live.svg?branch=main)](https://travis-ci.com/hackupc/hackupc-live)
 
-![HackUPC live preview](https://hackupc.com/ogimage.png)
+![HackUPC live preview](src/assets/img/preview.png)
 
 Hi! This is the code of the HackUPC live page.
 
@@ -96,8 +96,8 @@ npm run lint
 
 If you need help understanding something of this repo you can ask the previous developers. The ones that made this edition live were:
 
-- Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
-- David Dionís: Slack `@David Dionis`
+- Jaume López: Slack `@jaume` [jaumelopez.dev](https://jaumelopez.dev)
+- Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/)
 - Carlota Catot Bragós: Slack `@Carlota` [carlotacb.dev](https://carlotacb.dev/)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)
 

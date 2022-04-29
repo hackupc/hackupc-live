@@ -1,12 +1,12 @@
 export type DiscordType = 'chat' | 'voice'
 export interface DiscordLabelData {
-  name: string
-  description: string
-  icon: DiscordType
+  readonly name: string
+  readonly description: string
+  readonly icon: DiscordType
 }
 interface DiscordChannelInfo {
-  title: string
-  channels: DiscordLabelData[]
+  readonly title: string
+  readonly channels: DiscordLabelData[]
 }
 
 export const discordChannels: DiscordChannelInfo[] = [
@@ -16,7 +16,7 @@ export const discordChannels: DiscordChannelInfo[] = [
       {
         name: '👋 welcome',
         description:
-          'Welcome to HackUPC 2021! Here you have the important basic information about the server.',
+          'Welcome to HackUPC 2022! Here you have the important basic information about the server.',
         icon: 'chat',
       },
       {

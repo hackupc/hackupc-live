@@ -82,8 +82,11 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/schedule') }">
           <RouterLink to="/schedule">Schedule</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/activities') }">
-          <RouterLink to="/activities">Activities</RouterLink>
+        <li :class="{ selected: isActive('/map') }">
+          <RouterLink to="/map">Map</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/mission') }">
+          <RouterLink to="/mission">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
           <RouterLink to="/challenges">Challenges</RouterLink>
@@ -91,18 +94,21 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/talks') }">
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules">Rules</RouterLink>
-        </li>
         <li>
           <a
-            href="https://hackupc.com/#faq"
+            href="https://guides.hackupc.com/guide/hacker/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            FAQ
+            Guides
             <ExternalLinkIcon class="external-link-icon" />
           </a>
+        </li>
+        <li :class="{ selected: isActive('/rules') }">
+          <RouterLink to="/rules">Rules</RouterLink>
+        </li>
+        <li :class="{ selected: isActive('/faq') }">
+          <RouterLink to="/faq">FAQ</RouterLink>
         </li>
       </ul>
     </nav>
@@ -110,40 +116,70 @@ const isActive = (page: string): boolean => {
   <!--header for >720px-->
   <header v-if="!isFullscreen" class="header-nav-bar hide-when-small">
     <nav>
-      <ul>
-        <li :class="{ selected: isActive('/') }">
+      <ul class="header-nav-bar__list">
+        <li class="header-nav-bar__item" :class="{ selected: isActive('/') }">
           <RouterLink to="/">Home</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/live') }">
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/live') }"
+        >
           <RouterLink to="/live">Live</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/schedule') }">
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/schedule') }"
+        >
           <RouterLink to="/schedule">Schedule</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/activities') }">
-          <RouterLink to="/activities">Activities</RouterLink>
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/map') }"
+        >
+          <RouterLink to="/map">Map</RouterLink>
         </li>
-        <li class="countdown-li">
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/mission') }"
+        >
+          <RouterLink to="/mission">Mission</RouterLink>
+        </li>
+        <li class="header-nav-bar__item header-nav-bar__item--countdown">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
         </li>
-        <li :class="{ selected: isActive('/challenges') }">
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/challenges') }"
+        >
           <RouterLink to="/challenges">Challenges</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/talks') }">
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/talks') }"
+        >
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules">Rules</RouterLink>
-        </li>
-        <li>
+        <li class="header-nav-bar__item">
           <a
-            href="https://hackupc.com/#faq"
+            href="https://guides.hackupc.com/guide/hacker/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            FAQ
+            Guides
             <ExternalLinkIcon class="external-link-icon" />
           </a>
+        </li>
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/rules') }"
+        >
+          <RouterLink to="/rules">Rules</RouterLink>
+        </li>
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/faq') }"
+        >
+          <RouterLink to="/faq">FAQ</RouterLink>
         </li>
       </ul>
     </nav>
@@ -282,7 +318,7 @@ $fade-time: 300ms;
   z-index: 50;
   width: 100%;
 
-  ul {
+  &__list {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -292,7 +328,7 @@ $fade-time: 300ms;
     list-style: none;
   }
 
-  li {
+  &__item {
     flex: 1 1 0;
     border-left: thin solid rgb(30 30 30 / 20%);
     background: #fff;
@@ -300,6 +336,12 @@ $fade-time: 300ms;
 
     :first-child {
       border-left: 0;
+    }
+
+    &--countdown {
+      position: relative;
+      flex: 0 0 215px;
+      padding: 0;
     }
   }
 
@@ -314,12 +356,6 @@ $fade-time: 300ms;
     box-shadow: 0 3px 0 $primary-color;
     cursor: default;
   }
-}
-
-.countdown-li {
-  position: relative;
-  flex: 0 0 215px;
-  padding: 0;
 }
 
 @media (min-width: 720px) {

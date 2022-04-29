@@ -8,35 +8,35 @@ import { ArrowNarrowRightIcon, VolumeOffIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
 
 interface TimelineHourEvent {
-  type: 'event'
-  startTmsp: number
-  endTmsp: number
-  title: string
+  readonly type: 'event'
+  readonly startTmsp: number
+  readonly endTmsp: number
+  readonly title: string
 
-  id: ScheduleEvent['id']
-  startHour: string
-  endHour: string
-  isSubscribed: boolean
+  readonly id: ScheduleEvent['id']
+  readonly startHour: string
+  readonly endHour: string
+  readonly isSubscribed: boolean
 }
 
 interface TimelineEventTitle {
-  type: 'title'
-  startTmsp: number
-  endTmsp: number
-  title: string
+  readonly type: 'title'
+  readonly startTmsp: number
+  readonly endTmsp: number
+  readonly title: string
 }
 
 interface TimelineEventItem {
-  type: 'item'
-  startTmsp: number
-  endTmsp: number
+  readonly type: 'item'
+  readonly startTmsp: number
+  readonly endTmsp: number
 
-  isHappening: boolean
-  hourEvents: TimelineHourEvent[]
+  readonly isHappening: boolean
+  readonly hourEvents: TimelineHourEvent[]
 }
 
 interface Props {
-  fullscreen?: boolean
+  readonly fullscreen?: boolean
 }
 defineProps<Props>()
 
@@ -265,10 +265,6 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     color: $secondary-text-color;
     font-size: 28px;
 
-    :last-child {
-      margin-bottom: 400px;
-    }
-
     > div {
       display: flex;
     }
@@ -299,6 +295,10 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       margin-right: 60%;
       font-size: 1.5em;
     }
+  }
+
+  li:last-child {
+    margin-bottom: 400px;
   }
 }
 

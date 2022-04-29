@@ -2,37 +2,54 @@
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import VideoThumbnail from '@/components/VideoThumbnail.vue'
+import config from '@/config'
 import { challenges } from '@/data/challenges'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { HashtagIcon } from '@heroicons/vue/solid'
+import { ref } from 'vue'
 import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
+import SecretContent from '../components/SecretContent.vue'
+
+const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 </script>
 
 <template>
   <div id="challenges">
     <PanelContainer>
-      <Panel
-        v-for="challenge in challenges"
-        :key="challenge.title"
-        :title="challenge.company"
-      >
-        <IconLabel class="channel" centered>
-          <template #icon>
-            <FontAwesomeIcon :icon="['fab', 'discord']" />
-          </template>
-          {{ challenge.channel }}
-        </IconLabel>
-        <h3>{{ challenge.title }}</h3>
-        <VueMarkdownIt :source="challenge.description" />
-        <p>
-          <strong>Prize:</strong>
-          {{ challenge.prize }}
-        </p>
-        <VideoThumbnail
-          v-if="challenge.videoUrl"
-          :video-url="challenge.videoUrl"
-        />
-      </Panel>
+      <template v-for="challenge in challenges" :key="challenge.title">
+        <Panel v-if="hideChallengesAndPrizes" :title="challenge.company">
+          <IconLabel class="channel" centered>
+            <template #icon>
+              <HashtagIcon />
+            </template>
+            {{ challenge.channel }}
+          </IconLabel>
+          <SecretContent />
+        </Panel>
+
+        <Panel v-else :title="challenge.company">
+          <IconLabel class="channel" centered>
+            <template #icon>
+              <HashtagIcon />
+            </template>
+            {{ challenge.channel }}
+          </IconLabel>
+
+          <h3>{{ challenge.title }}</h3>
+
+          <VueMarkdownIt :source="challenge.description" />
+
+          <p>
+            <strong>Prize:</strong>
+            {{ challenge.prize }}
+          </p>
+
+          <VideoThumbnail
+            v-if="challenge.videoUrl"
+            :video-url="challenge.videoUrl"
+          />
+        </Panel>
+      </template>
     </PanelContainer>
   </div>
 </template>

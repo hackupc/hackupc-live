@@ -1,6 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import type { Duration } from 'dayjs/plugin/duration'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
@@ -8,16 +7,11 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 dayjs.extend(customParseFormat)
 
-export type DateFormat =
-  | 'hour'
-  | 'minute'
-  | 'second'
-  | 'time'
-  | 'weekday'
-  | 'weekday-time'
-  | 'date'
-  | 'date-time'
-  | 'full-date-time'
+const defaultTimezone = 'Europe/Madrid'
+dayjs.tz.setDefault(defaultTimezone)
+const userTimezone = dayjs.tz.guess()
+
+export type DateFormat = keyof DateFormatsTypes
 
 export const dateFormats: Record<DateFormat, string> = {
   hour: 'H',
@@ -29,14 +23,22 @@ export const dateFormats: Record<DateFormat, string> = {
   date: 'D/M/YYYY',
   'date-time': 'D/M/YYYY H:mm',
   'full-date-time': 'D/M/YYYY H:mm:ss',
-} as const
+}
+
+export type DateFormatsTypes = {
+  hour: `${number}`
+  minute: `${number}`
+  second: `${number}`
+  time: `${number}:${number}`
+  weekday: `${string}`
+  'weekday-time': `${string} at ${number}:${number}`
+  date: `${number}/${number}/${2022}`
+  'date-time': `${number}/${number}/${2022} ${number}:${number}`
+  'full-date-time': `${number}/${number}/${2022} ${number}:${number}:${number}`
+}
 
 export function formatDate(format: DateFormat, date: Dayjs): string {
   return date.local().format(dateFormats[format])
-}
-
-export function formatDuration(format: DateFormat, date: Duration): string {
-  return date.format(dateFormats[format])
 }
 
 export function formatInterval(dateStart: Dayjs, dateEnd: Dayjs): string {
@@ -63,10 +65,24 @@ export function parseSpanishDate(
   format: DateFormat,
   dateString?: string
 ): Dayjs {
-  return dayjs(dateString, dateFormats[format]).tz('Europe/Madrid')
+  return dayjs
+    .tz(dateString, dateFormats[format], defaultTimezone)
+    .tz(userTimezone)
 }
 
-export function parseTimeInDay(timeString: string, dayDate: Dayjs): Dayjs {
-  const timeDate = dayjs(timeString, dateFormats['time'])
-  return dayDate.hour(timeDate.hour()).minute(timeDate.minute())
+export function formatDateInTimezone(
+  format: DateFormat,
+  dateString: string
+): string {
+  return formatDate(format, parseSpanishDate('full-date-time', dateString))
+}
+
+export function formatIntervalInTimezone(
+  dateStartString: string,
+  dateEndString: string
+): string {
+  return formatInterval(
+    parseSpanishDate('full-date-time', dateStartString),
+    parseSpanishDate('full-date-time', dateEndString)
+  )
 }

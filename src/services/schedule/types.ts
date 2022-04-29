@@ -1,31 +1,27 @@
-import type {
-  RawSchedule,
-  RawScheduleDay,
-  RawScheduleEvent,
-} from '@/data/schedule'
+import type { RawSchedule, RawScheduleEvent } from '@/data/schedule'
 import type { Dayjs } from 'dayjs'
 
-export type ScheduleEvent = Omit<RawScheduleEvent, 'startHour' | 'endHour'> & {
-  start: Dayjs
-  end: Dayjs
+export type ScheduleEvent = Omit<RawScheduleEvent, 'start' | 'end'> & {
+  readonly start: Dayjs
+  readonly end: Dayjs
 }
 
-export type ScheduleDay = Omit<RawScheduleDay, 'date' | 'events'> & {
-  start: Dayjs
-  end: Dayjs
-  events: ScheduleEvent[]
+export type ScheduleDay = {
+  readonly start: Dayjs
+  readonly end: Dayjs
+  readonly events: ScheduleEvent[]
 }
 
 export type Schedule = Omit<
   RawSchedule,
   'days' | 'countdownStart' | 'countdownEnd' | 'submitDeadline'
 > & {
-  days: ScheduleDay[]
-  countdown: ScheduleCountdown
-  submitDeadline: Dayjs
+  readonly days: ScheduleDay[]
+  readonly countdown: ScheduleCountdown
+  readonly submitDeadline: Dayjs
 }
 
 export type ScheduleCountdown = {
-  start: Dayjs
-  end: Dayjs
+  readonly start: Dayjs
+  readonly end: Dayjs
 }

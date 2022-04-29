@@ -1,11 +1,15 @@
+import type { DateFormatsTypes } from './services/dates'
+
 interface Config {
-  readonly fakeStartTime?: string
+  readonly fakeStartTime?: DateFormatsTypes['full-date-time']
   readonly disabled: boolean
+  readonly hideChallengesAndPrizes: boolean
 }
 
 const config: Config = {
-  // fakeStartTime: '14/5/2021 21:59:55',
-  disabled: true,
+  // fakeStartTime: '29/4/2022 21:59:55',
+  disabled: false,
+  hideChallengesAndPrizes: true,
 }
 
 export default config
