@@ -99,6 +99,7 @@ If you need help understanding something of this repo you can ask the previous d
 - Maurici Abad Gutierrez: Slack `@mauri` [mauriciabad.com](https://mauriciabad.com/) `done the most part`
 - David Dionís: Slack `@David Dionis`
 - Carlota Catot Bragós: Slack `@Carlota` [carlotacb.dev](https://carlotacb.dev/)
+- Jaume López Slack `@jaume`[jaumelopez.dev](https://jaumelopez.dev)
 - Bernat Torres: Slack `@bernatixer` [bernattorres.com](https://bernattorres.com/)
 
 ## License
