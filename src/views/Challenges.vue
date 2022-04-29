@@ -66,36 +66,4 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 strong {
   color: $highlight-color;
 }
-
-.secret {
-  --title-blur: 3px;
-  --text-blur: 1.5px;
-
-  padding: 0 0 1rem;
-  color: $text-soft-color;
-  cursor: help;
-  font-style: italic;
-  line-height: 1;
-  text-align: center;
-
-  &:hover {
-    --title-blur: 0;
-    --text-blur: 0;
-  }
-
-  &__title {
-    margin: 0 0 1rem;
-    filter: blur(var(--title-blur, 3px));
-    font-size: 3rem;
-    font-weight: bold;
-    transition: filter ease-out 500ms;
-  }
-
-  &__text {
-    margin: 0;
-    filter: blur(var(--text-blur, 1.5px));
-    font-size: 1.5rem;
-    transition: filter ease-out 500ms;
-  }
-}
 </style>
