@@ -32,7 +32,7 @@ const submitDeadline = computed<string>(() =>
       >. Submit your projects to
       <a
         target="_blank"
-        href="https://hackupc2022.devpost.com/"
+        href="https://hackupc-2022.devpost.com/"
         rel="noopener noreferrer"
         >Devpost</a
       >.
