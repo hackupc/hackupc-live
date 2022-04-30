@@ -334,8 +334,8 @@ In this talk, we will explain how HP use VR & AR technology to make our life bet
     {
       id: 'lunch',
       title: 'Lunch: Paellada',
-      start: '30/4/2022 13:00',
-      end: '30/4/2022 14:30',
+      start: '30/4/2022 14:00',
+      end: '30/4/2022 15:00',
       physicalLocation: {
         text: 'Meal Zone',
         mapId: 'campus',
