@@ -374,8 +374,8 @@ Time to take a shower! 🚿 💧
         url: 'https://hackupc2022.slack.com',
         icon: 'slack',
       },
-      start: '30/4/2022 17:00',
-      end: '30/4/2022 18:00',
+      start: '30/4/2022 18:00',
+      end: '30/4/2022 19:00',
       description: /* markdown */ `
 Reload your gun... The cyber-battle begins!
 `,
