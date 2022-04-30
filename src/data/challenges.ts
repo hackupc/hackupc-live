@@ -96,7 +96,7 @@ Build your project using one (or more) of our available AI Computer Vision APIs.
 To get a free API key come visit us at our booth; we promise we are really friendly and would love to chat with you about anything that comes to your mind! For more details, please check our [Github](https://github.com/restbai/hackupc-2022).
 `,
     prize: '1 Xiaomi Redmi Watch 2 Lite GL for each team member.',
-    channel: '#restb',
+    channel: '#restbai',
   },
   {
     company: 'Huawei',
