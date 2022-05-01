@@ -1,51 +1,51 @@
 <script setup lang="ts">
-import Countdown from '@/components/Countdown.vue'
-import { ExternalLinkIcon } from '@heroicons/vue/solid'
-import { ref } from 'vue'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
+import Countdown from "@/components/Countdown.vue";
+import { ExternalLinkIcon } from "@heroicons/vue/solid";
+import { ref } from "vue";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 
 interface Props {
-  isFullscreen: boolean
+  isFullscreen: boolean;
 }
-defineProps<Props>()
+defineProps<Props>();
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
-const asideMenuClosed = ref(true)
-const asideMenuHidden = ref(true)
+const asideMenuClosed = ref(true);
+const asideMenuHidden = ref(true);
 
 const goToFullscreen = () => {
-  router.push('fullscreen')
-}
+  router.push("fullscreen");
+};
 
 const openAsideMenu = (): void => {
-  document.body.scrollTop = 0
-  document.body.style.overflow = 'hidden'
-  asideMenuHidden.value = false
-  document.body.classList.add('veil')
+  document.body.scrollTop = 0;
+  document.body.style.overflow = "hidden";
+  asideMenuHidden.value = false;
+  document.body.classList.add("veil");
   setTimeout(() => {
-    asideMenuClosed.value = false
-    document.body.classList.add('veiled')
-  }, 1)
-}
+    asideMenuClosed.value = false;
+    document.body.classList.add("veiled");
+  }, 1);
+};
 
 const closeAsideMenu = (): void => {
-  document.body.classList.remove('veiled')
+  document.body.classList.remove("veiled");
   setTimeout(() => {
-    document.body.classList.remove('veil')
-  }, 1)
-  asideMenuClosed.value = true
+    document.body.classList.remove("veil");
+  }, 1);
+  asideMenuClosed.value = true;
   setTimeout(() => {
-    asideMenuHidden.value = true
-  }, 300)
-  document.body.style.overflow = 'auto'
-}
+    asideMenuHidden.value = true;
+  }, 300);
+  document.body.style.overflow = "auto";
+};
 
 const isActive = (page: string): boolean => {
-  if (page === '/') return route.path === '/'
-  return route.path.startsWith(page)
-}
+  if (page === "/") return route.path === "/";
+  return route.path.startsWith(page);
+};
 </script>
 
 <template>
@@ -85,8 +85,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/map') }">
           <RouterLink to="/map">Map</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/mission') }">
-          <RouterLink to="/mission">Mission</RouterLink>
+        <li :class="{ selected: isActive('/the-mission') }">
+          <RouterLink to="/the-mission">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
           <RouterLink to="/challenges">Challenges</RouterLink>
@@ -142,7 +142,7 @@ const isActive = (page: string): boolean => {
           class="header-nav-bar__item"
           :class="{ selected: isActive('/mission') }"
         >
-          <RouterLink to="/mission">Mission</RouterLink>
+          <RouterLink to="/the-mission">Mission</RouterLink>
         </li>
         <li class="header-nav-bar__item header-nav-bar__item--countdown">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
