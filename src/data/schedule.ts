@@ -30,8 +30,8 @@ export interface RawSchedule {
 }
 
 export const schedule: RawSchedule = {
-  countdownStart: '29/4/2022 17:00',
-  countdownEnd: '1/5/2022 17:00',
+  countdownStart: '29/4/2022 21:00',
+  countdownEnd: '1/5/2022 9:00',
   submitDeadline: '1/5/2022 9:00',
   events: [
     {
