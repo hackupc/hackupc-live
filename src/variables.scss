@@ -1,13 +1,15 @@
+@use "sass:color";
 /* --- COLORS --- */
-$bg-color: #1d162f;
-$text-color: #494949;
-$contrast-color: #fff;
+$bg-color: #f2ede6;
+$text-color: #2b2b2b;
+$contrast-color: #E8E2D7;
 $text-soft-color: #686868;
-$primary-color: #4c3d84;
-$secondary-color: #ec6162;
-$secondary-light-color: #f8d6c6;
-$secondary-text-color: #fff;
-$tertiary-light-color: #f2e7bf;
+$primary-color: #BEB771;
+$secondary-color: #E18282;
+$secondary-light-color-intensity: 100;
+$secondary-light-color: color.adjust($secondary-color, $red: $secondary-light-color-intensity, $green: $secondary-light-color-intensity, $blue: $secondary-light-color-intensity);
+$secondary-text-color: #2b2b2b;
+$tertiary-light-color: #fff;
 $highlight-color: $secondary-color;
 
 /* --- EASINGS --- */
