@@ -73,34 +73,40 @@ const isActive = (page: string): boolean => {
     <nav>
       <ul>
         <li :class="{ selected: isActive('/') }">
-          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/" @click="closeAsideMenu">Home</RouterLink>
         </li>
         <li :class="{ selected: isActive('/live') }">
-          <RouterLink to="/live">Live</RouterLink>
+          <RouterLink to="/live" @click="closeAsideMenu">Live</RouterLink>
         </li>
         <li :class="{ selected: isActive('/schedule') }">
-          <RouterLink to="/schedule">Schedule</RouterLink>
+          <RouterLink to="/schedule" @click="closeAsideMenu"
+            >Schedule</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/map') }">
-          <RouterLink to="/map">Map</RouterLink>
+          <RouterLink to="/map" @click="closeAsideMenu">Map</RouterLink>
         </li>
         <li :class="{ selected: isActive('/mission') }">
-          <RouterLink to="/mission">Mission</RouterLink>
+          <RouterLink to="/mission" @click="closeAsideMenu">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
-          <RouterLink to="/challenges">Challenges</RouterLink>
+          <RouterLink to="/challenges" @click="closeAsideMenu"
+            >Challenges</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/talks') }">
-          <RouterLink to="/talks">Talks</RouterLink>
+          <RouterLink to="/talks" @click="closeAsideMenu">Talks</RouterLink>
         </li>
         <li :class="{ selected: isActive('/hardware') }">
-          <RouterLink to="/hardware">Hardware</RouterLink>
+          <RouterLink to="/hardware" @click="closeAsideMenu"
+            >Hardware</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules">Rules</RouterLink>
+          <RouterLink to="/rules" @click="closeAsideMenu">Rules</RouterLink>
         </li>
         <li :class="{ selected: isActive('/faq') }">
-          <RouterLink to="/faq">FAQ</RouterLink>
+          <RouterLink to="/faq" @click="closeAsideMenu">FAQ</RouterLink>
         </li>
       </ul>
     </nav>

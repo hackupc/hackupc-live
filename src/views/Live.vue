@@ -246,11 +246,16 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     min-height: 200px;
     max-height: 100%;
     box-sizing: content-box;
-    padding-top: 200px;
-    padding-left: 100px;
-    margin: 0;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 175px;
+    margin-right: 75px;
+    margin-left: 75px;
+    background-color: #ffffff75;
+    border-radius: 25px;
     list-style: none;
-    overflow-y: scroll;
+    overflow-y: none;
   }
 
   li {
@@ -305,7 +310,9 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 @media (max-width: 720px) {
   .events-fancy {
     ul {
+      padding-top: 200px;
       padding-left: 25px !important;
+      margin: 0;
     }
   }
 }
