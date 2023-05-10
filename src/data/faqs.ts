@@ -19,6 +19,7 @@ If you have been elected to receive a travel reimbursement, we will contact you 
 - Received an email with travel reimbursement amount.
 - Travel reimbursement receipts submitted before the date specified by HackUPC Team.
 - Project submitted to Devpost before due date.
+- Demo your project in the HackUPC judging rooms.
 
 The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1-2 months time period. Remember that you need to post a project before the deadline in order to get the reimbursement!`,
     size: 'big',
@@ -86,9 +87,9 @@ If you participate in a challenge, you'll have to present at the specific sponso
   {
     title: 'Deadline for project submissions?',
     description: `The deadline for project submissions at ${formatDateInTimezone(
-      'time',
+      'weekday-time',
       '14/5/2022 9:00:00'
-    )}. Submit your projects to [Devpost](https://hackupc-2022.devpost.com/).`,
+    )}. Submit your projects to [Devpost](https://hackupc-2023.devpost.com/).`,
     size: 'small',
   },
   {

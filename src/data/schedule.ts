@@ -488,7 +488,7 @@ Good morning! Your meal is waiting 4 u ♥
     {
       id: 'showers-3',
       title: 'Showers',
-      start: '13/5/2023 9:00',
+      start: '14/5/2023 9:00',
       physicalLocation: {
         text: 'Gym',
         mapId: 'indoors',
@@ -499,8 +499,8 @@ Good morning! Your meal is waiting 4 u ♥
     {
       id: 'demo',
       title: 'Demo time',
-      start: '13/5/2023 10:15',
-      end: '13/5/2023 13:15',
+      start: '14/5/2023 10:15',
+      end: '14/5/2023 13:15',
       physicalLocation: {
         text: 'A3 & A4 building',
         mapId: 'indoors',
@@ -510,8 +510,8 @@ Good morning! Your meal is waiting 4 u ♥
     {
       id: 'lunch-2',
       title: 'Lunch: Hot Dogs',
-      start: '13/5/2023 13:00',
-      end: '13/5/2023 14:00',
+      start: '14/5/2023 13:00',
+      end: '14/5/2023 14:00',
       physicalLocation: {
         text: 'A3 & A4 building',
         mapId: 'indoors',
@@ -521,8 +521,8 @@ Good morning! Your meal is waiting 4 u ♥
     {
       id: 'closing',
       title: 'Closing ceremony',
-      start: '13/5/2023 15:00',
-      end: '13/5/2023 17:00',
+      start: '14/5/2023 15:00',
+      end: '14/5/2023 17:00',
       physicalLocation: {
         text: 'Vertex auditorium',
         mapId: 'campus',
