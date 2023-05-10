@@ -286,7 +286,7 @@ const submitDeadline = computed<string>(() =>
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: 3px solid #E8E2D7;
+      border-left: 3px solid #e8e2d7;
     }
   }
 }
