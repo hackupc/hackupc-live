@@ -16,34 +16,32 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 <template>
   <div id="challenges">
     <PanelContainer>
-      <Panel title="HackUPC prizes" size="big">
-        <div class="prizes-container">
+      <Panel title="😏😏😏" size="big">
+        <!---<div class="prizes-container">
           <div class="prize">
             <h3 class="prize__position">1st</h3>
-            <p class="prize__text">Nintendo Switch Lite</p>
+            <p class="prize__text">Xbox Series S</p>
             <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
             <h3 class="prize__position">2nd</h3>
-            <p class="prize__text">Dron IDEA 22</p>
+            <p class="prize__text">Razer Huntsman V2 TKL</p>
             <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
             <h3 class="prize__position">3rd</h3>
-            <p class="prize__text">Amazfit GTS</p>
+            <p class="prize__text">Polaroid Now i-Type</p>
             <p class="prize__subtext">(For each team member)</p>
           </div>
-        </div>
+        </div>-->
+        <SecretContent />
       </Panel>
 
       <template v-for="challenge in challenges" :key="challenge.title">
-        <Panel v-if="hideChallengesAndPrizes" :title="challenge.company">
-          <IconLabel class="channel" centered>
-            <template #icon>
-              <HashtagIcon />
-            </template>
-            {{ challenge.channel }}
-          </IconLabel>
+        <Panel
+          v-if="hideChallengesAndPrizes"
+          :title="challenge.companyEncrypted"
+        >
           <SecretContent />
         </Panel>
 

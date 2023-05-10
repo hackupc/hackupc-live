@@ -14,6 +14,8 @@ import {
   faPlaneArrival,
   faTrainSubway,
   faWheelchair,
+  faCar,
+  faBus,
 } from '@fortawesome/free-solid-svg-icons'
 import { createPinia } from 'pinia'
 import { registerSW } from 'virtual:pwa-register'
@@ -44,7 +46,9 @@ library.add(
   faYoutube,
   faWheelchair,
   faTrainSubway,
-  faPlaneArrival
+  faPlaneArrival,
+  faCar,
+  faBus
 )
 
 const app = createApp(App)

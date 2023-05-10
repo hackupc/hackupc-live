@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Countdown from '@/components/Countdown.vue'
-import { ExternalLinkIcon } from '@heroicons/vue/solid'
 import { ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 
@@ -85,8 +84,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/map') }">
           <RouterLink to="/map">Map</RouterLink>
         </li>
-        <li :class="{ selected: isActive('/the-mission') }">
-          <RouterLink to="/the-mission">Mission</RouterLink>
+        <li :class="{ selected: isActive('/mission') }">
+          <RouterLink to="/mission">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
           <RouterLink to="/challenges">Challenges</RouterLink>
@@ -94,15 +93,8 @@ const isActive = (page: string): boolean => {
         <li :class="{ selected: isActive('/talks') }">
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li>
-          <a
-            href="https://guides.hackupc.com/guide/hacker/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Guides
-            <ExternalLinkIcon class="external-link-icon" />
-          </a>
+        <li :class="{ selected: isActive('/hardware') }">
+          <RouterLink to="/hardware">Hardware</RouterLink>
         </li>
         <li :class="{ selected: isActive('/rules') }">
           <RouterLink to="/rules">Rules</RouterLink>
@@ -142,7 +134,7 @@ const isActive = (page: string): boolean => {
           class="header-nav-bar__item"
           :class="{ selected: isActive('/mission') }"
         >
-          <RouterLink to="/the-mission">Mission</RouterLink>
+          <RouterLink to="/mission">Mission</RouterLink>
         </li>
         <li class="header-nav-bar__item header-nav-bar__item--countdown">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
@@ -159,15 +151,11 @@ const isActive = (page: string): boolean => {
         >
           <RouterLink to="/talks">Talks</RouterLink>
         </li>
-        <li class="header-nav-bar__item">
-          <a
-            href="https://guides.hackupc.com/guide/hacker/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Guides
-            <ExternalLinkIcon class="external-link-icon" />
-          </a>
+        <li
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/hardware') }"
+        >
+          <RouterLink to="/hardware">Hardware</RouterLink>
         </li>
         <li
           class="header-nav-bar__item"

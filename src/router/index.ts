@@ -27,8 +27,8 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Map.vue'),
   },
   {
-    path: '/the-mission',
-    name: 'the-mission',
+    path: '/mission',
+    name: 'mission',
     component: () => import('@/views/Mission.vue'),
   },
   {
@@ -60,6 +60,11 @@ const routes: RouteRecordRaw[] = [
     path: '/faq',
     name: 'faqs',
     component: () => import('@/views/FAQs.vue'),
+  },
+  {
+    path: '/hardware',
+    name: 'hardware',
+    component: () => import('@/views/Hardware.vue'),
   },
 ]
 

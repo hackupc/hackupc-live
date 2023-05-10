@@ -1,6 +1,7 @@
 type MarkdownString = string // Accepts Markdown
 export interface Challenge {
   readonly title: string
+  readonly companyEncrypted: string
   readonly company: string
   readonly videoUrl?: string
   readonly channel: string
@@ -10,114 +11,98 @@ export interface Challenge {
 
 export const challenges: Challenge[] = [
   {
-    title:
-      'Create solutions that make InfoJobs a more attractive job portal for IT profiles',
-    company: 'InfoJobs',
+    title: 'Making Markets to Make a Change',
+    companyEncrypted: 'FpDvGOwa9WVr4riRPXIFmg',
+    company: 'Optiver',
     // videoUrl: 'https://youtu.be/IG_bN195bwI',
-    description: /* markdown */ `
-We encourage you to develop a solution that would make InfoJobs a more attractive job portal for IT profiles, by mixing state of art technology and using a dataset consisting of job offers and applications. We want to change the user perception and become a portal that is considered as both innovative and efficient.
+    description: /* markdown */ `Join us in our mission to improve markets! Your challenge: develop a trading algorithm to stimulate investments in firms that help build a sustainable world. Your algorithm will compete against others on our simulated exchange in real time!
 
-Our challenge is that we are a generalist portal and we are currently offering the same product to all users (whether you are a software developer or a truck driver). Our product is not customized according to the user characteristics (apart from our "recommended offers" which are based on the user's previous behavior on the site). Help us to change this generalist perception with innovative and daring ideas that make InfoJobs a portal for a professional like you.
-`,
-    prize:
-      '1st  Drone with 4k camera\n2nd, streaming set: Professional microphone, gamer headset and ring light.\n3rd, €50 Amazon voucher',
-    channel: '#infojobs',
+If we’re really serious about achieving sustainability, making the transition to green financial markets and supporting sustainable businesses is of vital importance. As a global market maker, Optiver is fully committed to improving the access and pricing of financial products in the environmental, societal, and governance (ESG) space. By providing liquidity for these products in exchanges around the world, we make it easier and more attractive for market participants to incorporate them into their investment strategies.
+    
+Join us in this mission at our HackUPC challenge. You’ll be competing in real time against other participants to create an algorithm that best improves ESG product prices and can handle the pressures of a constantly changing market. You’ll be doing this in our simulated exchange Optibook, which recreates the real-world complexity of trading on a modern exchange. It’s time to collaborate and drive the momentum needed to realise a more sustainable future.
+    `,
+    prize: '1st: An iPhone 13 for each member of the team',
+    channel: '#optiver',
   },
   {
-    company: 'IThinkUPC',
-    title: "Let's PLAY",
-    //description: /* markdown */ `[DataSet](https://mega.nz/folder/uzYWibST#7QY4JO5GWNof22euRnqTQA)`,
-    //videoUrl: 'https://www.youtube.com/watch?v=KeG4q7_dLFo',
-    description: /* markdown */ `
-Something that helps people in future hackathons to take a break from their
-coding work and have some fun.
-
-_No rules. Free topic._
-
-What are we looking for:
-- Something simple
-- As said, any kind of game works. But better if based on resolving a
-challenging problem or situation.
-- With a short play time
-- A web based application, to play mostly from your phone
-
-What we don't need (although you can use it if you want):
-- Sophisticated interfaces or graphic engines
-- Keeping profiles, scores or any other
-- Any specific technology or framework. Use what you feel comfortable with.
-
-What would be nice:
-- Some kind of collaborative or one-vs-one feature
-`,
-    prize:
-      '1st Amazon Voucher 100€, 2nd Amazon Voucher 50€, 3rd Amazon Voucher 30 € (for each team member) ',
-    channel: '#ithinkupc',
+    companyEncrypted: 'TZABPAEwSHar7SLMqkDmuA',
+    company: 'Bunge',
+    title: '',
+    //description: /* markdown */ ``,
+    //videoUrl: '',
+    description: /* markdown */ ``,
+    prize: '',
+    channel: '#bunge',
   },
   {
-    company: 'Mundimoto',
-    title: 'The best use for our dataset!',
-    //videoUrl: 'https://youtu.be/UIrA73wtBAY',
-    description: /* markdown */ `
-You will have a list of tons of motorbikes and their information; we expect you to create something amazing. For example, a bot that recommends similar bikes to the one you already like; A neural network that prices motorbikes based on the brand, model, and kilometers; An algorithm to identify a motorbike's brand and model based on an image. These are some ideas you can implement, but we welcome and appreciate any ideas on what you can do with the dataset we provide!
-`,
-    prize: '1st price: iPad, 2nd price: Electric Scooter',
-    channel: '#mundimoto',
-  },
-  {
-    company: 'McKinsey & company',
-    title: 'When science meets business - The reality of a Data Scientist',
-    //videoUrl: 'https://www.youtube.com/watch?v=20mE0Sl5h74',
-    description: /* markdown */ `
-In this challenge you will become a Data Scientist at McKinsey and you will resolve a real-life problem by applying state-of-art Machine Learning techniques to solve a very challenging issue. You will go far beyond data and aim to find real solutions that you will have to present as if you were presenting it to a client
-`,
-    prize:
-      "Travel with your team! You'll have the chance to win a 3-day trip to one of the European capitals (travel and hotel covered for all the team members).",
-    channel: '#mckinsey',
-  },
-  {
+    companyEncrypted: 'OJ4LCmSBly+3JmL7P7/V1w',
     company: 'HP',
-    title:
-      'Create a virtual collaboration environment, unleash your imagination!',
-    //videoUrl: 'https://youtu.be/oCBjbd9ATJk',
+    title: 'HP Inventory & Sales Forecasting',
+    //videoUrl: '',
     description: /* markdown */ `
-We encourage you to create a Collaboration environment or virtual communication app using VR (Virtual Reality) or AR(Augmented Reality) or any type of device you can imagine. The idea is that you can create a virtual collaboration platform/environment that enables remote meetings.
+Attention all students! Are you ready to put your problem-solving skills to the test and make a real impact on the world? Then join us at HP Inc's exciting hackathon event!
 
-Avatars are welcome, Unleash your imagination!
+
+We're looking for bright minds who are up for the challenge of forecasting the sales and inventory of different products for the next 13 weeks. This is a real case problem that we're facing at HP and we need your help to solve it.
+
+
+By participating in this hackathon, you will have the opportunity to showcase your talents to a leading company in the technology industry and learn a lot about time series forecasting. Plus, the top teams will have the chance to win amazing prizes!
+
+
+So what are you waiting for? Sign up now and show us what you're made of! Let's tackle this challenge together and make a difference for HP Inc.
 `,
-    prize: 'HP Sprocket for each team member',
+    prize: '1st: 4 HP Laptop 15, 2nd: 4 Hyper X Keyboard, 3rd: 4 Omen Sweater',
     channel: '#hp',
   },
   {
-    company: 'Restb.ai',
-    title: 'Most disruptive use of Restb.ai API',
-    //videoUrl: 'https://youtu.be/80k_JJcQfwo',
+    companyEncrypted: '8KmM/3LZtmAsuR4vnOPTvg',
+    company: 'IThinkUPC',
+    title: '',
+    //videoUrl: '',
     description: /* markdown */ `
-Build your project using one (or more) of our available AI Computer Vision APIs. From Real Estate CV classification solutions to a broad collection of object and features detection models. Our API is waiting for you!
-To get a free API key come visit us at our booth; we promise we are really friendly and would love to chat with you about anything that comes to your mind! For more details, please check our [Github](https://github.com/restbai/hackupc-2022).
 `,
-    prize: '1 Xiaomi Redmi Watch 2 Lite GL for each team member.',
-    channel: '#restbai',
+    prize: '',
+    channel: '#ithinkupc',
   },
   {
-    company: 'Huawei',
-    title: 'Hack app development with Huawei HMS',
-    //videoUrl: 'https://youtu.be/80k_JJcQfwo',
+    companyEncrypted: 'OKOOYK8p3e6ixR3KQ05l8Q',
+    company: 'Strands',
+    title: '',
+    //videoUrl: '',
     description: /* markdown */ `
-In Huawei, we love innovation in hardware and software. Thanks to HMS, we set the app development to the next level. Are you keen on developing apps? How fast can you develop an app with analytics and push notifications? Do you master app monetization using ads? Do you know how to use voice recognition, maps, and location? We challenge you to create an app using at least 2 features but not limited to them.
+`,
+    prize: '',
+    channel: '#strands',
+  },
+  {
+    companyEncrypted: '+5CxQKLiDwgwXZEp3ePpFw',
+    company: 'Vueling',
+    title: '',
+    //videoUrl: '',
+    description: /* markdown */ `
 `,
     prize:
-      '1st prize:  HUAWEI GT2PRO*2 Y HUAWEI FREEBUDS STUDIO *2. (Team members choose which one they want, only one prize per participant.)\n2nd prize: HUAWEI FREEBUDS PRO*4\n3rd prize: HUAWEI BAND 6*4',
-    channel: '#huawei',
+      'The prize for the winners will be a round trip flight to any Vueling destination for the whole team',
+    channel: '#vueling',
   },
   {
+    companyEncrypted: 'MZHdrReJtUe0TWxiyNwFTA',
     company: 'Capchase',
-    title: 'Code the SQLillo!',
-    //videoUrl: 'https://youtu.be/80k_JJcQfwo',
+    title: 'SQLillo Royale - Programmable Battle Royale',
+    //videoUrl: '',
     description: /* markdown */ `
-There's a grid. There's you and your code. Your objective? Paint it, but there's me, and I will paint too. Who will win?
 `,
-    prize:
-      '1st prize:  3D printer\n2nd prize: Arduino Kit\n3rd prize: 100€ amazon voucher',
+    prize: '',
     channel: '#capchase',
+  },
+  {
+    companyEncrypted: 'IXZ07J9j2ognub5PeUbefg',
+    company: 'Restb.ai',
+    title: 'Most innovative usage of our data',
+    //videoUrl: '',
+    description: /* markdown */ `
+Take advantage of our 800k Real Estate properties dataset and create your project using the visual insights extracted from our Computer Vision solutions. Our data includes information obtained from our classification solutions, regression analysis, and a broad collection of object and feature detection models. In addition, you have free access to our APIs so you can be as creative as you wish! To get a free API key come to visit us at our booth; we promise we are really friendly and would love to chat with you about anything that comes to your mind! Spoiler: you'll get a free T-shirt if you come by.`,
+    prize: 'Travel anywhere up to 200€ for each team member.',
+    channel: '#restbai',
   },
 ]

@@ -30,9 +30,9 @@ export interface RawSchedule {
 }
 
 export const schedule: RawSchedule = {
-  countdownStart: '29/4/2022 21:00',
-  countdownEnd: '1/5/2022 9:00',
-  submitDeadline: '1/5/2022 9:00',
+  countdownStart: '12/5/2023 21:00',
+  countdownEnd: '14/5/2023 9:00',
+  submitDeadline: '14/5/2023 9:00',
   events: [
     {
       id: 'checkin',
@@ -41,10 +41,10 @@ export const schedule: RawSchedule = {
         mapId: 'indoors',
       },
       title: 'Hacker Registration',
-      start: '29/4/2022 17:00',
-      end: '29/4/2022 18:45',
+      start: '12/5/2023 16:00',
+      end: '12/5/2023 18:45',
       description: /* markdown */ `
-Register to the hackathon and get your swag! Make sure to have your ID ready
+Register to the hackathon and get your swag! Make sure to have ready your **ID and your QR ticket**
 `,
     },
     {
@@ -54,7 +54,7 @@ Register to the hackathon and get your swag! Make sure to have your ID ready
         mapId: 'indoors',
       },
       title: 'Baggage Registration',
-      start: '29/4/2022 17:00',
+      start: '12/5/2023 16:00',
       description: /* markdown */ `
 Bring your luggage or the stuff you don't need to be with you and we will store them securely.
 `,
@@ -62,57 +62,45 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
     {
       id: 'opening',
       physicalLocation: {
-        text: 'Vertex',
+        text: 'Vertex auditorium',
         mapId: 'campus',
       },
       onlineLocation: {
         text: 'Youtube',
         url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'other',
+        icon: 'youtube',
       },
       title: 'Opening Ceremony',
-      start: '29/4/2022 19:00',
-      end: '29/4/2022 21:00',
-      description: /* markdown */ `
-Join us on youtube & Vertex to be aware of everything that will be happening this weekend
-`,
+      start: '12/5/2023 19:00',
+      end: '12/5/2023 20:30',
+      description: /* markdown */ `Join us on YouTube & Vertex auditorium to be aware of everything that will be happening this weekend`,
     },
     {
-      id: 'hacking-starts',
-      title: 'Hacking Starts!!!',
-      start: '29/4/2022 21:00',
-      description: /* markdown */ `
-Hacking time is starting now!! 👨‍💻👩‍💻
-`,
-    },
-    {
-      id: 'biene-draw',
-      title: 'Draw your Biene & Quackstions',
-      onlineLocation: {
-        text: 'Slack',
-        url: 'https://hackupc2022.slack.com',
-        icon: 'slack',
-      },
-      start: '29/4/2022 21:00',
-      description: /* markdown */ `
-Create your own remix of Biene!
-You can also answer out quack-stions!
-`,
-    },
-
-    {
-      id: 'dinner',
-      title: 'Dinner',
+      id: 'dinner-1',
+      title: 'Dinner: Poke',
       physicalLocation: {
         text: 'Meal Zone',
         mapId: 'indoors',
       },
-      start: '29/4/2022 21:00',
-      end: '29/4/2022 23:00',
-      description: /* markdown */ `
-Tired? Recharge your energies here!
-
-`,
+      start: '12/5/2023 20:30',
+      end: '12/5/2023 23:00',
+      description: /* markdown */ `Tired? Recharge your energies here before start coding with one **poke bowl**!`,
+    },
+    {
+      id: 'hacking-starts',
+      title: 'Hacking Starts!!!',
+      start: '12/5/2023 21:00',
+      description: /* markdown */ `Hacking time starts now!! 👨‍💻👩‍💻`,
+    },
+    {
+      id: 'biene-catcher',
+      title: 'BieneCatcher',
+      start: '12/5/2023 21:00',
+      physicalLocation: {
+        text: 'All the buildings',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `Get ready to put your scavenger skills to the test in our exciting BieneCatcher game, where you'll hunt down hidden Bienes throughout the HackUPC venue. Will you be able to find them all before anyone else?`,
     },
     {
       id: 'activity-team-building',
@@ -121,42 +109,31 @@ Tired? Recharge your energies here!
         text: 'A4002',
         mapId: 'indoors',
       },
-      onlineLocation: {
-        text: 'Slack',
-        url: 'https://hackupc2022.slack.com',
-        icon: 'slack',
-      },
-      start: '29/4/2022 22:00',
-      end: '29/4/2022 23:00',
-      description: /* markdown */ `
-Are you looking for a team or for teammates?
-Join us on the Team Building activity at #team-building
-`,
+      start: '12/5/2023 21:30',
+      end: '12/5/2023 22:30',
+      description: /* markdown */ `Are you looking for a team or for teammates? Join us on the Team Building activity to find someone to work with`,
     },
     {
-      id: 'intro-git',
-      title: '[Talk] Intro to Git and Github',
-      start: '29/4/2022 22:30',
-      end: '29/4/2022 23:00',
+      id: 'talk-optiver',
+      title: 'Secret Talk',
+      start: '12/5/2023 22:30',
+      end: '12/5/2023 23:00',
       physicalLocation: {
         text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
         text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
+        url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `
-Introduction to git and GitHub, learn the most basic commands for git and collaborate with GitHub
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-infojobs',
-      title:
-        '[Talk] Productionizing Machine Learning models to increase your Data Scientists performance.',
-      start: '29/4/2022 22:30',
-      end: '29/4/2022 23:00',
+      id: 'talk-bunge',
+      title: 'Secret Talk',
+      start: '12/5/2023 22:30',
+      end: '12/5/2023 23:00',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
@@ -164,35 +141,31 @@ Introduction to git and GitHub, learn the most basic commands for git and collab
       onlineLocation: {
         text: 'Youtube',
         url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'other',
+        icon: 'youtube',
       },
-      description: /* markdown */ `
-This talk explains how, in infojobs, we have modified this process to free data scientists of this duty. Freed data scientists can go back to develop the following model.
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-mundimoto',
-      title: '[Talk] Interviewing a company. Hire o no hire',
-      start: '29/4/2022 23:00',
-      end: '29/4/2022 23:30',
+      id: 'talk-hp',
+      title: 'Secret Talk',
+      start: '12/5/2023 23:00',
+      end: '12/5/2023 23:30',
       physicalLocation: {
         text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
         text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
+        url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `
-Discover the key to choose your next company.
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-infojobs-2',
-      title: '[Talk] Ignorance Oriented Programming',
-      start: '29/4/2022 23:00',
-      end: '29/4/2022 23:30',
+      id: 'talk-ithinkupc',
+      title: 'Secret Content',
+      start: '12/5/2023 23:00',
+      end: '12/5/2023 23:30',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
@@ -200,35 +173,31 @@ Discover the key to choose your next company.
       onlineLocation: {
         text: 'Youtube',
         url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'other',
+        icon: 'youtube',
       },
-      description: /* markdown */ `
-Join us on twitch! All the information on the talk is found on the talks tab
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-RestbAI',
-      title: '[Talk] Deep Learning: breaking the ice',
-      start: '29/4/2022 23:30',
-      end: '30/4/2022 00:00',
+      id: 'talk-strands',
+      title: 'Secret Talk',
+      start: '12/5/2023 23:30',
+      end: '12/5/2023 23:45',
       physicalLocation: {
         text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
         text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
+        url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `
-In this hands-on workshop, we will train a Deep Learning model to classify images using Python, Keras and Tensorflow.
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-tdd',
-      title: '[Talk] Want to code faster? Try TDD!',
-      start: '29/4/2022 23:30',
-      end: '30/4/2022 00:00',
+      id: 'talk-midokura',
+      title: 'Secret Workshop',
+      start: '12/5/2023 23:30',
+      end: '13/5/2023 00:00',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
@@ -236,333 +205,334 @@ In this hands-on workshop, we will train a Deep Learning model to classify image
       onlineLocation: {
         text: 'Youtube',
         url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'other',
+        icon: 'youtube',
       },
-      description: /* markdown */ `
-Hop into this introductory session to familiarise yourself with it and clear any doubts.
-`,
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
-
     {
-      id: 'Midnight-Snack',
+      id: 'talk-restb',
+      title: 'Secret Workshop',
+      start: '13/5/2023 00:00',
+      end: '14/5/2023 00:30',
+      physicalLocation: {
+        text: 'A5001',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'Twitch',
+        url: 'https://www.twitch.tv/hackersupc',
+        icon: 'twitch',
+      },
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+    },
+    {
+      id: 'midnight-1',
       title: 'Midnight Snack',
-      start: '30/4/2022 1:30',
+      start: '13/5/2023 1:30',
       physicalLocation: {
         text: 'Meal Zone',
         mapId: 'indoors',
       },
-      end: '30/4/2022 2:00',
-      description: /* markdown */ `
-Let's take a break and enjoy the power of snaks at night time 🌙
-`,
+      end: '13/5/2023 2:30',
+      description: /* markdown */ `Let's take a break and enjoy the power of **waffles** at night time 🌙`,
     },
     {
-      id: 'TheGame',
+      id: 'thegame-starts',
       title: 'TheGame',
-      start: '30/4/2022 3:14',
-      onlineLocation: {
-        text: 'A5001',
-        url: 'https://thegame.hackupc.com',
-        icon: 'other',
-      },
-      description: /* markdown */ `
-Enjoy, game is easy!
-`,
+      start: '13/5/2023 3:14',
+      description: /* markdown */ `Enjoy, game is easy!`,
     },
     {
-      id: 'breakfast',
+      id: 'breakfast-1',
       title: 'Breakfast',
-      start: '30/4/2022 8:00',
-      end: '30/4/2022 9:00',
+      start: '13/5/2023 9:00',
       physicalLocation: {
         text: 'Meal Zone',
         mapId: 'indoors',
       },
+      end: '13/5/2023 10:30',
       description: /* markdown */ `
 Good morning! Your meal is waiting 4 u ♥
 `,
     },
     {
-      id: 'showers',
+      id: 'showers-1',
       title: 'Showers',
+      start: '13/5/2023 9:30',
       physicalLocation: {
         text: 'Gym',
-        mapId: 'campus',
+        mapId: 'indoors',
       },
-      start: '30/4/2022 9:15',
-      end: '30/4/2022 11:00',
-      description: /* markdown */ `
-Time to take a shower! 🚿 💧
-`,
+      end: '13/5/2023 11:30',
+      description: /* markdown */ `Time to take a shower! 🚿 💧`,
     },
     {
-      id: 'talk-huawei',
-      title: '[Talk] Make development easier with Huawei Mobile Service',
-      start: '30/4/2022 10:00',
-      end: '30/4/2022 10:30',
+      id: 'workshop-optiver',
+      title: 'Secret Workshop',
+      start: '13/5/2023 10:00',
+      end: '13/5/2023 11:00',
       physicalLocation: {
         text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
         text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
+        url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      /* markdown */
-      description:
-        'Discover some of the main functionalities of Huawei Mobile Services that allow you to develop an app with a great user experience.',
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
     },
     {
-      id: 'talk-hp',
-      title: '[Talk] HP Virtual & Augmented Reality applications.',
-      start: '30/4/2022 10:30',
-      end: '30/4/2022 11:00',
-      physicalLocation: {
-        text: 'A5001',
-        mapId: 'indoors',
-      },
-      onlineLocation: {
-        text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
-        icon: 'twitch',
-      },
-      description: /* markdown */ `
-In this talk, we will explain how HP use VR & AR technology to make our life better.”
-`,
-    },
-    {
-      id: 'lunch',
-      title: 'Lunch: Paellada',
-      start: '30/4/2022 14:00',
-      end: '30/4/2022 15:00',
-      physicalLocation: {
-        text: 'Meal Zone',
-        mapId: 'campus',
-      },
-      description: /* markdown */ `
-Join us on twitch, we will be doing a draw with the participants of the photocall! 📷
-`,
-    },
-    //         {
-    //           id: 'activity-freehand',
-    //           title: 'Find the Duck',
-    //           startHour: '16:00',
-    //           endHour: '17:00',
-    //           description: /* markdown */ `
-
-    // `,
-    //         },
-    {
-      id: 'showers',
-      title: 'Showers',
-      physicalLocation: {
-        text: 'Gym',
-        mapId: 'campus',
-      },
-      start: '30/4/2022 17:00',
-      end: '30/4/2022 19:00',
-      description: /* markdown */ `
-Time to take a shower! 🚿 💧
-`,
-    },
-    {
-      id: 'krunker',
-      title: 'Krunker',
-      onlineLocation: {
-        text: 'Slack',
-        url: 'https://hackupc2022.slack.com',
-        icon: 'slack',
-      },
-      start: '30/4/2022 18:00',
-      end: '30/4/2022 19:00',
-      description: /* markdown */ `
-Reload your gun... The cyber-battle begins!
-`,
-    },
-    {
-      id: 'lego',
-      title: 'Lego Tournament',
+      id: 'workshop-hp',
+      title: 'Secret Workshop',
+      start: '13/5/2023 10:00',
+      end: '13/5/2023 10:30',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
       },
-      start: '30/4/2022 19:00',
-      end: '30/4/2022 20:00',
-      description: /* markdown */ `
-Let your imagination fly and create amazing structures!
-`,
+      onlineLocation: {
+        text: 'Youtube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
+      },
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+    },
+    {
+      id: 'workshop-bunge',
+      title: 'Secret Workshop',
+      start: '13/5/2023 10:30',
+      end: '13/5/2023 11:00',
+      physicalLocation: {
+        text: 'A5002',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'Youtube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
+      },
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+    },
+    {
+      id: 'workshop-vueling',
+      title: 'Secret Workshop',
+      start: '13/5/2023 11:00',
+      end: '13/5/2023 11:30',
+      physicalLocation: {
+        text: 'A5002',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'Youtube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
+      },
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+    },
+    {
+      id: 'cup-stacking',
+      title: 'Cup Stacking by MLH',
+      start: '13/5/2023 11:30',
+      end: '13/5/2023 12:30',
+      physicalLocation: {
+        text: 'A4105',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `Are you ready to put your dexterity to the test? Join our Cup Stacking challenge, where you'll race against another team to build the tallest tower using only cups.`,
+    },
+    {
+      id: 'lunch-1',
+      title: 'Lunch: paellada',
+      start: '13/5/2023 13:00',
+      end: '13/5/2023 14:30',
+      physicalLocation: {
+        text: 'Meal Zone',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `What a better way to recharge batteries than with a tasty **paella**! 🥘`,
+    },
+    {
+      id: 'dodgeball',
+      title: 'Dodgeball',
+      start: '13/5/2023 16:00',
+      end: '13/5/2023 17:00',
+      physicalLocation: {
+        text: 'Dodgeball battle field',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `Are you ready to duck, dive and dodge? Come join our epic Dodge Ball tournament where you'll compete in 4 vs 4 matches. Bring your A-team and let the balls fly!`,
+    },
+    {
+      id: 'optiver-area',
+      title: 'Optiver Networking time',
+      start: '13/5/2023 17:00',
+      end: '13/5/2023 18:00',
+      physicalLocation: {
+        text: 'A4104',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+    },
+    {
+      id: 'showers-2',
+      title: 'Showers',
+      start: '13/5/2023 9:30',
+      physicalLocation: {
+        text: 'Gym',
+        mapId: 'indoors',
+      },
+      end: '13/5/2023 11:30',
+      description: /* markdown */ `Time to take a shower! 🚿 💧`,
+    },
+    {
+      id: 'hackathon-org',
+      title: 'Hackathon Organizers MeetUp',
+      start: '13/5/2023 18:00',
+      end: '13/5/2023 19:00',
+      physicalLocation: {
+        text: 'A4105',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `Are you planning to organize a hackathon or already organizing one? Meet them and share your thoughts!`,
+    },
+    {
+      id: 'lego-tournment',
+      title: 'Lego Tournament',
+      start: '13/5/2023 19:00',
+      end: '13/5/2023 20:00',
+      physicalLocation: {
+        text: 'A4105',
+        mapId: 'indoors',
+      },
+      description: /* markdown */ `Get your Lego skills ready and come compete in our epic tournament where you'll both create and have a blast trying some seriously cool builds!`,
     },
     {
       id: 'dinner-2',
-      title: 'Dinner: Pizza 🍕',
+      title: 'Dinner: pizza time',
+      start: '13/5/2023 20:00',
+      end: '13/5/2023 21:30',
       physicalLocation: {
         text: 'Meal Zone',
-        mapId: 'campus',
+        mapId: 'indoors',
       },
-      start: '30/4/2022 20:00',
-      end: '30/4/2022 21:30',
-      description: /* markdown */ `
-The famous pizza dinner has arrived! Come and enjoy your favourite meal ;)
-`,
+      description: /* markdown */ `The famous **pizza** dinner has arrived! 🍕🍕 Come and enjoy your favorite meal 😉`,
     },
     {
-      id: 'slideshare',
+      id: 'slideshare-show',
       title: 'Slideshare Show',
+      start: '13/5/2023 22:00',
+      end: '13/5/2023 23:00',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
       },
-      onlineLocation: {
-        text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
-        icon: 'twitch',
-      },
-      start: '30/4/2022 22:00',
-      end: '30/4/2022 23:00',
-      description: /* markdown */ `
-Want to laugh as you have never done? Come and discover it!
-`,
+      description: /* markdown */ `Come to the most unpredictable and hilarious activity of the night, where presenters will have to incorporate a surprise element into their presentations, and you get to choose the winner!`,
     },
-
     {
-      id: 'sticker',
+      id: 'sticker-xchange',
       title: 'StickerXchange',
-      start: '1/5/2022 0:00',
-      end: '1/5/2022 1:00',
+      start: '14/5/2023 00:00',
+      end: '14/5/2023 00:30',
       physicalLocation: {
         text: 'Cafeteria (A5106)',
         mapId: 'indoors',
       },
-      description: /* markdown */ `
-The most intense sticker trading
-`,
+      description: /* markdown */ `Join us for our StickerXchange event, where you can trade stickers with other hackers and add some awesome new additions to your collection!`,
     },
     {
-      id: 'snack-mid-2',
-      title: 'Midnight Snack',
-      start: '1/5/2022 1:00',
-      end: '1/5/2022 2:00',
-      physicalLocation: {
-        text: 'Meal Zone',
-        mapId: 'campus',
-      },
-      description: /* markdown */ `
-Charging batteries 🔋🔋🔋
-`,
-    },
-    {
-      id: 'nerf',
+      id: 'nerf-gun',
       title: 'EPIC NERF GUNS BATTLE',
-      start: '1/5/2022 1:00',
-      end: '1/5/2022 3:00',
+      start: '14/5/2023 00:30',
+      end: '14/5/2023 03:00',
       physicalLocation: {
         text: 'A4101 & A4102',
         mapId: 'indoors',
       },
-      description: /* markdown */ `
-Come and play a HackUPC classic: Nerf guns, 2 teams, a full classroom. Will you miss it?
-`,
+      description: /* markdown */ `Get ready to unleash your inner warrior in our ultimate Nerf Gun Battle, where you'll fight your opponents in a chaotic yet strategical war zone.`,
     },
     {
-      id: 'thegame-end',
-      title: 'TheGame ends',
-      start: '1/5/2022 3:14',
-      description: /* markdown */ `
-ohh... The game just finished. But your skills leveled up!
-`,
-    },
-    {
-      id: 'draw-biene-end',
-      title: 'Draw your Biene ends',
-      start: '1/5/2022 4:00',
-      description: /* markdown */ `
-Let the public vote for the best Biene
-`,
-    },
-    {
-      id: 'breakfast',
-      title: 'Breakfast',
-      start: '1/5/2022 8:00',
-      end: '1/5/2022 9:00',
+      id: 'midnight-2',
+      title: 'Midnight Snack',
+      start: '14/5/2023 00:30',
+      end: '14/5/2023 02:00',
       physicalLocation: {
         text: 'Meal Zone',
-        mapId: 'campus',
+        mapId: 'indoors',
       },
-      description: /* markdown */ `
-Start the day with your energies at MAX level!
-`,
+      description: /* markdown */ `Charging batteries 🔋🔋🔋. Come and try our **yoghurt** that will give you the energy to finish your project`,
     },
     {
-      id: 'hacking-submissions',
-      title: 'Hack Submissions',
-      start: '1/5/2022 08:00',
-      end: '1/5/2022 09:15',
-      onlineLocation: {
-        text: 'Devpost',
-        icon: 'other',
-        url: 'https://hackupc-2022.devpost.com/',
+      id: 'thegame-ends',
+      title: 'TheGame ends',
+      start: '14/5/2023 03:14',
+      description: /* markdown */ `ohh... The game just finished. But your skills leveled up!`,
+    },
+    {
+      id: 'breakfast-2',
+      title: 'Breakfast',
+      start: '14/5/2023 9:00',
+      physicalLocation: {
+        text: 'Meal Zone',
+        mapId: 'indoors',
       },
-      description: /* markdown */ `
-Submit your project in our Devpost!
-`,
+      end: '14/5/2023 10:30',
+      description: /* markdown */ `Start the day with your energies at MAX level!`,
     },
     {
       id: 'hacking-ends',
-      title: 'Hacking Ends',
-      start: '1/5/2022 09:15',
-      onlineLocation: {
-        text: 'Devpost',
-        icon: 'other',
-        url: 'https://hackupc-2022.devpost.com/',
-      },
-      description: /* markdown */ `
-Remember to submit a valid project on devpost to be elegible for prizes 🏆, swag 🎁 or credits ECTS!
-`,
+      title: 'Hacking ends',
+      start: '14/5/2023 9:00',
+      description: /* markdown */ `Remember to submit a valid project, on time, on Devpost to be eligible for prizes 🏆 or travel reimbursement ✈ !`,
     },
     {
-      id: 'demos',
+      id: 'showers-3',
+      title: 'Showers',
+      start: '14/5/2023 9:00',
+      physicalLocation: {
+        text: 'Gym',
+        mapId: 'indoors',
+      },
+      end: '13/5/2023 11:00',
+      description: /* markdown */ `Time to take a shower! 🚿 💧`,
+    },
+    {
+      id: 'demo',
       title: 'Demo time',
-      start: '1/5/2022 10:15',
-      end: '1/5/2022 13:15',
-      description: /* markdown */ `
-Follow the instructions in order to demo your project for the sponsor and for the HackUPC team
-`,
+      start: '14/5/2023 10:15',
+      end: '14/5/2023 13:15',
       physicalLocation: {
-        text: 'A4',
-        mapId: 'judging',
+        text: 'A3 & A4 building',
+        mapId: 'indoors',
       },
+      description: /* markdown */ `Follow the instructions in order to demo your project for the sponsor and for the HackUPC team`,
     },
     {
-      id: 'leo-boeck',
-      title: 'Lunch',
-      start: '1/5/2022 13:00',
-      end: '1/5/2022 14:00',
+      id: 'lunch-2',
+      title: 'Lunch: Hot Dogs',
+      start: '14/5/2023 13:00',
+      end: '14/5/2023 14:00',
       physicalLocation: {
-        text: 'Meal Zone',
-        mapId: 'campus',
+        text: 'A3 & A4 building',
+        mapId: 'indoors',
       },
-      description: /* markdown */ `
-Mmmmmmm... frankfurt...
-`,
+      description: /* markdown */ `Recovery all your energy!! Good job this weekend, you deserve this **hot dogs and hamburgers**`,
     },
     {
       id: 'closing',
       title: 'Closing ceremony',
-      start: '1/5/2022 14:30',
-      end: '1/5/2022 16:30',
+      start: '14/5/2023 15:00',
+      end: '14/5/2023 17:00',
       physicalLocation: {
-        text: 'Vèrtex',
+        text: 'Vertex auditorium',
         mapId: 'campus',
       },
       onlineLocation: {
-        text: 'Twitch',
-        url: 'https://twitch.tv/hackersupc',
-        icon: 'twitch',
+        text: 'Youtube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
       },
-      description: /* markdown */ `
-Join us on twitch for the closing ceremony to be aware of the winners! 🥇🥈🥉
-`,
+      description: /* markdown */ `Join us on YouTube & Vèrtex auditorium for the closing ceremony, where we’ll wrap up HackUPC 2023 and the winners will be announced! 🥇🥈🥉🥇🥈🥉`,
     },
   ],
 }

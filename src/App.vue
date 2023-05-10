@@ -57,7 +57,7 @@ body {
   background-attachment: fixed;
   background-color: $bg-color;
   background-image: url('@/assets/img/bg.svg');
-  background-position: center center;
+  background-position: center / 640px;
   background-repeat: repeat;
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
