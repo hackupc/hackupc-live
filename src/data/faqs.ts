@@ -76,7 +76,7 @@ If you participate in a challenge, you'll have to present at the specific sponso
   },
   {
     title: 'Can I sleep now?',
-    description: `Yes, sure. You can find the [sleeping spaces](/map/indoors) in A3 buildings. Some matresses will be provided. Unfortunately, we don't have enough for everyone!`,
+    description: `Yes, sure. You can find the [sleeping spaces](/map/indoors) in A3 building. Some matresses will be provided. Unfortunately, we don't have enough for everyone!`,
     size: 'small',
   },
   {
