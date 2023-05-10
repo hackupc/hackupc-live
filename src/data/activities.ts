@@ -40,7 +40,7 @@ There will be final voting between some of your submissions in order to find a w
 We would love to receive photos from your HackUPC online experience! 📷
 From you and your college coding, your pizza, anything you want to share with us!
 
-You can upload them on photocall channel or on any social network \`using\` the hashtag **#HackUPC2022**.
+You can upload them on photocall channel or on any social network \`using\` the hashtag **#HackUPC2023**.
 If your account is private, send us a screenshot via DM!
 
 You will enter some amazing contests by participating!

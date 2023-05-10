@@ -32,9 +32,9 @@ export type DateFormatsTypes = {
   time: `${number}:${number}`
   weekday: `${string}`
   'weekday-time': `${string} at ${number}:${number}`
-  date: `${number}/${number}/${2022}`
-  'date-time': `${number}/${number}/${2022} ${number}:${number}`
-  'full-date-time': `${number}/${number}/${2022} ${number}:${number}:${number}`
+  date: `${number}/${number}/${2023}`
+  'date-time': `${number}/${number}/${2023} ${number}:${number}`
+  'full-date-time': `${number}/${number}/${2023} ${number}:${number}:${number}`
 }
 
 export function formatDate(format: DateFormat, date: Dayjs): string {

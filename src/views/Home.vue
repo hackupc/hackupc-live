@@ -91,7 +91,7 @@ const submitDeadline = computed<string>(() =>
           rel="noopener noreferrer"
         >
           <b>MyHackUPC</b><br />
-          <span style="font-weight: 400">Hardware / Baggage / Judging</span>
+          <span style="font-weight: 400">Hardware / Baggage</span>
         </a>
       </div>
 
