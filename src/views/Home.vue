@@ -29,8 +29,8 @@ const submitDeadline = computed<string>(() =>
           tabindex="0"
         />
         <div class="wifi__inner">
-          SSID: <code>HACKUPC2022</code><br />
-          Password: <code>Biene2022!</code>
+          SSID: <code>HACKUPC2023</code><br />
+          Password: <code>Biene2023!</code>
         </div>
       </div>
 
@@ -38,12 +38,12 @@ const submitDeadline = computed<string>(() =>
         The projects must be posted on
         <a
           target="_blank"
-          href="https://hackupc-2022.devpost.com"
+          href="https://hackupc-2023.devpost.com"
           rel="noopener noreferrer"
           >Devpost</a
         >
         before {{ submitDeadline }}. If you don't do it, you won't have access
-        to the travel reimbursement, prizes, swag, nor ECTS credits.
+        to the travel reimbursement, prizes nor swag.
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
@@ -64,11 +64,11 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
         </template>
         <a
-          href="https://hackupc2022.slack.com"
+          href="https://hackupc2023.slack.com"
           target="_blank"
           rel="noopener noreferrer"
           class="icon-label-link"
-          >hackupc2022.slack.com</a
+          >hackupc2023.slack.com</a
         >
       </IconLabel>
       <IconLabel centered style="margin-bottom: 1.5rem">
@@ -91,7 +91,7 @@ const submitDeadline = computed<string>(() =>
           rel="noopener noreferrer"
         >
           <b>MyHackUPC</b><br />
-          <span style="font-weight: 400">Hardware / Baggage / Judging</span>
+          <span style="font-weight: 400">Hardware / Baggage</span>
         </a>
       </div>
 
@@ -115,7 +115,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://hackupc-2022.devpost.com"
+          href="https://hackupc-2023.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
