@@ -22,12 +22,12 @@ const submitDeadline = computed<string>(() =>
     <Panel title="Important information" style="overflow: visible">
       <h3 class="wifi__title">Wi-Fi</h3>
       <div class="wifi">
-        <img
+        <!-- <img
           class="wifi__qr"
           src="@/assets/img/wifi-qr.svg"
           alt=""
           tabindex="0"
-        />
+        /> -->
         <div class="wifi__inner">
           SSID: <code>HACKUPC2023</code><br />
           Password: <code>Biene2023!</code>
@@ -194,8 +194,8 @@ const submitDeadline = computed<string>(() =>
           >.
         </p>
         <p>
-          Don't get a T-10 ticket if you are in the airport, you won't be able
-          to use it from there. Buy a single trip ticket from the airport
+          Don't get a T-Casual ticket if you are in the airport, you won't be
+          able to use it from there. Buy a single trip ticket from the airport
           instead. If you really want to use a T-Casual, then you can take the
           train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
           shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes),
@@ -261,6 +261,59 @@ const submitDeadline = computed<string>(() =>
             will have to reach the elevator on the street at Sants Estació.
           </p>
         </div>
+        <div class="travel__separator"></div>
+        <h2 class="travel__title margin-bottom">
+          <FontAwesomeIcon icon="bus" /> By bus
+        </h2>
+        <h3 class="travel__subtitle">Arriving</h3>
+        <p>
+          If you are coming by bus you can take one of the following lines
+          <b>67</b>, <b>75</b>, <b>113</b> or <b>H6</b> until
+          <b>Palau Reial</b> stop, from there you need to walk up to Campus Nord
+          - UPC, placed on the top of Facultad d'economia de la UB. You can also
+          use the <b>33</b> bus line, which will leave you right in front of the
+          Campus Nord, check out everything on our
+          <RouterLink
+            :to="{
+              name: 'map',
+              params: { mapId: 'campus' },
+            }"
+            >map</RouterLink
+          >.
+        </p>
+        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+        <p>
+          In front of the Campus Nord you have a stop for bus line <b>33</b>.
+          Otherwise, if you need any of the other lines <b>67</b>, <b>75</b>,
+          <b>113</b>, or <b>H6</b>you will have to go down to Diagonal and look
+          for the stop for the line you need.
+        </p>
+        <div class="travel__accessible">
+          <p>
+            <span class="wheelchair-icon">
+              <FontAwesomeIcon
+                class="wheelchair-icon__icon"
+                icon="wheelchair"
+              />
+            </span>
+            This itinerary is completely accessible.
+          </p>
+        </div>
+        <div class="travel__separator"></div>
+        <h2 class="travel__title margin-bottom">
+          <FontAwesomeIcon icon="car" /> By car
+        </h2>
+        <h3 class="travel__subtitle">Arriving</h3>
+        <p>
+          If you come by car, you can find a place to park in the top of the
+          campus, you can check in the streets: <b>Sor Eulàlia d’Anzizu</b> or
+          <b>Cavallers</b>. The green parking area is free during the weekend.
+        </p>
+        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+        <p>
+          Google Maps will know for sure your way back home. Just remember where
+          you parked your car.
+        </p>
       </div>
     </Panel>
   </PanelContainer>
@@ -286,7 +339,7 @@ const submitDeadline = computed<string>(() =>
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: thin solid #fff;
+      border-left: 3px solid #e8e2d7;
     }
   }
 }
@@ -308,8 +361,8 @@ const submitDeadline = computed<string>(() =>
     z-index: 1;
     display: inline-block;
     height: 4rem;
-    padding: 1rem;
-    margin: -1rem;
+    padding: 0.7rem;
+    margin: -1rem 0;
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 0%);
