@@ -22,15 +22,15 @@ const submitDeadline = computed<string>(() =>
     <Panel title="Important information" style="overflow: visible">
       <h3 class="wifi__title">Wi-Fi</h3>
       <div class="wifi">
-        <img
+        <!-- <img
           class="wifi__qr"
           src="@/assets/img/wifi-qr.svg"
           alt=""
           tabindex="0"
-        />
+        /> -->
         <div class="wifi__inner">
-          SSID: <code>HACKUPC2022</code><br />
-          Password: <code>Biene2022!</code>
+          SSID: <code>HACKUPC2023</code><br />
+          Password: <code>Biene2023!</code>
         </div>
       </div>
 
@@ -38,12 +38,12 @@ const submitDeadline = computed<string>(() =>
         The projects must be posted on
         <a
           target="_blank"
-          href="https://hackupc-2022.devpost.com"
+          href="https://hackupc-2023.devpost.com"
           rel="noopener noreferrer"
           >Devpost</a
         >
         before {{ submitDeadline }}. If you don't do it, you won't have access
-        to the travel reimbursement, prizes, swag, nor ECTS credits.
+        to the travel reimbursement, prizes nor swag.
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
@@ -64,11 +64,11 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
         </template>
         <a
-          href="https://hackupc2022.slack.com"
+          href="https://hackupc2023.slack.com"
           target="_blank"
           rel="noopener noreferrer"
           class="icon-label-link"
-          >hackupc2022.slack.com</a
+          >hackupc2023.slack.com</a
         >
       </IconLabel>
       <IconLabel centered style="margin-bottom: 1.5rem">
@@ -115,7 +115,7 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://hackupc-2022.devpost.com"
+          href="https://hackupc-2023.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
@@ -194,8 +194,8 @@ const submitDeadline = computed<string>(() =>
           >.
         </p>
         <p>
-          Don't get a T-10 ticket if you are in the airport, you won't be able
-          to use it from there. Buy a single trip ticket from the airport
+          Don't get a T-Casual ticket if you are in the airport, you won't be
+          able to use it from there. Buy a single trip ticket from the airport
           instead. If you really want to use a T-Casual, then you can take the
           train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
           shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes),
@@ -261,6 +261,59 @@ const submitDeadline = computed<string>(() =>
             will have to reach the elevator on the street at Sants Estació.
           </p>
         </div>
+        <div class="travel__separator"></div>
+        <h2 class="travel__title margin-bottom">
+          <FontAwesomeIcon icon="bus" /> By bus
+        </h2>
+        <h3 class="travel__subtitle">Arriving</h3>
+        <p>
+          If you are coming by bus you can take one of the following lines
+          <b>67</b>, <b>75</b>, <b>113</b> or <b>H6</b> until
+          <b>Palau Reial</b> stop, from there you need to walk up to Campus Nord
+          - UPC, placed on the top of Facultad d'economia de la UB. You can also
+          use the <b>33</b> bus line, which will leave you right in front of the
+          Campus Nord, check out everything on our
+          <RouterLink
+            :to="{
+              name: 'map',
+              params: { mapId: 'campus' },
+            }"
+            >map</RouterLink
+          >.
+        </p>
+        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+        <p>
+          In front of the Campus Nord you have a stop for bus line <b>33</b>.
+          Otherwise, if you need any of the other lines <b>67</b>, <b>75</b>,
+          <b>113</b>, or <b>H6</b>you will have to go down to Diagonal and look
+          for the stop for the line you need.
+        </p>
+        <div class="travel__accessible">
+          <p>
+            <span class="wheelchair-icon">
+              <FontAwesomeIcon
+                class="wheelchair-icon__icon"
+                icon="wheelchair"
+              />
+            </span>
+            This itinerary is completely accessible.
+          </p>
+        </div>
+        <div class="travel__separator"></div>
+        <h2 class="travel__title margin-bottom">
+          <FontAwesomeIcon icon="car" /> By car
+        </h2>
+        <h3 class="travel__subtitle">Arriving</h3>
+        <p>
+          If you come by car, you can find a place to park in the top of the
+          campus, you can check in the streets: <b>Sor Eulàlia d’Anzizu</b> or
+          <b>Cavallers</b>. The green parking area is free during the weekend.
+        </p>
+        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+        <p>
+          Google Maps will know for sure your way back home. Just remember where
+          you parked your car.
+        </p>
       </div>
     </Panel>
   </PanelContainer>
@@ -286,7 +339,7 @@ const submitDeadline = computed<string>(() =>
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: 3px solid #E8E2D7;
+      border-left: 3px solid #e8e2d7;
     }
   }
 }
