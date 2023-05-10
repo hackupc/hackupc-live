@@ -377,12 +377,12 @@ Good morning! Your meal is waiting 4 u ♥
     {
       id: 'showers-2',
       title: 'Showers',
-      start: '13/5/2023 9:30',
+      start: '13/5/2023 17:00',
       physicalLocation: {
         text: 'Gym',
         mapId: 'indoors',
       },
-      end: '13/5/2023 11:30',
+      end: '13/5/2023 19:00',
       description: /* markdown */ `Time to take a shower! 🚿 💧`,
     },
     {
