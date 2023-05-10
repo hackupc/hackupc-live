@@ -22,12 +22,12 @@ const submitDeadline = computed<string>(() =>
     <Panel title="Important information" style="overflow: visible">
       <h3 class="wifi__title">Wi-Fi</h3>
       <div class="wifi">
-        <!-- <img
+        <img
           class="wifi__qr"
           src="@/assets/img/wifi-qr.svg"
           alt=""
           tabindex="0"
-        /> -->
+        />
         <div class="wifi__inner">
           SSID: <code>HACKUPC2023</code><br />
           Password: <code>Biene2023!</code>
