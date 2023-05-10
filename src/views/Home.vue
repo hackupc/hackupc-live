@@ -286,7 +286,7 @@ const submitDeadline = computed<string>(() =>
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: thin solid #fff;
+      border-left: 3px solid #E8E2D7;
     }
   }
 }
@@ -308,8 +308,8 @@ const submitDeadline = computed<string>(() =>
     z-index: 1;
     display: inline-block;
     height: 4rem;
-    padding: 1rem;
-    margin: -1rem;
+    padding: 0.7rem;
+    margin: -1rem 0;
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 0%);
