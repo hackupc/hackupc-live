@@ -4,7 +4,6 @@ export interface Hardware {
 }
 
 export const hardwares: Hardware[] = [
-  { title: '3D printing material' },
   { title: 'Anycubic i3 mega' },
   { title: 'Arduino kit' },
   { title: 'ASUS Zenwatch 2' },

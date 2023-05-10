@@ -16,7 +16,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 <template>
   <div id="challenges">
     <PanelContainer>
-      <Panel title="HackUPC prizes" size="big">
+      <Panel title="😏😏😏" size="big">
         <!---<div class="prizes-container">
           <div class="prize">
             <h3 class="prize__position">1st</h3>

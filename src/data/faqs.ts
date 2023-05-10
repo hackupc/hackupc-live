@@ -27,13 +27,13 @@ The processing of travel reimbursements takes some time. Our schedule depends on
   {
     title: 'How does judging work?',
     description: `
-We will have a judging expo **on ${formatIntervalInTimezone(
+We will have a judging expo on **${formatIntervalInTimezone(
       '14/5/2023 10:15:00',
-      '14/5/2022 13:15:00'
+      '14/5/2023 13:15:00'
     )}**.
 We will assign you a time slot to present your project (one for HackUPC + as many challenges as you participate), you need to go to in front of A3 building and an organizer will assign you to a queue and may give you an estimated time when you will present.
 
-The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except expect your hack. You can check out other projects at any judging room.
+The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except your hack. You can check out other projects at any judging room.
 
 The top teams will move on to an additional round of panel judging in the Closing Ceremony.
 
@@ -44,10 +44,10 @@ If you participate in a challenge, you'll have to present at the specific sponso
     title: 'When shall I arrive?',
     description: `Registration will start on ${formatDateInTimezone(
       'weekday-time',
-      '12/5/2022 16:00:00'
+      '12/5/2023 16:00:00'
     )}. The opening ceremony is at ${formatDateInTimezone(
       'time',
-      '12/5/2022 19:00:00'
+      '12/5/2023 19:00:00'
     )}.`,
     size: 'small',
   },
@@ -55,7 +55,7 @@ If you participate in a challenge, you'll have to present at the specific sponso
     title: 'When is HackUPC ending?',
     description: `The closing ceremony is expected to end on ${formatDateInTimezone(
       'weekday-time',
-      '14/5/2022 15:00:00'
+      '14/5/2023 17:00:00'
     )}.`,
     size: 'small',
   },
@@ -71,12 +71,12 @@ If you participate in a challenge, you'll have to present at the specific sponso
   },
   {
     title: 'Can I leave HackUPC?',
-    description: `Yes. However make sure you have your wristband with you, otherwise we might not let you in when you come back.`,
+    description: `Yes. However make sure you have your wristband in your wrist, otherwise we might not let you in when you come back.`,
     size: 'small',
   },
   {
     title: 'Can I sleep now?',
-    description: `Yes, sure. You can find the [sleeping spaces](/map/indoors) in A4 buildings. Some matresses will be provided. Unfortunately, we don't have enough for everyone!`,
+    description: `Yes, sure. You can find the [sleeping spaces](/map/indoors) in A3 buildings. Some matresses will be provided. Unfortunately, we don't have enough for everyone!`,
     size: 'small',
   },
   {
@@ -88,7 +88,7 @@ If you participate in a challenge, you'll have to present at the specific sponso
     title: 'Deadline for project submissions?',
     description: `The deadline for project submissions at ${formatDateInTimezone(
       'weekday-time',
-      '14/5/2022 9:00:00'
+      '14/5/2023 9:00:00'
     )}. Submit your projects to [Devpost](https://hackupc-2023.devpost.com/).`,
     size: 'small',
   },
