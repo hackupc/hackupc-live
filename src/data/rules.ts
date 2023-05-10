@@ -17,7 +17,7 @@ These are some highlights of the HackUPC competition rules.
 Remember that hackathons are like marathons. Some people go to compete but most people take part to better themselves and have fun. Whatever the reason is you're at a hackathon, make sure you're upholding the [hacker spirit](https://medium.com/@tfogo/the-spirit-of-hackathons-a0d81a65060a#.6cx5ac9t8) by collaborating with other teams, helping beginners, and having fun.
 
 ## The rules of the competition
-1. There is no minimum team size, however, the maximum size is 4 people. There will be 1 prize for each member of the team, independently of the team size.
+1. There is no minimum team size, however, the maximum size is 4 people. There will be 1 prize for each member of the team, independently of the team size.*
 2. Teams should be made up exclusively of students (or recent graduates within one year of having graduated) who are not organizers, judges, sponsors, or in any other privileged position at the event. Volunteers are allowed to participate in their free time, accepting the extra difficulty of hacking and volunteering at the same time, but their role won't give them any judging advantage in front of the rest of participants.
 3. All team members should be present at the event. Leaving the venue for some time to hack elsewhere or sleep is fine.
 4. Teams can of course gain advice and support from organizers, volunteers, sponsors, and others.
@@ -59,6 +59,8 @@ It's important to note that these judging criteria **do not include**:
 The competition is just a part of the hackathon. To make the most out of the event, try something new, teach other people, and make new friends!
 
 Happy Hacking from the HackUPC team!
+
+* This rule does not apply for Sqlillo Royale Challenge
 `,
   },
 ]
