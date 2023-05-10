@@ -60,7 +60,7 @@ The competition is just a part of the hackathon. To make the most out of the eve
 
 Happy Hacking from the HackUPC team!
 
-*** This rule does not apply for all the sponsors
+_*** This rule does not apply for all the sponsors_
 `,
   },
 ]
