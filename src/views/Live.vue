@@ -243,17 +243,17 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   }
 
   ul {
-    background-color: #ffffff75;
-    border-radius: 25px;
     min-height: 200px;
     max-height: 100%;
     box-sizing: content-box;
-    margin-top: 175px;
     padding-top: 25px;
-    margin-left: 75px;
-    padding-left: 25px;
-    margin-right: 75px;
     padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 175px;
+    margin-right: 75px;
+    margin-left: 75px;
+    background-color: #ffffff75;
+    border-radius: 25px;
     list-style: none;
     overflow-y: none;
   }
@@ -284,7 +284,6 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    
 
     &::before {
       content: none;
@@ -311,9 +310,9 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 @media (max-width: 720px) {
   .events-fancy {
     ul {
+      padding-top: 200px;
       padding-left: 25px !important;
       margin: 0;
-      padding-top: 200px;
     }
   }
 }

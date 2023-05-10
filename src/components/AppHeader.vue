@@ -73,25 +73,29 @@ const isActive = (page: string): boolean => {
     <nav>
       <ul>
         <li :class="{ selected: isActive('/') }">
-          <RouterLink @click="closeAsideMenu" to="/">Home</RouterLink>
+          <RouterLink to="/" @click="closeAsideMenu">Home</RouterLink>
         </li>
         <li :class="{ selected: isActive('/live') }">
-          <RouterLink @click="closeAsideMenu" to="/live">Live</RouterLink>
+          <RouterLink to="/live" @click="closeAsideMenu">Live</RouterLink>
         </li>
         <li :class="{ selected: isActive('/schedule') }">
-          <RouterLink @click="closeAsideMenu" to="/schedule">Schedule</RouterLink>
+          <RouterLink to="/schedule" @click="closeAsideMenu"
+            >Schedule</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/map') }">
-          <RouterLink @click="closeAsideMenu" to="/map">Map</RouterLink>
+          <RouterLink to="/map" @click="closeAsideMenu">Map</RouterLink>
         </li>
         <li :class="{ selected: isActive('/mission') }">
-          <RouterLink @click="closeAsideMenu" to="/mission">Mission</RouterLink>
+          <RouterLink to="/mission" @click="closeAsideMenu">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
-          <RouterLink @click="closeAsideMenu" to="/challenges">Challenges</RouterLink>
+          <RouterLink to="/challenges" @click="closeAsideMenu"
+            >Challenges</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/talks') }">
-          <RouterLink @click="closeAsideMenu" to="/talks">Talks</RouterLink>
+          <RouterLink to="/talks" @click="closeAsideMenu">Talks</RouterLink>
         </li>
         <li :class="{ selected: isActive('/hardware') }">
           <RouterLink to="/hardware">Hardware</RouterLink>
