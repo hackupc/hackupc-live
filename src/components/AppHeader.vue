@@ -73,25 +73,25 @@ const isActive = (page: string): boolean => {
     <nav>
       <ul>
         <li :class="{ selected: isActive('/') }">
-          <RouterLink to="/">Home</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/">Home</RouterLink>
         </li>
         <li :class="{ selected: isActive('/live') }">
-          <RouterLink to="/live">Live</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/live">Live</RouterLink>
         </li>
         <li :class="{ selected: isActive('/schedule') }">
-          <RouterLink to="/schedule">Schedule</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/schedule">Schedule</RouterLink>
         </li>
         <li :class="{ selected: isActive('/map') }">
-          <RouterLink to="/map">Map</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/map">Map</RouterLink>
         </li>
         <li :class="{ selected: isActive('/mission') }">
-          <RouterLink to="/mission">Mission</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/mission">Mission</RouterLink>
         </li>
         <li :class="{ selected: isActive('/challenges') }">
-          <RouterLink to="/challenges">Challenges</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/challenges">Challenges</RouterLink>
         </li>
         <li :class="{ selected: isActive('/talks') }">
-          <RouterLink to="/talks">Talks</RouterLink>
+          <RouterLink @click="closeAsideMenu" to="/talks">Talks</RouterLink>
         </li>
         <li :class="{ selected: isActive('/hardware') }">
           <RouterLink to="/hardware">Hardware</RouterLink>
