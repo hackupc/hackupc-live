@@ -14,7 +14,6 @@ import ImageRasberryModules from '@/assets/img/hardware/Raspberry-Pi-3-Module-B-
 import ImageSoldering from '@/assets/img/hardware/solder.png'
 import ImageEcho from '@/assets/img/hardware/echo.jpeg'
 
-
 export interface Hardware {
   readonly title: string
   readonly picture?: string

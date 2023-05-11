@@ -10,7 +10,14 @@ defineProps<Props>()
 <template>
   <div class="panel" :class="{ 'panel--big': size === 'big' }">
     <h2 v-if="title" class="panel__title">{{ title }}</h2>
-    <div class="panel__content" :style="{ backgroundImage: (panelContentImage !== undefined ? panelContentImage: 'none')}" :class="{panel__content__image: panelContentImage !== undefined}">
+    <div
+      class="panel__content"
+      :style="{
+        backgroundImage:
+          panelContentImage !== undefined ? panelContentImage : 'none',
+      }"
+      :class="{ panel__content__image: panelContentImage !== undefined }"
+    >
       <slot></slot>
     </div>
   </div>
@@ -113,8 +120,8 @@ defineProps<Props>()
     }
 
     &__image {
-      background-repeat: no-repeat;
       background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
     }
   }
