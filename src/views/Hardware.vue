@@ -23,9 +23,14 @@ import MoreInformationSoon from '@/components/MoreInformationSoon.vue'
       <p>This is the list of the sweet hardware you can hack with:</p>
     </Panel>
     <template v-for="hardware in hardwares" :key="hardware.title">
-      <Panel :title="hardware.title" size="small">
-        <MoreInformationSoon
-      /></Panel>
+      <Panel
+        :title="hardware.title"
+        size="small"
+        :panel-content-image="`url('${hardware.picture}')`"
+      >
+        <div v-if="hardware.picture !== undefined" style="height: 250px"></div>
+        <MoreInformationSoon v-if="hardware.picture === undefined" />
+      </Panel>
     </template>
   </PanelContainer>
 </template>
