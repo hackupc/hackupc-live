@@ -29,10 +29,9 @@ In the mission card, you will find the tasks that you can complete during the ev
     title: 'Claiming your rewards',
     description: `
 As you complete the tasks, you will earn points. The more points you earn, the higher your tier will be.
-There are 3 tiers in total:
-\n-**Tier 1**: 115 points
-\n-**Tier 2**: 190 points
-\n-**Tier 3**: 250 points
+There are 2 tiers in total:
+\n-**Tier 1**: 190 points
+\n-**Tier 2**: 250 points
 \nWith each tier, **Special prizes** are waiting for you!
 
 Remember, you can check your tier completion in your Tracking spreadsheet, and once you reach it you can go to the infoDesk and claim your reward! Don't forget to bring your card with you to verify your points.
