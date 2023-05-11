@@ -2,6 +2,7 @@
 interface Props {
   title?: string
   size?: 'big' | 'small'
+  panelContentImage?: string
 }
 defineProps<Props>()
 </script>
@@ -9,7 +10,7 @@ defineProps<Props>()
 <template>
   <div class="panel" :class="{ 'panel--big': size === 'big' }">
     <h2 v-if="title" class="panel__title">{{ title }}</h2>
-    <div class="panel__content">
+    <div class="panel__content" :style="{ backgroundImage: (panelContentImage !== undefined ? panelContentImage: 'none')}" :class="{panel__content__image: panelContentImage !== undefined}">
       <slot></slot>
     </div>
   </div>
@@ -109,6 +110,12 @@ defineProps<Props>()
       background-color: $secondary-light-color;
       border-radius: 3px;
       font-size: 1rem;
+    }
+
+    &__image {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 }
