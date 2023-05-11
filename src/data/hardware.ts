@@ -13,6 +13,7 @@ import ImageRasberryPi3 from '@/assets/img/hardware/raspberry-pi-3-b-plus-heat-s
 import ImageRasberryModules from '@/assets/img/hardware/Raspberry-Pi-3-Module-B-Sensor-Kit-37-Modules-in-1-Professional-Kit-for-Raspberry-Pi.jpeg'
 import ImageSoldering from '@/assets/img/hardware/solder.png'
 import ImageEcho from '@/assets/img/hardware/echo.jpeg'
+import ImageRasberryPiZero from '@/assets/img/hardware/rasp pi zero w.png'
 
 export interface Hardware {
   readonly title: string
@@ -34,6 +35,7 @@ export const hardwares: Hardware[] = [
   { title: 'Oculus rift', picture: ImageOculus },
   { title: 'Raspberry Pi 3 kit', picture: ImageRasberryPi3 },
   { title: 'Raspberry modules', picture: ImageRasberryModules },
+  { title: 'Raspberry Pi Zero', picture: ImageRasberryPiZero },
   { title: 'Soldering kit', picture: ImageSoldering },
   { title: 'Amazon echo dot', picture: ImageEcho },
 ]
