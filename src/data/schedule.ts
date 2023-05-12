@@ -115,7 +115,7 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
     },
     {
       id: 'talk-optiver',
-      title: 'Secret Talk',
+      title: 'Making Markets to Make a Change',
       start: '12/5/2023 22:30',
       end: '12/5/2023 23:00',
       physicalLocation: {
@@ -127,11 +127,11 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
         url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ `Come to know more of the Optiver Challenge`,
     },
     {
       id: 'talk-bunge',
-      title: 'Secret Talk',
+      title: 'Mission to Improve the Agribusiness Markets',
       start: '12/5/2023 22:30',
       end: '12/5/2023 23:00',
       physicalLocation: {
@@ -143,11 +143,11 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
         url: 'https://www.youtube.com/c/HackersUPC',
         icon: 'youtube',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ `Come to know more of the Bunge Challenge`,
     },
     {
       id: 'talk-hp',
-      title: 'Secret Talk',
+      title: 'HP Inventory & Sales Forecasting',
       start: '12/5/2023 23:00',
       end: '12/5/2023 23:30',
       physicalLocation: {
@@ -159,61 +159,29 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
         url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
-    },
-    {
-      id: 'talk-ithinkupc',
-      title: 'Secret Content',
-      start: '12/5/2023 23:00',
-      end: '12/5/2023 23:30',
-      physicalLocation: {
-        text: 'A5002',
-        mapId: 'indoors',
-      },
-      onlineLocation: {
-        text: 'Youtube',
-        url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'youtube',
-      },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ `Come to know more of the HP Challenge`,
     },
     {
       id: 'talk-strands',
-      title: 'Secret Talk',
-      start: '12/5/2023 23:30',
-      end: '12/5/2023 23:45',
-      physicalLocation: {
-        text: 'A5001',
-        mapId: 'indoors',
-      },
-      onlineLocation: {
-        text: 'Twitch',
-        url: 'https://www.twitch.tv/hackersupc',
-        icon: 'twitch',
-      },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
-    },
-    {
-      id: 'talk-midokura',
-      title: 'Secret Workshop',
-      start: '12/5/2023 23:30',
-      end: '13/5/2023 00:00',
+      title: 'Build the bank experience you need.',
+      start: '12/5/2023 23:00',
+      end: '12/5/2023 23:15',
       physicalLocation: {
         text: 'A5002',
         mapId: 'indoors',
       },
       onlineLocation: {
-        text: 'Youtube',
+        text: 'YouTube',
         url: 'https://www.youtube.com/c/HackersUPC',
         icon: 'youtube',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ `Come to know more of the Strands Challenge`,
     },
     {
-      id: 'talk-restb',
-      title: 'Secret Workshop',
-      start: '13/5/2023 00:00',
-      end: '14/5/2023 00:30',
+      id: 'talk-midokura',
+      title: 'Fine-tuning Computer Vision models for edge AI applications',
+      start: '12/5/2023 23:30',
+      end: '13/5/2023 00:00',
       physicalLocation: {
         text: 'A5001',
         mapId: 'indoors',
@@ -223,7 +191,23 @@ Bring your luggage or the stuff you don't need to be with you and we will store 
         url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ ``,
+    },
+    {
+      id: 'talk-restb',
+      title: 'Deep Learning: breaking the ice',
+      start: '13/5/2023 00:00',
+      end: '14/5/2023 00:30',
+      physicalLocation: {
+        text: 'A5002',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'YouTube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
+      },
+      description: /* markdown */ ``,
     },
     {
       id: 'midnight-1',
