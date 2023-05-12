@@ -17,7 +17,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
   <div id="challenges">
     <PanelContainer>
       <Panel title="😏😏😏" size="big">
-        <!---<div class="prizes-container">
+        <div class="prizes-container">
           <div class="prize">
             <h3 class="prize__position">1st</h3>
             <p class="prize__text">Xbox Series S</p>
@@ -33,8 +33,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
             <p class="prize__text">Polaroid Now i-Type</p>
             <p class="prize__subtext">(For each team member)</p>
           </div>
-        </div>-->
-        <SecretContent />
+        </div>
       </Panel>
 
       <template v-for="challenge in challenges" :key="challenge.title">

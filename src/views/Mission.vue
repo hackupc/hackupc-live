@@ -20,6 +20,16 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
     >
       <SecretContent v-if="hideChallengesAndPrizes" />
       <VueMarkdownIt v-else :source="mission.description" />
+      <div
+        style="
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <img :src="mission.picture" style="width: 75%" />
+      </div>
     </Panel>
   </PanelContainer>
 </template>
