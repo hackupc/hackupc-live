@@ -69,8 +69,8 @@ export const talks: Talk[] = [
     location: 'A5002',
     company: 'Restb.ai',
     //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
-    start: '13/5/2023 22:00',
-    end: '13/5/2023 23:30',
+    start: '13/5/2023 00:00',
+    end: '13/5/2023 00:30',
     streamLink: 'https://www.youtube.com/c/HackersUPC',
   },
   {
