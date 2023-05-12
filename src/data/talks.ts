@@ -80,7 +80,7 @@ export const talks: Talk[] = [
     company: 'Optiver',
     //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
     start: '13/5/2023 10:00',
-    end: '13/5/2023 11:30',
+    end: '13/5/2023 11:00',
     streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
@@ -112,7 +112,7 @@ export const talks: Talk[] = [
     //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
     start: '12/5/2023 11:00',
     end: '12/5/2023 11:30',
-    streamLink: 'https://www.youtube.com/c/HackersUPC',
+    streamLink: 'https://www.twitch.tv/hackersupc',
   },
   {
     title: 'Build and AI powered APP',
@@ -120,8 +120,8 @@ export const talks: Talk[] = [
     location: 'A5002',
     company: 'IThinkUPC',
     //videoUrl: 'https://www.youtube.com/watch?v=aYHEJwxAMBo&ab_channel=HackersUPCHackersUPC',
-    start: '12/5/2023 22:00',
-    end: '12/5/2023 23:30',
+    start: '12/5/2023 11:00',
+    end: '12/5/2023 11:30',
     streamLink: 'https://www.youtube.com/c/HackersUPC',
   },
 ]

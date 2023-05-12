@@ -252,7 +252,7 @@ Good morning! Your meal is waiting 4 u ♥
     },
     {
       id: 'workshop-optiver',
-      title: 'Secret Workshop',
+      title: 'How does technology impact trading?',
       start: '13/5/2023 10:00',
       end: '13/5/2023 11:00',
       physicalLocation: {
@@ -264,11 +264,12 @@ Good morning! Your meal is waiting 4 u ♥
         url: 'https://www.twitch.tv/hackersupc',
         icon: 'twitch',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ ``,
     },
     {
       id: 'workshop-hp',
-      title: 'Secret Workshop',
+      title:
+        'Artificial Intelligence Project Portfolio at HP Large Format Printing',
       start: '13/5/2023 10:00',
       end: '13/5/2023 10:30',
       physicalLocation: {
@@ -280,11 +281,11 @@ Good morning! Your meal is waiting 4 u ♥
         url: 'https://www.youtube.com/c/HackersUPC',
         icon: 'youtube',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ ``,
     },
     {
       id: 'workshop-bunge',
-      title: 'Secret Workshop',
+      title: 'Digital revolution in Agribusiness',
       start: '13/5/2023 10:30',
       end: '13/5/2023 11:00',
       physicalLocation: {
@@ -296,15 +297,31 @@ Good morning! Your meal is waiting 4 u ♥
         url: 'https://www.youtube.com/c/HackersUPC',
         icon: 'youtube',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ ``,
     },
     {
       id: 'workshop-vueling',
-      title: 'Secret Workshop',
+      title: 'The Quanting Framework',
       start: '13/5/2023 11:00',
       end: '13/5/2023 11:30',
       physicalLocation: {
-        text: 'A5002',
+        text: 'A5001',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'Twitch',
+        url: 'https://www.twitch.tv/hackersupc',
+        icon: 'twitch',
+      },
+      description: /* markdown */ ``,
+    },
+    {
+      id: 'workshop-ithinkupc',
+      title: 'Build and AI powered APP',
+      start: '13/5/2023 11:00',
+      end: '13/5/2023 11:30',
+      physicalLocation: {
+        text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
@@ -312,7 +329,7 @@ Good morning! Your meal is waiting 4 u ♥
         url: 'https://www.youtube.com/c/HackersUPC',
         icon: 'youtube',
       },
-      description: /* markdown */ `_Secret content! Come after the opening ceremony_`,
+      description: /* markdown */ ``,
     },
     {
       id: 'cup-stacking',
