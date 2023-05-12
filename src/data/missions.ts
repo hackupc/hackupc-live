@@ -1,9 +1,12 @@
 type MarkdownString = string // Accepts Markdown
 
+import MissionCard from '@/assets/img/hardware/missioncard.png'
+
 export interface Mission {
   readonly title: string
   readonly description?: MarkdownString
   readonly size: 'big' | 'small'
+  readonly picture?: string
 }
 
 export const missions: Mission[] = [
@@ -24,6 +27,7 @@ In the mission card, you will find the tasks that you can complete during the ev
     description: `Keep in mind that in order to get the points for each mission task, you must show the card to the organizer in charge of the activity so that they can stamp it.
     If there isn't an organizer to stamp your card, you should go to the infoDesk (the same location as baggage) and show a proof that you have completed the task, and they will take care of it.`,
     size: 'small',
+    picture: MissionCard,
   },
   {
     title: 'Claiming your rewards',

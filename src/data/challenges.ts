@@ -27,11 +27,11 @@ Join us in this mission at our HackUPC challenge. You’ll be competing in real 
   {
     companyEncrypted: 'TZABPAEwSHar7SLMqkDmuA',
     company: 'Bunge',
-    title: '',
+    title: 'Mission to Improve the Agribusiness Markets',
     //description: /* markdown */ ``,
     //videoUrl: '',
-    description: /* markdown */ ``,
-    prize: '',
+    description: /* markdown */ `As a global agribusiness player, BUNGE is fully committed to delivering essential food, feed and fuel to the world - Join us in our mission to improve agribusiness markets! Your challenge is to develop an AI solution to respond to basic questions about commodities’ markets, trading and evolution from a database.`,
+    prize: 'Each member wins a Meta Quest 2',
     channel: '#bunge',
   },
   {
@@ -57,30 +57,54 @@ So what are you waiting for? Sign up now and show us what you're made of! Let's 
   {
     companyEncrypted: '8KmM/3LZtmAsuR4vnOPTvg',
     company: 'IThinkUPC',
-    title: '',
+    title: 'Build an AI Powered App',
     //videoUrl: '',
     description: /* markdown */ `
-`,
-    prize: '',
+Train an AI open source model and integrate it in an application that helps students in any day-to-day activity that could be challenging or time consuming.
+
+
+What are we looking for:
+
+Something simple
+
+As said, any kind of application works. But better if oriented to help you in a everyday University Life situation. 
+
+A web based application, to use mostly from your phone 
+
+
+What we don’t need (although you can use it if you want):
+
+Although it’s inevitable to think about ChatGPT, it doesn’t have to necessarily be a Chatbot. 
+
+Any specific technology or framework. Use what you feel comfortable with.
+
+
+What would be nice
+
+Some kind of collaborative feature`,
+    prize:
+      '1rt Amazon Voucher 100€, 2nd Amazon Voucher 50€, 3rd Amazon Voucher 30€',
     channel: '#ithinkupc',
   },
   {
     companyEncrypted: 'OKOOYK8p3e6ixR3KQ05l8Q',
     company: 'Strands',
-    title: '',
+    title: 'Build the bank experience you need.',
     //videoUrl: '',
     description: /* markdown */ `
+Imagine a better banking experience, adapted to one or more segments of the population with the features they really need
 `,
-    prize: '',
+    prize:
+      '1 Windows 11 Pro, 12GB RAM 256GB ROM Ιntel Celeron J4125 Mini, 2 New Kindle Paperwhite, 3 Amazon voucher 100€',
     channel: '#strands',
   },
   {
     companyEncrypted: '+5CxQKLiDwgwXZEp3ePpFw',
     company: 'Vueling',
-    title: '',
+    title: 'Flight Fest',
     //videoUrl: '',
     description: /* markdown */ `
-`,
+Develop an in-flight entertainment platform that requires no internet connection and allows passangers to interact with one another. Extra points if the theme is about the flight destination and compatible with smart phones and laptops.`,
     prize:
       'The prize for the winners will be a round trip flight to any Vueling destination for the whole team',
     channel: '#vueling',
@@ -91,8 +115,8 @@ So what are you waiting for? Sign up now and show us what you're made of! Let's 
     title: 'SQLillo Royale - Programmable Battle Royale',
     //videoUrl: '',
     description: /* markdown */ `
-`,
-    prize: '',
+Programmable Battle Royale`,
+    prize: '1. Impresora 3D, 2. Set Arduino, 3. Amazon Voucher 100EUR',
     channel: '#capchase',
   },
   {
