@@ -94,7 +94,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
         })
         eventIndex += 1
         if (eventIndex < day.events.length) {
-          nextEventTmsp = event.start.unix()
+          nextEventTmsp = day.events[eventIndex].start.unix()
         }
       }
 

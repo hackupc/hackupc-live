@@ -6,7 +6,6 @@ import { ref } from 'vue'
 import config from '@/config'
 import Panel from '@/components/Panel.vue'
 import SecretContent from '@/components/SecretContent.vue'
-import { challenges } from '@/data/challenges'
 
 const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 </script>
