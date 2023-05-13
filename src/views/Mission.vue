@@ -23,9 +23,9 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
       <div
         style="
           display: flex;
-          justify-content: center;
-          align-items: center;
           width: 100%;
+          align-items: center;
+          justify-content: center;
         "
       >
         <img :src="mission.picture" style="width: 75%" />
