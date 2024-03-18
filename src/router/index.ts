@@ -66,6 +66,21 @@ const routes: RouteRecordRaw[] = [
     name: 'hardware',
     component: () => import('@/views/Hardware.vue'),
   },
+  {
+    path: '/meals',
+    name: 'meals',
+    component: () => import('@/views/Meals.vue'),
+  },
+  {
+    path: '/travel',
+    name: 'travel',
+    component: () => import('@/views/Travel.vue'),
+  },
+  {
+    path: '/mentors',
+    name: 'mentors',
+    component: () => import('@/views/Mentors.vue'),
+  },
 ]
 
 const router = createRouter({
