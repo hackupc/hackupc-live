@@ -13,4 +13,3 @@ import { meals } from '@/data/meals'
     </Panel>
   </PanelContainer>
 </template>
-

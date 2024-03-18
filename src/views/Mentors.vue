@@ -14,4 +14,3 @@ import PanelContainer from '@/components/PanelContainer.vue'
     </Panel>
   </PanelContainer>
 </template>
-

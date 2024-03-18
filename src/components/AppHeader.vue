@@ -429,8 +429,8 @@ $fade-time: 300ms;
   &__list {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-content: center;
+    justify-content: center;
     padding: 0;
     margin: 0;
     box-shadow: 0 3px 0 color.adjust($primary-color, $alpha: -0.5);
@@ -438,14 +438,14 @@ $fade-time: 300ms;
   }
 
   &__item {
+    display: flex;
     flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
     border-left: thin solid rgb(30 30 30 / 20%);
     background: #fff;
     text-align: center;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    justify-content: center;
 
     :first-child {
       border-left: 0;
@@ -453,9 +453,9 @@ $fade-time: 300ms;
 
     &--countdown {
       position: relative;
+      display: block;
       flex: 0 0 215px;
       padding: 0;
-      display: block;
     }
   }
 
@@ -475,9 +475,9 @@ $fade-time: 300ms;
     display: block;
 
     &__icon {
-      color: #0c0c0c;
       height: 20px;
       margin-right: 0.25rem;
+      color: #0c0c0c;
       vertical-align: -4px;
     }
   }
