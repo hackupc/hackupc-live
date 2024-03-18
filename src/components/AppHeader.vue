@@ -79,7 +79,7 @@ const isActive = (page: string): boolean => {
             Home</RouterLink
           >
         </li>
-        <li :class="{ selected: isActive('/schedule') }">
+        <li :class="{ selected: isActive('/live') }">
           <RouterLink to="/live" @click="closeAsideMenu"
             ><FontAwesomeIcon
               icon="calendar-days"
@@ -90,14 +90,14 @@ const isActive = (page: string): boolean => {
           </RouterLink>
         </li>
         <li :class="{ selected: isActive('/map') }">
-          <RouterLink to="/map" @click="closeAsideMenu"
-            ><FontAwesomeIcon
+          <RouterLink to="/map" @click="closeAsideMenu">
+            <FontAwesomeIcon
               icon="map-location-dot"
               size="sm"
               style="margin-right: 5px"
             />
-            Map</RouterLink
-          >
+            Map
+          </RouterLink>
         </li>
         <li :class="{ selected: isActive('/mission') }">
           <RouterLink to="/mission" @click="closeAsideMenu"
@@ -192,102 +192,117 @@ const isActive = (page: string): boolean => {
   <header v-if="!isFullscreen" class="header-nav-bar hide-when-small">
     <nav>
       <ul class="header-nav-bar__list">
-        <li class="header-nav-bar__item" :class="{ selected: isActive('/') }">
-          <RouterLink to="/"
-            ><FontAwesomeIcon icon="home" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+        <RouterLink
+          to="/"
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/') }"
+        >
+          <li>
+            <FontAwesomeIcon icon="home" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/schedule"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/schedule') }"
         >
-          <RouterLink to="/live"
-            ><FontAwesomeIcon icon="calendar-days" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="calendar-days" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/map"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/map') }"
         >
-          <RouterLink to="/map"
-            ><FontAwesomeIcon icon="map-location-dot" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="map-location-dot" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/mission"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/mission') }"
         >
-          <RouterLink to="/mission"
-            ><FontAwesomeIcon icon="user-secret" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="user-secret" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/mentors"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/mentors') }"
         >
-          <RouterLink to="/mentors"
-            ><FontAwesomeIcon icon="chalkboard-teacher" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="chalkboard-teacher" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/meals"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/meals') }"
         >
-          <RouterLink to="/meals"
-            ><FontAwesomeIcon icon="utensils" size="lg"
-          /></RouterLink>
-        </li>
+          <li>
+            <FontAwesomeIcon icon="utensils" size="lg" />
+          </li>
+        </RouterLink>
         <li class="header-nav-bar__item header-nav-bar__item--countdown">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
         </li>
-        <li
+        <RouterLink
+          to="/talks"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/talks') }"
         >
-          <RouterLink to="/talks"
-            ><FontAwesomeIcon icon="message" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="message" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/challenges"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/challenges') }"
         >
-          <RouterLink to="/challenges"
-            ><FontAwesomeIcon icon="code" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="code" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/hardware"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/hardware') }"
         >
-          <RouterLink to="/hardware"
-            ><FontAwesomeIcon icon="microchip" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="microchip" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/rules"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/rules') }"
         >
-          <RouterLink to="/rules"
-            ><FontAwesomeIcon icon="gavel" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="gavel" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/travel"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/travel') }"
         >
-          <RouterLink to="/travel"
-            ><FontAwesomeIcon icon="plane" size="lg"
-          /></RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="plane" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/faq"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/faq') }"
         >
-          <RouterLink to="/faq"
-            ><FontAwesomeIcon icon="circle-question" size="lg"
-          /></RouterLink>
-        </li>
+          <li>
+            <FontAwesomeIcon icon="circle-question" size="lg" />
+          </li>
+        </RouterLink>
       </ul>
     </nav>
   </header>
@@ -327,9 +342,9 @@ $fade-time: 300ms;
 
   &__bar {
     position: relative;
-    height: 50px;
+    height: 60px;
     border-bottom: thin solid rgb(125 125 125 / 30%);
-    background-color: $contrast-color;
+    background-color: $header-mobile-bg-color;
     box-shadow: 0 0 10px 0 rgb(125 125 125 / 60%);
     color: $secondary-text-color;
   }
@@ -354,7 +369,7 @@ $fade-time: 300ms;
   width: 50px;
   height: 100%;
   align-items: center;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   font-size: 20px;
   text-align: center;
@@ -371,7 +386,7 @@ $fade-time: 300ms;
   overflow: auto; /* just in case */
   width: 200px;
   height: 100%;
-  background-color: $contrast-color;
+  background-color: $header-mobile-bg-color;
   box-shadow: 0 0 13px 1px rgb(0 0 0 / 60%);
   transition: left 300ms;
 
@@ -384,6 +399,7 @@ $fade-time: 300ms;
     width: 50px;
     height: 50px;
     align-items: center;
+    color: #fff;
     cursor: pointer;
     text-align: center;
 
@@ -395,7 +411,7 @@ $fade-time: 300ms;
 
   nav {
     margin-top: 10px;
-    background-color: color.adjust($contrast-color, $lightness: -5%);
+    background-color: color.adjust($header-mobile-bg-color, $lightness: -5%);
   }
 
   ul {
@@ -408,7 +424,7 @@ $fade-time: 300ms;
   }
 
   .selected {
-    background-color: color.adjust($contrast-color, $lightness: -15%);
+    background-color: color.adjust($header-mobile-bg-color, $lightness: -15%);
     font-weight: bold;
   }
 
@@ -444,7 +460,7 @@ $fade-time: 300ms;
     justify-content: center;
     padding: 8px 12px;
     border-left: thin solid rgb(30 30 30 / 20%);
-    background: #fff;
+    background: $header-desktop-bg-color;
     text-align: center;
 
     :first-child {
@@ -460,8 +476,7 @@ $fade-time: 300ms;
   }
 
   a {
-    display: block;
-    padding: 10px 0;
+    padding: 15px 5px;
     color: $text-color;
     text-decoration: none;
   }
