@@ -18,20 +18,18 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
     <PanelContainer>
       <Panel title="HackUPC prizes" size="big">
         <div class="prizes-container">
-          <div class="prize">
+          <!--Example of prize:
             <h3 class="prize__position">1st</h3>
-            <p class="prize__text">Xbox Series S</p>
-            <p class="prize__subtext">(For each team member)</p>
+            <p class="prize__text">Price</p>
+            <p class="prize__subtext">(For each team member)</p> -->
+          <div class="prize">
+            <SecretContent />
           </div>
           <div class="prize">
-            <h3 class="prize__position">2nd</h3>
-            <p class="prize__text">Razer Huntsman V2 TKL</p>
-            <p class="prize__subtext">(For each team member)</p>
+            <SecretContent />
           </div>
           <div class="prize">
-            <h3 class="prize__position">3rd</h3>
-            <p class="prize__text">Polaroid Now i-Type</p>
-            <p class="prize__subtext">(For each team member)</p>
+            <SecretContent />
           </div>
         </div>
       </Panel>

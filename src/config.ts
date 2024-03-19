@@ -9,7 +9,7 @@ interface Config {
 const config: Config = {
   // fakeStartTime: '29/4/2022 21:59:55',
   disabled: false,
-  hideChallengesAndPrizes: false,
+  hideChallengesAndPrizes: true,
 }
 
 export default config
