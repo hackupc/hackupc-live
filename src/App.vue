@@ -56,15 +56,17 @@ body {
   margin: 0;
   background-attachment: fixed;
   background-color: $bg-color;
-  background-image: url('@/assets/img/bg.svg');
+  background-image: url('@/assets/img/stars.jpeg');
   background-position: center / 640px;
   background-repeat: repeat;
+  cursor: url('assets/img/rocket.png'), auto;
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
   color: $highlight-color;
+  cursor: url('assets/img/rocket-fire.png'), auto;
   text-decoration: none;
 }
 </style>

@@ -333,13 +333,14 @@ const submitDeadline = computed<string>(() =>
     flex: 1 1 0;
     padding: 8px;
     background-color: $tertiary-light-color;
-    color: $text-color !important;
+    color: $text-color-dark !important;
+    cursor: pointer;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
 
     &:not(:first-child) {
-      border-left: 3px solid #e8e2d7;
+      margin-left: 4px;
     }
   }
 }
@@ -379,11 +380,15 @@ const submitDeadline = computed<string>(() =>
     display: inline-block;
     line-height: 2;
     text-align: left;
+
+    code {
+      color: $text-color-dark;
+    }
   }
 }
 
 .icon-label-link {
-  color: currentcolor !important;
+  color: $text-color-dark !important;
   text-decoration: none !important;
 }
 
