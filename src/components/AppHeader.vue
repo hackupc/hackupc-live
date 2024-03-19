@@ -2,6 +2,7 @@
 import Countdown from '@/components/Countdown.vue'
 import { ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 interface Props {
   isFullscreen: boolean
@@ -73,40 +74,116 @@ const isActive = (page: string): boolean => {
     <nav>
       <ul>
         <li :class="{ selected: isActive('/') }">
-          <RouterLink to="/" @click="closeAsideMenu">Home</RouterLink>
-        </li>
-        <li :class="{ selected: isActive('/live') }">
-          <RouterLink to="/live" @click="closeAsideMenu">Live</RouterLink>
-        </li>
-        <li :class="{ selected: isActive('/schedule') }">
-          <RouterLink to="/schedule" @click="closeAsideMenu"
-            >Schedule</RouterLink
+          <RouterLink to="/" @click="closeAsideMenu"
+            ><FontAwesomeIcon icon="home" size="sm" style="margin-right: 5px" />
+            Home</RouterLink
           >
         </li>
+        <li :class="{ selected: isActive('/live') }">
+          <RouterLink to="/live" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="calendar-days"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Schedule & Live
+          </RouterLink>
+        </li>
         <li :class="{ selected: isActive('/map') }">
-          <RouterLink to="/map" @click="closeAsideMenu">Map</RouterLink>
+          <RouterLink to="/map" @click="closeAsideMenu">
+            <FontAwesomeIcon
+              icon="map-location-dot"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Map
+          </RouterLink>
         </li>
         <li :class="{ selected: isActive('/mission') }">
-          <RouterLink to="/mission" @click="closeAsideMenu">Mission</RouterLink>
+          <RouterLink to="/mission" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="user-secret"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Mission</RouterLink
+          >
         </li>
-        <li :class="{ selected: isActive('/challenges') }">
-          <RouterLink to="/challenges" @click="closeAsideMenu"
-            >Challenges</RouterLink
+        <li :class="{ selected: isActive('/mentors') }">
+          <RouterLink to="/mentors" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="chalkboard-teacher"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Mentors</RouterLink
+          >
+        </li>
+        <li :class="{ selected: isActive('/meals') }">
+          <RouterLink to="/meals" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="utensils"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Meals</RouterLink
           >
         </li>
         <li :class="{ selected: isActive('/talks') }">
-          <RouterLink to="/talks" @click="closeAsideMenu">Talks</RouterLink>
+          <RouterLink to="/talks" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="message"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Talks</RouterLink
+          >
+        </li>
+        <li :class="{ selected: isActive('/challenges') }">
+          <RouterLink to="/challenges" @click="closeAsideMenu"
+            ><FontAwesomeIcon icon="code" size="sm" style="margin-right: 5px" />
+            Challenges</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/hardware') }">
           <RouterLink to="/hardware" @click="closeAsideMenu"
-            >Hardware</RouterLink
+            ><FontAwesomeIcon
+              icon="microchip"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Hardware</RouterLink
           >
         </li>
         <li :class="{ selected: isActive('/rules') }">
-          <RouterLink to="/rules" @click="closeAsideMenu">Rules</RouterLink>
+          <RouterLink to="/rules" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="gavel"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Rules</RouterLink
+          >
+        </li>
+        <li :class="{ selected: isActive('/travel') }">
+          <RouterLink to="/travel" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="plane"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Discover BCN & Travel policies</RouterLink
+          >
         </li>
         <li :class="{ selected: isActive('/faq') }">
-          <RouterLink to="/faq" @click="closeAsideMenu">FAQ</RouterLink>
+          <RouterLink to="/faq" @click="closeAsideMenu"
+            ><FontAwesomeIcon
+              icon="circle-question"
+              size="sm"
+              style="margin-right: 5px"
+            />
+            Help</RouterLink
+          >
         </li>
       </ul>
     </nav>
@@ -115,66 +192,117 @@ const isActive = (page: string): boolean => {
   <header v-if="!isFullscreen" class="header-nav-bar hide-when-small">
     <nav>
       <ul class="header-nav-bar__list">
-        <li class="header-nav-bar__item" :class="{ selected: isActive('/') }">
-          <RouterLink to="/">Home</RouterLink>
-        </li>
-        <li
+        <RouterLink
+          to="/"
           class="header-nav-bar__item"
-          :class="{ selected: isActive('/live') }"
+          :class="{ selected: isActive('/') }"
         >
-          <RouterLink to="/live">Live</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="home" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/schedule"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/schedule') }"
         >
-          <RouterLink to="/schedule">Schedule</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="calendar-days" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/map"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/map') }"
         >
-          <RouterLink to="/map">Map</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="map-location-dot" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/mission"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/mission') }"
         >
-          <RouterLink to="/mission">Mission</RouterLink>
-        </li>
+          <li>
+            <FontAwesomeIcon icon="user-secret" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/mentors"
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/mentors') }"
+        >
+          <li>
+            <FontAwesomeIcon icon="chalkboard-teacher" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/meals"
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/meals') }"
+        >
+          <li>
+            <FontAwesomeIcon icon="utensils" size="lg" />
+          </li>
+        </RouterLink>
         <li class="header-nav-bar__item header-nav-bar__item--countdown">
           <Countdown class="hide-when-small" @click="goToFullscreen" />
         </li>
-        <li
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/challenges') }"
-        >
-          <RouterLink to="/challenges">Challenges</RouterLink>
-        </li>
-        <li
+        <RouterLink
+          to="/talks"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/talks') }"
         >
-          <RouterLink to="/talks">Talks</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="message" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/challenges"
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/challenges') }"
+        >
+          <li>
+            <FontAwesomeIcon icon="code" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/hardware"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/hardware') }"
         >
-          <RouterLink to="/hardware">Hardware</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="microchip" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/rules"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/rules') }"
         >
-          <RouterLink to="/rules">Rules</RouterLink>
-        </li>
-        <li
+          <li>
+            <FontAwesomeIcon icon="gavel" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/travel"
+          class="header-nav-bar__item"
+          :class="{ selected: isActive('/travel') }"
+        >
+          <li>
+            <FontAwesomeIcon icon="plane" size="lg" />
+          </li>
+        </RouterLink>
+        <RouterLink
+          to="/faq"
           class="header-nav-bar__item"
           :class="{ selected: isActive('/faq') }"
         >
-          <RouterLink to="/faq">FAQ</RouterLink>
-        </li>
+          <li>
+            <FontAwesomeIcon icon="circle-question" size="lg" />
+          </li>
+        </RouterLink>
       </ul>
     </nav>
   </header>
@@ -214,9 +342,9 @@ $fade-time: 300ms;
 
   &__bar {
     position: relative;
-    height: 50px;
+    height: 60px;
     border-bottom: thin solid rgb(125 125 125 / 30%);
-    background-color: $contrast-color;
+    background-color: $header-mobile-bg-color;
     box-shadow: 0 0 10px 0 rgb(125 125 125 / 60%);
     color: $secondary-text-color;
   }
@@ -241,7 +369,7 @@ $fade-time: 300ms;
   width: 50px;
   height: 100%;
   align-items: center;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   font-size: 20px;
   text-align: center;
@@ -258,7 +386,7 @@ $fade-time: 300ms;
   overflow: auto; /* just in case */
   width: 200px;
   height: 100%;
-  background-color: $contrast-color;
+  background-color: $header-mobile-bg-color;
   box-shadow: 0 0 13px 1px rgb(0 0 0 / 60%);
   transition: left 300ms;
 
@@ -271,6 +399,7 @@ $fade-time: 300ms;
     width: 50px;
     height: 50px;
     align-items: center;
+    color: #fff;
     cursor: pointer;
     text-align: center;
 
@@ -282,7 +411,7 @@ $fade-time: 300ms;
 
   nav {
     margin-top: 10px;
-    background-color: color.adjust($contrast-color, $lightness: -5%);
+    background-color: color.adjust($header-mobile-bg-color, $lightness: -5%);
   }
 
   ul {
@@ -295,7 +424,7 @@ $fade-time: 300ms;
   }
 
   .selected {
-    background-color: color.adjust($contrast-color, $lightness: -15%);
+    background-color: color.adjust($header-mobile-bg-color, $lightness: -15%);
     font-weight: bold;
   }
 
@@ -311,10 +440,12 @@ $fade-time: 300ms;
   position: fixed;
   z-index: 50;
   width: 100%;
+  align-content: center;
 
   &__list {
     display: flex;
     flex-direction: row;
+    align-content: center;
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -323,9 +454,13 @@ $fade-time: 300ms;
   }
 
   &__item {
+    display: flex;
     flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
     border-left: thin solid rgb(30 30 30 / 20%);
-    background: #fff;
+    background: $header-desktop-bg-color;
     text-align: center;
 
     :first-child {
@@ -334,14 +469,14 @@ $fade-time: 300ms;
 
     &--countdown {
       position: relative;
+      display: block;
       flex: 0 0 215px;
       padding: 0;
     }
   }
 
   a {
-    display: block;
-    padding: 10px 0;
+    padding: 15px 5px;
     color: $text-color;
     text-decoration: none;
   }
@@ -349,6 +484,17 @@ $fade-time: 300ms;
   .selected {
     box-shadow: 0 3px 0 $primary-color;
     cursor: default;
+  }
+
+  .link {
+    display: block;
+
+    &__icon {
+      height: 20px;
+      margin-right: 0.25rem;
+      color: #0c0c0c;
+      vertical-align: -4px;
+    }
   }
 }
 
