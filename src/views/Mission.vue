@@ -7,7 +7,7 @@ import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
 import SecretContent from '../components/SecretContent.vue'
 
-const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
+const hideMission = ref(config.hideMission)
 </script>
 
 <template>
@@ -18,9 +18,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
       :title="mission.title"
       :size="mission.size"
     >
-      <SecretContent v-if="hideChallengesAndPrizes" />
-      <VueMarkdownIt v-else :source="mission.description" />
-      <div
+      <!--<div
         style="
           display: flex;
           width: 100%;
@@ -29,7 +27,9 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
         "
       >
         <img :src="mission.picture" style="width: 75%" />
-      </div>
+      </div>-->
+      <SecretContent v-if="hideMission" />
+      <VueMarkdownIt v-else :source="mission.description" />
     </Panel>
   </PanelContainer>
 </template>
