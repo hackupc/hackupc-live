@@ -20,7 +20,7 @@ const submitDeadline = computed<string>(() =>
 <template>
   <PanelContainer>
     <Panel title="Important information" style="overflow: visible">
-      <h3 class="wifi__title">Wi-Fi</h3>
+      <!--<h3 class="wifi__title">Wi-Fi</h3>
       <div class="wifi">
         <img
           class="wifi__qr"
@@ -29,10 +29,10 @@ const submitDeadline = computed<string>(() =>
           tabindex="0"
         />
         <div class="wifi__inner">
-          SSID: <code>HACKUPC2023</code><br />
-          Password: <code>Biene2023!</code>
+          SSID: <code>HACKUPC2024</code><br />
+          Password: <code>Biene2024!</code>
         </div>
-      </div>
+      </div>-->
 
       <p>
         The projects must be posted on
@@ -59,18 +59,18 @@ const submitDeadline = computed<string>(() =>
     </Panel>
 
     <Panel title="Contact">
-      <IconLabel centered style="margin-top: 0.27rem">
+      <!--<IconLabel centered style="margin-top: 0.27rem">
         <template #icon>
           <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
         </template>
         <a
-          href="https://hackupc2023.slack.com"
+          href="https://hackupc2024.slack.com"
           target="_blank"
           rel="noopener noreferrer"
           class="icon-label-link"
-          >hackupc2023.slack.com</a
+          >hackupc2024.slack.com</a
         >
-      </IconLabel>
+      </IconLabel>-->
       <IconLabel centered style="margin-bottom: 1.5rem">
         <template #icon>
           <MailIcon />
@@ -172,6 +172,8 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon :icon="['fab', 'medium']" />
         </a>
       </div>
+      <h3>Emergency contact</h3>
+      <p>In case of a major emergency you can contact the Spanish emergency number: <b>112</b></p>
     </Panel>
 
     <Panel title="How to get to HackUPC" size="big">
