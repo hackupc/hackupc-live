@@ -173,7 +173,10 @@ const submitDeadline = computed<string>(() =>
         </a>
       </div>
       <h3>Emergency contact</h3>
-      <p>In case of a major emergency you can contact the Spanish emergency number: <b>112</b></p>
+      <p>
+        In case of a major emergency you can contact the Spanish emergency
+        number: <b>112</b>
+      </p>
     </Panel>
 
     <Panel title="How to get to HackUPC" size="big">
