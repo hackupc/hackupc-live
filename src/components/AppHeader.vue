@@ -412,14 +412,14 @@ $fade-time: 300ms;
 }
 
 .countdown-text {
-  margin-right: 10px;
   position: absolute;
-  right: 5px;
   top: 0;
+  right: 5px;
   display: flex;
   width: 50px;
   height: 100%;
   align-items: center;
+  margin-right: 10px;
   color: #fff;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   font-size: 15px;
