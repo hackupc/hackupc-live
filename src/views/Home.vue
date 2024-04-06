@@ -112,14 +112,14 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon :icon="['fab', 'twitch']" />
           <br />Twitch
         </a>
-        <a
+        <!--<a
           target="_blank"
           rel="noopener noreferrer"
           href="https://hackupc-2023.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
-        </a>
+        </a>-->
       </div>
 
       <div class="buttons">
