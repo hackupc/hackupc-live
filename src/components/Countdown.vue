@@ -161,4 +161,26 @@ const handleClick = (): void => {
     border-radius: 100%;
   }
 }
+
+@media (max-width: 720px) {
+  .countdown {
+    &--fullscreen {
+      top: 40px;
+      left: 59vw;
+      width: 33.333vw;
+      height: 33.333vw;
+    }
+
+    &--fullscreen &__time {
+      font-size: 6vw;
+    }
+  }
+
+  .countdown__bg {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+}
 </style>

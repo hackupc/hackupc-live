@@ -32,4 +32,10 @@ const exitFullscreen = () => {
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 720px) {
+  .fullscreen {
+    flex-direction: column;
+  }
+}
 </style>

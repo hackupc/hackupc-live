@@ -82,13 +82,18 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
         eventIndex < day.events.length
       ) {
         const event = day.events[eventIndex]
+        let haveEnd = true
+        if (event.start === event.end) {
+          haveEnd = false
+        }
+
         hourEvents.push({
           type: 'event',
           id: event.id,
           startTmsp: i,
           endTmsp,
           startHour: formatDate('time', event.start),
-          endHour: formatDate('time', event.end),
+          endHour: haveEnd ? formatDate('time', event.end) : '',
           title: event.title,
           isSubscribed: notificationsStore.subscriptions.includes(event.id),
         })
@@ -177,7 +182,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 }
 
 .event {
-  margin: 5px 0;
+  margin: 16px 0;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   user-select: none;
 
@@ -198,6 +203,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   &__hour {
     display: flex;
     width: 54px;
+    gap: 8px;
     flex-direction: column;
     margin-top: 3px;
     margin-right: 10px;
@@ -260,6 +266,8 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 
     > div {
       display: flex;
+      align-items: center;
+      gap: 16px;
     }
   }
 
