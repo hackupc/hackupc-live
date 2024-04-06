@@ -3,6 +3,7 @@ import Countdown from '@/components/Countdown.vue'
 import { ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { Tooltip } from 'ant-design-vue'
 
 interface Props {
   isFullscreen: boolean
@@ -136,7 +137,7 @@ const isActive = (page: string): boolean => {
               size="sm"
               style="margin-right: 5px"
             />
-            Talks</RouterLink
+            Talks & Workshops</RouterLink
           >
         </li>
         <li :class="{ selected: isActive('/challenges') }">
@@ -192,117 +193,157 @@ const isActive = (page: string): boolean => {
   <header v-if="!isFullscreen" class="header-nav-bar hide-when-small">
     <nav>
       <ul class="header-nav-bar__list">
-        <RouterLink
-          to="/"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="home" size="lg" />
+        <Tooltip title="Home" class="cursor-is-rocket">
+          <RouterLink
+            to="/"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="home" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Schedule & Live" class="cursor-is-rocket">
+          <RouterLink
+            to="/schedule"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/schedule') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="calendar-days" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Map" class="cursor-is-rocket">
+          <RouterLink
+            to="/map"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/map') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="map-location-dot" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Mission" class="cursor-is-rocket">
+          <RouterLink
+            to="/mission"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/mission') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="user-secret" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Mentors" class="cursor-is-rocket">
+          <RouterLink
+            to="/mentors"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/mentors') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="chalkboard-teacher" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Meals" class="cursor-is-rocket">
+          <RouterLink
+            to="/meals"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/meals') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="utensils" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Live full screen" class="cursor-is-rocket">
+          <li
+            class="header-nav-bar__item header-nav-bar__item--countdown cursor-is-rocket"
+          >
+            <Countdown class="hide-when-small" @click="goToFullscreen" />
           </li>
-        </RouterLink>
-        <RouterLink
-          to="/schedule"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/schedule') }"
+        </Tooltip>
+
+        <Tooltip title="Talks & Workshops" class="cursor-is-rocket">
+          <RouterLink
+            to="/talks"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/talks') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="message" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Challenges" class="cursor-is-rocket">
+          <RouterLink
+            to="/challenges"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/challenges') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="code" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+
+        <Tooltip title="Hardware" class="cursor-is-rocket">
+          <RouterLink
+            to="/hardware"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/hardware') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="microchip" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+        <Tooltip title="Rules" class="cursor-is-rocket">
+          <RouterLink
+            to="/rules"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/rules') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="gavel" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+        <Tooltip
+          title="Discover BCN & Travel policies"
+          class="cursor-is-rocket"
         >
-          <li>
-            <FontAwesomeIcon icon="calendar-days" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/map"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/map') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="map-location-dot" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/mission"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/mission') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="user-secret" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/mentors"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/mentors') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="chalkboard-teacher" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/meals"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/meals') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="utensils" size="lg" />
-          </li>
-        </RouterLink>
-        <li class="header-nav-bar__item header-nav-bar__item--countdown">
-          <Countdown class="hide-when-small" @click="goToFullscreen" />
-        </li>
-        <RouterLink
-          to="/talks"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/talks') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="message" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/challenges"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/challenges') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="code" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/hardware"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/hardware') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="microchip" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/rules"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/rules') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="gavel" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/travel"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/travel') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="plane" size="lg" />
-          </li>
-        </RouterLink>
-        <RouterLink
-          to="/faq"
-          class="header-nav-bar__item"
-          :class="{ selected: isActive('/faq') }"
-        >
-          <li>
-            <FontAwesomeIcon icon="circle-question" size="lg" />
-          </li>
-        </RouterLink>
+          <RouterLink
+            to="/travel"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/travel') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="plane" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
+        <Tooltip title="Help" class="cursor-is-rocket">
+          <RouterLink
+            to="/faq"
+            class="header-nav-bar__item"
+            :class="{ selected: isActive('/faq') }"
+          >
+            <li>
+              <FontAwesomeIcon icon="circle-question" size="lg" />
+            </li>
+          </RouterLink>
+        </Tooltip>
       </ul>
     </nav>
   </header>
@@ -313,6 +354,10 @@ const isActive = (page: string): boolean => {
 @use '@/variables' as *;
 
 $fade-time: 300ms;
+
+.cursor-is-rocket {
+  cursor: url('../assets/img/rocket-fire.png'), auto !important;
+}
 
 .external-link-icon {
   width: 16px;
@@ -370,7 +415,7 @@ $fade-time: 300ms;
   height: 100%;
   align-items: center;
   color: #fff;
-  cursor: pointer;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
   font-size: 20px;
   text-align: center;
 
@@ -400,7 +445,7 @@ $fade-time: 300ms;
     height: 50px;
     align-items: center;
     color: #fff;
-    cursor: pointer;
+    cursor: url('../assets/img/rocket-fire.png'), auto;
     text-align: center;
 
     div {

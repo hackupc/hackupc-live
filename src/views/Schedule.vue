@@ -25,7 +25,13 @@ const hasHackathonFinished = computed<boolean>(
         :key="day.start.unix()"
         class="table-container"
       >
-        <h1>{{ formatDate('weekday', day.start) }}</h1>
+        <h1>
+          {{
+            formatDate('weekday', day.start) +
+            ' ' +
+            formatDate('date', day.start)
+          }}
+        </h1>
         <div class="table-scroll">
           <table>
             <thead>
@@ -121,7 +127,8 @@ const hasHackathonFinished = computed<boolean>(
 
 .table-container {
   flex: 1 1 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   color: $secondary-color;
 

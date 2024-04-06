@@ -89,7 +89,7 @@ const handleClick = (): void => {
   margin-top: -90px;
   border-radius: 100%;
   box-shadow: 0 -5px 42px rgb(0 0 0 / 40%);
-  cursor: pointer;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
   transition: transform 200ms $ease-bounce;
 
   &:hover {
@@ -143,7 +143,7 @@ const handleClick = (): void => {
     height: 33.333vw;
     border-radius: 50%;
     box-shadow: 0 4px 42px 0 rgb(0 0 0 / 30%);
-    cursor: pointer;
+    cursor: url('../assets/img/rocket-fire.png'), auto;
     text-shadow: 0 0 12px rgb(0 0 0 / 50%);
   }
 

@@ -339,7 +339,7 @@ const submitDeadline = computed<string>(() =>
     padding: 8px;
     background-color: $tertiary-light-color;
     color: $text-color-dark !important;
-    cursor: pointer;
+    cursor: url('../assets/img/rocket-fire.png'), auto;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
