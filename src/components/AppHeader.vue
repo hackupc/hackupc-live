@@ -80,8 +80,8 @@ const isActive = (page: string): boolean => {
             Home</RouterLink
           >
         </li>
-        <li :class="{ selected: isActive('/live') }">
-          <RouterLink to="/live" @click="closeAsideMenu"
+        <li :class="{ selected: isActive('/schedule') }">
+          <RouterLink to="/schedule" @click="closeAsideMenu"
             ><FontAwesomeIcon
               icon="calendar-days"
               size="sm"
