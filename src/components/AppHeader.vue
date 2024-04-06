@@ -59,6 +59,9 @@ const isActive = (page: string): boolean => {
       <div class="title-container">
         <h1 id="title">Live</h1>
       </div>
+      <div class="countdown-text" @click="goToFullscreen">
+        <span>Full screen</span>
+      </div>
     </div>
   </header>
   <!--Aside menu for small screens-->
@@ -80,8 +83,8 @@ const isActive = (page: string): boolean => {
             Home</RouterLink
           >
         </li>
-        <li :class="{ selected: isActive('/live') }">
-          <RouterLink to="/live" @click="closeAsideMenu"
+        <li :class="{ selected: isActive('/schedule') }">
+          <RouterLink to="/schedule" @click="closeAsideMenu"
             ><FontAwesomeIcon
               icon="calendar-days"
               size="sm"
@@ -406,6 +409,21 @@ $fade-time: 300ms;
     padding: 0;
     margin: 0;
   }
+}
+
+.countdown-text {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  display: flex;
+  width: 50px;
+  height: 100%;
+  align-items: center;
+  margin-right: 10px;
+  color: #fff;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
+  font-size: 15px;
+  text-align: center;
 }
 
 .open-aside-btn {

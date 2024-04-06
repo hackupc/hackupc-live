@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Countdown from '@/components/Countdown.vue'
-import Live from '@/views/Live.vue'
+import Live from '@/components/LiveView.vue'
 import { onBeforeUnmount, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -31,5 +31,11 @@ const exitFullscreen = () => {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .fullscreen {
+    flex-direction: column;
+  }
 }
 </style>

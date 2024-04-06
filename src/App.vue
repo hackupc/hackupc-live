@@ -58,7 +58,7 @@ body {
   background-color: $bg-color;
   background-image: url('@/assets/img/stars.jpeg');
   background-position: center / 640px;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   cursor: url('assets/img/rocket.png'), auto;
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
