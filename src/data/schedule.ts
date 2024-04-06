@@ -190,7 +190,7 @@ export const schedule: RawSchedule = {
     },
     {
       id: 'hacking-ends',
-      title: '😮‍💨 Hacking starts',
+      title: '😮‍💨 Hacking ends',
       start: '05/05/2024 09:00',
       description: /* markdown */ `Remember to submit a valid project, on time, on Devpost to be eligible for prizes 🏆 or travel reimbursement 🛫`,
     },
@@ -250,8 +250,8 @@ export const schedule: RawSchedule = {
         icon: 'youtube',
       },
       title: '🗣️ Closing ceremony',
-      start: '03/05/2024 15:30',
-      end: '03/05/2024 17:30',
+      start: '05/05/2024 15:30',
+      end: '05/05/2024 17:30',
       description: /* markdown */ `Want to know how the event went? Just join us on YouTube & Vèrtex auditorium for the closing ceremony, where we’ll wrap up HackUPC 2023 and the winners will be announced! 🥇🥈🥉`,
     },
     {

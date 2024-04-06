@@ -7,12 +7,12 @@ import LiveView from '@/components/LiveView.vue'
 
 const route = useRoute()
 
-const currentSchedule = computed<'live' | 'basic'>(() => {
+const currentSchedule = computed<'live' | 'detailed'>(() => {
   if (
     route.params?.scheduleId !== 'live' &&
-    route.params?.scheduleId !== 'basic'
+    route.params?.scheduleId !== 'detailed'
   ) {
-    return 'basic'
+    return 'detailed'
   }
 
   return route.params.scheduleId
@@ -27,11 +27,11 @@ const currentSchedule = computed<'live' | 'basic'>(() => {
         <RouterLink
           :to="{
             name: 'schedule',
-            params: { scheduleId: 'basic' },
+            params: { scheduleId: 'detailed' },
           }"
           class="button"
-          :class="{ 'button--disabled': currentSchedule === 'basic' }"
-          >Basic view</RouterLink
+          :class="{ 'button--disabled': currentSchedule === 'detailed' }"
+          >Detailed view</RouterLink
         >
         <RouterLink
           :to="{
@@ -49,7 +49,7 @@ const currentSchedule = computed<'live' | 'basic'>(() => {
       </p>
     </div>
     <div class="scrollable">
-      <div v-if="currentSchedule === 'basic'">
+      <div v-if="currentSchedule === 'detailed'">
         <ScheduleView />
       </div>
 
