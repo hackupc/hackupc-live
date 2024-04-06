@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Countdown from '@/components/Countdown.vue'
-import Live from '@/views/Live.vue'
+import Live from '@/components/LiveView.vue'
 import { onBeforeUnmount, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 

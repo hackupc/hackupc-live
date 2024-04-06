@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import IconLabel from '@/components/IconLabel.vue'
-import { DevpostIcon } from '@/components/icons'
 import Panel from '@/components/Panel.vue'
 import { formatDate } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
