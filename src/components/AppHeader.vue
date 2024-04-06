@@ -59,6 +59,9 @@ const isActive = (page: string): boolean => {
       <div class="title-container">
         <h1 id="title">Live</h1>
       </div>
+      <div class="countdown-text" @click="goToFullscreen">
+        <span>Full screen</span>
+      </div>
     </div>
   </header>
   <!--Aside menu for small screens-->
@@ -406,6 +409,21 @@ $fade-time: 300ms;
     padding: 0;
     margin: 0;
   }
+}
+
+.countdown-text {
+  margin-right: 10px;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  display: flex;
+  width: 50px;
+  height: 100%;
+  align-items: center;
+  color: #fff;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
+  font-size: 15px;
+  text-align: center;
 }
 
 .open-aside-btn {

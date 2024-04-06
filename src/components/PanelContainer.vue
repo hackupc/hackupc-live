@@ -21,7 +21,7 @@ defineProps<Props>()
   margin: 0 auto;
 
   @media (max-width: 720px) {
-    padding-top: 60px;
+    padding: 80px 20px 40px;
   }
 
   .no-margin {
