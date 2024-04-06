@@ -84,16 +84,16 @@ const submitDeadline = computed<string>(() =>
         >
       </IconLabel>
 
-      <!--<div class="buttons">
+      <div class="buttons">
         <a
           href="https://my.hackupc.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <b>MyHackUPC</b><br />
-          <span style="font-weight: 400">Hardware / Baggage</span>
+          <!--<span style="font-weight: 400">Hardware / Baggage</span>-->
         </a>
-      </div>-->
+      </div>
 
       <div class="buttons">
         <a
