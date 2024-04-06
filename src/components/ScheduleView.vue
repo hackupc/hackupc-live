@@ -110,6 +110,7 @@ const hasHackathonFinished = computed<boolean>(
 <style scoped lang="scss">
 @use 'sass:color';
 @use '@/variables' as *;
+
 .table-container {
   flex: 1 1 0;
   margin-top: 30px;

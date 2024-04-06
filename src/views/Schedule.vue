@@ -65,9 +65,9 @@ const currentSchedule = computed<'live' | 'basic'>(() => {
 @use '@/variables' as *;
 
 .schedule {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
 
   div {
     max-width: 100%;
@@ -80,20 +80,20 @@ const currentSchedule = computed<'live' | 'basic'>(() => {
 }
 
 .explore {
-  text-align: center;
   margin-top: 20px;
+  text-align: center;
 
   &__title {
     margin: 0 0 20px;
-    text-align: center;
     color: $primary-color-light;
-    font-weight: bold;
     font-size: 20px;
+    font-weight: bold;
+    text-align: center;
   }
 }
 
 .note {
-  margin: 15px 0 15px;
+  margin: 15px 0;
   color: $primary-color-light;
   font-size: 18px;
   text-align: center;
