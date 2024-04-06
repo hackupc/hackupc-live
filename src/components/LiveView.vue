@@ -203,12 +203,12 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   &__hour {
     display: flex;
     width: 54px;
-    gap: 8px;
     flex-direction: column;
     margin-top: 3px;
     margin-right: 10px;
     font-size: 15px;
     font-weight: bold;
+    gap: 8px;
     text-align: right;
 
     &__end-hour {
