@@ -127,8 +127,8 @@ const hasHackathonFinished = computed<boolean>(
 
 .table-container {
   flex: 1 1 0;
-  margin-bottom: 30px;
   margin-top: 30px;
+  margin-bottom: 30px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   color: $secondary-color;
 
