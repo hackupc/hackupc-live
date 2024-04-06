@@ -35,13 +35,13 @@ const submitDeadline = computed<string>(() =>
       </div>-->
 
       <p>
-        The projects must be posted on
-        <a
+        The projects must be posted on Devpost
+        <!--<a
           target="_blank"
           href="https://hackupc-2023.devpost.com"
           rel="noopener noreferrer"
           >Devpost</a
-        >
+        >-->
         before {{ submitDeadline }}. If you don't do it, you won't have access
         to the travel reimbursement, prizes nor swag.
       </p>
@@ -112,14 +112,14 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon :icon="['fab', 'twitch']" />
           <br />Twitch
         </a>
-        <a
+        <!--<a
           target="_blank"
           rel="noopener noreferrer"
           href="https://hackupc-2023.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
-        </a>
+        </a>-->
       </div>
 
       <div class="buttons">
