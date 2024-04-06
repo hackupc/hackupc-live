@@ -39,7 +39,7 @@ defineProps<Props>()
   text-align: left;
 
   &--big {
-    flex: 1 1 782px;
+    flex: 1 1 1300px;
   }
 
   &__title {
