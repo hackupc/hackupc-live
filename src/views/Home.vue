@@ -47,7 +47,7 @@ const submitDeadline = computed<string>(() =>
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
-      <div class="buttons">
+      <!--<div class="buttons">
         <a
           href="https://guides.hackupc.com/guide/hacker/"
           target="_blank"
@@ -55,7 +55,7 @@ const submitDeadline = computed<string>(() =>
         >
           <b>Guides</b>
         </a>
-      </div>
+      </div>-->
     </Panel>
 
     <Panel title="Contact">
@@ -84,7 +84,7 @@ const submitDeadline = computed<string>(() =>
         >
       </IconLabel>
 
-      <div class="buttons">
+      <!--<div class="buttons">
         <a
           href="https://my.hackupc.com/"
           target="_blank"
@@ -93,7 +93,7 @@ const submitDeadline = computed<string>(() =>
           <b>MyHackUPC</b><br />
           <span style="font-weight: 400">Hardware / Baggage</span>
         </a>
-      </div>
+      </div>-->
 
       <div class="buttons">
         <a
