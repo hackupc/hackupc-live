@@ -37,11 +37,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Activities.vue'),
   },
   {
-    path: '/live',
-    name: 'live',
-    component: () => import('@/components/LiveView.vue'),
-  },
-  {
     path: '/fullscreen',
     name: 'fullScreen',
     component: () => import('@/views/FullScreen.vue'),
