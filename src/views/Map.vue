@@ -105,7 +105,7 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
   border-radius: 3px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
   color: $contrast-color;
-  cursor: pointer;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
   font-weight: bold;
 
   &--disabled {

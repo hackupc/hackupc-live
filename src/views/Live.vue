@@ -176,7 +176,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 
 .event {
   margin: 5px 0;
-  cursor: pointer;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
   user-select: none;
 
   &__arrow {

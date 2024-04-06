@@ -14,12 +14,10 @@ defineProps<Props>()
 <style lang="scss" scoped>
 .container {
   display: flex;
-  max-width: 1024px;
+  max-width: 1300px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 16px;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding: 150px 16px 50px;
   margin: 0 auto;
 
   @media (max-width: 720px) {

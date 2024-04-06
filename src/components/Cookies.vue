@@ -124,7 +124,7 @@ $ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     background-color: transparent;
     border-radius: 0.5rem;
     color: #fff;
-    cursor: pointer;
+    cursor: url('../assets/img/rocket-fire.png'), auto;
 
     &:hover,
     &:focus {
