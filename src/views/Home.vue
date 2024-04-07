@@ -177,12 +177,11 @@ const submitDeadline = computed<string>(() =>
         number: <b>112</b>
       </p>
     </Panel>
-
-    <Panel title="How to get to HackUPC" size="big">
-      <div class="travel">
-        <h2 class="travel__title text-centered">
-          <FontAwesomeIcon icon="plane-arrival" /> By plane
-        </h2>
+    <div>
+      <div class="panel">
+        <h2 class="travel__title">How to get and leave HackUPC</h2>
+      </div>
+      <Panel title="✈️ By plane">
         <h3 class="travel__subtitle text-centered">Arriving</h3>
         <p>
           Take the metro L9 in either <b>Aeroport T2</b> or
@@ -224,10 +223,8 @@ const submitDeadline = computed<string>(() =>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="train-subway" /> By train
-        </h2>
+      </Panel>
+      <Panel title="🚂 By train">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you take the train, you will probably arrive at
@@ -265,10 +262,8 @@ const submitDeadline = computed<string>(() =>
             will have to reach the elevator on the street at Sants Estació.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="bus" /> By bus
-        </h2>
+      </Panel>
+      <Panel title="🚌 By bus">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you are coming by bus you can take one of the following lines
@@ -303,10 +298,8 @@ const submitDeadline = computed<string>(() =>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="car" /> By car
-        </h2>
+      </Panel>
+      <Panel title="🚗 By car">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you come by car, you can find a place to park in the top of the
@@ -318,8 +311,8 @@ const submitDeadline = computed<string>(() =>
           Google Maps will know for sure your way back home. Just remember where
           you parked your car.
         </p>
-      </div>
-    </Panel>
+      </Panel>
+    </div>
   </PanelContainer>
 </template>
 
@@ -347,6 +340,13 @@ const submitDeadline = computed<string>(() =>
       margin-left: 4px;
     }
   }
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .wifi {
@@ -407,10 +407,30 @@ const submitDeadline = computed<string>(() =>
   }
 }
 
+.panel {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 350px;
+  margin: 16px;
+  background-color: $contrast-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: $text-color;
+  text-align: left;
+}
+
 .travel {
   &__title {
-    margin-top: 0;
-    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 1300px;
+    padding: 12px 24px;
+    margin: 0;
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.6;
     text-align: center;
   }
 
