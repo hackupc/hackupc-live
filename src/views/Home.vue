@@ -177,9 +177,9 @@ const submitDeadline = computed<string>(() =>
         number: <b>112</b>
       </p>
     </Panel>
-
     <div>
-      <Panel title="✈️ Arriving by plane">
+      <div class="panel"><h2 class="travel__title">How to get and leave HackUPC</h2></div>
+      <Panel title="✈️ By plane">
         <h3 class="travel__subtitle text-centered">Arriving</h3>
         <p>
           Take the metro L9 in either <b>Aeroport T2</b> or
@@ -222,7 +222,7 @@ const submitDeadline = computed<string>(() =>
           </p>
         </div>
       </Panel>
-      <Panel title="🚂 Arriving by train">
+      <Panel title="🚂 By train">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you take the train, you will probably arrive at
@@ -261,7 +261,7 @@ const submitDeadline = computed<string>(() =>
           </p>
         </div>
       </Panel>
-      <Panel title="🚌 Arriving by bus">
+      <Panel title="🚌 By bus">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you are coming by bus you can take one of the following lines
@@ -297,7 +297,7 @@ const submitDeadline = computed<string>(() =>
           </p>
         </div>
       </Panel>
-      <Panel title="🚗 Arriving by car">
+      <Panel title="🚗 By car">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you come by car, you can find a place to park in the top of the
@@ -405,10 +405,30 @@ const submitDeadline = computed<string>(() =>
   }
 }
 
+.panel {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 350px;
+  margin: 16px;
+  background-color: $contrast-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: $text-color;
+  text-align: left;
+}
+
 .travel {
   &__title {
-    margin-top: 0;
-    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 1300px;
+    border-radius: $border-radius;
+    padding: 12px 24px;
+    margin: 0;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.6;
     text-align: center;
   }
 
