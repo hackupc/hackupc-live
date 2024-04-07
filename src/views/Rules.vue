@@ -11,7 +11,7 @@ import PanelContainer from '../components/PanelContainer.vue'
       v-for="rule in rules"
       :key="rule.title"
       :title="rule.title"
-      size="big"
+      :size="rule.size"
     >
       <VueMarkdownIt :source="rule.description" />
     </Panel>

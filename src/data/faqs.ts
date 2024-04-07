@@ -25,22 +25,6 @@ The processing of travel reimbursements takes some time. Our schedule depends on
     size: 'big',
   },
   {
-    title: 'How does judging work?',
-    description: `
-We will have a judging expo on **${formatIntervalInTimezone(
-      '14/5/2023 10:15:00',
-      '14/5/2023 13:15:00'
-    )}**.
-We will assign you a time slot to present your project (one for HackUPC + as many challenges as you participate), you need to go to in front of A3 building and an organizer will assign you to a queue and may give you an estimated time when you will present.
-
-The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except your hack. You can check out other projects at any judging room.
-
-The top teams will move on to an additional round of panel judging in the Closing Ceremony.
-
-If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.`,
-    size: 'big',
-  },
-  {
     title: 'When shall I arrive?',
     description: `Registration will start on ${formatDateInTimezone(
       'weekday-time',

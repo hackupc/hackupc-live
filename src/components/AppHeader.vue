@@ -311,7 +311,7 @@ const isActive = (page: string): boolean => {
             </li>
           </RouterLink>
         </Tooltip>
-        <Tooltip title="Rules" class="cursor-is-rocket">
+        <Tooltip title="Judging & rules" class="cursor-is-rocket">
           <RouterLink
             to="/rules"
             class="header-nav-bar__item"
