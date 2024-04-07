@@ -3,11 +3,20 @@ import PanelContainer from '../components/PanelContainer.vue'
 import Panel from '@/components/Panel.vue'
 import { meals } from '@/data/meals'
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import config from '@/config'
+import SecretContent from '@/components/SecretContent.vue'
+
+const hideMeals = ref(config.hideMeals)
+const hideCafeteria = ref(config.hideCafeteria)
 </script>
 
 <template>
   <PanelContainer id="cafeteria">
-    <Panel title="☕️ 🎲 Cafeteria" size="big">
+    <Panel v-if="hideCafeteria" title="☕️ 🎲 Cafeteria" size="big">
+      <SecretContent />
+    </Panel>
+    <Panel v-else title="☕️ 🎲 Cafeteria" size="big">
       <span>
         In the cafeteria (<span>
           located in the
@@ -28,7 +37,10 @@ import { RouterLink } from 'vue-router'
       </span>
     </Panel>
 
-    <Panel title="Schedule & Rules">
+    <Panel v-if="hideCafeteria" title="Schedule & Rules" size="small">
+      <SecretContent />
+    </Panel>
+    <Panel v-else title="Schedule & Rules" size="small">
       <div style="display: flex; flex-direction: column">
         <div style="display: flex; gap: 16px">
           <span class="meal-title">Rules</span>
@@ -61,7 +73,10 @@ import { RouterLink } from 'vue-router'
       </div>
     </Panel>
 
-    <Panel title="What we have">
+    <Panel v-if="hideCafeteria" title="What we have" size="small">
+      <SecretContent />
+    </Panel>
+    <Panel v-else title="What we have" size="small">
       <div style="display: flex; flex-direction: column">
         <div style="display: flex; gap: 16px">
           <span class="meal-title">Coffee</span>
@@ -124,7 +139,11 @@ import { RouterLink } from 'vue-router'
   </PanelContainer>
 
   <PanelContainer id="meals" style="padding-top: 10px">
-    <Panel title="🍽 Regular meals" size="big">
+    <Panel v-if="hideMeals" title="🍽 Regular meals" size="big">
+      <SecretContent />
+    </Panel>
+
+    <Panel v-else title="🍽 Regular meals" size="big">
       <div class="allergies">
         <p><span class="allergies--icon">🌱</span> Vegetarian diet</p>
         <p><span class="allergies--icon">🥦</span> Vegan diet</p>
@@ -132,37 +151,38 @@ import { RouterLink } from 'vue-router'
       </div>
     </Panel>
 
-    <Panel
-      v-for="meal in meals"
-      :key="meal.title"
-      :title="meal.title"
-      size="small"
-    >
-      <div style="margin-bottom: 1.2rem; text-align: center">
-        <span v-if="meal.provider" class="provider-name">
-          {{ meal.provider }}
-        </span>
-        <span v-if="meal.mealTitle" class="meal-title">
-          {{ meal.mealTitle }}
-        </span>
-      </div>
-      <div
-        v-for="description in meal.mealDescription"
-        :key="description.nameMeal"
-        class="meal-row"
-      >
-        <span class="meal-name">{{ description.nameMeal }} </span>
-        <span v-if="description.isVegetarian" class="meal-icon-diet">🌱</span>
-        <span v-if="description.isVegan" class="meal-icon-diet">🥦</span>
-        <span v-if="description.isGlutenFree" class="meal-icon-diet">🌾</span>
-        <span v-if="description.ingredients !== ''" class="meal-ingredients">
-          <br />
-          <span class="meal-ingredients">{{
-            description.ingredients
-          }}</span></span
+    <template v-for="meal in meals" :key="meal.title">
+      <Panel v-if="hideMeals" :title="meal.title" size="small">
+        <SecretContent
+      /></Panel>
+
+      <Panel v-else :title="meal.title" size="small">
+        <div style="margin-bottom: 1.2rem; text-align: center">
+          <span v-if="meal.provider" class="provider-name">
+            {{ meal.provider }}
+          </span>
+          <span v-if="meal.mealTitle" class="meal-title">
+            {{ meal.mealTitle }}
+          </span>
+        </div>
+        <div
+          v-for="description in meal.mealDescription"
+          :key="description.nameMeal"
+          class="meal-row"
         >
-      </div>
-    </Panel>
+          <span class="meal-name">{{ description.nameMeal }} </span>
+          <span v-if="description.isVegetarian" class="meal-icon-diet">🌱</span>
+          <span v-if="description.isVegan" class="meal-icon-diet">🥦</span>
+          <span v-if="description.isGlutenFree" class="meal-icon-diet">🌾</span>
+          <span v-if="description.ingredients !== ''" class="meal-ingredients">
+            <br />
+            <span class="meal-ingredients">{{
+              description.ingredients
+            }}</span></span
+          >
+        </div>
+      </Panel>
+    </template>
   </PanelContainer>
 </template>
 
