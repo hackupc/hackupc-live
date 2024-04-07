@@ -178,11 +178,8 @@ const submitDeadline = computed<string>(() =>
       </p>
     </Panel>
 
-    <Panel title="How to get to HackUPC" size="big">
-      <div class="travel">
-        <h2 class="travel__title text-centered">
-          <FontAwesomeIcon icon="plane-arrival" /> By plane
-        </h2>
+    <div>
+      <Panel title="✈️ Arriving by plane">
         <h3 class="travel__subtitle text-centered">Arriving</h3>
         <p>
           Take the metro L9 in either <b>Aeroport T2</b> or
@@ -191,10 +188,10 @@ const submitDeadline = computed<string>(() =>
           there. To get to our check-in point please check out our
           <RouterLink
             :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
           >.
         </p>
         <p>
@@ -215,19 +212,17 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon
+              class="wheelchair-icon__icon"
+              icon="wheelchair"
+            />
+          </span>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="train-subway" /> By train
-        </h2>
+      </Panel>
+      <Panel title="🚂 Arriving by train">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you take the train, you will probably arrive at
@@ -239,10 +234,10 @@ const submitDeadline = computed<string>(() =>
           some signs pointing where HackUPC is, otherwise you can check out our
           <RouterLink
             :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
           >.
         </p>
         <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
@@ -255,20 +250,18 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon
+              class="wheelchair-icon__icon"
+              icon="wheelchair"
+            />
+          </span>
             This itinerary is completely accessible. To enter the metro, you
             will have to reach the elevator on the street at Sants Estació.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="bus" /> By bus
-        </h2>
+      </Panel>
+      <Panel title="🚌 Arriving by bus">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you are coming by bus you can take one of the following lines
@@ -279,10 +272,10 @@ const submitDeadline = computed<string>(() =>
           Campus Nord, check out everything on our
           <RouterLink
             :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
           >.
         </p>
         <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
@@ -294,19 +287,17 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon
+              class="wheelchair-icon__icon"
+              icon="wheelchair"
+            />
+          </span>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="car" /> By car
-        </h2>
+      </Panel>
+      <Panel title="🚗 Arriving by car">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you come by car, you can find a place to park in the top of the
@@ -318,8 +309,8 @@ const submitDeadline = computed<string>(() =>
           Google Maps will know for sure your way back home. Just remember where
           you parked your car.
         </p>
-      </div>
-    </Panel>
+      </Panel>
+    </div>
   </PanelContainer>
 </template>
 
@@ -347,6 +338,13 @@ const submitDeadline = computed<string>(() =>
       margin-left: 4px;
     }
   }
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .wifi {
