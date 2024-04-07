@@ -13,8 +13,8 @@ export const rules: Rule[] = [
     title: 'How does judging work?',
     description: `
 We will have a judging expo on **${formatIntervalInTimezone(
-      '14/5/2023 10:15:00',
-      '14/5/2023 13:15:00'
+      '5/5/2024 10:15:00',
+      '5/5/2024 13:15:00'
     )}**.
 We will assign you a time slot to present your project (one for HackUPC + as many challenges as you participate), you need to go to in front of A3 building and an organizer will assign you to a queue and may give you an estimated time when you will present.
 
