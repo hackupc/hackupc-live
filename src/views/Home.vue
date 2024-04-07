@@ -188,10 +188,10 @@ const submitDeadline = computed<string>(() =>
           there. To get to our check-in point please check out our
           <RouterLink
             :to="{
-            name: 'map',
-            params: { mapId: 'campus' },
-          }"
-          >map</RouterLink
+              name: 'map',
+              params: { mapId: 'campus' },
+            }"
+            >map</RouterLink
           >.
         </p>
         <p>
@@ -212,12 +212,12 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-          <span class="wheelchair-icon">
-            <FontAwesomeIcon
-              class="wheelchair-icon__icon"
-              icon="wheelchair"
-            />
-          </span>
+            <span class="wheelchair-icon">
+              <FontAwesomeIcon
+                class="wheelchair-icon__icon"
+                icon="wheelchair"
+              />
+            </span>
             This itinerary is completely accessible.
           </p>
         </div>
@@ -234,10 +234,10 @@ const submitDeadline = computed<string>(() =>
           some signs pointing where HackUPC is, otherwise you can check out our
           <RouterLink
             :to="{
-            name: 'map',
-            params: { mapId: 'campus' },
-          }"
-          >map</RouterLink
+              name: 'map',
+              params: { mapId: 'campus' },
+            }"
+            >map</RouterLink
           >.
         </p>
         <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
@@ -250,12 +250,12 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-          <span class="wheelchair-icon">
-            <FontAwesomeIcon
-              class="wheelchair-icon__icon"
-              icon="wheelchair"
-            />
-          </span>
+            <span class="wheelchair-icon">
+              <FontAwesomeIcon
+                class="wheelchair-icon__icon"
+                icon="wheelchair"
+              />
+            </span>
             This itinerary is completely accessible. To enter the metro, you
             will have to reach the elevator on the street at Sants Estació.
           </p>
@@ -272,10 +272,10 @@ const submitDeadline = computed<string>(() =>
           Campus Nord, check out everything on our
           <RouterLink
             :to="{
-            name: 'map',
-            params: { mapId: 'campus' },
-          }"
-          >map</RouterLink
+              name: 'map',
+              params: { mapId: 'campus' },
+            }"
+            >map</RouterLink
           >.
         </p>
         <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
@@ -287,12 +287,12 @@ const submitDeadline = computed<string>(() =>
         </p>
         <div class="travel__accessible">
           <p>
-          <span class="wheelchair-icon">
-            <FontAwesomeIcon
-              class="wheelchair-icon__icon"
-              icon="wheelchair"
-            />
-          </span>
+            <span class="wheelchair-icon">
+              <FontAwesomeIcon
+                class="wheelchair-icon__icon"
+                icon="wheelchair"
+              />
+            </span>
             This itinerary is completely accessible.
           </p>
         </div>
