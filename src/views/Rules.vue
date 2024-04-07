@@ -35,12 +35,13 @@ import { RouterLink } from 'vue-router'
 <style lang="scss" scoped>
 @use 'sass:color';
 @use '@/variables' as *;
+
 .explore {
-  margin-top: 20px;
-  width: 100%;
-  margin-right: 20px;
   display: flex;
+  width: 100%;
   justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
 
   &__title {
     margin: 0 0 20px;
@@ -58,7 +59,7 @@ import { RouterLink } from 'vue-router'
   background: $links-color;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  color: #000000;
+  color: #000;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   font-weight: bold;
 
