@@ -8,7 +8,7 @@ interface Config {
 }
 
 const config: Config = {
-  // fakeStartTime: '29/4/2022 21:59:55',
+  //fakeStartTime: '29/4/2022 21:59:55',
   disabled: false,
   hideChallengesAndPrizes: true,
   hideMission: true,

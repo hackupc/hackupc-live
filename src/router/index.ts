@@ -39,7 +39,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/live',
     name: 'live',
-    component: () => import('@/views/Live.vue'),
+    component: () => import('@/components/LiveView.vue'),
   },
   {
     path: '/fullscreen',

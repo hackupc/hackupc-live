@@ -38,8 +38,6 @@ export type DateFormatsTypes = {
 }
 
 export function formatDate(format: DateFormat, date: Dayjs): string {
-  console.log(format, date, dateFormats[format])
-  console.log(date.local().format(dateFormats[format]))
   return date.local().format(dateFormats[format])
 }
 

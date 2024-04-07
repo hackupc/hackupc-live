@@ -1,112 +1,60 @@
 <script setup lang="ts">
 import PanelContainer from '@/components/PanelContainer.vue'
-import { formatDate } from '@/services/dates'
-import { useScheduleStore } from '@/stores/schedule'
-import { useTimeStore } from '@/stores/time'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { LinkIcon, LocationMarkerIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
-import VueMarkdownIt from 'vue3-markdown-it'
+import { RouterLink, useRoute } from 'vue-router'
+import ScheduleView from '@/components/ScheduleView.vue'
+import LiveView from '@/components/LiveView.vue'
 
-const scheduleStore = useScheduleStore()
-const timeStore = useTimeStore()
+const route = useRoute()
 
-const hasHackathonFinished = computed<boolean>(
-  () => scheduleStore.schedule.days.at(-1)?.end.isBefore(timeStore.now) ?? true
-)
+const currentSchedule = computed<'live' | 'detailed'>(() => {
+  if (
+    route.params?.scheduleId !== 'live' &&
+    route.params?.scheduleId !== 'detailed'
+  ) {
+    return 'detailed'
+  }
+
+  return route.params.scheduleId
+})
 </script>
 
 <template>
   <PanelContainer id="schedule" class="schedule">
-    <div>
-      <div
-        v-for="day in scheduleStore.schedule.days"
-        :key="day.start.unix()"
-        class="table-container"
-      >
-        <h1>
-          {{
-            formatDate('weekday', day.start) +
-            ' ' +
-            formatDate('date', day.start)
-          }}
-        </h1>
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Location</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Title</th>
-                <th class="hide-when-small">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="event in day.events"
-                :key="event.id"
-                :class="{
-                  happened:
-                    !hasHackathonFinished && event.end.isBefore(timeStore.now),
-                }"
-              >
-                <td>
-                  <RouterLink
-                    v-if="event.physicalLocation"
-                    class="link"
-                    :to="{
-                      name: 'map',
-                      params: { mapId: event.physicalLocation.mapId },
-                    }"
-                  >
-                    <LocationMarkerIcon class="link__icon" />
-                    <span class="link__text">
-                      {{ event.physicalLocation.text }}
-                    </span>
-                  </RouterLink>
-                  <a
-                    v-if="event.onlineLocation"
-                    :href="event.onlineLocation.url"
-                    rel="noopener noreferrer"
-                    class="link"
-                  >
-                    <FontAwesomeIcon
-                      v-if="event.onlineLocation.icon === 'slack'"
-                      class="link__icon"
-                      :icon="['fab', 'slack']"
-                    />
-                    <FontAwesomeIcon
-                      v-else-if="event.onlineLocation.icon === 'twitch'"
-                      class="link__icon"
-                      :icon="['fab', 'twitch']"
-                    />
-                    <FontAwesomeIcon
-                      v-else-if="event.onlineLocation.icon === 'youtube'"
-                      class="link__icon"
-                      :icon="['fab', 'youtube']"
-                    />
-                    <LinkIcon v-else class="link__icon" />
-                    <span class="link__text">
-                      {{ event.onlineLocation.text }}
-                    </span>
-                  </a>
-                </td>
-                <td>{{ formatDate('time', event.start) }}</td>
-                <td>
-                  <template v-if="event.start !== event.end">{{
-                    formatDate('time', event.end)
-                  }}</template>
-                </td>
-                <td class="when-small">{{ event.title }}</td>
-                <td class="hide-when-small">
-                  <VueMarkdownIt :source="event.description" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <div class="explore">
+      <p class="explore__title">Select your favourite view</p>
+      <div class="explore__list">
+        <RouterLink
+          :to="{
+            name: 'schedule',
+            params: { scheduleId: 'detailed' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentSchedule === 'detailed' }"
+          >Detailed view</RouterLink
+        >
+        <RouterLink
+          :to="{
+            name: 'schedule',
+            params: { scheduleId: 'live' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentSchedule === 'live' }"
+          >Live view</RouterLink
+        >
+      </div>
+      <p class="note">
+        ** The schedule is in construction times can change and also activities
+        will appear as they are confirmed.
+      </p>
+    </div>
+    <div class="scrollable">
+      <div v-if="currentSchedule === 'detailed'">
+        <ScheduleView />
+      </div>
+
+      <div v-if="currentSchedule === 'live'">
+        <LiveView />
       </div>
     </div>
   </PanelContainer>
@@ -117,120 +65,55 @@ const hasHackathonFinished = computed<boolean>(
 @use '@/variables' as *;
 
 .schedule {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   div {
     max-width: 100%;
   }
 }
 
-.table-container {
-  flex: 1 1 0;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  color: $secondary-color;
+.scrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+}
 
-  h1 {
-    padding: 10px;
-    margin: 0;
-    background-color: $primary-color;
-    border-radius: $border-radius $border-radius 0 0;
-    color: #fff;
+.explore {
+  margin-top: 20px;
+  text-align: center;
+
+  &__title {
+    margin: 0 0 20px;
+    color: $primary-color-light;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-
-    // border-bottom: 1px solid #fff3;
-  }
-
-  .table-scroll {
-    overflow: auto;
-  }
-
-  table {
-    width: 100%;
-    background-color: $contrast-color;
-    border-collapse: collapse;
-    border-radius: 0 0 $border-radius $border-radius;
-    color: $text-color;
-  }
-
-  thead {
-    background-color: $primary-color;
-    color: $contrast-color;
-  }
-
-  th {
-    padding: 10px;
-    text-align: left;
-
-    &:first-child {
-      border-left: 0;
-    }
-
-    &:last-child {
-      border-right: 0;
-    }
-  }
-
-  td {
-    padding: 10px;
-    border: thin solid #ececec;
-    text-align: left;
-
-    &:last-child {
-      min-width: 200px;
-      border-right: 0;
-    }
-
-    &:first-child {
-      border-left: 0;
-      text-align: center;
-    }
-  }
-
-  a {
-    color: $secondary-color;
-  }
-
-  tr:first-child th {
-    border-top: 0;
-  }
-
-  tr:last-child td {
-    border-bottom: 0;
   }
 }
 
-.happened {
-  opacity: 0.5;
+.note {
+  margin: 15px 0;
+  color: $primary-color-light;
+  font-size: 18px;
+  text-align: center;
 }
 
-.when-small {
-  width: 20%;
-}
+.button {
+  display: inline-block;
+  padding: 8px 24px;
+  margin: 0 0.2em 16px;
+  background: $primary-color;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  color: $text-color;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
+  font-weight: bold;
 
-@media (max-width: 720px) {
-  .when-small {
-    width: 60%;
-  }
-
-  .hide-when-small {
-    display: none !important;
-  }
-}
-
-.link {
-  display: block;
-
-  &:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
-
-  &__icon {
-    height: 20px;
-    margin-right: 0.25rem;
-    vertical-align: -4px;
+  &--disabled {
+    filter: grayscale(0.5);
+    opacity: 0.4;
+    pointer-events: none;
   }
 }
 </style>

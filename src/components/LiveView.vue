@@ -82,13 +82,18 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
         eventIndex < day.events.length
       ) {
         const event = day.events[eventIndex]
+        let haveEnd = true
+        if (event.start === event.end) {
+          haveEnd = false
+        }
+
         hourEvents.push({
           type: 'event',
           id: event.id,
           startTmsp: i,
           endTmsp,
           startHour: formatDate('time', event.start),
-          endHour: formatDate('time', event.end),
+          endHour: haveEnd ? formatDate('time', event.end) : '',
           title: event.title,
           isSubscribed: notificationsStore.subscriptions.includes(event.id),
         })
@@ -116,51 +121,53 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 </script>
 
 <template>
-  <div id="live" class="container-live">
-    <div
-      class="events-fancy"
-      :class="{ 'events-fancy--fullscreen': fullscreen }"
-    >
-      <ul>
-        <template v-for="event in events">
-          <li
-            v-if="event.type === 'title'"
-            :key="`${event.title}-${event.startTmsp}`"
-          >
-            <h1>{{ event.title }}</h1>
-          </li>
-          <li
-            v-else-if="event.type === 'item'"
-            :key="`${event.startTmsp}`"
-            :class="{ happening: event.isHappening }"
-          >
-            <ArrowNarrowRightIcon
-              v-if="event.isHappening"
-              class="event__arrow"
-            />
-            <div
-              v-for="hourEvent in event.hourEvents"
-              :key="hourEvent.id"
-              class="event"
-              :class="{ subscribed: hourEvent.isSubscribed }"
-              :data-event-id="hourEvent.id"
-              @click="notificationsStore.toggleSubscription(hourEvent.id)"
+  <div>
+    <div class="container-live">
+      <div
+        class="events-fancy"
+        :class="{ 'events-fancy--fullscreen': fullscreen }"
+      >
+        <ul>
+          <template v-for="event in events">
+            <li
+              v-if="event.type === 'title'"
+              :key="`${event.title}-${event.startTmsp}`"
             >
-              <div class="event__hour">
-                <div>{{ hourEvent.startHour }}</div>
-                <div class="event__end-hour">{{ hourEvent.endHour }}</div>
+              <h1>{{ event.title }}</h1>
+            </li>
+            <li
+              v-else-if="event.type === 'item'"
+              :key="`${event.startTmsp}`"
+              :class="{ happening: event.isHappening }"
+            >
+              <ArrowNarrowRightIcon
+                v-if="event.isHappening"
+                class="event__arrow"
+              />
+              <div
+                v-for="hourEvent in event.hourEvents"
+                :key="hourEvent.id"
+                class="event"
+                :class="{ subscribed: hourEvent.isSubscribed }"
+                :data-event-id="hourEvent.id"
+                @click="notificationsStore.toggleSubscription(hourEvent.id)"
+              >
+                <div class="event__hour">
+                  <div>{{ hourEvent.startHour }}</div>
+                  <div class="event__end-hour">{{ hourEvent.endHour }}</div>
+                </div>
+                <div class="title">
+                  {{ hourEvent.title }}
+                  <VolumeOffIcon
+                    v-if="!hourEvent.isSubscribed"
+                    class="event__subscribed-icon"
+                  />
+                </div>
               </div>
-              <div class="title">
-                {{ hourEvent.title }}
-                <VolumeOffIcon
-                  v-if="!hourEvent.isSubscribed"
-                  class="event__subscribed-icon"
-                />
-              </div>
-            </div>
-          </li>
-        </template>
-      </ul>
+            </li>
+          </template>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -175,7 +182,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 }
 
 .event {
-  margin: 5px 0;
+  margin: 16px 0;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   user-select: none;
 
@@ -185,6 +192,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     height: 2.5rem;
     margin-top: -0.25em;
     margin-right: 0.5em;
+    color: $secondary-color;
   }
 
   &__subscribed-icon {
@@ -200,6 +208,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     margin-right: 10px;
     font-size: 15px;
     font-weight: bold;
+    gap: 8px;
     text-align: right;
 
     &__end-hour {
@@ -230,18 +239,6 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
   -webkit-overflow-scrolling: touch;
   text-align: left;
 
-  &::before {
-    position: fixed;
-    z-index: 10;
-    top: 39px;
-    right: 0;
-    left: 0;
-    height: 100px;
-    background-image: linear-gradient($bg-color, transparent);
-    content: '';
-    pointer-events: none;
-  }
-
   ul {
     min-height: 200px;
     max-height: 100%;
@@ -249,13 +246,10 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
     padding-top: 25px;
     padding-right: 25px;
     padding-left: 25px;
-    margin-top: 175px;
     margin-right: 75px;
     margin-left: 75px;
-    background-color: #ffffff75;
     border-radius: 25px;
     list-style: none;
-    overflow-y: none;
   }
 
   li {
@@ -272,6 +266,8 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
 
     > div {
       display: flex;
+      align-items: center;
+      gap: 16px;
     }
   }
 
@@ -293,7 +289,7 @@ const events = computed<(TimelineEventItem | TimelineEventTitle)[]>(() => {
       width: 100%;
       height: 100%;
       max-height: 100%;
-      margin-left: 40%;
+      margin-left: 48%;
     }
 
     li {
