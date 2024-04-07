@@ -22,7 +22,6 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
 <template>
   <PanelContainer id="schedule" class="schedule">
     <div class="explore">
-      <p class="explore__title">Select your favourite view</p>
       <div class="explore__list">
         <RouterLink
           :to="{
@@ -80,22 +79,17 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
 }
 
 .explore {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   margin-top: 20px;
-  text-align: center;
-
-  &__title {
-    margin: 0 0 20px;
-    color: $primary-color-light;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
+  margin-right: 20px;
 }
 
 .note {
-  margin: 15px 0;
+  margin: 0;
   color: $primary-color-light;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -103,10 +97,10 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
   display: inline-block;
   padding: 8px 24px;
   margin: 0 0.2em 16px;
-  background: $primary-color;
+  background: $links-color;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  color: $text-color;
+  color: #000;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   font-weight: bold;
 
@@ -114,6 +108,11 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
     filter: grayscale(0.5);
     opacity: 0.4;
     pointer-events: none;
+  }
+
+  &:hover {
+    background: $links-color-hover;
+    color: #fff;
   }
 }
 </style>
