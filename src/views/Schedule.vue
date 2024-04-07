@@ -79,11 +79,11 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
 }
 
 .explore {
-  margin-top: 20px;
-  margin-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .note {
@@ -100,7 +100,7 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
   background: $links-color;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  color: #000000;
+  color: #000;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   font-weight: bold;
 
@@ -112,7 +112,7 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
 
   &:hover {
     background: $links-color-hover;
-    color: #ffffff;
+    color: #fff;
   }
 }
 </style>
