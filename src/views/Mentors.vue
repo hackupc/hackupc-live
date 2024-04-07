@@ -24,7 +24,8 @@ import PanelContainer from '@/components/PanelContainer.vue'
         You can always find a mentor in the Mentors lobby, located at A5105 next
         to the Cafeteria.
         <br /><br />
-        📍Check where to find it in the <a href="/map/indoors">Map</a>! <br/><br/>
+        📍Check where to find it in the <a href="/map/indoors">Map</a>!
+        <br /><br />
         Also you can ask for help through the help channel on Slack!
         <IconLabel centered style="margin-top: 0.27rem">
           <template #icon>
@@ -35,7 +36,7 @@ import PanelContainer from '@/components/PanelContainer.vue'
             target="_blank"
             rel="noopener noreferrer"
             class="icon-label-link"
-          >#help
+            >#help
           </a>
         </IconLabel>
       </Panel>
@@ -91,10 +92,10 @@ import PanelContainer from '@/components/PanelContainer.vue'
 <style lang="scss" scoped>
 .mentorPan {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
   max-width: 1300px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 1.5rem;
 
   @media (max-width: 720px) {
