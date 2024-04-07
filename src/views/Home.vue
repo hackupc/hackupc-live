@@ -178,7 +178,9 @@ const submitDeadline = computed<string>(() =>
       </p>
     </Panel>
     <div>
-      <div class="panel"><h2 class="travel__title">How to get and leave HackUPC</h2></div>
+      <div class="panel">
+        <h2 class="travel__title">How to get and leave HackUPC</h2>
+      </div>
       <Panel title="✈️ By plane">
         <h3 class="travel__subtitle text-centered">Arriving</h3>
         <p>
@@ -422,10 +424,10 @@ const submitDeadline = computed<string>(() =>
     position: relative;
     overflow: hidden;
     flex: 1 1 1300px;
-    border-radius: $border-radius;
     padding: 12px 24px;
     margin: 0;
     background-color: $primary-color;
+    border-radius: $border-radius;
     color: #fff;
     font-size: 20px;
     line-height: 1.6;
