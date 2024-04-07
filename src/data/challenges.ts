@@ -73,13 +73,4 @@ export const challenges: Challenge[] = [
     prize: '',
     channel: '',
   },
-  {
-    companyEncrypted: 'Company challenge',
-    company: '',
-    title: '',
-    videoUrl: '',
-    //description: /* markdown */ ``,
-    prize: '',
-    channel: '',
-  },
 ]
