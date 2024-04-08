@@ -44,7 +44,7 @@ import PanelContainer from '@/components/PanelContainer.vue'
         In order to recognize a Mentor you can check if <b>Mentor</b> is written
         on their back!
         <Panel :panel-content-image="`url('${MentorShirt}')`" size="small">
-          <div style="height: 400px"></div>
+          <div style="height: 600px"></div>
         </Panel>
       </Panel>
     </div>
