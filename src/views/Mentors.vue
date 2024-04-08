@@ -9,38 +9,36 @@ import PanelContainer from '@/components/PanelContainer.vue'
 
 <template>
   <PanelContainer id="mentors">
-    <div class="mentorPan">
-      <Panel title="What is a mentor?" size="small">
-        Mentors are experts in various technologies and programming languages
-        who can help you with:
-        <ul>
-          <li>Issues with your code</li>
-          <li>Boosting up your project</li>
-          <li>Getting started with your project</li>
-          <li>Submitting it to Devpost</li>
-        </ul>
-      </Panel>
-      <Panel title="Where to find them? Mentor lobby" size="small">
-        You can always find a mentor in the Mentors lobby, located at A5105 next
-        to the Cafeteria.
-        <br /><br />
-        📍Check where to find it in the <a href="/map/indoors">Map</a>!
-        <br /><br />
-        Also you can ask for help through the help channel on Slack!
-        <IconLabel centered style="margin-top: 0.27rem">
-          <template #icon>
-            <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
-          </template>
-          <a
-            href="https://hackupc2024.slack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="icon-label-link"
-            >#help
-          </a>
-        </IconLabel>
-      </Panel>
-    </div>
+    <Panel title="What is a mentor?" size="small">
+      Mentors are experts in various technologies and programming languages
+      who can help you with:
+      <ul>
+        <li>Issues with your code</li>
+        <li>Boosting up your project</li>
+        <li>Getting started with your project</li>
+        <li>Submitting it to Devpost</li>
+      </ul>
+    </Panel>
+    <Panel title="Where to find them? Mentor lobby" size="small">
+      You can always find a mentor in the Mentors lobby, located at A5105 next
+      to the Cafeteria.
+      <br /><br />
+      📍Check where to find it in the <a href="/map/indoors">Map</a>!
+      <br /><br />
+      Also you can ask for help through the help channel on Slack!
+      <IconLabel centered style="margin-top: 0.27rem">
+        <template #icon>
+          <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
+        </template>
+        <a
+          href="https://hackupc2024.slack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="icon-label-link"
+          >#help
+        </a>
+      </IconLabel>
+    </Panel>
     <div class="mentorPan">
       <Panel title="How to recognize a Mentor" size="big">
         In order to recognize a Mentor you can check if <b>Mentor</b> is written
@@ -97,10 +95,6 @@ import PanelContainer from '@/components/PanelContainer.vue'
   align-items: center;
   justify-content: center;
   padding-bottom: 1.5rem;
-
-  @media (max-width: 720px) {
-    padding-top: 60px;
-  }
 
   .no-margin {
     div {
