@@ -10,8 +10,8 @@ import PanelContainer from '@/components/PanelContainer.vue'
 <template>
   <PanelContainer id="mentors">
     <Panel title="What is a mentor?" size="small">
-      Mentors are experts in various technologies and programming languages
-      who can help you with:
+      Mentors are experts in various technologies and programming languages who
+      can help you with:
       <ul>
         <li>Issues with your code</li>
         <li>Boosting up your project</li>
