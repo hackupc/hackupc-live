@@ -35,7 +35,10 @@ const hideMission = ref(config.hideMission)
       >
         <img :src="mission.picture" style="width: 75%" />
       </div>-->
-      <SecretContent v-if="hideMission" />
+      <SecretContent
+        v-if="hideMission"
+        secret-text="Stay tunned to discover more"
+      />
       <VueMarkdownIt v-else :source="mission.description" />
     </Panel>
   </PanelContainer>
