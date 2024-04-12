@@ -1,7 +1,16 @@
+<script setup lang="ts">
+interface Props {
+  secretText?: string
+}
+defineProps<Props>()
+</script>
+
 <template>
   <div class="secret">
     <div class="secret__title">Secret</div>
-    <div class="secret__text">Come back after the opening cerimony</div>
+    <div class="secret__text">
+      {{ secretText ? secretText : 'Come back after the opening ceremony' }}
+    </div>
   </div>
 </template>
 
