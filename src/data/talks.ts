@@ -11,7 +11,7 @@ export interface Talk {
   readonly end?: string
   readonly streamLink?: string
   readonly isSecret?: boolean
-  readonly secretTitle?: string
+  readonly isWorkshop?: boolean
 }
 
 export const talks: Talk[] = [
@@ -24,7 +24,6 @@ export const talks: Talk[] = [
     start: '3/5/2024 22:30',
     end: '3/5/2024 23:00',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -36,7 +35,6 @@ export const talks: Talk[] = [
     start: '3/5/2024 22:30',
     end: '3/5/2024 23:00',
     streamLink: 'https://www.youtube.com/c/HackersUPC',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -48,7 +46,7 @@ export const talks: Talk[] = [
     start: '3/5/2024 23:00',
     end: '3/5/2024 23:30',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
   {
@@ -60,7 +58,6 @@ export const talks: Talk[] = [
     start: '3/5/2024 22:30',
     end: '3/5/2024 23:00',
     streamLink: 'https://www.youtube.com/c/HackersUPC',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -72,7 +69,7 @@ export const talks: Talk[] = [
     start: '3/5/2024 23:30',
     end: '4/5/2024 00:00',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
   {
@@ -84,7 +81,6 @@ export const talks: Talk[] = [
     start: '3/5/2024 23:30',
     end: '4/5/2024 00:00',
     streamLink: 'https://www.youtube.com/c/HackersUPC',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -96,7 +92,6 @@ export const talks: Talk[] = [
     start: '4/5/2024 00:00',
     end: '4/5/2024 00:30',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -107,7 +102,6 @@ export const talks: Talk[] = [
     // videoUrl: '',
     start: '4/5/2024 00:00',
     end: '4/5/2024 00:30',
-    secretTitle: 'Challenge talk',
     isSecret: true,
   },
   {
@@ -119,7 +113,7 @@ export const talks: Talk[] = [
     start: '4/5/2024 10:00',
     end: '4/5/2024 10:30',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
   {
@@ -131,7 +125,7 @@ export const talks: Talk[] = [
     start: '4/5/2024 10:30',
     end: '4/5/2024 11:00',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
   {
@@ -143,7 +137,7 @@ export const talks: Talk[] = [
     start: '4/5/2024 11:00',
     end: '4/5/2024 11:30',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
   {
@@ -155,7 +149,7 @@ export const talks: Talk[] = [
     start: '4/5/2024 11:30',
     end: '4/5/2024 12:00',
     streamLink: 'https://www.twitch.tv/hackersupc',
-    secretTitle: 'Workshop',
+    isWorkshop: true,
     isSecret: true,
   },
 ]
