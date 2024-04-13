@@ -9,6 +9,7 @@ import {
   faTwitch,
   faTwitter,
   faYoutube,
+  faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faPlaneArrival,
@@ -28,6 +29,12 @@ import {
   faCode,
   faChalkboardTeacher,
   faMicrochip,
+  faGift,
+  faHourglassStart,
+  faFileInvoiceDollar,
+  faHourglassHalf,
+  faThumbsUp,
+  faMoneyBillWave,
 } from '@fortawesome/free-solid-svg-icons'
 import { createPinia } from 'pinia'
 import { registerSW } from 'virtual:pwa-register'
@@ -73,7 +80,14 @@ library.add(
   faMessage,
   faCode,
   faChalkboardTeacher,
-  faMicrochip
+  faMicrochip,
+  faGift,
+  faLinkedin,
+  faHourglassStart,
+  faHourglassHalf,
+  faThumbsUp,
+  faFileInvoiceDollar,
+  faMoneyBillWave
 )
 
 const app = createApp(App)

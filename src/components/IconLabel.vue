@@ -35,7 +35,7 @@ defineProps<{
     padding: 6px;
     margin: 0;
     margin-right: 0.25em;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     border-radius: 5px;
     color: #fff;
     font-weight: normal;
@@ -53,15 +53,13 @@ defineProps<{
     height: 2rem;
     padding: 0 12px;
     margin: 4px;
-    background-color: $secondary-light-color;
+    background-color: $primary-color-light;
     border-radius: 3px;
     font-size: 1rem;
     line-height: 2;
     vertical-align: middle;
-
-    a {
-      color: currentcolor !important;
-    }
+    color: $primary-color !important;
+    font-weight: bold;
   }
 }
 </style>
