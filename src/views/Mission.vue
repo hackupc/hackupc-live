@@ -12,6 +12,13 @@ const hideMission = ref(config.hideMission)
 
 <template>
   <PanelContainer id="missions">
+    <Panel title="The Mission" size="big"
+      >The main goal of <b>HackUPC</b> is not to create a project or win a
+      prize, but to have a great time and create lasting memories. It is for
+      this reason that we have prepared The Mission. To participate, you only
+      need <b>the Mission card</b>, that can be found in your swag bag received
+      at check-in. Complete the tasks and <b>win prizes</b> of all kinds!</Panel
+    >
     <Panel
       v-for="mission in missions"
       :key="mission.title"
@@ -28,7 +35,10 @@ const hideMission = ref(config.hideMission)
       >
         <img :src="mission.picture" style="width: 75%" />
       </div>-->
-      <SecretContent v-if="hideMission" />
+      <SecretContent
+        v-if="hideMission"
+        secret-text="Stay tunned to discover more"
+      />
       <VueMarkdownIt v-else :source="mission.description" />
     </Panel>
   </PanelContainer>

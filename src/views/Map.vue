@@ -19,6 +19,35 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 
 <template>
   <div class="wrapper">
+    <div class="explore">
+      <RouterLink
+        :to="{
+          name: 'map',
+          params: { mapId: 'indoors' },
+        }"
+        class="button"
+        :class="{ 'button--disabled': currentMap === 'indoors' }"
+        >Indoors</RouterLink
+      >
+      <RouterLink
+        :to="{
+          name: 'map',
+          params: { mapId: 'campus' },
+        }"
+        class="button"
+        :class="{ 'button--disabled': currentMap === 'campus' }"
+        >Campus</RouterLink
+      >
+      <RouterLink
+        :to="{
+          name: 'map',
+          params: { mapId: 'judging' },
+        }"
+        class="button"
+        :class="{ 'button--disabled': currentMap === 'judging' }"
+        >Judging</RouterLink
+      >
+    </div>
     <div class="map">
       <img
         v-if="currentMap === 'indoors'"
@@ -39,39 +68,6 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
         alt="Judging Map"
       />
     </div>
-
-    <div class="explore">
-      <p class="explore__title">Explore</p>
-      <div class="explore__list">
-        <RouterLink
-          :to="{
-            name: 'map',
-            params: { mapId: 'indoors' },
-          }"
-          class="button"
-          :class="{ 'button--disabled': currentMap === 'indoors' }"
-          >Indoors</RouterLink
-        >
-        <RouterLink
-          :to="{
-            name: 'map',
-            params: { mapId: 'campus' },
-          }"
-          class="button"
-          :class="{ 'button--disabled': currentMap === 'campus' }"
-          >Campus</RouterLink
-        >
-        <RouterLink
-          :to="{
-            name: 'map',
-            params: { mapId: 'judging' },
-          }"
-          class="button"
-          :class="{ 'button--disabled': currentMap === 'judging' }"
-          >Judging</RouterLink
-        >
-      </div>
-    </div>
   </div>
 </template>
 
@@ -79,32 +75,34 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 @use '@/variables' as *;
 
 .wrapper {
-  display: grid;
-  height: 100vh;
+  display: flex;
   box-sizing: border-box;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
-  background: #eee;
-  gap: 1rem;
-  grid-template: 1fr auto / 1fr;
-  text-align: center;
+  padding: 140px 0 0;
+  margin: 0 auto;
+  gap: 3rem;
 }
 
 .explore {
-  &__title {
-    margin: 0 0 8px;
-  }
+  display: flex;
+  width: 95%;
+  max-width: 1300px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
+  gap: 0.5rem;
 }
 
 .button {
   display: inline-block;
   padding: 8px 24px;
   margin: 0 0.2em 16px;
-  background: $primary-color;
+  background: $links-color;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-  color: $contrast-color;
+  color: #000;
   cursor: url('../assets/img/rocket-fire.png'), auto;
   font-weight: bold;
 
@@ -113,14 +111,17 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
     opacity: 0.4;
     pointer-events: none;
   }
+
+  &:hover {
+    background: $links-color-hover;
+    color: #fff;
+  }
 }
 
 .map {
   overflow: auto;
-  max-height: 700px;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
   text-align: center;
 
   @media screen and (max-width: 900px) {
@@ -129,8 +130,7 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 
   &__img {
     display: block;
-    width: 100%;
-    max-width: 1200px;
+    width: 98%;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {

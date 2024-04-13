@@ -4,49 +4,58 @@ import Panel from '@/components/Panel.vue'
 import { formatDate } from '@/services/dates'
 import { useScheduleStore } from '@/stores/schedule'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { MailIcon } from '@heroicons/vue/solid'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import PanelContainer from '../components/PanelContainer.vue'
+import { DevpostIcon } from '@/components/icons'
+import config from '@/config'
+import SecretContent from '@/components/SecretContent.vue'
 
 const scheduleStore = useScheduleStore()
 
 const submitDeadline = computed<string>(() =>
   formatDate('weekday-time', scheduleStore.schedule.submitDeadline)
 )
+
+const hideWifiConfig = ref(config.hideWifiConfig)
 </script>
 
 <template>
   <PanelContainer>
     <Panel title="Important information" style="overflow: visible">
-      <!--<h3 class="wifi__title">Wi-Fi</h3>
+      <h3 class="wifi__title"><strong>WI-FI</strong></h3>
       <div class="wifi">
-        <img
-          class="wifi__qr"
-          src="@/assets/img/wifi-qr.svg"
-          alt=""
-          tabindex="0"
-        />
-        <div class="wifi__inner">
-          SSID: <code>HACKUPC2024</code><br />
-          Password: <code>Biene2024!</code>
-        </div>
-      </div>-->
+        <template v-if="hideWifiConfig">
+          <SecretContent secret-text="Not available yet" />
+        </template>
+        <template v-else>
+          <img
+            class="wifi__qr"
+            src="@/assets/img/wifi-qr.svg"
+            alt=""
+            tabindex="0"
+          />
+          <div class="wifi__inner">
+            SSID: <code>HACKUPC2024</code><br />
+            Password: <code>Biene2024!</code>
+          </div>
+        </template>
+      </div>
 
       <p>
-        The projects must be posted on Devpost
-        <!--<a
+        The projects must be posted on
+        <a
           target="_blank"
-          href="https://hackupc-2023.devpost.com"
+          href="https://hackupc-2024.devpost.com"
           rel="noopener noreferrer"
           >Devpost</a
-        >-->
+        >
         before {{ submitDeadline }}. If you don't do it, you won't have access
-        to the travel reimbursement, prizes nor swag.
+        to the travel reimbursement or prizes.
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
-      <!--<div class="buttons">
+      <div class="buttons">
         <a
           href="https://guides.hackupc.com/guide/hacker/"
           target="_blank"
@@ -54,11 +63,11 @@ const submitDeadline = computed<string>(() =>
         >
           <b>Guides</b>
         </a>
-      </div>-->
+      </div>
     </Panel>
 
     <Panel title="Contact">
-      <!--<IconLabel centered style="margin-top: 0.27rem">
+      <IconLabel centered style="margin-top: 0.27rem; margin-bottom: 1.5rem">
         <template #icon>
           <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
         </template>
@@ -69,18 +78,6 @@ const submitDeadline = computed<string>(() =>
           class="icon-label-link"
           >hackupc2024.slack.com</a
         >
-      </IconLabel>-->
-      <IconLabel centered style="margin-bottom: 1.5rem">
-        <template #icon>
-          <MailIcon />
-        </template>
-        <a
-          href="mailto:contact@hackupc.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="icon-label-link"
-          >contact@hackupc.com</a
-        >
       </IconLabel>
 
       <div class="buttons">
@@ -90,7 +87,9 @@ const submitDeadline = computed<string>(() =>
           rel="noopener noreferrer"
         >
           <b>MyHackUPC</b><br />
-          <!--<span style="font-weight: 400">Hardware / Baggage</span>-->
+          <span style="font-weight: 400"
+            >Claim your hardware and check your baggage</span
+          >
         </a>
       </div>
 
@@ -111,17 +110,25 @@ const submitDeadline = computed<string>(() =>
           <FontAwesomeIcon :icon="['fab', 'twitch']" />
           <br />Twitch
         </a>
-        <!--<a
+        <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://hackupc-2023.devpost.com"
+          href="https://hackupc-2024.devpost.com"
         >
           <DevpostIcon />
           <br />Devpost
-        </a>-->
+        </a>
       </div>
 
       <div class="buttons">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:contact@hackupc.com"
+          aria-label="mail"
+        >
+          <FontAwesomeIcon :icon="['fa', 'envelope']" />
+        </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -149,14 +156,6 @@ const submitDeadline = computed<string>(() =>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.youtube.com/c/HackersUPC"
-          aria-label="youtube"
-        >
-          <FontAwesomeIcon :icon="['fab', 'youtube']" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
           href="https://github.com/hackupc"
           aria-label="github"
         >
@@ -170,19 +169,26 @@ const submitDeadline = computed<string>(() =>
         >
           <FontAwesomeIcon :icon="['fab', 'medium']" />
         </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://es.linkedin.com/company/hack-upc"
+          aria-label="linkedin"
+        >
+          <FontAwesomeIcon :icon="['fab', 'linkedin']" />
+        </a>
       </div>
-      <h3>Emergency contact</h3>
+      <h3 style="margin-top: 1.5rem"><strong>Emergency contact</strong></h3>
       <p>
         In case of a major emergency you can contact the Spanish emergency
         number: <b>112</b>
       </p>
     </Panel>
-
-    <Panel title="How to get to HackUPC" size="big">
-      <div class="travel">
-        <h2 class="travel__title text-centered">
-          <FontAwesomeIcon icon="plane-arrival" /> By plane
-        </h2>
+    <div>
+      <div class="panel">
+        <h2 class="travel__title">How to get and leave HackUPC</h2>
+      </div>
+      <Panel title="✈️ By plane" size="small">
         <h3 class="travel__subtitle text-centered">Arriving</h3>
         <p>
           Take the metro L9 in either <b>Aeroport T2</b> or
@@ -224,10 +230,8 @@ const submitDeadline = computed<string>(() =>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="train-subway" /> By train
-        </h2>
+      </Panel>
+      <Panel title="🚂 By train" size="small">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you take the train, you will probably arrive at
@@ -265,10 +269,8 @@ const submitDeadline = computed<string>(() =>
             will have to reach the elevator on the street at Sants Estació.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="bus" /> By bus
-        </h2>
+      </Panel>
+      <Panel title="🚌 By bus" size="small">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you are coming by bus you can take one of the following lines
@@ -303,10 +305,8 @@ const submitDeadline = computed<string>(() =>
             This itinerary is completely accessible.
           </p>
         </div>
-        <div class="travel__separator"></div>
-        <h2 class="travel__title margin-bottom">
-          <FontAwesomeIcon icon="car" /> By car
-        </h2>
+      </Panel>
+      <Panel title="🚗 By car" size="small">
         <h3 class="travel__subtitle">Arriving</h3>
         <p>
           If you come by car, you can find a place to park in the top of the
@@ -318,8 +318,8 @@ const submitDeadline = computed<string>(() =>
           Google Maps will know for sure your way back home. Just remember where
           you parked your car.
         </p>
-      </div>
-    </Panel>
+      </Panel>
+    </div>
   </PanelContainer>
 </template>
 
@@ -346,18 +346,33 @@ const submitDeadline = computed<string>(() =>
     &:not(:first-child) {
       margin-left: 4px;
     }
+
+    &:hover {
+      background-color: $links-color !important;
+    }
+
+    &:active {
+      background-color: $links-color-hover !important;
+    }
   }
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .wifi {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  gap: 1rem;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
 
   &__title {
-    margin: 0 0 0.5rem !important;
+    margin: 0 0 2rem !important;
     line-height: 1;
     text-align: center;
   }
@@ -382,18 +397,24 @@ const submitDeadline = computed<string>(() =>
 
   &__inner {
     display: inline-block;
-    line-height: 2;
+    line-height: 2.5;
     text-align: left;
 
     code {
+      margin-left: 0.5rem;
+      background-color: $primary-color-light;
       color: $text-color-dark;
     }
   }
 }
 
 .icon-label-link {
-  color: $text-color-dark !important;
+  color: $primary-color !important;
   text-decoration: none !important;
+
+  &:hover {
+    color: $links-color-hover !important;
+  }
 }
 
 .wheelchair-icon {
@@ -407,10 +428,30 @@ const submitDeadline = computed<string>(() =>
   }
 }
 
+.panel {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 350px;
+  margin: 16px;
+  background-color: $contrast-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  color: $text-color;
+  text-align: left;
+}
+
 .travel {
   &__title {
-    margin-top: 0;
-    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 1300px;
+    padding: 12px 24px;
+    margin: 0;
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.6;
     text-align: center;
   }
 
