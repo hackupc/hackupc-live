@@ -401,9 +401,9 @@ const hideWifiConfig = ref(config.hideWifiConfig)
     text-align: left;
 
     code {
-      color: $text-color-dark;
-      background-color: $primary-color-light;
       margin-left: 0.5rem;
+      background-color: $primary-color-light;
+      color: $text-color-dark;
     }
   }
 }
