@@ -90,8 +90,8 @@ const currentView = computed<'travel' | 'discover'>(() => {
 @use '@/variables' as *;
 
 .explore {
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 20px;

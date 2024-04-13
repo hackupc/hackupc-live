@@ -55,11 +55,11 @@ defineProps<{
     margin: 4px;
     background-color: $primary-color-light;
     border-radius: 3px;
+    color: $primary-color !important;
     font-size: 1rem;
+    font-weight: bold;
     line-height: 2;
     vertical-align: middle;
-    color: $primary-color !important;
-    font-weight: bold;
   }
 }
 </style>
