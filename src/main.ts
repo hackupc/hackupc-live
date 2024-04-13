@@ -22,6 +22,7 @@ import {
   faFileInvoiceDollar,
   faGavel,
   faGift,
+  faGlobe,
   faHome,
   faHourglassHalf,
   faHourglassStart,
@@ -90,7 +91,8 @@ library.add(
   faThumbsUp,
   faFileInvoiceDollar,
   faMoneyBillWave,
-  faEnvelope
+  faEnvelope,
+  faGlobe
 )
 
 const app = createApp(App)
