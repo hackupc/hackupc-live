@@ -76,23 +76,23 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
   box-sizing: border-box;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  margin: 0 auto;
   padding: 140px 0 0;
+  margin: 0 auto;
+  gap: 3rem;
 }
 
 .explore {
   display: flex;
   width: 95%;
-  gap: 0.5rem;
-  justify-content: flex-end;
   max-width: 1300px;
+  justify-content: flex-end;
   margin-top: 20px;
   margin-right: 20px;
+  gap: 0.5rem;
 }
 
 .button {
