@@ -5,6 +5,7 @@ interface Config {
   readonly disabled: boolean
   readonly hideChallengesAndPrizes: boolean
   readonly hideMission: boolean
+  readonly hideWifiConfig: boolean
 }
 
 const config: Config = {
@@ -12,6 +13,7 @@ const config: Config = {
   disabled: false,
   hideChallengesAndPrizes: true,
   hideMission: true,
+  hideWifiConfig: true,
 }
 
 export default config
