@@ -8,15 +8,12 @@ import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
 
 const hideMeals = ref(config.hideMeals)
-const hideCafeteria = ref(config.hideCafeteria)
+const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
 </script>
 
 <template>
   <PanelContainer id="cafeteria">
-    <Panel v-if="hideCafeteria" title="☕️ 🎲 Cafeteria" size="big">
-      <SecretContent />
-    </Panel>
-    <Panel v-else title="☕️ 🎲 Cafeteria" size="big">
+    <Panel title="☕️ 🎲 Cafeteria" size="big">
       <span>
         In the cafeteria (<span>
           located in the
@@ -37,10 +34,7 @@ const hideCafeteria = ref(config.hideCafeteria)
       </span>
     </Panel>
 
-    <Panel v-if="hideCafeteria" title="Schedule & Rules" size="small">
-      <SecretContent />
-    </Panel>
-    <Panel v-else title="Schedule & Rules" size="small">
+    <Panel title="Schedule & Rules" size="small">
       <div style="display: flex; flex-direction: column">
         <div style="display: flex; gap: 16px">
           <span class="meal-title">Rules</span>
@@ -65,18 +59,20 @@ const hideCafeteria = ref(config.hideCafeteria)
         <div style="display: flex; gap: 16px">
           <span class="meal-title">Schedule</span>
         </div>
-        <ul>
-          <li><b>Friday</b>: The cafeteria will not open on friday!</li>
-          <li><b>Saturday</b>:</li>
-          <li><b>Sunday</b>:</li>
-        </ul>
+        <template v-if="hideCafeteriaSchedule">
+          <SecretContent secret-text="Soon available" />
+        </template>
+        <template v-else>
+          <ul>
+            <li><b>Friday</b>: The cafeteria will not open on friday!</li>
+            <li><b>Saturday</b>:</li>
+            <li><b>Sunday</b>:</li>
+          </ul>
+        </template>
       </div>
     </Panel>
 
-    <Panel v-if="hideCafeteria" title="What we have" size="small">
-      <SecretContent />
-    </Panel>
-    <Panel v-else title="What we have" size="small">
+    <Panel title="What we have" size="small">
       <div style="display: flex; flex-direction: column">
         <div style="display: flex; gap: 16px">
           <span class="meal-title">Coffee</span>
@@ -102,6 +98,8 @@ const hideCafeteria = ref(config.hideCafeteria)
           <li><b>RedBull</b></li>
           <li><b>Coca-cola</b>: Classic, Zero, Light</li>
           <li><b>Fanta</b>: Orange, Orange light, Lemon, Lemon light</li>
+          <li><b>Aquarius</b>: Classic, Orange</li>
+          <li><b>Fuze team</b>: Peach, lemon</li>
         </ul>
       </div>
 
@@ -139,11 +137,7 @@ const hideCafeteria = ref(config.hideCafeteria)
   </PanelContainer>
 
   <PanelContainer id="meals" style="padding-top: 10px">
-    <Panel v-if="hideMeals" title="🍽 Regular meals" size="big">
-      <SecretContent />
-    </Panel>
-
-    <Panel v-else title="🍽 Regular meals" size="big">
+    <Panel title="🍽 Regular meals" size="big">
       <div class="allergies">
         <p><span class="allergies--icon">🌱</span> Vegetarian diet</p>
         <p><span class="allergies--icon">🥦</span> Vegan diet</p>
@@ -152,11 +146,7 @@ const hideCafeteria = ref(config.hideCafeteria)
     </Panel>
 
     <template v-for="meal in meals" :key="meal.title">
-      <Panel v-if="hideMeals" :title="meal.title" size="small">
-        <SecretContent
-      /></Panel>
-
-      <Panel v-else :title="meal.title" size="small">
+      <Panel :title="meal.title" size="small">
         <div style="margin-bottom: 1.2rem; text-align: center">
           <span v-if="meal.provider" class="provider-name">
             {{ meal.provider }}
@@ -165,22 +155,34 @@ const hideCafeteria = ref(config.hideCafeteria)
             {{ meal.mealTitle }}
           </span>
         </div>
-        <div
-          v-for="description in meal.mealDescription"
-          :key="description.nameMeal"
-          class="meal-row"
-        >
-          <span class="meal-name">{{ description.nameMeal }} </span>
-          <span v-if="description.isVegetarian" class="meal-icon-diet">🌱</span>
-          <span v-if="description.isVegan" class="meal-icon-diet">🥦</span>
-          <span v-if="description.isGlutenFree" class="meal-icon-diet">🌾</span>
-          <span v-if="description.ingredients !== ''" class="meal-ingredients">
-            <br />
-            <span class="meal-ingredients">{{
-              description.ingredients
-            }}</span></span
+        <template v-if="hideMeals">
+          <SecretContent secret-text="Soon available" />
+        </template>
+        <template v-else>
+          <div
+            v-for="description in meal.mealDescription"
+            :key="description.nameMeal"
+            class="meal-row"
           >
-        </div>
+            <span class="meal-name">{{ description.nameMeal }} </span>
+            <span v-if="description.isVegetarian" class="meal-icon-diet"
+              >🌱</span
+            >
+            <span v-if="description.isVegan" class="meal-icon-diet">🥦</span>
+            <span v-if="description.isGlutenFree" class="meal-icon-diet"
+              >🌾</span
+            >
+            <span
+              v-if="description.ingredients !== ''"
+              class="meal-ingredients"
+            >
+              <br />
+              <span class="meal-ingredients">{{
+                description.ingredients
+              }}</span></span
+            >
+          </div>
+        </template>
       </Panel>
     </template>
   </PanelContainer>

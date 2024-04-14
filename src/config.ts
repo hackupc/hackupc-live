@@ -5,7 +5,7 @@ interface Config {
   readonly disabled: boolean
   readonly hideChallengesAndPrizes: boolean
   readonly hideMission: boolean
-  readonly hideCafeteria: boolean
+  readonly hideCafeteriaSchedule: boolean
   readonly hideMeals: boolean
   readonly hideWifiConfig: boolean
 }
@@ -15,8 +15,8 @@ const config: Config = {
   disabled: false,
   hideChallengesAndPrizes: true,
   hideMission: true,
-  hideCafeteria: false,
-  hideMeals: false,
+  hideCafeteriaSchedule: true,
+  hideMeals: true,
   hideWifiConfig: true,
 }
 
