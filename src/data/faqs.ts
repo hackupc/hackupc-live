@@ -1,7 +1,4 @@
-import {
-  formatDateInTimezone,
-  formatIntervalInTimezone,
-} from '@/services/dates'
+import { formatDateInTimezone } from '@/services/dates'
 
 type MarkdownString = string // Accepts Markdown
 
@@ -12,18 +9,6 @@ export interface Faq {
 }
 
 export const faqs: Faq[] = [
-  {
-    title: 'Travel reimbursement',
-    description: `
-If you have been elected to receive a travel reimbursement, we will contact you after the hackathon to send it to you. You will receive a maximum that has been specified in the email, based on current travelling prices and distances. Requirements to receive travel reimbursement are as follows.
-- Received an email with travel reimbursement amount.
-- Travel reimbursement receipts submitted before the date specified by HackUPC Team.
-- Project submitted to Devpost before due date.
-- Demo your project in the HackUPC judging rooms.
-
-The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1-2 months time period. Remember that you need to post a project before the deadline in order to get the reimbursement!`,
-    size: 'big',
-  },
   {
     title: 'When shall I arrive?',
     description: `Registration will start on ${formatDateInTimezone(
