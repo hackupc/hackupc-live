@@ -163,8 +163,8 @@ export const schedule: RawSchedule = {
     {
       id: 'dinner2',
       physicalLocation: {
-        text: 'Gym',
-        mapId: 'campus',
+        text: 'Meals zone',
+        mapId: 'indoors',
       },
       title: '🍕 Dinner',
       start: '04/05/2024 20:00',
