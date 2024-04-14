@@ -13,9 +13,16 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
 <template>
   <PanelContainer v-if="hideChallengesAndPrizes" id="talks">
     <template v-for="talk in talks" :key="talk.title">
-      <Panel>
-        <SecretContent />
+      <Panel
+        v-if="talk.isSecret"
+        :title="talk.isWorkshop ? 'Workshop' : 'Challenge talk'"
+      >
+        <SecretContent
+          :secret-text="talk.isWorkshop ? 'Comming soon' : undefined"
+        />
       </Panel>
+
+      <PanelTalk v-else :talk="talk" />
     </template>
   </PanelContainer>
   <PanelContainer v-else id="talks">

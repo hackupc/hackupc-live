@@ -11,11 +11,12 @@ $primary-color-light: #E3C3FF;
 $links-color: #FF8886;
 $links-color-hover: #FC5C5A;
 $secondary-color: #E23532;
+$secondary-color-light: #FF8886;
 $secondary-light-color-intensity: 100;
 $secondary-light-color: color.adjust($secondary-color, $red: $secondary-light-color-intensity, $green: $secondary-light-color-intensity, $blue: $secondary-light-color-intensity);
 $secondary-text-color: #dadada;
 $tertiary-light-color: #88A7B7;
-$highlight-color: $secondary-color;
+$highlight-color: #E3C3FF;
 $header-mobile-bg-color: rgb(40 40 40 / 90%);
 $header-desktop-bg-color: rgb(40 40 40 / 50%);
 

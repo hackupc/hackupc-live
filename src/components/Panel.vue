@@ -72,8 +72,12 @@ defineProps<Props>()
     }
 
     ::v-deep(a) {
-      color: $highlight-color;
-      text-decoration: underline;
+      color: $links-color;
+      font-weight: bold;
+
+      &:hover {
+        color: color.adjust($links-color-hover, $lightness: -10%);
+      }
     }
 
     ::v-deep(h3) {

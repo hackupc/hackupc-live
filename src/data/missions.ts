@@ -11,12 +11,6 @@ export interface Mission {
 
 export const missions: Mission[] = [
   {
-    title: 'The Mission',
-    description: `The main goal of **HackUPC** is not to create a project or win a prize, but to have a great time and create lasting memories. It is for this reason that we have prepared The Mission.
-To participate, you only need **the Mission card**, that can be found in your swag bag received at check-in. Complete the tasks and **win prizes** of all kinds!`,
-    size: 'big',
-  },
-  {
     title: 'Your Mission Card',
     description: `\n-(logo Talk) Learn new things going to a talk or workshop from our sponsors :speech_balloon:
 \n-(slideshare) Have some laughs with our SlideShare Show Karaoke activity :circus_tent:
