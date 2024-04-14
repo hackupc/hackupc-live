@@ -67,7 +67,7 @@ export const meals: Meals[] = [
   },
   {
     title: 'Saturday Breakfast',
-    mealTitle: 'Cold bocatas and pasteries',
+    mealTitle: 'Cold bocadillo and pasteries',
     mealDescription: [
       {
         nameMeal: 'Bocatas',
@@ -160,7 +160,7 @@ export const meals: Meals[] = [
   },
   {
     title: 'Sunday Breakfast',
-    mealTitle: 'Cold bocatas and pasteries',
+    mealTitle: 'Cold bocadillos and pasteries',
     mealDescription: [
       {
         nameMeal: 'Bocatas',
