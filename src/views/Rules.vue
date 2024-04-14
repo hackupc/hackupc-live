@@ -3,32 +3,82 @@ import Panel from '@/components/Panel.vue'
 import { rules } from '@/data/rules'
 import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
-import { RouterLink } from 'vue-router'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { RouterLink, useRoute } from 'vue-router'
+import { computed } from 'vue'
+import { judgings } from '@/data/judging'
+
+const route = useRoute()
+
+const currentViewRules = computed<'judging' | 'hRules'>(() => {
+  if (
+    route.params?.rulesId !== 'judging' &&
+    route.params?.rulesId !== 'hRules'
+  ) {
+    return 'judging'
+  }
+
+  return route.params.rulesId
+})
 </script>
 
 <template>
   <PanelContainer id="rules">
     <div class="explore">
-      <div class="explore__list">
+      <RouterLink
+        :to="{
+          name: 'map',
+          params: { rulesId: 'judging' },
+        }"
+        class="button"
+      >
+        <FontAwesomeIcon icon="map-location-dot" style="margin-right: 4px" />
+        Go to judging map
+      </RouterLink>
+      <div>
         <RouterLink
           :to="{
-            name: 'map',
-            params: { mapId: 'judging' },
+            name: 'rules',
+            params: { rulesId: 'judging' },
           }"
           class="button"
-          >See judging map</RouterLink
+          :class="{ 'button--disabled': currentViewRules === 'judging' }"
         >
+          Judging
+        </RouterLink>
+        <RouterLink
+          :to="{
+            name: 'rules',
+            params: { rulesId: 'hRules' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentViewRules === 'hRules' }"
+        >
+          Rules
+        </RouterLink>
       </div>
     </div>
 
-    <Panel
-      v-for="rule in rules"
-      :key="rule.title"
-      :title="rule.title"
-      :size="rule.size"
-    >
-      <VueMarkdownIt :source="rule.description" />
-    </Panel>
+    <template v-if="currentViewRules === 'judging'">
+      <Panel
+        v-for="j in judgings"
+        :key="j.title"
+        :title="j.title"
+        :size="j.size"
+      >
+        <VueMarkdownIt :source="j.description" />
+      </Panel>
+    </template>
+    <template v-if="currentViewRules === 'hRules'">
+      <Panel
+        v-for="rule in rules"
+        :key="rule.title"
+        :title="rule.title"
+        :size="rule.size"
+      >
+        <VueMarkdownIt :source="rule.description" />
+      </Panel>
+    </template>
   </PanelContainer>
 </template>
 
@@ -39,9 +89,11 @@ import { RouterLink } from 'vue-router'
 .explore {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
   margin-right: 20px;
+  margin-left: 20px;
+  gap: 0.5rem;
 
   &__title {
     margin: 0 0 20px;
