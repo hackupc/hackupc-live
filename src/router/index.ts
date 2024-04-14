@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Challenges.vue'),
   },
   {
-    path: '/schedule',
+    path: '/schedule/:scheduleId?',
     name: 'schedule',
     component: () => import('@/views/Schedule.vue'),
   },
@@ -42,7 +42,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/FullScreen.vue'),
   },
   {
-    path: '/rules',
+    path: '/rules/:rulesId?',
     name: 'rules',
     component: () => import('@/views/Rules.vue'),
   },

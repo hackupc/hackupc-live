@@ -16,7 +16,7 @@ export const meals: Meals[] = [
   {
     title: "Friday's dinner",
     provider: 'Bar de la FIB',
-    mealTitle: 'Warm Bocatas',
+    mealTitle: 'Warm bocadillos',
     mealDescription: [
       {
         nameMeal: 'Croquetas',
@@ -67,7 +67,7 @@ export const meals: Meals[] = [
   },
   {
     title: 'Saturday Breakfast',
-    mealTitle: 'Cold bocatas and pasteries',
+    mealTitle: 'Cold bocadillos and pastries',
     mealDescription: [
       {
         nameMeal: 'Bocatas',
@@ -160,7 +160,7 @@ export const meals: Meals[] = [
   },
   {
     title: 'Sunday Breakfast',
-    mealTitle: 'Cold bocatas and pasteries',
+    mealTitle: 'Cold bocadillos and pastries',
     mealDescription: [
       {
         nameMeal: 'Bocatas',
