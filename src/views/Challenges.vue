@@ -20,8 +20,8 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
         <blockquote>
           Remember that in HackUPC you can develop whatever you want, it's not
           mandatory to follow a challenge, what it's important is to follow
-          <a href="/rules">HackUPC rules</a>!! One project per team and the code
-          can not start before the event.
+          <a href="/rules/hRules">HackUPC rules</a>!! One project per team and
+          the code can not start before the event.
         </blockquote>
       </div>
 

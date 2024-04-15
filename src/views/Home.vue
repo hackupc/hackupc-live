@@ -186,7 +186,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
     </Panel>
     <div style="width: 100%; margin-top: 3rem">
       <div class="panel">
-        <h2 class="travel__title">How to get and leave HackUPC</h2>
+        <h2 class="travel__title">How to get to and leave HackUPC</h2>
       </div>
     </div>
     <Panel title="✈️ By plane" size="small">
