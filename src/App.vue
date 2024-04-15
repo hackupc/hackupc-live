@@ -24,7 +24,7 @@ setInterval(() => {
 
 setInterval(() => {
   scheduleStore.refreshSchedule()
-}, 1 * 60 * 1000) // 1 minute
+}, 60 * 1000) // 1 minute
 
 onMounted(() => {
   window.addEventListener('keyup', (event) => {
