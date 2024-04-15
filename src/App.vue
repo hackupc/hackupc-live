@@ -63,17 +63,17 @@ body {
 
 .background {
   position: fixed;
+  z-index: -1;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100%;
+  min-width: 100vw;
   height: 100%;
   min-height: 100vh;
-  min-width: 100vw;
   background-image: url('@/assets/img/stars_desktop.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (max-width: 900px) {
     background-image: url('@/assets/img/stars_mobile.jpg');
