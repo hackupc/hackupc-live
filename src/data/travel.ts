@@ -11,13 +11,13 @@ export const travels: Travel[] = [
     title: 'Get accepted into HackUPC',
     tag: 'Invited to HackUPC',
     emoji: 'gift',
-    description: `Congratulations! You are accepted to HackUPC, once you confirm your attendance you will be able to **check if you need travel reimbursement**. Take into account that we provide: \n - **Up to** 50€ for people coming from Spain (outside Catalunya) \n - **Up to** 120€ for people coming from Europe \n - **Up to** 200€ for people coming from outside Europe.`,
+    description: `Congratulations! You have been accepted to HackUPC, once you confirm your attendance you will be able to **check if you need travel reimbursement**. Take into account that we provide: \n - **Up to** 50€ for people coming from Spain (outside Catalunya) \n - **Up to** 120€ for people coming from Europe \n - **Up to** 200€ for people coming from outside Europe.`,
   },
   {
     title: 'Confirm your attendance',
     tag: 'Pending review',
     emoji: 'hourglass-start',
-    description: `Now in your [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/) it appears a new tab called **Travel**, you can see that you are **Pending review**. \n\n We are reviewing all your demands to be able to give something to everyone, to help you to come to HackUPC. \n\n We will let you know if your demand is accepted or not. \n\n **Please, be patient!**`,
+    description: `Now in your [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/), a new tab called **Travel** appears, you can see that you are **Pending review**. \n\n We are reviewing all your demands to be able to give something to everyone, to help you to come to HackUPC. \n\n We will let you know if your demand is accepted or not. \n\n **Please, be patient!**`,
   },
   {
     title: 'Submit your travel details',

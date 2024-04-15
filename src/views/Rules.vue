@@ -28,7 +28,7 @@ const currentViewRules = computed<'judging' | 'hRules'>(() => {
       <RouterLink
         :to="{
           name: 'map',
-          params: { rulesId: 'judging' },
+          params: { mapId: 'judging' },
         }"
         class="button"
       >

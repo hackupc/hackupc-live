@@ -12,7 +12,7 @@ export const rules: Rule[] = [
     description: /* markdown */ `
 > You can find the full hackathon and submission rules in the [Terms and Conditions](https://legal.hackersatupc.org/hackupc/terms_and_conditions) and [Code of Conduct](https://legal.hackersatupc.org/hackupc/code_of_conduct).
 
-These are some highlights of the HackUPC competition rules ⚖️ **Please read properly and if you have any doubt!**
+These are some highlights of the HackUPC competition rules ⚖️ **Please read properly and if you have any doubt don't hesitate to contact us (in email or slack)!**
 `,
     size: 'big',
   },
