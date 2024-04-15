@@ -44,6 +44,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import Antd from 'ant-design-vue'
+import { faCircle, faCircleDot } from '@fortawesome/free-regular-svg-icons'
 
 registerSW({
   immediate: true,
@@ -92,7 +93,9 @@ library.add(
   faFileInvoiceDollar,
   faMoneyBillWave,
   faEnvelope,
-  faGlobe
+  faGlobe,
+  faCircle,
+  faCircleDot
 )
 
 const app = createApp(App)

@@ -184,142 +184,132 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         number: <b>112</b>
       </p>
     </Panel>
-    <div>
+    <div style="width: 100%; margin-top: 3rem">
       <div class="panel">
         <h2 class="travel__title">How to get and leave HackUPC</h2>
       </div>
-      <Panel title="✈️ By plane" size="small">
-        <h3 class="travel__subtitle text-centered">Arriving</h3>
-        <p>
-          Take the metro L9 in either <b>Aeroport T2</b> or
-          <b>Aeroport T1</b> towards <b>Zona Universitària</b>. Go to the last
-          station <b>Zona Universitària</b>. Our venue is a 10 minute walk from
-          there. To get to our check-in point please check out our
-          <RouterLink
-            :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
-          >.
-        </p>
-        <p>
-          Don't get a T-Casual ticket if you are in the airport, you won't be
-          able to use it from there. Buy a single trip ticket from the airport
-          instead. If you really want to use a T-Casual, then you can take the
-          train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free
-          shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes),
-          but the train only runs every 30 minutes. You will have to get down at
-          <b>Sants Estació</b> (3rd stop) and take the metro as explained below.
-        </p>
-        <h3 class="travel__subtitle text-centered">Leaving</h3>
-        <p>
-          Take the metro L9 in <b>Zona Universitària</b> towards
-          <b>Aeroport T1</b>. Stop at either <b> Aeroport T1</b> or
-          <b>Aeroport T2</b> depending on the terminal your plane is departing
-          from.
-        </p>
-        <div class="travel__accessible">
-          <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
-            This itinerary is completely accessible.
-          </p>
-        </div>
-      </Panel>
-      <Panel title="🚂 By train" size="small">
-        <h3 class="travel__subtitle">Arriving</h3>
-        <p>
-          If you take the train, you will probably arrive at
-          <b>Sants Estació</b>. From there you need to take the metro L3, it is
-          located on the north side of the station, follow the signs for the
-          green line (L3), not the blue one (L5). When you reach the station, go
-          towards <b>Zona Universitària</b> (to the right if coming from
-          underground). Get off at <b>Palau Reial</b>, from there you should see
-          some signs pointing where HackUPC is, otherwise you can check out our
-          <RouterLink
-            :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
-          >.
-        </p>
-        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
-        <p>
-          Take the metro L3 in <b>Palau Reial</b> towards
-          <b>Trinitat Nova</b> and get off at <b>Sants Estació</b>. When
-          exiting, the easiest way is to turn left and follow the signs towards
-          the railway station, you can follow the plane sign or the letter R
-          with the orange background.
-        </p>
-        <div class="travel__accessible">
-          <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
-            This itinerary is completely accessible. To enter the metro, you
-            will have to reach the elevator on the street at Sants Estació.
-          </p>
-        </div>
-      </Panel>
-      <Panel title="🚌 By bus" size="small">
-        <h3 class="travel__subtitle">Arriving</h3>
-        <p>
-          If you are coming by bus you can take one of the following lines
-          <b>67</b>, <b>75</b>, <b>113</b> or <b>H6</b> until
-          <b>Palau Reial</b> stop, from there you need to walk up to Campus Nord
-          - UPC, placed on the top of Facultad d'economia de la UB. You can also
-          use the <b>33</b> bus line, which will leave you right in front of the
-          Campus Nord, check out everything on our
-          <RouterLink
-            :to="{
-              name: 'map',
-              params: { mapId: 'campus' },
-            }"
-            >map</RouterLink
-          >.
-        </p>
-        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
-        <p>
-          In front of the Campus Nord you have a stop for bus line <b>33</b>.
-          Otherwise, if you need any of the other lines <b>67</b>, <b>75</b>,
-          <b>113</b>, or <b>H6</b>you will have to go down to Diagonal and look
-          for the stop for the line you need.
-        </p>
-        <div class="travel__accessible">
-          <p>
-            <span class="wheelchair-icon">
-              <FontAwesomeIcon
-                class="wheelchair-icon__icon"
-                icon="wheelchair"
-              />
-            </span>
-            This itinerary is completely accessible.
-          </p>
-        </div>
-      </Panel>
-      <Panel title="🚗 By car" size="small">
-        <h3 class="travel__subtitle">Arriving</h3>
-        <p>
-          If you come by car, you can find a place to park in the top of the
-          campus, you can check in the streets: <b>Sor Eulàlia d’Anzizu</b> or
-          <b>Cavallers</b>. The green parking area is free during the weekend.
-        </p>
-        <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
-        <p>
-          Google Maps will know for sure your way back home. Just remember where
-          you parked your car.
-        </p>
-      </Panel>
     </div>
+    <Panel title="✈️ By plane" size="small">
+      <h3 class="travel__subtitle text-centered">Arriving</h3>
+      <p>
+        Take the metro L9 in either <b>Aeroport T2</b> or
+        <b>Aeroport T1</b> towards <b>Zona Universitària</b>. Go to the last
+        station <b>Zona Universitària</b>. Our venue is a 10 minute walk from
+        there. To get to our check-in point please check out our
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
+        >.
+      </p>
+      <p>
+        Don't get a T-Casual ticket if you are in the airport, you won't be able
+        to use it from there. Buy a single trip ticket from the airport instead.
+        If you really want to use a T-Casual, then you can take the train (R2 to
+        Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free shuttle bus
+        from Terminal 1 to Terminal 2B departs every 5 minutes), but the train
+        only runs every 30 minutes. You will have to get down at
+        <b>Sants Estació</b> (3rd stop) and take the metro as explained below.
+      </p>
+      <h3 class="travel__subtitle text-centered">Leaving</h3>
+      <p>
+        Take the metro L9 in <b>Zona Universitària</b> towards
+        <b>Aeroport T1</b>. Stop at either <b> Aeroport T1</b> or
+        <b>Aeroport T2</b> depending on the terminal your plane is departing
+        from.
+      </p>
+      <div class="travel__accessible">
+        <p>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon class="wheelchair-icon__icon" icon="wheelchair" />
+          </span>
+          This itinerary is completely accessible.
+        </p>
+      </div>
+    </Panel>
+    <Panel title="🚂 By train" size="small">
+      <h3 class="travel__subtitle">Arriving</h3>
+      <p>
+        If you take the train, you will probably arrive at
+        <b>Sants Estació</b>. From there you need to take the metro L3, it is
+        located on the north side of the station, follow the signs for the green
+        line (L3), not the blue one (L5). When you reach the station, go towards
+        <b>Zona Universitària</b> (to the right if coming from underground). Get
+        off at <b>Palau Reial</b>, from there you should see some signs pointing
+        where HackUPC is, otherwise you can check out our
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
+        >.
+      </p>
+      <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+      <p>
+        Take the metro L3 in <b>Palau Reial</b> towards <b>Trinitat Nova</b> and
+        get off at <b>Sants Estació</b>. When exiting, the easiest way is to
+        turn left and follow the signs towards the railway station, you can
+        follow the plane sign or the letter R with the orange background.
+      </p>
+      <div class="travel__accessible">
+        <p>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon class="wheelchair-icon__icon" icon="wheelchair" />
+          </span>
+          This itinerary is completely accessible. To enter the metro, you will
+          have to reach the elevator on the street at Sants Estació.
+        </p>
+      </div>
+    </Panel>
+    <Panel title="🚌 By bus" size="small">
+      <h3 class="travel__subtitle">Arriving</h3>
+      <p>
+        If you are coming by bus you can take one of the following lines
+        <b>67</b>, <b>75</b>, <b>113</b> or <b>H6</b> until
+        <b>Palau Reial</b> stop, from there you need to walk up to Campus Nord -
+        UPC, placed on the top of Facultad d'economia de la UB. You can also use
+        the <b>33</b> bus line, which will leave you right in front of the
+        Campus Nord, check out everything on our
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          >map</RouterLink
+        >.
+      </p>
+      <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+      <p>
+        In front of the Campus Nord you have a stop for bus line <b>33</b>.
+        Otherwise, if you need any of the other lines <b>67</b>, <b>75</b>,
+        <b>113</b>, or <b>H6</b> you will have to go down to Diagonal and look
+        for the stop for the line you need.
+      </p>
+      <div class="travel__accessible">
+        <p>
+          <span class="wheelchair-icon">
+            <FontAwesomeIcon class="wheelchair-icon__icon" icon="wheelchair" />
+          </span>
+          This itinerary is completely accessible.
+        </p>
+      </div>
+    </Panel>
+    <Panel title="🚗 By car" size="small">
+      <h3 class="travel__subtitle">Arriving</h3>
+      <p>
+        If you come by car, you can find a place to park in the top of the
+        campus, you can check in the streets: <b>Sor Eulàlia d’Anzizu</b> or
+        <b>Cavallers</b>. The green parking area is free during the weekend.
+      </p>
+      <h3 class="travel__subtitle" style="margin-top: 20px">Leaving</h3>
+      <p>
+        Google Maps will know for sure your way back home. Just remember where
+        you parked your car.
+      </p>
+    </Panel>
   </PanelContainer>
 </template>
 
