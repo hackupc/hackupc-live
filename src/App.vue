@@ -37,6 +37,7 @@ onMounted(() => {
 
 <template>
   <template v-if="!disabled">
+    <div class="background" />
     <Notification />
     <AppHeader :is-fullscreen="isFullscreen" />
     <main>
@@ -54,18 +55,38 @@ onMounted(() => {
 body {
   padding: 0;
   margin: 0;
-  background-attachment: fixed;
   background-color: $bg-color;
-  background-image: url('@/assets/img/stars.jpeg');
-  background-repeat: repeat;
   cursor: url('assets/img/rocket.png'), auto;
   font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('@/assets/img/stars_desktop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (max-width: 900px) {
+    background-image: url('@/assets/img/stars_mobile.jpg');
+  }
+}
+
 a {
-  color: $highlight-color;
+  color: $links-color;
   cursor: url('assets/img/rocket-fire.png'), auto;
   text-decoration: none;
+
+  &:hover {
+    color: $links-color-hover;
+  }
 }
 </style>
