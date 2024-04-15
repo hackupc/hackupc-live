@@ -75,24 +75,32 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 @use '@/variables' as *;
 
 .wrapper {
-  display: flex;
+  display: grid;
   box-sizing: border-box;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 140px 0 0;
+  padding: 100px 0 0;
   margin: 0 auto;
-  gap: 3rem;
+  gap: 1rem;
+  grid-template: 1fr auto / 1fr;
+  text-align: center;
+
+  @media screen and (max-width: 900px) {
+    height: 100vh;
+  }
 }
 
 .explore {
   display: flex;
-  width: 95%;
-  max-width: 1300px;
   justify-content: flex-end;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 50px;
   gap: 0.5rem;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    margin: 0;
+  }
 }
 
 .button {
@@ -130,13 +138,15 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 
   &__img {
     display: block;
-    width: 98%;
+    width: 95%;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {
       width: unset;
       max-width: unset;
       height: 100%;
+      margin-right: 12px;
+      margin-left: 12px;
     }
   }
 }
