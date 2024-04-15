@@ -98,6 +98,42 @@ library.add(
   faCircleDot
 )
 
+function loadClarity() {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  ;(function (c, l, a, r, i, t, y) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    c[a] =
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      c[a] ||
+      function () {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        // eslint-disable-next-line prefer-rest-params
+        ;(c[a].q = c[a].q || []).push(arguments)
+      }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    t = l.createElement(r)
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    t.async = 1
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    t.src = `https://www.clarity.ms/tag/${i}`
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    y = l.getElementsByTagName(r)[0]
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    y.parentNode.insertBefore(t, y)
+  })(window, document, 'clarity', 'script', 'lx4watt9a4')
+}
+
+loadClarity()
+
 const app = createApp(App)
 
 app.use(createPinia())
