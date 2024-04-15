@@ -23,13 +23,13 @@ export const travels: Travel[] = [
     title: 'Submit your travel details',
     tag: 'Pending receipt submission',
     emoji: 'file-invoice-dollar',
-    description: `You've been granted with a **up to** amount!! Now it's time to submit your receipts to demonstrate your expenses at [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/). Remember that there are some rules: \n - Your full name should appear in your ticket \n - The total details of the price should appear, also with the total price \n - There should be a 2 way tickets, the way to barcelona and the way back home \n - The tickets should be between the April 26th and the May 10th \n - Only flight, bus or train tickets are allowed \n \n Remember to add your paypal account so we can be able to send you the money!`,
+    description: `You've been granted **up to** a certain amount!!!! Now it's time to submit your receipts to demonstrate your expenses at [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/). Remember that there are some rules: \n - Your full name should appear in your ticket \n - The total details of the price should appear, also with the total price \n - There should be a 2 way tickets, the way to barcelona and the way back home \n - The tickets should be between April 26th and May 10th \n - Only flight, bus or train tickets are allowed \n \n Remember to add your paypal account so we can be able to send you the money!`,
   },
   {
     title: 'Waiting for approval',
     tag: 'Pending receipt approval',
     emoji: 'hourglass-half',
-    description: `We have your ticket! We will review that it's following all the rules and we let you know, depending on the demand and our budget, taking in account the ticket price. How much we can give you. \n\n If your ticket it's not approved, you will receive a email with the reason. If you have any problem don't hesitate to contact us sending a email to [reimbursements@hackupc.com](mailto:reimbursements@hackupc.com). \n\n **Please, be patient!**`,
+    description: `We have your ticket! We will review that it's following all the rules and we'll let you know, depending on the demand and our budget, taking in account the ticket price how much we can give you. \n\n If your ticket it's not approved, you will receive a email with the reason. If you have any problem don't hesitate to contact us sending a email to [reimbursements@hackupc.com](mailto:reimbursements@hackupc.com). \n\n **Please, be patient!**`,
   },
   {
     title: 'Your travel has been approved',

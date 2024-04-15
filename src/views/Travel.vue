@@ -73,7 +73,7 @@ const currentView = computed<'travel' | 'discover'>(() => {
           help to pay your trip, we are not covering full price of a trip.
           <br /><br />
           In addition, take in mind that everything in the event is covered, so
-          will will have no expenses during the weekend!!.
+          will have no expenses during the weekend!!.
           <br /><br />
           <strong>We hope to see you all at HackUPC! 😄</strong>
         </p>
