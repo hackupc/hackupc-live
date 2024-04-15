@@ -211,7 +211,8 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free shuttle bus
         from Terminal 1 to Terminal 2B departs every 5 minutes), but the train
         only runs every 30 minutes. You will have to get down at
-        <b>Sants Estació</b> (3rd stop) and take the metro as explained below.
+        <b>Sants Estació</b> (3rd stop) and take the metro as explained in the
+        following section (By train).
       </p>
       <h3 class="travel__subtitle text-centered">Leaving</h3>
       <p>
