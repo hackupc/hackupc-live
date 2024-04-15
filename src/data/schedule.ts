@@ -186,7 +186,7 @@ export const schedule: RawSchedule = {
       id: 'the-game-ends',
       title: '🧑🏽‍💻 THE GAME ENDS',
       start: '05/05/2024 03:14',
-      description: /* markdown */ `ohh... The game just finished. But your skills leveled up!`,
+      description: /* markdown */ `Ohh... The game just finished. But your skills leveled up!`,
     },
     {
       id: 'hacking-ends',
