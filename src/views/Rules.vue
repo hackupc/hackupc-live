@@ -42,7 +42,6 @@ const currentViewRules = computed<'judging' | 'hRules'>(() => {
             params: { rulesId: 'judging' },
           }"
           class="button"
-          :class="{ 'button--disabled': currentViewRules === 'judging' }"
         >
           Judging
         </RouterLink>
@@ -94,14 +93,6 @@ const currentViewRules = computed<'judging' | 'hRules'>(() => {
   margin-right: 20px;
   margin-left: 20px;
   gap: 0.5rem;
-
-  &__title {
-    margin: 0 0 20px;
-    color: $primary-color-light;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
 }
 
 .button {

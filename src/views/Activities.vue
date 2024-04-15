@@ -2,64 +2,83 @@
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import { activities } from '@/data/activities'
-import { formatInterval, parseSpanishDate } from '@/services/dates'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueMarkdownIt from 'vue3-markdown-it'
 import PanelContainer from '../components/PanelContainer.vue'
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import config from '@/config'
+import SecretContent from '@/components/SecretContent.vue'
+
+const hideActivities = ref(config.hideActivities)
 </script>
 
 <template>
   <div id="activities">
     <PanelContainer>
-      <Panel
-        v-for="activity in activities"
-        :key="activity.title"
-        :title="activity.title"
-        class="activity"
-      >
-        <IconLabel class="channel" centered>
-          <template #icon>
-            <FontAwesomeIcon :icon="['fab', activity.icon]" />
-          </template>
-          {{ activity.location }}
-        </IconLabel>
-        <p class="activity__time">
-          {{
-            formatInterval(
-              parseSpanishDate('date-time', activity.start),
-              parseSpanishDate('date-time', activity.end)
-            )
-          }}
-        </p>
-        <VueMarkdownIt :source="activity.description" />
-        <img :src="activity.image" aria-hidden="true" class="activity__image" />
-      </Panel>
+      <template v-for="activity in activities" :key="activity.title">
+        <Panel v-if="hideActivities" title="Activity">
+          <SecretContent secret-text="Soon available" />
+        </Panel>
+
+        <Panel v-else :title="activity.title" class="activity">
+          <RouterLink
+            v-if="activity.isMission"
+            :to="{
+              name: 'mission',
+            }"
+            class="mission"
+          >
+            <FontAwesomeIcon :icon="['fa', 'user-secret']" size="3x" />
+            <span> Join the mission</span>
+          </RouterLink>
+          <div class="tags">
+            <IconLabel class="channel" centered>
+              <template #icon>
+                <FontAwesomeIcon :icon="['far', 'clock']" />
+              </template>
+              {{ activity.time }}
+            </IconLabel>
+            <IconLabel class="channel" centered>
+              <template #icon>
+                <FontAwesomeIcon :icon="['fa', 'location-dot']" />
+              </template>
+              {{ activity.location }}
+            </IconLabel>
+          </div>
+          <div class="description">
+            <VueMarkdownIt :source="activity.description" />
+          </div>
+        </Panel>
+      </template>
     </PanelContainer>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.channel {
-  margin-bottom: 1em;
+@use '@/variables' as *;
+.tags {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.activity {
-  &__time {
-    margin-bottom: 1.5em;
-    color: #ec6162;
-    font-style: italic;
+.mission {
+  position: absolute;
+  bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.6rem;
+  left: 16px;
+  color: $links-color;
+}
 
-    &::first-letter {
-      text-transform: uppercase;
-    }
-  }
-
-  &__image {
-    display: block;
-    max-width: 100%;
-    max-height: 10em;
-    margin: 1em auto 0;
-    border-radius: 0.5rem;
-  }
+.description {
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 </style>

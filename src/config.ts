@@ -8,16 +8,18 @@ interface Config {
   readonly hideCafeteriaSchedule: boolean
   readonly hideMeals: boolean
   readonly hideWifiConfig: boolean
+  readonly hideActivities: boolean
 }
 
 const config: Config = {
-  //fakeStartTime: '29/4/2022 21:59:55',
+  // fakeStartTime: '15/4/2024 21:59:55',
   disabled: false,
   hideChallengesAndPrizes: true,
-  hideMission: true,
   hideCafeteriaSchedule: true,
   hideMeals: true,
   hideWifiConfig: true,
+  hideMission: false,
+  hideActivities: false,
 }
 
 export default config
