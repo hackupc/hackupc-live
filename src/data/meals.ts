@@ -179,8 +179,8 @@ export const meals: Meals[] = [
   },
   {
     title: 'Sunday Lunch',
-    provider: 'TBD',
-    mealTitle: 'TBD',
+    provider: 'Casa Vallés',
+    mealTitle: 'Frankfurts',
     mealDescription: [
       {
         nameMeal: 'TBD',
