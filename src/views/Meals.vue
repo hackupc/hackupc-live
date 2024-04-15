@@ -143,6 +143,13 @@ const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
         <p><span class="allergies--icon">🥦</span> Vegan diet</p>
         <p><span class="allergies--icon">🌾</span> Gluten free</p>
       </div>
+      <div class="note">
+        <blockquote>
+          We take in account all the allergies you specified in the application,
+          so don't worry, we will have something for you. We do not offer Halal
+          food, we recommend selecting the vegetarian diet instead.
+        </blockquote>
+      </div>
     </Panel>
 
     <template v-for="meal in meals" :key="meal.title">
@@ -218,6 +225,14 @@ const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
   font-weight: bold;
   line-height: 2;
   vertical-align: middle;
+}
+
+.note {
+  margin-top: 2rem;
+
+  blockquote {
+    margin: 0 !important;
+  }
 }
 
 .provider-icon {
