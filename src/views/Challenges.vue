@@ -126,7 +126,7 @@ blockquote {
   margin: 1em 2rem;
   background-color: color.adjust($primary-color, $alpha: -0.7);
   border-radius: 0 8px 8px 0;
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   letter-spacing: 0.6px;
   line-height: 1.6;
