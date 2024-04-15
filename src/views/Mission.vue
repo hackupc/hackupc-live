@@ -36,9 +36,9 @@ const hideMission = ref(config.hideMission)
       >The main goal of <strong>HackUPC</strong> is not to create a project or
       win a prize, but to have a great time and create lasting memories. It is
       for this reason that we have prepared The Mission. To participate, you
-      only need <strong>the Mission card</strong>, that can be found in your
-      swag bag received at check-in. Complete the tasks and
-      <strong>win prizes</strong> of all kinds!</Panel
+      only need <strong>the Mission card</strong>, that will be given to you
+      when at the check-in. Complete the tasks and
+      <strong>win exclusive prizes</strong> of all kinds!</Panel
     >
 
     <Panel title="Your mission card" size="small">

@@ -57,28 +57,29 @@ const hideActivities = ref(config.hideActivities)
 
 <style lang="scss" scoped>
 @use '@/variables' as *;
+
 .tags {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
   margin-bottom: 1rem;
+  gap: 0.5rem;
 }
 
 .mission {
   position: absolute;
   bottom: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 0.6rem;
   left: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   color: $links-color;
+  gap: 0.6rem;
 }
 
 .description {
-  margin-left: 1.4rem;
   margin-right: 1.4rem;
   margin-bottom: 1.5rem;
+  margin-left: 1.4rem;
 }
 </style>
