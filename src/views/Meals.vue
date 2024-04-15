@@ -6,6 +6,7 @@ import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const hideMeals = ref(config.hideMeals)
 const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
@@ -22,7 +23,7 @@ const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
               name: 'map',
             }"
           >
-            <span class="link__text"> A5105 </span>
+            <span class="link__text"> A5106 </span>
           </RouterLink> </span
         >) you will be able to refill your energy with snacks and drinks!!
       </span>
@@ -79,9 +80,66 @@ const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
           <img src="@/assets/img/meals/incapto.svg" alt="incapto" width="100" />
         </div>
         <ul>
-          <li><b>Machine 1</b>: 100% arabica (Intensity 3/5)</li>
-          <li><b>Machine 2</b>: Brasil (Intensity 3/5)</li>
-          <li><b>Machine 3</b>: Decaf (Intensity 2/5)</li>
+          <li>
+            <b>Machine 1</b>: 100% arabica with a intensity of
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px; margin-left: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon :icon="['far', 'circle']" />
+          </li>
+          <li>
+            <b>Machine 2</b>: Brasil with a intensity of
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px; margin-left: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon :icon="['far', 'circle']" />
+          </li>
+          <li>
+            <b>Machine 3</b>: Decaf with a intensity of
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px; margin-left: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-dot']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon
+              :icon="['far', 'circle']"
+              style="margin-right: 4px"
+            />
+            <FontAwesomeIcon :icon="['far', 'circle']" />
+          </li>
         </ul>
       </div>
 
@@ -99,7 +157,7 @@ const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
           <li><b>Coca-cola</b>: Classic, Zero, Light</li>
           <li><b>Fanta</b>: Orange, Orange light, Lemon, Lemon light</li>
           <li><b>Aquarius</b>: Classic, Orange</li>
-          <li><b>Fuze team</b>: Peach, lemon</li>
+          <li><b>Fuze tea</b>: Peach, lemon</li>
         </ul>
       </div>
 
