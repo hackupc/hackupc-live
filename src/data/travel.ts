@@ -35,7 +35,7 @@ export const travels: Travel[] = [
     title: 'Your travel has been approved',
     tag: 'Receipt approved',
     emoji: 'thumbs-up',
-    description: `Now it's your turn!! We have approved your ticket so your travel reimbursement will be granted, if you follow the last steps: \n - Demo a valid your project in our HackUPC judges. \n - Add your devpost link at [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/) \n\n Take in account the project should follow our rules, check them out in the [rules and judging section](/rules)`,
+    description: `Now it's your turn!! We have approved your ticket so your travel reimbursement will be granted, if you follow the last steps: \n - Demo a valid project to our HackUPC judges. \n - Add your devpost link at [MyHackUPC dashboard](https://my.hackupc.com/reimbursement/dash_board/) \n\n Take in account the project should follow our rules, check them out in the [rules and judging section](/rules)`,
   },
   {
     title: 'You have completed all the steps!',
