@@ -183,12 +183,6 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         In case of a major emergency you can contact the Spanish emergency
         number: <b><a href="tel:112"> 112 </a></b>
       </p>
-      <h3 style="margin-top: 1.5rem"><strong>Location of the event</strong></h3>
-      <p>
-        You can find us
-        <b><a href="https://maps.app.goo.gl/qudNdevoLMA7Znt17">here</a></b
-        >!
-      </p>
     </Panel>
     <div style="width: 100%; margin-top: 3rem">
       <div class="panel">
