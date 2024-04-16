@@ -185,7 +185,9 @@ const hideWifiConfig = ref(config.hideWifiConfig)
       </p>
       <h3 style="margin-top: 1.5rem"><strong>Location of the event</strong></h3>
       <p>
-        You can find us <b><a href="https://maps.app.goo.gl/qudNdevoLMA7Znt17">here</a></b>!
+        You can find us
+        <b><a href="https://maps.app.goo.gl/qudNdevoLMA7Znt17">here</a></b
+        >!
       </p>
     </Panel>
     <div style="width: 100%; margin-top: 3rem">
