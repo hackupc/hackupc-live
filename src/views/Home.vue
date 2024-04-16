@@ -181,7 +181,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
       <h3 style="margin-top: 1.5rem"><strong>Emergency contact</strong></h3>
       <p>
         In case of a major emergency you can contact the Spanish emergency
-        number: <b><a href="tel:{entry[column.key]}" > 112 </a></b>
+        number: <b><a href="tel:{entry[column.key]}"> 112 </a></b>
       </p>
     </Panel>
     <div style="width: 100%; margin-top: 3rem">
