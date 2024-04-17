@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import MentorShirt from '@/assets/img/mentorShirt.png'
 import { mentors } from '@/data/mentors'
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
@@ -33,15 +32,6 @@ import PanelContainer from '@/components/PanelContainer.vue'
       <br /><br />
       Also you can ask for help through the help channel on Slack!
     </Panel>
-    <div class="mentorPan">
-      <Panel title="How to recognize a Mentor" size="big">
-        In order to recognize a Mentor you can check if <b>Mentor</b> is written
-        on their back!
-        <Panel :panel-content-image="`url('${MentorShirt}')`" size="small">
-          <div style="height: 600px"></div>
-        </Panel>
-      </Panel>
-    </div>
     <div class="mentorPan">
       <Panel
         v-for="mentor in mentors"
