@@ -61,7 +61,18 @@ const hideWifiConfig = ref(config.hideWifiConfig)
           target="_blank"
           rel="noopener noreferrer"
         >
-          <b>Guides</b>
+          <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
+          Guides
+        </a>
+      </div>
+      <div class="buttons">
+        <a
+          href="https://maps.app.goo.gl/AKazP14LMy7LZoZq8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon="map-location-dot" style="margin-right: 4px" />
+          HackUPC location in Google maps
         </a>
       </div>
     </Panel>
