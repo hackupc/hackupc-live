@@ -7,6 +7,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue'
 import IconLabel from '@/components/IconLabel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { discovers } from '@/data/discover'
 
 const route = useRoute()
 
@@ -81,7 +82,13 @@ const currentView = computed<'travel' | 'discover'>(() => {
     </template>
 
     <template v-if="currentView === 'discover'">
-      <Panel title="Discover BCN" size="big"> </Panel>
+      <Panel
+        v-for="discover in discovers"
+        :key="discover.title"
+        :title="discover.title"
+      >
+        <VueMarkdownIt :source="discover.description" />
+      </Panel>
     </template>
   </PanelContainer>
 </template>

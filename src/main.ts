@@ -7,17 +7,21 @@ import {
   faLinkedin,
   faMedium,
   faSlack,
+  faTiktok,
   faTwitch,
   faTwitter,
+  faXTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {
+  faBookOpen,
   faBus,
   faCalendarDays,
   faCar,
   faChalkboardTeacher,
   faCircleQuestion,
   faCode,
+  faDice,
   faEnvelope,
   faFileInvoiceDollar,
   faGavel,
@@ -26,6 +30,7 @@ import {
   faHome,
   faHourglassHalf,
   faHourglassStart,
+  faLocationDot,
   faMapLocationDot,
   faMessage,
   faMicrochip,
@@ -44,7 +49,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import Antd from 'ant-design-vue'
-import { faCircle, faCircleDot } from '@fortawesome/free-regular-svg-icons'
+import {
+  faCircle,
+  faCircleDot,
+  faClock,
+} from '@fortawesome/free-regular-svg-icons'
 
 registerSW({
   immediate: true,
@@ -95,7 +104,13 @@ library.add(
   faEnvelope,
   faGlobe,
   faCircle,
-  faCircleDot
+  faCircleDot,
+  faDice,
+  faClock,
+  faLocationDot,
+  faBookOpen,
+  faTiktok,
+  faXTwitter
 )
 
 function loadClarity() {

@@ -43,8 +43,8 @@ const currentSchedule = computed<'live' | 'detailed'>(() => {
         >
       </div>
       <p class="note">
-        ** The schedule is in construction times can change and also activities
-        will appear as they are confirmed.
+        ** The schedule is under construction. Times can change and also
+        activities will appear as soon as they are confirmed.
       </p>
     </div>
     <div class="scrollable">

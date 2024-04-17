@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const route = useRoute()
 
@@ -20,33 +21,44 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 <template>
   <div class="wrapper">
     <div class="explore">
-      <RouterLink
-        :to="{
-          name: 'map',
-          params: { mapId: 'indoors' },
-        }"
+      <a
+        href="https://maps.app.goo.gl/AKazP14LMy7LZoZq8"
+        target="_blank"
+        rel="noopener noreferrer"
         class="button"
-        :class="{ 'button--disabled': currentMap === 'indoors' }"
-        >Indoors</RouterLink
       >
-      <RouterLink
-        :to="{
-          name: 'map',
-          params: { mapId: 'campus' },
-        }"
-        class="button"
-        :class="{ 'button--disabled': currentMap === 'campus' }"
-        >Campus</RouterLink
-      >
-      <RouterLink
-        :to="{
-          name: 'map',
-          params: { mapId: 'judging' },
-        }"
-        class="button"
-        :class="{ 'button--disabled': currentMap === 'judging' }"
-        >Judging</RouterLink
-      >
+        <FontAwesomeIcon icon="map-location-dot" style="margin-right: 4px" />
+        Link to Google Maps
+      </a>
+      <div class="explore__maps-buttons">
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'indoors' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentMap === 'indoors' }"
+          >Indoors</RouterLink
+        >
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'campus' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentMap === 'campus' }"
+          >Campus</RouterLink
+        >
+        <RouterLink
+          :to="{
+            name: 'map',
+            params: { mapId: 'judging' },
+          }"
+          class="button"
+          :class="{ 'button--disabled': currentMap === 'judging' }"
+          >Judging</RouterLink
+        >
+      </div>
     </div>
     <div class="map">
       <img
@@ -92,10 +104,14 @@ const currentMap = computed<'indoors' | 'campus' | 'judging'>(() => {
 
 .explore {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
-  margin-right: 50px;
-  gap: 0.5rem;
+  margin-right: 60px;
+  margin-left: 60px;
+
+  &__maps-buttons {
+    gap: 0.5rem;
+  }
 
   @media screen and (max-width: 900px) {
     display: block;
