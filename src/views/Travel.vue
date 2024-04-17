@@ -7,7 +7,6 @@ import { RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue'
 import IconLabel from '@/components/IconLabel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { rules } from '@/data/rules'
 import { discovers } from '@/data/discover'
 
 const route = useRoute()
