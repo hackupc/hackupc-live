@@ -4,10 +4,14 @@ import Panel from '@/components/Panel.vue'
 import PanelContainer from '@/components/PanelContainer.vue'
 import VueMarkdownIt from 'vue3-markdown-it'
 import { RouterLink, useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import IconLabel from '@/components/IconLabel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { discovers } from '@/data/discover'
+import config from '@/config'
+import MoreInformationSoon from '@/components/MoreInformationSoon.vue'
+
+const workingDiscovery = ref(config.workingDiscovery)
 
 const route = useRoute()
 
@@ -87,7 +91,12 @@ const currentView = computed<'travel' | 'discover'>(() => {
         :key="discover.title"
         :title="discover.title"
       >
-        <VueMarkdownIt :source="discover.description" />
+        <template v-if="workingDiscovery">
+          <MoreInformationSoon />
+        </template>
+        <template v-else>
+          <VueMarkdownIt :source="discover.description" />
+        </template>
       </Panel>
     </template>
   </PanelContainer>
