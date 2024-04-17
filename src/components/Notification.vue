@@ -132,7 +132,7 @@ const getEvent = function (id: string): ScheduleEvent | undefined {
     margin-left: 16px;
     background-color: $primary-color;
     border-radius: 5px;
-    color: $contrast-color;
+    color: #fff;
     cursor: url('../assets/img/rocket-fire.png'), auto;
     font-weight: bold;
     letter-spacing: 1px;

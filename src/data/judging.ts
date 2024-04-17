@@ -16,13 +16,15 @@ We will have a judging expo on **${formatIntervalInTimezone(
       '5/5/2024 10:15:00',
       '5/5/2024 13:15:00'
     )}**.
-We will assign you a time slot to present your project (one for HackUPC + as many challenges as you participate), you need to go to in front of A3 building and an organizer will assign you to a queue and may give you an estimated time when you will present.
+We will have a judging expo on Sunday ☀️ **from 10:15 to 13:15**, divided in three timeslots of 1h. To present your project, you should follow these steps:\n\n
 
-The presentation can only be **3 minutes** long and with **no slides**, Prezi's or any visual support except your hack. You can check out other projects at any judging room.
-
-The top teams will move on to an additional round of panel judging in the Closing Ceremony.
-
-If you participate in a challenge, you'll have to present at the specific sponsor room, which is independent of the HackUPC judging.`,
+1. Make sure you submitted your project to Devpost before the deadline ⏳!
+2. Watch out for the message on Slack from the organizers, with the timeslot that corresponds to you 📱
+3. When your turn is up, present yourself to the front of the A3 building, where an organizer will add you to the queue 🏢
+4. Wait for the organizer to call up your project and give you your judging room 🙋
+5. Go to the room the organizer told you 🚶🏻‍♀️
+6. Present your amazing project to the judges 🏆
+`,
     size: 'big',
   },
   {
