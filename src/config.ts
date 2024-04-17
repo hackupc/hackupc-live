@@ -9,6 +9,7 @@ interface Config {
   readonly hideMeals: boolean
   readonly hideWifiConfig: boolean
   readonly hideActivities: boolean
+  readonly workingDiscovery: boolean
 }
 
 const config: Config = {
@@ -20,6 +21,7 @@ const config: Config = {
   hideWifiConfig: true,
   hideMission: true,
   hideActivities: false,
+  workingDiscovery: true,
 }
 
 export default config
