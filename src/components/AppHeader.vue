@@ -149,14 +149,10 @@ const isActive = (page: string): boolean => {
             Challenges</RouterLink
           >
         </li>
-        <li :class="{ selected: isActive('/hardware') }">
-          <RouterLink to="/hardware" @click="closeAsideMenu"
-            ><FontAwesomeIcon
-              icon="microchip"
-              size="sm"
-              style="margin-right: 5px"
-            />
-            Hardware</RouterLink
+        <li :class="{ selected: isActive('/activities') }">
+          <RouterLink to="/activities" @click="closeAsideMenu"
+            ><FontAwesomeIcon icon="dice" size="sm" style="margin-right: 5px" />
+            Activities</RouterLink
           >
         </li>
         <li :class="{ selected: isActive('/rules') }">
@@ -166,7 +162,7 @@ const isActive = (page: string): boolean => {
               size="sm"
               style="margin-right: 5px"
             />
-            Rules</RouterLink
+            Judging & Rules</RouterLink
           >
         </li>
         <li :class="{ selected: isActive('/travel') }">
@@ -300,14 +296,14 @@ const isActive = (page: string): boolean => {
           </RouterLink>
         </Tooltip>
 
-        <Tooltip title="Hardware" class="cursor-is-rocket">
+        <Tooltip title="Activities" class="cursor-is-rocket">
           <RouterLink
-            to="/hardware"
+            to="/activities"
             class="header-nav-bar__item"
-            :class="{ selected: isActive('/hardware') }"
+            :class="{ selected: isActive('/activities') }"
           >
             <li>
-              <FontAwesomeIcon icon="microchip" size="lg" />
+              <FontAwesomeIcon icon="dice" size="lg" />
             </li>
           </RouterLink>
         </Tooltip>

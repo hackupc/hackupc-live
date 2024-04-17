@@ -1,6 +1,6 @@
 type MarkdownString = string // Accepts Markdown
 
-import MissionCard from '@/assets/img/hardware/missioncard.png'
+import MissionCard from '@/assets/img/activities/missioncard.png'
 
 export interface Mission {
   readonly title: string
