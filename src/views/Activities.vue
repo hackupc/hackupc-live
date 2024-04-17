@@ -29,7 +29,7 @@ const hideActivities = ref(config.hideActivities)
             }"
             class="mission"
           >
-            <FontAwesomeIcon :icon="['fa', 'user-secret']" size="3x" />
+            <FontAwesomeIcon :icon="['fa', 'user-secret']" size="2x" />
             <span> Join the mission</span>
           </RouterLink>
           <div class="tags">
@@ -78,8 +78,8 @@ const hideActivities = ref(config.hideActivities)
 }
 
 .description {
-  margin-right: 1.4rem;
+  margin-right: 0.5rem;
   margin-bottom: 1.5rem;
-  margin-left: 1.4rem;
+  margin-left: 0.5rem;
 }
 </style>

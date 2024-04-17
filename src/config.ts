@@ -18,7 +18,7 @@ const config: Config = {
   hideCafeteriaSchedule: true,
   hideMeals: true,
   hideWifiConfig: true,
-  hideMission: false,
+  hideMission: true,
   hideActivities: false,
 }
 
