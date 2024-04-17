@@ -7,11 +7,14 @@ import {
   faLinkedin,
   faMedium,
   faSlack,
+  faTiktok,
   faTwitch,
   faTwitter,
+  faXTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import {
+  faBookOpen,
   faBus,
   faCalendarDays,
   faCar,
@@ -104,7 +107,10 @@ library.add(
   faCircleDot,
   faDice,
   faClock,
-  faLocationDot
+  faLocationDot,
+  faBookOpen,
+  faTiktok,
+  faXTwitter
 )
 
 function loadClarity() {

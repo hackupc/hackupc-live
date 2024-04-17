@@ -13,9 +13,9 @@ import PanelContainer from '@/components/PanelContainer.vue'
       Mentors are experts in various technologies and programming languages who
       can help you with:
       <ul>
-        <li>💣 Issues with your code</li>
-        <li>🚀 Boosting up your project</li>
         <li>💻 Getting started with your project</li>
+        <li>🚀 Boosting up your project</li>
+        <li>💣 Issues with your code</li>
         <li>🏆 Submitting it to Devpost</li>
       </ul>
     </Panel>
