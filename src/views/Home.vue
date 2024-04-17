@@ -154,7 +154,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
           href="https://twitter.com/HackUPC"
           aria-label="twitter"
         >
-          <FontAwesomeIcon :icon="['fab', 'twitter']" />
+          <FontAwesomeIcon :icon="['fab', 'x-twitter']" />
         </a>
         <a
           target="_blank"
@@ -194,6 +194,44 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         In case of a major emergency you can contact the Spanish emergency
         number: <b><a href="tel:112"> 112 </a></b>
       </p>
+
+      <h4 style="margin-top: 1rem; margin-bottom: 0">
+        Know more what's behind HackUPC
+      </h4>
+      <div class="buttons">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.facebook.com/hackersupc"
+          aria-label="facebook"
+        >
+          <FontAwesomeIcon :icon="['fab', 'facebook']" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/hackersupc"
+          aria-label="twitter"
+        >
+          <FontAwesomeIcon :icon="['fab', 'x-twitter']" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/hackersupc"
+          aria-label="instagram"
+        >
+          <FontAwesomeIcon :icon="['fab', 'instagram']" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://tiktok.com/@hackersatupc"
+          aria-label="instagram"
+        >
+          <FontAwesomeIcon :icon="['fab', 'tiktok']" />
+        </a>
+      </div>
     </Panel>
     <div style="width: 100%; margin-top: 3rem">
       <div class="panel">
