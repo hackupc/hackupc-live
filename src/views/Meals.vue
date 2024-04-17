@@ -7,6 +7,7 @@ import { computed, ref } from 'vue'
 import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import MoreInformationSoon from '@/components/MoreInformationSoon.vue'
 
 const hideMeals = ref(config.hideMeals)
 const hideCafeteriaSchedule = ref(config.hideCafeteriaSchedule)
@@ -264,7 +265,7 @@ const currentView = computed<'cafeteria' | 'regular'>(() => {
             </span>
           </div>
           <template v-if="hideMeals">
-            <SecretContent secret-text="Soon available" />
+            <MoreInformationSoon />
           </template>
           <template v-else>
             <div
