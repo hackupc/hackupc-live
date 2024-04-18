@@ -55,10 +55,7 @@ export const faqs: Faq[] = [
   },
   {
     title: 'Deadline for project submissions?',
-    description: `The deadline for project submissions at ${formatDateInTimezone(
-      'weekday-time',
-      '05/05/2023 9:00:00'
-    )}. Submit your projects to [Devpost](https://hackupc-2024.devpost.com/).`,
+    description: `The deadline for project submissions at Sunday 05/05/2024 at 09:00 AM. Submit your projects to [Devpost](https://hackupc-2024.devpost.com/).`,
     size: 'small',
   },
   {
