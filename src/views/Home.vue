@@ -374,8 +374,8 @@ const hideWifiConfig = ref(config.hideWifiConfig)
     flex: 1 1 0;
     padding: 8px;
     border: 2px solid $tertiary-light-color;
-    color: $tertiary-light-color;
     border-radius: 3px;
+    color: $tertiary-light-color;
     cursor: not-allowed;
     font-weight: bold;
     text-align: center;
