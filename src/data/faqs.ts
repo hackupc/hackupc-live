@@ -13,10 +13,10 @@ export const faqs: Faq[] = [
     title: 'When shall I arrive?',
     description: `Registration will start on ${formatDateInTimezone(
       'weekday-time',
-      '12/5/2023 16:00:00'
+      '03/05/2024 16:00:00'
     )}. The opening ceremony is at ${formatDateInTimezone(
       'time',
-      '12/5/2023 19:00:00'
+      '03/05/2023 19:00:00'
     )}.`,
     size: 'small',
   },
@@ -24,28 +24,28 @@ export const faqs: Faq[] = [
     title: 'When is HackUPC ending?',
     description: `The closing ceremony is expected to end on ${formatDateInTimezone(
       'weekday-time',
-      '14/5/2023 17:00:00'
+      '05/05/2024 17:00:00'
     )}.`,
     size: 'small',
   },
   {
-    title: 'What if I cannot make it in time?',
-    description: `No problem. Just come to our [InfoDesk](/map/indoors) for a late check-in. If you are confused, please reach out to any volunteer (apricot t-shirts) or organizer (red t-shirts).`,
-    size: 'small',
-  },
-  {
-    title: "I'm not in Slack, how do I get in?",
-    description: `Come to the [InfoDesk](/map/indoors) during the event or send us an email to [contact@hackupc.com](mailto:contact@hackupc.com)`,
-    size: 'small',
-  },
-  {
-    title: 'Can I leave HackUPC?',
+    title: 'Can I leave during HackUPC?',
     description: `Yes. However make sure you have your wristband in your wrist, otherwise we might not let you in when you come back.`,
     size: 'small',
   },
   {
-    title: 'Can I sleep now?',
-    description: `Yes, sure. You can find the [sleeping spaces](/map/indoors) in A3 building. Some matresses will be provided. Unfortunately, we don't have enough for everyone!`,
+    title: 'What if I cannot make it in time?',
+    description: `No problem. Send us a email to [contact@hackupc.com](mailto:contact@hackupc.com) to inform us and when you arrive, just come to our [InfoDesk](/map/indoors) for a late check-in. If you are confused, please reach out to any volunteer or organizer (you will recognize them for the back of the t-shirts).`,
+    size: 'small',
+  },
+  {
+    title: "I'm not in Slack, how do I get in?",
+    description: `If you are invited and have confirmed your participation to HackUPC, check your email to find the invitation, if you don't have it be patient it will arrive, and if during the event or 2-3 days before you can not get in, come to the [InfoDesk](/map/indoors) during the event or send us an email to [contact@hackupc.com](mailto:contact@hackupc.com)`,
+    size: 'small',
+  },
+  {
+    title: 'Can I sleep in the venue?',
+    description: `Yes, sure! You can use the [sleeping spaces](/map/indoors) in A3 building starting saturday 00:00h. Some mattresses will be provided. Unfortunately, we don't have enough for everyone! \n\n Please take only one and do not move it from the sleeping area. Once you've finished using it, don't leave your things, our staff will remove it.`,
     size: 'small',
   },
   {
@@ -57,8 +57,8 @@ export const faqs: Faq[] = [
     title: 'Deadline for project submissions?',
     description: `The deadline for project submissions at ${formatDateInTimezone(
       'weekday-time',
-      '14/5/2023 9:00:00'
-    )}. Submit your projects to [Devpost](https://hackupc-2023.devpost.com/).`,
+      '05/05/2023 9:00:00'
+    )}. Submit your projects to [Devpost](https://hackupc-2024.devpost.com/).`,
     size: 'small',
   },
   {

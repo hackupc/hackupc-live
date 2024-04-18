@@ -114,6 +114,12 @@ library.add(
 )
 
 function loadClarity() {
+  const link = document.createElement('link')
+  link.rel = 'preconnect'
+  link.href = 'https://www.clarity.ms'
+  link.crossOrigin = 'anonymous'
+  document.head.appendChild(link)
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   ;(function (c, l, a, r, i, t, y) {

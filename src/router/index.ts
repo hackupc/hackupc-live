@@ -57,11 +57,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/FAQs.vue'),
   },
   {
-    path: '/hardware',
-    name: 'hardware',
-    component: () => import('@/views/Hardware.vue'),
-  },
-  {
     path: '/meals/:mealsId?',
     name: 'meals',
     component: () => import('@/views/Meals.vue'),
@@ -72,7 +67,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Travel.vue'),
   },
   {
-    path: '/mentors',
+    path: '/mentors/:mentorsId?',
     name: 'mentors',
     component: () => import('@/views/Mentors.vue'),
   },

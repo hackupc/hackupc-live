@@ -42,6 +42,7 @@ const currentViewRules = computed<'judging' | 'hRules'>(() => {
             params: { rulesId: 'judging' },
           }"
           class="button"
+          :class="{ 'button--disabled': currentViewRules === 'judging' }"
         >
           Judging
         </RouterLink>
