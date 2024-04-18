@@ -1,21 +1,14 @@
 <script setup lang="ts">
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
-import { formatDate } from '@/services/dates'
-import { useScheduleStore } from '@/stores/schedule'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import PanelContainer from '../components/PanelContainer.vue'
 import { DevpostIcon } from '@/components/icons'
 import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
-
-const scheduleStore = useScheduleStore()
-
-const submitDeadline = computed<string>(() =>
-  formatDate('weekday-time', scheduleStore.schedule.submitDeadline)
-)
+import { Tooltip } from 'ant-design-vue'
 
 const hideWifiConfig = ref(config.hideWifiConfig)
 </script>
@@ -50,21 +43,25 @@ const hideWifiConfig = ref(config.hideWifiConfig)
           rel="noopener noreferrer"
           >Devpost</a
         >
-        before {{ submitDeadline }}. If you don't do it, you won't have access
-        to the travel reimbursement or prizes.
+        before Sunday at 9:00 AM. If you don't do it, you won't have access to
+        the travel reimbursement or prizes.
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
-      <div class="buttons">
-        <a
-          href="https://guides.hackupc.com/guide/hacker/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <Tooltip title="Working on it">
+        <div class="buttons__disabled">
+          <!-- <a
+            href="https://guides.hackupc.com/guide/hacker/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
+            Guides
+          </a> -->
           <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
-          Guides
-        </a>
-      </div>
+          Guides (coming soon)
+        </div>
+      </Tooltip>
       <div class="buttons">
         <a
           href="https://maps.app.goo.gl/AKazP14LMy7LZoZq8"
@@ -371,6 +368,19 @@ const hideWifiConfig = ref(config.hideWifiConfig)
   overflow: hidden;
   margin-top: 0.75rem;
   border-radius: 3px;
+
+  &__disabled {
+    display: block;
+    flex: 1 1 0;
+    padding: 8px;
+    border: 2px solid $tertiary-light-color;
+    color: $tertiary-light-color;
+    border-radius: 3px;
+    cursor: not-allowed;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+  }
 
   a {
     display: block;
