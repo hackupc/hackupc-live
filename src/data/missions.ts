@@ -1,6 +1,6 @@
 type MarkdownString = string // Accepts Markdown
 
-import MissionCard from '@/assets/img/hardware/missioncard.png'
+import MissionCard from '@/assets/img/activities/missioncard.png'
 
 export interface Mission {
   readonly title: string
@@ -11,34 +11,24 @@ export interface Mission {
 
 export const missions: Mission[] = [
   {
-    title: 'The Mission',
-    description: `We want your experience at HackUPC to be more than just creating a project, we want you to have a great time attending talks and workshops, meeting new people and having fun with the activities that we have prepared for you.
-
-To achieve that, we have created a mission for you to complete. So, let's get to it! To start the mission, you will need:
-
-- **The mission card** that you will find in your swag bag received at check-in.
-- Your own copy of **the tracking spreadsheet** that you will find **[here](https://docs.google.com/spreadsheets/d/16M5zLWoqDwzYZNwg1gOq-D0h3x5SEdXao2RQlP5UMc0/)**.
-
-In the mission card, you will find the tasks that you can complete during the event. Each task has a different amount of points, and you can complete them in any order you want. You can also find a list of activities that you can participate in. These activities will be announced during the event, and you will have to complete them in order to get the points. You can find more information on when the activities are happening in the **[Schedule section](https://live.hackupc.com/schedule)**.`,
-    size: 'big',
-  },
-  {
     title: 'Your Mission Card',
-    description: `Keep in mind that in order to get the points for each mission task, you must show the card to the organizer in charge of the activity so that they can stamp it.
-    If there isn't an organizer to stamp your card, you should go to the infoDesk (the same location as baggage) and show a proof that you have completed the task, and they will take care of it.`,
+    description: `\n-(logo Talk) Learn new things going to a talk or workshop from our sponsors :speech_balloon:
+\n-(slideshare) Have some laughs with our SlideShare Show Karaoke activity :circus_tent:
+\n-(lego) Let your creativity flow with the Lego Tournament :magic_wand:
+\n-(Find The Biene) Take a photo with at least 15 Bienes hidden through the venue :biene-default:
+\n-(demo) Expose your challenge to the judges! :speaking_head_in_silhouette:
+\n-(Photocall) Post a photo of you and your friends at the photocall! :camera_with_flash:
+\n-(Dodgeball) Come join our epic Dodge Ball tournament :volleyball:
+\n-(WikiRace) Show your detective skills in the WikiRace :mag_right:`,
     size: 'small',
     picture: MissionCard,
   },
   {
     title: 'Claiming your rewards',
     description: `
-As you complete the tasks, you will earn points. The more points you earn, the higher your tier will be.
-There are 2 tiers in total:
-\n-**Tier 1**: 190 points
-\n-**Tier 2**: 250 points
-\nWith each tier, **Special prizes** are waiting for you!
-
-Remember, you can check your tier completion in your Tracking spreadsheet, and once you reach it you can go to the infoDesk and claim your reward! Don't forget to bring your card with you to verify your points.
+When you have a **line completed**, go to the infoDesk and claim your reward!
+Don’t forget to **carry the mission card to all these events**! The organizer in charge of the activity will stamp it. If there isn't an organizer to stamp your card, you should go to the infoDesk (the same location as baggage) and **show a proof** that you have completed the task.
+You can find more information on when the activities are happening in the **[Schedule section](https://live.hackupc.com/schedule)**.
     `,
     size: 'small',
   },

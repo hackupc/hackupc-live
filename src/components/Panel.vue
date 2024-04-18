@@ -39,7 +39,7 @@ defineProps<Props>()
   text-align: left;
 
   &--big {
-    flex: 1 1 782px;
+    flex: 1 1 1300px;
   }
 
   &__title {
@@ -72,8 +72,12 @@ defineProps<Props>()
     }
 
     ::v-deep(a) {
-      color: $highlight-color;
-      text-decoration: underline;
+      color: $links-color;
+      font-weight: bold;
+
+      &:hover {
+        color: color.adjust($links-color-hover, $lightness: -10%);
+      }
     }
 
     ::v-deep(h3) {
@@ -85,7 +89,7 @@ defineProps<Props>()
     }
 
     ::v-deep(li) {
-      margin-bottom: 0.25em;
+      margin-bottom: 0.5em;
     }
 
     ::v-deep(ul, ol) {
@@ -93,6 +97,7 @@ defineProps<Props>()
     }
 
     ::v-deep(ol li::marker) {
+      margin-right: 6px;
       color: $primary-color;
       font-weight: 600;
     }
@@ -100,7 +105,7 @@ defineProps<Props>()
     ::v-deep(blockquote) {
       padding: 10px 0 10px 24px;
       border-left: 4px solid $primary-color;
-      margin: 1.5em 0;
+      margin: 0 0 1.5em;
       background-color: color.adjust($primary-color, $alpha: -0.9);
       border-radius: 0 8px 8px 0;
     }

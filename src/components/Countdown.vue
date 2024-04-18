@@ -89,7 +89,7 @@ const handleClick = (): void => {
   margin-top: -90px;
   border-radius: 100%;
   box-shadow: 0 -5px 42px rgb(0 0 0 / 40%);
-  cursor: pointer;
+  cursor: url('../assets/img/rocket-fire.png'), auto;
   transition: transform 200ms $ease-bounce;
 
   &:hover {
@@ -143,7 +143,7 @@ const handleClick = (): void => {
     height: 33.333vw;
     border-radius: 50%;
     box-shadow: 0 4px 42px 0 rgb(0 0 0 / 30%);
-    cursor: pointer;
+    cursor: url('../assets/img/rocket-fire.png'), auto;
     text-shadow: 0 0 12px rgb(0 0 0 / 50%);
   }
 
@@ -159,6 +159,28 @@ const handleClick = (): void => {
     box-sizing: border-box;
     border-width: 8px;
     border-radius: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .countdown {
+    &--fullscreen {
+      top: 40px;
+      left: 59vw;
+      width: 33.333vw;
+      height: 33.333vw;
+    }
+
+    &--fullscreen &__time {
+      font-size: 6vw;
+    }
+  }
+
+  .countdown__bg {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
   }
 }
 </style>

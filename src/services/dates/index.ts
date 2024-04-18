@@ -20,7 +20,7 @@ export const dateFormats: Record<DateFormat, string> = {
   time: 'H:mm',
   weekday: 'dddd',
   'weekday-time': 'dddd [at] H:mm',
-  date: 'D/M/YYYY',
+  date: 'DD/MM/YYYY',
   'date-time': 'D/M/YYYY H:mm',
   'full-date-time': 'D/M/YYYY H:mm:ss',
 }
@@ -32,9 +32,9 @@ export type DateFormatsTypes = {
   time: `${number}:${number}`
   weekday: `${string}`
   'weekday-time': `${string} at ${number}:${number}`
-  date: `${number}/${number}/${2023}`
-  'date-time': `${number}/${number}/${2023} ${number}:${number}`
-  'full-date-time': `${number}/${number}/${2023} ${number}:${number}:${number}`
+  date: `${number}/${number}/${2024}`
+  'date-time': `${number}/${number}/${2024} ${number}:${number}`
+  'full-date-time': `${number}/${number}/${2024} ${number}:${number}:${number}`
 }
 
 export function formatDate(format: DateFormat, date: Dayjs): string {

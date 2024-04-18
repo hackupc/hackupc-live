@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Challenges.vue'),
   },
   {
-    path: '/schedule',
+    path: '/schedule/:scheduleId?',
     name: 'schedule',
     component: () => import('@/views/Schedule.vue'),
   },
@@ -37,17 +37,12 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/Activities.vue'),
   },
   {
-    path: '/live',
-    name: 'live',
-    component: () => import('@/views/Live.vue'),
-  },
-  {
     path: '/fullscreen',
     name: 'fullScreen',
     component: () => import('@/views/FullScreen.vue'),
   },
   {
-    path: '/rules',
+    path: '/rules/:rulesId?',
     name: 'rules',
     component: () => import('@/views/Rules.vue'),
   },
@@ -62,9 +57,19 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/FAQs.vue'),
   },
   {
-    path: '/hardware',
-    name: 'hardware',
-    component: () => import('@/views/Hardware.vue'),
+    path: '/meals/:mealsId?',
+    name: 'meals',
+    component: () => import('@/views/Meals.vue'),
+  },
+  {
+    path: '/travel',
+    name: 'travel',
+    component: () => import('@/views/Travel.vue'),
+  },
+  {
+    path: '/mentors/:mentorsId?',
+    name: 'mentors',
+    component: () => import('@/views/Mentors.vue'),
   },
 ]
 
