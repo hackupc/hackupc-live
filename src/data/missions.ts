@@ -15,7 +15,7 @@ export const missions: Mission[] = [
     description: `\n-(logo Talk) Learn new things going to a talk or workshop from our sponsors :speech_balloon:
 \n-(slideshare) Have some laughs with our SlideShare Show Karaoke activity :circus_tent:
 \n-(lego) Let your creativity flow with the Lego Tournament :magic_wand:
-\n-(Find The Biene) Take a photo with at least 15 Bienes hidden through the venue :biene-default:
+\n-(Find The Biene) Take a photo with at least 12 Bienes hidden through the venue :biene-default:
 \n-(demo) Expose your challenge to the judges! :speaking_head_in_silhouette:
 \n-(Photocall) Post a photo of you and your friends at the photocall! :camera_with_flash:
 \n-(Dodgeball) Come join our epic Dodge Ball tournament :volleyball:
