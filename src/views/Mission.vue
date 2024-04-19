@@ -100,11 +100,11 @@ strong {
 .explore {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
-  gap: 0.5rem;
 }
 
 .button {

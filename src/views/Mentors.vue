@@ -66,7 +66,7 @@ const currentView = computed<'generalInfo' | 'meetThem'>(() => {
           <template #icon>
             <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
           </template>
-          #help
+          #mentors
         </IconLabel>
         You can always find a mentor in the Mentors lobby, located at A5105 next
         to the Cafeteria.
@@ -130,11 +130,11 @@ const currentView = computed<'generalInfo' | 'meetThem'>(() => {
 .explore {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: flex-end;
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
-  gap: 0.5rem;
 }
 
 .button {
