@@ -50,16 +50,14 @@ const hideWifiConfig = ref(config.hideWifiConfig)
       <p>All dates and hours are adjusted to your timezone.</p>
       <Tooltip title="Working on it">
         <div class="buttons__disabled">
-          <!-- <a
+          <a
             href="https://guides.hackupc.com/guide/hacker/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
             Guides
-          </a> -->
-          <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
-          Guides (coming soon)
+          </a>
         </div>
       </Tooltip>
       <div class="buttons">
