@@ -9,8 +9,8 @@ export interface Activity {
 
 export const activities: Activity[] = [
   {
-    title: 'Find a biene',
-    description: /* markdown */ `There are 12 bienes 🐝 hidden in the venue! Find them, take a selfie and show it on the InfoDesk to check your mission stamp! \n\n Please don't remove them from their place.`,
+    title: 'Find the biene',
+    description: /* markdown */ `There are 24 bienes 🐝 hidden in the venue! Find 12 of them, take a selfie and show them at the InfoDesk to check your mission stamp! \n\n Please don't remove them from their place.`,
     location: 'Hacking area',
     time: 'All weekend',
     isMission: true,
