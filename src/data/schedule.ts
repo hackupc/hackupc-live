@@ -96,7 +96,7 @@ export const schedule: RawSchedule = {
       },
       title: '🐝 Find The Biene',
       start: '03/05/2024 21:00',
-      description: /* markdown */ `You can start looking for bienes around the venue! There are 12 hidden bienes. [More information](/talks)`,
+      description: /* markdown */ `You can start looking for bienes around the venue! There are 24 hidden bienes. [More information](/talks)`,
     },
     {
       id: 'team-building',

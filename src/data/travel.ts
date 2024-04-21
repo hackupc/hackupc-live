@@ -11,7 +11,7 @@ export const travels: Travel[] = [
     title: 'Get accepted into HackUPC',
     tag: 'Invited to HackUPC',
     emoji: 'gift',
-    description: `Congratulations! You have been accepted to HackUPC, once you confirm your attendance you will be able to **check if you need travel reimbursement**. Take into account that we provide: \n - **Up to** 50€ for people coming from Spain (outside Catalunya) \n - **Up to** 120€ for people coming from Europe \n - **Up to** 200€ for people coming from outside Europe.`,
+    description: `Congratulations! You have been accepted to HackUPC, once you confirm your attendance you will be able to **check if you need travel reimbursement**. Take into account that we provide: \n - **Up to** 50€ for people coming from Spain (outside Catalunya) \n - **Up to** 120€ for people coming from Europe \n - **Up to** 200€ for people coming from outside Europe. \n\n _**Note**: Due the high demand of reimbursement petitions we are only covering **up to** the 50% of the trip since we have a limited budget._`,
   },
   {
     title: 'Confirm your attendance',
