@@ -454,7 +454,7 @@ export const schedule: RawSchedule = {
         text: 'Cafeteria (A5106)',
         mapId: 'indoors',
       },
-      title: '🤝🏼 Sticker Xchange',
+      title: '🤝🏼 StickerXchange',
       start: '05/05/2024 00:00',
       end: '05/05/2024 00:30',
       description: /* markdown */ `Want to find new stickers for your laptop? Come to met new people at the cafeteria! [More information](/activities)`,

@@ -9,7 +9,7 @@ export interface Activity {
 
 export const activities: Activity[] = [
   {
-    title: 'Find a biene',
+    title: 'Find the biene',
     description: /* markdown */ `There are 24 bienes 🐝 hidden in the venue! Find at least 12 of them, take a selfie and show it on the InfoDesk to check your mission stamp! \n\n Please don't remove them from their place.`,
     location: 'Hacking area',
     time: 'All weekend',
@@ -35,7 +35,7 @@ export const activities: Activity[] = [
     time: 'Sunday 00:30h',
   },
   {
-    title: 'Sticker Xchange',
+    title: 'StickerXchange',
     description: /* markdown */ `Want to improve your sticker collection? Come to the cafeteria and exchange your stickers with other hackathon lovers!`,
     location: 'Cafeteria',
     time: 'Sunday 00:00h',
