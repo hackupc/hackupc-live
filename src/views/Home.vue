@@ -8,7 +8,6 @@ import PanelContainer from '../components/PanelContainer.vue'
 import { DevpostIcon } from '@/components/icons'
 import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
-import { Tooltip } from 'ant-design-vue'
 
 const hideWifiConfig = ref(config.hideWifiConfig)
 </script>
