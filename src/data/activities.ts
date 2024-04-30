@@ -35,7 +35,7 @@ export const activities: Activity[] = [
     time: 'Sunday 00:30h',
   },
   {
-    title: 'Sticker Xchange',
+    title: 'StickerXchange',
     description: /* markdown */ `Want to improve your sticker collection? Come to the cafeteria and exchange your stickers with other hackathon lovers!`,
     location: 'Cafeteria',
     time: 'Sunday 00:00h',
