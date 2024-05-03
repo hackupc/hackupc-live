@@ -24,11 +24,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
         </blockquote>
       </div>
 
-      <Panel
-        title="HackUPC prizes"
-        v-if="hideChallengesAndPrizes"
-        size="big"
-      >
+      <Panel v-if="hideChallengesAndPrizes" title="HackUPC prizes" size="big">
         <SecretContent />
       </Panel>
       <Panel v-else title="HackUPC prizes" size="big">
@@ -38,7 +34,7 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
             <p class="prize__text">Price</p>
             <p class="prize__subtext">(For each team member)</p> -->
           <div class="prize">
-            <h3 class="prize__position2">2nd </h3>
+            <h3 class="prize__position2">2nd</h3>
             <p class="prize__text">Streamdeck</p>
             <p class="prize__subtext">(For each team member)</p>
           </div>
@@ -120,14 +116,16 @@ strong {
     color: #aa8e25;
     font-size: 2rem;
   }
+
   &__position2 {
     margin: 0 !important;
-    color: #C0C0C0;
+    color: #c0c0c0;
     font-size: 1.75rem;
   }
+
   &__position3 {
     margin: 0 !important;
-    color: #CD7F32;
+    color: #cd7f32;
     font-size: 1.5rem;
   }
 }
