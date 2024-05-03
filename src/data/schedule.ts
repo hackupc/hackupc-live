@@ -168,22 +168,6 @@ export const schedule: RawSchedule = {
       description: /* markdown */ `Learn about cool stuff in this workshop! [More information](/talks)`,
     },
     {
-      id: 'challenge-talk-3',
-      physicalLocation: {
-        text: 'A5001',
-        mapId: 'indoors',
-      },
-      onlineLocation: {
-        text: 'YouTube',
-        url: 'https://www.youtube.com/c/HackersUPC',
-        icon: 'youtube',
-      },
-      title: '🗣️ Grafana talk',
-      start: '03/05/2024 23:30',
-      end: '04/05/2024 00:00',
-      description: /* markdown */ `Come to discover more about the challenge! [More information](/talks)`,
-    },
-    {
       id: 'workshop-2',
       physicalLocation: {
         text: 'A5002',
@@ -198,6 +182,22 @@ export const schedule: RawSchedule = {
       start: '03/05/2024 23:00',
       end: '03/05/2024 23:30',
       description: /* markdown */ `Learn about cool stuff in this workshop! [More information](/talks)`,
+    },
+    {
+      id: 'challenge-talk-3',
+      physicalLocation: {
+        text: 'A5001',
+        mapId: 'indoors',
+      },
+      onlineLocation: {
+        text: 'YouTube',
+        url: 'https://www.youtube.com/c/HackersUPC',
+        icon: 'youtube',
+      },
+      title: '🗣️ Grafana talk',
+      start: '03/05/2024 23:30',
+      end: '04/05/2024 00:00',
+      description: /* markdown */ `Come to discover more about the challenge! [More information](/talks)`,
     },
     {
       id: 'challenge-talk-4',
