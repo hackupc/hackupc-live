@@ -105,8 +105,13 @@ const currentView = computed<'cafeteria' | 'regular'>(() => {
           <template v-else>
             <ul>
               <li><b>Friday</b>: The cafeteria will not open on friday!</li>
-              <li><b>Saturday</b>:</li>
-              <li><b>Sunday</b>:</li>
+              <li>
+                <b>Saturday</b>:From 0:00h to 11:00h, 12:00h to 17:00h and
+                18:00h to 0:00h
+              </li>
+              <li>
+                <b>Sunday</b>: From 0:00h to 2:00h and from 3:00h to 12:00h
+              </li>
             </ul>
           </template>
         </div>

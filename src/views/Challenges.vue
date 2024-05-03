@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
-import VideoThumbnail from '@/components/VideoThumbnail.vue'
 import config from '@/config'
 import { challenges } from '@/data/challenges'
 import { HashtagIcon } from '@heroicons/vue/solid'
@@ -25,20 +24,29 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
         </blockquote>
       </div>
 
-      <Panel title="HackUPC prizes" size="big">
+      <Panel v-if="hideChallengesAndPrizes" title="HackUPC prizes" size="big">
+        <SecretContent />
+      </Panel>
+      <Panel v-else title="HackUPC prizes" size="big">
         <div class="prizes-container">
           <!--Example of prize:
             <h3 class="prize__position">1st</h3>
             <p class="prize__text">Price</p>
             <p class="prize__subtext">(For each team member)</p> -->
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position2">2nd</h3>
+            <p class="prize__text">Streamdeck</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position1">1st</h3>
+            <p class="prize__text">2nd Gen Airpods Pro</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position3">3rd</h3>
+            <p class="prize__text">Space Themed Lego Set</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
         </div>
       </Panel>
@@ -62,16 +70,6 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
           <h3>{{ challenge.title }}</h3>
 
           <VueMarkdownIt :source="challenge.description" />
-
-          <p>
-            <strong>Prize:</strong>
-            {{ challenge.prize }}
-          </p>
-
-          <VideoThumbnail
-            v-if="challenge.videoUrl"
-            :video-url="challenge.videoUrl"
-          />
         </Panel>
       </template>
     </PanelContainer>
@@ -113,10 +111,22 @@ strong {
     opacity: 0.6;
   }
 
-  &__position {
+  &__position1 {
     margin: 0 !important;
     color: #aa8e25;
     font-size: 2rem;
+  }
+
+  &__position2 {
+    margin: 0 !important;
+    color: #c0c0c0;
+    font-size: 1.75rem;
+  }
+
+  &__position3 {
+    margin: 0 !important;
+    color: #cd7f32;
+    font-size: 1.5rem;
   }
 }
 
