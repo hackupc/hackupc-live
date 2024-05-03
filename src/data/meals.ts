@@ -72,15 +72,15 @@ export const meals: Meals[] = [
       {
         nameMeal: 'Bocatas',
         ingredients:
-          'Fuet, Queso, Jamón York, Jamón Serrano, Tortilla de patatas',
+          'Fuet, Cheese, Jam, Spanish jam, Tortilla de patatas (spanish omelette)',
       },
       {
         nameMeal: 'Bolleria',
-        ingredients: 'Croissant de chocolate, Croissant de crema',
+        ingredients: 'Chocolate Croissant, Cream Croissant',
       },
       {
-        nameMeal: 'Zumos',
-        ingredients: 'Naranja, Piña',
+        nameMeal: 'Juice',
+        ingredients: 'Orange, Pineapple',
       },
     ],
   },
