@@ -27,7 +27,8 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: 'Galileo Mastermind: Develop a platform for crowdsourcing GNSS data to analyse Galileo signals',
+    title:
+      'Galileo Mastermind: Develop a platform for crowdsourcing GNSS data to analyse Galileo signals',
     description: '',
     location: 'A5002',
     company: 'ESA',
@@ -61,7 +62,8 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: 'From Padawan to Jedi: Essential Tactics for First-Time Participants by a Jedi Master',
+    title:
+      'From Padawan to Jedi: Essential Tactics for First-Time Participants by a Jedi Master',
     description: '',
     location: 'A5002',
     company: 'BlueTab',
@@ -84,7 +86,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: 'AI Work Assistant. Don\'t click, tell me what you need.',
+    title: "AI Work Assistant. Don't click, tell me what you need.",
     description: '',
     location: 'A5001',
     company: 'Seidor',
