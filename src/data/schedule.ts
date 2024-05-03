@@ -170,7 +170,7 @@ export const schedule: RawSchedule = {
     {
       id: 'challenge-talk-3',
       physicalLocation: {
-        text: 'A5002',
+        text: 'A5001',
         mapId: 'indoors',
       },
       onlineLocation: {
@@ -186,7 +186,7 @@ export const schedule: RawSchedule = {
     {
       id: 'workshop-2',
       physicalLocation: {
-        text: 'A5001',
+        text: 'A5002',
         mapId: 'indoors',
       },
       onlineLocation: {
