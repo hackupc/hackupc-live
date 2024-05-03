@@ -28,7 +28,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
             tabindex="0"
           />
           <div class="wifi__inner">
-            SSID: <code>HACKUPC2024</code><br />
+            SSID: <code>HACKUPC2024B</code><br />
             Password: <code>Biene2024!</code>
           </div>
         </template>
