@@ -62,16 +62,6 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
           <h3>{{ challenge.title }}</h3>
 
           <VueMarkdownIt :source="challenge.description" />
-
-          <p>
-            <strong>Prize:</strong>
-            {{ challenge.prize }}
-          </p>
-
-          <VideoThumbnail
-            v-if="challenge.videoUrl"
-            :video-url="challenge.videoUrl"
-          />
         </Panel>
       </template>
     </PanelContainer>
