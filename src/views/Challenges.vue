@@ -24,20 +24,33 @@ const hideChallengesAndPrizes = ref(config.hideChallengesAndPrizes)
         </blockquote>
       </div>
 
-      <Panel title="HackUPC prizes" size="big">
+      <Panel
+        title="HackUPC prizes"
+        v-if="hideChallengesAndPrizes"
+        size="big"
+      >
+        <SecretContent />
+      </Panel>
+      <Panel v-else title="HackUPC prizes" size="big">
         <div class="prizes-container">
           <!--Example of prize:
             <h3 class="prize__position">1st</h3>
             <p class="prize__text">Price</p>
             <p class="prize__subtext">(For each team member)</p> -->
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position2">2nd </h3>
+            <p class="prize__text">Streamdeck</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position1">1st</h3>
+            <p class="prize__text">2nd Gen Airpods Pro</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
           <div class="prize">
-            <SecretContent />
+            <h3 class="prize__position3">3rd</h3>
+            <p class="prize__text">Space Themed Lego Set</p>
+            <p class="prize__subtext">(For each team member)</p>
           </div>
         </div>
       </Panel>
@@ -102,10 +115,20 @@ strong {
     opacity: 0.6;
   }
 
-  &__position {
+  &__position1 {
     margin: 0 !important;
     color: #aa8e25;
     font-size: 2rem;
+  }
+  &__position2 {
+    margin: 0 !important;
+    color: #C0C0C0;
+    font-size: 1.75rem;
+  }
+  &__position3 {
+    margin: 0 !important;
+    color: #CD7F32;
+    font-size: 1.5rem;
   }
 }
 
