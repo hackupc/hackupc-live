@@ -6,7 +6,7 @@ export interface Discover {
 export const discovers: Discover[] = [
   {
     title: 'Where to eat?',
-    description: `Check out the best places to eat in Barcelona!`,
+    description: `In Barcelona we have a lot of different types of food and drinks places! \n\n `,
   },
   {
     title: 'What to visit',
