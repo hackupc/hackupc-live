@@ -23,7 +23,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         <template v-else>
           <img
             class="wifi__qr"
-            src="@/assets/img/wifi-qr.svg"
+            src="@/assets/img/wifi-qr.png"
             alt=""
             tabindex="0"
           />

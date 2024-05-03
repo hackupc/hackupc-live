@@ -19,7 +19,7 @@ const config: Config = {
   hideChallengesAndPrizes: true,
   hideCafeteriaSchedule: true,
   hideMeals: true,
-  hideWifiConfig: true,
+  hideWifiConfig: false,
   hideMission: true,
   hideActivities: false,
   workingDiscovery: true,
