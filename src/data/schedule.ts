@@ -179,8 +179,8 @@ export const schedule: RawSchedule = {
         icon: 'youtube',
       },
       title: '🗣️ Grafana talk',
-      start: '03/05/2024 23:00',
-      end: '03/05/2024 23:30',
+      start: '03/05/2024 23:30',
+      end: '04/05/2024 00:00',
       description: /* markdown */ `Come to discover more about the challenge! [More information](/talks)`,
     },
     {
@@ -195,8 +195,8 @@ export const schedule: RawSchedule = {
         icon: 'twitch',
       },
       title: '🗣️ Workshop BlueTab!',
-      start: '03/05/2024 23:30',
-      end: '04/05/2024 00:00',
+      start: '03/05/2024 23:00',
+      end: '03/05/2024 23:30',
       description: /* markdown */ `Learn about cool stuff in this workshop! [More information](/talks)`,
     },
     {
