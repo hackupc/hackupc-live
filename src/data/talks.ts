@@ -16,7 +16,7 @@ export interface Talk {
 
 export const talks: Talk[] = [
   {
-    title: '',
+    title: 'Boost your project with GenAI and Vector Search',
     description: '',
     location: 'A5001',
     company: 'InterSystems',
@@ -27,7 +27,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Galileo Mastermind: Develop a platform for crowdsourcing GNSS data to analyse Galileo signals',
     description: '',
     location: 'A5002',
     company: 'ESA',
@@ -38,7 +38,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Building Better Hacks, Faster with GitHub Copilot',
     description: '',
     location: 'A5001',
     company: 'GitHub',
@@ -50,7 +50,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'IoT Observability with Grafana',
     //description: '',
     location: 'A5001',
     company: 'Grafana',
@@ -61,7 +61,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'From Padawan to Jedi: Essential Tactics for First-Time Participants by a Jedi Master',
     description: '',
     location: 'A5002',
     company: 'BlueTab',
@@ -73,7 +73,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Creating Meaningful Travel Encounters',
     //description: '',
     location: 'A5002',
     company: 'TravelPerk',
@@ -84,7 +84,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'AI Work Assistant. Don\'t click, tell me what you need.',
     description: '',
     location: 'A5001',
     company: 'Seidor',
@@ -95,7 +95,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'AI-driven Clothing Similarity: Enhancing Fashion Ecommerce',
     //description: '',
     location: 'A5002',
     company: 'InditexTech',
@@ -105,7 +105,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Scaping data for fun and profit',
     description: '',
     location: 'A5001',
     company: 'Flanks',
@@ -117,7 +117,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Beyond the Code: Detecting AI Content',
     description: '',
     location: 'A5001',
     company: 'Vueling',
@@ -129,7 +129,7 @@ export const talks: Talk[] = [
     isSecret: true,
   },
   {
-    title: '',
+    title: 'Hands-on workshop on InterSystems IRIS Vector Search',
     description: '',
     location: 'A5001',
     company: 'InterSystems',
