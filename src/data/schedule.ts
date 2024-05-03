@@ -216,6 +216,16 @@ export const schedule: RawSchedule = {
       description: /* markdown */ `Come to discover more about the challenge! [More information](/talks)`,
     },
     {
+      id: 'cafe1',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕ Cafeteria is open',
+      start: '04/05/2024 00:00',
+      description: /* markdown */ `Need some extra energy? Come grab a coffee and match it with some snacks!`,
+    },
+    {
       id: 'challenge-talk-5',
       physicalLocation: {
         text: 'A5001',
@@ -319,6 +329,16 @@ export const schedule: RawSchedule = {
       description: /* markdown */ `Learn about cool stuff in this workshop! [More information](/talks)`,
     },
     {
+      id: 'cafe2',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is closed',
+      start: '04/05/2024 11:00',
+      description: /* markdown */ `We know you enjoy the coffee. Let us refill and we will be back in a minute`,
+    },
+    {
       id: 'workshop-5',
       physicalLocation: {
         text: 'A5001',
@@ -349,6 +369,16 @@ export const schedule: RawSchedule = {
       start: '04/05/2024 11:30',
       end: '04/05/2024 12:00',
       description: /* markdown */ `Learn about cool stuff in this workshop! [More information](/talks)`,
+    },
+    {
+      id: 'cafe3',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is open',
+      start: '04/05/2024 12:00',
+      description: /* markdown */ `Need some extra energy? Come grab a coffee and match it with some snacks!`,
     },
     {
       id: 'workshop-6',
@@ -392,6 +422,26 @@ export const schedule: RawSchedule = {
       title: '🦆 Rubber duck finding',
       start: '04/05/2024 16:00',
       description: /* markdown */ `Quack! [More information](/activities)`,
+    },
+    {
+      id: 'cafe4',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is closed',
+      start: '04/05/2024 17:00',
+      description: /* markdown */ `We know you enjoy the coffee. Let us refill and we will be back in a minute`,
+    },
+    {
+      id: 'cafe5',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is open',
+      start: '04/05/2024 18:00',
+      description: /* markdown */ `Need some extra energy? Come grab a coffee and match it with some snacks!`,
     },
     {
       id: 'shower2',
@@ -482,6 +532,26 @@ export const schedule: RawSchedule = {
       description: /* markdown */ `Come one! Last night! Last sprint! Recharge your batteries with a energetic **yogurt**! [More information](/meals)`,
     },
     {
+      id: 'cafe6',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is closed',
+      start: '05/05/2024 2:00',
+      description: /* markdown */ `We know you enjoy the coffee. Let us refill and we will be back in a minute`,
+    },
+    {
+      id: 'cafe7',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is open',
+      start: '05/05/2024 3:00',
+      description: /* markdown */ `Need some extra energy? Come grab a coffee and match it with some snacks!`,
+    },
+    {
       id: 'the-game-ends',
       title: '🧑🏽‍💻 THE GAME ENDS',
       start: '05/05/2024 03:14',
@@ -514,6 +584,16 @@ export const schedule: RawSchedule = {
       start: '05/05/2024 09:00',
       end: '05/05/2024 11:00',
       description: /* markdown */ `Coding time it's over! Take a shower and feel fresh to do a great demo!`,
+    },
+    {
+      id: 'cafe8',
+      physicalLocation: {
+        text: 'A5106',
+        mapId: 'indoors',
+      },
+      title: '☕Cafeteria is closed',
+      start: '05/05/2024 12:00',
+      description: /* markdown */ `We know you enjoy the coffee. But the time has come to finally close the cafeteria`,
     },
     {
       id: 'demo-fair',
