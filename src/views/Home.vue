@@ -8,7 +8,6 @@ import PanelContainer from '../components/PanelContainer.vue'
 import { DevpostIcon } from '@/components/icons'
 import config from '@/config'
 import SecretContent from '@/components/SecretContent.vue'
-import { Tooltip } from 'ant-design-vue'
 
 const hideWifiConfig = ref(config.hideWifiConfig)
 </script>
@@ -24,7 +23,7 @@ const hideWifiConfig = ref(config.hideWifiConfig)
         <template v-else>
           <img
             class="wifi__qr"
-            src="@/assets/img/wifi-qr.svg"
+            src="@/assets/img/wifi-qr.png"
             alt=""
             tabindex="0"
           />
@@ -48,18 +47,16 @@ const hideWifiConfig = ref(config.hideWifiConfig)
       </p>
 
       <p>All dates and hours are adjusted to your timezone.</p>
-      <Tooltip title="Hackers Guidelines">
-        <div class="buttons">
-          <a
-            href="https://guides.hackupc.com/guide/hacker/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
-            Guides
-          </a>
-        </div>
-      </Tooltip>
+      <div class="buttons">
+        <a
+          href="https://guides.hackupc.com/guide/hacker/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon="book-open" style="margin-right: 4px" />
+          Guides
+        </a>
+      </div>
       <div class="buttons">
         <a
           href="https://maps.app.goo.gl/AKazP14LMy7LZoZq8"
