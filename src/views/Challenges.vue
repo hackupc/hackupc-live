@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
-import VideoThumbnail from '@/components/VideoThumbnail.vue'
 import config from '@/config'
 import { challenges } from '@/data/challenges'
 import { HashtagIcon } from '@heroicons/vue/solid'

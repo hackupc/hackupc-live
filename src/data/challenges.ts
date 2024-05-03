@@ -13,7 +13,7 @@ export const challenges: Challenge[] = [
   {
     companyEncrypted: 'Company challenge',
     company: 'Seidor',
-    title: 'AI Work Assistant: Don\'t click, tell me what you need',
+    title: "AI Work Assistant: Don't click, tell me what you need",
     //videoUrl: '',
     description: /* markdown */ `Join our AI Voice Assistant Challenge to simplify the daily tasks of creating shopping lists and fulfilling orders. By leveraging AI technology with conversational capabilities, we aim to address common issues like locating items and correcting quantities—all through natural language interactions. Together, let's revolutionize workflow efficiency and improve lives. Hack away at HackUPC!`,
     //prize: '',
