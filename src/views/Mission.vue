@@ -79,8 +79,6 @@ const hideMission = ref(config.hideMission)
           InfoDesk and <strong>show a proof</strong> that you have completed the
           task.
         </p>
-        <span class="rewards-title">Prizes</span>
-        <p>FOTO DELS PREMIS BEN POSATS</p>
       </template>
     </Panel>
   </PanelContainer>
