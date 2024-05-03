@@ -52,7 +52,7 @@ export const talks: Talk[] = [
   {
     title: '',
     //description: '',
-    location: 'A5002',
+    location: 'A5001',
     company: 'Grafana',
     // videoUrl: '',
     start: '3/5/2024 23:30',
@@ -63,7 +63,7 @@ export const talks: Talk[] = [
   {
     title: '',
     description: '',
-    location: 'A5001',
+    location: 'A5002',
     company: 'BlueTab',
     // videoUrl: '',
     start: '3/5/2024 23:00',
