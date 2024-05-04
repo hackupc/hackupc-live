@@ -523,7 +523,7 @@ export const schedule: RawSchedule = {
       },
       title: '🥣 Midnight snack',
       start: '05/05/2024 00:30',
-      end: '04/05/2024 02:00',
+      end: '05/05/2024 02:00',
       description: /* markdown */ `Come one! Last night! Last sprint! Recharge your batteries with a energetic **yogurt**! [More information](/meals)`,
     },
     {
