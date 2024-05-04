@@ -393,8 +393,8 @@ export const schedule: RawSchedule = {
         mapId: 'indoors',
       },
       title: '🥘 Lunch',
-      start: '04/05/2024 13:00',
-      end: '04/05/2024 14:30',
+      start: '04/05/2024 13:30',
+      end: '04/05/2024 15:00',
       description: /* markdown */ `Recharge your batteries with a delicious **paella**!  [More information](/meals)`,
     },
     {
