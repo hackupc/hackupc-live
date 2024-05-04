@@ -522,8 +522,8 @@ export const schedule: RawSchedule = {
         mapId: 'indoors',
       },
       title: '🥣 Midnight snack',
-      start: '05/05/2024 00:30',
-      end: '05/05/2024 02:00',
+      start: '05/05/2024 01:00',
+      end: '05/05/2024 02:30',
       description: /* markdown */ `Come one! Last night! Last sprint! Recharge your batteries with a energetic **yogurt**! [More information](/meals)`,
     },
     {
