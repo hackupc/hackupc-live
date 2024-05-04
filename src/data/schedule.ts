@@ -478,8 +478,8 @@ export const schedule: RawSchedule = {
         mapId: 'indoors',
       },
       title: '🍕 Dinner',
-      start: '04/05/2024 20:00',
-      end: '04/05/2024 21:30',
+      start: '04/05/2024 20:30',
+      end: '04/05/2024 22:00',
       description: /* markdown */ `Hard day? It's normal after 24 hours coding... you deserve a really good dinner! **PIZZA TIME** [More information](/meals)`,
     },
     {
