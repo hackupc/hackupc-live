@@ -21,31 +21,6 @@ jobs:
           name: dist
           path: dist
 
-  lighthouseci:
-    name: Lighthouse
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: 🚚 Get the build
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: dist
-      - name: 🎯 Set up Node.js using nvm
-        uses: actions/setup-node@v2
-        with:
-          node-version-file: '.nvmrc'
-      - name: 🎁 Install Lighthouse
-        run: npm install -g @lhci/cli
-      - name: 🔎 Run Lighthouse
-        run: lhci autorun
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
   lintfix:
     name: Lint, Type check and auto-fix
     runs-on: ubuntu-latest
