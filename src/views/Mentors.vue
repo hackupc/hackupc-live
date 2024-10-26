@@ -1,23 +1,15 @@
 <script setup lang="ts">
-import { mentors } from '@/data/mentors'
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import PanelContainer from '@/components/PanelContainer.vue'
-import { RouterLink, useRoute } from 'vue-router'
-import { computed, ref } from 'vue'
-import config from '@/config'
-import MoreInformationSoon from '@/components/MoreInformationSoon.vue'
-
-const hideMentors = ref(config.hideMentors)
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 const route = useRoute()
 
-const currentView = computed<'generalInfo' | 'meetThem'>(() => {
-  if (
-    route.params?.mentorsId !== 'generalInfo' &&
-    route.params?.mentorsId !== 'meetThem'
-  ) {
+const currentView = computed<'generalInfo'>(() => {
+  if (route.params?.mentorsId !== 'generalInfo') {
     return 'generalInfo'
   }
 
@@ -27,29 +19,6 @@ const currentView = computed<'generalInfo' | 'meetThem'>(() => {
 
 <template>
   <PanelContainer id="mentors">
-    <div class="explore">
-      <RouterLink
-        :to="{
-          name: 'mentors',
-          params: { mentorsId: 'generalInfo' },
-        }"
-        class="button"
-        :class="{ 'button--disabled': currentView === 'generalInfo' }"
-      >
-        General Information
-      </RouterLink>
-      <RouterLink
-        :to="{
-          name: 'mentors',
-          params: { mentorsId: 'meetThem' },
-        }"
-        class="button"
-        :class="{ 'button--disabled': currentView === 'meetThem' }"
-      >
-        Meet our mentors
-      </RouterLink>
-    </div>
-
     <template v-if="currentView === 'generalInfo'">
       <Panel title="What is a mentor?" size="small">
         Mentors are experts in various technologies and programming languages
@@ -75,51 +44,6 @@ const currentView = computed<'generalInfo' | 'meetThem'>(() => {
         <br /><br />
         Also you can ask for help through the help channel on Slack!
       </Panel>
-    </template>
-
-    <template v-if="currentView === 'meetThem'">
-      <template v-for="mentor in mentors" :key="mentor.title">
-        <Panel v-if="hideMentors" title="Mentor name">
-          <MoreInformationSoon />
-        </Panel>
-        <Panel v-else :title="mentor.title">
-          <IconLabel
-            centered
-            style="margin-top: 0.27rem; margin-bottom: 1.5rem"
-          >
-            <template #icon>
-              <FontAwesomeIcon class="link__icon" :icon="['fab', 'slack']" />
-            </template>
-            <p class="icon-label-link">{{ mentor.slack }}</p>
-          </IconLabel>
-          <p class="position">
-            <span style="margin-right: 8px">💼</span
-            ><strong>Working as:</strong>
-            {{ mentor.description }}
-          </p>
-          <p class="position">{{ mentor.languages }}</p>
-          <div class="icons">
-            <a
-              v-if="mentor.linkedin"
-              :href="mentor.linkedin"
-              class="icons__icon"
-            >
-              <FontAwesomeIcon
-                class="link__icon"
-                :icon="['fab', 'linkedin']"
-                size="3x"
-              />
-            </a>
-            <a v-if="mentor.webpage" :href="mentor.webpage" class="icons__icon">
-              <FontAwesomeIcon
-                class="link__icon"
-                :icon="['fa', 'globe']"
-                size="3x"
-              />
-            </a>
-          </div>
-        </Panel>
-      </template>
     </template>
   </PanelContainer>
 </template>
