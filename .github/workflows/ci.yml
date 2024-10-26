@@ -8,7 +8,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: 🎯 Set up Node.js using nvm
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
       - name: 🎁 Install dependencies
@@ -16,7 +16,7 @@ jobs:
       - name: 👷🏽‍♂️ Build the site
         run: npm run build --if-present
       - name: 💾 Store the build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist

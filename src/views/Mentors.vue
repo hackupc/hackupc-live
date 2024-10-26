@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { mentors } from '@/data/mentors'
 import IconLabel from '@/components/IconLabel.vue'
 import Panel from '@/components/Panel.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import PanelContainer from '@/components/PanelContainer.vue'
-import { RouterLink, useRoute } from 'vue-router'
-import { computed, ref } from 'vue'
-import config from '@/config'
-import MoreInformationSoon from '@/components/MoreInformationSoon.vue'
-
-const hideMentors = ref(config.hideMentors)
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 const route = useRoute()
 
